@@ -1,6 +1,6 @@
 {
-  "name": "ryanpotter/silverstripe-boilerplate-installer",
-  "version": "1.0",
+  "name": "pinc/silver",
+  "version": "0.1",
   "description": "Boilerplate Installer",
   "type": "silverstripe-module",
   "keywords": [
@@ -10,9 +10,9 @@
   "license": "BSD-3-Clause",
   "authors": [
     {
-      "name": "Ryan Potter",
-      "homepage": "http://ryanpotter.co.nz/",
-      "role": "Developer"
+      "name": "Jaydn de Graaf",
+      "homepage": "http://pinc.nz/",
+      "role": "Tall Guy"
     }
   ],
   "require": {
@@ -21,7 +21,6 @@
     "silverstripe/framework": "3.x@stable",
     "silverstripe/googlesitemaps": "1.2.*",
     "unclecheese/betterbuttons": "1.2.*",
-    "ryanpotter/silverstripe-boilerplate": "dev-master",
     "ryanpotter/silverstripe-cms-theme": "dev-master",
     "google/recaptcha": "~1.1",
     "drewm/mailchimp-api": "~1.0",
@@ -34,10 +33,8 @@
   "scripts": {
     "post-create-project-cmd": [
       "npm install",
-      "npm install -g grunt-cli",
-      "npm install -g bower",
-      "bower install -allow-root",
-      "grunt deploy"
+      "npm install -g gulp-cli",
+      "gulp deploy"
     ]
   },
   "minimum-stability": "dev"
