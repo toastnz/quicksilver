@@ -52,11 +52,6 @@ table {
 .clearfix:after, .row:after {
   clear: both; }
 
-.aaaa {
-  background-size: cover;
-  background-position: center center;
-  -ms-behavior: url(/backgroundsize.min.htc); }
-
 html, body {
   height: 100%;
   font-size: 10px;

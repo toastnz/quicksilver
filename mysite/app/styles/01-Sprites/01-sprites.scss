@@ -2,7 +2,7 @@
     .icon-arrow-medium-down{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -215px 0px;
+    background-position: 0px 0px;
     width:42px;
     height:56px;
     }
@@ -10,7 +10,7 @@
     .icon-arrow-medium-left{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: 0px -117px;
+    background-position: 0px -60px;
     width:56px;
     height:42px;
     }
@@ -18,7 +18,7 @@
     .icon-arrow-medium-right{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -60px -117px;
+    background-position: -46px 0px;
     width:56px;
     height:42px;
     }
@@ -26,7 +26,7 @@
     .icon-arrow-medium-up{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -215px -60px;
+    background-position: -106px 0px;
     width:42px;
     height:56px;
     }
@@ -34,7 +34,7 @@
     .icon-arrow-small-down{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -120px -117px;
+    background-position: -60px -60px;
     width:28px;
     height:37px;
     }
@@ -42,7 +42,7 @@
     .icon-arrow-small-left{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -149px -77px;
+    background-position: -92px -60px;
     width:37px;
     height:28px;
     }
@@ -50,7 +50,7 @@
     .icon-arrow-small-right{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -108px -77px;
+    background-position: 0px -106px;
     width:37px;
     height:28px;
     }
@@ -58,7 +58,7 @@
     .icon-arrow-small-up{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -215px -120px;
+    background-position: -152px 0px;
     width:28px;
     height:37px;
     }
@@ -66,7 +66,7 @@
     .icon-arrow-tiny-right{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -152px -146px;
+    background-position: -46px -46px;
     width:13px;
     height:7px;
     }
@@ -74,7 +74,7 @@
     .icon-checkbox-checked{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -152px -117px;
+    background-position: -152px -41px;
     width:25px;
     height:25px;
     }
@@ -82,7 +82,7 @@
     .icon-closeburger{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -190px -77px;
+    background-position: -152px -93px;
     width:20px;
     height:20px;
     }
@@ -90,31 +90,15 @@
     .icon-facebook{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -247px -120px;
+    background-position: -133px -60px;
     width:7px;
     height:12px;
-    }
-    .no-flexboxlegacy.no-touch.no-canvas .icon-logo-large,
-    .icon-logo-large{
-    display:inline-block;
-    background-image: url(../images/sprites.png);
-    background-position: 0px 0px;
-    width:211px;
-    height:73px;
-    }
-    .no-flexboxlegacy.no-touch.no-canvas .icon-logo-small,
-    .icon-logo-small{
-    display:inline-block;
-    background-image: url(../images/sprites.png);
-    background-position: 0px -77px;
-    width:104px;
-    height:36px;
     }
     .no-flexboxlegacy.no-touch.no-canvas .icon-navburger,
     .icon-navburger{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -181px -117px;
+    background-position: -152px -70px;
     width:24px;
     height:19px;
     }
@@ -122,7 +106,7 @@
     .icon-search{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: 0px -163px;
+    background-position: -41px -106px;
     width:19px;
     height:19px;
     }
@@ -130,7 +114,7 @@
     .icon-twitter{
     display:inline-block;
     background-image: url(../images/sprites.png);
-    background-position: -23px -163px;
+    background-position: -152px -117px;
     width:12px;
     height:10px;
     }

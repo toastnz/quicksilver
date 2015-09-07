@@ -40,21 +40,6 @@ var gulp = require("gulp");
 var size = require('gulp-size');
 var gulpif = require("gulp-if");
 
-//-----------------------------------------------------------
-// Clean
-//-----------------------------------------------------------
-
-var del = require('del');
-
-gulp.task('clean', function (cb) {
-	del([
-		dist + 'styles/*',
-		dist + 'svg/*',
-		dist + 'js/*'
-	], cb);
-});
-
-
 // -----------------------------------------------------------
 // Sass
 //-----------------------------------------------------------
@@ -158,7 +143,7 @@ var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var uglify = require("gulp-uglify");
 
-gulp.task('modules', function () {
+gulp.task('js', function () {
 	browserify({
 		entries: app + 'js/components/app.js',
 		debug  : true
@@ -170,7 +155,7 @@ gulp.task('modules', function () {
 });
 
 
-gulp.task('minify-js', ['modules'], function () {
+gulp.task('minify-js', ['js'], function () {
 	return gulp.src([dist + 'js/output.js'])
 		.pipe(uglify())
 		.pipe(rename({
@@ -223,7 +208,7 @@ gulp.task('ie', function () {
 		'screen and (min-width: 1024px)',
 	];
 
-	gulp.src([dist + 'styles/style.css'])
+	gulp.src([dist + 'styles/style.css']) 
 		.pipe(rework(queryless(keepmatches)))
 		.pipe(rename({
 			suffix: '.ie'
@@ -236,13 +221,13 @@ gulp.task('ie', function () {
 // Task Declaration
 //------------------------------------------------------------
 
-var util = require("gulp-util");
+var util = require("gulp-util"); 
 var chalk = require("chalk");
 
 var changeEvent = function (evt) {
 	util.log('File', chalk.green(evt.path.replace(/^.*\/(?=[^\/]*$)/, '')), 'was', chalk.green(evt.type));
 };
-gulp.task('default', ['clean', 'sprites', 'sass', 'js', 'modules', 'modules', 'minify-js', 'minify-css', 'svg', 'ie'], function () {
+gulp.task('default', ['sprites', 'sass', 'js', 'minify-js', 'minify-css', 'svg', 'ie'], function () {
 
 
 	gulp.watch([app + 'styles/**/*.scss', modules + '**/*.scss'], ['sass', 'minify-css', 'ie']).on('change', function (evt) {
@@ -253,7 +238,7 @@ gulp.task('default', ['clean', 'sprites', 'sass', 'js', 'modules', 'modules', 'm
 		changeEvent(evt);
 	});
 
-	gulp.watch([app + 'js/components/*.js'], ['modules', ['minify-js']]).on('change', function (evt) {
+	gulp.watch([app + 'js/components/*.js'], ['js', ['minify-js']]).on('change', function (evt) {
 		changeEvent(evt);
 	});
 
@@ -295,7 +280,7 @@ gulp.task('default', ['clean', 'sprites', 'sass', 'js', 'modules', 'modules', 'm
 
 });
 
-gulp.task('deploy', ['clean', 'sprites', 'sass', 'js', 'modules', 'minify-js', 'minify-css', 'svg']);
+gulp.task('deploy', ['sprites', 'sass', 'js', 'js', 'minify-js', 'minify-css', 'svg']);
 
 gulp.task('minify', ['minify-js', 'minify-css']);
 
