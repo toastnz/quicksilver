@@ -1,0 +1,114 @@
+#MemberLoginForm_LoginForm {
+	margin: 0 auto;
+	max-width: 1200px;
+	padding: 80px 20px;
+}
+
+#SearchForm_SearchForm {
+	padding: 0;
+}
+
+form {
+	text-align: center;
+	padding: 40px 20px;
+	position: relative;
+	max-width: 768px;
+	margin: 0 auto;
+	.FormHeading {
+		padding-bottom: 20px;
+		text-align: left;
+	}
+	fieldset {
+		display: inline-block;
+		margin: 0 auto;
+		width: 100%;
+		@include clearfix;
+	}
+	.field {
+		position: relative;
+		text-align: left;
+		display: block;
+		float: left;
+		width: 100%;
+		&.half {
+			display: block;
+			float: left;
+			width: 100%;
+			@include media($md) {
+				width: 50%;
+				&:nth-child(even) {
+					padding-right: 10px;
+				}
+				&:nth-child(odd) {
+					padding-left: 10px;
+				}
+			}
+		}
+		.message {
+			position: absolute;
+			color: $pink;
+			bottom: 4px;
+			@include bold;
+		}
+	}
+	textarea,
+	input[type="email"],
+	input[type="password"],
+	input[type="text"] {
+		display: block;
+		-webkit-appearance: none;
+		border: 1px solid $grey-light;
+		height: 40px;
+		padding: 0 10px;
+		line-height: 40px;
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	input[type="submit"] {
+		display: block;
+		-webkit-appearance: none;
+		border: 0;
+		padding: 10px 10px;
+		line-height: 40px;
+		width: 100%;
+		margin: 20px auto;
+		cursor: pointer;
+		background: $pink;
+		color: $white;
+		@include font($h6);
+		@include extra-bold;
+	}
+	.Actions {
+		display: block;
+		float: left;
+		width: 100%;
+	}
+	textarea {
+		resize: none;
+		min-height: 200px;
+	}
+	label {
+		display: block;
+		@include extra-bold;
+		@include font($h6);
+		margin-bottom: 10px;
+		.req-indicator {
+			color: $pink;
+			vertical-align: middle;
+		}
+	}
+	.req-indicator-message {
+		color: $pink;
+		@include extra-bold;
+	}
+	a {
+		color: $blue;
+		@include extra-bold;
+		margin: 10px auto;
+	}
+	.alert-bad {
+		color: $pink;
+		@include bold;
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,40 @@
+//==================================================================
+// Sidebar content Styles
+//==================================================================
+
+.content {
+	padding: 80px 20px;
+	&__wrap {
+		max-width: 768px;
+		margin: 0 auto;
+		position: relative;
+		@include clearfix;
+		padding: 0 20px 100px;
+	}
+	&__article {
+		width: 100%;
+		display: block;
+		float: left;
+		&__heading {
+			padding-top: 60px;
+			margin-bottom: 30px;
+		}
+		img {
+			width: 100%;
+			margin: 20px auto;
+		}
+		p {
+			@include font($p);
+			@include bold;
+			strong {
+				@include extra-bold;
+			}
+			margin-bottom: 10px;
+			display: block;
+			a {
+				color: $blue;
+				text-decoration: none;
+			}
+		}
+	}
+}

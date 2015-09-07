@@ -1,0 +1,44 @@
+{
+  "name": "ryanpotter/silverstripe-boilerplate-installer",
+  "version": "1.0",
+  "description": "Boilerplate Installer",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "theme"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Ryan Potter",
+      "homepage": "http://ryanpotter.co.nz/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "silverstripe/cms": "3.x@stable",
+    "silverstripe/framework": "3.x@stable",
+    "silverstripe/googlesitemaps": "1.2.*",
+    "unclecheese/betterbuttons": "1.2.*",
+    "ryanpotter/silverstripe-boilerplate": "dev-master",
+    "ryanpotter/silverstripe-cms-theme": "dev-master",
+    "google/recaptcha": "~1.1",
+    "drewm/mailchimp-api": "~1.0",
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "littlegiant/silverstripe-catalogmanager": "^2.0",
+    "heyday/silverstripe-cacheinclude": "~4.0",
+    "silverstripe-australia/grouped-cms-menu": "dev-master",
+    "silverstripe/tagfield": "dev-master"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "npm install",
+      "npm install -g grunt-cli",
+      "npm install -g bower",
+      "bower install -allow-root",
+      "grunt deploy"
+    ]
+  },
+  "minimum-stability": "dev"
+}

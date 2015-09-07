@@ -1,0 +1,188 @@
+/** =========================================
+ * Concertina Section
+ ===========================================*/
+
+.concertina {
+	position: relative;
+	width: 100%;
+	@include clearfix;
+	&:before,
+	&:after {
+		width: 50%;
+		top: 0;
+		bottom: 0;
+		height: 100%;
+		position: absolute;
+		display: block;
+		content: '';
+	}
+	&:before {
+		left: 0;
+		background: $pink;
+	}
+	&:after {
+		right: 0;
+		background: $blue;
+	}
+	&__wrap {
+		@include clearfix;
+		@include media($lg) {
+			max-width: 1350px;
+		}
+		margin: 0 auto;
+	}
+	&__item {
+		&--pink {
+			background-color: $pink;
+			.concertina__item__copy {
+				background-color: $pink-dark;
+			}
+			.concertina__item__triangle {
+				border-top-color: $pink;
+			}
+		}
+		&--blue {
+			background-color: $blue;
+			.concertina__item__copy {
+				background-color: $blue-dark;
+			}
+			.concertina__item__triangle {
+				border-top-color: $blue;
+			}
+		}
+		&--green {
+			background-color: $green;
+			.concertina__item__copy {
+				background-color: $green-dark;
+			}
+			.concertina__item__triangle {
+				border-top-color: $green;
+			}
+		}
+		position: relative;
+		z-index: 3;
+		width: percentage(1);
+		@include media($lg) {
+			width: percentage(1/3);
+		}
+		display: block;
+		float: left;
+		&__triangle {
+			width: 0;
+			height: 0;
+			border-left: 30px solid transparent;
+			border-right: 30px solid transparent;
+			border-top: 30px solid #f00;
+			@include media($lg) {
+				border-left: 50px solid transparent;
+				border-right: 50px solid transparent;
+				border-top: 50px solid #f00;
+			}
+			position: absolute;
+			right: 10%;
+			z-index: 4;
+			transition: all 320ms $easeInOutQuad;
+			top: 0;
+		}
+		&__heading {
+			color: $white;
+			text-transform: uppercase;
+			padding: 10px 20px;
+			position: relative;
+			cursor: pointer;
+			br {
+				display: none;
+			}
+			@include media($lg) {
+				padding: 80px 20px 0;
+				br {
+					display: block;
+				}
+			}
+			h2 {
+				margin: 10px;
+				line-height: 1;
+				position: relative;
+				z-index: 5;
+				@include font($h3);
+			}
+			span {
+				position: absolute;
+				bottom: 15px;
+				right: -15px;
+				transition: all 320ms $easeInOutQuad;
+			}
+		}
+		&__copy {
+			color: $white;
+			text-align: center;
+			max-height: 0;
+			position: relative;
+			overflow: hidden;
+			padding: 0 20px;
+			@include media($lg, max) {
+				transition: all 320ms $easeInOutQuad;
+			}
+			h4 {
+				color: white;
+				margin-bottom: 20px;
+			}
+		}
+		&.active {
+			.concertina__item__triangle {
+				top: 100%;
+			}
+			span {
+				transform: rotate(-180deg);
+			}
+			@include media($lg, max) {
+				.concertina__item__copy {
+					max-height: 500px;
+					padding: 60px 20px;
+				}
+			}
+		}
+	}
+}
+
+.copies {
+	position: relative;
+	z-index: 0;
+	width: 100%;
+	.pink {
+		background-color: $pink-dark;
+	}
+	.blue {
+		background-color: $blue-dark;
+	}
+	.green {
+		background-color: $green-dark;
+	}
+	.outer {
+		z-index: 3;
+		text-align: center;
+		max-height: 0;
+		position: relative;
+		overflow: hidden;
+		padding: 0 20px;
+		.inner {
+			max-width: 930px;
+			margin: 60px auto;
+		}
+		@include media($lg) {
+			transition: all 320ms $easeInOutQuad;
+		}
+		@include media($lg, max) {
+			display: none;
+		}
+		h4 {
+			color: white;
+			margin-bottom: 20px;
+		}
+	}
+	.outer.active {
+		max-height: 400px;
+		padding: 20px;
+	}
+}
+

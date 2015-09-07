@@ -1,0 +1,19 @@
+en:
+  HomePage:
+    DESCRIPTION: 'Entry to the site. Has carousel, featured panels, quicklinks and news summaries'
+    PLURALNAME: 'Base Pages'
+    SINGULARNAME: 'Home Page'
+  Page:
+    DESCRIPTION: 'Generic content page'
+    PLURALNAME: 'Base Pages'
+    SINGULARNAME: Page
+  SiteTree:
+    PLURALNAME: Pages
+    SINGULARNAME: Page
+  CommentsInterface_singlecomment_ss:
+    APPROVE: 'Approve'
+    ISNTSPAM: 'Not spam'
+    ISSPAM: 'Spam'
+    REMCOM: 'Delete'
+  AkismetField:
+    SPAM: 'Your comment has been rejected because a word or character has been treated as spam. Please make sure your comment is using appropriate language before submitting it again.'

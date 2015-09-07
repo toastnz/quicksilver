@@ -1,0 +1,44 @@
+.prettycheckbox,
+.prettyradio {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  > a {
+    display: block;
+    float: left;
+    cursor: pointer;
+    margin: 0;
+    outline: 0 none;
+  }
+  label {
+    display: block;
+    float: left;
+    margin: 6px 5px;
+    cursor: pointer;
+  }
+
+  a,
+  label {
+    &.disabled {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.prettycheckbox {
+  > a {
+    @extend .icon-checkbox;
+    &.checked {
+      @extend .icon-checkbox-checked;
+      &.disabled {
+        @extend .icon-checkbox;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.prettyradio {
+  > a {
+  }
+}

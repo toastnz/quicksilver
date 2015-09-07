@@ -1,0 +1,29 @@
+//==================================================================
+// Call To Action Styles
+//==================================================================
+
+.cta {
+    @include cover;
+    &__wrap {
+        padding: 90px 20px;
+        @include clearfix;
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        a {
+            background: $blue;
+            display: inline-block;
+            padding: 50px 70px;
+            color: $white;
+            @include extra-bold;
+            text-decoration: none;
+            span, h5 {
+                display: inline-block;
+                vertical-align: middle;
+            }
+            h5 {
+                margin-right: 10px;
+            }
+        }
+    }
+}

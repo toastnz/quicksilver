@@ -1,0 +1,26 @@
+## ignorance is bliss
+
+/assets/*
+_ss_environment.php
+_resampled
+.DS_Store
+._.gitignore
+*.sublime-*
+*.map
+/.sass-cache/
+/cms/
+/framework/
+/components/
+/googlesitemaps/
+/node_modules/
+/vendor/
+/.idea/
+/gridfieldextensions/
+/boilerplate/
+/betterbuttons/
+/silverstripe-branding/
+/silverstripe-cacheinclude/
+/silverstripe-catalogmanager/
+/silverstripe-color-field/
+/sortablegridfield/
+/grouped-cms-menu/

@@ -1,0 +1,42 @@
+//==================================================================
+// Footer Styles
+//==================================================================
+
+.newsletter {
+	padding: 0 20px;
+	@include cover;
+	background-position: right center;
+	&__wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 40px 0;
+		@include clearfix;
+		min-height: 300px;
+	}
+}
+
+.footer {
+	padding: 0 20px;
+	&__wrap {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 40px 0;
+		@include clearfix;
+	}
+	&__logo {
+		float: left;
+	}
+	&__legal {
+		color: $grey;
+		float: right;
+		text-transform: uppercase;
+		p, a {
+			font-size: $span;
+			display: inline-block;
+			color: $grey;
+			text-decoration: none;
+			margin-left: 10px;
+			@include font($span);
+		}
+	}
+}

@@ -1,0 +1,189 @@
+$base: 10px;
+
+$breakpoints: (
+	$xxs: 480px,
+	$xs: 540px,
+	$sm: 640px,
+	$md: 768px,
+	$lg: 1024px,
+	$xl: 1280px,
+	$xxl: 1920px
+);
+
+$h1: (
+	null: ceil(($base * 8)) * 0.6,
+	480px: ceil(($base * 8)) * 0.7,
+	768px: ceil(($base * 8)) * 0.8,
+	992px: ceil(($base * 8)) * 0.9,
+	1200px: ceil(($base * 8)) * 1.0,
+	1600px: ceil(($base * 8)) * 1.0
+);
+
+$h2: (
+	null: ceil(($base * 7)) * 0.8,
+	480px: ceil(($base * 7)) * 0.8,
+	768px: ceil(($base * 7)) * 0.8,
+	992px: ceil(($base * 7)) * 0.9,
+	1200px: ceil(($base * 7)) * 1.0,
+	1600px: ceil(($base * 7)) * 1.0
+);
+
+$h3: (
+	null: ceil(($base * 4.5)) * 0.8,
+	480px: ceil(($base * 4.5)) * 0.8,
+	768px: ceil(($base * 4.5)) * 0.8,
+	992px: ceil(($base * 4.5)) * 0.9,
+	1200px: ceil(($base * 4.5)) * 1.0,
+	1600px: ceil(($base * 4.5)) * 1.0
+);
+
+$h4: (
+	null: ceil(($base * 3)) * 0.8,
+	480px: ceil(($base * 3)) * 0.8,
+	768px: ceil(($base * 3)) * 0.8,
+	992px: ceil(($base * 3)) * 0.9,
+	1200px: ceil(($base * 3)) * 1.0,
+	1600px: ceil(($base * 3)) * 1.0
+);
+
+$h5: (
+	null: ceil(($base * 2.6)) * 0.8,
+	480px: ceil(($base * 2.6)) * 0.8,
+	768px: ceil(($base * 2.6)) * 0.8,
+	992px: ceil(($base * 2.6)) * 0.9,
+	1200px: ceil(($base * 2.6)) * 1.0,
+	1600px: ceil(($base * 2.6)) * 1.0
+);
+
+$h6: (
+	null: ceil(($base * 1.9)) * 0.8,
+	480px: ceil(($base * 1.9)) * 0.8,
+	768px: ceil(($base * 1.9)) * 0.8,
+	992px: ceil(($base * 1.9)) * 0.9,
+	1200px: ceil(($base * 1.9)) * 1.0,
+	1600px: ceil(($base * 1.9)) * 1.0
+);
+
+$p: (
+	null: ceil(($base * 1.5)) * 0.8,
+	480px: ceil(($base * 1.5)) * 0.8,
+	768px: ceil(($base * 1.5)) * 0.8,
+	992px: ceil(($base * 1.5)) * 0.9,
+	1200px: ceil(($base * 1.5)) * 1.0,
+	1600px: ceil(($base * 1.5)) * 1.0
+);
+
+$span: (
+	null: $base,
+	480px: $base,
+	768px: $base,
+	992px: $base,
+	1200px: $base,
+	1600px: $base
+);
+
+@mixin font($fs-map, $fs-breakpoints: $breakpoints) {
+	@each $fs-breakpoint, $fs-font-size in $fs-map {
+		@if $fs-breakpoint == null {
+			@include make-font-size($fs-font-size);
+		} @else {
+			@if map-has-key($fs-breakpoints, $fs-breakpoint) {
+				$fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+			}
+			@media screen and (min-width: $fs-breakpoint) {
+				@include make-font-size($fs-font-size);
+			}
+		}
+	}
+}
+
+@mixin make-font-size($fs-font-size) {
+	@if type-of($fs-font-size) == "list" {
+		font-size: nth($fs-font-size, 1);
+		@if (length($fs-font-size) > 1) {
+			line-height: nth($fs-font-size, 2);
+		}
+	} @else {
+		font-size: $fs-font-size;
+	}
+}
+
+//==================================================================
+// Typograpgy settings
+//==================================================================
+html, body {
+	height: 100%;
+	font-size: 10px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: normal;
+}
+
+@mixin light {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+}
+
+@mixin regular {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+@mixin semi {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 600;
+}
+
+@mixin bold {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+@mixin extra-bold {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 800;
+}
+
+/** =========================================
+ * Typography
+ ===========================================*/
+
+h1 {
+	@include font($h1);
+}
+
+h2 {
+	@include font($h2);
+}
+
+h3 {
+	@include font($h3);
+}
+
+h4 {
+	@include font($h4);
+}
+
+h5 {
+	@include font($h5);
+}
+
+h6 {
+	@include font($h6);
+}
+
+p, li {
+	@include font($p);
+}
+
+span {
+	@include font($span);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include extra-bold;
+	line-height: 1;
+}
+
+p, li {
+	line-height: 1.6;
+}
