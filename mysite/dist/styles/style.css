@@ -206,12 +206,10 @@ span {
       font-size: 10px; } }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
   line-height: 1; }
 
 p, li {
-  line-height: 1.6; }
+  line-height: 1.4; }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2.5), only screen and (min-resolution: 240dpi) {
   .icon-checkbox-checked {
@@ -1001,8 +999,6 @@ form.loading .loader {
   cursor: default;
   outline: none;
   cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
   margin-bottom: 20px; }
 
 .sod_select:before,
@@ -1041,13 +1037,9 @@ form.loading .loader {
   border-top: none;
   color: #000000;
   font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
   z-index: 1;
   margin-top: 6px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800; }
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
 
 .sod_select.open .sod_list_wrapper {
   display: block; }
@@ -1099,8 +1091,6 @@ form.loading .loader {
 
 .sod_select .sod_option.selected {
   font-weight: 700;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
   padding-right: 25px; }
 
 .sod_select .sod_option.selected:before {
@@ -1117,9 +1107,7 @@ form.loading .loader {
   width: 10px; }
 
 .sod_select.no_highlight .sod_option.selected {
-  font-weight: 300;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800; }
+  font-weight: 300; }
 
 .sod_select.no_highlight .sod_option.selected:before {
   display: none; }
