@@ -1,13 +1,14 @@
 //==================================================================
 // Toast Notifications
 //==================================================================
+
 $close-size: 12px;
 
 $notificationTypes: (
-        error: #F78D8C,
-        success: #A8D3AA,
-        warning: #FFD479,
-        standard: #323232
+    error: #F78D8C,
+    success: #A8D3AA,
+    warning: #FFD479,
+    standard: #323232
 );
 
 .notify {

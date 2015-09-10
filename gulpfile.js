@@ -62,7 +62,7 @@ function compileScripts(watch) {
 
   bundler.on('update', function () {
     rebundle();
-    Message('success', 'green');
+    Message('js', 'green');
   });
   return rebundle();
 
@@ -120,7 +120,11 @@ gulp.task('sass', function () {
     .pipe(gulpif(prod, cssmin()))
     .pipe(sourcemaps.write('./'))
     .pipe(plumber.stop())
-    .pipe(gulp.dest(dist + 'styles'));
+    .pipe(gulp.dest(dist + 'styles'))
+});
+
+gulp.task('other-task', ['sass'], function () {
+  Message('scss', 'green')
 });
 
 //-----------------------------------------------------------
@@ -241,9 +245,8 @@ var changeEvent = function (evt) {
 
 gulp.task('default', ['start', 'sprites', 'sass', 'minify-css', 'svg', 'ie'], function () {
 
+  // JS watch script
   compileScripts(true);
-
-  Message('success', 'green');
 
   // SASS Watch task
   gulp.watch([app + 'styles/**/*.scss'], ['sass']).on('change', function (evt) {
@@ -258,7 +261,6 @@ gulp.task('default', ['start', 'sprites', 'sass', 'minify-css', 'svg', 'ie'], fu
 
 gulp.task('deploy', ['start', 'sprites', 'sass', 'minify-css', 'minify-js', 'svg', 'ie'], function () {
   compileScripts(false);
-  Message('success', 'green');
   Message('checklist', 'yellow');
 });
 
@@ -280,10 +282,15 @@ var Messages = {
     '\n           ███████║██║███████╗╚████╔╝ ███████╗██║  ██║',
     '\n           ╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝'
   ],
-  success  : [
-    '╔═════════════════════════════╗',
-    '\n           ║ Build completed Succesfully ║',
-    '\n           ╚═════════════════════════════╝',
+  scss     : [
+    '╔═══════════════════════════╗',
+    '\n           ║ Sass compiled Succesfully ║',
+    '\n           ╚═══════════════════════════╝',
+  ],
+  js       : [
+    '╔════════════════════════╗',
+    '\n           ║ JS bundled Succesfully ║',
+    '\n           ╚════════════════════════╝',
   ],
   error    : [
     '╔═══════════════════════╗',
@@ -301,6 +308,9 @@ var Messages = {
     '\n           ☑ CSS files are minified',
     '\n           ☑ All images have alt tag values',
     '\n           ☑ !important is avoided',
-    '\n           ☑ No base files have been overwritten'
+    '\n           ☑ No base files have been overwritten',
+    '\n           ☑ 404 Page has been styled',
+    '\n           ☑ Common meta tags',
+    '\n           ☑ Autoprefixer',
   ]
 }
