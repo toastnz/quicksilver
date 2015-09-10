@@ -50,6 +50,10 @@
     "css-queryless": "latest",
     "gulp-rename": "latest",
     "gulp-filter": "latest",
-    "rework": "latest"
+    "rework": "latest",
+    "pretty-hrtime": "latest",
+    "watchify": "latest",
+    "gulp-bytediff": "latest",
+    "gulp-notify": "latest"
   }
 }
