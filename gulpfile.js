@@ -1,5 +1,5 @@
 /**
- *╔══════════════════════════════════════════╗
+ *╔══════════════════════════════════════════════════════╗
  *║                                                      ║
  *║                 _      _        _ _                  ║
  *║                (_)    | |      (_) |                 ║
@@ -13,7 +13,7 @@
  *║       Author: Jaydn de Graaf                         ║
  *║       Email: jd@pinc.nz                              ║
  *║                                                      ║
- *╚══════════════════════════════════════════╝
+ *╚══════════════════════════════════════════════════════╝
  */
 
 /*jshint esnext: true */
@@ -33,11 +33,11 @@ var root          = './mysite/',
     gutil         = require("gulp-util"),
     chalk         = require("chalk");
 
-//╔════════════════════════╗
+//╔═══════════════════════════════╗
 //║                               ║
 //║   JAVASCRIPT FUNCTIONALITY    ║
 //║                               ║
-//╚════════════════════════╝
+//╚═══════════════════════════════╝
 var babel      = require("gulp-babel"),
     rename     = require("gulp-rename"),
     babelify   = require('babelify'),
@@ -84,7 +84,7 @@ function compileScripts(watch) {
 gulp.task('lint', function () {
     Message('lint', 'green');
     gutil.log('Gulp.js:', gutil.colors.green('• Linting Javascript Application'));
-    let jsHintOptions = {
+    var jsHintOptions = {
         lookup: true,
         esnext: true
     };
@@ -110,11 +110,11 @@ gulp.task('minify-css', ['sass'], function () {
     return gulp.src([dist + 'styles/style.css']).pipe(bytediff.start()).pipe(strip()).pipe(minifyCss()).pipe(rename({extname: '.min.css'})).pipe(bytediff.stop()).pipe(gulp.dest(dist + 'styles/'))
 });
 
-//╔════════════════════════╗
+//╔═══════════════════════════════╗
 //║                               ║
 //║    STYLESHEET MANIPLUATION    ║
 //║                               ║
-//╚════════════════════════╝
+//╚═══════════════════════════════╝
 var sass         = require('gulp-sass'),
     minifyCss    = require('gulp-cssmin'),
     order        = require("gulp-order"),
@@ -127,18 +127,18 @@ var sass         = require('gulp-sass'),
 
 gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
-    let autoprefixerSettings = {
+    var autoprefixerSettings = {
         browsers: ['last 2 versions'],
         cascade : true
     };
     return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
 });
 
-//╔════════════════════════╗
+//╔═══════════════════════════════╗
 //║                               ║
 //║      SPRITESHEET CREATION     ║
 //║                               ║
-//╚════════════════════════╝
+//╚═══════════════════════════════╝
 var imagemin    = require('gulp-imagemin'),
     spritesmith = require('gulp.spritesmith'),
     pngquant    = require('imagemin-pngquant');
@@ -200,7 +200,7 @@ var rework    = require('gulp-rework'),
 
 gulp.task('ie', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Making IE safe stylesheet'));
-    let keepmatches = [
+    var keepmatches = [
         'screen and (min-width: 768px)',
         'screen and (min-width: 1024px)'
     ];
@@ -213,11 +213,11 @@ gulp.task('start', function () {
     Message('start', 'green');
 });
 
-//╔════════════════════════╗
+//╔═══════════════════════════════╗
 //║                               ║
 //║        TASK DECLARATION       ║
 //║                               ║
-//╚════════════════════════╝
+//╚═══════════════════════════════╝
 
 var gulpSequence = require('gulp-sequence');
 
