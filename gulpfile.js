@@ -24,7 +24,6 @@ var root          = './mysite/',
     app           = root + 'app/',
     dist          = root + 'dist/',
     prod          = false,
-    buildID       = 1,
     sprites       = [app + '*/@1x/*.png'],
     retinasprites = [app + '*/@2x/*.png'],
     gulp          = require("gulp"),
@@ -225,7 +224,6 @@ var changeEvent = function (evt) {
     gutil.log('File', chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')), 'was', chalk['blue'](evt.type));
 };
 
-var logUpdate = require('log-update');
 gulp.task('finishing', function () {
 
     Message('scss', 'green');
