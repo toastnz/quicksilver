@@ -1,0 +1,182 @@
+//==================================================================
+// Standard Button Styling
+//==================================================================
+
+//==================================================================
+// Single element lodaing div
+//==================================================================
+
+$loader-size: 3em;
+$loader-color: white;
+
+form.loading .loader {
+    display: block;
+}
+
+.loader {
+    display: none;
+    position: absolute;
+    font-size: 10px;
+    margin: -1.5em auto 0;
+    text-indent: -9999em;
+    left: 0;
+    right: 0;
+    width: $loader-size;
+    height: $loader-size;
+    border-radius: 50%;
+    background: $loader-color;
+    background: linear-gradient(to right, $loader-color 10%, rgba(255, 255, 255, 0) 42%);
+    animation: load3 1.4s infinite linear;
+    transform: translateZ(0);
+    top: 50%;
+}
+
+.loader:before {
+    @include pseudo;
+    width: 50%;
+    height: 50%;
+    background: $loader-color;
+    border-radius: 100% 0 0 0;
+    top: 0;
+    left: 0;
+}
+
+.loader:after {
+    @include pseudo;
+    background: $loader-color;
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes load3 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+//==================================================================
+// Polymer Ripple Effect
+//==================================================================
+
+.rippleDark,
+.ripple {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    outline: 0;
+}
+
+.ripple .ink {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.rippleDark .ink {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.ink {
+    display: block;
+    position: absolute;
+    border-radius: 100%;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+}
+
+.ink.animate {
+    animation: ripple 360ms linear;
+}
+
+@keyframes ripple {
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+.LoadingNotification-anim {
+    @include transition(680ms);
+    display: block;
+    height: 160px;
+    overflow: visible;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 160px;
+    zoom: 2;
+    -moz-transform: scale(1.8);
+    visibility: hidden;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    @include vertical-align;
+    position: absolute;
+    z-index: 9999;
+}
+
+.LoadingNotification-anim .circular {
+    height: 160px;
+    position: relative;
+    width: 160px;
+    animation: loadingrotate 2s linear infinite;
+}
+
+.LoadingNotification-anim .path {
+    stroke-dasharray: 1, 100;
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+}
+
+.LoadingNotification-anim .path {
+    animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+}
+
+@keyframes color {
+    0%, 100% {
+        stroke: $red;
+    }
+    40% {
+        stroke: $red;
+    }
+    66% {
+        stroke: $red;
+    }
+    80%, 90% {
+        stroke: $red;
+    }
+}
+
+@keyframes loadingrotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dasharray: 1, 200;
+        stroke-dashoffset: 0;
+    }
+    50% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -35;
+    }
+    100% {
+        stroke-dasharray: 89, 200;
+        stroke-dashoffset: -124;
+    }
+}

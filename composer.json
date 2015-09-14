@@ -1,0 +1,36 @@
+{
+  "name": "pinc/silver",
+  "version": "0.1",
+  "description": "SilverStripe Base",
+  "type": "silverstripe-module",
+  "keywords": [
+    "silverstripe",
+    "theme"
+  ],
+  "license": "BSD-3-Clause",
+  "authors": [
+    {
+      "name": "Jaydn de Graaf",
+      "homepage": "http://pinc.nz/",
+      "role": "Tall Guy"
+    }
+  ],
+  "require": {
+    "php": ">=5.3.3",
+    "silverstripe/cms": "3.x@stable",
+    "silverstripe/framework": "3.x@stable",
+    "unclecheese/betterbuttons": "1.2.*",
+    "ryanpotter/silverstripe-cms-theme": "dev-master",
+    "google/recaptcha": "~1.1",
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "heyday/silverstripe-cacheinclude": "~4.0"
+  },
+  "scripts": {
+    "post-create-project-cmd": [
+      "npm install",
+      "npm install -g gulp-cli",
+      "gulp deploy"
+    ]
+  },
+  "minimum-stability": "dev"
+}

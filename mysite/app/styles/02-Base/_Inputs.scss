@@ -1,0 +1,14 @@
+//==================================================================
+// Standard Input Styling
+//==================================================================
+
+.inputWrap {
+    position: relative;
+    .errorLabel {
+        display: none;
+        color: red;
+    }
+    &.error .errorLabel {
+        display: block;
+    }
+}
