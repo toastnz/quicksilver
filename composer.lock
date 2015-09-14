@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9c7aa1c6a5928edda45d9cec74b7653f",
+    "hash": "ab429076a7f31ed7618e0ae0e7b50e23",
     "packages": [
         {
             "name": "composer/installers",
@@ -169,43 +169,6 @@
                 "caching"
             ],
             "time": "2015-08-31 13:09:29"
-        },
-        {
-            "name": "drewm/mailchimp-api",
-            "version": "v1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drewm/mailchimp-api.git",
-                "reference": "707d555962442b21a75683a56bdb7cebd0a19f72"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/707d555962442b21a75683a56bdb7cebd0a19f72",
-                "reference": "707d555962442b21a75683a56bdb7cebd0a19f72",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "Drewm": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Drew McLellan",
-                    "homepage": "http://allinthehead.com/"
-                }
-            ],
-            "description": "Super-simple, minimum abstraction MailChimp API v2 wrapper",
-            "homepage": "https://github.com/drewm/mailchimp-api",
-            "time": "2015-07-07 15:38:25"
         },
         {
             "name": "google/recaptcha",
@@ -487,52 +450,6 @@
             "time": "2015-09-06 22:44:41"
         },
         {
-            "name": "silverstripe-australia/grouped-cms-menu",
-            "version": "dev-master",
-            "target-dir": "grouped-cms-menu",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe-australia/silverstripe-grouped-cms-menu.git",
-                "reference": "5de802c61ae0a5245ec72c759ba4e52a3a56382f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-grouped-cms-menu/zipball/5de802c61ae0a5245ec72c759ba4e52a3a56382f",
-                "reference": "5de802c61ae0a5245ec72c759ba4e52a3a56382f",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "grouped-cms-menu",
-                "branch-alias": {
-                    "dev-master": "2.2.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Marcus Nyeholt",
-                    "email": "marcus@silverstripe.com.au"
-                }
-            ],
-            "description": "Allows you to group CMS menu items.",
-            "homepage": "https://github.com/silverstripe-australia/silverstripe-grouped-cms-menu",
-            "keywords": [
-                "cms",
-                "menu",
-                "module",
-                "silverstripe"
-            ],
-            "time": "2015-08-25 21:27:55"
-        },
-        {
             "name": "silverstripe/cms",
             "version": "3.1.13",
             "source": {
@@ -629,92 +546,17 @@
             "time": "2015-05-28 06:59:11"
         },
         {
-            "name": "silverstripe/googlesitemaps",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe-labs/silverstripe-googlesitemaps.git",
-                "reference": "198a850f8dfb65751d0ae20c6576bc4fa2fd0608"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-googlesitemaps/zipball/198a850f8dfb65751d0ae20c6576bc4fa2fd0608",
-                "reference": "198a850f8dfb65751d0ae20c6576bc4fa2fd0608",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD"
-            ],
-            "authors": [
-                {
-                    "name": "Will Rossiter",
-                    "email": "will@fullscreen.io",
-                    "homepage": "http://wilr.github.com"
-                }
-            ],
-            "description": "SilverStripe support for the Google Sitemaps XML system, enabling Google and other search engines to see all urls on your site. This helps your SilverStripe website rank well in search engines, and to encourage the information on your site to be discovered by Google quickly.",
-            "homepage": "https://github.com/silverstripe-labs/silverstripe-googlesitemaps",
-            "keywords": [
-                "googlesitemaps",
-                "seo",
-                "silverstripe"
-            ],
-            "time": "2014-07-17 22:16:18"
-        },
-        {
-            "name": "silverstripe/tagfield",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe-labs/silverstripe-tagfield.git",
-                "reference": "fc3e96a41b725eee6db0180b942d3177c9c640e6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-labs/silverstripe-tagfield/zipball/fc3e96a41b725eee6db0180b942d3177c9c640e6",
-                "reference": "fc3e96a41b725eee6db0180b942d3177c9c640e6",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Christopher Pitt",
-                    "email": "chris@silverstripe.com",
-                    "homepage": "http://github.com/assertchris"
-                }
-            ],
-            "description": "Tag field for Silverstripe",
-            "keywords": [
-                "field",
-                "silverstripe",
-                "tag"
-            ],
-            "time": "2015-08-27 01:28:59"
-        },
-        {
             "name": "symfony/expression-language",
             "version": "2.8.x-dev",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/expression-language.git",
-                "reference": "b4b129ac5811676c573b34b614051b99a9ed76c8"
+                "reference": "be97c9df984affabf8c04c920c46ce22c3066d67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/b4b129ac5811676c573b34b614051b99a9ed76c8",
-                "reference": "b4b129ac5811676c573b34b614051b99a9ed76c8",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/be97c9df984affabf8c04c920c46ce22c3066d67",
+                "reference": "be97c9df984affabf8c04c920c46ce22c3066d67",
                 "shasum": ""
             },
             "require": {
@@ -750,7 +592,7 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:18:02"
+            "time": "2015-09-09 18:05:45"
         },
         {
             "name": "symfony/yaml",
@@ -884,9 +726,7 @@
     "stability-flags": {
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
-        "ryanpotter/silverstripe-cms-theme": 20,
-        "silverstripe-australia/grouped-cms-menu": 20,
-        "silverstripe/tagfield": 20
+        "ryanpotter/silverstripe-cms-theme": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

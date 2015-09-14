@@ -1,7 +1,7 @@
 {
   "name": "pinc/silver",
   "version": "0.1",
-  "description": "Boilerplate Installer",
+  "description": "SilverStripe Base",
   "type": "silverstripe-module",
   "keywords": [
     "silverstripe",
@@ -19,16 +19,12 @@
     "php": ">=5.3.3",
     "silverstripe/cms": "3.x@stable",
     "silverstripe/framework": "3.x@stable",
-    "silverstripe/googlesitemaps": "1.2.*",
     "unclecheese/betterbuttons": "1.2.*",
     "ryanpotter/silverstripe-cms-theme": "dev-master",
     "google/recaptcha": "~1.1",
-    "drewm/mailchimp-api": "~1.0",
     "silverstripe-australia/gridfieldextensions": "~1.1",
-    "littlegiant/silverstripe-catalogmanager": "^2.0",
-    "heyday/silverstripe-cacheinclude": "~4.0",
-    "silverstripe-australia/grouped-cms-menu": "dev-master",
-    "silverstripe/tagfield": "dev-master"
+    "littlegiant/silverstripe-catalogmanager": "~2.0",
+    "heyday/silverstripe-cacheinclude": "~4.0"
   },
   "scripts": {
     "post-create-project-cmd": [

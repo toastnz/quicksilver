@@ -5,18 +5,18 @@ Make sure you have [Composer](https://getcomposer.org/) and [NPM](https://www.np
 Run the following:
 
 ```
-composer create-project -s dev ryanpotter/silverstripe-boilerplate-installer myNewProject
+composer create-project -s dev pinc/silver myNewProject
 ```
 
 ##Enviroment
 
-Create the following file in the root directory.
+Create the following file in the root directory. It's best to place it one level above the public directory.
 
 ```
 _ss_environment.php
 ```
 
-Copy paste this biz, and change the values.
+Copy and paste the following, adjusting the variables as required.
 
 ```
 <?php
