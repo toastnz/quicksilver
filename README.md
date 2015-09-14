@@ -10,7 +10,7 @@ composer create-project -s dev pinc/silver myNewProject
 
 ##Enviroment
 
-Create the following file in the root directory. It's best to place it one level above the public directory.
+Create the following file in the root directory. It's best to place it one level above the public directory on a live server.
 
 ```
 _ss_environment.php

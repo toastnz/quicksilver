@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ab429076a7f31ed7618e0ae0e7b50e23",
+    "hash": "c1036dfd377fcc9ac1435786121ed624",
     "packages": [
         {
             "name": "composer/installers",
@@ -264,48 +264,6 @@
                 }
             ],
             "time": "2014-09-10 22:15:47"
-        },
-        {
-            "name": "littlegiant/silverstripe-catalogmanager",
-            "version": "2.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Little-Giant/silverstripe-catalogmanager.git",
-                "reference": "6a3924ba22cb14a75b0b635c182148ac3ca90d48"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Little-Giant/silverstripe-catalogmanager/zipball/6a3924ba22cb14a75b0b635c182148ac3ca90d48",
-                "reference": "6a3924ba22cb14a75b0b635c182148ac3ca90d48",
-                "shasum": ""
-            },
-            "require": {
-                "undefinedoffset/sortablegridfield": "~0.4.0"
-            },
-            "type": "silverstripe-module",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Stevie Mayhew",
-                    "email": "stevie.mayhew@littlegiant.co.nz",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Oliver Shaw",
-                    "email": "oliver.shaw@littlegiant.co.nz",
-                    "role": "Developer"
-                },
-                {
-                    "name": "James Fallwell",
-                    "email": "james.fallwell@littlegiant.co.nz",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Catalog Manager provides extension for ModelAdmin editing of SiteTree instances",
-            "time": "2015-07-06 22:51:50"
         },
         {
             "name": "psr/log",
@@ -678,46 +636,6 @@
                 "silverstripe"
             ],
             "time": "2015-02-09 02:07:59"
-        },
-        {
-            "name": "undefinedoffset/sortablegridfield",
-            "version": "0.4.5",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/UndefinedOffset/SortableGridField.git",
-                "reference": "282ea74a764d247f70c1c73c1400bcc322aade08"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/282ea74a764d247f70c1c73c1400bcc322aade08",
-                "reference": "282ea74a764d247f70c1c73c1400bcc322aade08",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*",
-                "silverstripe/framework": ">=3.0.1,<3.3"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "sortablegridfield"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ed Chipman",
-                    "homepage": "http://www.edchipman.ca",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Adds drag and drop functionality to SilverStripe 3.0's GridField",
-            "keywords": [
-                "gridfield",
-                "silverstripe"
-            ],
-            "time": "2015-08-29 17:54:46"
         }
     ],
     "packages-dev": [],

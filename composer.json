@@ -23,7 +23,6 @@
     "ryanpotter/silverstripe-cms-theme": "dev-master",
     "google/recaptcha": "~1.1",
     "silverstripe-australia/gridfieldextensions": "~1.1",
-    "littlegiant/silverstripe-catalogmanager": "~2.0",
     "heyday/silverstripe-cacheinclude": "~4.0"
   },
   "scripts": {
