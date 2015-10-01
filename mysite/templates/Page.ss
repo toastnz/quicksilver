@@ -53,6 +53,8 @@ Email: jd@pinc.nz
 
     <% include Header %>
 
+        x $SVG('mail')
+
     $Layout
 
     <% include Footer %>
