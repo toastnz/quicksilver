@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Class Page
+ */
 class Page extends SiteTree
 {
 
