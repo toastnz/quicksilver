@@ -36,7 +36,7 @@ ColorField:
     - '#000'
     - '#FFF'
 SVGTemplate:
-  base_path: mysite/images/svg
+  base_path: mysite/dist/images/svg
 
 #Page:
 #  theme_color: '#1b354c'
