@@ -12,12 +12,12 @@
     "moment": "latest",
     "dragula": "latest",
     "backbone": "latest",
-    "chartist": "latest",
+    "fancybox": "latest",
+    "alertifyjs": "latest",
     "underscore": "latest",
     "imagesloaded": "latest",
     "slick-carousel": "latest",
-    "perfect-scrollbar": "latest",
-    "backbone-filtered-collection": "latest"
+    "perfect-scrollbar": "latest"
   },
   "devDependencies": {
     "gulp": "latest",
