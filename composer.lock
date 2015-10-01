@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c1036dfd377fcc9ac1435786121ed624",
+    "hash": "8564ab6eedf8ddfcc938b89c8f8bda6d",
+    "content-hash": "6e2b7e442a670a05d8aa6d5e36ddcdaa",
     "packages": [
         {
             "name": "composer/installers",
@@ -176,12 +177,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/recaptcha.git",
-                "reference": "2b7e00566afca82a38a1d3adb8e42c118006296e"
+                "reference": "7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/recaptcha/zipball/2b7e00566afca82a38a1d3adb8e42c118006296e",
-                "reference": "2b7e00566afca82a38a1d3adb8e42c118006296e",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab",
+                "reference": "7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab",
                 "shasum": ""
             },
             "require": {
@@ -213,7 +214,7 @@
                 "recaptcha",
                 "spam"
             ],
-            "time": "2015-09-02 17:23:59"
+            "time": "2015-09-23 09:14:48"
         },
         {
             "name": "heyday/silverstripe-cacheinclude",
@@ -312,60 +313,17 @@
             "time": "2015-06-02 13:48:41"
         },
         {
-            "name": "ryanpotter/silverstripe-cms-theme",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Rhym/silverstripe-cms-theme.git",
-                "reference": "3b2e03ee5953f5d3b391101bc5d23f484f3056f7"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Rhym/silverstripe-cms-theme/zipball/3b2e03ee5953f5d3b391101bc5d23f484f3056f7",
-                "reference": "3b2e03ee5953f5d3b391101bc5d23f484f3056f7",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*",
-                "silverstripe/framework": ">=3.0.1,<3.2"
-            },
-            "suggest": {
-                "silverstripe-australia/grouped-cms-menu": "Group CMS menus to provide a better UX"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "silverstripe-branding"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Ryan Potter",
-                    "homepage": "http://ryanpotter.co.nz/",
-                    "role": "Developer"
-                }
-            ],
-            "description": "CMS Theme",
-            "keywords": [
-                "silverstripe",
-                "theme"
-            ],
-            "time": "2015-08-12 05:30:43"
-        },
-        {
             "name": "silverstripe-australia/gridfieldextensions",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
-                "reference": "b4a0c9618bafd0c90bf6a586cc856935880f6224"
+                "reference": "fe13e8590f21453a84386d5a1504e874a6cd04de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/b4a0c9618bafd0c90bf6a586cc856935880f6224",
-                "reference": "b4a0c9618bafd0c90bf6a586cc856935880f6224",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/fe13e8590f21453a84386d5a1504e874a6cd04de",
+                "reference": "fe13e8590f21453a84386d5a1504e874a6cd04de",
                 "shasum": ""
             },
             "require": {
@@ -405,20 +363,20 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-09-06 22:44:41"
+            "time": "2015-09-28 09:06:01"
         },
         {
             "name": "silverstripe/cms",
-            "version": "3.1.13",
+            "version": "3.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-cms.git",
-                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5"
+                "reference": "0df0f35278bf25154a7946ecc555705582a23748"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/0557c0d47be849ff0d1693ab387c7ebad9b634e5",
-                "reference": "0557c0d47be849ff0d1693ab387c7ebad9b634e5",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-cms/zipball/0df0f35278bf25154a7946ecc555705582a23748",
+                "reference": "0df0f35278bf25154a7946ecc555705582a23748",
                 "shasum": ""
             },
             "require": {
@@ -452,25 +410,25 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2015-05-14 01:52:21"
+            "time": "2015-09-18 02:21:19"
         },
         {
             "name": "silverstripe/framework",
-            "version": "3.1.13",
+            "version": "3.1.15",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-framework.git",
-                "reference": "04b803dfc6dc60f2e6a38fa74f957156230b54be"
+                "reference": "c2a407a01b362981d070d6062fef52c8679e4a2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/04b803dfc6dc60f2e6a38fa74f957156230b54be",
-                "reference": "04b803dfc6dc60f2e6a38fa74f957156230b54be",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-framework/zipball/c2a407a01b362981d070d6062fef52c8679e4a2b",
+                "reference": "c2a407a01b362981d070d6062fef52c8679e4a2b",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "*",
-                "php": ">=5.3.2"
+                "php": ">=5.3.2,<7"
             },
             "require-dev": {
                 "phpunit/phpunit": "~3.7@stable"
@@ -501,7 +459,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2015-05-28 06:59:11"
+            "time": "2015-09-18 02:51:04"
         },
         {
             "name": "symfony/expression-language",
@@ -509,12 +467,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/expression-language.git",
-                "reference": "be97c9df984affabf8c04c920c46ce22c3066d67"
+                "reference": "98742ed56d6ee3b858f33c09c3b97194bd6cd638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/be97c9df984affabf8c04c920c46ce22c3066d67",
-                "reference": "be97c9df984affabf8c04c920c46ce22c3066d67",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/98742ed56d6ee3b858f33c09c3b97194bd6cd638",
+                "reference": "98742ed56d6ee3b858f33c09c3b97194bd6cd638",
                 "shasum": ""
             },
             "require": {
@@ -550,20 +508,20 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-09 18:05:45"
+            "time": "2015-09-26 19:48:07"
         },
         {
             "name": "symfony/yaml",
             "version": "2.8.x-dev",
             "source": {
                 "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "1a0bd40f71908db4c9d44d308e0008cc44fc5f2f"
+                "url": "https://github.com/symfony/yaml.git",
+                "reference": "01a41e4c70391ed05c0e735338868e7cdbe9e5d8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/1a0bd40f71908db4c9d44d308e0008cc44fc5f2f",
-                "reference": "1a0bd40f71908db4c9d44d308e0008cc44fc5f2f",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/01a41e4c70391ed05c0e735338868e7cdbe9e5d8",
+                "reference": "01a41e4c70391ed05c0e735338868e7cdbe9e5d8",
                 "shasum": ""
             },
             "require": {
@@ -599,7 +557,50 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-08-24 07:18:02"
+            "time": "2015-09-30 09:15:55"
+        },
+        {
+            "name": "toastnz/silverstripe-cms-theme",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/silverstripe-cms-theme.git",
+                "reference": "15faa6aef4843b6c8fd5c1ac36748d7ef6212df4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/silverstripe-cms-theme/zipball/15faa6aef4843b6c8fd5c1ac36748d7ef6212df4",
+                "reference": "15faa6aef4843b6c8fd5c1ac36748d7ef6212df4",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.2"
+            },
+            "suggest": {
+                "silverstripe-australia/grouped-cms-menu": "Group CMS menus to provide a better UX"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "silverstripe-branding"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ryan Potter",
+                    "homepage": "http://ryanpotter.co.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CMS Theme",
+            "keywords": [
+                "silverstripe",
+                "theme"
+            ],
+            "time": "2015-09-14 23:36:24"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -644,7 +645,7 @@
     "stability-flags": {
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
-        "ryanpotter/silverstripe-cms-theme": 20
+        "toastnz/silverstripe-cms-theme": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
