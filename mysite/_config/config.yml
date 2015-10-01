@@ -2,7 +2,7 @@
 # See http://doc.silverstripe.org/framework/en/topics/configuration
 # Caution: Indentation through two spaces, not tabs
 Name: mysite
-After: 'framework/*','cms/*','#boilerplate'
+After: 'framework/*','cms/*'
 ---
 SSViewer:
   # display template filenames as comments in the html output
@@ -27,8 +27,6 @@ Email:
   admin_email: 'email@mysite.com'
 
 LeftAndMain:
-  extensions:
-    - ProjectLeftAndMainExtension
   cms_menu_background: '#1b354c'
   cms_menu_active_text_color: '#fff'
   cms_menu_active_background_color: '#0d1a25'
