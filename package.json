@@ -47,7 +47,6 @@
     "gulp-bytediff": "latest",
     "pretty-hrtime": "latest",
     "css-queryless": "latest",
-    "gulp-imagemin": "latest",
     "rangeslider.js": "latest",
     "jshint-stylish": "latest",
     "gulp-sourcemaps": "latest",
@@ -55,7 +54,6 @@
     "gulp-sourcemaps": "latest",
     "jquery-highlight": "latest",
     "gulp.spritesmith": "latest",
-    "imagemin-pngquant": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-strip-comments": "latest",
     "vinyl-source-stream": "latest"
