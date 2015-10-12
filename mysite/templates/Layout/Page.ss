@@ -1,3 +1,3 @@
-$Form
+$Content
 
-<% include Content %>
+$Form

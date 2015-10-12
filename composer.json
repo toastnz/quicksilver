@@ -20,7 +20,7 @@
     "silverstripe/cms": "3.x@stable",
     "silverstripe/framework": "3.x@stable",
     "unclecheese/betterbuttons": "1.2.*",
-    "ryanpotter/silverstripe-cms-theme": "dev-master",
+    "toastnz/silverstripe-cms-theme": "dev-master",
     "google/recaptcha": "~1.1",
     "silverstripe-australia/gridfieldextensions": "~1.1",
     "heyday/silverstripe-cacheinclude": "~4.0"
