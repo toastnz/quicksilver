@@ -1,6 +1,6 @@
 {
   "name": "QuickSilver",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Build package for a clean application",
   "repository": {
     "type": "git",
@@ -17,6 +17,8 @@
     "underscore": "latest",
     "imagesloaded": "latest",
     "slick-carousel": "latest",
+    "jquery-bridget": "latest",
+    "masonry-layout": "latest",
     "perfect-scrollbar": "latest"
   },
   "devDependencies": {
@@ -47,14 +49,16 @@
     "gulp-bytediff": "latest",
     "pretty-hrtime": "latest",
     "css-queryless": "latest",
+    "gulp-imagemin": "latest",
     "rangeslider.js": "latest",
     "jshint-stylish": "latest",
     "gulp-sourcemaps": "latest",
     "gulp-minify-css": "latest",
-    "gulp-sourcemaps": "latest",
     "jquery-highlight": "latest",
     "gulp.spritesmith": "latest",
+    "imagemin-pngquant": "latest",
     "gulp-autoprefixer": "latest",
+    "babel-preset-es2015": "latest",
     "gulp-strip-comments": "latest",
     "vinyl-source-stream": "latest"
   }

@@ -55,14 +55,14 @@ function compileScripts(watch) {
 
     var bundler = watch ? watchify(browserify(props)) : browserify(props);
 
-    bundler.transform(babelify);
+    bundler.transform(babelify, {presets: ['es2015']});
 
     function rebundle() {
         var stream = bundler.bundle();
         return stream.on('error', function (error) {
-            Message('error', 'red');
-            gutil.log(chalk['red'](error.message));
-        })
+                Message('error', 'red');
+                gutil.log(chalk['red'](error.message));
+            })
             .pipe(source('output.js'))
             .pipe(gulp.dest(dist + 'js'));
     }
@@ -138,7 +138,9 @@ gulp.task('sass', function () {
 //║      SPRITESHEET CREATION     ║
 //║                               ║
 //╚═══════════════════════════════╝
-var spritesmith = require('gulp.spritesmith');
+var imagemin    = require('gulp-imagemin'),
+    spritesmith = require('gulp.spritesmith'),
+    pngquant    = require('imagemin-pngquant');
 
 gulp.task('sprites', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Creating the spritesheets and associated styles'));
@@ -152,7 +154,10 @@ gulp.task('sprites', function () {
         cssTemplate: app + 'images/@1x/sprite_positions.styl.mustache'
     }));
 
-    spriteData.img.pipe(gulp.dest(dist + 'images'));
+    spriteData.img.pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}]
+    })).pipe(gulp.dest(dist + 'images'));
 
     spriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
 
@@ -166,7 +171,10 @@ gulp.task('sprites', function () {
         cssTemplate: app + 'images/@2x/retina-sprite_positions.styl.mustache'
     }));
 
-    retinaSpriteData.img.pipe(gulp.dest(dist + 'images'));
+    retinaSpriteData.img.pipe(imagemin({
+        progressive: true,
+        svgoPlugins: [{removeViewBox: false}]
+    })).pipe(gulp.dest(dist + 'images'));
 
     retinaSpriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
 
@@ -202,6 +210,24 @@ gulp.task('ie', function () {
 
 gulp.task('start', function () {
     Message('start', 'green');
+});
+
+//╔═══════════════════════════════╗
+//║                               ║
+//║       FLAT CMS THEME          ║
+//║                               ║
+//╚═══════════════════════════════╝
+
+var cms =  './flat-cms/';
+
+gulp.task('cms', function () {
+    gutil.log('Gulp.js:', gutil.colors.green('• Compiling the CMS stylesheets'));
+    var autoprefixerSettings = {
+        browsers: ['last 2 versions'],
+        cascade : true
+    };
+    return gulp.src([cms + 'scss/flat.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop())
+        .pipe(gulp.dest(cms + 'css'))
 });
 
 //╔═══════════════════════════════╗

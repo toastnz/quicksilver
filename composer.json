@@ -17,13 +17,19 @@
   ],
   "require": {
     "php": ">=5.3.3",
-    "silverstripe/cms": "3.x@stable",
-    "silverstripe/framework": "3.x@stable",
-    "unclecheese/betterbuttons": "1.2.*",
-    "toastnz/silverstripe-cms-theme": "dev-master",
+    "toastnz/toast-seo": "*",
     "google/recaptcha": "~1.1",
-    "silverstripe-australia/gridfieldextensions": "~1.1",
-    "heyday/silverstripe-cacheinclude": "~4.0"
+    "drewm/mailchimp-api": "~1.0",
+    "toastnz/open-graph-meta": "*",
+    "silverstripe/cms": "3.x@stable",
+    "unclecheese/betterbuttons": "1.2.*",
+    "silverstripe/framework": "3.x@stable",
+    "toastnz/twitter-card-meta": "dev-master",
+    "jonom/silverstripe-betternavigator": "*",
+    "heyday/silverstripe-cacheinclude": "~4.0",
+    "toastnz/silverstripe-cms-theme": "dev-master",
+    "undefinedoffset/sortablegridfield": "dev-master",
+    "silverstripe-australia/gridfieldextensions": "~1.1"
   },
   "scripts": {
     "post-create-project-cmd": [
