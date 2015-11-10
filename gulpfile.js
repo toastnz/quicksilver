@@ -218,7 +218,7 @@ gulp.task('start', function () {
 //║                               ║
 //╚═══════════════════════════════╝
 
-var cms =  './flat-cms/';
+var cms = './flat-cms/';
 
 gulp.task('cms', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the CMS stylesheets'));
@@ -226,9 +226,10 @@ gulp.task('cms', function () {
         browsers: ['last 2 versions'],
         cascade : true
     };
-    return gulp.src([cms + 'scss/flat.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop())
-        .pipe(gulp.dest(cms + 'css'))
+    return gulp.src([cms + 'styles/scss/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('flat-cms.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop())
+        .pipe(gulp.dest(cms + 'styles/css'))
 });
+
 
 //╔═══════════════════════════════╗
 //║                               ║
@@ -265,7 +266,7 @@ gulp.task('default', ['start', 'sprites', 'sass', 'svg', 'ie'], function () {
 
 gulp.task('deploy', function (cb) {
     compileScripts(false);
-    gulpSequence(['start'], ['sprites'], ['sass'], ['svg'], ['ie'], ['minify-css'], ['minify-js'], ['finishing'])(cb);
+    gulpSequence(['start'], ['cms'], ['sprites'], ['sass'], ['svg'], ['ie'], ['minify-css'], ['minify-js'], ['lint'], ['finishing'])(cb);
 
 });
 
