@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8564ab6eedf8ddfcc938b89c8f8bda6d",
-    "content-hash": "6e2b7e442a670a05d8aa6d5e36ddcdaa",
+    "hash": "5532c01f5b913bcd89fd5b8a6c9c5f6a",
+    "content-hash": "37132ebde5e41ceba8f0d3a95d9fa0e3",
     "packages": [
         {
             "name": "composer/installers",
@@ -13,13 +13,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41"
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
-                "reference": "e420b539e8d7b38b7c6f3f99dccc0386bd3dfe41",
+                "url": "https://api.github.com/repos/composer/installers/zipball/bd9b14f094c89c8b5804a4e41edeb7853bb85046",
+                "reference": "bd9b14f094c89c8b5804a4e41edeb7853bb85046",
                 "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0"
             },
             "replace": {
                 "roundcube/plugin-installer": "*",
@@ -29,9 +32,9 @@
                 "composer/composer": "1.0.*@dev",
                 "phpunit/phpunit": "4.1.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "Composer\\Installers\\Installer",
+                "class": "Composer\\Installers\\Plugin",
                 "branch-alias": {
                     "dev-master": "1.0-dev"
                 }
@@ -100,7 +103,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2015-06-13 15:30:38"
+            "time": "2015-10-29 23:28:48"
         },
         {
             "name": "doctrine/cache",
@@ -172,17 +175,54 @@
             "time": "2015-08-31 13:09:29"
         },
         {
+            "name": "drewm/mailchimp-api",
+            "version": "v1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drewm/mailchimp-api.git",
+                "reference": "707d555962442b21a75683a56bdb7cebd0a19f72"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drewm/mailchimp-api/zipball/707d555962442b21a75683a56bdb7cebd0a19f72",
+                "reference": "707d555962442b21a75683a56bdb7cebd0a19f72",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Drewm": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Drew McLellan",
+                    "homepage": "http://allinthehead.com/"
+                }
+            ],
+            "description": "Super-simple, minimum abstraction MailChimp API v2 wrapper",
+            "homepage": "https://github.com/drewm/mailchimp-api",
+            "time": "2015-07-07 15:38:25"
+        },
+        {
             "name": "google/recaptcha",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/recaptcha.git",
-                "reference": "7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab"
+                "reference": "e4bfe88a2558fa2a812aec543086a117be340f81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/recaptcha/zipball/7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab",
-                "reference": "7e480bcfd2bbb4819e8d66cdbb10b5dba32a65ab",
+                "url": "https://api.github.com/repos/google/recaptcha/zipball/e4bfe88a2558fa2a812aec543086a117be340f81",
+                "reference": "e4bfe88a2558fa2a812aec543086a117be340f81",
                 "shasum": ""
             },
             "require": {
@@ -214,7 +254,7 @@
                 "recaptcha",
                 "spam"
             ],
-            "time": "2015-09-23 09:14:48"
+            "time": "2015-10-25 22:02:40"
         },
         {
             "name": "heyday/silverstripe-cacheinclude",
@@ -265,6 +305,46 @@
                 }
             ],
             "time": "2014-09-10 22:15:47"
+        },
+        {
+            "name": "jonom/silverstripe-betternavigator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-betternavigator.git",
+                "reference": "4f92851547c03fd0993586596c5d460e4e2a38c3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-betternavigator/zipball/4f92851547c03fd0993586596c5d460e4e2a38c3",
+                "reference": "4f92851547c03fd0993586596c5d460e4e2a38c3",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "betternavigator"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Front-end utility menu for SilverStripe websites featuring administration and development tools",
+            "keywords": [
+                "BetterNavigator",
+                "SilverStripeNavigator",
+                "navigator",
+                "silverstripe"
+            ],
+            "time": "2015-07-31 16:01:03"
         },
         {
             "name": "psr/log",
@@ -318,12 +398,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
-                "reference": "fe13e8590f21453a84386d5a1504e874a6cd04de"
+                "reference": "a0f032621a6aedc3b43b122d9bd31ac6705686a3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/fe13e8590f21453a84386d5a1504e874a6cd04de",
-                "reference": "fe13e8590f21453a84386d5a1504e874a6cd04de",
+                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/a0f032621a6aedc3b43b122d9bd31ac6705686a3",
+                "reference": "a0f032621a6aedc3b43b122d9bd31ac6705686a3",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +443,46 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-09-28 09:06:01"
+            "time": "2015-11-04 20:33:56"
+        },
+        {
+            "name": "silverstripe-rebelalliance/youtubefield",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe-rebelalliance/silverstripe-youtubefield.git",
+                "reference": "9a8b57cdcacc7c4ce724bc71a690a0734b124d65"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe-rebelalliance/silverstripe-youtubefield/zipball/9a8b57cdcacc7c4ce724bc71a690a0734b124d65",
+                "reference": "9a8b57cdcacc7c4ce724bc71a690a0734b124d65",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.0"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "youtubefield"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Linklater",
+                    "email": "ed@silverstripe.com"
+                }
+            ],
+            "description": "Field for selecting YouTube videos. Takes various URL formats as input and stores the YouTube ID.",
+            "keywords": [
+                "formfield",
+                "silverstripe",
+                "youtube"
+            ],
+            "time": "2015-09-09 03:26:11"
         },
         {
             "name": "silverstripe/cms",
@@ -467,19 +586,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/expression-language.git",
-                "reference": "98742ed56d6ee3b858f33c09c3b97194bd6cd638"
+                "reference": "6b3dc2ac918bc5839b49024db0e0171cd0f94f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/expression-language/zipball/98742ed56d6ee3b858f33c09c3b97194bd6cd638",
-                "reference": "98742ed56d6ee3b858f33c09c3b97194bd6cd638",
+                "url": "https://api.github.com/repos/symfony/expression-language/zipball/6b3dc2ac918bc5839b49024db0e0171cd0f94f63",
+                "reference": "6b3dc2ac918bc5839b49024db0e0171cd0f94f63",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -490,7 +606,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\ExpressionLanguage\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -508,7 +627,7 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-26 19:48:07"
+            "time": "2015-10-30 20:15:42"
         },
         {
             "name": "symfony/yaml",
@@ -516,19 +635,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "01a41e4c70391ed05c0e735338868e7cdbe9e5d8"
+                "reference": "5ff00ea2999343d42398fcb793bbfc64c92235ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/01a41e4c70391ed05c0e735338868e7cdbe9e5d8",
-                "reference": "01a41e4c70391ed05c0e735338868e7cdbe9e5d8",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/5ff00ea2999343d42398fcb793bbfc64c92235ff",
+                "reference": "5ff00ea2999343d42398fcb793bbfc64c92235ff",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.9"
-            },
-            "require-dev": {
-                "symfony/phpunit-bridge": "~2.7|~3.0.0"
             },
             "type": "library",
             "extra": {
@@ -539,7 +655,10 @@
             "autoload": {
                 "psr-4": {
                     "Symfony\\Component\\Yaml\\": ""
-                }
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -557,7 +676,45 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-09-30 09:15:55"
+            "time": "2015-11-05 09:04:44"
+        },
+        {
+            "name": "toastnz/open-graph-meta",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/open-graph-meta.git",
+                "reference": "4e57db6f145e8b88414c7f4d90309eba8f106c2a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/4e57db6f145e8b88414c7f4d90309eba8f106c2a",
+                "reference": "4e57db6f145e8b88414c7f4d90309eba8f106c2a",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.2"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe Open Graph Module",
+            "keywords": [
+                "facebook",
+                "open graph",
+                "silverstripe"
+            ],
+            "time": "2015-11-08 21:13:10"
         },
         {
             "name": "toastnz/silverstripe-cms-theme",
@@ -603,6 +760,81 @@
             "time": "2015-09-14 23:36:24"
         },
         {
+            "name": "toastnz/toast-seo",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/toast-seo.git",
+                "reference": "040b2168ffd6a9bb9510e3d4b87ac3005a97d9da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/040b2168ffd6a9bb9510e3d4b87ac3005a97d9da",
+                "reference": "040b2168ffd6a9bb9510e3d4b87ac3005a97d9da",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.2"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe Seo Module",
+            "keywords": [
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2015-11-08 22:13:56"
+        },
+        {
+            "name": "toastnz/twitter-card-meta",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/twitter-card-meta.git",
+                "reference": "b3ecb16ec8df7faa33359c5b16bfc5f1128346d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/b3ecb16ec8df7faa33359c5b16bfc5f1128346d1",
+                "reference": "b3ecb16ec8df7faa33359c5b16bfc5f1128346d1",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.2"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe Twitter Card Module",
+            "keywords": [
+                "silverstripe",
+                "twitter",
+                "twitter card"
+            ],
+            "time": "2015-11-08 21:18:08"
+        },
+        {
             "name": "unclecheese/betterbuttons",
             "version": "1.2.8",
             "source": {
@@ -637,6 +869,46 @@
                 "silverstripe"
             ],
             "time": "2015-02-09 02:07:59"
+        },
+        {
+            "name": "undefinedoffset/sortablegridfield",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UndefinedOffset/SortableGridField.git",
+                "reference": "4105ebdcd01fd04b3e59216fdb412128f9b79c84"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/4105ebdcd01fd04b3e59216fdb412128f9b79c84",
+                "reference": "4105ebdcd01fd04b3e59216fdb412128f9b79c84",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.3"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "sortablegridfield"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://www.edchipman.ca",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds drag and drop functionality to SilverStripe 3.0's GridField",
+            "keywords": [
+                "gridfield",
+                "silverstripe"
+            ],
+            "time": "2015-10-13 15:20:27"
         }
     ],
     "packages-dev": [],
@@ -645,7 +917,10 @@
     "stability-flags": {
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
-        "toastnz/silverstripe-cms-theme": 20
+        "toastnz/twitter-card-meta": 20,
+        "toastnz/silverstripe-cms-theme": 20,
+        "undefinedoffset/sortablegridfield": 20,
+        "silverstripe-rebelalliance/youtubefield": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
