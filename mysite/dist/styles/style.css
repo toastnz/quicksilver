@@ -43,9 +43,9 @@ table {
 *, *:before, *:after {
   box-sizing: border-box; }
 
-.clearfix:before,
-.row:before,
-.clearfix:after, .row:after {
+.clearfix:before, .row:before,
+.clearfix:after,
+.row:after {
   content: "";
   display: table; }
 
@@ -915,8 +915,9 @@ form.loading .loader {
   border-radius: 3px;
   font-size: 14px;
   cursor: default;
-  transition: visibility 300ms, -webkit-transform 300ms, box-shadow 240ms;
+  transition: visibility 300ms, box-shadow 240ms, -webkit-transform 300ms;
   transition: visibility 300ms, transform 300ms, box-shadow 240ms;
+  transition: visibility 300ms, transform 300ms, box-shadow 240ms, -webkit-transform 300ms;
   visibility: hidden;
   cursor: pointer;
   color: white; }

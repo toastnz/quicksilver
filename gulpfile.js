@@ -139,8 +139,7 @@ gulp.task('sass', function () {
 //║                               ║
 //╚═══════════════════════════════╝
 var imagemin    = require('gulp-imagemin'),
-    spritesmith = require('gulp.spritesmith'),
-    pngquant    = require('imagemin-pngquant');
+    spritesmith = require('gulp.spritesmith');
 
 gulp.task('sprites', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Creating the spritesheets and associated styles'));
