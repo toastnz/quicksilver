@@ -154,10 +154,7 @@ gulp.task('sprites', function () {
         cssTemplate: app + 'images/@1x/sprite_positions.styl.mustache'
     }));
 
-    spriteData.img.pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}]
-    })).pipe(gulp.dest(dist + 'images'));
+    spriteData.img.pipe(gulp.dest(dist + 'images'));
 
     spriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
 
@@ -171,10 +168,7 @@ gulp.task('sprites', function () {
         cssTemplate: app + 'images/@2x/retina-sprite_positions.styl.mustache'
     }));
 
-    retinaSpriteData.img.pipe(imagemin({
-        progressive: true,
-        svgoPlugins: [{removeViewBox: false}]
-    })).pipe(gulp.dest(dist + 'images'));
+    retinaSpriteData.img.pipe(gulp.dest(dist + 'images'));
 
     retinaSpriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
 

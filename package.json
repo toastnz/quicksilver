@@ -56,7 +56,6 @@
     "gulp-minify-css": "latest",
     "jquery-highlight": "latest",
     "gulp.spritesmith": "latest",
-    "imagemin-pngquant": "latest",
     "gulp-autoprefixer": "latest",
     "babel-preset-es2015": "latest",
     "gulp-strip-comments": "latest",
