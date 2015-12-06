@@ -1,13 +1,22 @@
-const $ = require('jquery');
-//const _ = require('underscore');
-//const moment = require('moment');
-//const dragula = require('dragula');
-//const alertify = require('alertifyjs');
-//const fancybox = require('fancybox')($);
-//const slick = require('slick-carousel');
-//const highlight = require('jquery-highlight');
-//import selectOrDie from'../plugins/selectordie';
+'use strict';
+window.jQuery = window.$ = require('jquery');
+// ======================================================
+// Requirements
+// ======================================================
 
-//==================================================================
-// Make some magic
-//==================================================================
+const $            = require('jquery'),
+      _            = require('underscore'),
+      fancybox     = require('fancybox')($),
+      imagesLoaded = require('imagesloaded'),
+      slick        = require('slick-carousel'),
+      jQBridget    = require('jquery-bridget'),
+      Masonry      = require('masonry-layout'),
+      matchHeight  = require('jquery-match-height');
+
+// ======================================================
+// Components
+// ======================================================
+
+const template    = require('./templates'),
+      selectOrDie = require('./selectordie');
+

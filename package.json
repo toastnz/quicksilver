@@ -19,7 +19,8 @@
     "slick-carousel": "latest",
     "jquery-bridget": "latest",
     "masonry-layout": "latest",
-    "perfect-scrollbar": "latest"
+    "perfect-scrollbar": "latest",
+    "jquery-match-height": "latest"
   },
   "devDependencies": {
     "gulp": "latest",

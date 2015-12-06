@@ -3,12 +3,10 @@
 /**
  * Class Page
  */
-class Page extends SiteTree
-{
+class Page extends SiteTree {
 
 }
 
-class Page_Controller extends ContentController
-{
+class Page_Controller extends ContentController {
 
 }

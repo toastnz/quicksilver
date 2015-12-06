@@ -29,8 +29,7 @@
     "heyday/silverstripe-cacheinclude": "~4.0",
     "toastnz/silverstripe-cms-theme": "dev-master",
     "undefinedoffset/sortablegridfield": "dev-master",
-    "silverstripe-australia/gridfieldextensions": "~1.1",
-    "silverstripe-rebelalliance/youtubefield": "dev-master"
+    "silverstripe-australia/gridfieldextensions": "~1.1"
   },
   "scripts": {
     "post-create-project-cmd": [
