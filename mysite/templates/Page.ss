@@ -29,29 +29,37 @@
     <div id="snappy">
         <div id="snappySidebar">
             <div id="modules">
-                <div class="module sidebarModule" data-module-type="blockquote"><p>ID:1</p></div>
-                <div class="module sidebarModule" data-module-type="text"><p>ID:1</p></div>
-                <div class="module sidebarModule" data-module-type="video"><p>ID:1</p></div>
-                <div class="module sidebarModule" data-module-type="image"><p>ID:1</p></div>
-                <div class="module sidebarModule" data-module-type="faq"><p>ID:1</p></div>
+                <div class="module sidebarModule" data-module-type="blockquote">
+                    <p class="vertical uppercase center">blockquote</p>
+                </div>
+                <div class="module sidebarModule" data-module-type="text">
+                    <p class="vertical uppercase center">text</p>
+                </div>
+                <div class="module sidebarModule" data-module-type="video">
+                    <p class="vertical uppercase center">video</p>
+                </div>
+                <div class="module sidebarModule" data-module-type="image">
+                    <p class="vertical uppercase center">image</p>
+                </div>
+                <div class="module sidebarModule" data-module-type="faq">
+                    <p class="vertical uppercase center">faq</p>
+                </div>
             </div>
         </div>
 
         <div id="snappyContent">
-           <div class="module contentModule">
-               blockquote
-           </div>
-           
-           <div class="module contentModule">
-               text
-           </div>
-           
-           <div class="module contentModule">
-               video
-           </div>
-       </div>
+         <div class="module contentModule">
+             <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+         </div>
+         <div class="module contentModule">
+             <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+         </div>
+         <div class="module contentModule">
+             <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+         </div>
+     </div>
 
-       <div class="functions">
+     <div class="functions">
         <button class="[ js-close-sidebar ]">closeSidebar</button>
         <button class="[ js-open-sidebar ]">openSidebar</button>
         <button class="[ js-toggle-sidebar ]">toggleSidebar</button>

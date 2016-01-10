@@ -14,10 +14,9 @@
  const $modules = $('#modules'); 
  const $snappyContent = $('#snappyContent');
 
-
  dragula([$modules[0], $snappyContent[0]], {
  	copy:function (el, target){
- 		(el.className.indexOf('sidebarModule') > 1)?true:false;
+ 		return (el.className.indexOf('sidebarModule') > 1)?true:false;
  	},
  	accepts: function (el, target) {
  		return target === $snappyContent[0];
@@ -25,11 +24,12 @@
  }).on('drop', function (el, target) {
  	if (target === $snappyContent[0]) {
  		log('drop() => Dragula item has been dropped');
- 		$snappyContent.find('.sidebarModule').remove();
- 		$snappyContent.append(module.create($(el).attr('data-module-type'))); 
- 		module.updateOrder();
+ 		let $clonedItem = $snappyContent.find('.sidebarModule');
+ 		let type = $(el).attr('data-module-type');
+ 		$(module.create(type)).insertAfter($clonedItem);
+ 		$clonedItem.remove();
+ 		module.updateOrder(); 
  	}
  });
-
 
  sidebar.open();

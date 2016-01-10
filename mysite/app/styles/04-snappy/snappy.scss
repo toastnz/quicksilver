@@ -10,10 +10,7 @@
 
 .contentModule{
 	@include aspect(6, 1);
-	&:nth-child(odd){
-		background:rgba($green, 0.4);
-	}
-	&:nth-child(even){
-		background:rgba($red, 0.4);
-	}
+	background:rgba($green, 0.4);
+	padding:24px;
+	transition:$med;
 }

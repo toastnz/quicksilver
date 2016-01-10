@@ -17,7 +17,10 @@
         box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
     }
     &.contentModule{
+        height:auto !important;
         left:260px !important;
+        -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
+        box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
     }
 }
 
@@ -41,6 +44,16 @@
 .gu-transit.sidebarModule {
     width:100%;
     height:30px;
+    transition:all 240ms;
+    background:$grey-light !important;
+    *{
+        display:none;
+    }
+}
+
+.gu-transit.contentModule {
+    width:100%;
+    height:0px;
     transition:all 240ms;
     background:$grey-light !important;
     *{

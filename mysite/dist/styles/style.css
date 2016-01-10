@@ -211,6 +211,20 @@ h1, h2, h3, h4, h5, h6 {
 p, li {
   line-height: 1.4; }
 
+.vertical {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  position: absolute; }
+  .vertical.center {
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    text-align: center; }
+
+.uppercase {
+  text-transform: uppercase; }
+
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2.5), only screen and (min-resolution: 240dpi) {
   .icon-checkbox-checked {
     background-image: url(../img/sprites-retina.png);
@@ -847,7 +861,9 @@ form.loading .loader {
       display: block;
       padding-bottom: 33.33333%; }
   .gu-mirror.contentModule {
-    left: 260px !important; }
+    height: auto !important;
+    left: 260px !important;
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4); }
 
 .gu-hide {
   display: none !important; }
@@ -869,6 +885,14 @@ form.loading .loader {
   transition: all 240ms;
   background: #b9b7b7 !important; }
   .gu-transit.sidebarModule * {
+    display: none; }
+
+.gu-transit.contentModule {
+  width: 100%;
+  height: 0px;
+  transition: all 240ms;
+  background: #b9b7b7 !important; }
+  .gu-transit.contentModule * {
     display: none; }
 
 #snappy .functions {
@@ -938,15 +962,14 @@ form.loading .loader {
     height: 100%; }
 
 .contentModule {
-  position: relative; }
+  position: relative;
+  background: rgba(46, 177, 80, 0.4);
+  padding: 24px;
+  transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   .contentModule:after {
     content: '';
     position: relative;
     display: block;
     padding-bottom: 16.66667%; }
-  .contentModule:nth-child(odd) {
-    background: rgba(46, 177, 80, 0.4); }
-  .contentModule:nth-child(even) {
-    background: rgba(236, 76, 104, 0.4); }
 
 /*# sourceMappingURL=style.css.map */
