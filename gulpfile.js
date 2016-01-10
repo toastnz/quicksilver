@@ -45,7 +45,6 @@ var babel      = require("gulp-babel"),
     uglify     = require("gulp-uglify"),
     watchify   = require("watchify"),
     notify     = require("gulp-notify"),
-    bytediff   = require('gulp-bytediff'),
     jshint     = require("gulp-jshint");
 
 function compileScripts(watch) {
@@ -97,17 +96,9 @@ gulp.task('lint', function () {
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
     return gulp.src([dist + 'js/output.js'])
-        .pipe(bytediff.start()).pipe(uglify()).pipe(strip()).pipe(rename({extname: '.min.js'})).pipe(bytediff.stop()).pipe(gulp.dest(dist + 'js/'))
+        .pipe(uglify()).pipe(strip()).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
 });
 
-/**
- *  Minify the compiled CSS
- */
-
-gulp.task('minify-css', ['sass'], function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
-    return gulp.src([dist + 'styles/style.css']).pipe(bytediff.start()).pipe(strip()).pipe(minifyCss()).pipe(rename({extname: '.min.css'})).pipe(bytediff.stop()).pipe(gulp.dest(dist + 'styles/'))
-});
 
 //╔═══════════════════════════════╗
 //║                               ║
@@ -115,15 +106,21 @@ gulp.task('minify-css', ['sass'], function () {
 //║                               ║
 //╚═══════════════════════════════╝
 var sass         = require('gulp-sass'),
-    minifyCss    = require('gulp-cssmin'),
     order        = require("gulp-order"),
     concat       = require("gulp-concat"),
     cssmin       = require("gulp-cssmin"),
     plumber      = require("gulp-plumber"),
     sourcemaps   = require("gulp-sourcemaps"),
-    autoprefixer = require("gulp-autoprefixer"),
-    strip        = require('gulp-strip-comments');
+    autoprefixer = require("gulp-autoprefixer");
 
+/**
+ *  Minify the compiled CSS
+ */
+
+gulp.task('minify-css', ['sass'], function () {
+    gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
+    return gulp.src([dist + 'styles/style.css']).pipe(cssmin()).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
+});
 gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
     var autoprefixerSettings = {
