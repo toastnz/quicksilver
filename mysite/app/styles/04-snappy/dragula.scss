@@ -9,6 +9,16 @@
     opacity: 0.8;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
     filter: alpha(opacity=80);
+    &.sidebarModule{
+        background:rgba($green, 1);
+        margin-bottom:12px;
+        @include aspect(3,1);
+        -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
+        box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
+    }
+    &.contentModule{
+        left:260px !important;
+    }
 }
 
 .gu-hide {
@@ -27,3 +37,16 @@
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
     filter: alpha(opacity=20);
 }
+
+.gu-transit.sidebarModule {
+    width:100%;
+    height:30px;
+    transition:all 240ms;
+    background:$grey-light !important;
+    *{
+        display:none;
+    }
+}
+
+
+

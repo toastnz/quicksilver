@@ -1,0 +1,40 @@
+#snappy{
+	$sidebar-width: 260px;
+	#snappySidebar{
+		position:fixed;
+		background: $grey;
+		height:100%;
+		top:0;
+		bottom:0;
+		left:0;
+		display:block;
+		z-index:9;
+		width:$sidebar-width;
+		transform:translateX(-$sidebar-width);
+		transition:$med;
+	}
+	&.sidebarOpen{ 
+		#snappySidebar{
+			transform:translateX(0);
+		}
+		#snappyContent{
+			transform: translateZ(0);
+			transform:translateX($sidebar-width);
+			width:calc(100% - #{$sidebar-width}); 
+		}
+	}
+
+	#modules{
+		height:100%;
+		width:100%;
+		overflow-x:hidden;
+		overflow-y:auto;
+		padding:12px;
+		.module{
+			background:rgba($green, 1);
+			margin-bottom:12px;
+			@include aspect(3,1);
+		}
+	}
+}
+

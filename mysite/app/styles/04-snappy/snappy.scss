@@ -1,0 +1,19 @@
+#snappy{
+	width:100%;
+	height:100%;
+	#snappyContent{
+		transition:$med;
+		width:100%;
+		height:100%;
+	}
+}
+
+.contentModule{
+	@include aspect(6, 1);
+	&:nth-child(odd){
+		background:rgba($green, 0.4);
+	}
+	&:nth-child(even){
+		background:rgba($red, 0.4);
+	}
+}

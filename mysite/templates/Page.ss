@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600" rel="stylesheet" type="text/css">
 
     <% with $SiteConfig %>
-        <link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>
+    <link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>
     <% end_with %>
 
     <% include ToastSEO %>
@@ -26,13 +26,36 @@
 
 <body class="$Classname" data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
 
-<div id="container">
+    <div id="snappy">
+        <div id="snappySidebar">
+            <div id="modules">
+                <div class="module sidebarModule" data-module-type="blockquote"><p>ID:1</p></div>
+                <div class="module sidebarModule" data-module-type="text"><p>ID:1</p></div>
+                <div class="module sidebarModule" data-module-type="video"><p>ID:1</p></div>
+                <div class="module sidebarModule" data-module-type="image"><p>ID:1</p></div>
+                <div class="module sidebarModule" data-module-type="faq"><p>ID:1</p></div>
+            </div>
+        </div>
 
-    <% include Header %>
+        <div id="snappyContent">
+           <div class="module contentModule">
+               blockquote
+           </div>
+           
+           <div class="module contentModule">
+               text
+           </div>
+           
+           <div class="module contentModule">
+               video
+           </div>
+       </div>
 
-    $Layout
-
-    <% include Footer %>
+       <div class="functions">
+        <button class="[ js-close-sidebar ]">closeSidebar</button>
+        <button class="[ js-open-sidebar ]">openSidebar</button>
+        <button class="[ js-toggle-sidebar ]">toggleSidebar</button>
+    </div>
 
 </div>
 

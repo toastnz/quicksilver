@@ -1,19 +1,18 @@
 /**
- * Our Main Snappy sidebar
- * @type {Object}
+ * Constants
  */
- const $sidebar = $('#sidebar');
+ const $snappy = $('#snappy'); 
 
 /**
  * Check the current state of the sidebar
  * @return {String} Current sidebar state
  */ 
  export function state(){
- 	if($sidebar.hasClass('sidebarOpen')){
- 		log('sidebarState() => sidebar is open');
+ 	if($snappy.hasClass('sidebarOpen')){
+ 		log('sidebar.state() => sidebar is open');
  		return 'open'; 
  	}else{
- 		log('sidebarState() => sidebar is closed');
+ 		log('sidebar.state() => sidebar is closed');
  		return 'closed';
  	}
  } 
@@ -22,31 +21,39 @@
  * Close the sidebar
  */ 
  export function close(){
- 	$sidebar.removeClass('sidebarOpen');
- 	log('openSideBar() => closing sidebar');
+ 	$snappy.removeClass('sidebarOpen');
+ 	log('sidebar.close() => closing sidebar');
  }
 
 /**
  * Open the sidebar 
  */
  export function open(){
- 	$sidebar.addClass('sidebarOpen');
- 	log('openSideBar() => opening sidebar');
+ 	$snappy.addClass('sidebarOpen');
+ 	log('sidebar.open() => opening sidebar');
  }
 
- /**
-  *
-  * INTERACTIONS
-  * 
-  */
+/**
+ *
+ * INTERACTIONS
+ * 
+ */
+ $snappy.on('click', '.js-toggle-sidebar',function(e){
+ 	e.preventDefault();
+ 	if(state() === 'open'){
+ 		close();
+ 	}else{
+ 		open();
+ 	}  
+ });
 
-  $sidebar.on('click', '.toggle',function(e){
-  	e.preventDefault();
-  	if(sidebar.state() === 'open'){
-  		sidebar.close();
-  	}else{
-  		sidebar.open();
-  	}  
-  });
+ $snappy.on('click', '.js-close-sidebar',function(e){
+ 	e.preventDefault();
+ 	close();
+ });
 
+ $snappy.on('click', '.js-open-sidebar',function(e){
+ 	e.preventDefault();
+ 	open();
+ });
 
