@@ -2,7 +2,7 @@
 	$sidebar-width: 260px;
 	#snappySidebar{
 		position:fixed;
-		background: $grey;
+		background: #d9d9d9;
 		height:100%;
 		top:0;
 		bottom:0;
@@ -31,7 +31,7 @@
 		overflow-y:auto;
 		padding:12px;
 		.module{
-			background:rgba($green, 1);
+			background:white;
 			margin-bottom:12px;
 			@include aspect(3,1);
 		}

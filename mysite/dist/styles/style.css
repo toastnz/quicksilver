@@ -62,7 +62,9 @@ html, body {
  * Typography
  ===========================================*/
 h1 {
-  font-size: 48px; }
+  font-size: 48px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
   @media screen and (min-width: 480px) {
     h1 {
       font-size: 56px; } }
@@ -80,7 +82,9 @@ h1 {
       font-size: 80px; } }
 
 h2 {
-  font-size: 56px; }
+  font-size: 56px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
   @media screen and (min-width: 480px) {
     h2 {
       font-size: 56px; } }
@@ -98,7 +102,9 @@ h2 {
       font-size: 70px; } }
 
 h3 {
-  font-size: 36px; }
+  font-size: 36px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
   @media screen and (min-width: 480px) {
     h3 {
       font-size: 36px; } }
@@ -116,7 +122,9 @@ h3 {
       font-size: 45px; } }
 
 h4 {
-  font-size: 24px; }
+  font-size: 24px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
   @media screen and (min-width: 480px) {
     h4 {
       font-size: 24px; } }
@@ -134,7 +142,9 @@ h4 {
       font-size: 30px; } }
 
 h5 {
-  font-size: 20.8px; }
+  font-size: 20.8px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800; }
   @media screen and (min-width: 480px) {
     h5 {
       font-size: 20.8px; } }
@@ -843,16 +853,66 @@ form.loading .loader {
             transform: translateX(-50%) translateY(0);
     opacity: 1; }
 
+.blockquote:before, .blockquote:after {
+  content: "";
+  display: table; }
+
+.blockquote:after {
+  clear: both; }
+
+.blockquote blockquote {
+  margin: 0 auto;
+  max-width: 868px;
+  border-left: 5px solid #2eb150;
+  padding-left: 24px; }
+  .blockquote blockquote p {
+    padding: 12px;
+    font-size: 15.2px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800; }
+    @media screen and (min-width: 480px) {
+      .blockquote blockquote p {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .blockquote blockquote p {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .blockquote blockquote p {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .blockquote blockquote p {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .blockquote blockquote p {
+        font-size: 19px; } }
+  .blockquote blockquote span.attribution {
+    font-size: 15.2px;
+    float: right;
+    padding: 12px;
+    margin: 0;
+    font-style: italic; }
+    @media screen and (min-width: 480px) {
+      .blockquote blockquote span.attribution {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .blockquote blockquote span.attribution {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .blockquote blockquote span.attribution {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .blockquote blockquote span.attribution {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .blockquote blockquote span.attribution {
+        font-size: 19px; } }
+
 .gu-mirror {
   position: fixed !important;
   margin: 0 !important;
-  z-index: 9999 !important;
-  opacity: 0.8;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-  filter: alpha(opacity=80); }
+  z-index: 9999 !important; }
   .gu-mirror.sidebarModule {
-    background: #2eb150;
-    margin-bottom: 12px;
+    background: white;
     position: relative;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4); }
     .gu-mirror.sidebarModule:after {
@@ -861,6 +921,7 @@ form.loading .loader {
       display: block;
       padding-bottom: 33.33333%; }
   .gu-mirror.contentModule {
+    opacity: 0.8;
     height: auto !important;
     left: 260px !important;
     box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4); }
@@ -914,7 +975,7 @@ form.loading .loader {
 
 #snappy #snappySidebar {
   position: fixed;
-  background: #7a7a7a;
+  background: #d9d9d9;
   height: 100%;
   top: 0;
   bottom: 0;
@@ -944,7 +1005,7 @@ form.loading .loader {
   overflow-y: auto;
   padding: 12px; }
   #snappy #modules .module {
-    background: #2eb150;
+    background: white;
     margin-bottom: 12px;
     position: relative; }
     #snappy #modules .module:after {
@@ -959,17 +1020,17 @@ form.loading .loader {
   #snappy #snappyContent {
     transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     width: 100%;
-    height: 100%; }
+    height: 100%;
+    padding-top: 100px; }
 
 .contentModule {
-  position: relative;
-  background: rgba(46, 177, 80, 0.4);
-  padding: 24px;
-  transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
-  .contentModule:after {
-    content: '';
-    position: relative;
-    display: block;
-    padding-bottom: 16.66667%; }
+  padding: 24px; }
+
+[contenteditable=true]:focus {
+  outline: 1px dashed rgba(122, 122, 122, 0.5); }
+
+.editMode {
+  outline: 1px solid rgba(46, 177, 80, 0.5);
+  outline-offset: -1px; }
 
 /*# sourceMappingURL=style.css.map */

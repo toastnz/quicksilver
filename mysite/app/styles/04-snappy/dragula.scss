@@ -6,17 +6,14 @@
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
-    opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
     &.sidebarModule{
-        background:rgba($green, 1);
-        margin-bottom:12px;
+        background:white;
         @include aspect(3,1);
         -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
         box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
     }
     &.contentModule{
+        opacity: 0.8;
         height:auto !important;
         left:260px !important;
         -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);

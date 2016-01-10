@@ -14,6 +14,7 @@
  const $modules = $('#modules'); 
  const $snappyContent = $('#snappyContent');
 
+
  dragula([$modules[0], $snappyContent[0]], {
  	copy:function (el, target){
  		return (el.className.indexOf('sidebarModule') > 1)?true:false;
@@ -33,3 +34,4 @@
  });
 
  sidebar.open();
+

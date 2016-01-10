@@ -150,22 +150,27 @@ html, body {
 
  h1 {
     @include font($h1);
+    @include extra-bold;
 }
 
 h2 {
     @include font($h2);
+    @include extra-bold;
 }
 
 h3 {
     @include font($h3);
+    @include extra-bold;
 }
 
 h4 {
     @include font($h4);
+    @include extra-bold;
 }
 
 h5 {
     @include font($h5);
+    @include extra-bold;
 }
 
 h6 {
