@@ -33,7 +33,6 @@
  	log('updateOrder() => Updating the order of the modules');
  }
 
-
 /**
  * Close the sidebar
  */ 
@@ -56,10 +55,13 @@
  * INTERACTIONS
  * 
  */
- $snappy.on('focus', '[contenteditable="true"]', function(){
- 	enterEditMode($(this).closest('.contentModule'));
+ $snappy.on('click', '.contentModule', function(){
+ 	enterEditMode($(this));
  });
 
- $snappy.on('blur', '[contenteditable="true"]', function(){
- 	exitEditMode();
+ $snappy.mouseup(function (e) {
+ 	var container = $('.contentModule');
+ 	if (!container.is(e.target) && container.has(e.target).length === 0){
+ 		exitEditMode();
+ 	}
  });
