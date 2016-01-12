@@ -56,6 +56,10 @@ $max-width: 1140px;
 }
 
 
+[contenteditable=true] {
+  outline:none;
+}
+
 .editMode{
 	outline:1px solid rgba($green,0.5); 
 	outline-offset:-1px;

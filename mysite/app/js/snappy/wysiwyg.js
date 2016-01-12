@@ -53,6 +53,8 @@ $('.contentModule').bind('blur keyup paste copy cut mouseup', function(e) {
 }) 
 
 function update_output($el) {
-  let content = $el[0].outerHTML; 
-  $('#output').text(content);
+  if($el){
+    let content = $el[0].outerHTML; 
+    $('#output').text(content);
+  }
 }

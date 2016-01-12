@@ -3,7 +3,7 @@
 //==================================================================
 
 .text{
-	@include clearfix;
+	@include clearfix; 
 	margin:0 auto;
 	.wrap{
 		@include clearfix;

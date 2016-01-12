@@ -1110,12 +1110,145 @@ form.loading .loader {
 .contentModule {
   padding: 24px; }
 
+[contenteditable=true] {
+  outline: none; }
+
 .editMode {
   outline: 1px solid rgba(46, 177, 80, 0.5);
   outline-offset: -1px; }
   .editMode [contenteditable=true] {
     outline: 1px dashed rgba(122, 122, 122, 0.5);
     outline-offset: -4px; }
+
+/*
+
+Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
+
+*/
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #F0F0F0; }
+
+.hljs,
+.hljs-subst {
+  color: #444; }
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-meta-keyword,
+.hljs-doctag,
+.hljs-name {
+  font-weight: bold; }
+
+.hljs-built_in,
+.hljs-literal,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #1F811F; }
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #BC6060; }
+
+.hljs-type,
+.hljs-string,
+.hljs-number,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #880000; }
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold; }
+
+.hljs-comment {
+  color: #888888; }
+
+.hljs-meta {
+  color: #2B6EA1; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
+
+/* Tomorrow Night Eighties Theme */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+  color: #999999; }
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+  color: #f2777a; }
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+  color: #f99157; }
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+  color: #ffcc66; }
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+  color: #99cc99; }
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+  color: #6699cc; }
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+  color: #cc99cc; }
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #2d2d2d;
+  color: #cccccc;
+  padding: 0.5em; }
+
+.hljs-emphasis {
+  font-style: italic; }
+
+.hljs-strong {
+  font-weight: bold; }
 
 .text {
   margin: 0 auto; }
@@ -1201,11 +1334,10 @@ form.loading .loader {
   #wysiwyg button {
     outline: none;
     padding: 0;
-    margin: 0 3px;
-    margin: 3px;
     cursor: pointer;
     background: transparent;
-    border: 0; }
+    border: 0;
+    padding: 3px; }
     #wysiwyg button i {
       color: #333;
       font-size: 24px; }
@@ -1223,9 +1355,10 @@ form.loading .loader {
       top: 100%;
       width: 160px;
       left: 0;
-      margin-top: 2px;
-      background: #eeeeee; }
+      border-top: 2px solid transparent;
+      margin-top: 0px; }
       #wysiwyg a ul li {
+        background: #eeeeee;
         text-align: left; }
         #wysiwyg a ul li button {
           padding: 3px 12px;

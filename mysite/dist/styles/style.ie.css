@@ -1266,6 +1266,10 @@ form.loading .loader {
   padding: 24px;
 }
 
+[contenteditable=true] {
+  outline: none;
+}
+
 .editMode {
   outline: 1px solid rgba(46, 177, 80, 0.5);
   outline-offset: -1px;
@@ -1273,6 +1277,7 @@ form.loading .loader {
 
 .editMode [contenteditable=true] {
   outline: 1px dashed rgba(122, 122, 122, 0.5);
+  outline-offset: -4px;
 }
 
 .text {
@@ -1385,11 +1390,10 @@ form.loading .loader {
 #wysiwyg button {
   outline: none;
   padding: 0;
-  margin: 0 3px;
-  margin: 3px;
   cursor: pointer;
   background: transparent;
   border: 0;
+  padding: 3px;
 }
 
 #wysiwyg button i {
@@ -1415,11 +1419,12 @@ form.loading .loader {
   top: 100%;
   width: 160px;
   left: 0;
-  margin-top: 2px;
-  background: #eeeeee;
+  border-top: 2px solid transparent;
+  margin-top: 0px;
 }
 
 #wysiwyg a ul li {
+  background: #eeeeee;
   text-align: left;
 }
 
