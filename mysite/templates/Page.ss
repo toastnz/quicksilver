@@ -65,9 +65,10 @@
             </ul>
         </a>
         <button data-action="foreColor"><i class="material-icons">format_color_text</i></button>
+        <button data-action="insert_link"><i class="material-icons">insert_link</i></button>
     </div>
 
-    <pre><code id="output" class="html"></code></pre>
+    <%--<pre><code id="output" class="html"></code></pre>--%>
 
     <div id="snappySidebar">
         <div id="modules">
@@ -98,7 +99,13 @@
     </div>
 
     <div id="snappyContent">
-
+        <div class="module contentModule text">
+            <div class="wrap" contenteditable="true">
+                <h4>Lets get some mullet grundies.</h4>
+                <p>Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.</p>
+                <p>Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.</p>
+            </div>
+        </div>
 
     </div>
 
