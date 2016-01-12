@@ -48,10 +48,11 @@ $('body').mouseup(function (e) {
 });
 
 
-$('.contentModule.text ').bind('blur keyup paste copy cut mouseup', function(e) {
-  update_output();
+$('.contentModule').bind('blur keyup paste copy cut mouseup', function(e) {
+  update_output($(this));
 }) 
 
-function update_output() {
-  $('#output').val($('.contentModule.text ').html());
+function update_output($el) {
+  let content = $el[0].outerHTML; 
+  $('#output').text(content);
 }

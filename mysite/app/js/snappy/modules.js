@@ -52,10 +52,6 @@
  */
  export function enterEditMode($el){
  	exitEditMode();
- 	if(!$el.hasClass('editMode')){
- 		$el.find("[contenteditable='true']").first().focus();
- 		log('Focusing on first editable item');
- 	}
  	$el.addClass('editMode');
  	log('enterEditMode() => Entering edit mode');
  }

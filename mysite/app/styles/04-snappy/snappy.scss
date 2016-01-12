@@ -61,5 +61,6 @@ $max-width: 1140px;
 	outline-offset:-1px;
   [contenteditable=true] {
     outline:1px dashed rgba($grey,0.5);
+    outline-offset: -4px;
   }
 }

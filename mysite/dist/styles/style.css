@@ -1114,7 +1114,8 @@ form.loading .loader {
   outline: 1px solid rgba(46, 177, 80, 0.5);
   outline-offset: -1px; }
   .editMode [contenteditable=true] {
-    outline: 1px dashed rgba(122, 122, 122, 0.5); }
+    outline: 1px dashed rgba(122, 122, 122, 0.5);
+    outline-offset: -4px; }
 
 .text {
   margin: 0 auto; }

@@ -53,7 +53,7 @@
        <button data-action="foreColor"><i class="material-icons">format_color_text</i></button>
      </div> 
 
-     <textarea id="output"></textarea>
+     <pre id="output"></pre>
 
 
      <div id="snappySidebar">
