@@ -853,59 +853,245 @@ form.loading .loader {
             transform: translateX(-50%) translateY(0);
     opacity: 1; }
 
-.blockquote:before, .blockquote:after {
-  content: "";
-  display: table; }
+#snappy .functions {
+  position: fixed;
+  right: 0;
+  top: 0; }
+  #snappy .functions button {
+    border: 1px solid #2eb150;
+    background: rgba(46, 177, 80, 0.4);
+    color: #000000;
+    display: inline-block;
+    margin: 4px 1px;
+    font-size: 12px;
+    outline: none;
+    cursor: pointer;
+    transition: all 120ms; }
+    #snappy .functions button:hover {
+      background: rgba(46, 177, 80, 0.7); }
 
-.blockquote:after {
-  clear: both; }
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype"); }
 
-.blockquote blockquote {
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga'; }
+
+#snappy {
+  width: 100%;
+  height: 100%; }
+  #snappy #snappyContent {
+    transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    width: 100%;
+    height: 100%;
+    padding-top: 100px; }
+
+.contentModule {
+  padding: 24px; }
+
+[contenteditable=true] {
+  outline: none; }
+
+.editMode {
+  outline: 1px solid rgba(46, 177, 80, 0.5);
+  outline-offset: -1px; }
+  .editMode [contenteditable=true] {
+    outline: 1px dashed rgba(122, 122, 122, 0.5);
+    outline-offset: -4px; }
+
+.alertify, .alertify *, .alertify-logs > *, .alertify.show {
+  box-sizing: border-box; }
+
+.alertify-logs > * {
+  color: #fff;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 1px; }
+
+.alertify-logs > *, .alertify-logs > .default {
+  background: rgba(0, 0, 0, 0.8); }
+
+.alertify-logs > .error {
+  background: rgba(244, 67, 54, 0.8); }
+
+.alertify-logs > .success {
+  background: rgba(76, 175, 80, 0.9); }
+
+.alertify {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 99999; }
+
+.alertify.hide {
+  opacity: 0;
+  pointer-events: none; }
+
+.alertify, .alertify.show {
+  transition: all 0.33s cubic-bezier(0.25, 0.8, 0.25, 1); }
+
+.alertify .dialog {
+  padding: 12px; }
+
+.alertify .alert, .alertify .dialog {
+  width: 100%;
   margin: 0 auto;
-  max-width: 868px;
-  border-left: 5px solid #2eb150;
-  padding-left: 24px; }
-  .blockquote blockquote p {
-    padding: 12px;
-    font-size: 15.2px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 800; }
-    @media screen and (min-width: 480px) {
-      .blockquote blockquote p {
-        font-size: 15.2px; } }
-    @media screen and (min-width: 768px) {
-      .blockquote blockquote p {
-        font-size: 15.2px; } }
-    @media screen and (min-width: 992px) {
-      .blockquote blockquote p {
-        font-size: 17.1px; } }
-    @media screen and (min-width: 1200px) {
-      .blockquote blockquote p {
-        font-size: 19px; } }
-    @media screen and (min-width: 1600px) {
-      .blockquote blockquote p {
-        font-size: 19px; } }
-  .blockquote blockquote span.attribution {
-    font-size: 15.2px;
-    float: right;
-    padding: 12px;
-    margin: 0;
-    font-style: italic; }
-    @media screen and (min-width: 480px) {
-      .blockquote blockquote span.attribution {
-        font-size: 15.2px; } }
-    @media screen and (min-width: 768px) {
-      .blockquote blockquote span.attribution {
-        font-size: 15.2px; } }
-    @media screen and (min-width: 992px) {
-      .blockquote blockquote span.attribution {
-        font-size: 17.1px; } }
-    @media screen and (min-width: 1200px) {
-      .blockquote blockquote span.attribution {
-        font-size: 19px; } }
-    @media screen and (min-width: 1600px) {
-      .blockquote blockquote span.attribution {
-        font-size: 19px; } }
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.alertify .alert > *, .alertify .dialog > * {
+  width: 400px;
+  max-width: 95%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 12px;
+  background: #fff;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.14), 0 4px 5px 0 rgba(0, 0, 0, 0.098), 0 1px 10px 0 rgba(0, 0, 0, 0.084); }
+
+.alertify .alert .msg, .alertify .dialog .msg {
+  padding: 12px;
+  margin: 0;
+  text-align: left; }
+
+.alertify .alert input:not(.form-control), .alertify .dialog input:not(.form-control) {
+  margin-bottom: 15px;
+  width: 100%;
+  font-size: 100%;
+  padding: 12px; }
+
+.alertify .alert input:not(.form-control):focus, .alertify .dialog input:not(.form-control):focus {
+  outline-offset: -2px; }
+
+.alertify .alert nav, .alertify .dialog nav {
+  text-align: right; }
+
+.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button), .alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button) {
+  background: 0 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.87);
+  position: relative;
+  outline: 0;
+  border: 0;
+  display: inline-block;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0 6px;
+  margin: 6px 8px;
+  line-height: 36px;
+  min-height: 36px;
+  white-space: nowrap;
+  min-width: 88px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 2px; }
+
+.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active, .alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover, .alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):active, .alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):hover {
+  background-color: rgba(0, 0, 0, 0.05); }
+
+.alertify .alert nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus, .alertify .dialog nav button:not(.btn):not(.pure-button):not(.md-button):not(.mdl-button):focus {
+  border: 1px dashed rgba(0, 0, 0, 0.1); }
+
+.alertify .alert nav button.btn, .alertify .dialog nav button.btn {
+  margin: 6px 4px; }
+
+.alertify-logs {
+  position: fixed;
+  z-index: 100; }
+
+.alertify-logs.bottom, .alertify-logs:not(.top) {
+  bottom: 16px; }
+
+.alertify-logs.left, .alertify-logs:not(.right) {
+  left: 16px; }
+
+.alertify-logs.left > *, .alertify-logs:not(.right) > * {
+  float: left;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  height: auto; }
+
+.alertify-logs.left > .show, .alertify-logs:not(.right) > .show {
+  left: 0; }
+
+.alertify-logs.left > *, .alertify-logs.left > .hide, .alertify-logs:not(.right) > *, .alertify-logs:not(.right) > .hide {
+  left: -110%; }
+
+.alertify-logs.right {
+  right: 16px; }
+
+.alertify-logs.right > * {
+  float: right;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.alertify-logs.right > .show {
+  right: 0;
+  opacity: 1; }
+
+.alertify-logs.right > *, .alertify-logs.right > .hide {
+  right: -110%;
+  opacity: 0; }
+
+.alertify-logs.top {
+  top: 0; }
+
+.alertify-logs > * {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  clear: both;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000;
+          perspective: 1000;
+  max-height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none; }
+
+.alertify-logs > .show {
+  margin-top: 12px;
+  opacity: 1;
+  max-height: 1000px;
+  padding: 12px;
+  pointer-events: auto; }
 
 .Scp {
   width: 175px;
@@ -1007,22 +1193,172 @@ form.loading .loader {
   .gu-transit.contentModule * {
     display: none; }
 
-#snappy .functions {
-  position: fixed;
-  right: 0;
-  top: 0; }
-  #snappy .functions button {
-    border: 1px solid #2eb150;
-    background: rgba(46, 177, 80, 0.4);
-    color: #000000;
-    display: inline-block;
-    margin: 4px 1px;
+.blockquote:before, .blockquote:after {
+  content: "";
+  display: table; }
+
+.blockquote:after {
+  clear: both; }
+
+.blockquote blockquote {
+  margin: 0 auto;
+  max-width: 868px;
+  border-left: 5px solid #2eb150;
+  padding-left: 24px; }
+  .blockquote blockquote p {
+    padding: 12px;
+    font-size: 15.2px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800; }
+    @media screen and (min-width: 480px) {
+      .blockquote blockquote p {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .blockquote blockquote p {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .blockquote blockquote p {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .blockquote blockquote p {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .blockquote blockquote p {
+        font-size: 19px; } }
+  .blockquote blockquote span.attribution {
+    font-size: 15.2px;
+    float: right;
+    padding: 12px;
+    margin: 0;
+    font-style: italic; }
+    @media screen and (min-width: 480px) {
+      .blockquote blockquote span.attribution {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .blockquote blockquote span.attribution {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .blockquote blockquote span.attribution {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .blockquote blockquote span.attribution {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .blockquote blockquote span.attribution {
+        font-size: 19px; } }
+
+.image {
+  margin: 0 auto; }
+  .image:before, .image:after {
+    content: "";
+    display: table; }
+  .image:after {
+    clear: both; }
+  .image .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 24px; }
+    .image .wrap:before, .image .wrap:after {
+      content: "";
+      display: table; }
+    .image .wrap:after {
+      clear: both; }
+  .image p {
+    padding: 3px 6px;
+    margin: 6px 0 12px;
     font-size: 12px;
-    outline: none;
-    cursor: pointer;
-    transition: all 120ms; }
-    #snappy .functions button:hover {
-      background: rgba(46, 177, 80, 0.7); }
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; }
+    @media screen and (min-width: 480px) {
+      .image p {
+        font-size: 12px; } }
+    @media screen and (min-width: 768px) {
+      .image p {
+        font-size: 12px; } }
+    @media screen and (min-width: 992px) {
+      .image p {
+        font-size: 13.5px; } }
+    @media screen and (min-width: 1200px) {
+      .image p {
+        font-size: 15px; } }
+    @media screen and (min-width: 1600px) {
+      .image p {
+        font-size: 15px; } }
+  .image strong, .image b {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; }
+  .image i {
+    font-style: italic; }
+  .image [contenteditable=true] {
+    outline-offset: 0; }
+
+.text {
+  margin: 0 auto; }
+  .text:before, .text:after {
+    content: "";
+    display: table; }
+  .text:after {
+    clear: both; }
+  .text .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 24px; }
+    .text .wrap:before, .text .wrap:after {
+      content: "";
+      display: table; }
+    .text .wrap:after {
+      clear: both; }
+  .text p {
+    margin-bottom: 12px;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400; }
+    @media screen and (min-width: 480px) {
+      .text p {
+        font-size: 12px; } }
+    @media screen and (min-width: 768px) {
+      .text p {
+        font-size: 12px; } }
+    @media screen and (min-width: 992px) {
+      .text p {
+        font-size: 13.5px; } }
+    @media screen and (min-width: 1200px) {
+      .text p {
+        font-size: 15px; } }
+    @media screen and (min-width: 1600px) {
+      .text p {
+        font-size: 15px; } }
+  .text strong, .text b {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700; }
+  .text i {
+    font-style: italic; }
+  .text ul, .text ol {
+    display: block;
+    padding: 24px; }
+    .text ul li, .text ol li {
+      position: relative;
+      margin-bottom: 12px;
+      display: block; }
+      .text ul li:before, .text ol li:before {
+        position: absolute;
+        content: '';
+        display: block;
+        background: #2eb150;
+        width: 4px;
+        height: 4px;
+        display: block;
+        left: -12px;
+        top: 10px; }
+
+.video {
+  max-width: 1140px;
+  margin: 0 auto; }
+  .video:before, .video:after {
+    content: "";
+    display: table; }
+  .video:after {
+    clear: both; }
 
 #snappy #snappySidebar {
   position: fixed;
@@ -1064,61 +1400,6 @@ form.loading .loader {
       position: relative;
       display: block;
       padding-bottom: 33.33333%; }
-
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(../fonts/MaterialIcons-Regular.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype"); }
-
-.material-icons {
-  font-family: 'Material Icons';
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  /* Support for all WebKit browsers. */
-  -webkit-font-smoothing: antialiased;
-  /* Support for Safari and Chrome. */
-  text-rendering: optimizeLegibility;
-  /* Support for Firefox. */
-  -moz-osx-font-smoothing: grayscale;
-  /* Support for IE. */
-  -webkit-font-feature-settings: 'liga';
-          font-feature-settings: 'liga'; }
-
-#snappy {
-  width: 100%;
-  height: 100%; }
-  #snappy #snappyContent {
-    transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    width: 100%;
-    height: 100%;
-    padding-top: 100px; }
-
-.contentModule {
-  padding: 24px; }
-
-[contenteditable=true] {
-  outline: none; }
-
-.editMode {
-  outline: 1px solid rgba(46, 177, 80, 0.5);
-  outline-offset: -1px; }
-  .editMode [contenteditable=true] {
-    outline: 1px dashed rgba(122, 122, 122, 0.5);
-    outline-offset: -4px; }
 
 /*
 
@@ -1249,74 +1530,6 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 
 .hljs-strong {
   font-weight: bold; }
-
-.text {
-  margin: 0 auto; }
-  .text:before, .text:after {
-    content: "";
-    display: table; }
-  .text:after {
-    clear: both; }
-  .text .wrap {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 24px; }
-    .text .wrap:before, .text .wrap:after {
-      content: "";
-      display: table; }
-    .text .wrap:after {
-      clear: both; }
-  .text p {
-    margin-bottom: 12px;
-    font-size: 12px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400; }
-    @media screen and (min-width: 480px) {
-      .text p {
-        font-size: 12px; } }
-    @media screen and (min-width: 768px) {
-      .text p {
-        font-size: 12px; } }
-    @media screen and (min-width: 992px) {
-      .text p {
-        font-size: 13.5px; } }
-    @media screen and (min-width: 1200px) {
-      .text p {
-        font-size: 15px; } }
-    @media screen and (min-width: 1600px) {
-      .text p {
-        font-size: 15px; } }
-  .text strong, .text b {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700; }
-  .text i {
-    font-style: italic; }
-  .text ul, .text ol {
-    display: block;
-    padding: 24px; }
-    .text ul li, .text ol li {
-      position: relative;
-      margin-bottom: 12px;
-      display: block; }
-      .text ul li:before, .text ol li:before {
-        position: absolute;
-        content: '';
-        display: block;
-        background: #2eb150;
-        width: 4px;
-        height: 4px;
-        display: block;
-        left: -12px;
-        top: 10px; }
-
-.video {
-  max-width: 1140px;
-  margin: 0 auto; }
-  .video:before, .video:after {
-    content: "";
-    display: table; }
-  .video:after {
-    clear: both; }
 
 #wysiwyg {
   position: fixed;

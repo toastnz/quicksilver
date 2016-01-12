@@ -5,7 +5,7 @@ let colorPicker;
 
 $('#wysiwyg').on('click', 'button', function(e) {
   let action= $(this).attr('data-action');
-  log('action=> ' + action);
+  log('action => ' + action);
   switch(action) {
     case 'h1':
     case 'h2':
@@ -14,9 +14,9 @@ $('#wysiwyg').on('click', 'button', function(e) {
     case 'h5':
     case 'h6':
     case 'p':
-    document.execCommand('formatBlock', false, action);
+    document.execCommand('heading', false, action);
     break;
-    case 'foreColor':
+    case 'foreColor':  
     chooseColour();
     default:
     document.execCommand(action, false, null);
