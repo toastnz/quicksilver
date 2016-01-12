@@ -24,6 +24,12 @@
  </div>
  `;
 
+ modules.video = `
+ <div class="module contentModule video">
+ <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://www.youtube.com/embed/e-ORhEE9VVg' frameborder='0' allowfullscreen></iframe></div>
+ </div>
+ `;
+
  export function create(type){
  	return modules[type];
  }
@@ -46,6 +52,10 @@
  */
  export function enterEditMode($el){
  	exitEditMode();
+ 	if(!$el.hasClass('editMode')){
+ 		$el.find("[contenteditable='true']").first().focus();
+ 		log('Focusing on first editable item');
+ 	}
  	$el.addClass('editMode');
  	log('enterEditMode() => Entering edit mode');
  }
@@ -59,9 +69,9 @@
  	enterEditMode($(this));
  });
 
-$snappy.mouseup(function (e) {
-	var container = $('.contentModule');
-	if (!container.is(e.target) && container.has(e.target).length === 0){
-		exitEditMode();
-	}
-});
+ $snappy.mouseup(function (e) {
+ 	var container = $('.contentModule');
+ 	if (!container.is(e.target) && container.has(e.target).length === 0){
+ 		exitEditMode();
+ 	}
+ });

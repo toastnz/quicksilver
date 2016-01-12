@@ -55,11 +55,11 @@ $max-width: 1140px;
 	padding:24px;
 }
 
-[contenteditable=true]:focus {
-	outline:1px dashed rgba($grey,0.5);
-}
 
 .editMode{
 	outline:1px solid rgba($green,0.5); 
 	outline-offset:-1px;
+  [contenteditable=true] {
+    outline:1px dashed rgba($grey,0.5);
+  }
 }

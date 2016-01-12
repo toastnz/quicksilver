@@ -1110,22 +1110,28 @@ form.loading .loader {
 .contentModule {
   padding: 24px; }
 
-[contenteditable=true]:focus {
-  outline: 1px dashed rgba(122, 122, 122, 0.5); }
-
 .editMode {
   outline: 1px solid rgba(46, 177, 80, 0.5);
   outline-offset: -1px; }
+  .editMode [contenteditable=true] {
+    outline: 1px dashed rgba(122, 122, 122, 0.5); }
 
 .text {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding-left: 24px; }
+  margin: 0 auto; }
   .text:before, .text:after {
     content: "";
     display: table; }
   .text:after {
     clear: both; }
+  .text .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 24px; }
+    .text .wrap:before, .text .wrap:after {
+      content: "";
+      display: table; }
+    .text .wrap:after {
+      clear: both; }
   .text p {
     margin-bottom: 12px;
     font-size: 12px;
@@ -1168,6 +1174,15 @@ form.loading .loader {
         display: block;
         left: -12px;
         top: 10px; }
+
+.video {
+  max-width: 1140px;
+  margin: 0 auto; }
+  .video:before, .video:after {
+    content: "";
+    display: table; }
+  .video:after {
+    clear: both; }
 
 #wysiwyg {
   position: fixed;

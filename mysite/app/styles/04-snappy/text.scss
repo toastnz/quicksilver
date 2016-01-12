@@ -4,9 +4,13 @@
 
 .text{
 	@include clearfix;
-	max-width:$max-width;
 	margin:0 auto;
-	padding-left:24px;
+	.wrap{
+		@include clearfix;
+		max-width:$max-width;
+		margin:0 auto;
+		padding:24px;
+	}
 	p{
 		margin-bottom:12px;
 		@include font($p); 
