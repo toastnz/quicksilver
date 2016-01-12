@@ -10,6 +10,7 @@
  import logging from './logging';
  import * as sidebar from './sidebar'; 
  import * as module from './modules'; 
+ import * as wysiwyg from './wysiwyg'; 
 
  const $modules = $('#modules'); 
  const $snappyContent = $('#snappyContent');

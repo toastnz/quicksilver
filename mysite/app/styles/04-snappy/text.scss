@@ -1,0 +1,40 @@
+//==================================================================
+// Blockquote
+//==================================================================
+
+.text{
+	@include clearfix;
+	max-width:$max-width;
+	margin:0 auto;
+	padding-left:24px;
+	p{
+		margin-bottom:12px;
+		@include font($p); 
+		@include regular;
+	}
+	strong,b {
+		@include bold;
+	}
+	i{
+		font-style:italic;
+	}
+	ul,ol{
+		display:block;
+		padding:24px;
+		li{
+			position:relative;
+			margin-bottom:12px;
+			display:block;
+			&:before{
+				@include pseudo;
+				background:$green;
+				width:4px;
+				height:4px;
+				display:block;
+				left:-12px;
+				top:10px;
+			}
+		}
+	}
+
+}

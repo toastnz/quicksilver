@@ -96,7 +96,7 @@ gulp.task('lint', function () {
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
     return gulp.src([dist + 'js/output.js'])
-        .pipe(uglify()).pipe(strip()).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
+        .pipe(uglify()).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
 });
 
 

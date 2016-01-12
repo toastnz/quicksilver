@@ -982,12 +982,44 @@ form.loading .loader {
   opacity: 1;
 }
 
-.blockquote blockquote strong {
-  font-size: 20.8px;
+.blockquote:before,
+.blockquote:after {
+  content: "";
+  display: table;
 }
 
-.blockquote blockquote strong {
-  font-size: 20.8px;
+.blockquote:after {
+  clear: both;
+}
+
+.blockquote blockquote {
+  margin: 0 auto;
+  max-width: 868px;
+  border-left: 5px solid #2eb150;
+  padding-left: 24px;
+}
+
+.blockquote blockquote p {
+  padding: 12px;
+  font-size: 15.2px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+.blockquote blockquote p {
+  font-size: 15.2px;
+}
+
+.blockquote blockquote span.attribution {
+  font-size: 15.2px;
+  float: right;
+  padding: 12px;
+  margin: 0;
+  font-style: italic;
+}
+
+.blockquote blockquote span.attribution {
+  font-size: 15.2px;
 }
 
 .gu-mirror {
@@ -1011,6 +1043,7 @@ form.loading .loader {
 
 .gu-mirror.contentModule {
   opacity: 0.8;
+  background: white;
   height: auto !important;
   left: 260px !important;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
@@ -1126,6 +1159,41 @@ form.loading .loader {
   padding-bottom: 33.33333%;
 }
 
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/MaterialIcons-Regular.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(../fonts/MaterialIcons-Regular.woff2) format("woff2"), url(../fonts/MaterialIcons-Regular.woff) format("woff"), url(../fonts/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+  /* Support for IE. */
+  -webkit-font-feature-settings: 'liga';
+  font-feature-settings: 'liga';
+}
+
 #snappy {
   width: 100%;
   height: 100%;
@@ -1135,20 +1203,197 @@ form.loading .loader {
   transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   width: 100%;
   height: 100%;
+  padding-top: 100px;
 }
 
 .contentModule {
-  position: relative;
-  background: rgba(46, 177, 80, 0.4);
   padding: 24px;
-  transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
 }
 
-.contentModule:after {
-  content: '';
-  position: relative;
+[contenteditable=true]:focus {
+  outline: 1px dashed rgba(122, 122, 122, 0.5);
+}
+
+.editMode {
+  outline: 1px solid rgba(46, 177, 80, 0.5);
+  outline-offset: -1px;
+}
+
+.text {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding-left: 24px;
+}
+
+.text:before,
+.text:after {
+  content: "";
+  display: table;
+}
+
+.text:after {
+  clear: both;
+}
+
+.text p {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.text p {
+  font-size: 12px;
+}
+
+.text strong,
+.text b {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.text i {
+  font-style: italic;
+}
+
+.text ul,
+.text ol {
   display: block;
-  padding-bottom: 16.66667%;
+  padding: 24px;
+}
+
+.text ul li,
+.text ol li {
+  position: relative;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.text ul li:before,
+.text ol li:before {
+  position: absolute;
+  content: '';
+  display: block;
+  background: #2eb150;
+  width: 4px;
+  height: 4px;
+  display: block;
+  left: -12px;
+  top: 10px;
+}
+
+#wysiwyg {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 600px;
+  top: 40px;
+  -webkit-transform: translateX(130px);
+  transform: translateX(130px);
+  background: #e1e1e1;
+  border-radius: 3px;
+  text-align: center;
+  z-index: 9;
+}
+
+#wysiwyg button {
+  outline: none;
+  padding: 0;
+  margin: 0 3px;
+  margin: 3px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+#wysiwyg button i {
+  color: #333;
+  font-size: 24px;
+}
+
+#wysiwyg a {
+  font-size: 0;
+  color: #333;
+  position: relative;
+}
+
+#wysiwyg a:hover ul {
+  opacity: 1;
+  visibility: visible;
+}
+
+#wysiwyg a ul {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  width: 160px;
+  left: 0;
+  margin-top: 2px;
+  background: #eeeeee;
+}
+
+#wysiwyg a ul li {
+  text-align: left;
+}
+
+#wysiwyg a ul li button {
+  padding: 3px 12px;
+  font-size: 12px;
+}
+
+#wysiwyg a ul li button {
+  font-size: 12px;
+}
+
+#wysiwyg a ul li button[data-action="h1"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+#wysiwyg a ul li button[data-action="h1"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+}
+
+#wysiwyg a ul li button[data-action="h2"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+#wysiwyg a ul li button[data-action="h3"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+#wysiwyg a ul li button[data-action="h4"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+#wysiwyg a ul li button[data-action="h5"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+}
+
+#wysiwyg a ul li button[data-action="h6"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+#wysiwyg a ul li button[data-action="p"] {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+#output {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 300px;
+  width: 600px;
+  border: 1px solid red;
 }
 
 /*# sourceMappingURL=style.css.map */

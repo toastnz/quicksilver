@@ -1,0 +1,92 @@
+//==================================================================
+// WYSIWYG
+//==================================================================
+
+#wysiwyg{
+	position:fixed;
+	left:0;
+	right:0;
+	margin:0 auto;
+	width:600px;
+	top:40px;
+	transform:translateX(130px);
+	background:#e1e1e1;
+	border-radius:3px;
+	text-align:center;
+	z-index:9;
+	button{
+		outline:none;
+		padding:0;
+		margin:0 3px;
+		margin:3px;
+		cursor:pointer;
+		background:transparent;
+		border:0;
+		i{
+			color:#333;
+			font-size:24px;
+		}
+	}
+	a{
+		font-size:0;
+		color:#333;
+		position:relative;
+		&:hover{
+			ul{
+				opacity:1;
+				visibility:visible;
+			}
+		}
+		ul{
+			opacity:0;
+			visibility:hidden;
+			position:absolute;
+			top:100%;
+			width:160px;
+			left:0;
+			margin-top:2px;
+			background:lighten(#e1e1e1, 5%);
+			li{
+				text-align:left;
+				button{
+					padding:3px 12px; 
+					@include font($p);
+					&[data-action="h1"]{
+						@include extra-bold;
+					}
+					&[data-action="h1"]{
+						@include extra-bold;
+					}
+					&[data-action="h2"]{
+						@include bold;
+					}
+					&[data-action="h3"]{
+						@include bold;
+					}
+					&[data-action="h4"]{
+						@include semi;
+					}
+					&[data-action="h5"]{
+						@include semi;
+					}
+					&[data-action="h6"]{
+						@include regular;
+					}
+					&[data-action="p"]{
+						@include light;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+#output{
+	position:fixed;
+	right:0;
+	bottom:0;
+	height:300px;
+	width:600px;
+	border:1px solid red;
+}
