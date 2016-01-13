@@ -1487,8 +1487,8 @@ form.loading .loader {
 }
 
 .image p {
-  padding: 12px 0;
-  margin-bottom: 12px;
+  padding: 3px 6px;
+  margin: 6px 0 12px;
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
@@ -1506,6 +1506,10 @@ form.loading .loader {
 
 .image i {
   font-style: italic;
+}
+
+.image [contenteditable=true] {
+  outline-offset: 0;
 }
 
 .text {
@@ -1536,6 +1540,16 @@ form.loading .loader {
 
 .text .wrap:after {
   clear: both;
+}
+
+.text h1,
+.text h2,
+.text h3,
+.text h4,
+.text h5,
+.text h6,
+.text p {
+  line-height: 1.6;
 }
 
 .text p {
@@ -1626,6 +1640,11 @@ form.loading .loader {
   -webkit-transform: translateX(260px);
   transform: translateX(260px);
   width: calc(100% - 260px);
+}
+
+#snappy.sidebarOpen #wysiwyg {
+  -webkit-transform: translateX(120px) translateY(0);
+  transform: translateX(120px) translateY(0);
 }
 
 #snappy #modules {
@@ -1818,17 +1837,17 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   margin: 0 auto;
   width: 600px;
   top: 40px;
-  -webkit-transform: translateX(130px);
-  transform: translateX(130px);
+  -webkit-transform: translateX(130px) translateY(-80px);
+  transform: translateX(130px) translateY(-80px);
   background: #e1e1e1;
   border-radius: 3px;
   text-align: center;
   z-index: 9;
+  transition: all 480ms;
 }
 
 #wysiwyg button {
   outline: none;
-  padding: 0;
   cursor: pointer;
   background: transparent;
   border: 0;

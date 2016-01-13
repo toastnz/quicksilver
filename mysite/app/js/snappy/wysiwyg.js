@@ -3,15 +3,17 @@ const alertify = require('alertify.js');
 
 let colorPicker;
 let selectedText;
+let sel;
 
 $('#wysiwyg').on('click', 'button', function (e) {
     e.preventDefault();
-    selectedText = document.getSelection();
     let action = $(this).attr('data-action');
     log('action => ' + action);
     switch (action) {
         case 'insert_link':
-            createLink(selectedText);
+            selectedText = saveSelection();
+            createLink();
+            break;
         case 'h1':
         case 'h2':
         case 'h3':
@@ -19,32 +21,18 @@ $('#wysiwyg').on('click', 'button', function (e) {
         case 'h5':
         case 'h6':
         case 'p':
-            document.execCommand('heading', false, action);
+            document.execCommand('formatBlock', false, action);
             break;
         case 'foreColor':
             chooseColour();
+            break;
         default:
             document.execCommand(action, false, null);
             break;
     }
     update_output();
-})
+});
 
-function makeLink(link) {
-    console.log(selectedText.toString())
-    document.execCommand("insertHTML", false, "<a href='" + link + "'>" + selectedText + "</a>");
-}
-
-function createLink(selectedText) {
-    var link = link || 'fdsfdsfd';
-    //document.execCommand("insertHTML", false, "<a href='" + link + "'>" + selectedText + "</a>");
-
-    alertify.prompt("Enter a URL to link to",
-        function (link) {
-            makeLink(link)
-        }, function () {
-        });
-}
 
 function chooseColour() {
     colorPicker = new ColorPicker({
@@ -63,7 +51,7 @@ function chooseColour() {
 $('body').mouseup(function (e) {
     let container = $('.Scp');
     if (!container.is(e.target) && container.has(e.target).length === 0 && colorPicker !== undefined) {
-        log(colorPicker)
+        log('created new colour picker');
         colorPicker.remove();
     }
 });
@@ -71,7 +59,7 @@ $('body').mouseup(function (e) {
 
 $('.contentModule').bind('blur keyup paste copy cut mouseup', function (e) {
     update_output($(this));
-})
+});
 
 function update_output($el) {
     if ($el) {
@@ -79,3 +67,44 @@ function update_output($el) {
         $('#output').text(content);
     }
 }
+
+function saveSelection() {
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            let ranges = [];
+            for (var i = 0, len = sel.rangeCount; i < len; ++i) {
+                ranges.push(sel.getRangeAt(i));
+            }
+            return ranges;
+        }
+    } else if (document.selection && document.selection.createRange) {
+        return document.selection.createRange();
+    }
+    return null;
+}
+
+function restoreSelection(savedSel) {
+    if (savedSel) {
+        if (window.getSelection) {
+            sel = window.getSelection();
+            sel.removeAllRanges();
+            for (var i = 0, len = savedSel.length; i < len; ++i) {
+                sel.addRange(savedSel[i]);
+            }
+        } else if (document.selection && savedSel.select) {
+            savedSel.select();
+        }
+    }
+}
+
+
+function createLink() {
+    alertify.prompt("Enter a URL to link to", function (url) {
+        restoreSelection(selectedText);
+        document.execCommand("CreateLink", false, url);
+    }, function () {
+        return false;
+    });
+}
+

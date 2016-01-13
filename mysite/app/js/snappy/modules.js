@@ -5,7 +5,7 @@ const _ = require('underscore');
 const alertify = require('alertify.js');
 const $snappy = $('#snappy');
 
-const SwiftVideos = ['QcIy9NiNbmo', 'IdneKLhsWOQ', '-CmadmM5cOk', '8xg3vE8Ie_E', 'jYa1eI1hpDE', 'e-ORhEE9VVg'];
+const SwiftVideos = ['e-ORhEE9VVg'];
 const modules = {};
 const text = {
     heading  : `Lets get some mullet grundies.`,
@@ -37,7 +37,10 @@ let templates = {
 
     video: function () {
         return `<div class="module contentModule video">
-                    <img style="width:100%;height:auto;" src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+                    <div class="image" style="background-image:url('http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg');">
+                        <a href="#" class="material-icons">play_circle_outline
+                        </a>
+                    </div>
                 </div>`;
     },
 

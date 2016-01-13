@@ -22,6 +22,9 @@
 			transform:translateX($sidebar-width);
 			width:calc(100% - #{$sidebar-width}); 
 		}
+		#wysiwyg{
+			transform:translateX(120px) translateY(0);
+		}
 	}
 
 	#modules{

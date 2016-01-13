@@ -2,43 +2,46 @@
 // Blockquote
 //==================================================================
 
-.text{
-	@include clearfix; 
-	margin:0 auto;
-	.wrap{
-		@include clearfix;
-		max-width:$max-width;
-		margin:0 auto;
-		padding:24px;
-	}
-	p{
-		margin-bottom:12px;
-		@include font($p); 
-		@include regular;
-	}
-	strong,b {
-		@include bold;
-	}
-	i{
-		font-style:italic;
-	}
-	ul,ol{
-		display:block;
-		padding:24px;
-		li{
-			position:relative;
-			margin-bottom:12px;
-			display:block;
-			&:before{
-				@include pseudo;
-				background:$green;
-				width:4px;
-				height:4px;
-				display:block;
-				left:-12px;
-				top:10px;
-			}
-		}
-	}
+.text {
+    @include clearfix;
+    margin: 0 auto;
+    .wrap {
+        @include clearfix;
+        max-width: $max-width;
+        margin: 0 auto;
+        //padding: 12px;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+        line-height: 1.6;
+    }
+    p {
+        margin-bottom: 12px;
+        @include font($p);
+        @include regular;
+    }
+    strong, b {
+        @include bold;
+    }
+    i {
+        font-style: italic;
+    }
+    ul, ol {
+        display: block;
+        padding: 24px;
+        li {
+            position: relative;
+            margin-bottom: 12px;
+            display: block;
+            &:before {
+                @include pseudo;
+                background: $green;
+                width: 4px;
+                height: 4px;
+                display: block;
+                left: -12px;
+                top: 10px;
+            }
+        }
+    }
 
 }

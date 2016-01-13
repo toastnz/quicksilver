@@ -2,24 +2,26 @@
 // Blockquote
 //==================================================================
 
-.blockquote{
-	@include clearfix;
-	blockquote{
-		margin:0 auto;
-		max-width:868px;
-		border-left:5px solid $green;
-		padding-left:24px;
-		p{
-			padding:12px;
-			@include font($h6); 
-			@include extra-bold;
-		}
-		span.attribution{
-			@include font($h6); 
-			float:right;
-			padding:12px;
-			margin:0;
-			font-style:italic;
-		}
-	}
+.blockquote {
+    @include clearfix;
+    blockquote {
+        margin: 0 auto;
+        max-width: 868px;
+        border-left: 5px solid $green;
+        padding-left: 24px;
+        p {
+            padding: 12px;
+            @include font($h6);
+            @include extra-bold;
+            position: relative;
+        }
+        span.attribution {
+            @include font($h6);
+            float: right;
+            margin: 0 0 1px 0;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+    }
 }
