@@ -12,7 +12,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <![endif]-->
     <%-- Custom type to be inserted here --%>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600|Lora:400,400italic,700,700italic" rel="stylesheet" type="text/css">
+    <%--<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>--%>
 
     <% with $SiteConfig %>
         <link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>
@@ -73,45 +74,42 @@
     <div id="snappySidebar">
         <div id="modules">
             <div class="module sidebarModule" data-module-type="blockquote">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">blockquote</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="text">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">text</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="image">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">image</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="imagetext">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">Image & Text</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="video">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">video</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="accordian">
+                <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">Accordian</h5>
             </div>
         </div>
     </div>
 
     <div id="snappyContent">
-        <div class="module contentModule text">
-            <div class="wrap" contenteditable="true">
-                <h4>Lets get some mullet grundies.</h4>
-                <p>Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.</p>
-                <p>Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.</p>
-            </div>
-        </div>
 
     </div>
 
     <div class="functions">
-        <button class="[ js-close-sidebar ]">closeSidebar</button>
-        <button class="[ js-open-sidebar ]">openSidebar</button>
         <button class="[ js-toggle-sidebar ]">toggleSidebar</button>
     </div>
 

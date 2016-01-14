@@ -23,6 +23,9 @@ dragula([$modules[0], $snappyContent[0]], {
     },
     accepts: function (el, target) {
         return target === $snappyContent[0];
+    },
+    moves  : function (el, container, handle) {
+        return handle.className === 'js-drag';
     }
 }).on('drop', function (el, target) {
     if (target === $snappyContent[0]) {
@@ -39,3 +42,13 @@ dragula([$modules[0], $snappyContent[0]], {
 
 sidebar.open();
 
+$snappyContent.append($(module.create('text')));
+$snappyContent.append($(module.create('blockquote')));
+$snappyContent.append($(module.create('text')));
+
+console.log(module.moduleEdit());
+
+$snappyContent.on('click', '.js-edit-html', function () {
+    let html = `<pre contenteditable="true">${$(this).closest('.contentModule').html()}</pre>`;
+
+});

@@ -1,27 +1,25 @@
 //==================================================================
 // Blockquote
 //==================================================================
-
-.text {
-    @include clearfix;
-    margin: 0 auto;
-    .wrap {
-        @include clearfix;
-        max-width: $max-width;
-        margin: 0 auto;
-        //padding: 12px;
-    }
-    h1, h2, h3, h4, h5, h6, p {
-        line-height: 1.6;
+.contentModule {
+    color: #333;
+    h1, h2, h3, h4, h5, h6 {
+        line-height: 1.3;
+        @include bold;
+        margin-bottom: 12px;
+        strong, b {
+            @include bold;
+        }
     }
     p {
         margin-bottom: 12px;
         @include font($p);
-        @include regular;
+        @include lora-regular;
     }
     strong, b {
-        @include bold;
+        @include lora-bold;
     }
+
     i {
         font-style: italic;
     }
@@ -42,6 +40,16 @@
                 top: 10px;
             }
         }
+    }
+}
+
+.text {
+    @include clearfix;
+    margin: 0 auto;
+    .wrap {
+        @include clearfix;
+        max-width: $max-width;
+        margin: 0 auto;
     }
 
 }

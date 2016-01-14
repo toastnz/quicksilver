@@ -1051,22 +1051,82 @@ form.loading .loader {
   padding-top: 100px;
 }
 
-.contentModule {
-  padding: 24px;
+#snappyContent .contentModule {
+  padding: 6px;
+  position: relative;
+}
+
+#snappyContent .contentModule.editMode .moduleEdit {
+  -webkit-transform: translateX(0) translateY(-50%);
+  transform: translateX(0) translateY(-50%);
 }
 
 [contenteditable=true] {
   outline: none;
 }
 
-.editMode {
-  outline: 1px solid rgba(46, 177, 80, 0.5);
-  outline-offset: -1px;
+[contenteditable=true] {
+  outline: 1px solid transparent;
+  transition: outline 500ms ease;
+  outline-offset: 12px;
 }
 
-.editMode [contenteditable=true] {
-  outline: 1px dashed rgba(122, 122, 122, 0.5);
-  outline-offset: -4px;
+[contenteditable=true]:focus,
+[contenteditable=true]:hover {
+  outline: 1px solid #3498db;
+}
+
+.moduleEdit {
+  display: block;
+  position: absolute;
+  z-index: 3;
+  left: 2px;
+  transition: all 360ms;
+  top: 50%;
+  -webkit-transform: translateX(-40px) translateY(-50%);
+  transform: translateX(-40px) translateY(-50%);
+}
+
+.moduleEdit span {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  display: block;
+  text-align: center;
+  padding: 2px;
+  cursor: pointer;
+  transition: all 120ms;
+  margin-bottom: -1px;
+}
+
+.moduleEdit span i {
+  font-style: normal !important;
+  color: white;
+}
+
+.moduleEdit span.red {
+  border-radius: 0 0 3px 3px;
+  background: #ec4c68;
+}
+
+.moduleEdit span.red:hover {
+  background: #ea3555;
+}
+
+.moduleEdit span.green {
+  border-radius: 3px 3px 0 0;
+  background: #2eb150;
+}
+
+.moduleEdit span.green:hover {
+  background: #299d47;
+}
+
+.moduleEdit span.blue {
+  background: #00afec;
+}
+
+.moduleEdit span.blue:hover {
+  background: #009cd3;
 }
 
 .alertify,
@@ -1369,12 +1429,20 @@ form.loading .loader {
   padding-bottom: 33.33333%;
 }
 
+.gu-mirror.sidebarModule .moduleEdit {
+  display: none !important;
+}
+
 .gu-mirror.contentModule {
   opacity: 0.8;
   background: white;
   height: auto !important;
   left: 260px !important;
   box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
+}
+
+.gu-mirror.contentModule .moduleEdit {
+  display: none !important;
 }
 
 .gu-hide {
@@ -1398,22 +1466,32 @@ form.loading .loader {
   width: 100%;
   height: 30px;
   transition: all 240ms;
-  background: #b9b7b7 !important;
+  background: #2eb150 !important;
+  opacity: 0.8;
 }
 
 .gu-transit.sidebarModule * {
   display: none;
 }
 
+.gu-transit.sidebarModule .moduleEdit {
+  display: none !important;
+}
+
 .gu-transit.contentModule {
   width: 100%;
-  height: 0px;
+  height: 30px;
   transition: all 240ms;
-  background: #b9b7b7 !important;
+  background: #2eb150 !important;
+  opacity: 0.8;
 }
 
 .gu-transit.contentModule * {
   display: none;
+}
+
+.gu-transit.contentModule .moduleEdit {
+  display: none !important;
 }
 
 .blockquote:before,
@@ -1427,28 +1505,24 @@ form.loading .loader {
 }
 
 .blockquote blockquote {
-  margin: 0 auto;
+  margin: 48px auto;
   max-width: 868px;
   border-left: 5px solid #2eb150;
   padding-left: 24px;
+  width: calc(100% - 72px);
 }
 
 .blockquote blockquote p {
   padding: 12px;
-  font-size: 15.2px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 800;
-}
-
-.blockquote blockquote p {
-  font-size: 15.2px;
+  position: relative;
 }
 
 .blockquote blockquote span.attribution {
   font-size: 15.2px;
   float: right;
-  padding: 12px;
-  margin: 0;
+  margin: 0 0 1px 0;
+  position: relative;
+  z-index: 1;
   font-style: italic;
 }
 
@@ -1473,7 +1547,6 @@ form.loading .loader {
 .image .wrap {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 24px;
 }
 
 .image .wrap:before,
@@ -1512,6 +1585,63 @@ form.loading .loader {
   outline-offset: 0;
 }
 
+#snappyContent h1,
+#snappyContent h2,
+#snappyContent h3,
+#snappyContent h4,
+#snappyContent h5,
+#snappyContent h6,
+#snappyContent p {
+  line-height: 1.6;
+}
+
+#snappyContent p {
+  margin-bottom: 12px;
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+#snappyContent p {
+  font-size: 12px;
+}
+
+#snappyContent strong,
+#snappyContent b {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+#snappyContent i {
+  font-style: italic;
+}
+
+#snappyContent ul,
+#snappyContent ol {
+  display: block;
+  padding: 24px;
+}
+
+#snappyContent ul li,
+#snappyContent ol li {
+  position: relative;
+  margin-bottom: 12px;
+  display: block;
+}
+
+#snappyContent ul li:before,
+#snappyContent ol li:before {
+  position: absolute;
+  content: '';
+  display: block;
+  background: #2eb150;
+  width: 4px;
+  height: 4px;
+  display: block;
+  left: -12px;
+  top: 10px;
+}
+
 .text {
   margin: 0 auto;
 }
@@ -1529,7 +1659,6 @@ form.loading .loader {
 .text .wrap {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 24px;
 }
 
 .text .wrap:before,
@@ -1542,65 +1671,7 @@ form.loading .loader {
   clear: both;
 }
 
-.text h1,
-.text h2,
-.text h3,
-.text h4,
-.text h5,
-.text h6,
-.text p {
-  line-height: 1.6;
-}
-
-.text p {
-  margin-bottom: 12px;
-  font-size: 12px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-}
-
-.text p {
-  font-size: 12px;
-}
-
-.text strong,
-.text b {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
-}
-
-.text i {
-  font-style: italic;
-}
-
-.text ul,
-.text ol {
-  display: block;
-  padding: 24px;
-}
-
-.text ul li,
-.text ol li {
-  position: relative;
-  margin-bottom: 12px;
-  display: block;
-}
-
-.text ul li:before,
-.text ol li:before {
-  position: absolute;
-  content: '';
-  display: block;
-  background: #2eb150;
-  width: 4px;
-  height: 4px;
-  display: block;
-  left: -12px;
-  top: 10px;
-}
-
 .video {
-  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -1612,6 +1683,49 @@ form.loading .loader {
 
 .video:after {
   clear: both;
+}
+
+.video .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.video .image {
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  -ms-behavior: url(/backgroundsize.min.htc);
+  position: relative;
+}
+
+.video .image:after {
+  content: '';
+  position: relative;
+  display: block;
+  padding-bottom: 56.25%;
+}
+
+.video .image a {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  color: white;
+  width: 100%;
+  opacity: 0.5;
+  transition: all 240ms;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-style: normal;
+  font-size: 90px;
+  cursor: pointer;
+  text-decoration: none;
+  z-index: 1;
+}
+
+.video .image a:hover {
+  opacity: 1;
 }
 
 #snappy #snappySidebar {

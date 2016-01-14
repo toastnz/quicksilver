@@ -10,6 +10,18 @@
     url(../fonts/MaterialIcons-Regular.ttf) format('truetype');
 }
 
+$z1-shadow: 0 1px 3px rgba(#000, 0.12), 0 1px 2px rgba(#000, 0.24);
+$z2-shadow: 0 3px 6px rgba(#000, 0.16), 0 3px 6px rgba(#000, 0.23);
+$z3-shadow: 0 10px 20px rgba(#000, 0.19), 0 6px 6px rgba(#000, 0.23);
+$z4-shadow: 0 14px 28px rgba(#000, 0.25), 0 10px 10px rgba(#000, 0.22);
+$z5-shadow: 0 19px 38px rgba(#000, 0.30), 0 15px 12px rgba(#000, 0.22);
+
+$side-z1-shadow: 0 0 3px 0.75px rgba(#000, 0.12), 0 0 2px 0.5px rgba(#000, 0.24);
+$side-z2-shadow: 0 0 6px 1.5px rgba(#000, 0.16), 0 0 6px 1.5px rgba(#000, 0.23);
+$side-z3-shadow: 0 0 20px 5px rgba(#000, 0.19), 0 0 6px 1.5px rgba(#000, 0.23);
+$side-z4-shadow: 0 0 28px 7px rgba(#000, 0.25), 0 0 10px 2.5px rgba(#000, 0.22);
+$side-z5-shadow: 0 0 38px 9.5px rgba(#000, 0.30), 0 0 12px 3px rgba(#000, 0.22);
+
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -24,16 +36,9 @@
     word-wrap: normal;
     white-space: nowrap;
     direction: ltr;
-
-    /* Support for all WebKit browsers. */
     -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
     text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
     -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
     font-feature-settings: 'liga';
 }
 
@@ -52,17 +57,86 @@ $max-width: 1140px;
 
 .contentModule {
     padding: 6px;
+    position: relative;
+    &.editMode {
+        .moduleEdit {
+            transform: translateX(0) translateY(-50%);
+        }
+    }
 }
 
 [contenteditable=true] {
     outline: none;
 }
 
-.editMode {
-    outline: 1px solid rgba($green, 0.5);
-    outline-offset: -1px;
-    [contenteditable=true] {
-        background: #eaf7ee;
-        outline: 6px solid #eaf7ee;
+[contenteditable=true] {
+    outline: 1px solid transparent;
+    transition: outline 500ms ease;
+    outline-offset: 12px;
+    &:focus,
+    &:hover {
+        outline: 1px solid #3498db;
+    }
+}
+
+.js-drag {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    background: transparent;
+    z-index: 9;
+    display: block;
+}
+
+.moduleEdit {
+    display: block;
+    position: absolute;
+    z-index: 3;
+    left: 8px;
+    transition: all 360ms;
+    top: 50%;
+    transform: translateX(-40px) translateY(-50%);
+    box-shadow: $z3-shadow;
+    span {
+        backface-visibility: hidden;
+        display: block;
+        text-align: center;
+        padding: 2px;
+        cursor: pointer;
+        transition: all 120ms;
+        margin-bottom: -1px;
+        position: relative;
+        i {
+            font-style: normal !important;
+            color: white;
+        }
+        &.red {
+            border-radius: 0 0 3px 3px;
+            background: $red;
+            &:hover {
+                background: darken($red, 5%);
+            }
+        }
+        &.grey {
+            background: $purple;
+            &:hover {
+                background: darken($purple, 5%);
+            }
+        }
+        &.green {
+            border-radius: 3px 3px 0 0;
+            background: $green;
+            &:hover {
+                background: darken($green, 5%);
+            }
+        }
+        &.blue {
+            background: $blue;
+            &:hover {
+                background: darken($blue, 5%);
+            }
+        }
     }
 }

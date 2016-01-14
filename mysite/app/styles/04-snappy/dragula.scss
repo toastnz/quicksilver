@@ -6,19 +6,26 @@
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
-    &.sidebarModule{
-        background:white;
-        @include aspect(3,1);
-        -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
-        box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
+    &.sidebarModule {
+        background: white;
+        @include aspect(3, 1);
+        box-shadow: $z3-shadow;
+        .moduleEdit {
+            display: none !important;
+        }
     }
-    &.contentModule{
-        opacity: 0.8;
-        background:white;
-        height:auto !important;
-        left:260px !important;
-        -webkit-box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
-        box-shadow: 0 0 40px 0 rgba(0,0,0,0.4);
+    &.contentModule {
+        opacity: 0.9;
+        background: white;
+        height: auto !important;
+        box-shadow: $z5-shadow;
+        position: absolute;
+    }
+}
+
+.sidebarOpen {
+    .gu-mirror.contentModule {
+        left: 260px !important;
     }
 }
 
@@ -40,22 +47,30 @@
 }
 
 .gu-transit.sidebarModule {
-    width:100%;
-    height:30px;
-    transition:all 240ms;
-    background:$grey-light !important;
-    *{
-        display:none;
+    width: 100%;
+    height: 50px;
+    transition: all 240ms;
+    background: $green !important;
+    opacity: 0.8;
+    * {
+        display: none;
+    }
+    .moduleEdit {
+        display: none !important;
     }
 }
 
 .gu-transit.contentModule {
-    width:100%;
-    height:0px;
-    transition:all 240ms;
-    background:$grey-light !important;
-    *{
-        display:none;
+    width: 100%;
+    height: 50px;
+    transition: all 240ms;
+    background: $green !important;
+    opacity: 0.8;
+    * {
+        display: none;
+    }
+    .moduleEdit {
+        display: none !important;
     }
 }
 
