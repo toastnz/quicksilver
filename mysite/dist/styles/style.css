@@ -1315,6 +1315,30 @@ form.loading .loader {
       .blockquote blockquote span.attribution {
         font-size: 19px; } }
 
+.divider {
+  margin: 0 auto; }
+  .divider:before, .divider:after {
+    content: "";
+    display: table; }
+  .divider:after {
+    clear: both; }
+  .divider .wrap {
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center; }
+    .divider .wrap:before, .divider .wrap:after {
+      content: "";
+      display: table; }
+    .divider .wrap:after {
+      clear: both; }
+    .divider .wrap hr {
+      border: 0;
+      margin: 40px auto;
+      height: 3px;
+      background: #2eb150;
+      display: block;
+      width: 60%; }
+
 .image {
   margin: 0 auto; }
   .image:before, .image:after {

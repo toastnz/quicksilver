@@ -25,6 +25,15 @@ export function moduleEdit() {
 
 let templates = {
 
+    divider: function () {
+        return `<div class="contentModule divider">
+                    ${moduleEdit()}
+                    <div class="wrap">
+                        <hr>
+                    </div>                    
+                </div>`;
+    },
+
     blockquote: function () {
         return `<div class="module contentModule blockquote">
                     ${moduleEdit()}

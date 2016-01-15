@@ -83,6 +83,11 @@
                 <h5 class="vertical uppercase center">text</h5>
             </div>
 
+             <div class="module sidebarModule" data-module-type="divider">
+                <div class="js-drag"></div>
+                <h5 class="vertical uppercase center">divider</h5>
+            </div>
+
             <div class="module sidebarModule" data-module-type="image">
                 <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">image</h5>
