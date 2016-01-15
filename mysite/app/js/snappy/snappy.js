@@ -42,13 +42,13 @@ dragula([$modules[0], $snappyContent[0]], {
 
 sidebar.open();
 
+$snappyContent.on('click', '.js-edit-html', function () {
+   let html = `<pre contenteditable="true">${$(this).closest('.contentModule').html()}</pre>`;
+});
+
+$snappyContent.append($(module.create('video')));
 $snappyContent.append($(module.create('text')));
 $snappyContent.append($(module.create('blockquote')));
 $snappyContent.append($(module.create('text')));
-
-console.log(module.moduleEdit());
-
-$snappyContent.on('click', '.js-edit-html', function () {
-    let html = `<pre contenteditable="true">${$(this).closest('.contentModule').html()}</pre>`;
-
-});
+$snappyContent.append($(module.create('divider')));
+$snappyContent.append($(module.create('text')));

@@ -1217,6 +1217,9 @@ form.loading .loader {
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     position: absolute; }
 
+.gu-mirror.contentModule {
+  left: 0 !important; }
+
 .sidebarOpen .gu-mirror.contentModule {
   left: 260px !important; }
 
@@ -1333,9 +1336,9 @@ form.loading .loader {
       clear: both; }
     .divider .wrap hr {
       border: 0;
-      margin: 40px auto;
+      margin: 48px auto;
       height: 3px;
-      background: #2eb150;
+      background: #f8f6f7;
       display: block;
       width: 60%; }
 

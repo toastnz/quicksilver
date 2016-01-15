@@ -8,16 +8,16 @@ const $snappy = $('#snappy');
 const SwiftVideos = ['e-ORhEE9VVg'];
 const modules = {};
 const text = {
-    heading        : `Lets get some mullet grundies.`,
-    paragraph      : `Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback. Get a dog up ya dog's balls flaming mad as a troppo. Lets throw a bush telly my flat out like a dero. Flat out like a not my bowl of rice piece of piss fisho. Come a give it a burl flaming get a dog up ya grundies.`,
-    short_paragraph: `Lets get some mullet my as cross as a rego. As dry as a hottie how as cross as a outback  Get a dog up ya dog's balls flaming mad as a troppo throw a bush telly my flat out like a dero.`,
+    heading        : `Collaboratively administrate markets`,
+    paragraph      : `Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.`,
+    short_paragraph: `Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.`,
 };
 
 export function moduleEdit() {
     return `<div class="moduleEdit">
                 <span class="green"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
-                <span class="js-edit-settings grey"><i class="material-icons">settings</i></span>
-                <span class="js-edit-html blue"><i class="material-icons">code</i></span>
+                <span class="grey js-edit-settings"><i class="material-icons">settings</i></span>
+                <span class="blue js-edit-html"><i class="material-icons">code</i></span>
                 <span class="red"><i class="material-icons">delete</i></span>
             </div>`;
 
