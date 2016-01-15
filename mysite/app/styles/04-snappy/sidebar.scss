@@ -11,6 +11,31 @@ $sidebar-width: 260px;
     width: $sidebar-width;
     transform: translateX(-$sidebar-width);
     transition: $med;
+    .sidebar-handle {
+        background: #d9d9d9;
+        position: absolute;
+        bottom: 100px;
+        right: -40px;
+        width: 40px;
+        text-align: center;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+        box-shadow: $side-z1-shadow;
+        &:after {
+            @include pseudo;
+            left: -5px;
+            height: 100%;
+            background: #d9d9d9;
+            display: block;
+            top: 0;
+            right: 100%;
+        }
+        i {
+            font-size: 40px;
+            color: #333;
+            transition: all 480ms;
+        }
+    }
 }
 
 #modules {
@@ -30,6 +55,9 @@ $sidebar-width: 260px;
     #snappySidebar {
         box-shadow: $side-z1-shadow;
         transform: translateX(0);
+        .sidebar-handle i {
+            transform: rotate(180deg);
+        }
     }
     #snappyContent {
         transform: translateX($sidebar-width);
@@ -38,7 +66,6 @@ $sidebar-width: 260px;
     #wysiwyg {
         transform: translateX(120px) translateY(0);
         box-shadow: $z3-shadow;
-
     }
 }
 

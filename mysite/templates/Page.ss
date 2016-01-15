@@ -72,6 +72,9 @@
     <%--<pre><code id="output" class="html"></code></pre>--%>
 
     <div id="snappySidebar">
+        <div class="js-toggle-sidebar sidebar-handle">
+            <i class="material-icons">keyboard_arrow_right</i>
+        </div>
         <div id="modules">
             <div class="module sidebarModule" data-module-type="blockquote">
                 <div class="js-drag"></div>
@@ -83,7 +86,7 @@
                 <h5 class="vertical uppercase center">text</h5>
             </div>
 
-             <div class="module sidebarModule" data-module-type="divider">
+            <div class="module sidebarModule" data-module-type="divider">
                 <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">divider</h5>
             </div>
@@ -114,8 +117,12 @@
 
     </div>
 
-    <div class="functions">
-        <button class="[ js-toggle-sidebar ]">toggleSidebar</button>
+    <div class="dataModal">
+        <div class="wrap">
+            <textarea spellcheck="false" class="html"></textarea>
+            <button class="js-cancel-save-data destructive">Cancel</button>
+            <button class="js-save-data constructive">Save</button>
+        </div>
     </div>
 
 </div>

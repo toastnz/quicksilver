@@ -9,14 +9,15 @@
         @include clearfix;
         max-width: $max-width;
         margin: 0 auto;
-        text-align:center;
-        hr{
-            border:0;
-            margin:48px auto;
-            height:3px;
-            background:$off-white;
-            display:block;
-            width:60%;
+        text-align: center;
+        padding: 48px 0;
+        display: block;
+        hr {
+            border: 0;
+            height: 3px;
+            background: $grey;
+            display: block;
+            width: 60%;
         }
     }
 }

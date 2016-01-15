@@ -1,0 +1,171 @@
+.dataModal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba($white, 0.9);
+    transition: all 360ms;
+    z-index: 9999;
+    opacity: 0;
+    transform: scale(0.8);
+    visibility: hidden;
+    &.active {
+        opacity: 1;
+        transform: scale(1);
+        visibility: visible;
+        .wrap {
+            opacity: 1;
+            visibility: visible;
+            transform: scale(1) translateY(-50%);
+        }
+    }
+    .wrap {
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        max-width: 600px;
+        transition: all 480ms;
+        transition-delay: 120ms;
+        background: white;
+        box-shadow: $z5-shadow;
+        opacity: 0;
+        visibility: hidden;
+        @include vertical-align;
+        transform: scale(0.6) translateY(-80%);
+        textarea {
+            border: 0;
+            outline: none;
+            height: 400px;
+            //@include font($p);
+            //line-height: 1.4;
+
+            display: block;
+            width: 100%;
+            margin: 0;
+            font-size: 14px;
+            letter-spacing: 1px;
+            line-height: 1.7;
+            color: #000;
+            padding: 20px;
+            border-collapse: collapse;
+
+        }
+        button {
+            border: 0;
+            outline: none;
+            width: 50%;
+            display: block;
+            float: left;
+            padding: 12px;
+            @include font($p);
+            @include regular;
+        }
+    }
+}
+
+.destructive {
+    background: $red;
+    transition: all 120ms;
+    cursor: pointer;
+    &:hover {
+        background: darken($red, 3%);
+    }
+    &:active {
+        background: darken($red, 7%);
+    }
+    color: $white;
+}
+
+.constructive {
+    background: $green;
+    transition: all 120ms;
+    cursor: pointer;
+    &:hover {
+        background: darken($green, 3%);
+    }
+    &:active {
+        background: darken($green, 7%);
+    }
+    color: $white;
+}
+
+/*
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+
+.hljs {
+    display: block;
+    background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+    color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+    color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+    color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+    color: #a6e22e;
+}
+
+.hljs-strong {
+    font-weight: bold;
+}
+
+.hljs-emphasis {
+    font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+    color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+    color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+    color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+    color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+    color: #75715e;
+}

@@ -40,7 +40,7 @@ dragula([$modules[0], $snappyContent[0]], {
     }
 });
 
-sidebar.open();
+//sidebar.open();
 
 $snappyContent.on('click', '.js-edit-html', function () {
    let html = `<pre contenteditable="true">${$(this).closest('.contentModule').html()}</pre>`;
