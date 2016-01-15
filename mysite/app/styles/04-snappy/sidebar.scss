@@ -14,7 +14,7 @@ $sidebar-width: 260px;
     .sidebar-handle {
         background: #d9d9d9;
         position: absolute;
-        bottom: 100px;
+        top: 0;
         right: -40px;
         width: 40px;
         text-align: center;
@@ -63,6 +63,13 @@ $sidebar-width: 260px;
         transform: translateX($sidebar-width);
         width: calc(100% - #{$sidebar-width}) !important;
     }
+    #wysiwyg {
+        transform: translateX(120px) translateY(0);
+        box-shadow: $z3-shadow;
+    }
+}
+
+.textEditor {
     #wysiwyg {
         transform: translateX(120px) translateY(0);
         box-shadow: $z3-shadow;

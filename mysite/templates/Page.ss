@@ -67,9 +67,8 @@
         </a>
         <button data-action="foreColor"><i class="material-icons">format_color_text</i></button>
         <button data-action="insert_link"><i class="material-icons">insert_link</i></button>
+        <a href="#" class="js-close-textEditor"><i class="material-icons">close</i></a>
     </div>
-
-    <%--<pre><code id="output" class="html"></code></pre>--%>
 
     <div id="snappySidebar">
         <div class="js-toggle-sidebar sidebar-handle">
@@ -122,6 +121,14 @@
             <textarea spellcheck="false" class="html"></textarea>
             <button class="js-cancel-save-data destructive">Cancel</button>
             <button class="js-save-data constructive">Save</button>
+        </div>
+    </div>
+
+    <div class="deleteModal">
+        <div class="wrap">
+            <p>Are you sure you want to delete this block?</p>
+            <button class="js-confirm-delete destructive">Delete</button>
+            <button class="js-cancel-delete nominal">Cancel</button>
         </div>
     </div>
 

@@ -1052,6 +1052,16 @@ form.loading .loader {
   position: relative;
 }
 
+.contentModule ::-moz-selection {
+  color: #fff;
+  background: #2eb150;
+}
+
+.contentModule ::selection {
+  color: #fff;
+  background: #2eb150;
+}
+
 .contentModule.editMode .moduleEdit {
   -webkit-transform: translateX(0) translateY(-50%);
   transform: translateX(0) translateY(-50%);
@@ -1476,17 +1486,33 @@ form.loading .loader {
 }
 
 .dataModal .wrap textarea {
-  width: 100%;
-  height: 300px;
-  outline: none;
-  padding: 12px;
   border: 0;
-  resize: none;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  outline: none;
+  height: 400px;
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  color: #000000;
+  padding: 20px;
+}
+
+.dataModal .wrap textarea::-moz-selection,
+.dataModal .wrap textarea ::-moz-selection {
+  color: #fff;
+  background: #2eb150;
+}
+
+.dataModal .wrap textarea::selection,
+.dataModal .wrap textarea ::selection {
+  color: #fff;
+  background: #2eb150;
 }
 
 .dataModal .wrap button {
+  margin-bottom: -1px;
   border: 0;
   outline: none;
   width: 50%;
@@ -1517,6 +1543,21 @@ form.loading .loader {
   background: #e92c4d;
 }
 
+.nominal {
+  background: #7a7a7a;
+  transition: all 120ms;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.nominal:hover {
+  background: #727272;
+}
+
+.nominal:active {
+  background: #686868;
+}
+
 .constructive {
   background: #2eb150;
   transition: all 120ms;
@@ -1530,6 +1571,86 @@ form.loading .loader {
 
 .constructive:active {
   background: #279543;
+}
+
+/*
+Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-license.org/
+*/
+
+.hljs {
+  display: block;
+  background: #23241f;
+}
+
+.hljs,
+.hljs-tag,
+.hljs-subst {
+  color: #f8f8f2;
+}
+
+.hljs-strong,
+.hljs-emphasis {
+  color: #a8a8a2;
+}
+
+.hljs-bullet,
+.hljs-quote,
+.hljs-number,
+.hljs-regexp,
+.hljs-literal,
+.hljs-link {
+  color: #ae81ff;
+}
+
+.hljs-code,
+.hljs-title,
+.hljs-section,
+.hljs-selector-class {
+  color: #a6e22e;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-keyword,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-attr {
+  color: #f92672;
+}
+
+.hljs-symbol,
+.hljs-attribute {
+  color: #66d9ef;
+}
+
+.hljs-params,
+.hljs-class .hljs-title {
+  color: #f8f8f2;
+}
+
+.hljs-string,
+.hljs-type,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-selector-id,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-addition,
+.hljs-variable,
+.hljs-template-variable {
+  color: #e6db74;
+}
+
+.hljs-comment,
+.hljs-deletion,
+.hljs-meta {
+  color: #75715e;
 }
 
 .gu-mirror {
@@ -1943,7 +2064,7 @@ form.loading .loader {
 #snappySidebar .sidebar-handle {
   background: #d9d9d9;
   position: absolute;
-  bottom: 100px;
+  top: 0;
   right: -40px;
   width: 40px;
   text-align: center;
@@ -2009,6 +2130,12 @@ form.loading .loader {
 }
 
 .sidebarOpen #wysiwyg {
+  -webkit-transform: translateX(120px) translateY(0);
+  transform: translateX(120px) translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.textEditor #wysiwyg {
   -webkit-transform: translateX(120px) translateY(0);
   transform: translateX(120px) translateY(0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);

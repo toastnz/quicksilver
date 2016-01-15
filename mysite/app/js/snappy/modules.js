@@ -18,7 +18,7 @@ export function moduleEdit(showSettings) {
     return `<div class="moduleEdit">
                 <span class="green"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
                 ${settings}
-                <span class="red"><i class="material-icons">delete</i></span>
+                <span class="red js-delete-module"><i class="material-icons">delete</i></span>
             </div>`;
 
 };
@@ -64,10 +64,10 @@ let templates = {
         return `<div class="module contentModule video">
                     ${moduleEdit(true)}
                     <div class="wrap">
-                        <div class="data" contenteditable="true">
                             <div class="image" style="background-image:url('http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg');">
                                 <a href="#" class="material-icons">play_circle_outline</a>
                             </div>
+                        <div class="data" contenteditable="true">
                         </div>
                     </div>
                 </div>`;
@@ -102,14 +102,6 @@ export function updateOrder() {
     log('updateOrder() => Updating the order of the modules');
 }
 
-/**
- * Remove all active editMode elements
- */
-export function exitEditMode() {
-    $('.editMode').removeClass('editMode');
-}
-
-
 const $dataModal = $('.dataModal');
 
 /**
@@ -124,7 +116,6 @@ export function enterHTMLMode($el) {
     $dataModal.addClass('active');
     let $newHTML = $oldHTML.find('.data')[0].outerHTML;
     $dataModal.find('.html').val($newHTML);
-
 }
 
 $snappy.on('click', '.js-save-data', function () {
@@ -150,9 +141,18 @@ export function enterEditMode($el) {
         return false;
     } else {
         exitEditMode();
+        $('body').addClass('textEditor');
         $el.addClass('editMode');
         log('enterEditMode() => Entering edit mode');
     }
+}
+
+/**
+ * Remove all active editMode elements
+ */
+export function exitEditMode() {
+    $('.editMode').removeClass('editMode');
+    $('body').removeClass('textEditor');
 }
 
 /**
@@ -160,21 +160,30 @@ export function enterEditMode($el) {
  * INTERACTIONS
  *
  */
-$snappy.on('click', '.contentModule', function () {
+$snappy.on('click', '.contentModule', function (e) {
+    e.preventDefault();
     enterEditMode($(this));
 });
 
-$snappy.on('click', '.js-edit-data', function () {
+$snappy.on('click', '.js-edit-data', function (e) {
+    e.preventDefault();
     enterHTMLMode($(this).closest('.contentModule'));
 });
 
-$snappy.on('click', '.js-cancel-save-data', function () {
+$snappy.on('click', '.js-cancel-save-data', function (e) {
+    e.preventDefault();
     exitHTMLMode();
+});
+
+$('body').on('click', '.js-close-textEditor', function (e) {
+    e.preventDefault();
+    exitEditMode();
 });
 
 $(document).keyup(function (e) {
     if (e.keyCode == 27) {
         exitHTMLMode();
+        closeDeleteModal();
     }
 });
 
@@ -183,4 +192,38 @@ $snappy.mousedown(function (e) {
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.blur();
     }
+});
+
+let $modalToDelete;
+let $deleteModal = $('.deleteModal');
+
+export function openDeleteModal() {
+    $deleteModal.addClass('active');
+}
+
+export function closeDeleteModal() {
+    $deleteModal.removeClass('active');
+}
+
+export function deleteModule() {
+    $modalToDelete.remove();
+    $modalToDelete = '';
+}
+
+$snappy.on('click', '.js-delete-module', function (e) {
+    e.preventDefault();
+    $modalToDelete = $(this).closest('.contentModule')
+    openDeleteModal();
+});
+
+$snappy.on('click', '.js-cancel-delete', function (e) {
+    e.preventDefault();
+    closeDeleteModal();
+    $modalToDelete = '';
+});
+
+$snappy.on('click', '.js-confirm-delete', function (e) {
+    e.preventDefault();
+    deleteModule();
+    closeDeleteModal();
 });

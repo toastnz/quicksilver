@@ -911,6 +911,12 @@ form.loading .loader {
 .contentModule {
   padding: 6px;
   position: relative; }
+  .contentModule ::-moz-selection {
+    color: #fff;
+    background: #2eb150; }
+  .contentModule ::selection {
+    color: #fff;
+    background: #2eb150; }
   .contentModule.editMode .moduleEdit {
     -webkit-transform: translateX(0) translateY(-50%);
             transform: translateX(0) translateY(-50%); }
@@ -1245,10 +1251,16 @@ form.loading .loader {
       font-size: 14px;
       letter-spacing: 1px;
       line-height: 1.7;
-      color: #000;
-      padding: 20px;
-      border-collapse: collapse; }
+      color: #000000;
+      padding: 20px; }
+      .dataModal .wrap textarea::-moz-selection, .dataModal .wrap textarea ::-moz-selection {
+        color: #fff;
+        background: #2eb150; }
+      .dataModal .wrap textarea::selection, .dataModal .wrap textarea ::selection {
+        color: #fff;
+        background: #2eb150; }
     .dataModal .wrap button {
+      margin-bottom: -1px;
       border: 0;
       outline: none;
       width: 50%;
@@ -1283,6 +1295,16 @@ form.loading .loader {
     background: #eb3e5c; }
   .destructive:active {
     background: #e92c4d; }
+
+.nominal {
+  background: #00afec;
+  transition: all 120ms;
+  cursor: pointer;
+  color: #ffffff; }
+  .nominal:hover {
+    background: #00a4dd; }
+  .nominal:active {
+    background: #0095c8; }
 
 .constructive {
   background: #2eb150;
@@ -1360,6 +1382,93 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-deletion,
 .hljs-meta {
   color: #75715e; }
+
+.deleteModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 360ms;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+  visibility: hidden; }
+  .deleteModal.active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    visibility: visible; }
+    .deleteModal.active .wrap {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: scale(1) translateY(-50%);
+              transform: scale(1) translateY(-50%); }
+  .deleteModal .wrap {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    transition: all 480ms;
+    transition-delay: 120ms;
+    background: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    -webkit-transform: scale(0.6) translateY(-80%);
+            transform: scale(0.6) translateY(-80%); }
+    .deleteModal .wrap p {
+      width: 100%;
+      text-align: center;
+      padding: 24px;
+      font-size: 15.2px; }
+      @media screen and (min-width: 480px) {
+        .deleteModal .wrap p {
+          font-size: 15.2px; } }
+      @media screen and (min-width: 768px) {
+        .deleteModal .wrap p {
+          font-size: 15.2px; } }
+      @media screen and (min-width: 992px) {
+        .deleteModal .wrap p {
+          font-size: 17.1px; } }
+      @media screen and (min-width: 1200px) {
+        .deleteModal .wrap p {
+          font-size: 19px; } }
+      @media screen and (min-width: 1600px) {
+        .deleteModal .wrap p {
+          font-size: 19px; } }
+    .deleteModal .wrap button {
+      margin-bottom: -1px;
+      border: 0;
+      outline: none;
+      width: 50%;
+      display: block;
+      float: left;
+      padding: 12px;
+      font-size: 13.6px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400; }
+      @media screen and (min-width: 480px) {
+        .deleteModal .wrap button {
+          font-size: 13.6px; } }
+      @media screen and (min-width: 768px) {
+        .deleteModal .wrap button {
+          font-size: 13.6px; } }
+      @media screen and (min-width: 992px) {
+        .deleteModal .wrap button {
+          font-size: 15.3px; } }
+      @media screen and (min-width: 1200px) {
+        .deleteModal .wrap button {
+          font-size: 17px; } }
+      @media screen and (min-width: 1600px) {
+        .deleteModal .wrap button {
+          font-size: 17px; } }
 
 .gu-mirror {
   position: fixed !important;
@@ -1679,7 +1788,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   #snappySidebar .sidebar-handle {
     background: #d9d9d9;
     position: absolute;
-    bottom: 100px;
+    top: 0;
     right: -40px;
     width: 40px;
     text-align: center;
@@ -1731,6 +1840,11 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   width: calc(100% - 260px) !important; }
 
 .sidebarOpen #wysiwyg {
+  -webkit-transform: translateX(120px) translateY(0);
+          transform: translateX(120px) translateY(0);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+
+.textEditor #wysiwyg {
   -webkit-transform: translateX(120px) translateY(0);
           transform: translateX(120px) translateY(0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }

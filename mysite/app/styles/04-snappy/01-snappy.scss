@@ -58,6 +58,10 @@ $max-width: 1140px;
 .contentModule {
     padding: 6px;
     position: relative;
+    ::selection {
+        color: #fff;
+        background: $green;
+    }
     &.editMode {
         .moduleEdit {
             transform: translateX(0) translateY(-50%);

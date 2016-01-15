@@ -37,21 +37,21 @@
             border: 0;
             outline: none;
             height: 400px;
-            //@include font($p);
-            //line-height: 1.4;
-
             display: block;
             width: 100%;
             margin: 0;
             font-size: 14px;
             letter-spacing: 1px;
             line-height: 1.7;
-            color: #000;
+            color: $black;
             padding: 20px;
-            border-collapse: collapse;
-
+            &::selection, ::selection {
+                color: #fff;
+                background: $green;
+            }
         }
         button {
+            margin-bottom: -1px;
             border: 0;
             outline: none;
             width: 50%;
@@ -73,6 +73,19 @@
     }
     &:active {
         background: darken($red, 7%);
+    }
+    color: $white;
+}
+
+.nominal {
+    background: $blue;
+    transition: all 120ms;
+    cursor: pointer;
+    &:hover {
+        background: darken($blue, 3%);
+    }
+    &:active {
+        background: darken($blue, 7%);
     }
     color: $white;
 }
