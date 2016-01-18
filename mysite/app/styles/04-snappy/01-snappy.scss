@@ -46,12 +46,18 @@ $max-width: 1140px;
 
 #snappy {
     width: 100%;
-    height: 100%;
+    position: relative;
+    min-height: calc(100% - 220px);
     #snappyContent {
+        min-height: 100%;
+        @include clearfix;
         transition: $med;
         width: 100%;
         height: 100%;
-        padding-top: 100px;
+        padding-top: 48px;
+        @include media(1140px, max) {
+            padding: 0 24px;
+        }
     }
 }
 
@@ -64,7 +70,10 @@ $max-width: 1140px;
     }
     &.editMode {
         .moduleEdit {
-            transform: translateX(0) translateY(-50%);
+            transform: translateX(-24px) translateY(-50%);
+            @include media(1140px) {
+                transform: translateX(0) translateY(-50%);
+            }
         }
     }
 }
@@ -101,7 +110,10 @@ $max-width: 1140px;
     left: 8px;
     transition: all 360ms;
     top: 50%;
-    transform: translateX(-40px) translateY(-50%);
+    transform: translateX(-60px) translateY(-50%);
+    @include media(1140px) {
+        transform: translateX(-40px) translateY(-50%);
+    }
     box-shadow: $z3-shadow;
     span {
         backface-visibility: hidden;
@@ -123,14 +135,20 @@ $max-width: 1140px;
                 background: darken($red, 5%);
             }
         }
-        &.grey {
+        &.purple {
             background: $purple;
             &:hover {
                 background: darken($purple, 5%);
             }
         }
-        &.green {
+        &.brown {
             border-radius: 3px 3px 0 0;
+            background: $brown;
+            &:hover {
+                background: darken($brown, 5%);
+            }
+        }
+        &.green {
             background: $green;
             &:hover {
                 background: darken($green, 5%);

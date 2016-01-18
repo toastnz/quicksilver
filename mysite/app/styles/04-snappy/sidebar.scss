@@ -1,7 +1,8 @@
 $sidebar-width: 260px;
 #snappySidebar {
+    $sidebar: lighten($black-light, 10%);
     position: fixed;
-    background: #d9d9d9;
+    background: $sidebar;
     height: 100%;
     top: 0;
     bottom: 0;
@@ -12,9 +13,9 @@ $sidebar-width: 260px;
     transform: translateX(-$sidebar-width);
     transition: $med;
     .sidebar-handle {
-        background: #d9d9d9;
+        background: $sidebar;
         position: absolute;
-        top: 0;
+        bottom: 0;
         right: -40px;
         width: 40px;
         text-align: center;
@@ -25,14 +26,14 @@ $sidebar-width: 260px;
             @include pseudo;
             left: -5px;
             height: 100%;
-            background: #d9d9d9;
+            background: $sidebar;
             display: block;
             top: 0;
             right: 100%;
         }
         i {
             font-size: 40px;
-            color: #333;
+            color: white;
             transition: all 480ms;
         }
     }

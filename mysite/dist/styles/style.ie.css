@@ -982,6 +982,238 @@ form.loading .loader {
   opacity: 1;
 }
 
+footer {
+  background: #212121;
+  padding: 60px 20px;
+  overflow: hidden;
+  text-align: center;
+}
+
+footer:before,
+footer:after {
+  content: "";
+  display: table;
+}
+
+footer:after {
+  clear: both;
+}
+
+footer nav {
+  display: inline-block;
+  color: #7a7a7a;
+}
+
+footer nav ul li {
+  display: inline-block;
+}
+
+footer nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  color: #7a7a7a;
+  padding: 10px;
+}
+
+header {
+  display: block;
+  width: 100%;
+  background: #2eb150;
+}
+
+header:before,
+header:after {
+  content: "";
+  display: table;
+}
+
+header:after {
+  clear: both;
+}
+
+header nav {
+  height: 80px;
+  float: right;
+  color: white;
+}
+
+header nav > ul {
+  margin-top: 20px;
+}
+
+header nav > ul > li {
+  display: block;
+  float: left;
+}
+
+header nav > ul > li > a {
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+header nav > ul > li:hover ul {
+  -webkit-transform: scale(1) translateY(10px);
+  transform: scale(1) translateY(10px);
+  opacity: 1;
+  max-height: 300px;
+}
+
+header nav > ul > li ul {
+  position: absolute;
+  background: white;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
+  -webkit-transform: scale(0.9) translateY(-20px);
+  transform: scale(0.9) translateY(-20px);
+  transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+
+header nav > ul > li ul li a {
+  padding: 10px 20px;
+  display: block;
+  color: #7a7a7a;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+header nav > ul > li ul li a:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.navburger {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+  display: block;
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.navburger {
+  display: none;
+}
+
+.navburger span {
+  width: 100%;
+  height: 4px;
+  position: relative;
+  margin: 7px 0;
+  background: white;
+  display: block;
+  transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.navburger:hover span {
+  background: #ea148c;
+}
+
+nav {
+  display: none;
+}
+
+nav {
+  display: block;
+}
+
+.off-canvas {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: all 240ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  visibility: hidden;
+  opacity: 0;
+}
+
+.off-canvas > ul {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  transition: all 480ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  background: white;
+  width: auto;
+  padding: 90px 50px 30px 20px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.off-canvas > ul > li {
+  display: block;
+}
+
+.off-canvas > ul > li > a {
+  padding: 5px 0;
+  text-decoration: none;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  display: block;
+  color: #333;
+}
+
+.off-canvas > ul > li li a {
+  padding: 5px 0 5px 30px;
+  text-decoration: none;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  display: block;
+  position: relative;
+  color: #333;
+}
+
+.off-canvas > ul > li li a:before {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 10px;
+  height: 3px;
+  background: #ea148c;
+  display: block;
+  left: 13px;
+  top: 14px;
+}
+
+.mobile-nav .navburger {
+  -webkit-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+
+.mobile-nav .navburger .first {
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-transform-origin: 90% 50%;
+  transform-origin: 90% 50%;
+  background: #ea148c;
+}
+
+.mobile-nav .navburger .second {
+  opacity: 0;
+}
+
+.mobile-nav .navburger .third {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  -webkit-transform-origin: 90% 50%;
+  transform-origin: 90% 50%;
+  background: #ea148c;
+}
+
 #snappy .functions {
   position: fixed;
   right: 0;
@@ -1037,14 +1269,26 @@ form.loading .loader {
 
 #snappy {
   width: 100%;
-  height: 100%;
+  position: relative;
+  min-height: calc(100% - 220px);
 }
 
 #snappy #snappyContent {
+  min-height: 100%;
   transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   width: 100%;
   height: 100%;
-  padding-top: 100px;
+  padding-top: 48px;
+}
+
+#snappy #snappyContent:before,
+#snappy #snappyContent:after {
+  content: "";
+  display: table;
+}
+
+#snappy #snappyContent:after {
+  clear: both;
 }
 
 .contentModule {
@@ -1131,16 +1375,24 @@ form.loading .loader {
   background: #ea3555;
 }
 
-.moduleEdit span.grey {
+.moduleEdit span.purple {
   background: #35366C;
 }
 
-.moduleEdit span.grey:hover {
+.moduleEdit span.purple:hover {
   background: #2d2d5b;
 }
 
-.moduleEdit span.green {
+.moduleEdit span.brown {
   border-radius: 3px 3px 0 0;
+  background: #886747;
+}
+
+.moduleEdit span.brown:hover {
+  background: #775a3e;
+}
+
+.moduleEdit span.green {
   background: #2eb150;
 }
 
@@ -1862,6 +2114,50 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   font-size: 15.2px;
 }
 
+.columnText {
+  margin: 0 auto;
+}
+
+.columnText:before,
+.columnText:after {
+  content: "";
+  display: table;
+}
+
+.columnText:after {
+  clear: both;
+}
+
+.columnText .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.columnText .wrap:before,
+.columnText .wrap:after {
+  content: "";
+  display: table;
+}
+
+.columnText .wrap:after {
+  clear: both;
+}
+
+.columnText .column {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.columnText .column {
+  padding-right: 24px;
+  width: 33.33333%;
+}
+
+.columnText .column.last {
+  padding-right: 0;
+}
+
 .divider {
   margin: 0 auto;
 }
@@ -1900,6 +2196,67 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   background: #7a7a7a;
   display: block;
   width: 60%;
+}
+
+.imageText {
+  margin: 0 auto;
+}
+
+.imageText:before,
+.imageText:after {
+  content: "";
+  display: table;
+}
+
+.imageText:after {
+  clear: both;
+}
+
+.imageText .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.imageText .wrap:before,
+.imageText .wrap:after {
+  content: "";
+  display: table;
+}
+
+.imageText .wrap:after {
+  clear: both;
+}
+
+.imageText img {
+  margin-right: 24px;
+  margin-bottom: 24px;
+  float: left;
+}
+
+.imageText img {
+  max-width: 40%;
+}
+
+.imageText p {
+  padding: 3px 6px;
+  margin: 6px 0 12px;
+  font-size: 13.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.imageText p {
+  font-size: 13.6px;
+}
+
+.imageText strong,
+.imageText b {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+.imageText i {
+  font-style: italic;
 }
 
 .image {
@@ -1955,6 +2312,42 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 .image [contenteditable=true] {
   outline-offset: 0;
+}
+
+.padding {
+  margin: 0 auto;
+}
+
+.padding:before,
+.padding:after {
+  content: "";
+  display: table;
+}
+
+.padding:after {
+  clear: both;
+}
+
+.padding .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+  text-align: center;
+  min-height: 48px;
+  display: block;
+}
+
+.padding .wrap:before,
+.padding .wrap:after {
+  content: "";
+  display: table;
+}
+
+.padding .wrap:after {
+  clear: both;
+}
+
+.padding .wrap br {
+  display: block;
 }
 
 .contentModule {
@@ -2065,6 +2458,54 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   clear: both;
 }
 
+.trippleImage {
+  margin: 0 auto;
+}
+
+.trippleImage:before,
+.trippleImage:after {
+  content: "";
+  display: table;
+}
+
+.trippleImage:after {
+  clear: both;
+}
+
+.trippleImage .wrap {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.trippleImage .wrap:before,
+.trippleImage .wrap:after {
+  content: "";
+  display: table;
+}
+
+.trippleImage .wrap:after {
+  clear: both;
+}
+
+.trippleImage .wrapExpander {
+  margin: 0 -12px;
+}
+
+.trippleImage .column {
+  display: block;
+  float: left;
+  width: 100%;
+}
+
+.trippleImage .column img {
+  width: 100%;
+}
+
+.trippleImage .column {
+  margin: 0 12px;
+  width: calc(33.3333333% - 24px);
+}
+
 .video {
   margin: 0 auto;
 }
@@ -2124,7 +2565,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 #snappySidebar {
   position: fixed;
-  background: #d9d9d9;
+  background: #363841;
   height: 100%;
   top: 0;
   bottom: 0;
@@ -2138,9 +2579,9 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 }
 
 #snappySidebar .sidebar-handle {
-  background: #d9d9d9;
+  background: #363841;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: -40px;
   width: 40px;
   text-align: center;
@@ -2155,7 +2596,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   display: block;
   left: -5px;
   height: 100%;
-  background: #d9d9d9;
+  background: #363841;
   display: block;
   top: 0;
   right: 100%;
@@ -2163,7 +2604,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 #snappySidebar .sidebar-handle i {
   font-size: 40px;
-  color: #333;
+  color: white;
   transition: all 480ms;
 }
 

@@ -2,16 +2,22 @@
 // Blockquote
 //==================================================================
 
-.image {
+.imageText {
     @include clearfix;
     margin: 0 auto;
     .wrap {
         @include clearfix;
         max-width: $max-width;
         margin: 0 auto;
-        img {
-            width: 100%;
-            height: auto;
+    }
+    img {
+        margin-right: 24px;
+        margin-bottom: 24px;
+        width: 100%;
+        height: auto;
+        float: left;
+        @include media($md) {
+            max-width: percentage(2/5);
         }
     }
     p {
@@ -25,8 +31,5 @@
     }
     i {
         font-style: italic;
-    }
-    [contenteditable=true] {
-        outline-offset: 0;
     }
 }

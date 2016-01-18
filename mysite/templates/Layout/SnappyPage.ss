@@ -39,6 +39,7 @@
         <button data-action="foreColor"><i class="material-icons">format_color_text</i></button>
         <button data-action="insert_link"><i class="material-icons">insert_link</i></button>
         <a href="#" class="js-close-textEditor"><i class="material-icons">close</i></a>
+        <a href="#" class="js-clear-data"><i class="material-icons">rowing</i></a>
     </div>
 
     <div id="snappySidebar">
@@ -56,9 +57,19 @@
                 <h5 class="vertical uppercase center">text</h5>
             </div>
 
+            <div class="module sidebarModule" data-module-type="heading">
+                <div class="js-drag"></div>
+                <h5 class="vertical uppercase center">heading</h5>
+            </div>
+
             <div class="module sidebarModule" data-module-type="divider">
                 <div class="js-drag"></div>
                 <h5 class="vertical uppercase center">divider</h5>
+            </div>
+
+            <div class="module sidebarModule" data-module-type="padding">
+                <div class="js-drag"></div>
+                <h5 class="vertical uppercase center">padding</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="image">
@@ -66,9 +77,14 @@
                 <h5 class="vertical uppercase center">image</h5>
             </div>
 
-            <div class="module sidebarModule" data-module-type="imagetext">
+            <div class="module sidebarModule" data-module-type="imageText">
                 <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">Image & Text</h5>
+                <h5 class="vertical uppercase center">image & text</h5>
+            </div>
+
+            <div class="module sidebarModule" data-module-type="trippleImage">
+                <div class="js-drag"></div>
+                <h5 class="vertical uppercase center">tripple image</h5>
             </div>
 
             <div class="module sidebarModule" data-module-type="video">
@@ -76,9 +92,9 @@
                 <h5 class="vertical uppercase center">video</h5>
             </div>
 
-            <div class="module sidebarModule" data-module-type="accordian">
+            <div class="module sidebarModule" data-module-type="columnText">
                 <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">Accordian</h5>
+                <h5 class="vertical uppercase center">Column Text</h5>
             </div>
         </div>
     </div>

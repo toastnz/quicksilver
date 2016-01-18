@@ -2,31 +2,29 @@
 // Blockquote
 //==================================================================
 
-.image {
+.trippleImage {
     @include clearfix;
     margin: 0 auto;
     .wrap {
         @include clearfix;
         max-width: $max-width;
         margin: 0 auto;
+    }
+    .wrapExpander {
+        margin: 0 -12px;
+    }
+    .column {
+        display: block;
+        float: left;
+        width: percentage(1/1);
         img {
             width: 100%;
-            height: auto;
         }
-    }
-    p {
-        padding: 3px 6px;
-        margin: 6px 0 12px;
-        @include font($p);
-        @include regular;
-    }
-    strong, b {
-        @include bold;
-    }
-    i {
-        font-style: italic;
-    }
-    [contenteditable=true] {
-        outline-offset: 0;
+        @include media($md) {
+            margin: 0 12px;
+            width: calc(33.3333333% - 24px);
+            &.last {
+            }
+        }
     }
 }

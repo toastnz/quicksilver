@@ -9,15 +9,16 @@ const SwiftVideos = ['e-ORhEE9VVg'];
 const modules = {};
 const text = {
     heading        : `Collaboratively administrate markets`,
-    paragraph      : `Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.`,
-    short_paragraph: `Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.`,
+    paragraph      : `Although it meant courting more run-ins at school, John decided to indulge her son's passion. By age 12, Richard was attending science camps during the summer and private school during the school year. When a teacher recommended her son engage in the Columbia Science Honours Program, a post-Sputnik program designed for gifted middle- and high-school students in New York City, Stallman added to his extracurriculars and was soon commuting uptown to the Columbia University campus on Saturdays.`,
+    short_paragraph: `Although it meant courting more run-ins at school, John decided to indulge her son's passion. By age 12, Richard was attending science camps during the summer and private school during the school year.`,
 };
 
 export function moduleEdit(showSettings) {
-    let settings = (!showSettings) ? `` : `<span class="grey js-edit-settings"><i class="material-icons">settings</i></span><span class="blue js-edit-data"><i class="material-icons">code</i></span>`;
+    let settings = (!showSettings) ? `` : `<span class="purple js-edit-settings"><i class="material-icons">settings</i></span><span class="blue js-edit-data"><i class="material-icons">code</i></span>`;
     return `<div class="moduleEdit">
-                <span class="green"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
+                <span class="brown"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
                 ${settings}
+                <span class="green js-save-module"><i class="material-icons">save</i></span>
                 <span class="red js-delete-module"><i class="material-icons">delete</i></span>
             </div>`;
 
@@ -31,6 +32,15 @@ let templates = {
                     <div class="wrap">
                         <hr>
                     </div>                    
+                </div>`;
+    },
+
+    padding: function () {
+        return `<div class="contentModule padding">
+                    ${moduleEdit(false)}
+                    <div class="wrap">
+                        <br>
+                    </div>
                 </div>`;
     },
 
@@ -51,9 +61,20 @@ let templates = {
                     ${moduleEdit(true)}
                     <div class="wrap">
                             <div class="data" contenteditable="true">
+                                <p>${text.paragraph}</p>
+                                <p>${text.paragraph}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+    },
+
+    heading: function () {
+        return `<div class="module contentModule text">
+                    ${moduleEdit(true)}
+                    <div class="wrap">
+                            <div class="data" contenteditable="true">
                                 <h3>${text.heading}</h3>
-                                <p>${text.paragraph}</p>
-                                <p>${text.paragraph}</p>
                             </div>
                         </div>
                     </div>
@@ -78,12 +99,69 @@ let templates = {
                     ${moduleEdit(true)}
                     <div class="wrap">
                         <div class="data">
-                            <img style="width:100%;height:auto;" src="http://placehold.it/1440x760?text=Image">
+                            <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
                             <p contenteditable="true">${text.heading}</p>
                         </div>
                     </div>
                 </div>`;
-    }
+    },
+
+    imageText: function () {
+        return `<div class="module contentModule imageText">
+                    ${moduleEdit(true)}
+                    <div class="wrap">
+                        <div class="data">
+                            <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+                            <h5>${text.heading}</h5>
+                            <p contenteditable="true">${text.paragraph}</p>
+                            <p contenteditable="true">${text.paragraph}</p>
+                        </div>
+                    </div>
+                </div>`;
+    },
+
+    trippleImage: function () {
+        return `<div class="module contentModule trippleImage">
+                    ${moduleEdit(true)}
+                    <div class="data wrap">
+                        <div class="wrapExpander">
+                            <div class="column">
+                                <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+                                <p contenteditable="true">${text.heading}</p>
+                            </div>
+                            <div class="column">
+                                <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+                                <p contenteditable="true">${text.heading}</p>
+                            </div>
+                            <div class="column last">
+                                <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+                                <p contenteditable="true">${text.heading}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+    },
+
+    columnText: function () {
+        return `<div class="module contentModule columnText">
+                    ${moduleEdit(true)}
+                    <div class="wrap" class="data">
+                            <div class="column" contenteditable="true">
+                                <h5>${text.heading}</h5>
+                                <p>${text.paragraph.substring(0, 440)}</p>
+                            </div>
+                            <div class="column" contenteditable="true">
+                                <h5>${text.heading}</h5>
+                                <p>${text.paragraph.substring(0, 220)}</p>
+                            </div>
+                            <div class="column last" contenteditable="true">
+                                <h5>${text.heading}</h5>
+                                <p>${text.paragraph.substring(0, 400)}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+    },
 
 
 }
@@ -164,6 +242,11 @@ $snappy.on('click', '.js-edit-data', function (e) {
     enterHTMLMode($(this).closest('.contentModule'));
 });
 
+$snappy.on('click', '.js-save-module', function (e) {
+    e.preventDefault();
+    saveSnappyContent();
+});
+
 $snappy.on('click', '.js-cancel-save-data', function (e) {
     e.preventDefault();
     exitHTMLMode();
@@ -224,16 +307,24 @@ $snappy.on('click', '.js-confirm-delete', function (e) {
 });
 
 
-export function saveSnappyContent() {
+export function saveSnappyContent(clear) {
+    let content;
+    if (clear) {
+        content = '';
+    }
+    else {
+        content = $('#snappyContent').html();
+    }
+
     $.ajax({
         url     : $('#snappy').attr('data-post-url'),
         type    : 'POST',
         dataType: 'json',
         data    : {
-            data: $('#snappyContent').html()
+            data: content
         }
     }).done(function () {
-        alertify.maxLogItems(1).success('Content Saved');
+        alertify.logPosition("bottom right").maxLogItems(1).success('Content Saved');
     });
 }
 

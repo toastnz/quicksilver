@@ -35,7 +35,14 @@ dragula([$modules[0], $snappyContent[0]], {
         if (type !== undefined) {
             $(module.create(type)).insertAfter($clonedItem);
             $clonedItem.remove();
+            module.saveSnappyContent();
+        } else {
+            setTimeout(function () {
+                module.saveSnappyContent();
+            }, 200);
         }
+    } else {
+        log('saving')
         module.saveSnappyContent();
     }
 });
@@ -45,4 +52,10 @@ $snappyContent.on('click', '.js-edit-html', function () {
 });
 
 
+$('.js-clear-data').on('click', function (e) {
+    e.preventDefault();
+    module.saveSnappyContent(true);
+});
 
+
+$snappyContent.css({'min-height': $snappyContent.parent().outerHeight()})
