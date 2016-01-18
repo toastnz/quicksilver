@@ -198,22 +198,22 @@ p, li {
       font-size: 17px; } }
 
 span {
-  font-size: 10px; }
+  font-size: 13.6px; }
   @media screen and (min-width: 480px) {
     span {
-      font-size: 10px; } }
+      font-size: 13.6px; } }
   @media screen and (min-width: 768px) {
     span {
-      font-size: 10px; } }
+      font-size: 13.6px; } }
   @media screen and (min-width: 992px) {
     span {
-      font-size: 10px; } }
+      font-size: 15.3px; } }
   @media screen and (min-width: 1200px) {
     span {
-      font-size: 10px; } }
+      font-size: 17px; } }
   @media screen and (min-width: 1600px) {
     span {
-      font-size: 10px; } }
+      font-size: 17px; } }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1; }

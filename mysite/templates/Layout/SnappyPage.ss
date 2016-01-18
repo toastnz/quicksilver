@@ -36,6 +36,7 @@
                 </li>
             </ul>
         </a>
+        <button data-action="backColor"><i class="material-icons">format_color_fill</i></button>
         <button data-action="foreColor"><i class="material-icons">format_color_text</i></button>
         <button data-action="insert_link"><i class="material-icons">insert_link</i></button>
         <a href="#" class="js-close-textEditor"><i class="material-icons">close</i></a>

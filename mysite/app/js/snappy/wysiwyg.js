@@ -24,7 +24,10 @@ $('#wysiwyg').on('click', 'button', function (e) {
         document.execCommand('formatBlock', false, action);
         break;
         case 'foreColor':
-        chooseColour();
+        chooseColour('foreColor');
+        break;
+        case 'backColor':
+        chooseColour('backColor');
         break;
         default:
         document.execCommand(action, false, null);
@@ -34,7 +37,7 @@ $('#wysiwyg').on('click', 'button', function (e) {
 });
 
 
-function chooseColour() {
+function chooseColour(type) {
     colorPicker = new ColorPicker({
         color     : '#333333',
         background: '#e1e1e1',
@@ -43,8 +46,11 @@ function chooseColour() {
         height    : 200
     }).onChange(function () {
         if (colorPicker !== undefined) {
-            log(colorPicker.getHexString());
-            document.execCommand('foreColor', false, colorPicker.getHexString());
+            if(type === 'foreColor'){
+                document.execCommand('foreColor', false, colorPicker.getHexString());
+            }else if(type === 'backColor'){
+                document.execCommand('backColor', false, colorPicker.getHexString());
+            }
         }
     });
 }
