@@ -120,6 +120,22 @@ let templates = {
                 </div>`;
     },
 
+    list: function () {
+        return `<div class="module contentModule text">
+                    ${moduleEdit(true)}
+                    <div class="wrap">
+                        <div class="data">
+                           <ul>
+                              <li>${text.heading}</li>
+                              <li>${text.heading}</li>
+                              <li>${text.heading}</li>
+                              <li>${text.heading}</li>
+                           </ul>
+                        </div>
+                    </div>
+                </div>`;
+    },
+
     trippleImage: function () {
         return `<div class="module contentModule trippleImage">
                     ${moduleEdit(true)}

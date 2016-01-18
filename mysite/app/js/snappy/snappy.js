@@ -59,3 +59,4 @@ $('.js-clear-data').on('click', function (e) {
 
 
 $snappyContent.css({'min-height': $snappyContent.parent().outerHeight()})
+

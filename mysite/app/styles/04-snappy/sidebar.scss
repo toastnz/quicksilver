@@ -1,6 +1,6 @@
 $sidebar-width: 260px;
+$sidebar: lighten($black-light, 10%);
 #snappySidebar {
-    $sidebar: lighten($black-light, 10%);
     position: fixed;
     background: $sidebar;
     height: 100%;
@@ -40,15 +40,23 @@ $sidebar-width: 260px;
 }
 
 #modules {
+    padding-top: 12px;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    padding: 12px;
+    border-right: 12px solid $sidebar;
+    border-left: 12px solid $sidebar;
     .module {
         background: white;
         margin-bottom: 12px;
-        @include aspect(3, 1);
+        @include aspect(3.4, 1);
+        display: block;
+    }
+    #scroll {
+        height: 100%;
+        width: 100%;
+        position: relative;
     }
 }
 
@@ -76,5 +84,97 @@ $sidebar-width: 260px;
         box-shadow: $z3-shadow;
     }
 }
+
+//.sidebarOpen {
+
+/* disable selection while dragging */
+.gm-scrollbar-disable-selection {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* fallback for native floating scrollbars */
+.gm-prevented {
+    -webkit-overflow-scrolling: touch;
+}
+
+.gm-prevented .gm-scrollbar {
+    display: none;
+}
+
+/* actual gemini-scrollbar styles */
+.gm-scrollbar-container {
+    position: relative;
+    overflow: hidden !important;
+    width: 100%;
+    height: 100%;
+}
+
+.gm-scrollbar {
+    position: absolute;
+    right: 2px;
+    bottom: 2px;
+    z-index: 1;
+    border-radius: 3px;
+}
+
+.gm-scrollbar.-vertical {
+    width: 6px;
+    top: 2px;
+}
+
+.gm-scrollbar.-horizontal {
+    height: 6px;
+    left: 2px;
+}
+
+.gm-scrollbar .thumb {
+    position: relative;
+    display: block;
+    width: 0;
+    height: 0;
+    cursor: pointer;
+    border-radius: inherit;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.gm-scrollbar .thumb:hover,
+.gm-scrollbar .thumb:active {
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.gm-scrollbar.-vertical .thumb {
+    width: 100%;
+}
+
+.gm-scrollbar.-horizontal .thumb {
+    height: 100%;
+}
+
+.gm-scrollbar-container .gm-scroll-view {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* @option: autoshow */
+.gm-scrollbar-container.gm-autoshow .gm-scrollbar {
+    opacity: 0;
+    transition: opacity 120ms ease-out;
+}
+
+.gm-scrollbar-container.gm-autoshow:hover .gm-scrollbar,
+.gm-scrollbar-container.gm-autoshow:focus .gm-scrollbar {
+    opacity: 1;
+    transition: opacity 340ms ease-out;
+}
+
+//}
+
 
 

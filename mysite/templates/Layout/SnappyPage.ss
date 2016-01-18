@@ -46,55 +46,64 @@
         <div class="js-toggle-sidebar sidebar-handle">
             <i class="material-icons">keyboard_arrow_right</i>
         </div>
-        <div id="modules">
-            <div class="module sidebarModule" data-module-type="blockquote">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">blockquote</h5>
-            </div>
 
-            <div class="module sidebarModule" data-module-type="text">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">text</h5>
-            </div>
+        <div id="scroll">
+            <div id="modules">
 
-            <div class="module sidebarModule" data-module-type="heading">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">heading</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="blockquote">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">blockquote</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="divider">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">divider</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="text">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">text</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="padding">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">padding</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="list">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">list</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="image">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">image</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="heading">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">heading</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="imageText">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">image & text</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="divider">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">divider</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="trippleImage">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">tripple image</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="padding">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">padding</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="video">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">video</h5>
-            </div>
+                <div class="module sidebarModule" data-module-type="image">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">image</h6>
+                </div>
 
-            <div class="module sidebarModule" data-module-type="columnText">
-                <div class="js-drag"></div>
-                <h5 class="vertical uppercase center">Column Text</h5>
+                <div class="module sidebarModule" data-module-type="imageText">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">image & text</h6>
+                </div>
+
+                <div class="module sidebarModule" data-module-type="trippleImage">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">tripple image</h6>
+                </div>
+
+                <div class="module sidebarModule" data-module-type="video">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">video</h6>
+                </div>
+
+                <div class="module sidebarModule" data-module-type="columnText">
+                    <div class="js-drag"></div>
+                    <h6 class="vertical uppercase center">Column Text</h6>
+                </div>
             </div>
         </div>
     </div>
