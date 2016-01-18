@@ -1,6 +1,9 @@
 //==================================================================
 // WYSIWYG
 //==================================================================
+.sidebarOpen #wysiwyg{
+    transform: translateX(130px) translateY(0px);
+}
 
 #wysiwyg {
     position: fixed;
@@ -9,11 +12,11 @@
     margin: 0 auto;
     width: 600px;
     top: 40px;
-    transform: translateX(130px) translateY(-80px);
+    transform: translateX(0px) translateY(-80px);
     background: $blue;
     border-radius: 3px;
     text-align: center;
-    z-index: 9;
+    z-index: 9999;
     transition: all 480ms;
     button {
         outline: none;

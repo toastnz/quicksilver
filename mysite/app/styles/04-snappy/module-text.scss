@@ -10,16 +10,31 @@
         strong, b {
             @include bold;
         }
+        a{
+            color:green;
+            text-decoration:none;
+            &:hover{
+                text-decoration:underline;
+                cursor:pointer;
+            }
+        }
     }
     p {
         margin-bottom: 12px;
         @include font($p);
         @include lora-regular;
+        a{
+            color:green;
+            text-decoration:none;
+            &:hover{
+                text-decoration:underline;
+                cursor:pointer;
+            }
+        }
     }
     strong, b {
         @include lora-bold;
     }
-
     i {
         font-style: italic;
     }
@@ -30,6 +45,14 @@
             position: relative;
             margin-bottom: 12px;
             display: block;
+            a{
+                color:green;
+                text-decoration:none;
+                &:hover{
+                    text-decoration:underline;
+                    cursor:pointer;
+                }
+            }
             &:before {
                 @include pseudo;
                 background: $green;

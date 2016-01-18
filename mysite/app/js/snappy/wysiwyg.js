@@ -11,9 +11,9 @@ $('#wysiwyg').on('click', 'button', function (e) {
     log('action => ' + action);
     switch (action) {
         case 'insert_link':
-            selectedText = saveSelection();
-            createLink();
-            break;
+        selectedText = saveSelection();
+        createLink();
+        break;
         case 'h1':
         case 'h2':
         case 'h3':
@@ -21,14 +21,14 @@ $('#wysiwyg').on('click', 'button', function (e) {
         case 'h5':
         case 'h6':
         case 'p':
-            document.execCommand('formatBlock', false, action);
-            break;
+        document.execCommand('formatBlock', false, action);
+        break;
         case 'foreColor':
-            chooseColour();
-            break;
+        chooseColour();
+        break;
         default:
-            document.execCommand(action, false, null);
-            break;
+        document.execCommand(action, false, null);
+        break;
     }
     update_output();
 });
@@ -44,6 +44,7 @@ function chooseColour() {
     }).onChange(function () {
         if (colorPicker !== undefined) {
             log(colorPicker.getHexString());
+            document.execCommand('foreColor', false, colorPicker.getHexString());
         }
     });
 }
@@ -107,4 +108,5 @@ function createLink() {
         return false;
     });
 }
+
 

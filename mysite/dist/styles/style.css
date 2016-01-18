@@ -961,10 +961,10 @@ header {
   .navburger:hover span {
     background: #ea148c; }
 
-nav {
+header nav {
   display: none; }
   @media only screen and (min-width: 768px) {
-    nav {
+    header nav {
       display: block; } }
 
 .off-canvas {
@@ -1987,6 +1987,12 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     .contentModule h1 strong, .contentModule h1 b, .contentModule h2 strong, .contentModule h2 b, .contentModule h3 strong, .contentModule h3 b, .contentModule h4 strong, .contentModule h4 b, .contentModule h5 strong, .contentModule h5 b, .contentModule h6 strong, .contentModule h6 b {
       font-family: 'Open Sans', sans-serif;
       font-weight: 700; }
+    .contentModule h1 a, .contentModule h2 a, .contentModule h3 a, .contentModule h4 a, .contentModule h5 a, .contentModule h6 a {
+      color: green;
+      text-decoration: none; }
+      .contentModule h1 a:hover, .contentModule h2 a:hover, .contentModule h3 a:hover, .contentModule h4 a:hover, .contentModule h5 a:hover, .contentModule h6 a:hover {
+        text-decoration: underline;
+        cursor: pointer; }
   .contentModule p {
     margin-bottom: 12px;
     font-size: 13.6px;
@@ -2007,9 +2013,15 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     @media screen and (min-width: 1600px) {
       .contentModule p {
         font-size: 17px; } }
+    .contentModule p a {
+      color: green;
+      text-decoration: none; }
+      .contentModule p a:hover {
+        text-decoration: underline;
+        cursor: pointer; }
   .contentModule strong, .contentModule b {
     font-family: 'Lora', serif;
-    font-weight: 300; }
+    font-weight: 700; }
   .contentModule i {
     font-style: italic; }
   .contentModule ul, .contentModule ol {
@@ -2019,6 +2031,12 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
       position: relative;
       margin-bottom: 12px;
       display: block; }
+      .contentModule ul li a, .contentModule ol li a {
+        color: green;
+        text-decoration: none; }
+        .contentModule ul li a:hover, .contentModule ol li a:hover {
+          text-decoration: underline;
+          cursor: pointer; }
       .contentModule ul li:before, .contentModule ol li:before {
         position: absolute;
         content: '';
@@ -2198,8 +2216,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
 .textEditor #wysiwyg {
-  -webkit-transform: translateX(120px) translateY(0);
-          transform: translateX(120px) translateY(0);
+  -webkit-transform: translateX(0px) translateY(0);
+          transform: translateX(0px) translateY(0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
 
 /* disable selection while dragging */
@@ -2404,6 +2422,10 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 .hljs-strong {
   font-weight: bold; }
 
+.sidebarOpen #wysiwyg {
+  -webkit-transform: translateX(130px) translateY(0px);
+          transform: translateX(130px) translateY(0px); }
+
 #wysiwyg {
   position: fixed;
   left: 0;
@@ -2411,12 +2433,12 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   margin: 0 auto;
   width: 600px;
   top: 40px;
-  -webkit-transform: translateX(130px) translateY(-80px);
-          transform: translateX(130px) translateY(-80px);
+  -webkit-transform: translateX(0px) translateY(-80px);
+          transform: translateX(0px) translateY(-80px);
   background: #00afec;
   border-radius: 3px;
   text-align: center;
-  z-index: 9;
+  z-index: 9999;
   transition: all 480ms; }
   #wysiwyg button {
     outline: none;

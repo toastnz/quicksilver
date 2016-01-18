@@ -96,7 +96,7 @@ header {
     }
 }
 
-nav {
+header nav {
     display: none;
     @include media($md) {
         display: block;
