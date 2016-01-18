@@ -52,6 +52,9 @@ $sidebar: lighten($black-light, 10%);
         margin-bottom: 12px;
         @include aspect(3.4, 1);
         display: block;
+        * {
+            @include extra-bold;
+        }
     }
     #scroll {
         height: 100%;

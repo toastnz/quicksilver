@@ -58,11 +58,9 @@ $snappy.on('click', '.js-open-sidebar', function (e) {
     open();
 });
 
-const GeminiScrollbar = require('gemini-scrollbar');
-
-var myScrollbar = new GeminiScrollbar({
-    element: document.getElementById('scroll')
-}).create();
-
-
-open();
+//const GeminiScrollbar = require('gemini-scrollbar');
+//
+//var myScrollbar = new GeminiScrollbar({
+//    element: document.getElementById('scroll')
+//}).create();
+//

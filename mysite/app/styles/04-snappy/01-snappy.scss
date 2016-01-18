@@ -54,7 +54,6 @@ $max-width: 1140px;
         transition: $med;
         width: 100%;
         height: 100%;
-        padding-top: 48px;
         @include media(1140px, max) {
             padding: 0 24px;
         }
