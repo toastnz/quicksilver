@@ -1988,7 +1988,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   top: 40px;
   -webkit-transform: translateX(130px) translateY(-80px);
           transform: translateX(130px) translateY(-80px);
-  background: #f8f6f7;
+  background: #00afec;
   border-radius: 3px;
   text-align: center;
   z-index: 9;
@@ -2000,11 +2000,11 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
     border: 0;
     padding: 3px; }
     #wysiwyg button i {
-      color: #333;
+      color: #ffffff;
       font-size: 24px; }
   #wysiwyg a {
     font-size: 0;
-    color: #333;
+    color: #ffffff;
     position: relative; }
     #wysiwyg a:hover ul {
       opacity: 1;

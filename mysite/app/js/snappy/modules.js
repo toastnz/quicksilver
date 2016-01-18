@@ -96,12 +96,6 @@ export function create(type) {
     }
 }
 
-
-export function updateOrder() {
-    alertify.maxLogItems(1).success('Row order updated')
-    log('updateOrder() => Updating the order of the modules');
-}
-
 const $dataModal = $('.dataModal');
 
 /**
@@ -208,6 +202,7 @@ export function closeDeleteModal() {
 export function deleteModule() {
     $modalToDelete.remove();
     $modalToDelete = '';
+    saveSnappyContent();
 }
 
 $snappy.on('click', '.js-delete-module', function (e) {
@@ -227,3 +222,18 @@ $snappy.on('click', '.js-confirm-delete', function (e) {
     deleteModule();
     closeDeleteModal();
 });
+
+
+export function saveSnappyContent() {
+    $.ajax({
+        url     : $('#snappy').attr('data-post-url'),
+        type    : 'POST',
+        dataType: 'json',
+        data    : {
+            data: $('#snappyContent').html()
+        }
+    }).done(function () {
+        alertify.maxLogItems(1).success('Content Saved');
+    });
+}
+

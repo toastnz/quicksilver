@@ -10,7 +10,7 @@
     width: 600px;
     top: 40px;
     transform: translateX(130px) translateY(-80px);
-    background: $off-white;
+    background: $blue;
     border-radius: 3px;
     text-align: center;
     z-index: 9;
@@ -22,13 +22,13 @@
         border: 0;
         padding: 3px;
         i {
-            color: #333;
+            color: $white;
             font-size: 24px;
         }
     }
     a {
         font-size: 0;
-        color: #333;
+        color: $white;
         position: relative;
         &:hover {
             ul {

@@ -1544,18 +1544,18 @@ form.loading .loader {
 }
 
 .nominal {
-  background: #7a7a7a;
+  background: #00afec;
   transition: all 120ms;
   cursor: pointer;
   color: #ffffff;
 }
 
 .nominal:hover {
-  background: #727272;
+  background: #00a4dd;
 }
 
 .nominal:active {
-  background: #686868;
+  background: #0095c8;
 }
 
 .constructive {
@@ -1651,6 +1651,82 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .hljs-deletion,
 .hljs-meta {
   color: #75715e;
+}
+
+.deleteModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 360ms;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transform: scale(0.8);
+  transform: scale(0.8);
+  visibility: hidden;
+}
+
+.deleteModal.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  visibility: visible;
+}
+
+.deleteModal.active .wrap {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1) translateY(-50%);
+  transform: scale(1) translateY(-50%);
+}
+
+.deleteModal .wrap {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  max-width: 400px;
+  transition: all 480ms;
+  transition-delay: 120ms;
+  background: white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  -webkit-transform: scale(0.6) translateY(-80%);
+  transform: scale(0.6) translateY(-80%);
+}
+
+.deleteModal .wrap p {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  font-size: 15.2px;
+}
+
+.deleteModal .wrap p {
+  font-size: 15.2px;
+}
+
+.deleteModal .wrap button {
+  margin-bottom: -1px;
+  border: 0;
+  outline: none;
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 12px;
+  font-size: 13.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.deleteModal .wrap button {
+  font-size: 13.6px;
 }
 
 .gu-mirror {
@@ -2312,7 +2388,7 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   top: 40px;
   -webkit-transform: translateX(130px) translateY(-80px);
   transform: translateX(130px) translateY(-80px);
-  background: #f8f6f7;
+  background: #00afec;
   border-radius: 3px;
   text-align: center;
   z-index: 9;
@@ -2328,13 +2404,13 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 }
 
 #wysiwyg button i {
-  color: #333;
+  color: #ffffff;
   font-size: 24px;
 }
 
 #wysiwyg a {
   font-size: 0;
-  color: #333;
+  color: #ffffff;
   position: relative;
 }
 
