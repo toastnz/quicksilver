@@ -226,11 +226,11 @@ li {
 }
 
 span {
-  font-size: 10px;
+  font-size: 13.6px;
 }
 
 span {
-  font-size: 10px;
+  font-size: 13.6px;
 }
 
 h1,
@@ -1130,11 +1130,11 @@ header nav > ul > li ul li a:hover {
   background: #ea148c;
 }
 
-nav {
+header nav {
   display: none;
 }
 
-nav {
+header nav {
   display: block;
 }
 
@@ -2401,6 +2401,26 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   font-weight: 700;
 }
 
+.contentModule h1 a,
+.contentModule h2 a,
+.contentModule h3 a,
+.contentModule h4 a,
+.contentModule h5 a,
+.contentModule h6 a {
+  color: green;
+  text-decoration: none;
+}
+
+.contentModule h1 a:hover,
+.contentModule h2 a:hover,
+.contentModule h3 a:hover,
+.contentModule h4 a:hover,
+.contentModule h5 a:hover,
+.contentModule h6 a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .contentModule p {
   margin-bottom: 12px;
   font-size: 13.6px;
@@ -2412,10 +2432,20 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   font-size: 13.6px;
 }
 
+.contentModule p a {
+  color: green;
+  text-decoration: none;
+}
+
+.contentModule p a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .contentModule strong,
 .contentModule b {
   font-family: 'Lora', serif;
-  font-weight: 300;
+  font-weight: 700;
 }
 
 .contentModule i {
@@ -2433,6 +2463,18 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   position: relative;
   margin-bottom: 12px;
   display: block;
+}
+
+.contentModule ul li a,
+.contentModule ol li a {
+  color: green;
+  text-decoration: none;
+}
+
+.contentModule ul li a:hover,
+.contentModule ol li a:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .contentModule ul li:before,
@@ -2686,8 +2728,8 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 }
 
 .textEditor #wysiwyg {
-  -webkit-transform: translateX(120px) translateY(0);
-  transform: translateX(120px) translateY(0);
+  -webkit-transform: translateX(0px) translateY(0);
+  transform: translateX(0px) translateY(0);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
@@ -2943,6 +2985,11 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   font-weight: bold;
 }
 
+.sidebarOpen #wysiwyg {
+  -webkit-transform: translateX(130px) translateY(0px);
+  transform: translateX(130px) translateY(0px);
+}
+
 #wysiwyg {
   position: fixed;
   left: 0;
@@ -2950,12 +2997,12 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   margin: 0 auto;
   width: 600px;
   top: 40px;
-  -webkit-transform: translateX(130px) translateY(-80px);
-  transform: translateX(130px) translateY(-80px);
+  -webkit-transform: translateX(0px) translateY(-80px);
+  transform: translateX(0px) translateY(-80px);
   background: #00afec;
   border-radius: 3px;
   text-align: center;
-  z-index: 9;
+  z-index: 9999;
   transition: all 480ms;
 }
 
