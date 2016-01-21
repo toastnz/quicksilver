@@ -1,5 +1,5 @@
-$sidebar-width: 260px;
-$sidebar: lighten($black-light, 10%);
+$sidebar-width: 274px;
+$sidebar: rgba($blue-dark, 0.9);
 #snappySidebar {
     position: fixed;
     background: $sidebar;
@@ -12,46 +12,22 @@ $sidebar: lighten($black-light, 10%);
     width: $sidebar-width;
     transform: translateX(-$sidebar-width);
     transition: $med;
-    .sidebar-handle {
-        background: $sidebar;
-        position: absolute;
-        bottom: 0;
-        right: -40px;
-        width: 40px;
-        text-align: center;
-        border-radius: 0 3px 3px 0;
-        cursor: pointer;
-        box-shadow: $side-z1-shadow;
-        &:after {
-            @include pseudo;
-            left: -5px;
-            height: 100%;
-            background: $sidebar;
-            display: block;
-            top: 0;
-            right: 100%;
-        }
-        i {
-            font-size: 40px;
-            color: white;
-            transition: all 480ms;
-        }
-    }
 }
 
 #modules {
-    padding-top: 12px;
+    padding: 12px;
     height: 100%;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    border-right: 12px solid $sidebar;
-    border-left: 12px solid $sidebar;
     .module {
         background: white;
         margin-bottom: 12px;
-        @include aspect(3.4, 1);
         display: block;
+        position: relative;
+        img {
+            width: 100%;
+        }
         * {
             @include extra-bold;
         }
@@ -65,26 +41,22 @@ $sidebar: lighten($black-light, 10%);
 
 .sidebarOpen {
     #snappySidebar {
-        box-shadow: $side-z1-shadow;
+        box-shadow: $side-z5-shadow;
         transform: translateX(0);
         .sidebar-handle i {
             transform: rotate(180deg);
         }
     }
-    #snappyContent {
-        transform: translateX($sidebar-width);
-        width: calc(100% - #{$sidebar-width}) !important;
-    }
-    #wysiwyg {
-        transform: translateX(120px) translateY(0);
-        box-shadow: $z3-shadow;
-    }
+    //#wysiwyg {
+    //    box-shadow: $z3-shadow;
+    //    transform: translateY(-20px) !important;
+    //}
 }
 
 .textEditor {
     #wysiwyg {
-        transform: translateX(0px) translateY(0);
         box-shadow: $z3-shadow;
+        transform: translateY(-20px) !important;
     }
 }
 

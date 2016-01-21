@@ -39,7 +39,7 @@ export function open() {
  * INTERACTIONS
  *
  */
-$snappy.on('click', '.js-toggle-sidebar', function (e) {
+$body.on('click', '.js-toggle-sidebar', function (e) {
     e.preventDefault();
     if (state() === 'open') {
         close();
@@ -64,3 +64,5 @@ $snappy.on('click', '.js-open-sidebar', function (e) {
 //    element: document.getElementById('scroll')
 //}).create();
 //
+
+//open();

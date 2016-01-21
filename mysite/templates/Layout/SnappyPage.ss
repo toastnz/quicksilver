@@ -44,66 +44,63 @@
     </div>
 
     <div id="snappySidebar">
-        <div class="js-toggle-sidebar sidebar-handle">
-            <i class="material-icons">keyboard_arrow_right</i>
-        </div>
 
         <div id="scroll">
             <div id="modules">
 
                 <div class="module sidebarModule" data-module-type="blockquote">
+                    <img src="$ThemeDir/dist/images/snappy/blockquote.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">blockquote</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="text">
+                    <img src="$ThemeDir/dist/images/snappy/text.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">text</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="list">
+                    <img src="$ThemeDir/dist/images/snappy/list.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">list</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="heading">
+                    <img src="$ThemeDir/dist/images/snappy/heading.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">heading</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="divider">
+                    <img src="$ThemeDir/dist/images/snappy/divider.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">divider</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="padding">
+                    <img src="$ThemeDir/dist/images/snappy/padding.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">padding</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="image">
+                    <img src="$ThemeDir/dist/images/snappy/image.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">image</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="imageText">
+                    <img src="$ThemeDir/dist/images/snappy/imageText.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">image & text</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="trippleImage">
+                    <img src="$ThemeDir/dist/images/snappy/trippleImage.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">tripple image</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="video">
+                    <img src="$ThemeDir/dist/images/snappy/video.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">video</h6>
                 </div>
 
                 <div class="module sidebarModule" data-module-type="columnText">
+                    <img src="$ThemeDir/dist/images/snappy/columnText.png">
                     <div class="js-drag"></div>
-                    <h6 class="vertical uppercase center">Column Text</h6>
                 </div>
             </div>
         </div>
@@ -131,9 +128,31 @@
 
 </div>
 
-<div style="position:fixed;right:12px;top:12px;background:red;color:white;">
-    <button class="js-publish">PUBLISH</button>
-    <button class="js-draft">DRAFT</button>
-    <button class="js-live">LIVE</button>
-    <button class="js-discard-draft">Discard Draft</button>
+<%--<div style="position:fixed;right:12px;top:12px;background:red;color:white;">--%>
+    <%--<button class="js-publish">PUBLISH</button>--%>
+    <%--<button class="js-draft">DRAFT</button>--%>
+    <%--<button class="js-live">LIVE</button>--%>
+    <%--<button class="js-discard-draft">Discard Draft</button>--%>
+<%--</div>--%>
+
+<div id="snappyMenu">
+    <i class="material-icons">menu</i>
+
+    <div class="mainMenu js-toggle-sidebar" data-tooltip="Sidebar">
+        <i class="material-icons">dns</i>
+    </div>
+
+    <div class="subMenu blue" data-tooltip="Change Mode">
+        <i class="material-icons">mode_edit</i>
+    </div>
+
+    <div class="subMenu green js-publish" data-tooltip="Save Changes">
+        <i class="material-icons">save</i>
+    </div>
+
+    <div class="subMenu red js-discard-draft" data-tooltip="Discard Draft">
+        <i class="material-icons">replay</i>
+    </div>
+
+
 </div>
