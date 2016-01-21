@@ -1156,11 +1156,11 @@ header nav {
       background: #35366C; }
       .moduleEdit span.purple:hover {
         background: #2d2d5b; }
-    .moduleEdit span.brown {
+    .moduleEdit span.blue-dark {
       border-radius: 3px 3px 0 0;
-      background: #886747; }
-      .moduleEdit span.brown:hover {
-        background: #775a3e; }
+      background: #04283f; }
+      .moduleEdit span.blue-dark:hover {
+        background: #021927; }
     .moduleEdit span.green {
       background: #2eb150; }
       .moduleEdit span.green:hover {
@@ -1173,7 +1173,6 @@ header nav {
 #snappyMenu {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  position: absolute;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   background: #04283f;
   border-radius: 56px;
@@ -1264,8 +1263,6 @@ header nav {
     opacity: 1; }
 
 .subMenu {
-  position: absolute;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
   border-radius: 40px;
   width: 40px;
@@ -1331,6 +1328,14 @@ header nav {
             transform: translateY(-50%);
     position: absolute;
     color: white; }
+
+.alertify-logs.right {
+  right: 102px !important;
+  bottom: 30px !important;
+  font-size: 13px; }
+  .alertify-logs.right .show {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    margin: 0 !important; }
 
 .alertify, .alertify *, .alertify-logs > *, .alertify.show {
   box-sizing: border-box; }
@@ -2315,78 +2320,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-transform: translateY(-20px) !important;
           transform: translateY(-20px) !important; }
-
-/* disable selection while dragging */
-.gm-scrollbar-disable-selection {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
-
-/* fallback for native floating scrollbars */
-.gm-prevented {
-  -webkit-overflow-scrolling: touch; }
-
-.gm-prevented .gm-scrollbar {
-  display: none; }
-
-/* actual gemini-scrollbar styles */
-.gm-scrollbar-container {
-  position: relative;
-  overflow: hidden !important;
-  width: 100%;
-  height: 100%; }
-
-.gm-scrollbar {
-  position: absolute;
-  right: 2px;
-  bottom: 2px;
-  z-index: 1;
-  border-radius: 3px; }
-
-.gm-scrollbar.-vertical {
-  width: 6px;
-  top: 2px; }
-
-.gm-scrollbar.-horizontal {
-  height: 6px;
-  left: 2px; }
-
-.gm-scrollbar .thumb {
-  position: relative;
-  display: block;
-  width: 0;
-  height: 0;
-  cursor: pointer;
-  border-radius: inherit;
-  background-color: rgba(0, 0, 0, 0.2); }
-
-.gm-scrollbar .thumb:hover,
-.gm-scrollbar .thumb:active {
-  background-color: rgba(0, 0, 0, 0.3); }
-
-.gm-scrollbar.-vertical .thumb {
-  width: 100%; }
-
-.gm-scrollbar.-horizontal .thumb {
-  height: 100%; }
-
-.gm-scrollbar-container .gm-scroll-view {
-  width: 100%;
-  height: 100%;
-  overflow: scroll;
-  -webkit-overflow-scrolling: touch; }
-
-/* @option: autoshow */
-.gm-scrollbar-container.gm-autoshow .gm-scrollbar {
-  opacity: 0;
-  transition: opacity 120ms ease-out; }
-
-.gm-scrollbar-container.gm-autoshow:hover .gm-scrollbar,
-.gm-scrollbar-container.gm-autoshow:focus .gm-scrollbar {
-  opacity: 1;
-  transition: opacity 340ms ease-out; }
 
 /*
 

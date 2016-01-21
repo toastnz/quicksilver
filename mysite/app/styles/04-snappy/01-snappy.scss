@@ -140,11 +140,11 @@ $max-width: 1140px;
                 background: darken($purple, 5%);
             }
         }
-        &.brown {
+        &.blue-dark {
             border-radius: 3px 3px 0 0;
-            background: $brown;
+            background: $blue-dark;
             &:hover {
-                background: darken($brown, 5%);
+                background: darken($blue-dark, 5%);
             }
         }
         &.green {
@@ -164,7 +164,6 @@ $max-width: 1140px;
 
 #snappyMenu {
     backface-visibility: hidden;
-    position: absolute;
     box-shadow: $z3-shadow;
     background: $blue-dark;
     border-radius: 56px;
@@ -243,8 +242,6 @@ $max-width: 1140px;
 }
 
 .subMenu {
-    position: absolute;
-    box-shadow: $z2-shadow;
     box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
     border-radius: 40px;
     width: 40px;
@@ -307,5 +304,15 @@ $max-width: 1140px;
         margin: 0 auto;
         @include vertical-align;
         color: white;
+    }
+}
+
+.alertify-logs.right {
+    right: 102px !important;
+    bottom: 30px !important;
+    font-size: 13px;
+    .show {
+        box-shadow: $z2-shadow;
+        margin: 0 !important;
     }
 }

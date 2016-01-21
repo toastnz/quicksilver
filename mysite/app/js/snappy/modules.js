@@ -1,24 +1,23 @@
 /**
  * Constants
  */
- const _ = require('underscore');
- const alertify = require('alertify.js');
- const $snappy = $('#snappy');
+const _ = require('underscore');
+const alertify = require('alertify.js');
+const $snappy = $('#snappy');
 
- const SwiftVideos = ['e-ORhEE9VVg'];
- const modules = {};
- const text = {
+const SwiftVideos = ['e-ORhEE9VVg'];
+const modules = {};
+const text = {
     heading        : `Collaboratively administrate markets`,
     paragraph      : `Although it meant courting more run-ins at school, John decided to indulge her son's passion. By age 12, Richard was attending science camps during the summer and private school during the school year. When a teacher recommended her son engage in the Columbia Science Honours Program, a post-Sputnik program designed for gifted middle- and high-school students in New York City, Stallman added to his extracurriculars and was soon commuting uptown to the Columbia University campus on Saturdays.`,
     short_paragraph: `Although it meant courting more run-ins at school, John decided to indulge her son's passion. By age 12, Richard was attending science camps during the summer and private school during the school year.`,
 };
 
 export function moduleEdit(showSettings) {
-    let settings = (!showSettings) ? `` : `<span class="purple js-edit-settings"><i class="material-icons">settings</i></span><span class="blue js-edit-data"><i class="material-icons">code</i></span>`;
+    let settings = (!showSettings) ? `` : `<span class="blue js-edit-settings"><i class="material-icons">settings</i></span><span class="green js-edit-data"><i class="material-icons">code</i></span>`;
     return `<div class="moduleEdit">
-    <span class="brown"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
+    <span class="blue-dark"><div class="js-drag"></div><i class="material-icons">drag_handle</i></span>
     ${settings}
-    <span class="green js-save-module"><i class="material-icons">save</i></span>
     <span class="red js-delete-module"><i class="material-icons">delete</i></span>
     </div>`;
 
@@ -195,11 +194,11 @@ const $dataModal = $('.dataModal');
 /**
  * Enter Edit HTML Mode
  */
- let $oldHTML;
- let $newHTML;
+let $oldHTML;
+let $newHTML;
 
 
- export function enterHTMLMode($el) {
+export function enterHTMLMode($el) {
     $oldHTML = $el;
     $dataModal.addClass('active');
     let $newHTML = $oldHTML.find('.data')[0].outerHTML;
@@ -224,7 +223,7 @@ export function saveHTML($el, html) {
 /**
  * Activate editMode for the curreent contentModule
  */
- export function enterEditMode($el) {
+export function enterEditMode($el) {
     if ($el.hasClass('editMode')) {
         return false;
     } else {
@@ -238,7 +237,7 @@ export function saveHTML($el, html) {
 /**
  * Remove all active editMode elements
  */
- export function exitEditMode() {
+export function exitEditMode() {
     $('.editMode').removeClass('editMode');
     $('body').removeClass('textEditor');
 }
@@ -248,49 +247,49 @@ export function saveHTML($el, html) {
  * INTERACTIONS
  *
  */
- $snappy.on('click', '.contentModule', function (e) {
+$snappy.on('click', '.contentModule', function (e) {
     e.preventDefault();
     enterEditMode($(this));
 });
 
- $snappy.on('click', '.js-edit-data', function (e) {
+$snappy.on('click', '.js-edit-data', function (e) {
     e.preventDefault();
     enterHTMLMode($(this).closest('.contentModule'));
 });
 
- $snappy.on('click', '.js-save-module', function (e) {
+$snappy.on('click', '.js-save-module', function (e) {
     e.preventDefault();
     saveSnappyContent();
 });
 
- $snappy.on('click', '.js-cancel-save-data', function (e) {
+$snappy.on('click', '.js-cancel-save-data', function (e) {
     e.preventDefault();
     exitHTMLMode();
 });
 
- $('body').on('click', '.js-close-textEditor', function (e) {
+$('body').on('click', '.js-close-textEditor', function (e) {
     e.preventDefault();
     exitEditMode();
 });
 
- $(document).keyup(function (e) {
+$(document).keyup(function (e) {
     if (e.keyCode == 27) {
         exitHTMLMode();
         closeDeleteModal();
     }
 });
 
- $snappy.mousedown(function (e) {
+$snappy.mousedown(function (e) {
     var container = $('[contenteditable=true]');
     if (!container.is(e.target) && container.has(e.target).length === 0) {
         container.blur();
     }
 });
 
- let $modalToDelete;
- let $deleteModal = $('.deleteModal');
+let $modalToDelete;
+let $deleteModal = $('.deleteModal');
 
- export function openDeleteModal() {
+export function openDeleteModal() {
     $deleteModal.addClass('active');
 }
 
@@ -340,11 +339,11 @@ export function saveSnappyContent(clear) {
             data: content
         }
     }).done(function (response) {
-        console.log(response)
+        console.log(response);
         if (response == 'You must be logged in to perform this action') {
             alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {
-            alertify.logPosition("top right").maxLogItems(1).success('Content Saved');
+            alertify.logPosition("bottom right").maxLogItems(1).success('Content Saved');
         }
     });
 }
@@ -359,9 +358,9 @@ export function getSnappyContent(version) {
         }
     }).done(function (response) {
         if (response == 'You must be logged in to perform this action') {
-            alertify.logPosition("top right").maxLogItems(1).error('You must be logged in to perform this action');
+            alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
         } else {
-            alertify.logPosition("top right").maxLogItems(1).success('Changed Version');
+            alertify.logPosition("bottom right").maxLogItems(1).success('Changed Version');
             console.log(response);
             $('#snappyContent').html(response);
         }
@@ -377,9 +376,9 @@ export function publishSnappyContent() {
     }).done(function (response) {
         console.log(response)
         if (response == 'You must be logged in to perform this action') {
-            alertify.logPosition("top right").maxLogItems(1).error('You must be logged in to perform this action');
+            alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {
-            alertify.logPosition("top right").maxLogItems(1).success('Content Published');
+            alertify.logPosition("bottom right").maxLogItems(1).success('Content Published');
         }
     });
 }
