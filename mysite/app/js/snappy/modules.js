@@ -341,9 +341,9 @@ export function saveSnappyContent(clear) {
     }).done(function (response) {
         console.log(response);
         if (response == 'You must be logged in to perform this action') {
-            alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
+            alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {
-            alertify.logPosition("bottom right").maxLogItems(1).success('Content Saved');
+            alertify.logPosition('top right').maxLogItems(1).success('Content Saved');
         }
     });
 }
@@ -358,9 +358,9 @@ export function getSnappyContent(version) {
         }
     }).done(function (response) {
         if (response == 'You must be logged in to perform this action') {
-            alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
+            alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else {
-            alertify.logPosition("bottom right").maxLogItems(1).success('Changed Version');
+            alertify.logPosition('top right').maxLogItems(1).success('Changed Version');
             console.log(response);
             $('#snappyContent').html(response);
         }
@@ -376,9 +376,9 @@ export function publishSnappyContent() {
     }).done(function (response) {
         console.log(response)
         if (response == 'You must be logged in to perform this action') {
-            alertify.logPosition("bottom right").maxLogItems(1).error('You must be logged in to perform this action');
+            alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {
-            alertify.logPosition("bottom right").maxLogItems(1).success('Content Published');
+            alertify.logPosition('top right').maxLogItems(1).success('Content Published');
         }
     });
 }

@@ -27,9 +27,9 @@ Email:
   admin_email: 'email@mysite.com'
 
 LeftAndMain:
-  cms_menu_background: '#1b354c'
-  cms_menu_active_text_color: '#fff'
-  cms_menu_active_background_color: '#0d1a25'
+  cms_highlight_colour : '#212121';
+  cms_success_color : '#2eb150';
+  cms_error_color : '#e42e37';
 
 ColorField:
   colors:

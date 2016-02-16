@@ -12,8 +12,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
     <![endif]-->
     <%-- Custom type to be inserted here --%>
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600|Lora:400,400italic,700,700italic" rel="stylesheet" type="text/css">
-    <%--<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>--%>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600" rel="stylesheet" type="text/css">
 
     <% with $SiteConfig %>
         <link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>

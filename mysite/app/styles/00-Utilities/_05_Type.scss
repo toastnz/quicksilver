@@ -1,86 +1,86 @@
 $base: 10px;
 
 $breakpoints: (
-    $xxs: 480px,
-    $xs: 540px,
-    $sm: 640px,
-    $md: 768px,
-    $lg: 1024px,
-    $xl: 1280px,
-    $xxl: 1920px
-    );
+        $xxs: 480px,
+        $xs: 540px,
+        $sm: 640px,
+        $md: 768px,
+        $lg: 1024px,
+        $xl: 1280px,
+        $xxl: 1920px
+);
 
 $h1: (
-    null: ceil(($base * 6.4)) * 0.6,
-    480px: ceil(($base * 6.4)) * 0.7,
-    768px: ceil(($base * 6.4)) * 0.8,
-    992px: ceil(($base * 6.4)) * 0.9,
-    1200px: ceil(($base * 6.4)) * 1.0,
-    1600px: ceil(($base * 6.4)) * 1.0
-    );
+        null: ceil(($base * 6.4)) * 0.6,
+        480px: ceil(($base * 6.4)) * 0.7,
+        768px: ceil(($base * 6.4)) * 0.8,
+        992px: ceil(($base * 6.4)) * 0.9,
+        1200px: ceil(($base * 6.4)) * 1.0,
+        1600px: ceil(($base * 6.4)) * 1.0
+);
 
 $h2: (
-    null: ceil(($base * 5.2)) * 0.8,
-    480px: ceil(($base * 5.2)) * 0.8,
-    768px: ceil(($base * 5.2)) * 0.8,
-    992px: ceil(($base * 5.2)) * 0.9,
-    1200px: ceil(($base * 5.2)) * 1.0,
-    1600px: ceil(($base * 5.2)) * 1.0
-    );
+        null: ceil(($base * 5.2)) * 0.8,
+        480px: ceil(($base * 5.2)) * 0.8,
+        768px: ceil(($base * 5.2)) * 0.8,
+        992px: ceil(($base * 5.2)) * 0.9,
+        1200px: ceil(($base * 5.2)) * 1.0,
+        1600px: ceil(($base * 5.2)) * 1.0
+);
 
 $h3: (
-    null: ceil(($base * 4.5)) * 0.8,
-    480px: ceil(($base * 4.5)) * 0.8,
-    768px: ceil(($base * 4.5)) * 0.8,
-    992px: ceil(($base * 4.5)) * 0.9,
-    1200px: ceil(($base * 4.5)) * 1.0,
-    1600px: ceil(($base * 4.5)) * 1.0
-    );
+        null: ceil(($base * 4.5)) * 0.8,
+        480px: ceil(($base * 4.5)) * 0.8,
+        768px: ceil(($base * 4.5)) * 0.8,
+        992px: ceil(($base * 4.5)) * 0.9,
+        1200px: ceil(($base * 4.5)) * 1.0,
+        1600px: ceil(($base * 4.5)) * 1.0
+);
 
 $h4: (
-    null: ceil(($base * 3)) * 0.8,
-    480px: ceil(($base * 3)) * 0.8,
-    768px: ceil(($base * 3)) * 0.8,
-    992px: ceil(($base * 3)) * 0.9,
-    1200px: ceil(($base * 3)) * 1.0,
-    1600px: ceil(($base * 3)) * 1.0
-    );
+        null: ceil(($base * 3)) * 0.8,
+        480px: ceil(($base * 3)) * 0.8,
+        768px: ceil(($base * 3)) * 0.8,
+        992px: ceil(($base * 3)) * 0.9,
+        1200px: ceil(($base * 3)) * 1.0,
+        1600px: ceil(($base * 3)) * 1.0
+);
 
 $h5: (
-    null: ceil(($base * 2.6)) * 0.8,
-    480px: ceil(($base * 2.6)) * 0.8,
-    768px: ceil(($base * 2.6)) * 0.8,
-    992px: ceil(($base * 2.6)) * 0.9,
-    1200px: ceil(($base * 2.6)) * 1.0,
-    1600px: ceil(($base * 2.6)) * 1.0
-    );
+        null: ceil(($base * 2.6)) * 0.8,
+        480px: ceil(($base * 2.6)) * 0.8,
+        768px: ceil(($base * 2.6)) * 0.8,
+        992px: ceil(($base * 2.6)) * 0.9,
+        1200px: ceil(($base * 2.6)) * 1.0,
+        1600px: ceil(($base * 2.6)) * 1.0
+);
 
 $h6: (
-    null: ceil(($base * 1.9)) * 0.8,
-    480px: ceil(($base * 1.9)) * 0.8,
-    768px: ceil(($base * 1.9)) * 0.8,
-    992px: ceil(($base * 1.9)) * 0.9,
-    1200px: ceil(($base * 1.9)) * 1.0,
-    1600px: ceil(($base * 1.9)) * 1.0
-    );
+        null: ceil(($base * 1.9)) * 0.8,
+        480px: ceil(($base * 1.9)) * 0.8,
+        768px: ceil(($base * 1.9)) * 0.8,
+        992px: ceil(($base * 1.9)) * 0.9,
+        1200px: ceil(($base * 1.9)) * 1.0,
+        1600px: ceil(($base * 1.9)) * 1.0
+);
 
 $p: (
-    null: ceil(($base * 1.7)) * 0.8,
-    480px: ceil(($base * 1.7)) * 0.8,
-    768px: ceil(($base * 1.7)) * 0.8,
-    992px: ceil(($base * 1.7)) * 0.9,
-    1200px: ceil(($base * 1.7)) * 1.0,
-    1600px: ceil(($base * 1.7)) * 1.0
-    );
+        null: ceil(($base * 1.7)) * 0.8,
+        480px: ceil(($base * 1.7)) * 0.8,
+        768px: ceil(($base * 1.7)) * 0.8,
+        992px: ceil(($base * 1.7)) * 0.9,
+        1200px: ceil(($base * 1.7)) * 1.0,
+        1600px: ceil(($base * 1.7)) * 1.0
+);
 
 $span: (
-    null: ceil(($base * 1.7)) * 0.8,
-    480px: ceil(($base * 1.7)) * 0.8,
-    768px: ceil(($base * 1.7)) * 0.8,
-    992px: ceil(($base * 1.7)) * 0.9,
-    1200px: ceil(($base * 1.7)) * 1.0,
-    1600px: ceil(($base * 1.7)) * 1.0
-    );
+        null: ceil(($base * 1.7)) * 0.8,
+        480px: ceil(($base * 1.7)) * 0.8,
+        768px: ceil(($base * 1.7)) * 0.8,
+        992px: ceil(($base * 1.7)) * 0.9,
+        1200px: ceil(($base * 1.7)) * 1.0,
+        1600px: ceil(($base * 1.7)) * 1.0
+);
 
 @mixin font($fs-map, $fs-breakpoints: $breakpoints) {
     @each $fs-breakpoint, $fs-font-size in $fs-map {
@@ -112,23 +112,6 @@ $span: (
 // Typograpgy settings
 //==================================================================
 
-html, body {
-    height: 100%;
-    font-size: 10px;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: normal;
-}
-
-@mixin lora-regular {
-    font-family: 'Lora', serif;
-    font-weight: 300;
-}
-
-@mixin lora-bold {
-    font-family: 'Lora', serif;
-    font-weight: 700;
-}
-
 @mixin light {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
@@ -154,11 +137,17 @@ html, body {
     font-weight: 800;
 }
 
+html, body {
+    height: 100%;
+    font-size: 10px;
+    @include regular;
+}
+
 /** =========================================
  * Typography
  ===========================================*/
 
- h1 {
+h1 {
     @include font($h1);
     @include extra-bold;
 }

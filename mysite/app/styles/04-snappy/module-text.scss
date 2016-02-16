@@ -22,7 +22,7 @@
     p {
         margin-bottom: 12px;
         @include font($p);
-        @include lora-regular;
+        //@include lora-regular;
         a{
             color:green;
             text-decoration:none;
@@ -33,7 +33,7 @@
         }
     }
     strong, b {
-        @include lora-bold;
+        //@include lora-bold;
     }
     i {
         font-style: italic;

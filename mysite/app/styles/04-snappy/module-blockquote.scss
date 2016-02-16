@@ -11,7 +11,7 @@
         padding-left: 24px;
         width: calc(100% - 72px);
         h6 {
-            @include lora-regular;
+            //@include lora-regular;
             position: relative;
             line-height: 1.4;
             @include font($h5);

@@ -19,7 +19,7 @@ const $snappyContent = $('#snappyContent');
 
 dragula([$modules[0], $snappyContent[0]], {
     copy   : function (el, target) {
-        return (el.className.indexOf('sidebarModule') > 1) ? true : false;
+        return (el.className.indexOf('sidebarModule') > 1);
     },
     accepts: function (el, target) {
         return target === $snappyContent[0];
@@ -42,7 +42,7 @@ dragula([$modules[0], $snappyContent[0]], {
             }, 200);
         }
     } else {
-        log('saving')
+        log('saving');
         module.saveSnappyContent();
     }
 });
@@ -58,5 +58,5 @@ $('.js-clear-data').on('click', function (e) {
 });
 
 
-$snappyContent.css({'min-height': $snappyContent.parent().outerHeight()})
+$snappyContent.css({'min-height': $snappyContent.parent().outerHeight()});
 

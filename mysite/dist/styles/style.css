@@ -56,7 +56,7 @@ html, body {
   height: 100%;
   font-size: 10px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: normal; }
+  font-weight: 400; }
 
 /** =========================================
  * Typography
@@ -1329,14 +1329,6 @@ header nav {
     position: absolute;
     color: white; }
 
-.alertify-logs.right {
-  right: 102px !important;
-  bottom: 30px !important;
-  font-size: 13px; }
-  .alertify-logs.right .show {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-    margin: 0 !important; }
-
 .alertify, .alertify *, .alertify-logs > *, .alertify.show {
   box-sizing: border-box; }
 
@@ -1419,7 +1411,8 @@ header nav {
   display: inline-block;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  -ms-grid-row-align: center;
+      align-items: center;
   padding: 0 6px;
   margin: 6px 8px;
   line-height: 36px;
@@ -1902,8 +1895,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   padding-left: 24px;
   width: calc(100% - 72px); }
   .blockquote blockquote h6 {
-    font-family: 'Lora', serif;
-    font-weight: 300;
     position: relative;
     line-height: 1.4;
     font-size: 20.8px;
@@ -2135,9 +2126,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
         cursor: pointer; }
   .contentModule p {
     margin-bottom: 12px;
-    font-size: 13.6px;
-    font-family: 'Lora', serif;
-    font-weight: 300; }
+    font-size: 13.6px; }
     @media screen and (min-width: 480px) {
       .contentModule p {
         font-size: 13.6px; } }
@@ -2159,9 +2148,6 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
       .contentModule p a:hover {
         text-decoration: underline;
         cursor: pointer; }
-  .contentModule strong, .contentModule b {
-    font-family: 'Lora', serif;
-    font-weight: 700; }
   .contentModule i {
     font-style: italic; }
   .contentModule ul, .contentModule ol {

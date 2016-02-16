@@ -9,7 +9,6 @@
         <span class="third"></span>
     </div>
 
-    $SVG('snappy')
     <nav>
         <ul>
             <% loop $Menu(1) %>

@@ -17,6 +17,7 @@
   ],
   "require": {
     "php": ">=5.3.3",
+    "toastnz/flat-cms": "*",
     "toastnz/toast-seo": "*",
     "google/recaptcha": "~1.1",
     "drewm/mailchimp-api": "~1.0",
@@ -27,16 +28,8 @@
     "toastnz/twitter-card-meta": "dev-master",
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
-    "toastnz/silverstripe-cms-theme": "dev-master",
     "undefinedoffset/sortablegridfield": "dev-master",
     "silverstripe-australia/gridfieldextensions": "~1.1"
-  },
-  "scripts": {
-    "post-create-project-cmd": [
-      "npm install",
-      "npm install -g gulp-cli",
-      "gulp deploy"
-    ]
   },
   "minimum-stability": "dev"
 }

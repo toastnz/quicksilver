@@ -39,6 +39,7 @@ export function open() {
  * INTERACTIONS
  *
  */
+
 $body.on('click', '.js-toggle-sidebar', function (e) {
     e.preventDefault();
     if (state() === 'open') {
