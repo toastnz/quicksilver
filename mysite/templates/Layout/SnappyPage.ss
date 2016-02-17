@@ -1,4 +1,4 @@
-<div id="snappy" data-get-url="$Link('getSnappy')" data-post-url="$Link('saveSnappy')" data-publish-url="$Link('publishSnappy')">
+<div id="snappy" data-base="$Link" data-get-url="$Link('getSnappy')" data-post-url="$Link('saveSnappy')" data-publish-url="$Link('publishSnappy')">
 
     <div id="wysiwyg">
         <button data-action="bold"><i class="material-icons">format_bold</i></button>
@@ -106,8 +106,11 @@
         </div>
     </div>
 
+    $snappyUpload
+
     <div id="snappyContent">
         $Content
+
     </div>
 
     <div class="dataModal">
@@ -128,12 +131,6 @@
 
 </div>
 
-<%--<div style="position:fixed;right:12px;top:12px;background:red;color:white;">--%>
-    <%--<button class="js-publish">PUBLISH</button>--%>
-    <%--<button class="js-draft">DRAFT</button>--%>
-    <%--<button class="js-live">LIVE</button>--%>
-    <%--<button class="js-discard-draft">Discard Draft</button>--%>
-<%--</div>--%>
 
 <div id="snappyMenu">
     <i class="material-icons">menu</i>
@@ -142,11 +139,15 @@
         <i class="material-icons">dns</i>
     </div>
 
-    <div class="subMenu blue" data-tooltip="Change Mode">
-        <i class="material-icons">mode_edit</i>
+    <div class="subMenu purple js-draft" data-tooltip="Draft Mode">
+        <i class="material-icons">assignment</i>
     </div>
 
-    <div class="subMenu green js-publish" data-tooltip="Save Changes">
+    <div class="subMenu blue js-live" data-tooltip="Live Mode">
+        <i class="material-icons">assignment_turned_in</i>
+    </div>
+
+    <div class="subMenu green js-publish" data-tooltip="Publish">
         <i class="material-icons">save</i>
     </div>
 

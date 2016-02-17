@@ -339,7 +339,6 @@ export function saveSnappyContent(clear) {
             data: content
         }
     }).done(function (response) {
-        console.log(response);
         if (response == 'You must be logged in to perform this action') {
             alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {
@@ -361,7 +360,6 @@ export function getSnappyContent(version) {
             alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else {
             alertify.logPosition('top right').maxLogItems(1).success('Changed Version');
-            console.log(response);
             $('#snappyContent').html(response);
         }
     });
@@ -374,7 +372,6 @@ export function publishSnappyContent() {
         type    : 'POST',
         dataType: 'json',
     }).done(function (response) {
-        console.log(response)
         if (response == 'You must be logged in to perform this action') {
             alertify.logPosition('top right').maxLogItems(1).error('You must be logged in to perform this action');
         } else if (response == 'Success') {

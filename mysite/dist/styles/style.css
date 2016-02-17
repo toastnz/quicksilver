@@ -1291,6 +1291,10 @@ header nav {
     background: #00afec; }
   .subMenu.green {
     background: #2eb150; }
+  .subMenu.yellow {
+    background: #f1d96b; }
+  .subMenu.purple {
+    background: #35366C; }
   .subMenu.red {
     background: #ec4c68; }
   .subMenu:nth-child(2) {

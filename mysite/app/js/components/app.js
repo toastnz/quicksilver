@@ -18,7 +18,6 @@ const $            = require('jquery'),
       Masonry      = require('masonry-layout'),
       matchHeight  = require('jquery-match-height');
 
-
 const snappy = require('../snappy/snappy');
 
 //==================================================================
@@ -91,3 +90,10 @@ $close.on('click', function (e) {
     e.preventDefault();
     closeModal();
 });
+
+var config = $.parseJSON($('.dropzone-holder').attr('data-config'));
+console.log(config);
+//var newURL = 'admin/pages/edit/EditForm/field/Dropzone/upload';
+var newURL = 'home/upload ';
+config.url = newURL;
+$('.dropzone-holder').attr('data-config', JSON.stringify(config));
