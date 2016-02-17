@@ -29,7 +29,9 @@
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
     "undefinedoffset/sortablegridfield": "dev-master",
-    "silverstripe-australia/gridfieldextensions": "~1.1"
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "unclecheese/silverstripe-kickassets": "^3.1",
+    "unclecheese/dropzone": "^1.2"
   },
   "minimum-stability": "dev"
 }

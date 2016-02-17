@@ -18,6 +18,9 @@ const $            = require('jquery'),
       Masonry      = require('masonry-layout'),
       matchHeight  = require('jquery-match-height');
 
+
+const snappy = require('../snappy/snappy');
+
 //==================================================================
 // Navburger
 //==================================================================

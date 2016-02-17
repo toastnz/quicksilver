@@ -2471,11 +2471,11 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
       opacity: 0;
       visibility: hidden;
       position: absolute;
-      top: 100%;
+      bottom: 28px;
       width: 160px;
       left: 0;
       border-top: 2px solid transparent;
-      margin-top: 0px; }
+      margin-top: 0; }
       #wysiwyg a ul li {
         background: #eeeeee;
         text-align: left; }
