@@ -106,7 +106,6 @@
         </div>
     </div>
 
-    $snappyUpload
 
     <div id="snappyContent">
         $Content
@@ -126,6 +125,14 @@
             <p>Are you sure you want to delete this block?</p>
             <button class="js-confirm-delete destructive">Delete</button>
             <button class="js-cancel-delete nominal">Cancel</button>
+        </div>
+    </div>
+
+    <div class="imageModal">
+        <div class="wrap">
+            $snappyUpload
+            <button class="js-cancel-new-image destructive">Cancel</button>
+            <button class="js-save-new-image constructive">Save</button>
         </div>
     </div>
 

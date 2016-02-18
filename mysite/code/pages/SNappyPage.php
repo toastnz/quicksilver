@@ -33,10 +33,6 @@ class SnappyPage_Controller extends Page_Controller {
         return $form->renderWith('snappyUploadForm');
     }
 
-    public function snappyUploadForm() {
-        return 'ppp';
-    }
-
     public function getSnappy(SS_HTTPRequest $request) {
         $member = Member::currentUser();
         if ($member) {
@@ -127,6 +123,7 @@ class SnappyPage_Controller extends Page_Controller {
 
         $ids = array();
         $filenames = array();
+        $fileString = '';
         foreach ($tmpFiles as $tmpFile) {
             if ($tmpFile['error']) {
                 return $this->httpError(400, $tmpFile['error']);
@@ -149,9 +146,10 @@ class SnappyPage_Controller extends Page_Controller {
             }
 
             $filenames[] = $fileObject->Filename;
+            $fileString = $fileObject->Filename;
         }
 
-        return new SS_HTTPResponse(json_encode($filenames), 200);
+        return new SS_HTTPResponse(json_encode($fileString, true), 200);
     }
 
 }

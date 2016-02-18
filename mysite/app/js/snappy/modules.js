@@ -98,7 +98,14 @@ let templates = {
         ${moduleEdit(true)}
         <div class="wrap">
         <div class="data">
+        <div class="imageWrap">
         <img src="http://img.youtube.com/vi/${_.sample(SwiftVideos)}/maxresdefault.jpg">
+        <div class="actions">
+        <div class="red action js-image-upload" data-tooltip="Change Image">
+        <i class="material-icons">image</i>
+        </div>
+        </div>
+        </div>
         <p contenteditable="true">${text.heading}</p>
         </div>
         </div>
@@ -287,6 +294,7 @@ $snappy.mousedown(function (e) {
 });
 
 let $modalToDelete;
+
 let $deleteModal = $('.deleteModal');
 
 export function openDeleteModal() {
@@ -302,7 +310,6 @@ export function deleteModule() {
     $modalToDelete = '';
     saveSnappyContent();
 }
-
 $snappy.on('click', '.js-delete-module', function (e) {
     e.preventDefault();
     $modalToDelete = $(this).closest('.contentModule')
@@ -330,7 +337,6 @@ export function saveSnappyContent(clear) {
     else {
         content = $('#snappyContent').html();
     }
-
     $.ajax({
         url     : $('#snappy').attr('data-post-url'),
         type    : 'POST',
@@ -345,6 +351,7 @@ export function saveSnappyContent(clear) {
             alertify.logPosition('top right').maxLogItems(1).success('Content Saved');
         }
     });
+
 }
 
 export function getSnappyContent(version) {
@@ -379,7 +386,6 @@ export function publishSnappyContent() {
         }
     });
 }
-
 $('.js-publish').on('click', function () {
     publishSnappyContent();
 });
@@ -397,3 +403,49 @@ $('.js-discard-draft').on('click', function () {
 });
 
 getSnappyContent('Stage');
+
+var $imageToChange = '';
+
+$snappy.on('click', '.js-image-upload', function (e) {
+    e.preventDefault();
+    openImageModal();
+    $imageToChange = $(this).closest('.imageWrap').find('img');
+    //console.log('uipload me')
+});
+
+$snappy.on('click', '.js-cancel-new-image', function (e) {
+    e.preventDefault();
+    closeImageModal();
+    $imageToChange = '';
+});
+
+$snappy.on('click', '.js-save-new-image', function (e) {
+    e.preventDefault();
+    changeImage();
+});
+
+let $imageModal = $('.imageModal');
+let newImage = '';
+
+export function openImageModal() {
+    $imageModal.addClass('active');
+}
+
+export function closeImageModal() {
+    $imageModal.removeClass('active');
+}
+
+export function changeImage() {
+    console.log($imageToChange);
+    $imageToChange.attr('src', newImage);
+    $imageToChange = '';
+    newImage = '';
+    closeImageModal();
+    saveSnappyContent();
+}
+
+setTimeout(function () {
+    window.Dropzone.instances[0].on('success', function (e, file) {
+        newImage = JSON.parse(file);
+    })
+}, 400);

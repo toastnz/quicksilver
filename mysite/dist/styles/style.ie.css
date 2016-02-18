@@ -1534,6 +1534,14 @@ header nav {
   background: #2eb150;
 }
 
+.subMenu.yellow {
+  background: #f1d96b;
+}
+
+.subMenu.purple {
+  background: #35366C;
+}
+
 .subMenu.red {
   background: #ec4c68;
 }
@@ -1583,6 +1591,30 @@ header nav {
   transform: translateY(-50%);
   position: absolute;
   color: white;
+}
+
+.actions {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+}
+
+.actions .action {
+  display: block;
+  float: right;
+  margin-left: 6px;
+  border-radius: 3px;
+  padding: 3px;
+  cursor: pointer;
+}
+
+.actions .action i {
+  font-style: normal !important;
+  color: white;
+}
+
+.actions .action.red {
+  background: #ec4c68;
 }
 
 .alertify,
@@ -2497,6 +2529,10 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   outline-offset: 0;
 }
 
+.image .imageWrap {
+  position: relative;
+}
+
 .padding {
   margin: 0 auto;
 }
@@ -3048,11 +3084,11 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   opacity: 0;
   visibility: hidden;
   position: absolute;
-  top: 100%;
+  bottom: 28px;
   width: 160px;
   left: 0;
   border-top: 2px solid transparent;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 #wysiwyg a ul li {

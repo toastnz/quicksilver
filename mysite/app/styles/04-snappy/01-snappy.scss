@@ -312,3 +312,25 @@ $max-width: 1140px;
         color: white;
     }
 }
+
+.actions {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    .action {
+        display: block;
+        float: right;
+        margin-left: 6px;
+        border-radius: 3px;
+        padding: 3px;
+        cursor: pointer;
+        i {
+            font-style: normal !important;
+            color: white;
+        }
+        &.red {
+            background: $red;
+        }
+
+    }
+}
