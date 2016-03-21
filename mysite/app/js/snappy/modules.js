@@ -444,8 +444,8 @@ export function changeImage() {
     saveSnappyContent();
 }
 
-setTimeout(function () {
-    window.Dropzone.instances[0].on('success', function (e, file) {
-        newImage = JSON.parse(file);
-    })
-}, 400);
+//setTimeout(function () {
+//    window.Dropzone.instances[0].on('success', function (e, file) {
+//        newImage = JSON.parse(file);
+//    })
+//}, 400);

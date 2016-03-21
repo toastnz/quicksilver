@@ -681,6 +681,85 @@ form.loading .loader {
   text-align: center;
 }
 
+.Security form {
+  margin: 40px auto;
+  width: 100%;
+  max-width: 400px;
+}
+
+.Security form label {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  display: block;
+  font-size: 15.2px;
+  margin-bottom: 10px;
+}
+
+.Security form label {
+  font-size: 15.2px;
+}
+
+.Security form textarea,
+.Security form input[type="email"],
+.Security form input[type="password"],
+.Security form input[type="text"] {
+  outline: 0;
+  height: 40px;
+  border: 0;
+  width: 100%;
+  padding: 0 10px;
+  font-size: 13.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  margin-bottom: 10px;
+  background: white;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+
+.Security form textarea,
+.Security form input[type="email"],
+.Security form input[type="password"],
+.Security form input[type="text"] {
+  font-size: 13.6px;
+}
+
+.Security form input[type="submit"] {
+  outline: 0;
+  -webkit-appearance: none;
+  border-radius: 0;
+  background: #2eb150;
+  border: 0;
+  width: 100%;
+  cursor: pointer;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px auto;
+  text-transform: uppercase;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 15.2px;
+}
+
+.Security form input[type="submit"] {
+  font-size: 15.2px;
+}
+
+.Security form .checkbox {
+  margin-top: 10px;
+}
+
+.Security form a {
+  color: #2eb150;
+}
+
+.Security .right {
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: -3px;
+}
+
 .sod_select,
 .sod_select * {
   -webkit-user-select: none;
@@ -2122,11 +2201,11 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   top: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.9);
-  transition: all 360ms;
+  transition: all 120ms;
   z-index: 9999;
   opacity: 0;
-  -webkit-transform: scale(0.8);
-  transform: scale(0.8);
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
   visibility: hidden;
 }
 
@@ -2277,6 +2356,86 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 
 .gu-transit.contentModule .moduleEdit {
   display: none !important;
+}
+
+.imageModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 120ms;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  transform: scale(0.9);
+  visibility: hidden;
+}
+
+.imageModal .dropzone-holder.uploadable {
+  margin-bottom: 0;
+}
+
+.imageModal.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  visibility: visible;
+}
+
+.imageModal.active .wrap {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1) translateY(-50%);
+  transform: scale(1) translateY(-50%);
+}
+
+.imageModal .wrap {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  max-width: 400px;
+  transition: all 480ms;
+  transition-delay: 120ms;
+  background: white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  -webkit-transform: scale(0.6) translateY(-80%);
+  transform: scale(0.6) translateY(-80%);
+}
+
+.imageModal .wrap p {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  font-size: 15.2px;
+}
+
+.imageModal .wrap p {
+  font-size: 15.2px;
+}
+
+.imageModal .wrap button {
+  margin-bottom: -1px;
+  border: 0;
+  outline: none;
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 12px;
+  font-size: 13.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.imageModal .wrap button {
+  font-size: 13.6px;
 }
 
 .blockquote:before,

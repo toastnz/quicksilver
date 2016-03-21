@@ -600,6 +600,118 @@ form.loading .loader {
   margin-right: auto;
   text-align: center; }
 
+.Security form {
+  margin: 40px auto;
+  width: 100%;
+  max-width: 400px; }
+  .Security form label {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    display: block;
+    font-size: 15.2px;
+    margin-bottom: 10px; }
+    @media screen and (min-width: 480px) {
+      .Security form label {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .Security form label {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .Security form label {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .Security form label {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .Security form label {
+        font-size: 19px; } }
+  .Security form textarea,
+  .Security form input[type="email"],
+  .Security form input[type="password"],
+  .Security form input[type="text"] {
+    outline: 0;
+    height: 40px;
+    border: 0;
+    width: 100%;
+    padding: 0 10px;
+    font-size: 13.6px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+    background: white;
+    -webkit-appearance: none;
+    border-radius: 0; }
+    @media screen and (min-width: 480px) {
+      .Security form textarea,
+      .Security form input[type="email"],
+      .Security form input[type="password"],
+      .Security form input[type="text"] {
+        font-size: 13.6px; } }
+    @media screen and (min-width: 768px) {
+      .Security form textarea,
+      .Security form input[type="email"],
+      .Security form input[type="password"],
+      .Security form input[type="text"] {
+        font-size: 13.6px; } }
+    @media screen and (min-width: 992px) {
+      .Security form textarea,
+      .Security form input[type="email"],
+      .Security form input[type="password"],
+      .Security form input[type="text"] {
+        font-size: 15.3px; } }
+    @media screen and (min-width: 1200px) {
+      .Security form textarea,
+      .Security form input[type="email"],
+      .Security form input[type="password"],
+      .Security form input[type="text"] {
+        font-size: 17px; } }
+    @media screen and (min-width: 1600px) {
+      .Security form textarea,
+      .Security form input[type="email"],
+      .Security form input[type="password"],
+      .Security form input[type="text"] {
+        font-size: 17px; } }
+  .Security form input[type="submit"] {
+    outline: 0;
+    -webkit-appearance: none;
+    border-radius: 0;
+    background: #2eb150;
+    border: 0;
+    width: 100%;
+    cursor: pointer;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px auto;
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 15.2px; }
+    @media screen and (min-width: 480px) {
+      .Security form input[type="submit"] {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 768px) {
+      .Security form input[type="submit"] {
+        font-size: 15.2px; } }
+    @media screen and (min-width: 992px) {
+      .Security form input[type="submit"] {
+        font-size: 17.1px; } }
+    @media screen and (min-width: 1200px) {
+      .Security form input[type="submit"] {
+        font-size: 19px; } }
+    @media screen and (min-width: 1600px) {
+      .Security form input[type="submit"] {
+        font-size: 19px; } }
+  .Security form .checkbox {
+    margin-top: 10px; }
+  .Security form a {
+    color: #2eb150; }
+
+.Security .right {
+  display: inline-block;
+  margin-left: 12px;
+  position: relative;
+  top: -3px; }
+
 .sod_select,
 .sod_select * {
   -webkit-user-select: none;

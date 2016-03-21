@@ -1,0 +1,60 @@
+//==================================================================
+// Login Page Styles
+//==================================================================
+
+.Security {
+    form {
+        margin: 40px auto;
+        width: 100%;
+        max-width: 400px;
+        label {
+            @include regular;
+            display: block;
+            @include font($h6);
+            margin-bottom: 10px;
+        }
+        textarea,
+        input[type="email"],
+        input[type="password"],
+        input[type="text"] {
+            outline: 0;
+            height: 40px;
+            border: 0;
+            width: 100%;
+            padding: 0 10px;
+            @include font($p);
+            @include regular;
+            margin-bottom: 10px;
+            background: white;
+            -webkit-appearance: none;
+            border-radius: 0;
+        }
+        input[type="submit"] {
+            outline: 0;
+            -webkit-appearance: none;
+            border-radius: 0;
+            background: $green;
+            border: 0;
+            width: 100%;
+            cursor: pointer;
+            color: white;
+            padding: 10px 20px;
+            margin: 10px auto;
+            text-transform: uppercase;
+            @include light;
+            @include font($h6);
+        }
+        .checkbox {
+            margin-top: 10px;
+        }
+        a {
+            color: $green;
+        }
+    }
+    .right {
+        display: inline-block;
+        margin-left: 12px;
+        position: relative;
+        top: -3px;
+    }
+}
