@@ -1,11 +1,12 @@
 {
-  "name": "pinc/silver",
-  "version": "0.1",
-  "description": "SilverStripe Base",
+  "name": "quicksilver",
+  "version": "0.2",
+  "description": "SilverStripe Boilerplate",
   "type": "silverstripe-module",
   "keywords": [
     "silverstripe",
-    "theme"
+    "theme",
+    "boilerplate"
   ],
   "license": "BSD-3-Clause",
   "authors": [
@@ -22,6 +23,7 @@
     "google/recaptcha": "~1.1",
     "drewm/mailchimp-api": "~1.0",
     "toastnz/open-graph-meta": "*",
+    "unclecheese/dropzone": "^1.2",
     "silverstripe/cms": "3.x@stable",
     "toastnz/silverstripe-ipsum": "*",
     "unclecheese/betterbuttons": "1.2.*",
@@ -29,10 +31,9 @@
     "toastnz/twitter-card-meta": "dev-master",
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
-    "undefinedoffset/sortablegridfield": "dev-master",
-    "silverstripe-australia/gridfieldextensions": "~1.1",
     "unclecheese/silverstripe-kickassets": "^3.1",
-    "unclecheese/dropzone": "^1.2"
+    "undefinedoffset/sortablegridfield": "dev-master",
+    "silverstripe-australia/gridfieldextensions": "~1.1"
   },
   "minimum-stability": "dev"
 }
