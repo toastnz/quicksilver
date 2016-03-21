@@ -224,6 +224,7 @@ p, li {
 .vertical {
   top: 50%;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute; }
   .vertical.center {
@@ -287,6 +288,7 @@ form.loading .loader {
   height: 3em;
   border-radius: 50%;
   background: white;
+  background: -webkit-linear-gradient(left, white 10%, rgba(255, 255, 255, 0) 42%);
   background: linear-gradient(to right, white 10%, rgba(255, 255, 255, 0) 42%);
   -webkit-animation: load3 1.4s infinite linear;
           animation: load3 1.4s infinite linear;
@@ -357,6 +359,7 @@ form.loading .loader {
   position: absolute;
   border-radius: 100%;
   -webkit-transform: scale(0);
+  -ms-transform: scale(0);
   transform: scale(0); }
 
 .ink.animate {
@@ -376,6 +379,7 @@ form.loading .loader {
             transform: scale(2.5); } }
 
 .LoadingNotification-anim {
+  -webkit-transition: all 680ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 680ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   display: block;
   height: 160px;
@@ -393,6 +397,7 @@ form.loading .loader {
   margin: 0 auto;
   top: 50%;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute;
   position: absolute;
@@ -831,6 +836,7 @@ form.loading .loader {
   right: 10px;
   top: 50%;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   display: inline-block;
   color: #808080;
@@ -888,6 +894,7 @@ form.loading .loader {
 
 .slick-slider .slick-track, .slick-slider .slick-list {
   -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0); }
 
 .slick-track {
@@ -980,6 +987,7 @@ header {
     right: 24px;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     float: right;
@@ -994,6 +1002,7 @@ header {
         text-transform: uppercase; }
       header nav > ul > li:hover ul {
         -webkit-transform: scale(1) translateY(10px);
+            -ms-transform: scale(1) translateY(10px);
                 transform: scale(1) translateY(10px);
         opacity: 1;
         max-height: 300px; }
@@ -1002,7 +1011,9 @@ header {
         background: white;
         box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
         -webkit-transform: scale(0.9) translateY(-20px);
+            -ms-transform: scale(0.9) translateY(-20px);
                 transform: scale(0.9) translateY(-20px);
+        -webkit-transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
         transition: all 120ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
         opacity: 0;
         max-height: 0;
@@ -1013,6 +1024,7 @@ header {
           color: #7a7a7a;
           text-decoration: none;
           text-transform: uppercase;
+          -webkit-transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
           transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
           header nav > ul > li ul li a:hover {
             background: rgba(0, 0, 0, 0.1); }
@@ -1026,10 +1038,12 @@ header {
   cursor: pointer;
   z-index: 999;
   display: block;
+  -webkit-transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   right: 24px;
   top: 50%;
   -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
           transform: translateY(-50%);
   position: absolute; }
   @media only screen and (min-width: 768px) {
@@ -1042,6 +1056,7 @@ header {
     margin: 7px 0;
     background: white;
     display: block;
+    -webkit-transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   .navburger:hover span {
     background: #ea148c; }
@@ -1062,12 +1077,15 @@ header nav {
   z-index: 2;
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden;
+  -webkit-transition: all 240ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 240ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   visibility: hidden;
   opacity: 0; }
   .off-canvas > ul {
     -webkit-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
             transform: translateY(-100%);
+    -webkit-transition: all 480ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 480ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     background: white;
     width: auto;
@@ -1111,23 +1129,29 @@ header nav {
     visibility: visible; }
     .mobile-nav .off-canvas > ul {
       -webkit-transform: translateY(0%);
+          -ms-transform: translateY(0%);
               transform: translateY(0%); } }
 
 .mobile-nav .navburger {
   -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
           transform: rotate(-90deg); }
   .mobile-nav .navburger .first {
     -webkit-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
             transform: rotate(-45deg);
     -webkit-transform-origin: 90% 50%;
+        -ms-transform-origin: 90% 50%;
             transform-origin: 90% 50%;
     background: #ea148c; }
   .mobile-nav .navburger .second {
     opacity: 0; }
   .mobile-nav .navburger .third {
     -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transform-origin: 90% 50%;
+        -ms-transform-origin: 90% 50%;
             transform-origin: 90% 50%;
     background: #ea148c; }
 
@@ -1144,6 +1168,7 @@ header nav {
     font-size: 12px;
     outline: none;
     cursor: pointer;
+    -webkit-transition: all 120ms;
     transition: all 120ms; }
     #snappy .functions button:hover {
       background: rgba(46, 177, 80, 0.7); }
@@ -1180,9 +1205,11 @@ header nav {
 #snappy {
   width: 100%;
   position: relative;
+  min-height: -webkit-calc(100% - 220px);
   min-height: calc(100% - 220px); }
   #snappy #snappyContent {
     min-height: 100%;
+    -webkit-transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
     width: 100%;
     height: 100%; }
@@ -1206,10 +1233,12 @@ header nav {
     background: #2eb150; }
   .contentModule.editMode .moduleEdit {
     -webkit-transform: translateX(-24px) translateY(-50%);
+        -ms-transform: translateX(-24px) translateY(-50%);
             transform: translateX(-24px) translateY(-50%); }
     @media only screen and (min-width: 1140px) {
       .contentModule.editMode .moduleEdit {
         -webkit-transform: translateX(0) translateY(-50%);
+            -ms-transform: translateX(0) translateY(-50%);
                 transform: translateX(0) translateY(-50%); } }
 
 [contenteditable=true] {
@@ -1217,6 +1246,7 @@ header nav {
 
 [contenteditable=true] {
   outline: 1px solid transparent;
+  -webkit-transition: outline 500ms ease;
   transition: outline 500ms ease;
   outline-offset: 12px; }
   [contenteditable=true]:focus, [contenteditable=true]:hover {
@@ -1237,14 +1267,17 @@ header nav {
   position: absolute;
   z-index: 3;
   left: 8px;
+  -webkit-transition: all 360ms;
   transition: all 360ms;
   top: 50%;
   -webkit-transform: translateX(-60px) translateY(-50%);
+      -ms-transform: translateX(-60px) translateY(-50%);
           transform: translateX(-60px) translateY(-50%);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
   @media only screen and (min-width: 1140px) {
     .moduleEdit {
       -webkit-transform: translateX(-40px) translateY(-50%);
+          -ms-transform: translateX(-40px) translateY(-50%);
               transform: translateX(-40px) translateY(-50%); } }
   .moduleEdit span {
     -webkit-backface-visibility: hidden;
@@ -1253,6 +1286,7 @@ header nav {
     text-align: center;
     padding: 2px;
     cursor: pointer;
+    -webkit-transition: all 120ms;
     transition: all 120ms;
     margin-bottom: -1px;
     position: relative; }
@@ -1296,6 +1330,7 @@ header nav {
   right: 24px;
   cursor: pointer;
   text-align: center;
+  -webkit-transition: all 120ms;
   transition: all 120ms; }
   #snappyMenu > i {
     -webkit-user-select: none;
@@ -1307,19 +1342,24 @@ header nav {
     margin: 0 auto;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     color: white;
+    -webkit-transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1);
     transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1); }
   #snappyMenu:hover .subMenu {
     -webkit-transform: scale(1) !important;
+        -ms-transform: scale(1) !important;
             transform: scale(1) !important;
     opacity: 1; }
   #snappyMenu:hover > i {
     -webkit-transform: scale(0) translateY(-50%);
+        -ms-transform: scale(0) translateY(-50%);
             transform: scale(0) translateY(-50%); }
   #snappyMenu:hover .mainMenu i {
     -webkit-transform: scale(1) translateY(-50%);
+        -ms-transform: scale(1) translateY(-50%);
             transform: scale(1) translateY(-50%); }
 
 .mainMenu {
@@ -1336,11 +1376,14 @@ header nav {
     margin: 0 auto;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     color: white;
+    -webkit-transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1);
     transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1);
     -webkit-transform: scale(0) translateY(-100%);
+        -ms-transform: scale(0) translateY(-100%);
             transform: scale(0) translateY(-100%); }
 
 [data-tooltip] {
@@ -1356,6 +1399,7 @@ header nav {
     margin-right: 10px;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     padding: 7px 11px;
@@ -1365,12 +1409,15 @@ header nav {
     color: white;
     opacity: 0;
     visibility: hidden;
+    -webkit-transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1);
     transition: all 480ms cubic-bezier(0.25, 0.25, 0, 1);
     -webkit-transform: translateX(24px) translateY(-50%);
+        -ms-transform: translateX(24px) translateY(-50%);
             transform: translateX(24px) translateY(-50%); }
   [data-tooltip]:hover:after {
     visibility: visible;
     -webkit-transform: translateX(0px) translateY(-50%);
+        -ms-transform: translateX(0px) translateY(-50%);
             transform: translateX(0px) translateY(-50%);
     opacity: 1; }
 
@@ -1385,8 +1432,10 @@ header nav {
   right: 32px;
   cursor: pointer;
   text-align: center;
+  -webkit-transition: all 180ms cubic-bezier(0.25, 0.25, 0, 1);
   transition: all 180ms cubic-bezier(0.25, 0.25, 0, 1);
   -webkit-transform: scale(0);
+      -ms-transform: scale(0);
           transform: scale(0);
   opacity: 0; }
   .subMenu:before {
@@ -1413,23 +1462,31 @@ header nav {
     background: yellow; }
   .subMenu:nth-child(3) {
     -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
             transform: translateY(10px);
-    transition-delay: 60ms !important;
+    -webkit-transition-delay: 60ms !important;
+            transition-delay: 60ms !important;
     margin-bottom: 60px; }
   .subMenu:nth-child(4) {
     -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
             transform: translateY(10px);
-    transition-delay: 120ms !important;
+    -webkit-transition-delay: 120ms !important;
+            transition-delay: 120ms !important;
     margin-bottom: 108px; }
   .subMenu:nth-child(5) {
     -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
             transform: translateY(10px);
-    transition-delay: 180ms !important;
+    -webkit-transition-delay: 180ms !important;
+            transition-delay: 180ms !important;
     margin-bottom: 156px; }
   .subMenu:nth-child(6) {
     -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
             transform: translateY(10px);
-    transition-delay: 240ms !important;
+    -webkit-transition-delay: 240ms !important;
+            transition-delay: 240ms !important;
     margin-bottom: 204px; }
   .subMenu > i {
     -webkit-user-select: none;
@@ -1441,6 +1498,7 @@ header nav {
     margin: 0 auto;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     color: white; }
@@ -1495,6 +1553,7 @@ header nav {
   pointer-events: none; }
 
 .alertify, .alertify.show {
+  -webkit-transition: all 0.33s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.33s cubic-bezier(0.25, 0.8, 0.25, 1); }
 
 .alertify .dialog {
@@ -1506,6 +1565,7 @@ header nav {
   position: relative;
   top: 50%;
   -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
 
 .alertify .alert > *, .alertify .dialog > * {
@@ -1542,6 +1602,7 @@ header nav {
   outline: 0;
   border: 0;
   display: inline-block;
+  -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
   -ms-grid-row-align: center;
@@ -1610,6 +1671,7 @@ header nav {
   top: 0; }
 
 .alertify-logs > * {
+  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   position: relative;
   clear: both;
@@ -1642,8 +1704,10 @@ header nav {
 
 .Scp-saturation {
   position: relative;
+  width: -webkit-calc(100% - 25px);
   width: calc(100% - 25px);
   height: 100%;
+  background: -webkit-linear-gradient(left, #fff 0%, #f00 100%);
   background: linear-gradient(to right, #fff 0%, #f00 100%);
   float: left;
   margin-right: 5px; }
@@ -1651,6 +1715,7 @@ header nav {
 .Scp-brightness {
   width: 100%;
   height: 100%;
+  background: -webkit-linear-gradient(bottom, #000 0%, rgba(255, 255, 255, 0) 100%);
   background: linear-gradient(to top, #000 0%, rgba(255, 255, 255, 0) 100%); }
 
 .Scp-sbSelector {
@@ -1671,6 +1736,7 @@ header nav {
   height: 100%;
   position: relative;
   float: left;
+  background: -webkit-linear-gradient(top, #f00 0%, #f0f 17%, #00f 34%, #0ff 50%, #0f0 67%, #ff0 84%, #f00 100%);
   background: linear-gradient(to bottom, #f00 0%, #f0f 17%, #00f 34%, #0ff 50%, #0f0 67%, #ff0 84%, #f00 100%); }
 
 .Scp-hSelector {
@@ -1688,38 +1754,46 @@ header nav {
   top: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 360ms;
   transition: all 360ms;
   z-index: 9999;
   opacity: 0;
   -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
           transform: scale(0.8);
   visibility: hidden; }
   .dataModal.active {
     opacity: 1;
     -webkit-transform: scale(1);
+        -ms-transform: scale(1);
             transform: scale(1);
     visibility: visible; }
     .dataModal.active .wrap {
       opacity: 1;
       visibility: visible;
       -webkit-transform: scale(1) translateY(-50%);
+          -ms-transform: scale(1) translateY(-50%);
               transform: scale(1) translateY(-50%); }
   .dataModal .wrap {
     margin: 0 auto;
     left: 0;
     right: 0;
     max-width: 600px;
+    -webkit-transition: all 480ms;
     transition: all 480ms;
-    transition-delay: 120ms;
+    -webkit-transition-delay: 120ms;
+            transition-delay: 120ms;
     background: white;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     opacity: 0;
     visibility: hidden;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     -webkit-transform: scale(0.6) translateY(-80%);
+        -ms-transform: scale(0.6) translateY(-80%);
             transform: scale(0.6) translateY(-80%); }
     .dataModal .wrap textarea {
       border: 0;
@@ -1768,6 +1842,7 @@ header nav {
 
 .destructive {
   background: #ec4c68;
+  -webkit-transition: all 120ms;
   transition: all 120ms;
   cursor: pointer;
   color: #ffffff; }
@@ -1778,6 +1853,7 @@ header nav {
 
 .nominal {
   background: #00afec;
+  -webkit-transition: all 120ms;
   transition: all 120ms;
   cursor: pointer;
   color: #ffffff; }
@@ -1788,6 +1864,7 @@ header nav {
 
 .constructive {
   background: #2eb150;
+  -webkit-transition: all 120ms;
   transition: all 120ms;
   cursor: pointer;
   color: #ffffff; }
@@ -1870,38 +1947,46 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   top: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 120ms;
   transition: all 120ms;
   z-index: 9999;
   opacity: 0;
   -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
           transform: scale(0.9);
   visibility: hidden; }
   .deleteModal.active {
     opacity: 1;
     -webkit-transform: scale(1);
+        -ms-transform: scale(1);
             transform: scale(1);
     visibility: visible; }
     .deleteModal.active .wrap {
       opacity: 1;
       visibility: visible;
       -webkit-transform: scale(1) translateY(-50%);
+          -ms-transform: scale(1) translateY(-50%);
               transform: scale(1) translateY(-50%); }
   .deleteModal .wrap {
     margin: 0 auto;
     left: 0;
     right: 0;
     max-width: 400px;
+    -webkit-transition: all 480ms;
     transition: all 480ms;
-    transition-delay: 120ms;
+    -webkit-transition-delay: 120ms;
+            transition-delay: 120ms;
     background: white;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     opacity: 0;
     visibility: hidden;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     -webkit-transform: scale(0.6) translateY(-80%);
+        -ms-transform: scale(0.6) translateY(-80%);
             transform: scale(0.6) translateY(-80%); }
     .deleteModal .wrap p {
       width: 100%;
@@ -1995,6 +2080,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .gu-transit.sidebarModule {
   width: 100%;
   height: 50px;
+  -webkit-transition: all 240ms;
   transition: all 240ms;
   background: #2eb150 !important;
   opacity: 0.8; }
@@ -2006,6 +2092,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .gu-transit.contentModule {
   width: 100%;
   height: 50px;
+  -webkit-transition: all 240ms;
   transition: all 240ms;
   background: #2eb150 !important;
   opacity: 0.8; }
@@ -2021,10 +2108,12 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   top: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 120ms;
   transition: all 120ms;
   z-index: 9999;
   opacity: 0;
   -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
           transform: scale(0.9);
   visibility: hidden; }
   .imageModal .dropzone-holder.uploadable {
@@ -2032,29 +2121,35 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   .imageModal.active {
     opacity: 1;
     -webkit-transform: scale(1);
+        -ms-transform: scale(1);
             transform: scale(1);
     visibility: visible; }
     .imageModal.active .wrap {
       opacity: 1;
       visibility: visible;
       -webkit-transform: scale(1) translateY(-50%);
+          -ms-transform: scale(1) translateY(-50%);
               transform: scale(1) translateY(-50%); }
   .imageModal .wrap {
     margin: 0 auto;
     left: 0;
     right: 0;
     max-width: 400px;
+    -webkit-transition: all 480ms;
     transition: all 480ms;
-    transition-delay: 120ms;
+    -webkit-transition-delay: 120ms;
+            transition-delay: 120ms;
     background: white;
     box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
     opacity: 0;
     visibility: hidden;
     top: 50%;
     -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
             transform: translateY(-50%);
     position: absolute;
     -webkit-transform: scale(0.6) translateY(-80%);
+        -ms-transform: scale(0.6) translateY(-80%);
             transform: scale(0.6) translateY(-80%); }
     .imageModal .wrap p {
       width: 100%;
@@ -2115,6 +2210,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   max-width: 868px;
   border-left: 5px solid #2eb150;
   padding-left: 24px;
+  width: -webkit-calc(100% - 72px);
   width: calc(100% - 72px); }
   .blockquote blockquote h6 {
     position: relative;
@@ -2440,6 +2536,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     @media only screen and (min-width: 768px) {
       .trippleImage .column {
         margin: 0 12px;
+        width: -webkit-calc(33.3333333% - 24px);
         width: calc(33.3333333% - 24px); } }
 
 .video {
@@ -2466,11 +2563,13 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     .video .image a {
       top: 50%;
       -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
               transform: translateY(-50%);
       position: absolute;
       color: white;
       width: 100%;
       opacity: 0.5;
+      -webkit-transition: all 240ms;
       transition: all 240ms;
       left: 0;
       right: 0;
@@ -2494,7 +2593,9 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
   z-index: 9;
   width: 274px;
   -webkit-transform: translateX(-274px);
+      -ms-transform: translateX(-274px);
           transform: translateX(-274px);
+  -webkit-transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   transition: all 360ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
 #modules {
@@ -2521,14 +2622,17 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
 .sidebarOpen #snappySidebar {
   box-shadow: 0 0 38px 9.5px rgba(0, 0, 0, 0.3), 0 0 12px 3px rgba(0, 0, 0, 0.22);
   -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
           transform: translateX(0); }
   .sidebarOpen #snappySidebar .sidebar-handle i {
     -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
             transform: rotate(180deg); }
 
 .textEditor #wysiwyg {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   -webkit-transform: translateY(-20px) !important;
+      -ms-transform: translateY(-20px) !important;
           transform: translateY(-20px) !important; }
 
 /*
@@ -2661,6 +2765,121 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
 .hljs-strong {
   font-weight: bold; }
 
+.videoModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 120ms;
+  transition: all 120ms;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+      -ms-transform: scale(0.9);
+          transform: scale(0.9);
+  visibility: hidden; }
+  .videoModal .dropzone-holder.uploadable {
+    margin-bottom: 0; }
+  .videoModal input {
+    border: 0;
+    outline: none;
+    height: 40px;
+    display: block;
+    width: 100%;
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 1.7;
+    color: #000000;
+    padding: 20px; }
+    .videoModal input::-moz-selection, .videoModal input ::-moz-selection {
+      color: #fff;
+      background: #2eb150; }
+    .videoModal input::selection, .videoModal input ::selection {
+      color: #fff;
+      background: #2eb150; }
+  .videoModal.active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    visibility: visible; }
+    .videoModal.active .wrap {
+      opacity: 1;
+      visibility: visible;
+      -webkit-transform: scale(1) translateY(-50%);
+          -ms-transform: scale(1) translateY(-50%);
+              transform: scale(1) translateY(-50%); }
+  .videoModal .wrap {
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    max-width: 400px;
+    -webkit-transition: all 480ms;
+    transition: all 480ms;
+    -webkit-transition-delay: 120ms;
+            transition-delay: 120ms;
+    background: white;
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+    opacity: 0;
+    visibility: hidden;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    position: absolute;
+    -webkit-transform: scale(0.6) translateY(-80%);
+        -ms-transform: scale(0.6) translateY(-80%);
+            transform: scale(0.6) translateY(-80%); }
+    .videoModal .wrap p {
+      width: 100%;
+      text-align: center;
+      padding: 24px;
+      font-size: 15.2px; }
+      @media screen and (min-width: 480px) {
+        .videoModal .wrap p {
+          font-size: 15.2px; } }
+      @media screen and (min-width: 768px) {
+        .videoModal .wrap p {
+          font-size: 15.2px; } }
+      @media screen and (min-width: 992px) {
+        .videoModal .wrap p {
+          font-size: 17.1px; } }
+      @media screen and (min-width: 1200px) {
+        .videoModal .wrap p {
+          font-size: 19px; } }
+      @media screen and (min-width: 1600px) {
+        .videoModal .wrap p {
+          font-size: 19px; } }
+    .videoModal .wrap button {
+      margin-bottom: -1px;
+      border: 0;
+      outline: none;
+      width: 50%;
+      display: block;
+      float: left;
+      padding: 12px;
+      font-size: 13.6px;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400; }
+      @media screen and (min-width: 480px) {
+        .videoModal .wrap button {
+          font-size: 13.6px; } }
+      @media screen and (min-width: 768px) {
+        .videoModal .wrap button {
+          font-size: 13.6px; } }
+      @media screen and (min-width: 992px) {
+        .videoModal .wrap button {
+          font-size: 15.3px; } }
+      @media screen and (min-width: 1200px) {
+        .videoModal .wrap button {
+          font-size: 17px; } }
+      @media screen and (min-width: 1600px) {
+        .videoModal .wrap button {
+          font-size: 17px; } }
+
 #wysiwyg {
   position: fixed;
   left: 0;
@@ -2669,11 +2888,13 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   width: 600px;
   bottom: 20px;
   -webkit-transform: translateX(0px) translateY(80px);
+      -ms-transform: translateX(0px) translateY(80px);
           transform: translateX(0px) translateY(80px);
   background: rgba(4, 40, 63, 0.9);
   border-radius: 3px;
   text-align: center;
   z-index: 9999;
+  -webkit-transition: all 480ms;
   transition: all 480ms; }
   #wysiwyg button {
     outline: none;

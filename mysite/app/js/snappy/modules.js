@@ -89,6 +89,11 @@ let templates = {
         </div>
         <div class="data" contenteditable="true">
         </div>
+        <div class="actions">
+         <div class="red action js-change-video" data-tooltip="Change Video">
+        <i class="material-icons">videocam</i>
+        </div> 
+        </div>
         </div>
         </div>`;
     },
@@ -410,7 +415,6 @@ $snappy.on('click', '.js-image-upload', function (e) {
     e.preventDefault();
     openImageModal();
     $imageToChange = $(this).closest('.imageWrap').find('img');
-    //console.log('uipload me')
 });
 
 $snappy.on('click', '.js-cancel-new-image', function (e) {
@@ -444,8 +448,43 @@ export function changeImage() {
     saveSnappyContent();
 }
 
-//setTimeout(function () {
-//    window.Dropzone.instances[0].on('success', function (e, file) {
-//        newImage = JSON.parse(file);
-//    })
-//}, 400);
+setTimeout(function () {
+    window.Dropzone.instances[0].on('success', function (e, file) {
+        newImage = JSON.parse(file);
+    })
+}, 400);
+
+
+export function openVideoModal() {
+    $videoModal.addClass('active');
+}
+
+export function closeVideoModal() {
+    $videoModal.removeClass('active');
+}
+let $videoToChange = '';
+
+$snappy.on('click', '.js-change-video', function (e) {
+    e.preventDefault();
+    $videoToChange = $(this).closest('.wrap').find('.image');
+    openVideoModal();
+});
+
+
+$snappy.on('click', '.js-cancel-video-change', function (e) {
+    e.preventDefault();
+    closeImageModal();
+    $videoToChange = '';
+});
+
+$snappy.on('click', '.js-save-video-change', function (e) {
+    e.preventDefault();
+    let newVideoID = $('.new-video-id').val();
+    $videoToChange.css({'background-image': `url('http://img.youtube.com/vi/${newVideoID}/maxresdefault.jpg')`});
+    closeVideoModal();
+    saveSnappyContent();
+});
+
+let $videoModal = $('.videoModal');
+
+

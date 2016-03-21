@@ -136,6 +136,17 @@
         </div>
     </div>
 
+    <div class="videoModal">
+        <div class="wrap">
+            <div class="input-wrap">
+                <input type="text" class="new-video-id" placeholder="Video ID i.e. 7gh89tf3">
+            </div>
+            <div class="clearfix"></div>
+            <button class="js-cancel-video-change destructive">Cancel</button>
+            <button class="js-save-video-change constructive">Update</button>
+        </div>
+    </div>
+
 </div>
 
 
