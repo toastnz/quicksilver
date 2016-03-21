@@ -124,7 +124,7 @@ gulp.task('minify-css', ['sass'], function () {
 gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
     var autoprefixerSettings = {
-        browsers: ['last 2 versions'],
+        browsers: ['last 5 versions'],
         cascade : true
     };
     return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))

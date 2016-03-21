@@ -23,6 +23,7 @@
     "drewm/mailchimp-api": "~1.0",
     "toastnz/open-graph-meta": "*",
     "silverstripe/cms": "3.x@stable",
+    "toastnz/silverstripe-ipsum": "*",
     "unclecheese/betterbuttons": "1.2.*",
     "silverstripe/framework": "3.x@stable",
     "toastnz/twitter-card-meta": "dev-master",

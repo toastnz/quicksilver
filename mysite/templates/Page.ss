@@ -13,26 +13,21 @@
     <![endif]-->
     <%-- Custom type to be inserted here --%>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600" rel="stylesheet" type="text/css">
-
     <% with $SiteConfig %>
         <link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>
     <% end_with %>
-
     <% include ToastSEO %>
     <% include OpenGraphMeta %>
     <% include TwitterCardMeta %>
-
 </head>
 
-<body class="$Classname" data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
+<body class="$Classname $URLSegment" data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
 
     <% include Header %>
     $Layout
     $Form
     <% include Footer %>
 
-
-<!--Javascript Includes-->
 <script type="text/javascript" src="$Themedir/dist/js/output.js"></script>
 
 </body>
