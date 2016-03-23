@@ -3300,6 +3300,120 @@ Original highlight.js style (c) Ivan Sagalaev <maniac@softwaremaniacs.org>
   font-weight: bold;
 }
 
+.videoModal {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-transition: all 120ms;
+  transition: all 120ms;
+  z-index: 9999;
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  visibility: hidden;
+}
+
+.videoModal .dropzone-holder.uploadable {
+  margin-bottom: 0;
+}
+
+.videoModal input {
+  border: 0;
+  outline: none;
+  height: 40px;
+  display: block;
+  width: 100%;
+  margin: 0;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 1.7;
+  color: #000000;
+  padding: 20px;
+}
+
+.videoModal input::-moz-selection,
+.videoModal input ::-moz-selection {
+  color: #fff;
+  background: #2eb150;
+}
+
+.videoModal input::selection,
+.videoModal input ::selection {
+  color: #fff;
+  background: #2eb150;
+}
+
+.videoModal.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  visibility: visible;
+}
+
+.videoModal.active .wrap {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1) translateY(-50%);
+  -ms-transform: scale(1) translateY(-50%);
+  transform: scale(1) translateY(-50%);
+}
+
+.videoModal .wrap {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  max-width: 400px;
+  -webkit-transition: all 480ms;
+  transition: all 480ms;
+  -webkit-transition-delay: 120ms;
+  transition-delay: 120ms;
+  background: white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  opacity: 0;
+  visibility: hidden;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: absolute;
+  -webkit-transform: scale(0.6) translateY(-80%);
+  -ms-transform: scale(0.6) translateY(-80%);
+  transform: scale(0.6) translateY(-80%);
+}
+
+.videoModal .wrap p {
+  width: 100%;
+  text-align: center;
+  padding: 24px;
+  font-size: 15.2px;
+}
+
+.videoModal .wrap p {
+  font-size: 15.2px;
+}
+
+.videoModal .wrap button {
+  margin-bottom: -1px;
+  border: 0;
+  outline: none;
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 12px;
+  font-size: 13.6px;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.videoModal .wrap button {
+  font-size: 13.6px;
+}
+
 #wysiwyg {
   position: fixed;
   left: 0;

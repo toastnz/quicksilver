@@ -1,5 +1,3 @@
-## ignorance is bliss
-
 /assets/*
 _ss_environment.php
 _resampled
@@ -10,19 +8,18 @@ _resampled
 /.sass-cache/
 /cms/
 /framework/
-/components/
-/googlesitemaps/
 /node_modules/
 /vendor/
 /.idea/
 /gridfieldextensions/
-/boilerplate/
 /betterbuttons/
-/silverstripe-branding/
+/silverstripe-ipsum/
 /silverstripe-cacheinclude/
-/silverstripe-catalogmanager/
-/silverstripe-color-field/
 /sortablegridfield/
-/grouped-cms-menu/
 /kickassets/
 /dropzone/
+/open-graph-meta/
+/betternavigator/
+/flat-cms/
+/toast-seo/
+/twitter-card-meta/

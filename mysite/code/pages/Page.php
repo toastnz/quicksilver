@@ -2,36 +2,48 @@
 
 /**
  * Class Page
+ *
+ * @method Image Thumbnail
  */
-class Page extends SiteTree {
+class Page extends SiteTree
+{
+    private static $has_one = array(
+        'Thumbnail' => 'Image'
+    );
 
     /**
      * @return FieldList
      */
-    public function getCMSFields() {
-        static $db = array(
-            'wysiwyg' => 'HTMLText'
-        );
-
+    public function getCMSFields()
+    {
         /** =========================================
          * @var FieldList $fields
+         * @var UploadField $thumbnail
          * ========================================*/
 
         $fields = parent::getCMSFields();
 
         /** -----------------------------------------
-         * Content
+         * Thumbnail
          * ----------------------------------------*/
-        $fields->addFieldsToTab('Root.WYSIWYG', array(
-            HtmlEditorField::create('wysiwyg', 'Page Content')
-        ));
 
-        $fields->removeFieldFromTab("Root.Main", "Content");
+        $thumbnail = UploadField::create('Thumbnail', 'Thumbnail');
+        $thumbnail->setFolderName('Uploads/thumbnails');
+
+        $fields->addFieldsToTab('Root.Main', array(
+            $thumbnail
+        ), 'Content');
 
         return $fields;
     }
+
+    public function getIsLive()
+    {
+        return Director::isLive();
+    }
 }
 
-class Page_Controller extends ContentController {
+class Page_Controller extends ContentController
+{
 
 }

@@ -1,0 +1,7 @@
+---
+Name: myextensions
+After: 'framework/*','cms/*'
+---
+SiteConfig:
+  extensions:
+    - SiteConfigExtension
