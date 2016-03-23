@@ -473,16 +473,20 @@ $snappy.on('click', '.js-change-video', function (e) {
 
 $snappy.on('click', '.js-cancel-video-change', function (e) {
     e.preventDefault();
-    closeImageModal();
+    closeVideoModal();
     $videoToChange = '';
 });
 
 $snappy.on('click', '.js-save-video-change', function (e) {
     e.preventDefault();
     let newVideoID = $('.new-video-id').val();
-    $videoToChange.css({'background-image': `url('http://img.youtube.com/vi/${newVideoID}/maxresdefault.jpg')`});
-    closeVideoModal();
-    saveSnappyContent();
+    if (newVideoID.length > 1) {
+        $videoToChange.css({'background-image': `url('http://img.youtube.com/vi/${newVideoID}/maxresdefault.jpg')`});
+        closeVideoModal();
+        saveSnappyContent();
+    } else {
+        alertify.error('Please enter in a video ID');
+    }
 });
 
 let $videoModal = $('.videoModal');
