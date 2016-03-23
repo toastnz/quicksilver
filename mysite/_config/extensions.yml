@@ -1,0 +1,7 @@
+---
+Name: myconfig
+After: 'framework/*','cms/*'
+---
+SiteConfig:
+  extensions:
+    - SiteConfigExtension
