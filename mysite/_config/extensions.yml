@@ -1,5 +1,5 @@
 ---
-Name: myconfig
+Name: myextensions
 After: 'framework/*','cms/*'
 ---
 SiteConfig:
