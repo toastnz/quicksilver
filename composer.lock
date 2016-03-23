@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "af276ec891e672d08ea05b2fc68d6835",
-    "content-hash": "e7797f3d4047d4e8d1c9c93c629d2d7c",
+    "hash": "dd4ed378252897c0bf9e796294bd12ad",
+    "content-hash": "9456f07fc501aed8f5d9d09378bb031d",
     "packages": [
         {
             "name": "composer/installers",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "0d061bff8273df2f4a45287209acfb769a01a02d"
+                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/0d061bff8273df2f4a45287209acfb769a01a02d",
-                "reference": "0d061bff8273df2f4a45287209acfb769a01a02d",
+                "url": "https://api.github.com/repos/composer/installers/zipball/6aac6a0a931ad06780fa7c574f27178d48109ec7",
+                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7",
                 "shasum": ""
             },
             "require": {
@@ -56,7 +56,7 @@
                 }
             ],
             "description": "A multi-framework Composer library installer",
-            "homepage": "http://composer.github.com/installers/",
+            "homepage": "https://composer.github.io/installers/",
             "keywords": [
                 "Craft",
                 "Dolibarr",
@@ -104,7 +104,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-03-11 13:58:36"
+            "time": "2016-03-23 16:25:33"
         },
         {
             "name": "doctrine/cache",
@@ -647,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/flat-cms.git",
-                "reference": "8351442ee3f8dec0c90ecbf111c59bb99c7ba354"
+                "reference": "89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/flat-cms/zipball/8351442ee3f8dec0c90ecbf111c59bb99c7ba354",
-                "reference": "8351442ee3f8dec0c90ecbf111c59bb99c7ba354",
+                "url": "https://api.github.com/repos/toastnz/flat-cms/zipball/89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d",
+                "reference": "89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d",
                 "shasum": ""
             },
             "require": {
@@ -677,7 +677,7 @@
                 "flat cms",
                 "silverstripe"
             ],
-            "time": "2016-03-17 00:49:27"
+            "time": "2016-03-23 05:53:57"
         },
         {
             "name": "toastnz/open-graph-meta",
