@@ -1,5 +1,5 @@
 {
-  "name": "quicksilver",
+  "name": "toastnz/quicksilver",
   "version": "0.2",
   "description": "SilverStripe Boilerplate",
   "type": "silverstripe-module",
@@ -14,6 +14,11 @@
       "name": "Jaydn de Graaf",
       "homepage": "http://pinc.nz/",
       "role": "Tall Guy"
+    },
+    {
+      "name": "Danae Miller-Clendon",
+      "homepage": "http://www.toast.co.nz/",
+      "role": "Token Chick"
     }
   ],
   "require": {
@@ -24,10 +29,10 @@
     "drewm/mailchimp-api": "~1.0",
     "toastnz/open-graph-meta": "*",
     "unclecheese/dropzone": "^1.2",
-    "silverstripe/cms": "3.1.x@stable",
-    "silverstripe/framework": "3.1.x@stable",
     "toastnz/silverstripe-ipsum": "*",
+    "silverstripe/cms": "3.1.x@stable",
     "unclecheese/betterbuttons": "1.2.*",
+    "silverstripe/framework": "3.1.x@stable",
     "toastnz/twitter-card-meta": "dev-master",
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
