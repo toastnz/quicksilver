@@ -33,7 +33,8 @@
     "heyday/silverstripe-cacheinclude": "~4.0",
     "unclecheese/silverstripe-kickassets": "^3.1",
     "undefinedoffset/sortablegridfield": "dev-master",
-    "silverstripe-australia/gridfieldextensions": "~1.1"
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "toastnz/fill-form": "dev-master"
   },
   "minimum-stability": "dev"
 }
