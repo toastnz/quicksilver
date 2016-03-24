@@ -22,6 +22,7 @@ Includes a bunch of other modules with equally made-up names.
 * [Toast SEO](https://github.com/toastnz/toast-seo) - Meta fields your SEO company will forget to populate before live
 * [Open Graph Meta](https://github.com/toastnz/open-graph-meta) - Your clients don't understand what Open Graph is, and you don't have to either
 * [Twitter Card Meta](https://github.com/toastnz/twitter-card-meta) - #twitterpro #iknowwhatimdoing #trending
+* [Fill Form](https://github.com/toastnz/fill-form.git) - Command + Shift + F fills in allll the form fields
 
 ## For the love of god, read this step
 
