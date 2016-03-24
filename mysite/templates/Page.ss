@@ -10,6 +10,7 @@
     $Layout
     $Form
     <% include Footer %>
+    <% include FillForm %>
 
 <script type="text/javascript" src="$Themedir/dist/js/output.js"></script>
 

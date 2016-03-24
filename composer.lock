@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd4ed378252897c0bf9e796294bd12ad",
-    "content-hash": "9456f07fc501aed8f5d9d09378bb031d",
+    "hash": "dd437bd5e1b08826536e79e0bb7b6999",
+    "content-hash": "b792d3b38dcb4c696490ef3870584f4e",
     "packages": [
         {
             "name": "composer/installers",
@@ -642,6 +642,44 @@
             "time": "2016-03-04 07:54:35"
         },
         {
+            "name": "toastnz/fill-form",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/fill-form.git",
+                "reference": "bd2e05eefcf4310b6dfba461c76042e669dcb9b2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/fill-form/zipball/bd2e05eefcf4310b6dfba461c76042e669dcb9b2",
+                "reference": "bd2e05eefcf4310b6dfba461c76042e669dcb9b2",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": ">=3.0.1,<3.2"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Tall Guy"
+                }
+            ],
+            "description": "Silverstripe Automagic Form Filling Thing",
+            "keywords": [
+                "fill form",
+                "form population",
+                "silverstripe"
+            ],
+            "time": "2016-03-23 23:39:10"
+        },
+        {
             "name": "toastnz/flat-cms",
             "version": "dev-master",
             "source": {
@@ -965,7 +1003,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/07e24d52e69aadff76273982b014170d9036e7aa",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/62a744d48f933c522ca5914bbae548f05a0870e7",
                 "reference": "07e24d52e69aadff76273982b014170d9036e7aa",
                 "shasum": ""
             },
@@ -1003,7 +1041,8 @@
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
         "toastnz/twitter-card-meta": 20,
-        "undefinedoffset/sortablegridfield": 20
+        "undefinedoffset/sortablegridfield": 20,
+        "toastnz/fill-form": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
