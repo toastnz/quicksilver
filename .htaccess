@@ -65,6 +65,10 @@ Options -Indexes
 	SetEnv HTTP_MOD_REWRITE On
 	RewriteEngine On
 
+	# Redirect index.php
+    RewriteCond %{THE_REQUEST} ^GET.*index\.php [NC]
+    RewriteRule (.*?)index\.php/*(.*) /$1$2 [R=301,NE,L]
+
 	# Deny access to potentially sensitive files and folders
 	RewriteRule ^vendor(/|$) - [F,L,NC]
 	RewriteRule silverstripe-cache(/|$) - [F,L,NC]
