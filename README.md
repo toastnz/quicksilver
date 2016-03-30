@@ -2,6 +2,10 @@
   <img style="width:100%;height:auto; max-width:810px" src="http://pinc.nz/git/quicksilver/quicksilver.png">
 </p>
 
+<img src="https://img.shields.io/badge/made_with-%20%20%20%E2%98%95-green.svg">
+<img src="https://img.shields.io/badge/made_by-%F0%9F%92%A9%F0%9F%92%A9-dddddd.svg">
+<img src="https://img.shields.io/badge/made_for-%F0%9F%92%B5-e6acca.svg">
+
 # Manhandling your SilverStripe installation
 
 Have you ever installed SilverStripe and wondered, "Gee whiz, I really wish someone would force a bunch of modules down my throat so I don't have to think for myself!" No? That's fine, the whole point of this module is to cowboy your SilverStripe installation with modules and defaults we reckon are A-Okay. Just install, sit back, and pretend you're a hacker while you watch the Composer output fly through your console like the majestic f#!king programmer you are. 
