@@ -191,9 +191,13 @@ HtmlEditorConfig::get('cms')->setOption('theme_advanced_blockformats', 'h1,h2,h3
  *      template
  *
  */
+
+
+HtmlEditorConfig::get('cms')->enablePlugins(array('youtube' => '../../../mysite/code/tinymce/youtube.js'));
+
 HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect', 'separator', 'bullist', 'numlist',
     'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'image', 'separator', 'sslink', 'unlink',
     'separator', 'bold', 'italic', 'underline', 'blockquote');
-HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'code');
+HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'code','youtube');
 HtmlEditorConfig::get('cms')->setButtonsForLine(3, '');
 HtmlEditorConfig::get('cms')->disablePlugins('table', 'contextmenu');
