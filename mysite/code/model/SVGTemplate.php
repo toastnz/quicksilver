@@ -118,32 +118,36 @@ class SVGTemplate extends ViewableData {
      * @return string
      */
     private function process($filePath) {
-        $out = new DOMDocument();
-        $out->load($filePath);
-        $root = $out->documentElement;
-        if ($this->fill) {
-            $root->setAttribute('fill', $this->fill);
-        }
-        if ($this->width) {
-            $root->setAttribute('width', $this->width . 'px');
-        }
-        if ($this->height) {
-            $root->setAttribute('height', $this->height . 'px');
-        }
-        if ($this->extra_classes) {
-            $root->setAttribute('class', implode(' ', $this->extra_classes));
-        }
-        foreach ($out->getElementsByTagName('svg') as $element) {
-            if ($this->id) {
-                $element->setAttribute('id', $this->id);
-            } else {
-                if ($element->hasAttribute('id')) {
-                    $element->removeAttribute('id');
+        if (file_exists($filePath)) {
+            $out = new DOMDocument();
+            $out->load($filePath);
+            $root = $out->documentElement;
+            if ($this->fill) {
+                $root->setAttribute('fill', $this->fill);
+            }
+            if ($this->width) {
+                $root->setAttribute('width', $this->width . 'px');
+            }
+            if ($this->height) {
+                $root->setAttribute('height', $this->height . 'px');
+            }
+            if ($this->extra_classes) {
+                $root->setAttribute('class', implode(' ', $this->extra_classes));
+            }
+            foreach ($out->getElementsByTagName('svg') as $element) {
+                if ($this->id) {
+                    $element->setAttribute('id', $this->id);
+                } else {
+                    if ($element->hasAttribute('id')) {
+                        $element->removeAttribute('id');
+                    }
                 }
             }
+            $out->normalizeDocument();
+            return $out->saveHTML();
         }
-        $out->normalizeDocument();
-        return $out->saveHTML();
+
+        return '';
     }
 
     /**
