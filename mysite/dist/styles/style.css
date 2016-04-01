@@ -605,6 +605,20 @@ form.loading .loader {
   margin-right: auto;
   text-align: center; }
 
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%; }
+
+.embed-container iframe, .embed-container object, .embed-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+
 .Security form {
   margin: 40px auto;
   width: 100%;
@@ -1605,7 +1619,8 @@ header nav {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
-  align-items: center;
+  -ms-grid-row-align: center;
+      align-items: center;
   padding: 0 6px;
   margin: 6px 8px;
   line-height: 36px;
@@ -2547,6 +2562,7 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     clear: both; }
   .video .wrap {
     max-width: 1140px;
+    position: relative;
     margin: 0 auto; }
   .video .image {
     position: relative;
