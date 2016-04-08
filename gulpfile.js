@@ -16,19 +16,14 @@
  *╚══════════════════════════════════════════════════════╝
  */
 
-/*jshint esnext: true */
-
 'use strict';
 
 var root          = './mysite/',
     app           = root + 'app/',
     dist          = root + 'dist/',
-    prod          = false,
     sprites       = [app + '*/@1x/*.png'],
     retinasprites = [app + '*/@2x/*.png'],
     gulp          = require("gulp"),
-    size          = require('gulp-size'),
-    gulpif        = require("gulp-if"),
     gutil         = require("gulp-util"),
     chalk         = require("chalk");
 
@@ -37,15 +32,12 @@ var root          = './mysite/',
 //║   JAVASCRIPT FUNCTIONALITY    ║
 //║                               ║
 //╚═══════════════════════════════╝
-var babel      = require("gulp-babel"),
-    rename     = require("gulp-rename"),
+var rename     = require("gulp-rename"),
     babelify   = require('babelify'),
     browserify = require('browserify'),
     source     = require('vinyl-source-stream'),
     uglify     = require("gulp-uglify"),
-    watchify   = require("watchify"),
-    notify     = require("gulp-notify"),
-    jshint     = require("gulp-jshint");
+    watchify   = require("watchify");
 
 function compileScripts(watch) {
     var props = watchify.args;
@@ -74,20 +66,6 @@ function compileScripts(watch) {
     return rebundle();
 
 }
-
-/**
- *  Lint the JS application
- */
-
-gulp.task('lint', function () {
-    Message('lint', 'green');
-    gutil.log('Gulp.js:', gutil.colors.green('• Linting Javascript Application'));
-    var jsHintOptions = {
-        lookup: true,
-        esnext: true
-    };
-    return gulp.src(app + 'js/components/app.js').pipe(jshint(jsHintOptions)).pipe(jshint.reporter('jshint-stylish'))
-});
 
 /**
  *  Minify the JS output
@@ -127,7 +105,7 @@ gulp.task('sass', function () {
         browsers: ['last 5 versions'],
         cascade : true
     };
-    return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
+    return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
 });
 
 //╔═══════════════════════════════╗
@@ -135,8 +113,7 @@ gulp.task('sass', function () {
 //║      SPRITESHEET CREATION     ║
 //║                               ║
 //╚═══════════════════════════════╝
-var imagemin    = require('gulp-imagemin'),
-    spritesmith = require('gulp.spritesmith');
+var spritesmith = require('gulp.spritesmith');
 
 gulp.task('sprites', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Creating the spritesheets and associated styles'));
@@ -168,16 +145,6 @@ gulp.task('sprites', function () {
 
     retinaSpriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
 
-});
-
-/**
- *  SVG Optimisation
- */
-var svgmin = require('gulp-svgmin');
-
-gulp.task('svg', function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Optimising all of the projects SVG files'));
-    return gulp.src(app + 'images/svg/*.svg').pipe(svgmin({options: {plugins: [{removeViewBox: false}]}})).pipe(gulp.dest(dist + 'images/svg/'));
 });
 
 /**
@@ -213,10 +180,10 @@ var cms = './flat-cms/';
 gulp.task('cms', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the CMS stylesheets'));
     var autoprefixerSettings = {
-        browsers: ['last 2 versions'],
+        browsers: ['last 5 versions'],
         cascade : true
     };
-    return gulp.src([cms + 'styles/scss/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('flat-cms.scss')).pipe(gulpif(prod, sass({outputStyle: 'compressed'}), sass({outputStyle: 'nested'}))).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(gulpif(prod, cssmin())).pipe(sourcemaps.write('./')).pipe(plumber.stop())
+    return gulp.src([cms + 'styles/scss/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('flat-cms.scss')).on('error', sass.logError).pipe(sass({outputStyle: 'compressed'})).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop())
         .pipe(gulp.dest(cms + 'styles/css'))
 });
 
@@ -234,13 +201,12 @@ var changeEvent = function (evt) {
 };
 
 gulp.task('finishing', function () {
-
     Message('scss', 'green');
     Message('js', 'green');
     Message('checklist', 'green');
 });
 
-gulp.task('default', ['start', 'sprites', 'sass', 'svg', 'ie'], function () {
+gulp.task('default', ['start', 'sprites', 'sass', 'ie'], function () {
 
     compileScripts(true);
 
@@ -248,7 +214,7 @@ gulp.task('default', ['start', 'sprites', 'sass', 'svg', 'ie'], function () {
         changeEvent(evt);
     });
 
-    gulp.watch([app + 'js/components/app.js'], ['lint']).on('change', function (evt) {
+    gulp.watch([app + 'js/components/app.js']).on('change', function (evt) {
         changeEvent(evt);
     });
 
@@ -256,7 +222,7 @@ gulp.task('default', ['start', 'sprites', 'sass', 'svg', 'ie'], function () {
 
 gulp.task('deploy', function (cb) {
     compileScripts(false);
-    gulpSequence(['start'], ['cms'], ['sprites'], ['sass'], ['svg'], ['ie'], ['minify-css'], ['minify-js'], ['lint'], ['finishing'])(cb);
+    gulpSequence(['start'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['minify-js'], ['finishing'])(cb);
 
 });
 
@@ -270,6 +236,5 @@ var Messages = {
     scss     : '╔═══════════════════════════╗\n           ║ Sass compiled Succesfully ║\n           ╚═══════════════════════════╝',
     js       : '╔════════════════════════╗\n           ║ JS bundled Succesfully ║\n           ╚════════════════════════╝',
     error    : '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
-    lint     : '╔════════════╗\n           ║ JS Linting ║\n           ╚════════════╝',
-    checklist: '╔═══════════════════╗\n           ║ Go live checklist ║\n           ╚═══════════════════╝\n           ☑ External font\'s have been included\n           ☑ Favicons have been generated and included\n           ☑ Analytics software is monitoring site\n           ☑ JavaScript files are minified\n           ☑ CSS files are minified\n           ☑ All images have alt tag values\n           ☑ !important is avoided\n           ☑ No base files have been overwritten\n           ☑ 404 Page has been styled\n           ☑ Common meta tags\n           ☑ Autoprefixer'
+    checklist: '╔═══════════════════╗\n           ║ Go live checklist ║\n           ╚═══════════════════╝\n           ☑ External font\'s have been included\n           ☑ Favicons have been generated and included\n           ☑ Analytics software is monitoring site\n           ☑ JavaScript files are minified\n           ☑ CSS files are minified\n           ☑ All images have alt tag values\n           ☑ !important is avoided\n           ☑ No base files have been overwritten\n           ☑ 404 Page has been styled\n           ☑ Common meta tags\n           ☑ Autoprefixer\n           ☑ Login page has been styled'
 };
