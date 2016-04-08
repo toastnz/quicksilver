@@ -44,7 +44,7 @@
     "gulp-sequence": "latest",
     "gulp-sourcemaps": "latest",
     "gulp.spritesmith": "latest",
-    "gulp-autoprefixer": "1.0.1",
+    "gulp-autoprefixer": "latest",
     "vinyl-source-stream": "latest",
     "babel-preset-es2015": "latest"
   }

@@ -1366,6 +1366,7 @@ header nav {
 #snappy {
   width: 100%;
   position: relative;
+  min-height: -webkit-calc(100% - 220px);
   min-height: calc(100% - 220px);
 }
 
@@ -1874,6 +1875,7 @@ header nav {
   -webkit-box-align: center;
   -webkit-align-items: center;
   -ms-flex-align: center;
+  -ms-grid-row-align: center;
   align-items: center;
   padding: 0 6px;
   margin: 6px 8px;
@@ -2003,6 +2005,7 @@ header nav {
 
 .Scp-saturation {
   position: relative;
+  width: -webkit-calc(100% - 25px);
   width: calc(100% - 25px);
   height: 100%;
   background: -webkit-linear-gradient(left, #fff 0%, red 100%);
@@ -2541,6 +2544,7 @@ header nav {
   max-width: 868px;
   border-left: 5px solid #2eb150;
   padding-left: 24px;
+  width: -webkit-calc(100% - 72px);
   width: calc(100% - 72px);
 }
 
@@ -3003,6 +3007,7 @@ header nav {
 
 .trippleImage .column {
   margin: 0 12px;
+  width: -webkit-calc(33.3333333% - 24px);
   width: calc(33.3333333% - 24px);
 }
 
