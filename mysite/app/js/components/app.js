@@ -7,7 +7,6 @@ window.jQuery = window.$ = require('jquery');
 
 const $            = require('jquery'),
       moment       = require('moment'),
-      pikaday      = require('pikaday'),
       parsley      = require('parsleyjs'),
       _            = require('underscore'),
       alertify     = require('alertify.js'),
