@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "dd437bd5e1b08826536e79e0bb7b6999",
-    "content-hash": "b792d3b38dcb4c696490ef3870584f4e",
+    "hash": "3415896a74627e976bfdee3fc28170a5",
+    "content-hash": "64d5528d859f458fd7b00144a1dcac2c",
     "packages": [
         {
             "name": "composer/installers",
@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7"
+                "reference": "eef05aa80320f7d563acee6a16dc526bb0d54b9c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/6aac6a0a931ad06780fa7c574f27178d48109ec7",
-                "reference": "6aac6a0a931ad06780fa7c574f27178d48109ec7",
+                "url": "https://api.github.com/repos/composer/installers/zipball/eef05aa80320f7d563acee6a16dc526bb0d54b9c",
+                "reference": "eef05aa80320f7d563acee6a16dc526bb0d54b9c",
                 "shasum": ""
             },
             "require": {
@@ -40,8 +40,8 @@
                 }
             },
             "autoload": {
-                "psr-0": {
-                    "Composer\\Installers\\": "src/"
+                "psr-4": {
+                    "Composer\\Installers\\": "src/Composer/Installers"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -61,9 +61,11 @@
                 "Craft",
                 "Dolibarr",
                 "Hurad",
+                "ImageCMS",
                 "MODX Evo",
                 "Mautic",
                 "OXID",
+                "RadPHP",
                 "SMF",
                 "Thelia",
                 "WolfCMS",
@@ -104,7 +106,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-03-23 16:25:33"
+            "time": "2016-04-15 21:04:42"
         },
         {
             "name": "doctrine/cache",
@@ -306,46 +308,6 @@
                 }
             ],
             "time": "2015-11-17 03:42:25"
-        },
-        {
-            "name": "jonom/silverstripe-betternavigator",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jonom/silverstripe-betternavigator.git",
-                "reference": "e0a82db4673988c55710dcf651c91436f0d9230c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jonom/silverstripe-betternavigator/zipball/e0a82db4673988c55710dcf651c91436f0d9230c",
-                "reference": "e0a82db4673988c55710dcf651c91436f0d9230c",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "betternavigator"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathon Menz",
-                    "homepage": "http://jonathonmenz.com"
-                }
-            ],
-            "description": "Front-end utility menu for SilverStripe websites featuring administration and development tools",
-            "keywords": [
-                "BetterNavigator",
-                "SilverStripeNavigator",
-                "navigator",
-                "silverstripe"
-            ],
-            "time": "2016-02-10 17:31:37"
         },
         {
             "name": "psr/log",
@@ -598,12 +560,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb"
+                "reference": "e4fbcc65f90909c999ac3b4dfa699ee6563a9940"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/584e52cb8f788a887553ba82db6caacb1d6260bb",
-                "reference": "584e52cb8f788a887553ba82db6caacb1d6260bb",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e4fbcc65f90909c999ac3b4dfa699ee6563a9940",
+                "reference": "e4fbcc65f90909c999ac3b4dfa699ee6563a9940",
                 "shasum": ""
             },
             "require": {
@@ -639,7 +601,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2016-03-04 07:54:35"
+            "time": "2016-03-29 19:00:15"
         },
         {
             "name": "toastnz/fill-form",
@@ -647,12 +609,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/fill-form.git",
-                "reference": "bd2e05eefcf4310b6dfba461c76042e669dcb9b2"
+                "reference": "ca1a97c37e5ada72f8e7f6c77f2a4c62c28799c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/fill-form/zipball/bd2e05eefcf4310b6dfba461c76042e669dcb9b2",
-                "reference": "bd2e05eefcf4310b6dfba461c76042e669dcb9b2",
+                "url": "https://api.github.com/repos/toastnz/fill-form/zipball/ca1a97c37e5ada72f8e7f6c77f2a4c62c28799c9",
+                "reference": "ca1a97c37e5ada72f8e7f6c77f2a4c62c28799c9",
                 "shasum": ""
             },
             "require": {
@@ -677,7 +639,7 @@
                 "form population",
                 "silverstripe"
             ],
-            "time": "2016-03-23 23:39:10"
+            "time": "2016-03-30 20:31:26"
         },
         {
             "name": "toastnz/flat-cms",
@@ -685,12 +647,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/flat-cms.git",
-                "reference": "89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d"
+                "reference": "8508d008351425c1277daff9d5557440b8e7dfc7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/flat-cms/zipball/89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d",
-                "reference": "89ff9c5a7afc56ef94de4a4586b64c57b11b6d6d",
+                "url": "https://api.github.com/repos/toastnz/flat-cms/zipball/8508d008351425c1277daff9d5557440b8e7dfc7",
+                "reference": "8508d008351425c1277daff9d5557440b8e7dfc7",
                 "shasum": ""
             },
             "require": {
@@ -715,7 +677,7 @@
                 "flat cms",
                 "silverstripe"
             ],
-            "time": "2016-03-23 05:53:57"
+            "time": "2016-04-14 02:46:28"
         },
         {
             "name": "toastnz/open-graph-meta",
@@ -723,12 +685,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/open-graph-meta.git",
-                "reference": "156023e6d22dd9d53c3e245970ae306efb24a60d"
+                "reference": "1f346293fd36649cce55c7a101db3f9a3a9a49ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/156023e6d22dd9d53c3e245970ae306efb24a60d",
-                "reference": "156023e6d22dd9d53c3e245970ae306efb24a60d",
+                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/1f346293fd36649cce55c7a101db3f9a3a9a49ba",
+                "reference": "1f346293fd36649cce55c7a101db3f9a3a9a49ba",
                 "shasum": ""
             },
             "require": {
@@ -753,7 +715,7 @@
                 "open graph",
                 "silverstripe"
             ],
-            "time": "2016-03-17 01:34:25"
+            "time": "2016-04-07 02:59:15"
         },
         {
             "name": "toastnz/silverstripe-ipsum",
@@ -761,12 +723,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/silverstripe-ipsum.git",
-                "reference": "4bd7c40b508451713797538fdbde37425cc23e49"
+                "reference": "a7de2dcfc27b8c0cf9d933ee03c0427f56645d3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/silverstripe-ipsum/zipball/4bd7c40b508451713797538fdbde37425cc23e49",
-                "reference": "4bd7c40b508451713797538fdbde37425cc23e49",
+                "url": "https://api.github.com/repos/toastnz/silverstripe-ipsum/zipball/a7de2dcfc27b8c0cf9d933ee03c0427f56645d3c",
+                "reference": "a7de2dcfc27b8c0cf9d933ee03c0427f56645d3c",
                 "shasum": ""
             },
             "require": {
@@ -790,7 +752,7 @@
                 "ipsum",
                 "silverstripe"
             ],
-            "time": "2016-03-19 22:38:39"
+            "time": "2016-03-30 20:31:52"
         },
         {
             "name": "toastnz/toast-seo",
@@ -798,12 +760,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/toast-seo.git",
-                "reference": "7f38b5e81686793e953e394e51a3a114dce3c8e6"
+                "reference": "49a070b2672e20924a4cf16355bc068deb4f7ce1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/7f38b5e81686793e953e394e51a3a114dce3c8e6",
-                "reference": "7f38b5e81686793e953e394e51a3a114dce3c8e6",
+                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/49a070b2672e20924a4cf16355bc068deb4f7ce1",
+                "reference": "49a070b2672e20924a4cf16355bc068deb4f7ce1",
                 "shasum": ""
             },
             "require": {
@@ -827,7 +789,7 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2016-03-17 01:26:26"
+            "time": "2016-04-07 02:55:57"
         },
         {
             "name": "toastnz/twitter-card-meta",
@@ -835,16 +797,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/twitter-card-meta.git",
-                "reference": "58c9d2300a4bc25612f8771364326eec22b32fa8"
+                "reference": "56d1eceb88a6db085ada8caef26a183ec18f7bcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/58c9d2300a4bc25612f8771364326eec22b32fa8",
-                "reference": "58c9d2300a4bc25612f8771364326eec22b32fa8",
+                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/56d1eceb88a6db085ada8caef26a183ec18f7bcc",
+                "reference": "56d1eceb88a6db085ada8caef26a183ec18f7bcc",
                 "shasum": ""
             },
             "require": {
                 "composer/installers": "*",
+                "silverstripe/cms": ">=3.0.1,<3.2",
                 "silverstripe/framework": ">=3.0.1,<3.2"
             },
             "type": "silverstripe-module",
@@ -855,8 +818,15 @@
             "authors": [
                 {
                     "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz",
                     "homepage": "http://pinc.nz/",
-                    "role": "Developer"
+                    "role": "Tall Guy"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "email": "danae@toast.co.nz",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Token Chick"
                 }
             ],
             "description": "Silverstripe Twitter Card Module",
@@ -865,7 +835,7 @@
                 "twitter",
                 "twitter card"
             ],
-            "time": "2016-03-17 01:31:50"
+            "time": "2016-04-08 01:20:37"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -995,7 +965,7 @@
         },
         {
             "name": "undefinedoffset/sortablegridfield",
-            "version": "dev-master",
+            "version": "0.6.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UndefinedOffset/SortableGridField.git",
@@ -1003,7 +973,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/62a744d48f933c522ca5914bbae548f05a0870e7",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/07e24d52e69aadff76273982b014170d9036e7aa",
                 "reference": "07e24d52e69aadff76273982b014170d9036e7aa",
                 "shasum": ""
             },
@@ -1038,11 +1008,10 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "toastnz/fill-form": 20,
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
-        "toastnz/twitter-card-meta": 20,
-        "undefinedoffset/sortablegridfield": 20,
-        "toastnz/fill-form": 20
+        "toastnz/twitter-card-meta": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
