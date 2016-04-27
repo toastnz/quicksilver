@@ -13,8 +13,11 @@ $databaseConfig['database'] = str_replace('SS_', '', $databaseConfig['database']
 /** Set default language */
 i18n::set_locale('en_US');
 
-/** Force redirect to www */
-//Director::forceWWW();
+/** Uncomment to control SSL and www  */
+if (!Director::is_cli() && Director::isLive()){
+//    Director::forceWWW();
+//    Director::forceSSL();
+}
 
 define('PROJECT_THIRDPARTY_DIR', project() . '/thirdparty');
 define('PROJECT_THIRDPARTY_PATH', project() . '/' . PROJECT_THIRDPARTY_DIR);

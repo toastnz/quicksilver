@@ -14,7 +14,7 @@ class SVGTemplate extends ViewableData {
      * @config
      * @var string
      */
-    private static $base_path = ' mysite/dist/images/svg/';
+    private static $base_path = 'mysite/dist/images/svg/';
 
     /**
      * @config
