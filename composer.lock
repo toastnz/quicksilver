@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "3415896a74627e976bfdee3fc28170a5",
-    "content-hash": "64d5528d859f458fd7b00144a1dcac2c",
+    "hash": "393cfdaebc95b37d2127407e38d32401",
+    "content-hash": "782e7a60884752e6a687f3bcc62b62e1",
     "packages": [
         {
             "name": "composer/installers",
@@ -310,6 +310,46 @@
             "time": "2015-11-17 03:42:25"
         },
         {
+            "name": "jonom/silverstripe-betternavigator",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-betternavigator.git",
+                "reference": "e0a82db4673988c55710dcf651c91436f0d9230c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-betternavigator/zipball/e0a82db4673988c55710dcf651c91436f0d9230c",
+                "reference": "e0a82db4673988c55710dcf651c91436f0d9230c",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "betternavigator"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Front-end utility menu for SilverStripe websites featuring administration and development tools",
+            "keywords": [
+                "BetterNavigator",
+                "SilverStripeNavigator",
+                "navigator",
+                "silverstripe"
+            ],
+            "time": "2016-02-10 17:31:37"
+        },
+        {
             "name": "psr/log",
             "version": "dev-master",
             "source": {
@@ -504,6 +544,60 @@
                 "silverstripe"
             ],
             "time": "2016-02-29 02:10:05"
+        },
+        {
+            "name": "studiobonito/silverstripe-google-analytics",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/studiobonito/silverstripe-google-analytics.git",
+                "reference": "bf90dbf57796ab4963c177c14e3d19d7c59bd1e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/studiobonito/silverstripe-google-analytics/zipball/bf90dbf57796ab4963c177c14e3d19d7c59bd1e3",
+                "reference": "bf90dbf57796ab4963c177c14e3d19d7c59bd1e3",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "silverstripe/cms": ">=3.1.2,<3.3",
+                "silverstripe/framework": ">=3.1.2,<3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "0.9.*",
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1",
+                "symfony/class-loader": "~2.3"
+            },
+            "type": "silverstripe-module",
+            "autoload": {
+                "psr-4": {
+                    "StudioBonito\\SilverStripe\\GoogleAnalytics\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Densham",
+                    "email": "tom.densham@studiobonito.co.uk",
+                    "homepage": "http://www.studiobonito.co.uk",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provide basic Google Analytics integration for SilverStripe CMS.",
+            "homepage": "https://github.com/studiobonito/silverstripe-google-analytics",
+            "keywords": [
+                "analytics",
+                "google",
+                "silverstripe",
+                "silverstripe-google-analytics",
+                "studiobonito"
+            ],
+            "time": "2015-12-17 15:32:25"
         },
         {
             "name": "symfony/expression-language",

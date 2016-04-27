@@ -5,19 +5,19 @@ window.jQuery = window.$ = require('jquery');
 // Requirements
 // ======================================================
 
-const $            = require('jquery'),
-      moment       = require('moment'),
-      parsley      = require('parsleyjs'),
-      _            = require('underscore'),
-      alertify     = require('alertify.js'),
-      fancybox     = require('fancybox')($),
-      imagesLoaded = require('imagesloaded'),
-      slick        = require('slick-carousel'),
-      jQBridget    = require('jquery-bridget'),
-      Masonry      = require('masonry-layout'),
-      matchHeight  = require('jquery-match-height');
+const $ = require('jquery'),
+    moment = require('moment'),
+    parsley = require('parsleyjs'),
+    _ = require('underscore'),
+    alertify = require('alertify.js'),
+    fancybox = require('fancybox')($),
+    imagesLoaded = require('imagesloaded'),
+    slick = require('slick-carousel'),
+    jQBridget = require('jquery-bridget'),
+    Masonry = require('masonry-layout'),
+    matchHeight = require('jquery-match-height');
 
-const snappy = require('../snappy/snappy');
+// const snappy = require('../snappy/snappy');
 
 //==================================================================
 // Navburger
@@ -42,7 +42,7 @@ if ($contactForm.length > 0) {
     }).on('form:submit', () => {
         $contactForm.addClass('busy');
         $.ajax({
-            url : $contactForm.attr('action'),
+            url: $contactForm.attr('action'),
             data: $contactForm.serialize()
         }).done(()=> {
             alertify.success('Form sent succesfully');
@@ -90,9 +90,9 @@ $close.on('click', function (e) {
     closeModal();
 });
 
-var config = $.parseJSON($('.dropzone-holder').attr('data-config'));
-console.log(config);
-//var newURL = 'admin/pages/edit/EditForm/field/Dropzone/upload';
-var newURL = 'home/upload ';
-config.url = newURL;
-$('.dropzone-holder').attr('data-config', JSON.stringify(config));
+// var config = $.parseJSON($('.dropzone-holder').attr('data-config'));
+// console.log(config);
+// //var newURL = 'admin/pages/edit/EditForm/field/Dropzone/upload';
+// var newURL = 'home/upload ';
+// config.url = newURL;
+// $('.dropzone-holder').attr('data-config', JSON.stringify(config));

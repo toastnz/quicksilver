@@ -37,8 +37,9 @@
     "toastnz/twitter-card-meta": "dev-master",
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
-    "undefinedoffset/sortablegridfield": "dev-master",
-    "silverstripe-australia/gridfieldextensions": "~1.1"
+    "undefinedoffset/sortablegridfield": "*",
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "studiobonito/silverstripe-google-analytics": "^2.0"
   },
   "minimum-stability": "dev"
 }
