@@ -18,26 +18,26 @@
 
 'use strict';
 
-var root          = './mysite/',
-    app           = root + 'app/',
-    dist          = root + 'dist/',
-    sprites       = [app + '*/@1x/*.png'],
+var root = './mysite/',
+    app = root + 'app/',
+    dist = root + 'dist/',
+    sprites = [app + '*/@1x/*.png'],
     retinasprites = [app + '*/@2x/*.png'],
-    gulp          = require("gulp"),
-    gutil         = require("gulp-util"),
-    chalk         = require("chalk");
+    gulp = require("gulp"),
+    gutil = require("gulp-util"),
+    chalk = require("chalk");
 
 //╔═══════════════════════════════╗
 //║                               ║
 //║   JAVASCRIPT FUNCTIONALITY    ║
 //║                               ║
 //╚═══════════════════════════════╝
-var rename     = require("gulp-rename"),
-    babelify   = require('babelify'),
+var rename = require("gulp-rename"),
+    babelify = require('babelify'),
     browserify = require('browserify'),
-    source     = require('vinyl-source-stream'),
-    uglify     = require("gulp-uglify"),
-    watchify   = require("watchify");
+    source = require('vinyl-source-stream'),
+    uglify = require("gulp-uglify"),
+    watchify = require("watchify");
 
 function compileScripts(watch) {
     var props = watchify.args;
@@ -83,12 +83,12 @@ gulp.task('minify-js', function () {
 //║    STYLESHEET MANIPLUATION    ║
 //║                               ║
 //╚═══════════════════════════════╝
-var sass         = require('gulp-sass'),
-    order        = require("gulp-order"),
-    concat       = require("gulp-concat"),
-    cssmin       = require("gulp-cssmin"),
-    plumber      = require("gulp-plumber"),
-    sourcemaps   = require("gulp-sourcemaps"),
+var sass = require('gulp-sass'),
+    order = require("gulp-order"),
+    concat = require("gulp-concat"),
+    cssmin = require("gulp-cssmin"),
+    plumber = require("gulp-plumber"),
+    sourcemaps = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
 
 /**
@@ -103,7 +103,7 @@ gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
-        cascade : true
+        cascade: true
     };
     return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
 });
@@ -121,9 +121,9 @@ gulp.task('sprites', function () {
      *  Standard Sprites
      */
     var spriteData = gulp.src(sprites).pipe(spritesmith({
-        padding    : 4,
-        imgName    : 'sprites.png',
-        cssName    : '01-sprites.scss',
+        padding: 4,
+        imgName: 'sprites.png',
+        cssName: '01-sprites.scss',
         cssTemplate: app + 'images/@1x/sprite_positions.styl.mustache'
     }));
 
@@ -135,9 +135,9 @@ gulp.task('sprites', function () {
      *  Retina Sprites
      */
     var retinaSpriteData = gulp.src(retinasprites).pipe(spritesmith({
-        padding    : 8,
-        imgName    : 'sprites-retina.png',
-        cssName    : '02-sprites-retina.scss',
+        padding: 8,
+        imgName: 'sprites-retina.png',
+        cssName: '02-sprites-retina.scss',
         cssTemplate: app + 'images/@2x/retina-sprite_positions.styl.mustache'
     }));
 
@@ -151,7 +151,7 @@ gulp.task('sprites', function () {
  *  IE8 Stylesheet fixer
  */
 
-var rework    = require('gulp-rework'),
+var rework = require('gulp-rework'),
     queryless = require('css-queryless');
 
 gulp.task('ie', function () {
@@ -181,7 +181,7 @@ gulp.task('cms', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the CMS stylesheets'));
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
-        cascade : true
+        cascade: true
     };
     return gulp.src([cms + 'styles/scss/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('flat-cms.scss')).on('error', sass.logError).pipe(sass({outputStyle: 'compressed'})).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop())
         .pipe(gulp.dest(cms + 'styles/css'))
@@ -204,6 +204,14 @@ gulp.task('finishing', function () {
     Message('scss', 'green');
     Message('js', 'green');
     Message('checklist', 'green');
+});
+
+gulp.task('flat', ['cms'], function () {
+
+    gulp.watch(['**/*.scss'], ['cms']).on('change', function (evt) {
+        changeEvent(evt);
+    });
+
 });
 
 gulp.task('default', ['start', 'sprites', 'sass', 'ie'], function () {
@@ -232,9 +240,9 @@ function Message(message, col) {
 }
 
 var Messages = {
-    start    : ' ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗███████╗██╗██╗    ██╗   ██╗███████╗██████╗\n           ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██║██║    ██║   ██║██╔════╝██╔══██╗\n           ██║   ██║██║   ██║██║██║     █████╔╝ ███████╗██║██║    ██║   ██║█████╗  ██████╔╝\n           ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ╚════██║██║██║    ╚██╗ ██╔╝██╔══╝  ██╔══██╗\n           ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗███████║██║███████╗╚████╔╝ ███████╗██║  ██║\n            ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝',
-    scss     : '╔═══════════════════════════╗\n           ║ Sass compiled Succesfully ║\n           ╚═══════════════════════════╝',
-    js       : '╔════════════════════════╗\n           ║ JS bundled Succesfully ║\n           ╚════════════════════════╝',
-    error    : '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
+    start: ' ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗███████╗██╗██╗    ██╗   ██╗███████╗██████╗\n           ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██║██║    ██║   ██║██╔════╝██╔══██╗\n           ██║   ██║██║   ██║██║██║     █████╔╝ ███████╗██║██║    ██║   ██║█████╗  ██████╔╝\n           ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ╚════██║██║██║    ╚██╗ ██╔╝██╔══╝  ██╔══██╗\n           ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗███████║██║███████╗╚████╔╝ ███████╗██║  ██║\n            ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝',
+    scss: '╔═══════════════════════════╗\n           ║ Sass compiled Succesfully ║\n           ╚═══════════════════════════╝',
+    js: '╔════════════════════════╗\n           ║ JS bundled Succesfully ║\n           ╚════════════════════════╝',
+    error: '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
     checklist: '╔═══════════════════╗\n           ║ Go live checklist ║\n           ╚═══════════════════╝\n           ☑ External font\'s have been included\n           ☑ Favicons have been generated and included\n           ☑ Analytics software is monitoring site\n           ☑ JavaScript files are minified\n           ☑ CSS files are minified\n           ☑ All images have alt tag values\n           ☑ !important is avoided\n           ☑ No base files have been overwritten\n           ☑ 404 Page has been styled\n           ☑ Common meta tags\n           ☑ Autoprefixer\n           ☑ Login page has been styled'
 };
