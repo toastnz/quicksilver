@@ -13,12 +13,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "eef05aa80320f7d563acee6a16dc526bb0d54b9c"
+                "reference": "21a8c06dd5fe0a22b776797cc552e51d17d7e7dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/eef05aa80320f7d563acee6a16dc526bb0d54b9c",
-                "reference": "eef05aa80320f7d563acee6a16dc526bb0d54b9c",
+                "url": "https://api.github.com/repos/composer/installers/zipball/21a8c06dd5fe0a22b776797cc552e51d17d7e7dd",
+                "reference": "21a8c06dd5fe0a22b776797cc552e51d17d7e7dd",
                 "shasum": ""
             },
             "require": {
@@ -106,7 +106,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-15 21:04:42"
+            "time": "2016-04-24 13:17:36"
         },
         {
             "name": "doctrine/cache",
@@ -547,22 +547,22 @@
         },
         {
             "name": "studiobonito/silverstripe-google-analytics",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/studiobonito/silverstripe-google-analytics.git",
-                "reference": "bf90dbf57796ab4963c177c14e3d19d7c59bd1e3"
+                "reference": "cd4bf48912168bf3a7ebf59dc09897045d4633eb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/studiobonito/silverstripe-google-analytics/zipball/bf90dbf57796ab4963c177c14e3d19d7c59bd1e3",
-                "reference": "bf90dbf57796ab4963c177c14e3d19d7c59bd1e3",
+                "url": "https://api.github.com/repos/studiobonito/silverstripe-google-analytics/zipball/cd4bf48912168bf3a7ebf59dc09897045d4633eb",
+                "reference": "cd4bf48912168bf3a7ebf59dc09897045d4633eb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.0",
-                "silverstripe/cms": ">=3.1.2,<3.3",
-                "silverstripe/framework": ">=3.1.2,<3.3"
+                "silverstripe/cms": ">=3.1.2,<4.0",
+                "silverstripe/framework": ">=3.1.2,<4.0"
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
@@ -597,7 +597,7 @@
                 "silverstripe-google-analytics",
                 "studiobonito"
             ],
-            "time": "2015-12-17 15:32:25"
+            "time": "2016-04-28 08:05:21"
         },
         {
             "name": "symfony/expression-language",
@@ -891,12 +891,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/twitter-card-meta.git",
-                "reference": "56d1eceb88a6db085ada8caef26a183ec18f7bcc"
+                "reference": "1598cd8a2ac43db45771c6c17e628a1155261025"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/56d1eceb88a6db085ada8caef26a183ec18f7bcc",
-                "reference": "56d1eceb88a6db085ada8caef26a183ec18f7bcc",
+                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/1598cd8a2ac43db45771c6c17e628a1155261025",
+                "reference": "1598cd8a2ac43db45771c6c17e628a1155261025",
                 "shasum": ""
             },
             "require": {
@@ -929,7 +929,7 @@
                 "twitter",
                 "twitter card"
             ],
-            "time": "2016-04-08 01:20:37"
+            "time": "2016-04-22 04:02:31"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -1010,65 +1010,17 @@
             "time": "2015-11-24 22:14:18"
         },
         {
-            "name": "unclecheese/silverstripe-kickassets",
-            "version": "3.1.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/unclecheese/silverstripe-kickassets.git",
-                "reference": "2006eb23a2bcb422da95def82577fdaac6178117"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/unclecheese/silverstripe-kickassets/zipball/2006eb23a2bcb422da95def82577fdaac6178117",
-                "reference": "2006eb23a2bcb422da95def82577fdaac6178117",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0",
-                "silverstripe/cms": ">= 3.1.0",
-                "silverstripe/framework": ">= 3.1.0",
-                "unclecheese/dropzone": "1.2.*"
-            },
-            "replace": {
-                "silverstripe/kickassets": "*",
-                "unclecheese/kickassets": "*"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "kickassets"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Uncle Cheese",
-                    "email": "unclecheese@leftandmain.com"
-                }
-            ],
-            "description": "Provides an alternative file management interface for SilverStripe CMS with drag-and-drop, multi-selection, and several other desktop-like UI conventions.",
-            "keywords": [
-                "AssetAdmin",
-                "assets",
-                "files",
-                "silverstripe",
-                "upload"
-            ],
-            "time": "2016-02-05 10:24:01"
-        },
-        {
             "name": "undefinedoffset/sortablegridfield",
-            "version": "0.6.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UndefinedOffset/SortableGridField.git",
-                "reference": "07e24d52e69aadff76273982b014170d9036e7aa"
+                "reference": "fc2e8e5538198ce94fff0efd1a5564d0ce726dd3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/07e24d52e69aadff76273982b014170d9036e7aa",
-                "reference": "07e24d52e69aadff76273982b014170d9036e7aa",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/fc2e8e5538198ce94fff0efd1a5564d0ce726dd3",
+                "reference": "fc2e8e5538198ce94fff0efd1a5564d0ce726dd3",
                 "shasum": ""
             },
             "require": {
@@ -1095,7 +1047,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2016-03-03 13:47:28"
+            "time": "2016-04-04 15:32:51"
         }
     ],
     "packages-dev": [],
