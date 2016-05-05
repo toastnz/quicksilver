@@ -24,8 +24,8 @@
   "require": {
     "php": ">=5.3.3",
     "toastnz/flat-cms": "*",
-    "toastnz/toast-seo": "*",
     "google/recaptcha": "~1.1",
+    "toastnz/toast-seo": "~0.1.0",
     "drewm/mailchimp-api": "~1.0",
     "toastnz/open-graph-meta": "*",
     "unclecheese/dropzone": "^1.2",
