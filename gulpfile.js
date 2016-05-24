@@ -51,9 +51,9 @@ function compileScripts(watch) {
     function rebundle() {
         var stream = bundler.bundle();
         return stream.on('error', function (error) {
-                Message('error', 'red');
-                gutil.log(chalk['red'](error.message));
-            })
+            Message('error', 'red');
+            gutil.log(chalk['red'](error.message));
+        })
             .pipe(source('output.js'))
             .pipe(gulp.dest(dist + 'js'));
     }
@@ -73,8 +73,7 @@ function compileScripts(watch) {
 
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
-    return gulp.src([dist + 'js/output.js'])
-        .pipe(uglify()).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
+    return gulp.src([dist + 'js/output.js']).pipe(uglify({compress: {unused: false}})).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
 });
 
 
@@ -86,8 +85,8 @@ gulp.task('minify-js', function () {
 var sass = require('gulp-sass'),
     order = require("gulp-order"),
     concat = require("gulp-concat"),
-    cssmin = require("gulp-cssmin"),
     plumber = require("gulp-plumber"),
+    cleanCSS = require("gulp-clean-css"),
     sourcemaps = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
 
@@ -97,7 +96,7 @@ var sass = require('gulp-sass'),
 
 gulp.task('minify-css', ['sass'], function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
-    return gulp.src([dist + 'styles/style.css']).pipe(cssmin()).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
+    return gulp.src([dist + 'styles/style.css']).pipe(cleanCSS({compatibility: 'ie8'})).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
 });
 gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
@@ -171,6 +170,18 @@ gulp.task('start', function () {
 
 //╔═══════════════════════════════╗
 //║                               ║
+//║        FONT AWESOME           ║
+//║                               ║
+//╚═══════════════════════════════╝
+
+gulp.task('fontAwesome', function () {
+    gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
+    return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dist + 'fonts'))
+});
+
+
+//╔═══════════════════════════════╗
+//║                               ║
 //║       FLAT CMS THEME          ║
 //║                               ║
 //╚═══════════════════════════════╝
@@ -230,7 +241,7 @@ gulp.task('default', ['start', 'sprites', 'sass', 'ie'], function () {
 
 gulp.task('deploy', function (cb) {
     compileScripts(false);
-    gulpSequence(['start'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['minify-js'], ['finishing'])(cb);
+    gulpSequence(['start'], ['minify-js'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['fontAwesome'], ['finishing'])(cb);
 
 });
 

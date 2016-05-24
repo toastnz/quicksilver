@@ -6,18 +6,13 @@ window.jQuery = window.$ = require('jquery');
 // ======================================================
 
 const $ = require('jquery'),
-    moment = require('moment'),
     parsley = require('parsleyjs'),
     _ = require('underscore'),
     alertify = require('alertify.js'),
     fancybox = require('fancybox')($),
     imagesLoaded = require('imagesloaded'),
     slick = require('slick-carousel'),
-    jQBridget = require('jquery-bridget'),
-    Masonry = require('masonry-layout'),
     matchHeight = require('jquery-match-height');
-
-// const snappy = require('../snappy/snappy');
 
 //==================================================================
 // Navburger
@@ -59,10 +54,9 @@ if ($contactForm.length > 0) {
 // Lightbox
 //==================================================================
 
-let $close = $('.svg-close');
+let $close = $('.js-close-modal');
 let $modal = $('.lightbox-overlay');
 let $modalContent = $modal.find('.lightbox-overlay__content');
-
 
 function closeModal() {
     $modal.removeClass('active');
@@ -89,10 +83,3 @@ $close.on('click', function (e) {
     e.preventDefault();
     closeModal();
 });
-
-// var config = $.parseJSON($('.dropzone-holder').attr('data-config'));
-// console.log(config);
-// //var newURL = 'admin/pages/edit/EditForm/field/Dropzone/upload';
-// var newURL = 'home/upload ';
-// config.url = newURL;
-// $('.dropzone-holder').attr('data-config', JSON.stringify(config));
