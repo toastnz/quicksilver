@@ -8,7 +8,13 @@ require_once('conf/ConfigureFromEnv.php');
 
 /** Remove the auto generated SS_ prefix that gets added if database is auto detected */
 global $databaseConfig;
-$databaseConfig['database'] = str_replace('SS_', '', $databaseConfig['database']);
+
+if(defined('SS_DATABASE_NAME') && SS_DATABASE_NAME) {
+    $database = SS_DATABASE_NAME;
+} else {
+    $database = $databaseConfig['database'] = str_replace('SS_', '', $databaseConfig['database']);
+}
+
 
 /** Set default language */
 i18n::set_locale('en_US');
