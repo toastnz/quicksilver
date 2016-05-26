@@ -13,8 +13,8 @@ class SubscriptionForm extends Form
     public function __construct($controller, $name, $arguments = array())
     {
         /** =========================================
-         * @var EmailField $email
-         * @var TextField $name
+         * @var EmailField $emailField
+         * @var TextField $nameField
          * @var FormAction $submit
          * @var Form $form
         ===========================================*/
@@ -23,21 +23,21 @@ class SubscriptionForm extends Form
          * Fields
          * ----------------------------------------*/
 
-        $email = EmailField::create('Email', 'Email Address');
+        $emailField = EmailField::create('Email', 'Email Address');
 
-        $email->addExtraClass('form-control')
+        $emailField->addExtraClass('form-control')
             ->setAttribute('placeholder', 'Email')
             ->setAttribute('data-parsley-required-message', 'Please enter your <strong>Email</strong>')
             ->setCustomValidationMessage('Please enter your <strong>Email</strong>');
 
-        $name = TextField::create('Name', 'Name');
-        $name->setAttribute('placeholder', 'Name')
+        $nameField = TextField::create('Name', 'Name');
+        $nameField->setAttribute('placeholder', 'Name')
             ->setAttribute('data-parsley-required-message', 'Please enter your <strong>Name</strong>')
             ->setCustomValidationMessage('Please enter your <strong>Name</strong>');;
 
         $fields = FieldList::create(
-            $name,
-            $email
+            $nameField,
+            $emailField
         );
 
         /** -----------------------------------------

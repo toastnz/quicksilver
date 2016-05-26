@@ -45,5 +45,12 @@ class Page extends SiteTree
 
 class Page_Controller extends ContentController
 {
+    private static $allowed_actions = array(
+        'SubscriptionForm'
+    );
 
+    public function SubscriptionForm()
+    {
+        return SubscriptionForm::create($this, 'SubscriptionForm');
+    }
 }
