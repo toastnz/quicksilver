@@ -3,187 +3,186 @@
 //==================================================================
 
 header {
-    margin-bottom: 48px;
-    display: block;
-    width: 100%;
-    @include clearfix;
-    background: $green;
-    min-height: 80px;
-    position: relative;
-    svg {
-        width: 60px;
-        margin-left: 24px;
-    }
-    nav {
-        right: 24px;
-        @include vertical-align;
-        float: right;
-        color: white;
-        > ul {
-            > li {
-                display: block;
-                float: left;
-                > a {
-                    padding: 10px;
-                    color: white;
-                    text-decoration: none;
-                    text-transform: uppercase;
-                }
-                &:hover {
-                    ul {
-                        transform: scale(1) translateY(10px);
-                        opacity: 1;
-                        max-height: 300px;
-                    }
-                }
-                ul {
-                    position: absolute;
-                    background: rgba(white, 1);
-                    -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
-                    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
-                    transform: scale(0.9) translateY(-20px);
-                    transition: all 120ms $easeInOutQuad;
-                    opacity: 0;
-                    max-height: 0;
-                    overflow: hidden;
-                    li {
-                        a {
-                            padding: 10px 20px;
-                            display: block;
-                            color: $grey;
-                            text-decoration: none;
-                            text-transform: uppercase;
-                            transition: all 300ms $easeInOutQuad;
-                            &:hover {
-                                background: rgba(black, 0.1);
-                            }
-                        }
-                    }
-                }
-            }
+  margin-bottom: 48px;
+  display: block;
+  width: 100%;
+  @include clearfix;
+  background: $green;
+  min-height: 80px;
+  position: relative;
+  svg {
+    width: 60px;
+    margin-left: 24px;
+  }
+  nav {
+    right: 24px;
+    @include vertical-align;
+    float: right;
+    color: white;
+    > ul {
+      > li {
+        display: block;
+        float: left;
+        > a {
+          padding: 10px;
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
         }
+        &:hover {
+          ul {
+            transform: scale(1) translateY(10px);
+            opacity: 1;
+            max-height: 300px;
+          }
+        }
+        ul {
+          position: absolute;
+          background: rgba(white, 1);
+          -webkit-box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
+          box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.4);
+          transform: scale(0.9) translateY(-20px);
+          transition: all 120ms $easeInOutQuad;
+          opacity: 0;
+          max-height: 0;
+          overflow: hidden;
+          li {
+            a {
+              padding: 10px 20px;
+              display: block;
+              color: $grey;
+              text-decoration: none;
+              text-transform: uppercase;
+              transition: all 300ms $easeInOutQuad;
+              &:hover {
+                background: rgba(black, 0.1);
+              }
+            }
+          }
+        }
+      }
     }
+  }
 }
 
 .navburger {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    z-index: 999;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 20px;
+  cursor: pointer;
+  z-index: 999;
+  display: block;
+  transition: all 300ms $easeInOutQuad;
+  right: 24px;
+  @include vertical-align;
+  @include media($md) {
+    display: none;
+  }
+  span {
+    width: 100%;
+    height: 4px;
+    position: relative;
+    margin: 7px 0;
+    background: white;
     display: block;
     transition: all 300ms $easeInOutQuad;
-    right: 24px;
-    @include vertical-align;
-    @include media($md) {
-        display: none;
-    }
+  }
+  &:hover {
     span {
-        width: 100%;
-        height: 4px;
-        position: relative;
-        margin: 7px 0;
-        background: white;
-        display: block;
-        transition: all 300ms $easeInOutQuad;
+      background: $pink;
     }
-    &:hover {
-        span {
-            background: $pink;
-        }
-    }
+  }
 }
 
 header nav {
-    display: none;
-    @include media($md) {
-        display: block;
-    }
+  display: none;
+  @include media($md) {
+    display: block;
+  }
 }
 
 .off-canvas {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: white;
+  z-index: 2;
+  background: rgba(black, 0.5);
+  overflow: hidden;
+  transition: all 240ms $easeInOutQuad;
+  visibility: hidden;
+  opacity: 0;
+  > ul {
+    transform: translateY(-100%);
+    transition: all 480ms $easeInOutQuad;
     background: white;
-    z-index: 2;
-    background: rgba(black, 0.5);
-    overflow: hidden;
-    transition: all 240ms $easeInOutQuad;
-    visibility: hidden;
-    opacity: 0;
-    > ul {
-        transform: translateY(-100%);
-        transition: all 480ms $easeInOutQuad;
-        background: white;
-        width: auto;
-        padding: 90px 50px 30px 20px;
-        -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
-        box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
-        > li {
+    width: auto;
+    padding: 90px 50px 30px 20px;
+    -webkit-box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.5);
+    > li {
+      display: block;
+      > a {
+        padding: 5px 0;
+        text-decoration: none;
+        font-size: 20px;
+        text-transform: uppercase;
+        @include semi;
+        display: block;
+        color: $grey-dark;
+      }
+      li {
+        a {
+          padding: 5px 0 5px 30px;
+          text-decoration: none;
+          font-size: 16px;
+          text-transform: uppercase;
+          @include semi;
+          display: block;
+          position: relative;
+          color: $grey-dark;
+          &:before {
+            @include pseudo;
+            width: 10px;
+            height: 3px;
+            background: $pink;
             display: block;
-            > a {
-                padding: 5px 0;
-                text-decoration: none;
-                font-size: 20px;
-                text-transform: uppercase;
-                @include semi;
-                display: block;
-                color: $grey-dark;
-            }
-            li {
-                a {
-                    padding: 5px 0 5px 30px;
-                    text-decoration: none;
-                    font-size: 16px;
-                    text-transform: uppercase;
-                    @include semi;
-                    display: block;
-                    position: relative;
-                    color: $grey-dark;
-                    &:before {
-                        @include pseudo;
-                        width: 10px;
-                        height: 3px;
-                        background: $pink;
-                        display: block;
-                        left: 13px;
-                        top: 14px;
-                    }
-                }
-            }
+            left: 13px;
+            top: 14px;
+          }
         }
+      }
     }
+  }
 }
 
 .mobile-nav {
-    @include media($md, max) {
-        .off-canvas {
-            opacity: 1;
-            visibility: visible;
-            > ul {
-                transform: translateY(0%);
-            }
-        }
+  @include media($md, max) {
+    .off-canvas {
+      opacity: 1;
+      visibility: visible;
+      > ul {
+        transform: translateY(0%);
+      }
     }
-    .navburger {
-        transform: rotate(-90deg);
-        .first {
-            transform: rotate(-45deg);
-            transform-origin: 90% 50%;
-            background: $pink;
-        }
-        .second {
-            opacity: 0;
-        }
-        .third {
-            transform: rotate(45deg);
-            transform-origin: 90% 50%;
-            background: $pink;
-        }
+  }
+  .navburger {
+    transform: rotate(-90deg);
+    .first {
+      transform: rotate(-45deg);
+      transform-origin: 90% 50%;
+      background: $pink;
     }
+    .second {
+      opacity: 0;
+    }
+    .third {
+      transform: rotate(45deg);
+      transform-origin: 90% 50%;
+      background: $pink;
+    }
+  }
 }

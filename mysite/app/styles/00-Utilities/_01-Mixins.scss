@@ -1,6 +1,12 @@
 //==================================================================
 // Variables
 //==================================================================
+
+$materialEasingStandard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$materialEasingDeceleration: cubic-bezier(0.0, 0.0, 0.2, 1);
+$materialEasingAcceleration: cubic-bezier(0.4, 0.0, 1, 1);
+$materialEasingSharp: cubic-bezier(0.4, 0.0, 0.6, 1);
+
 $easeInQuad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
 $easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
 $easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
@@ -37,115 +43,128 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
 // Mixins
 //==================================================================
 
-@mixin transparent($color: black, $transparency:0.7) {
-	@if ($color == white) {
-		background: rgba($white, 0.1) url('../images/1x1px/FFFFFF-#{$transparency}.png');
-	} @else {
-		background: rgba($white, 0.1) url('../images/1x1px/000000-#{$transparency}.png');
-	}
-}
-
 @mixin media($size1, $size2: min) {
-	@if $size2 == min {
-		@media only screen and (min-width: $size1) {
-			@content;
-		}
-	} @else if $size2 == max {
-		@media only screen and (max-width: $size1 - 1) {
-			@content;
-		}
-	} @else {
-		@media only screen and (min-width: $size1) and (max-width: $size2 - 1) {
-			@content;
-		}
-	}
+  @if $size2 == min {
+    @media only screen and (min-width: $size1) {
+      @content;
+    }
+  } @else if $size2 == max {
+    @media only screen and (max-width: $size1 - 1) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: $size1) and (max-width: $size2 - 1) {
+      @content;
+    }
+  }
 }
 
 @mixin transition($x) {
-	transition: all $x $easeInOutQuad;
+  transition: all $x $easeInOutQuad;
 }
 
 @mixin vertical-align {
-	top: 50%;
-	transform: translateY(-50%);
-	position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+}
+
+%vertical-align {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
 }
 
 @mixin linear-gradient($direction, $color-stops...) {
-	@if is-direction($direction) == false {
-		$color-stops: ($direction, $color-stops);
-		$direction: 180deg;
-	}
-	background: nth(nth($color-stops, 1), 1);
-	background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-	background: linear-gradient($direction, $color-stops);
+  @if is-direction($direction) == false {
+    $color-stops: ($direction, $color-stops);
+    $direction: 180deg;
+  }
+  background: nth(nth($color-stops, 1), 1);
+  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+  background: linear-gradient($direction, $color-stops);
 }
 
 @mixin placeholder {
-	::-webkit-input-placeholder {
-		@content
-	}
-	:-moz-placeholder {
-		@content
-	}
-	::-moz-placeholder {
-		@content
-	}
-	:-ms-input-placeholder {
-		@content
-	}
+  ::-webkit-input-placeholder {
+    @content
+  }
+  :-moz-placeholder {
+    @content
+  }
+  ::-moz-placeholder {
+    @content
+  }
+  :-ms-input-placeholder {
+    @content
+  }
 }
 
 @mixin clearfix {
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
-}
-
-%clearfix {
-	&:before,
-	&:after {
-		content: "";
-		display: table;
-	}
-	&:after {
-		clear: both;
-	}
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
 }
 
 .clearfix:before,
 .clearfix:after {
-	content: "";
-	display: table;
+  content: "";
+  display: table;
 }
 
 .clearfix:after {
-	clear: both;
+  clear: both;
 }
 
 @mixin pseudo {
-	position: absolute;
-	content: '';
-	display: block;
+  position: absolute;
+  content: '';
+  display: block;
+}
+
+%pseudo {
+  position: absolute;
+  content: '';
+  display: block;
+}
+
+@mixin full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+%full {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 @mixin aspect($x, $y) {
-	position: relative;
-	&:after {
-		content: '';
-		position: relative;
-		display: block;
-		padding-bottom: percentage($y / $x);
-	}
+  position: relative;
+  &:after {
+    content: '';
+    position: relative;
+    display: block;
+    padding-bottom: percentage($y / $x);
+  }
 }
 
 @mixin cover {
-	background-size: cover;
-	background-position: center center;
-	-ms-behavior: url(/backgroundsize.min.htc);
+  background-size: cover;
+  background-position: center center;
+}
+
+%cover {
+  background-size: cover;
+  background-position: center center;
 }

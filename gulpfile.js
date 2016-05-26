@@ -51,9 +51,9 @@ function compileScripts(watch) {
     function rebundle() {
         var stream = bundler.bundle();
         return stream.on('error', function (error) {
-                Message('error', 'red');
-                gutil.log(chalk['red'](error.message));
-            })
+            Message('error', 'red');
+            gutil.log(chalk['red'](error.message));
+        })
             .pipe(source('output.js'))
             .pipe(gulp.dest(dist + 'js'));
     }
@@ -73,8 +73,7 @@ function compileScripts(watch) {
 
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
-    return gulp.src([dist + 'js/output.js'])
-        .pipe(uglify()).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
+    return gulp.src([dist + 'js/output.js']).pipe(uglify({compress: {unused: false}})).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
 });
 
 
@@ -86,8 +85,8 @@ gulp.task('minify-js', function () {
 var sass = require('gulp-sass'),
     order = require("gulp-order"),
     concat = require("gulp-concat"),
-    cssmin = require("gulp-cssmin"),
     plumber = require("gulp-plumber"),
+    cleanCSS = require("gulp-clean-css"),
     sourcemaps = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
 
@@ -97,7 +96,7 @@ var sass = require('gulp-sass'),
 
 gulp.task('minify-css', ['sass'], function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
-    return gulp.src([dist + 'styles/style.css']).pipe(cssmin()).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
+    return gulp.src([dist + 'styles/style.css']).pipe(cleanCSS({compatibility: 'ie8'})).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
 });
 gulp.task('sass', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
@@ -171,6 +170,18 @@ gulp.task('start', function () {
 
 //╔═══════════════════════════════╗
 //║                               ║
+//║        FONT AWESOME           ║
+//║                               ║
+//╚═══════════════════════════════╝
+
+gulp.task('fontAwesome', function () {
+    gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
+    return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dist + 'fonts'))
+});
+
+
+//╔═══════════════════════════════╗
+//║                               ║
 //║       FLAT CMS THEME          ║
 //║                               ║
 //╚═══════════════════════════════╝
@@ -187,6 +198,80 @@ gulp.task('cms', function () {
         .pipe(gulp.dest(cms + 'styles/css'))
 });
 
+//╔═══════════════════════════════╗
+//║                               ║
+//║       FAVICON GENERATION      ║
+//║                               ║
+//╚═══════════════════════════════╝
+
+const realFavicon = require('gulp-real-favicon');
+const fs = require('fs');
+
+// File where the favicon markups are stored
+var FAVICON_DATA_FILE = 'faviconData.json';
+
+gulp.task('generate-favicon', function (done) {
+    realFavicon.generateFavicon({
+        masterPicture: 'icon.png',
+        dest: root + 'favicons',
+        iconsPath: '/',
+        design: {
+            ios: {
+                pictureAspect: 'noChange'
+            },
+            desktopBrowser: {},
+            windows: {
+                pictureAspect: 'noChange',
+                backgroundColor: '#da532c',
+                onConflict: 'override'
+            },
+            androidChrome: {
+                pictureAspect: 'noChange',
+                themeColor: '#ffffff',
+                manifest: {
+                    name: 'My App',
+                    display: 'browser',
+                    orientation: 'notSet',
+                    onConflict: 'override',
+                    declared: true
+                }
+            },
+            safariPinnedTab: {
+                pictureAspect: 'silhouette',
+                themeColor: '#5bbad5'
+            }
+        },
+        settings: {
+            scalingAlgorithm: 'Mitchell',
+            errorOnImageTooSmall: false
+        },
+        markupFile: FAVICON_DATA_FILE
+    }, function () {
+        done();
+    });
+});
+
+// Inject the favicon markups in your HTML pages. You should run
+// this task whenever you modify a page. You can keep this task
+// as is or refactor your existing HTML pipeline.
+gulp.task('inject-favicon-markups', function () {
+    gulp.src([app + 'templates/includes/Favicons.ss'])
+        .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
+        .pipe(gulp.dest(app + 'favicons'));
+});
+
+// Check for updates on RealFaviconGenerator (think: Apple has just
+// released a new Touch icon along with the latest version of iOS).
+// Run this task from time to time. Ideally, make it part of your
+// continuous integration system.
+gulp.task('check-for-favicon-update', function (done) {
+    var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
+    realFavicon.checkForUpdates(currentVersion, function (err) {
+        if (err) {
+            throw err;
+        }
+    });
+});
 
 //╔═══════════════════════════════╗
 //║                               ║
@@ -230,7 +315,7 @@ gulp.task('default', ['start', 'sprites', 'sass', 'ie'], function () {
 
 gulp.task('deploy', function (cb) {
     compileScripts(false);
-    gulpSequence(['start'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['minify-js'], ['finishing'])(cb);
+    gulpSequence(['start'], ['minify-js'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['fontAwesome'], ['finishing'])(cb);
 
 });
 
