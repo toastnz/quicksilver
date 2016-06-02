@@ -1,8 +1,6 @@
 {
   "name": "toastnz/quicksilver",
-  "version": "0.2",
   "description": "SilverStripe Boilerplate",
-  "type": "silverstripe-module",
   "keywords": [
     "silverstripe",
     "theme",
