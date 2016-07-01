@@ -1,47 +1,35 @@
-//==================================================================
-// Variables
-//==================================================================
+/*------------------------------------------------------------------
+Box Shadows
+------------------------------------------------------------------*/
 
-$materialEasingStandard: cubic-bezier(0.4, 0.0, 0.2, 1);
-$materialEasingDeceleration: cubic-bezier(0.0, 0.0, 0.2, 1);
-$materialEasingAcceleration: cubic-bezier(0.4, 0.0, 1, 1);
-$materialEasingSharp: cubic-bezier(0.4, 0.0, 0.6, 1);
+$z1: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+$z2: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+$z3: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+$z4: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+$z5: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
 
-$easeInQuad: cubic-bezier(0.550, 0.085, 0.680, 0.530);
-$easeOutQuad: cubic-bezier(0.250, 0.460, 0.450, 0.940);
-$easeInOutQuad: cubic-bezier(0.455, 0.030, 0.515, 0.955);
+/*------------------------------------------------------------------
+Material Easing Beziers
+------------------------------------------------------------------*/
 
-$easeInCubic: cubic-bezier(0.550, 0.055, 0.675, 0.190);
-$easeOutCubic: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-$easeInOutCubic: cubic-bezier(0.645, 0.045, 0.355, 1.000);
+$transition-standard: cubic-bezier(0.4, 0.0, 0.2, 1);
+$transition-deceleration: cubic-bezier(0.0, 0.0, 0.2, 1);
+$transition-acceleration: cubic-bezier(0.4, 0.0, 1, 1);
+$transition-sharp: cubic-bezier(0.4, 0.0, 0.6, 1);
 
-$easeInQuart: cubic-bezier(0.895, 0.030, 0.685, 0.220);
-$easeOutQuart: cubic-bezier(0.165, 0.840, 0.440, 1.000);
-$easeInOutQuart: cubic-bezier(0.770, 0.000, 0.175, 1.000);
+/*------------------------------------------------------------------
+HAF
+------------------------------------------------------------------*/
 
-$easeInQuint: cubic-bezier(0.755, 0.050, 0.855, 0.060);
-$easeOutQuint: cubic-bezier(0.230, 1.000, 0.320, 1.000);
-$easeInOutQuint: cubic-bezier(0.860, 0.000, 0.070, 1.000);
+@mixin active {
+  &:hover, &:active, &:focus {
+    @content;
+  }
+}
 
-$easeInSine: cubic-bezier(0.470, 0.000, 0.745, 0.715);
-$easeOutSine: cubic-bezier(0.390, 0.575, 0.565, 1.000);
-$easeInOutSine: cubic-bezier(0.445, 0.050, 0.550, 0.950);
-
-$easeInExpo: cubic-bezier(0.950, 0.050, 0.795, 0.035);
-$easeOutExpo: cubic-bezier(0.190, 1.000, 0.220, 1.000);
-$easeInOutExpo: cubic-bezier(1.000, 0.000, 0.000, 1.000);
-
-$easeInCirc: cubic-bezier(0.600, 0.040, 0.980, 0.335);
-$easeOutCirc: cubic-bezier(0.075, 0.820, 0.165, 1.000);
-$easeInOutCirc: cubic-bezier(0.785, 0.135, 0.150, 0.860);
-
-$easeInBack: cubic-bezier(0.600, -0.280, 0.735, 0.045);
-$easeOutBack: cubic-bezier(0.175, 0.885, 0.320, 1.275);
-$easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
-
-//==================================================================
-// Mixins
-//==================================================================
+/*------------------------------------------------------------------
+Media Queries
+------------------------------------------------------------------*/
 
 @mixin media($size1, $size2: min) {
   @if $size2 == min {
@@ -59,9 +47,9 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
 }
 
-@mixin transition($x) {
-  transition: all $x $easeInOutQuad;
-}
+/*------------------------------------------------------------------
+Vertical Align
+------------------------------------------------------------------*/
 
 @mixin vertical-align {
   top: 50%;
@@ -69,21 +57,18 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   position: absolute;
 }
 
-%vertical-align {
+@mixin vertical-center {
   top: 50%;
   transform: translateY(-50%);
   position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
 }
 
-@mixin linear-gradient($direction, $color-stops...) {
-  @if is-direction($direction) == false {
-    $color-stops: ($direction, $color-stops);
-    $direction: 180deg;
-  }
-  background: nth(nth($color-stops, 1), 1);
-  background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
-  background: linear-gradient($direction, $color-stops);
-}
+/*------------------------------------------------------------------
+Placeholders
+------------------------------------------------------------------*/
 
 @mixin placeholder {
   ::-webkit-input-placeholder {
@@ -99,6 +84,10 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
     @content
   }
 }
+
+/*------------------------------------------------------------------
+Micro Clearfix
+------------------------------------------------------------------*/
 
 @mixin clearfix {
   &:before,
@@ -121,17 +110,19 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   clear: both;
 }
 
+/*------------------------------------------------------------------
+Pseudo Elements
+------------------------------------------------------------------*/
+
 @mixin pseudo {
   position: absolute;
   content: '';
   display: block;
 }
 
-%pseudo {
-  position: absolute;
-  content: '';
-  display: block;
-}
+/*------------------------------------------------------------------
+Full Cover Positioning
+------------------------------------------------------------------*/
 
 @mixin full {
   position: absolute;
@@ -141,13 +132,9 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   left: 0;
 }
 
-%full {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+/*------------------------------------------------------------------
+Static Aspect Ratios
+------------------------------------------------------------------*/
 
 @mixin aspect($x, $y) {
   position: relative;
@@ -159,12 +146,32 @@ $easeInOutBack: cubic-bezier(0.680, -0.550, 0.265, 1.550);
   }
 }
 
+/*------------------------------------------------------------------
+Background Cover
+------------------------------------------------------------------*/
+
 @mixin cover {
   background-size: cover;
   background-position: center center;
 }
 
-%cover {
-  background-size: cover;
-  background-position: center center;
+/*------------------------------------------------------------------
+Embed Responsivley
+------------------------------------------------------------------*/
+
+.embed-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  max-width: 100%;
+  object,
+  embed,
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }

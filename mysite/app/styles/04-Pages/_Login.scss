@@ -1,0 +1,41 @@
+/*------------------------------------------------------------------
+Login Page
+------------------------------------------------------------------*/
+
+.login-wrap {
+  @include full;
+  position: fixed;
+  background: $grey-light;
+  &__content {
+    background: $white;
+    @include vertical-center;
+    width: 90%;
+    max-width: 400px;
+    padding: 3rem 3.6rem 4rem;
+    box-shadow: $z1;
+    border-top: 5px solid $primary;
+    .input-wrap__actions {
+      input {
+        width: 100%;
+        border-radius: 0;
+      }
+    }
+    .logo-wrapper {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    #ForgotPassword {
+      background: $off-white;
+      margin: 2rem -3.6rem -4rem;
+      width: calc(100% + 7.2rem);
+      padding: 1rem;
+      @include normal;
+      text-align: center;
+      a {
+        color: $text;
+      }
+    }
+  }
+}
+

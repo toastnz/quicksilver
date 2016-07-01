@@ -1,0 +1,119 @@
+/*------------------------------------------------------------------
+Typography settings
+------------------------------------------------------------------*/
+
+$base: 10px;
+
+$fonts: (
+        h1: 4rem,
+        h2: 3.6rem,
+        h3: 3.2rem,
+        h4: 2.8rem,
+        h5: 2.4rem,
+        h6: 2rem,
+        p: 1.6rem,
+        li: 1.6rem,
+        p-small:1.4rem
+);
+
+/*------------------------------------------------------------------
+Access Font Size
+------------------------------------------------------------------*/
+
+@mixin make-font-size($tag) {
+  font-size: $tag;
+}
+
+@mixin font($font-name) {
+  @include make-font-size(map-get($fonts, $font-name));
+}
+
+/*------------------------------------------------------------------
+Font Awesome
+------------------------------------------------------------------*/
+
+//@import "../../../node_modules/font-awesome/scss/font-awesome";
+
+/*------------------------------------------------------------------
+Font Weights
+------------------------------------------------------------------*/
+
+@mixin light {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+}
+
+@mixin normal {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+@mixin bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+@mixin merriweather {
+  font-family: 'Merriweather', serif;
+  font-weight: normal;
+}
+
+/*------------------------------------------------------------------
+Tags
+------------------------------------------------------------------*/
+
+html, body {
+  font-size: $base;
+  @include normal;
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@each $name, $font in $fonts {
+  #{$name} {
+    font-size: $font;
+    line-height: 1.2;
+    margin: 0 0 1.6rem;
+    @include light;
+  }
+}
+
+ul {
+  padding-left: 3rem;
+  li {
+    position: relative;
+    &:before {
+      @include pseudo;
+      width: 5px;
+      height: 5px;
+      border-radius: 10px;
+      background: $primary;
+      top: 0.8rem;
+      left: -1.3rem;
+    }
+  }
+}
+
+p, li {
+  @include merriweather;
+  margin: 1.6rem 0;
+  line-height: 1.6;
+  color: $text-light;
+  a {
+    color: $primary;
+    text-decoration: none;
+    @include active {
+      text-decoration: underline;
+    }
+  }
+}
+
+i {
+  font-style: italic;
+}
+
+strong, b {
+  @include bold;
+}

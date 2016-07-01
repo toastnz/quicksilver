@@ -1,0 +1,55 @@
+/*------------------------------------------------------------------
+Style Guide Page
+------------------------------------------------------------------*/
+#style {
+  text-align: center;
+  section {
+    @include clearfix;
+    width: 90%;
+    max-width: 1140px;
+    margin: 40px auto;
+    padding: 40px;
+    text-align: left;
+    border: 1px solid $grey-light;
+    border-radius: 4px;
+  }
+  .style {
+    &__header {
+      background: $primary;
+      color: $white;
+      padding: 20px;
+      @include light;
+    }
+  }
+  .colours {
+    .colour {
+      @include aspect(1, 1);
+      width: percentage(1/5);
+      background: $white;
+      box-shadow: $z2;
+      padding: 6px;
+      &__swatch {
+      }
+    }
+  }
+}
+
+/*------------------------------------------------------------------
+Style Guide Page
+------------------------------------------------------------------*/
+
+pre {
+  white-space: pre-wrap;
+  background: rgb(20, 30, 30);
+  color: rgb(220, 230, 230);
+  margin: 2rem auto;
+  font-family: Monaco, Consolas, "Lucida Console", monospace;
+  line-height: 1.45;
+  padding: 1rem 2rem;
+  position: relative;
+  @include font(p);
+  &::selection {
+    color: rgb(20, 30, 30);
+    background: rgb(220, 230, 230);
+  }
+}

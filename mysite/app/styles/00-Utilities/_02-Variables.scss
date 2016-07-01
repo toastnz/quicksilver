@@ -1,35 +1,41 @@
-//==================================================================
-// Colours
-//==================================================================
+/*------------------------------------------------------------------
+                        Colours
+------------------------------------------------------------------*/
 
-$yellow: #f1d96b;
+//Colurs
+$yellow-light: #f1c40f;
+$yellow-dark: #f39c12;
+$green-light: #2ecc71;
+$green-dark: #27ae60;
+$red-light: #e74c3c;
+$red-dark: #c0392b;
+$pink-light: #ea148c;
+$pink-dark: #b7106d;
+$blue-light: #3498db;
+$blue-dark: #2980b9;
+$purple-light: #9b59b6;
+$purple-dark: #8e44ad;
+
+// Shades
 $white: #ffffff;
 $off-white: #f8f6f7;
-$grey-light: #b0b0b0;
-$green-light: #7cca90;
-$green: #2eb150;
-$green-dark: #248a3e;
-$red: #ec4c68;
-$pink: #ea148c;
-$pink-dark: #b7106d;
-$blue-light: #48c2ed;
-$blue: #00afec;
-$blue-dark: #04283f;
-$purple: #35366C;
-$brown: #886747;
-
-
-$grey-light: #b9b7b7;
-$grey: #7a7a7a;
+$grey-light: #dddddd;
+$grey-mid: #7a7a7a;
 $grey-dark: #333;
+$black-light: #58585b;
+$black-mid: #19191a;
+$black-dark: #000000;
 
-$black-light: #1f2025;
-$black-mid: #1c1d22;
-$black: #000000;
+// Brand Colours
+$text-light: $black-light;
+$text: $black-mid;
+$primary: $blue-dark;
+$secondary: $green-dark;
+$tertiary: $blue-light;
 
-//==================================================================
-// Breakpoints
-//==================================================================
+/*------------------------------------------------------------------
+                         Break Points
+------------------------------------------------------------------*/
 
 $xxs: 480px;
 $xs: 540px;
@@ -38,4 +44,4 @@ $md: 768px;
 $xmd: 968px;
 $lg: 1024px;
 $xl: 1280px;
-$xxl: 1920px;
+$xxl: 1440px;

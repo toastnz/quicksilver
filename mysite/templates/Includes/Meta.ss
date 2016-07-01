@@ -12,10 +12,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <![endif]-->
 <%-- Custom type to be inserted here --%>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300,600" rel="stylesheet" type="text/css">
-<%--<% with $SiteConfig %>--%>
-    <%--<link rel="shortcut icon" href="$FavIcon.AbsoluteURL"/>--%>
-<%--<% end_with %>--%>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Merriweather" rel="stylesheet" type="text/css">
+
 <% include Favicons %>
 <% include ToastSEO %>
 <% include OpenGraphMeta %>

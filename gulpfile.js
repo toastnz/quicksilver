@@ -1,37 +1,21 @@
-/**
- *╔══════════════════════════════════════════════════════╗
- *║                                                      ║
- *║                 _      _        _ _                  ║
- *║                (_)    | |      (_) |                 ║
- *║      __ _ _   _ _  ___| | _____ _| |_   _____ _ __   ║
- *║     / _` | | | | |/ __| |/ / __| | \ \ / / _ \ '__|  ║
- *║    | (_| | |_| | | (__|   <\__ \ | |\ V /  __/ |     ║
- *║     \__, |\__,_|_|\___|_|\_\___/_|_| \_/ \___|_|     ║
- *║        | |                                           ║
- *║        |_|                                           ║
- *║                                                      ║
- *║       Author: Jaydn de Graaf                         ║
- *║       Email: jd@pinc.nz                              ║
- *║                                                      ║
- *╚══════════════════════════════════════════════════════╝
- */
-
 'use strict';
+/*------------------------------------------------------------------
+ Project Variables
+ ------------------------------------------------------------------*/
 
 var root = './mysite/',
     app = root + 'app/',
     dist = root + 'dist/',
-    sprites = [app + '*/@1x/*.png'],
-    retinasprites = [app + '*/@2x/*.png'],
+    sprites = [app + 'sprites/*@1x.png'],
+    retinasprites = [app + 'sprites/*@2x.png'],
     gulp = require("gulp"),
     gutil = require("gulp-util"),
     chalk = require("chalk");
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║   JAVASCRIPT FUNCTIONALITY    ║
-//║                               ║
-//╚═══════════════════════════════╝
+/*------------------------------------------------------------------
+ Javascript
+ ------------------------------------------------------------------*/
+
 var rename = require("gulp-rename"),
     babelify = require('babelify'),
     browserify = require('browserify'),
@@ -61,27 +45,22 @@ function compileScripts(watch) {
     bundler.on('update', function () {
         rebundle();
         Message('js', 'green');
-        gutil.log('Gulp.js:', gutil.colors.green('• Bundling all Javascript files with browserify'));
     });
     return rebundle();
 
 }
 
-/**
- *  Minify the JS output
- */
+/* Minify the JS output */
 
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
     return gulp.src([dist + 'js/output.js']).pipe(uglify({compress: {unused: false}})).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
 });
 
+/*------------------------------------------------------------------
+ Stylesheets
+ ------------------------------------------------------------------*/
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║    STYLESHEET MANIPLUATION    ║
-//║                               ║
-//╚═══════════════════════════════╝
 var sass = require('gulp-sass'),
     order = require("gulp-order"),
     concat = require("gulp-concat"),
@@ -90,16 +69,15 @@ var sass = require('gulp-sass'),
     sourcemaps = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
 
-/**
- *  Minify the compiled CSS
- */
+/* Minify the compiled CSS */
 
 gulp.task('minify-css', ['sass'], function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
     return gulp.src([dist + 'styles/style.css']).pipe(cleanCSS({compatibility: 'ie8'})).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
 });
+
 gulp.task('sass', function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Compiling the combined stylesheets'));
+    Message('scss', 'green');
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
         cascade: true
@@ -107,51 +85,45 @@ gulp.task('sass', function () {
     return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
 });
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║      SPRITESHEET CREATION     ║
-//║                               ║
-//╚═══════════════════════════════╝
+/*------------------------------------------------------------------
+ Spritesheet Creation
+ ------------------------------------------------------------------*/
+
 var spritesmith = require('gulp.spritesmith');
+var replace = require('gulp-replace');
 
 gulp.task('sprites', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Creating the spritesheets and associated styles'));
-    /**
-     *  Standard Sprites
-     */
+
+    /* Standard Sprites */
     var spriteData = gulp.src(sprites).pipe(spritesmith({
         padding: 4,
         imgName: 'sprites.png',
-        cssName: '01-sprites.scss',
-        cssTemplate: app + 'images/@1x/sprite_positions.styl.mustache'
+        cssName: '_01-Sprites.scss',
+        cssTemplate: app + 'sprites/sprite_positions.styl.mustache'
     }));
 
     spriteData.img.pipe(gulp.dest(dist + 'images'));
 
-    spriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
+    spriteData.css.pipe(replace('@1x', '')).pipe(gulp.dest(app + 'styles/01-Sprites'));
 
-    /**
-     *  Retina Sprites
-     */
+    /* Retina Sprites */
     var retinaSpriteData = gulp.src(retinasprites).pipe(spritesmith({
         padding: 8,
         imgName: 'sprites-retina.png',
-        cssName: '02-sprites-retina.scss',
-        cssTemplate: app + 'images/@2x/retina-sprite_positions.styl.mustache'
+        cssName: '_02-Sprites-retina.scss',
+        cssTemplate: app + 'sprites/retina-sprite_positions.styl.mustache'
     }));
 
     retinaSpriteData.img.pipe(gulp.dest(dist + 'images'));
 
-    retinaSpriteData.css.pipe(gulp.dest(app + 'styles/01-Sprites'));
+    retinaSpriteData.css.pipe(replace('@2x', '')).pipe(gulp.dest(app + 'styles/01-Sprites'));
 
 });
 
-/**
- *  IE8 Stylesheet fixer
- */
-
-var rework = require('gulp-rework'),
-    queryless = require('css-queryless');
+/* IE8 Stylesheet fixer */
+var rework = require('gulp-rework');
+var queryless = require('css-queryless');
 
 gulp.task('ie', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Making IE safe stylesheet'));
@@ -163,33 +135,18 @@ gulp.task('ie', function () {
     gulp.src([dist + 'styles/style.css']).pipe(rework(queryless(keepmatches))).pipe(rename({suffix: '.ie'})).pipe(gulp.dest(dist + 'styles/'))
 });
 
-
 gulp.task('start', function () {
     Message('start', 'green');
 });
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║        FONT AWESOME           ║
-//║                               ║
-//╚═══════════════════════════════╝
-
-gulp.task('fontAwesome', function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
-    return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dist + 'fonts'))
-});
-
-
-//╔═══════════════════════════════╗
-//║                               ║
-//║       FLAT CMS THEME          ║
-//║                               ║
-//╚═══════════════════════════════╝
+/*------------------------------------------------------------------
+ Flat CMS Theme
+ ------------------------------------------------------------------*/
 
 var cms = './flat-cms/';
 
 gulp.task('cms', function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Compiling the CMS stylesheets'));
+    Message('scss', 'green');
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
         cascade: true
@@ -198,16 +155,13 @@ gulp.task('cms', function () {
         .pipe(gulp.dest(cms + 'styles/css'))
 });
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║       FAVICON GENERATION      ║
-//║                               ║
-//╚═══════════════════════════════╝
+/*------------------------------------------------------------------
+ Favicon Generation
+ ------------------------------------------------------------------*/
 
 const realFavicon = require('gulp-real-favicon');
 const fs = require('fs');
 
-// File where the favicon markups are stored
 var FAVICON_DATA_FILE = 'faviconData.json';
 
 gulp.task('generate-favicon', function (done) {
@@ -251,19 +205,12 @@ gulp.task('generate-favicon', function (done) {
     });
 });
 
-// Inject the favicon markups in your HTML pages. You should run
-// this task whenever you modify a page. You can keep this task
-// as is or refactor your existing HTML pipeline.
 gulp.task('inject-favicon-markups', function () {
     gulp.src([app + 'templates/includes/Favicons.ss'])
         .pipe(realFavicon.injectFaviconMarkups(JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).favicon.html_code))
         .pipe(gulp.dest(app + 'favicons'));
 });
 
-// Check for updates on RealFaviconGenerator (think: Apple has just
-// released a new Touch icon along with the latest version of iOS).
-// Run this task from time to time. Ideally, make it part of your
-// continuous integration system.
 gulp.task('check-for-favicon-update', function (done) {
     var currentVersion = JSON.parse(fs.readFileSync(FAVICON_DATA_FILE)).version;
     realFavicon.checkForUpdates(currentVersion, function (err) {
@@ -273,11 +220,17 @@ gulp.task('check-for-favicon-update', function (done) {
     });
 });
 
-//╔═══════════════════════════════╗
-//║                               ║
-//║        TASK DECLARATION       ║
-//║                               ║
-//╚═══════════════════════════════╝
+/*------------------------------------------------------------------
+ Font Awesome Asset Relocation
+ ------------------------------------------------------------------*/
+gulp.task('fontAwesome', function () {
+    gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
+    return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dist + 'fonts'))
+});
+
+/*------------------------------------------------------------------
+ Task Declaration
+ ------------------------------------------------------------------*/
 
 var gulpSequence = require('gulp-sequence');
 
@@ -323,6 +276,10 @@ function Message(message, col) {
     var color = (col != undefined) ? col : 'yellow';
     gutil.log(chalk[color](Messages[message]));
 }
+
+/*------------------------------------------------------------------
+ Output Messages
+ ------------------------------------------------------------------*/
 
 var Messages = {
     start: ' ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗███████╗██╗██╗    ██╗   ██╗███████╗██████╗\n           ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██║██║    ██║   ██║██╔════╝██╔══██╗\n           ██║   ██║██║   ██║██║██║     █████╔╝ ███████╗██║██║    ██║   ██║█████╗  ██████╔╝\n           ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ╚════██║██║██║    ╚██╗ ██╔╝██╔══╝  ██╔══██╗\n           ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗███████║██║███████╗╚████╔╝ ███████╗██║  ██║\n            ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝',

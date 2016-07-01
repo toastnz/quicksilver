@@ -20,11 +20,13 @@ class SiteConfigExtension extends DataExtension
     private static $db = array(
         'Phone' => 'Varchar(255)',
         'Email' => 'Varchar(255)',
+        'ContactFormEmail' => 'Varchar(255)',
         'Address' => 'Text',
         'PostalAddress' => 'Text',
         'Facebook' => 'Varchar(255)',
         'LinkedIn' => 'Varchar(255)',
         'Pinterest' => 'Varchar(255)',
+        'Instagram' => 'Varchar(255)',
         'TwitterHandle' => 'Varchar(255)',
         'MailChimpAPI' => 'Varchar(255)',
         'MailChimpListID' => 'Varchar(255)',
