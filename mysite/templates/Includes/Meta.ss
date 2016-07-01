@@ -1,8 +1,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-<title><% if $MetaTitle %>$MetaTitle<% else %>{$Title}<% end_if %> | {$SiteConfig.Title}<% if $SiteConfig.Tagline %>
-    - {$SiteConfig.Tagline}<% end_if %></title>
+<% include ToastSEO %>
 <% base_tag %>
 <link rel="stylesheet" href="$Themedir/dist/styles/style.css"/>
 <!--[if (gte IE 6)&(lte IE 9)]>
@@ -15,7 +14,6 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Merriweather" rel="stylesheet" type="text/css">
 
 <% include Favicons %>
-<% include ToastSEO %>
 <% include OpenGraphMeta %>
 <% include TwitterCardMeta %>
 $GoogleAnalytics
