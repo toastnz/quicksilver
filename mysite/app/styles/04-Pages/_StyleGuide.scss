@@ -7,8 +7,8 @@ Style Guide Page
     @include clearfix;
     width: 90%;
     max-width: 1140px;
-    margin: 40px auto;
-    padding: 40px;
+    margin: 4rem auto;
+    padding: 4rem;
     text-align: left;
     border: 1px solid $grey-light;
     border-radius: 4px;
@@ -17,7 +17,7 @@ Style Guide Page
     &__header {
       background: $primary;
       color: $white;
-      padding: 20px;
+      padding: 2rem;
       @include light;
     }
   }

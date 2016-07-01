@@ -3,30 +3,30 @@
  Project Variables
  ------------------------------------------------------------------*/
 
-var root = './mysite/',
-    app = root + 'app/',
-    dist = root + 'dist/',
-    sprites = [app + 'sprites/*@1x.png'],
-    retinasprites = [app + 'sprites/*@2x.png'],
-    gulp = require("gulp"),
-    gutil = require("gulp-util"),
-    chalk = require("chalk");
+var root          = './mysite/',
+    app           = root + 'app/',
+    dist          = root + 'dist/',
+    sprites       = [app + 'sprites/*@1x.png'],
+    retinasprites = [app + 'sprites/*@2x.png'];
 
 /*------------------------------------------------------------------
  Javascript
  ------------------------------------------------------------------*/
 
-var rename = require("gulp-rename"),
-    babelify = require('babelify'),
+var gulp       = require("gulp"),
+    chalk      = require("chalk"),
+    babelify   = require('babelify'),
+    watchify   = require("watchify"),
+    gutil      = require("gulp-util"),
     browserify = require('browserify'),
-    source = require('vinyl-source-stream'),
-    uglify = require("gulp-uglify"),
-    watchify = require("watchify");
+    rename     = require("gulp-rename"),
+    uglify     = require("gulp-uglify"),
+    source     = require('vinyl-source-stream');
 
 function compileScripts(watch) {
-    var props = watchify.args;
+    var props     = watchify.args;
     props.entries = [app + 'js/components/app.js'];
-    props.debug = true;
+    props.debug   = true;
 
     var bundler = watch ? watchify(browserify(props)) : browserify(props);
 
@@ -54,35 +54,53 @@ function compileScripts(watch) {
 
 gulp.task('minify-js', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
-    return gulp.src([dist + 'js/output.js']).pipe(uglify({compress: {unused: false}})).pipe(rename({extname: '.min.js'})).pipe(gulp.dest(dist + 'js/'))
+    return gulp.src([dist + 'js/output.js'])
+        .pipe(uglify({compress: {unused: false}}))
+        .pipe(rename({extname: '.min.js'}))
+        .pipe(gulp.dest(dist + 'js/'))
 });
 
 /*------------------------------------------------------------------
  Stylesheets
  ------------------------------------------------------------------*/
 
-var sass = require('gulp-sass'),
-    order = require("gulp-order"),
-    concat = require("gulp-concat"),
-    plumber = require("gulp-plumber"),
-    cleanCSS = require("gulp-clean-css"),
-    sourcemaps = require("gulp-sourcemaps"),
+var sass         = require('gulp-sass'),
+    order        = require("gulp-order"),
+    pixrem       = require('gulp-pixrem'),
+    concat       = require("gulp-concat"),
+    plumber      = require("gulp-plumber"),
+    cleanCSS     = require("gulp-clean-css"),
+    sourcemaps   = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
 
 /* Minify the compiled CSS */
 
 gulp.task('minify-css', ['sass'], function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
-    return gulp.src([dist + 'styles/style.css']).pipe(cleanCSS({compatibility: 'ie8'})).pipe(rename({extname: '.min.css'})).pipe(gulp.dest(dist + 'styles/'))
+    return gulp.src([dist + 'styles/style.css'])
+        .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(rename({extname: '.min.css'}))
+        .pipe(gulp.dest(dist + 'styles/'))
 });
 
 gulp.task('sass', function () {
     Message('scss', 'green');
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
-        cascade: true
+        cascade : true
     };
-    return gulp.src([app + 'styles/**/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('style.scss')).pipe(sass({outputStyle: 'compressed'})).on('error', sass.logError).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop()).pipe(gulp.dest(dist + 'styles'))
+    return gulp.src([app + 'styles/**/*.scss'])
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(order())
+        .pipe(concat('style.scss'))
+        .pipe(sass({outputStyle: 'compressed'}))
+        .on('error', sass.logError)
+        .pipe(autoprefixer(autoprefixerSettings))
+        .pipe(pixrem({rootValue: '10px'}))
+        .pipe(sourcemaps.write('./'))
+        .pipe(plumber.stop())
+        .pipe(gulp.dest(dist + 'styles'))
 });
 
 /*------------------------------------------------------------------
@@ -90,16 +108,16 @@ gulp.task('sass', function () {
  ------------------------------------------------------------------*/
 
 var spritesmith = require('gulp.spritesmith');
-var replace = require('gulp-replace');
+var replace     = require('gulp-replace');
 
 gulp.task('sprites', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Creating the spritesheets and associated styles'));
 
     /* Standard Sprites */
     var spriteData = gulp.src(sprites).pipe(spritesmith({
-        padding: 4,
-        imgName: 'sprites.png',
-        cssName: '_01-Sprites.scss',
+        padding    : 4,
+        imgName    : 'sprites.png',
+        cssName    : '_01-Sprites.scss',
         cssTemplate: app + 'sprites/sprite_positions.styl.mustache'
     }));
 
@@ -109,9 +127,9 @@ gulp.task('sprites', function () {
 
     /* Retina Sprites */
     var retinaSpriteData = gulp.src(retinasprites).pipe(spritesmith({
-        padding: 8,
-        imgName: 'sprites-retina.png',
-        cssName: '_02-Sprites-retina.scss',
+        padding    : 8,
+        imgName    : 'sprites-retina.png',
+        cssName    : '_02-Sprites-retina.scss',
         cssTemplate: app + 'sprites/retina-sprite_positions.styl.mustache'
     }));
 
@@ -122,7 +140,7 @@ gulp.task('sprites', function () {
 });
 
 /* IE8 Stylesheet fixer */
-var rework = require('gulp-rework');
+var rework    = require('gulp-rework');
 var queryless = require('css-queryless');
 
 gulp.task('ie', function () {
@@ -132,7 +150,10 @@ gulp.task('ie', function () {
         'screen and (min-width: 1024px)'
     ];
 
-    gulp.src([dist + 'styles/style.css']).pipe(rework(queryless(keepmatches))).pipe(rename({suffix: '.ie'})).pipe(gulp.dest(dist + 'styles/'))
+    gulp.src([dist + 'styles/style.css'])
+        .pipe(rework(queryless(keepmatches)))
+        .pipe(rename({suffix: '.ie'}))
+        .pipe(gulp.dest(dist + 'styles/'))
 });
 
 gulp.task('start', function () {
@@ -149,9 +170,18 @@ gulp.task('cms', function () {
     Message('scss', 'green');
     var autoprefixerSettings = {
         browsers: ['last 5 versions'],
-        cascade: true
+        cascade : true
     };
-    return gulp.src([cms + 'styles/scss/*.scss']).pipe(plumber()).pipe(sourcemaps.init()).pipe(order()).pipe(concat('flat-cms.scss')).on('error', sass.logError).pipe(sass({outputStyle: 'compressed'})).pipe(autoprefixer(autoprefixerSettings)).pipe(sourcemaps.write('./')).pipe(plumber.stop())
+    return gulp.src([cms + 'styles/scss/*.scss'])
+        .pipe(plumber())
+        .pipe(sourcemaps.init())
+        .pipe(order())
+        .pipe(concat('flat-cms.scss'))
+        .on('error', sass.logError)
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(autoprefixer(autoprefixerSettings))
+        .pipe(sourcemaps.write('./'))
+        .pipe(plumber.stop())
         .pipe(gulp.dest(cms + 'styles/css'))
 });
 
@@ -160,46 +190,46 @@ gulp.task('cms', function () {
  ------------------------------------------------------------------*/
 
 const realFavicon = require('gulp-real-favicon');
-const fs = require('fs');
+const fs          = require('fs');
 
 var FAVICON_DATA_FILE = 'faviconData.json';
 
 gulp.task('generate-favicon', function (done) {
     realFavicon.generateFavicon({
         masterPicture: 'icon.png',
-        dest: root + 'favicons',
-        iconsPath: '/',
-        design: {
-            ios: {
+        dest         : root + 'favicons',
+        iconsPath    : '/',
+        design       : {
+            ios            : {
                 pictureAspect: 'noChange'
             },
-            desktopBrowser: {},
-            windows: {
-                pictureAspect: 'noChange',
+            desktopBrowser : {},
+            windows        : {
+                pictureAspect  : 'noChange',
                 backgroundColor: '#da532c',
-                onConflict: 'override'
+                onConflict     : 'override'
             },
-            androidChrome: {
+            androidChrome  : {
                 pictureAspect: 'noChange',
-                themeColor: '#ffffff',
-                manifest: {
-                    name: 'My App',
-                    display: 'browser',
+                themeColor   : '#ffffff',
+                manifest     : {
+                    name       : 'My App',
+                    display    : 'browser',
                     orientation: 'notSet',
-                    onConflict: 'override',
-                    declared: true
+                    onConflict : 'override',
+                    declared   : true
                 }
             },
             safariPinnedTab: {
                 pictureAspect: 'silhouette',
-                themeColor: '#5bbad5'
+                themeColor   : '#5bbad5'
             }
         },
-        settings: {
-            scalingAlgorithm: 'Mitchell',
+        settings     : {
+            scalingAlgorithm    : 'Mitchell',
             errorOnImageTooSmall: false
         },
-        markupFile: FAVICON_DATA_FILE
+        markupFile   : FAVICON_DATA_FILE
     }, function () {
         done();
     });
@@ -221,7 +251,7 @@ gulp.task('check-for-favicon-update', function (done) {
 });
 
 /*------------------------------------------------------------------
- Font Awesome Asset Relocation
+ Font Awesome Asset Relocationdfs
  ------------------------------------------------------------------*/
 gulp.task('fontAwesome', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
@@ -282,9 +312,9 @@ function Message(message, col) {
  ------------------------------------------------------------------*/
 
 var Messages = {
-    start: ' ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗███████╗██╗██╗    ██╗   ██╗███████╗██████╗\n           ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██║██║    ██║   ██║██╔════╝██╔══██╗\n           ██║   ██║██║   ██║██║██║     █████╔╝ ███████╗██║██║    ██║   ██║█████╗  ██████╔╝\n           ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ╚════██║██║██║    ╚██╗ ██╔╝██╔══╝  ██╔══██╗\n           ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗███████║██║███████╗╚████╔╝ ███████╗██║  ██║\n            ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝',
-    scss: '╔═══════════════════════════╗\n           ║ Sass compiled Succesfully ║\n           ╚═══════════════════════════╝',
-    js: '╔════════════════════════╗\n           ║ JS bundled Succesfully ║\n           ╚════════════════════════╝',
-    error: '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
+    start    : ' ██████╗ ██╗   ██╗██╗ ██████╗██╗  ██╗███████╗██╗██╗    ██╗   ██╗███████╗██████╗\n           ██╔═══██╗██║   ██║██║██╔════╝██║ ██╔╝██╔════╝██║██║    ██║   ██║██╔════╝██╔══██╗\n           ██║   ██║██║   ██║██║██║     █████╔╝ ███████╗██║██║    ██║   ██║█████╗  ██████╔╝\n           ██║▄▄ ██║██║   ██║██║██║     ██╔═██╗ ╚════██║██║██║    ╚██╗ ██╔╝██╔══╝  ██╔══██╗\n           ╚██████╔╝╚██████╔╝██║╚██████╗██║  ██╗███████║██║███████╗╚████╔╝ ███████╗██║  ██║\n            ╚══▀▀═╝  ╚═════╝ ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝╚═╝╚══════╝ ╚═══╝  ╚══════╝╚═╝  ╚═╝',
+    scss     : '╔═══════════════════════════╗\n           ║ Sass compiled Succesfully ║\n           ╚═══════════════════════════╝',
+    js       : '╔════════════════════════╗\n           ║ JS bundled Succesfully ║\n           ╚════════════════════════╝',
+    error    : '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
     checklist: '╔═══════════════════╗\n           ║ Go live checklist ║\n           ╚═══════════════════╝\n           ☑ External font\'s have been included\n           ☑ Favicons have been generated and included\n           ☑ Analytics software is monitoring site\n           ☑ JavaScript files are minified\n           ☑ CSS files are minified\n           ☑ All images have alt tag values\n           ☑ !important is avoided\n           ☑ No base files have been overwritten\n           ☑ 404 Page has been styled\n           ☑ Common meta tags\n           ☑ Autoprefixer\n           ☑ Login page has been styled'
 };

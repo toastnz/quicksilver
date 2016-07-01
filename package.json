@@ -36,6 +36,7 @@
     "gulp-concat": "latest",
     "gulp-if": "latest",
     "gulp-order": "latest",
+    "gulp-pixrem": "^1.0.0",
     "gulp-plumber": "latest",
     "gulp-real-favicon": "^0.2.1",
     "gulp-rename": "latest",

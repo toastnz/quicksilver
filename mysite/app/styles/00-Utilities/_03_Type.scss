@@ -21,41 +21,41 @@ Access Font Size
 ------------------------------------------------------------------*/
 
 @mixin make-font-size($tag) {
-  font-size: $tag;
+    font-size: $tag;
 }
 
 @mixin font($font-name) {
-  @include make-font-size(map-get($fonts, $font-name));
+    @include make-font-size(map-get($fonts, $font-name));
 }
 
 /*------------------------------------------------------------------
 Font Awesome
 ------------------------------------------------------------------*/
 
-//@import "../../../node_modules/font-awesome/scss/font-awesome";
+@import "../../../node_modules/font-awesome/scss/font-awesome";
 
 /*------------------------------------------------------------------
 Font Weights
 ------------------------------------------------------------------*/
 
 @mixin light {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
 }
 
 @mixin normal {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
 }
 
 @mixin bold {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
 @mixin merriweather {
-  font-family: 'Merriweather', serif;
-  font-weight: normal;
+    font-family: 'Merriweather', serif;
+    font-weight: normal;
 }
 
 /*------------------------------------------------------------------
@@ -63,57 +63,67 @@ Tags
 ------------------------------------------------------------------*/
 
 html, body {
-  font-size: $base;
-  @include normal;
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+    font-size: $base * 0.7;
+    @include media($md) {
+        font-size: $base * 0.8;
+    }
+    @include media($lg) {
+        font-size: $base * 0.9;
+    }
+    @include media($xl) {
+        font-size: $base;
+    }
+    @include normal;
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 }
 
 @each $name, $font in $fonts {
-  #{$name} {
-    font-size: $font;
-    line-height: 1.2;
-    margin: 0 0 1.6rem;
-    @include light;
-  }
+    #{$name} {
+        font-size: $font;
+        line-height: 1.2;
+        margin: 0 0 1.6rem;
+        transition: all 220ms $transition-deceleration;
+        @include light;
+    }
 }
 
 ul {
-  padding-left: 3rem;
-  li {
-    position: relative;
-    &:before {
-      @include pseudo;
-      width: 5px;
-      height: 5px;
-      border-radius: 10px;
-      background: $primary;
-      top: 0.8rem;
-      left: -1.3rem;
+    padding-left: 3rem;
+    li {
+        position: relative;
+        &:before {
+            @include pseudo;
+            width: 0.4rem;
+            height: 0.4rem;
+            border-radius: 10px;
+            background: $primary;
+            top: 0.8rem;
+            left: -1.3rem;
+        }
     }
-  }
 }
 
 p, li {
-  @include merriweather;
-  margin: 1.6rem 0;
-  line-height: 1.6;
-  color: $text-light;
-  a {
-    color: $primary;
-    text-decoration: none;
-    @include active {
-      text-decoration: underline;
+    @include merriweather;
+    margin: 1.6rem 0;
+    line-height: 1.6;
+    color: $text-light;
+    a {
+        color: $primary;
+        text-decoration: none;
+        @include active {
+            text-decoration: underline;
+        }
     }
-  }
 }
 
-i {
-  font-style: italic;
+i, em {
+    font-style: italic;
 }
 
 strong, b {
-  @include bold;
+    font-weight: bold;
 }

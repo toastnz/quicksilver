@@ -1,0 +1,88 @@
+/*------------------------------------------------------------------
+Login Page
+------------------------------------------------------------------*/
+
+.login-wrap {
+    @include full;
+    position: fixed;
+    background: linear-gradient(to left, #abbaab, $white);
+    &__content {
+        background: $white;
+        @include vertical-center;
+        width: 90%;
+        max-width: 400px;
+        padding: 3rem 3.6rem 4rem;
+        box-shadow: $z2;
+        border-top: 5px solid $primary;
+        &--lost {
+            #Email label {
+                @extend .fa-envelope;
+            }
+        }
+        h4 {
+            display: block;
+            text-align: center;
+        }
+        .input-wrap__actions {
+            input {
+                width: 100%;
+                border-radius: 0;
+            }
+        }
+        .logo-wrapper {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 2rem;
+            svg {
+                max-width: 90%;
+                height: auto;
+                transition: all 220ms $transition-deceleration;
+            }
+        }
+        #BackToLogin,
+        #ForgotPassword {
+            background: $grey-light;
+            margin: 2rem -3.6rem -4rem;
+            width: calc(100% + 7.2rem);
+            padding: 1rem;
+            @include normal;
+            text-align: center;
+            a {
+                color: $text;
+            }
+        }
+    }
+    #Password,
+    #Email {
+        label {
+            font-size: 0;
+            position: absolute;
+            background: $grey-light;
+            width: 4rem;
+            text-align: center;
+            padding: 1.1rem 0 1rem;
+            @include media($xl) {
+                padding: 1.1rem 0 0.9rem;
+            }
+            top: -0.2rem;
+            &:before {
+                font-size: 2rem;
+                color: $primary;
+            }
+        }
+        input {
+            margin-left: 4rem;
+            width: calc(100% - 4rem);
+        }
+    }
+}
+
+#Password label {
+    @extend .fa;
+    @extend .fa-unlock-alt;
+}
+
+#Email label {
+    @extend .fa;
+    @extend .fa-user;
+}
