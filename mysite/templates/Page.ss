@@ -8,7 +8,9 @@
 
     <% include Header %>
     <%--<% include StyleGuide %>--%>
+<div class="layout">
     $Layout
+</div>
     <% include Footer %>
 
 <script type="text/javascript" src="$Themedir/dist/js/output.js"></script>

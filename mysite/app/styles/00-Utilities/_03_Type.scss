@@ -5,7 +5,7 @@ Typography settings
 $base: 10px;
 
 $fonts: (
-        h1: 4rem,
+        h1: 4.4rem,
         h2: 3.6rem,
         h3: 3.2rem,
         h4: 2.8rem,
@@ -90,15 +90,16 @@ html, body {
     }
 }
 
+ol,
 ul {
-    padding-left: 3rem;
+    padding-left: 4rem;
     li {
         position: relative;
         &:before {
             @include pseudo;
             width: 0.4rem;
             height: 0.4rem;
-            border-radius: 10px;
+            border-radius: 0.4rem;
             background: $primary;
             top: 0.8rem;
             left: -1.3rem;
@@ -126,4 +127,29 @@ i, em {
 
 strong, b {
     font-weight: bold;
+}
+
+blockquote {
+    margin: 3rem;
+    padding: 0 2rem;
+    border-left: 4px solid $primary;
+    p {
+        margin: 0;
+    }
+}
+
+::selection {
+    color: $white;
+    background: $primary;
+}
+
+/*------------------------------------------------------------------
+Layout and Constraits
+------------------------------------------------------------------*/
+
+.layout {
+    padding: 2rem;
+    max-width: 1140px;
+    display: block;
+    margin: 0 auto;
 }

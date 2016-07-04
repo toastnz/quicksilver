@@ -3224,6 +3224,11 @@ b {
   font-weight: bold;
 }
 
+.layout {
+  padding: 40px;
+  padding: 4rem;
+}
+
 .icon-close {
   display: inline-block;
   background-image: url(../images/sprites.png);
