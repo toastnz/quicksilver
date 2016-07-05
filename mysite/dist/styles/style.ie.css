@@ -3066,8 +3066,8 @@ body * {
 }
 
 h1 {
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 44px;
+  font-size: 4.4rem;
   line-height: 1.2;
   margin: 0 0 16px;
   margin: 0 0 1.6rem;
@@ -3164,15 +3164,18 @@ p-small {
   font-weight: 300;
 }
 
+ol,
 ul {
-  padding-left: 30px;
-  padding-left: 3rem;
+  padding-left: 40px;
+  padding-left: 4rem;
 }
 
+ol li,
 ul li {
   position: relative;
 }
 
+ol li:before,
 ul li:before {
   position: absolute;
   content: '';
@@ -3181,7 +3184,7 @@ ul li:before {
   width: 0.4rem;
   height: 4px;
   height: 0.4rem;
-  border-radius: 10px;
+  border-radius: 0.4rem;
   background: #2980b9;
   top: 8px;
   top: 0.8rem;
@@ -3224,9 +3227,34 @@ b {
   font-weight: bold;
 }
 
+blockquote {
+  margin: 30px;
+  margin: 3rem;
+  padding: 0 20px;
+  padding: 0 2rem;
+  border-left: 4px solid #2980b9;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #2980b9;
+}
+
+::selection {
+  color: #fff;
+  background: #2980b9;
+}
+
 .layout {
-  padding: 40px;
-  padding: 4rem;
+  padding: 20px;
+  padding: 2rem;
+  max-width: 1140px;
+  display: block;
+  margin: 0 auto;
 }
 
 .icon-close {
@@ -3732,6 +3760,223 @@ table tr td {
   text-align: left;
 }
 
+#typeSettings {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  background: #fff;
+  z-index: 9;
+  padding: 30px 20px;
+  padding: 3rem 2rem;
+  border-right: 2px solid #2980b9;
+  overflow: auto;
+}
+
+#typeSettings ::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+}
+
+#typeSettings ::-webkit-scrollbar {
+  width: 6px;
+  background-color: #dfdfdf;
+}
+
+#typeSettings ::-webkit-scrollbar-thumb {
+  background-color: #2980b9;
+}
+
+.input-wrap,
+.input-wrap__actions,
+.input-wrap__text,
+.input-wrap__number,
+.input-wrap__email,
+.input-wrap__textarea,
+.input-wrap__select,
+.input-wrap__checkbox {
+  position: relative;
+  width: calc(33.333% - 10px);
+  margin: 0 5px 15px;
+  margin: 0 0.5rem 1.5rem;
+  display: block;
+  float: left;
+}
+
+.input-wrap select,
+.input-wrap__actions select,
+.input-wrap__text select,
+.input-wrap__number select,
+.input-wrap__email select,
+.input-wrap__textarea select,
+.input-wrap__select select,
+.input-wrap__checkbox select,
+.input-wrap input[type="number"],
+.input-wrap__actions input[type="number"],
+.input-wrap__text input[type="number"],
+.input-wrap__number input[type="number"],
+.input-wrap__email input[type="number"],
+.input-wrap__textarea input[type="number"],
+.input-wrap__select input[type="number"],
+.input-wrap__checkbox input[type="number"],
+.input-wrap input[type="text"],
+.input-wrap__actions input[type="text"],
+.input-wrap__text input[type="text"],
+.input-wrap__number input[type="text"],
+.input-wrap__email input[type="text"],
+.input-wrap__textarea input[type="text"],
+.input-wrap__select input[type="text"],
+.input-wrap__checkbox input[type="text"] {
+  width: 100%;
+  background: white;
+  padding: 24px 30px 7px 8px;
+  padding: 2.4rem 3rem 0.7rem 0.8rem;
+  border: 1px solid #d0d4d9;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+
+.input-wrap select:active,
+.input-wrap__actions select:active,
+.input-wrap__text select:active,
+.input-wrap__number select:active,
+.input-wrap__email select:active,
+.input-wrap__textarea select:active,
+.input-wrap__select select:active,
+.input-wrap__checkbox select:active,
+.input-wrap select:focus,
+.input-wrap__actions select:focus,
+.input-wrap__text select:focus,
+.input-wrap__number select:focus,
+.input-wrap__email select:focus,
+.input-wrap__textarea select:focus,
+.input-wrap__select select:focus,
+.input-wrap__checkbox select:focus,
+.input-wrap input[type="number"]:active,
+.input-wrap__actions input[type="number"]:active,
+.input-wrap__text input[type="number"]:active,
+.input-wrap__number input[type="number"]:active,
+.input-wrap__email input[type="number"]:active,
+.input-wrap__textarea input[type="number"]:active,
+.input-wrap__select input[type="number"]:active,
+.input-wrap__checkbox input[type="number"]:active,
+.input-wrap input[type="number"]:focus,
+.input-wrap__actions input[type="number"]:focus,
+.input-wrap__text input[type="number"]:focus,
+.input-wrap__number input[type="number"]:focus,
+.input-wrap__email input[type="number"]:focus,
+.input-wrap__textarea input[type="number"]:focus,
+.input-wrap__select input[type="number"]:focus,
+.input-wrap__checkbox input[type="number"]:focus,
+.input-wrap input[type="text"]:active,
+.input-wrap__actions input[type="text"]:active,
+.input-wrap__text input[type="text"]:active,
+.input-wrap__number input[type="text"]:active,
+.input-wrap__email input[type="text"]:active,
+.input-wrap__textarea input[type="text"]:active,
+.input-wrap__select input[type="text"]:active,
+.input-wrap__checkbox input[type="text"]:active,
+.input-wrap input[type="text"]:focus,
+.input-wrap__actions input[type="text"]:focus,
+.input-wrap__text input[type="text"]:focus,
+.input-wrap__number input[type="text"]:focus,
+.input-wrap__email input[type="text"]:focus,
+.input-wrap__textarea input[type="text"]:focus,
+.input-wrap__select input[type="text"]:focus,
+.input-wrap__checkbox input[type="text"]:focus {
+  border-color: #2980b9;
+}
+
+.input-wrap__number span,
+.input-wrap__text span {
+  position: absolute;
+  right: 10px;
+  right: 1rem;
+  bottom: 30px;
+  bottom: 3rem;
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #A0A4AD;
+  font-weight: 400 !important;
+}
+
+.input-wrap__colour {
+  display: none;
+}
+
+.input-wrap__select {
+  margin-top: 0;
+}
+
+.input-wrap__select select {
+  padding: 24px 30px 7px 8px;
+  padding: 2.4rem 3rem 0.7rem 0.8rem;
+}
+
+.input-wrap label,
+.input-wrap__actions label,
+.input-wrap__text label,
+.input-wrap__number label,
+.input-wrap__email label,
+.input-wrap__textarea label,
+.input-wrap__select label,
+.input-wrap__checkbox label {
+  position: absolute;
+  top: 6px;
+  top: 0.6rem;
+  left: 8px;
+  left: 0.8rem;
+  font-size: 10px;
+  font-size: 1rem;
+}
+
+.input-wrap ::-webkit-input-placeholder,
+.input-wrap__actions ::-webkit-input-placeholder,
+.input-wrap__text ::-webkit-input-placeholder,
+.input-wrap__number ::-webkit-input-placeholder,
+.input-wrap__email ::-webkit-input-placeholder,
+.input-wrap__textarea ::-webkit-input-placeholder,
+.input-wrap__select ::-webkit-input-placeholder,
+.input-wrap__checkbox ::-webkit-input-placeholder {
+  color: black;
+}
+
+.input-wrap :-moz-placeholder,
+.input-wrap__actions :-moz-placeholder,
+.input-wrap__text :-moz-placeholder,
+.input-wrap__number :-moz-placeholder,
+.input-wrap__email :-moz-placeholder,
+.input-wrap__textarea :-moz-placeholder,
+.input-wrap__select :-moz-placeholder,
+.input-wrap__checkbox :-moz-placeholder {
+  color: black;
+}
+
+.input-wrap ::-moz-placeholder,
+.input-wrap__actions ::-moz-placeholder,
+.input-wrap__text ::-moz-placeholder,
+.input-wrap__number ::-moz-placeholder,
+.input-wrap__email ::-moz-placeholder,
+.input-wrap__textarea ::-moz-placeholder,
+.input-wrap__select ::-moz-placeholder,
+.input-wrap__checkbox ::-moz-placeholder {
+  color: black;
+}
+
+.input-wrap :-ms-input-placeholder,
+.input-wrap__actions :-ms-input-placeholder,
+.input-wrap__text :-ms-input-placeholder,
+.input-wrap__number :-ms-input-placeholder,
+.input-wrap__email :-ms-input-placeholder,
+.input-wrap__textarea :-ms-input-placeholder,
+.input-wrap__select :-ms-input-placeholder,
+.input-wrap__checkbox :-ms-input-placeholder {
+  color: black;
+}
+
 .login-wrap {
   position: absolute;
   top: 0;
@@ -3881,8 +4126,8 @@ table tr td {
 
 pre {
   white-space: pre-wrap;
-  background: #141e1e;
-  color: #dce6e6;
+  background: #19191a;
+  color: #f8f6f7;
   margin: 20px auto;
   margin: 2rem auto;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
@@ -3895,13 +4140,13 @@ pre {
 }
 
 pre::-moz-selection {
-  color: #141e1e;
-  background: #dce6e6;
+  color: #19191a;
+  background: #f8f6f7;
 }
 
 pre::selection {
-  color: #141e1e;
-  background: #dce6e6;
+  color: #19191a;
+  background: #f8f6f7;
 }
 
 /*# sourceMappingURL=style.css.map */

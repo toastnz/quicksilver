@@ -1,0 +1,158 @@
+$border-color: #d0d4d9;
+$active-border-color: $primary;
+
+#typeSettings {
+
+  .resizer {
+    width: 3rem;
+    height: 3rem;
+    background: $primary;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    cursor: se-resize;
+    text-align: center;
+    i {
+      @include vertical-center;
+      color: white;
+      font-size: 2rem;
+    }
+  }
+
+  .js-collapsible {
+    .fa {
+      transition: all 330ms $transition-deceleration;
+    }
+    &.expanded {
+      .fa {
+        transform: rotate(-180deg) !important;
+      }
+    }
+  }
+
+  .collapsible {
+    backface-visibility: hidden;
+    position: relative;
+    overflow: hidden;
+    max-height: 0;
+    padding: 0 1rem;
+    margin-bottom: 0.2rem;
+    transition: all 330ms $transition-deceleration;
+    &.expanded {
+      padding-top: 2rem;
+      max-height: 100rem;
+      overflow: visible;
+    }
+  }
+
+  .headingWrap {
+    position: relative;
+    h6 {
+      cursor: pointer;
+      background: $primary;
+      padding: 1.2rem;
+      color: white;
+      margin-bottom: 0;
+      @include normal;
+    }
+    .fa {
+      float: right;
+      right: 2rem;
+      font-size: 4rem;
+      margin-top: -1rem;
+    }
+  }
+
+  &.type-settings {
+    position: fixed;
+    border-right: 3px solid $primary;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 500px;
+    box-shadow: $z4;
+    background: $white;
+    z-index: 9;
+    .type-settings__header {
+      background: $primary;
+      color: $white;
+      padding: 1rem 2rem 0.1rem;
+    }
+    .scroll-wrap {
+      position: absolute;
+      top: 7rem;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 2rem 0;
+      overflow: auto;
+      &::-webkit-scrollbar-track {
+        background-color: #dfdfdf;
+      }
+      &::-webkit-scrollbar {
+        width: 6px;
+        background-color: #dfdfdf;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: $active-border-color;
+      }
+    }
+  }
+
+  .input-wrap {
+    position: relative;
+    width: calc(33.333% - 10px);
+    margin: 0 0.5rem 1.5rem;
+    display: block;
+    float: left;
+    min-width: 200px;
+    select,
+    input[type="number"],
+    input[type="text"] {
+      width: 100%;
+      background: white;
+      padding: 2.4rem 5rem 0.7rem 0.8rem;
+      border: 1px solid $border-color;
+      outline: none;
+      font-size: 18px;
+      font-weight: 400;
+      color: $black-dark;
+      &:active,
+      &:focus {
+        border-color: $active-border-color;
+      }
+    }
+    &__number,
+    &__text {
+      span {
+        position: absolute;
+        right: 1rem;
+        bottom: 3rem;
+        font-size: 1.8rem;
+        color: #A0A4AD;
+        font-weight: 400 !important;
+      }
+    }
+    &__colour {
+      display: none;
+    }
+    &__select {
+      margin-top: 0;
+      &:after {
+        right: 10%;
+      }
+      select {
+        padding: 2.4rem 3rem 0.7rem 0.8rem;
+      }
+    }
+    label {
+      position: absolute;
+      top: 0.6rem;
+      left: 0.8rem;
+      font-size: 1rem;
+    }
+    @include placeholder {
+      color: black;
+    }
+  }
+}

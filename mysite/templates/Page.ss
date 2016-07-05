@@ -5,9 +5,9 @@
 </head>
 
 <body class="$Classname $URLSegment" data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
+    <% include TypeSettings %>
 
     <% include Header %>
-    <%--<% include StyleGuide %>--%>
 <div class="layout">
     $Layout
 </div>
