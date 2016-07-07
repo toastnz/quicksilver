@@ -36,23 +36,25 @@ Style Guide Page
 
 .swatch {
     display: block;
-    width: calc(20% - 20px);
-    margin: 10px;
-    border: 8px solid white;
+    margin: 1rem;
+    border: 0.8rem solid white;
+    width: calc(33.333% - 2rem);
+    @include media($xs) {
+        width: calc(25% - 2rem);
+    }
+    @include media($md) {
+        width: calc(20% - 2rem);
+    }
     @include aspect(1, 1);
     float: left;
     box-shadow: $z1;
-    transition: all 330ms $transition-standard;
     p {
         @include vertical-center;
-        text-align: center;
         @include heading;
+        text-align: center;
         opacity: 0;
         color: $black-mid;
         transition: all 330ms $transition-standard;
-    }
-    &:hover {
-        box-shadow: $z3;
     }
     &:hover p {
         background: rgba($off-white, 0.2);
@@ -60,13 +62,13 @@ Style Guide Page
     }
     span {
         position: absolute;
-        bottom: 0;
-        left: 0;
-        right: 0;
+        bottom: -0.1rem;
+        left: -0.1rem;
+        right: -0.1rem;
         background: white;
         text-align: center;
         text-transform: uppercase;
-        padding: 4px;
+        padding: 0.5rem;
     }
 }
 

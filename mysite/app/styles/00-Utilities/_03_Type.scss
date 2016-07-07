@@ -96,9 +96,9 @@ Tags
 ------------------------------------------------------------------*/
 
 html, body {
-    font-size: $base * 0.7;
+    font-size: $base * 0.8;
     @include media($md) {
-        font-size: $base * 0.8;
+        font-size: $base * 0.85;
     }
     @include media($lg) {
         font-size: $base * 0.9;
