@@ -11,9 +11,20 @@
         <h4>Heading 4, 300 Open Sans</h4>
         <h5>Heading 5, 300 Open Sans</h5>
         <h6>Heading 6, 300 Open Sans</h6>
-        <p>Aa - <span>400 Merriweather 16px</span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<b>Omnis voluptate distinctio reprehenderit</b>, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <i>Libero mollitia modi ad id quasi illo!</i> Provident corporis unde inventore impedit vel, consequuntur hic eaque officia praesentium! Debitis doloribus fugiat eaque porro eveniet culpa possimus voluptatibus dolores, veritatis quis rem et modi exercitationem, excepturi, ex ratione iste aspernatur sint minus obcaecati illum voluptatum! Eum dicta eius aut qui quo, consectetur vel commodi nam illo facere, quam labore veritatis nihil saepe quisquam quia exercitationem eaque aliquam itaque laudantium quod. Dolorem, explicabo, dignissimos.</p>
+        <p>Aa -
+            <span>400 Merriweather 16px</span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<b>Omnis voluptate distinctio reprehenderit</b>, autem deleniti ad
+            <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <i>Libero mollitia modi ad id quasi illo!</i> Provident corporis unde inventore impedit vel, consequuntur hic eaque officia praesentium! Debitis doloribus fugiat eaque porro eveniet culpa possimus voluptatibus dolores, veritatis quis rem et modi exercitationem, excepturi, ex ratione iste aspernatur sint minus obcaecati illum voluptatum! Eum dicta eius aut qui quo, consectetur vel commodi nam illo facere, quam labore veritatis nihil saepe quisquam quia exercitationem eaque aliquam itaque laudantium quod. Dolorem, explicabo, dignissimos.
+        </p>
     </section>
+    <div class="clearfix"></div>
+    <section class="colors">
+        <h2>Colours</h2>
+        $getVariables
+    </section>
+    <div class="clearfix"></div>
 
     <section class="buttons">
         <h2>Buttons</h2>

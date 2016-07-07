@@ -34,6 +34,42 @@ Style Guide Page
     }
 }
 
+.swatch {
+    display: block;
+    width: calc(20% - 20px);
+    margin: 10px;
+    border: 8px solid white;
+    @include aspect(1, 1);
+    float: left;
+    box-shadow: $z1;
+    transition: all 330ms $transition-standard;
+    p {
+        @include vertical-center;
+        text-align: center;
+        @include heading;
+        opacity: 0;
+        color: $black-mid;
+        transition: all 330ms $transition-standard;
+    }
+    &:hover {
+        box-shadow: $z3;
+    }
+    &:hover p {
+        background: rgba($off-white, 0.2);
+        opacity: 1;
+    }
+    span {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: white;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 4px;
+    }
+}
+
 /*------------------------------------------------------------------
 Style Guide Page
 ------------------------------------------------------------------*/

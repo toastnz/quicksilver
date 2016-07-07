@@ -3066,8 +3066,8 @@ body * {
 }
 
 h1 {
-  font-size: 40px;
-  font-size: 4rem;
+  font-size: 44px;
+  font-size: 4.4rem;
   line-height: 1.2;
   margin: 0 0 16px;
   margin: 0 0 1.6rem;
@@ -3164,15 +3164,18 @@ p-small {
   font-weight: 300;
 }
 
+ol,
 ul {
-  padding-left: 30px;
-  padding-left: 3rem;
+  padding-left: 40px;
+  padding-left: 4rem;
 }
 
+ol li,
 ul li {
   position: relative;
 }
 
+ol li:before,
 ul li:before {
   position: absolute;
   content: '';
@@ -3181,7 +3184,7 @@ ul li:before {
   width: 0.4rem;
   height: 4px;
   height: 0.4rem;
-  border-radius: 10px;
+  border-radius: 0.4rem;
   background: #2980b9;
   top: 8px;
   top: 0.8rem;
@@ -3224,9 +3227,34 @@ b {
   font-weight: bold;
 }
 
+blockquote {
+  margin: 30px;
+  margin: 3rem;
+  padding: 0 20px;
+  padding: 0 2rem;
+  border-left: 4px solid #2980b9;
+}
+
+blockquote p {
+  margin: 0;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: #2980b9;
+}
+
+::selection {
+  color: #fff;
+  background: #2980b9;
+}
+
 .layout {
-  padding: 40px;
-  padding: 4rem;
+  padding: 20px;
+  padding: 2rem;
+  max-width: 1140px;
+  display: block;
+  margin: 0 auto;
 }
 
 .icon-close {
@@ -3881,8 +3909,8 @@ table tr td {
 
 pre {
   white-space: pre-wrap;
-  background: #141e1e;
-  color: #dce6e6;
+  background: #19191a;
+  color: #f8f6f7;
   margin: 20px auto;
   margin: 2rem auto;
   font-family: Monaco, Consolas, "Lucida Console", monospace;
@@ -3895,13 +3923,13 @@ pre {
 }
 
 pre::-moz-selection {
-  color: #141e1e;
-  background: #dce6e6;
+  color: #19191a;
+  background: #f8f6f7;
 }
 
 pre::selection {
-  color: #141e1e;
-  background: #dce6e6;
+  color: #19191a;
+  background: #f8f6f7;
 }
 
 /*# sourceMappingURL=style.css.map */
