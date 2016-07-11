@@ -3,7 +3,6 @@
 class TypeSettings extends DataExtension
 {
 
-
     public function updateCMSFields(FieldList $fields)
     {
         $fields->addFieldsToTab('Root.TypeSettings', array(
