@@ -18,6 +18,7 @@ $('body').keyup(function (e) {
         Type.loadStyles();
     }
 });
+Type.toggle();
 
 $('.js-save-type-settings').click(()=> {
     Type.saveCSS();

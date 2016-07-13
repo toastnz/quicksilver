@@ -11,6 +11,7 @@
     "alertify.js": "latest",
     "dragula": "latest",
     "fancybox": "latest",
+    "CSSJSON": "latest",
     "font-awesome": "latest",
     "gulp-replace": "^0.5.4",
     "imagesloaded": "latest",

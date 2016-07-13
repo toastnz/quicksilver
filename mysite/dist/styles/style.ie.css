@@ -3304,7 +3304,7 @@ blockquote p {
 }
 
 .button__outline {
-  background: #fff;
+  background: transparent;
   color: #2980b9;
 }
 
@@ -3760,17 +3760,43 @@ table tr td {
   text-align: left;
 }
 
+.pageWrap {
+  margin-right: 0;
+  background: white;
+  transition: border 330ms cubic-bezier(0, 0, 0.2, 1),width 220ms cubic-bezier(0, 0, 0.2, 1);
+  float: right;
+  width: 100%;
+  border: 0 solid #7a7a7a;
+  transition-delay: 120ms;
+}
+
+html {
+  background: #7a7a7a;
+}
+
+#typeSettings.visible+.pageWrap {
+  width: calc(100% - 239px);
+  border: 50px solid #7a7a7a;
+  border: 5rem solid #7a7a7a;
+}
+
+#typeSettings.visible {
+  transition-delay: 330ms;
+}
+
 #typeSettings {
-  transition: all 440ms cubic-bezier(0, 0, 0.2, 1);
-  -webkit-transform: translateX(-110%);
-  -ms-transform: translateX(-110%);
-  transform: translateX(-110%);
+  width: 240px;
+  transition: all 330ms cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transform: translateX(-100%);
+  -ms-transform: translateX(-100%);
+  transform: translateX(-100%);
 }
 
 #typeSettings.visible {
   -webkit-transform: translateX(0);
   -ms-transform: translateX(0);
   transform: translateX(0);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
 }
 
 #typeSettings .js-collapsible .fa,
@@ -3786,9 +3812,9 @@ table tr td {
 #Password #typeSettings .js-collapsible.expanded label,
 #typeSettings .js-collapsible.expanded #Email label,
 #Email #typeSettings .js-collapsible.expanded label {
-  -webkit-transform: rotate(-180deg) !important;
-  -ms-transform: rotate(-180deg) !important;
-  transform: rotate(-180deg) !important;
+  -webkit-transform: rotate(0) !important;
+  -ms-transform: rotate(0) !important;
+  transform: rotate(0) !important;
 }
 
 #typeSettings .collapsible {
@@ -3818,13 +3844,15 @@ table tr td {
 
 #typeSettings .headingWrap h6 {
   cursor: pointer;
-  background: #2980b9;
+  background: rgba(221,221,221,0.2);
+  color: #19191a;
   padding: 12px;
   padding: 1.2rem;
-  color: white;
   margin-bottom: 0;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 16px;
+  font-size: 1.6rem;
 }
 
 #typeSettings .headingWrap .fa,
@@ -3835,35 +3863,43 @@ table tr td {
   float: right;
   right: 20px;
   right: 2rem;
-  font-size: 40px;
-  font-size: 4rem;
-  margin-top: -10px;
-  margin-top: -1rem;
+  font-size: 25px;
+  font-size: 2.5rem;
+  margin-top: -0px;
+  margin-top: -0rem;
+  color: #2980b9;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 #typeSettings.type-settings {
   position: fixed;
-  border-right: 3px solid #2980b9;
   left: 0;
   top: 0;
   bottom: 0;
-  width: 500px;
-  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
   background: #fff;
   z-index: 9;
 }
 
 #typeSettings.type-settings .type-settings__header {
-  background: #2980b9;
-  color: #fff;
-  padding: 10px 20px 1px;
-  padding: 1rem 2rem 0.1rem;
+  color: #19191a;
+  box-shadow: 0 0 2px 0 rgba(0,0,0,0.1);
+  padding: 10px 10px 1px;
+  padding: 1rem 1rem 0.1rem;
+}
+
+#typeSettings.type-settings .type-settings__header h5 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  font-size: 2rem;
 }
 
 #typeSettings.type-settings .scroll-wrap {
   position: absolute;
-  top: 70px;
-  top: 7rem;
+  top: 55px;
+  top: 5.5rem;
   right: 0;
   bottom: 0;
   left: 0;
@@ -3872,17 +3908,10 @@ table tr td {
   overflow: auto;
 }
 
-#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar-track {
-  background-color: #dfdfdf;
-}
-
-#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar {
-  width: 6px;
-  background-color: #dfdfdf;
-}
-
-#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar-thumb {
-  background-color: #2980b9;
+#typeSettings.type-settings .scroll-wrap button {
+  margin: 20px 6%;
+  margin: 2rem 6%;
+  width: 86%;
 }
 
 #typeSettings .input-wrap,
@@ -3930,11 +3959,11 @@ table tr td {
   background: white;
   padding: 24px 50px 7px 8px;
   padding: 2.4rem 5rem 0.7rem 0.8rem;
-  border: 1px solid #d0d4d9;
+  border: 1px solid #d6d8de;
   outline: none;
   font-size: 18px;
   font-weight: 400;
-  color: #000;
+  color: #19191a;
 }
 
 #typeSettings .input-wrap select:active,
@@ -3988,6 +4017,57 @@ table tr td {
   border-color: #2980b9;
 }
 
+#typeSettings .input-wrap select:active+label,
+#typeSettings .input-wrap__actions select:active+label,
+#typeSettings .input-wrap__text select:active+label,
+#typeSettings .input-wrap__number select:active+label,
+#typeSettings .input-wrap__email select:active+label,
+#typeSettings .input-wrap__textarea select:active+label,
+#typeSettings .input-wrap__select select:active+label,
+#typeSettings .input-wrap__checkbox select:active+label,
+#typeSettings .input-wrap select:focus+label,
+#typeSettings .input-wrap__actions select:focus+label,
+#typeSettings .input-wrap__text select:focus+label,
+#typeSettings .input-wrap__number select:focus+label,
+#typeSettings .input-wrap__email select:focus+label,
+#typeSettings .input-wrap__textarea select:focus+label,
+#typeSettings .input-wrap__select select:focus+label,
+#typeSettings .input-wrap__checkbox select:focus+label,
+#typeSettings .input-wrap input[type="number"]:active+label,
+#typeSettings .input-wrap__actions input[type="number"]:active+label,
+#typeSettings .input-wrap__text input[type="number"]:active+label,
+#typeSettings .input-wrap__number input[type="number"]:active+label,
+#typeSettings .input-wrap__email input[type="number"]:active+label,
+#typeSettings .input-wrap__textarea input[type="number"]:active+label,
+#typeSettings .input-wrap__select input[type="number"]:active+label,
+#typeSettings .input-wrap__checkbox input[type="number"]:active+label,
+#typeSettings .input-wrap input[type="number"]:focus+label,
+#typeSettings .input-wrap__actions input[type="number"]:focus+label,
+#typeSettings .input-wrap__text input[type="number"]:focus+label,
+#typeSettings .input-wrap__number input[type="number"]:focus+label,
+#typeSettings .input-wrap__email input[type="number"]:focus+label,
+#typeSettings .input-wrap__textarea input[type="number"]:focus+label,
+#typeSettings .input-wrap__select input[type="number"]:focus+label,
+#typeSettings .input-wrap__checkbox input[type="number"]:focus+label,
+#typeSettings .input-wrap input[type="text"]:active+label,
+#typeSettings .input-wrap__actions input[type="text"]:active+label,
+#typeSettings .input-wrap__text input[type="text"]:active+label,
+#typeSettings .input-wrap__number input[type="text"]:active+label,
+#typeSettings .input-wrap__email input[type="text"]:active+label,
+#typeSettings .input-wrap__textarea input[type="text"]:active+label,
+#typeSettings .input-wrap__select input[type="text"]:active+label,
+#typeSettings .input-wrap__checkbox input[type="text"]:active+label,
+#typeSettings .input-wrap input[type="text"]:focus+label,
+#typeSettings .input-wrap__actions input[type="text"]:focus+label,
+#typeSettings .input-wrap__text input[type="text"]:focus+label,
+#typeSettings .input-wrap__number input[type="text"]:focus+label,
+#typeSettings .input-wrap__email input[type="text"]:focus+label,
+#typeSettings .input-wrap__textarea input[type="text"]:focus+label,
+#typeSettings .input-wrap__select input[type="text"]:focus+label,
+#typeSettings .input-wrap__checkbox input[type="text"]:focus+label {
+  color: #2980b9;
+}
+
 #typeSettings .input-wrap__number span,
 #typeSettings .input-wrap__text span {
   position: absolute;
@@ -4031,8 +4111,11 @@ table tr td {
   top: 0.6rem;
   left: 8px;
   left: 0.8rem;
-  font-size: 10px;
-  font-size: 1rem;
+  font-size: 9px;
+  font-size: 0.9rem;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  transition: all 120ms cubic-bezier(0, 0, 0.2, 1);
 }
 
 #typeSettings .input-wrap ::-webkit-input-placeholder,
@@ -4262,7 +4345,7 @@ table tr td {
   font-weight: 400;
   text-align: center;
   opacity: 0;
-  color: #19191a;
+  color: #333;
   transition: all 330ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -4282,13 +4365,14 @@ table tr td {
   background: white;
   text-align: center;
   text-transform: uppercase;
-  padding: 5px;
-  padding: 0.5rem;
+  padding: 8px 5px 3px;
+  padding: 0.8rem 0.5rem 0.3rem;
 }
 
 pre {
+  width: 100%;
   white-space: pre-wrap;
-  background: #19191a;
+  background: #333;
   color: #f8f6f7;
   margin: 20px auto;
   margin: 2rem auto;
@@ -4302,13 +4386,83 @@ pre {
 }
 
 pre::-moz-selection {
-  color: #19191a;
+  color: #333;
   background: #f8f6f7;
 }
 
 pre::selection {
-  color: #19191a;
+  color: #333;
   background: #f8f6f7;
+}
+
+pre {
+  position: relative;
+  padding: 30px 10px 20px 40px;
+  background: #393939;
+  word-break: break-all;
+  word-wrap: break-word;
+  white-space: pre;
+  color: #b3b3b3;
+  border-left: 3px solid #7b7b7b;
+}
+
+pre:before {
+  content: "E.G.";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+pre.css {
+  color: #37DEB3;
+  border-left: 3px solid #37DEB3;
+}
+
+pre.css:before {
+  content: "CSS";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+pre.html {
+  color: #4092F1;
+  border-left: 3px solid #4092F1;
+}
+
+pre.html:before {
+  content: "HTML";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+pre.js {
+  color: #a172f8;
+  border-left: 3px solid #a172f8;
+}
+
+pre.js:before {
+  content: "JS";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /*# sourceMappingURL=style.css.map */

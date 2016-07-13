@@ -5,9 +5,10 @@
  ------------------------------------------------------------------*/
 
 // Requirements
-const $ = require('jquery');
-const _ = require('lodash');
-const CSSJSON = require('CSSJSON');
+const $        = require('jquery');
+const _        = require('lodash');
+const CSSJSON  = require('CSSJSON');
+const alertify = require('alertify.js');
 
 /**
  * TypeSettings class to update the styles in realtime of common
@@ -19,9 +20,9 @@ export class TypeSettings {
     constructor(element, stylesheet) {
 
         /* Constructor elements and variables */
-        this.$el = $(`#${element}`);
+        this.$el         = $(`#${element}`);
         this.$styleSheet = $(`#${stylesheet}`);
-        this.styles = {children: {}};
+        this.styles      = {children: {}};
 
         /* Toggle height for the collapsible items */
         this.$el.find('.js-collapsible').click(function () {
@@ -38,8 +39,8 @@ export class TypeSettings {
     /* Get a nested object of the current site configs' type settings */
     loadStyles() {
         $.ajax({
-            url: this.$el.attr('data-load-type-settings'),
-            type: 'POST',
+            url     : this.$el.attr('data-load-type-settings'),
+            type    : 'POST',
             dataType: 'json'
         }).done((response)=> {
             this.setStyles(response);
@@ -48,10 +49,10 @@ export class TypeSettings {
 
     saveCSS(css) {
         $.ajax({
-            url: this.$el.attr('data-save-css'),
-            type: 'POST',
+            url     : this.$el.attr('data-save-css'),
+            type    : 'POST',
             dataType: 'json',
-            data: {
+            data    : {
                 css: CSSJSON.toCSS(this.styles)
             }
         }).done((response)=> {
@@ -61,7 +62,7 @@ export class TypeSettings {
     /* Update all of the type setting fields with the currently saved values */
     setStyles(data) {
         var count = 0;
-        var tags = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
+        var tags  = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
         _.each(data, (tag)=> {
             this.$el.find(`#${tags[count]}_font-size`).val(tag.attributes['font-size']);
             this.$el.find(`#${tags[count]}_font-weight`).val(tag.attributes['font-weight']);
@@ -78,13 +79,14 @@ export class TypeSettings {
     saveStyles() {
         this.assignStyles();
         $.ajax({
-            url: this.$el.attr('data-save-type-settings'),
-            type: 'POST',
+            url     : this.$el.attr('data-save-type-settings'),
+            type    : 'POST',
             dataType: 'json',
-            data: {
+            data    : {
                 styles: this.styles.children
             }
         }).done((response)=> {
+            alertify.maxLogItems(1).success("Styles successfully updated");
         });
     }
 
@@ -121,11 +123,11 @@ export class TypeSettings {
         return {
             [selector]: {
                 attributes: {
-                    "font-size": this.$el.find(`#${input}_font-size`).val() + "rem",
-                    "font-weight": this.$el.find(`#${input}_font-weight`).val(),
-                    "font-style": this.$el.find(`#${input}_font-style`).val(),
-                    "text-align": this.$el.find(`#${input}_text-align`).val(),
-                    "line-height": this.$el.find(`#${input}_line-height`).val(),
+                    "font-size"     : this.$el.find(`#${input}_font-size`).val() + "rem",
+                    "font-weight"   : this.$el.find(`#${input}_font-weight`).val(),
+                    "font-style"    : this.$el.find(`#${input}_font-style`).val(),
+                    "text-align"    : this.$el.find(`#${input}_text-align`).val(),
+                    "line-height"   : this.$el.find(`#${input}_line-height`).val(),
                     "letter-spacing": this.$el.find(`#${input}_letter-spacing`).val() + 'px'
                 }
             }
