@@ -4,16 +4,19 @@
  Type settings
  ------------------------------------------------------------------*/
 
+
 // Requirements
-const $        = require('jquery');
-const _        = require('lodash');
-const CSSJSON  = require('CSSJSON');
-const alertify = require('alertify.js');
+const $         = require('jquery');
+const _         = require('lodash');
+const CSSJSON   = require('CSSJSON');
+const NProgress = require('nprogress');
 
 /**
  * TypeSettings class to update the styles in realtime of common
  * type properties
  */
+
+NProgress.configure({trickleRate: 0.1, trickleSpeed: 800, showSpinner: false});
 
 export class TypeSettings {
 
@@ -23,6 +26,7 @@ export class TypeSettings {
         this.$el         = $(`#${element}`);
         this.$styleSheet = $(`#${stylesheet}`);
         this.styles      = {children: {}};
+        this.tags        = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
 
         /* Toggle height for the collapsible items */
         this.$el.find('.js-collapsible').click(function () {
@@ -30,7 +34,8 @@ export class TypeSettings {
         });
 
         /* Update style when the input elements change */
-        this.$el.find('input, select').change(()=> {
+
+        this.$el.find('input, select').on('keyup input change', ()=> {
             this.updateStyles();
         });
 
@@ -62,14 +67,13 @@ export class TypeSettings {
     /* Update all of the type setting fields with the currently saved values */
     setStyles(data) {
         var count = 0;
-        var tags  = ['Heading_1', 'Heading_2', 'Heading_3', 'Heading_4', 'Heading_5', 'Heading_6', 'Paragraph'];
         _.each(data, (tag)=> {
-            this.$el.find(`#${tags[count]}_font-size`).val(tag.attributes['font-size']);
-            this.$el.find(`#${tags[count]}_font-weight`).val(tag.attributes['font-weight']);
-            this.$el.find(`#${tags[count]}_font-style`).val(tag.attributes['font-style']);
-            this.$el.find(`#${tags[count]}_text-align`).val(tag.attributes['text-align']);
-            this.$el.find(`#${tags[count]}_line-height`).val(tag.attributes['line-height']);
-            this.$el.find(`#${tags[count]}_letter-spacing`).val(tag.attributes['letter-spacing']);
+            this.$el.find(`#${this.tags[count]}_font-size`).val(tag.attributes['font-size']);
+            this.$el.find(`#${this.tags[count]}_font-weight`).val(tag.attributes['font-weight']);
+            this.$el.find(`#${this.tags[count]}_font-style`).val(tag.attributes['font-style']);
+            this.$el.find(`#${this.tags[count]}_text-align`).val(tag.attributes['text-align']);
+            this.$el.find(`#${this.tags[count]}_line-height`).val(tag.attributes['line-height']);
+            this.$el.find(`#${this.tags[count]}_letter-spacing`).val(tag.attributes['letter-spacing']);
             count++;
         });
         this.updateStyles();
@@ -77,6 +81,7 @@ export class TypeSettings {
 
     /* Update the current type settings */
     saveStyles() {
+        NProgress.start();
         this.assignStyles();
         $.ajax({
             url     : this.$el.attr('data-save-type-settings'),
@@ -86,7 +91,7 @@ export class TypeSettings {
                 styles: this.styles.children
             }
         }).done((response)=> {
-            alertify.maxLogItems(1).success("Styles successfully updated");
+            NProgress.done();
         });
     }
 
