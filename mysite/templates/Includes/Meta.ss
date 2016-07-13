@@ -5,15 +5,19 @@
 <% base_tag %>
 <link rel="stylesheet" href="$Themedir/dist/styles/style.css"/>
 <!--[if (gte IE 6)&(lte IE 9)]>
-<link rel="stylesheet" href=$Themedir>
+<link rel="stylesheet" href=$Themedir/dist/styles/style.ie.css>
 <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 <![endif]-->
+
 <%-- Custom type to be inserted here --%>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300|Merriweather" rel="stylesheet" type="text/css">
 
 <% include Favicons %>
 <% include OpenGraphMeta %>
 <% include TwitterCardMeta %>
-$GoogleAnalytics
+<% if $GoogleAnalyticsTrackingID %>
+    $GoogleAnalytics
+<% end_if %>
+
