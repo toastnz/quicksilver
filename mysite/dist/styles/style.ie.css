@@ -3760,31 +3760,17 @@ table tr td {
   text-align: left;
 }
 
-#typeSettings .resizer {
-  width: 30px;
-  width: 3rem;
-  height: 30px;
-  height: 3rem;
-  background: #2980b9;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  cursor: se-resize;
-  text-align: center;
+#typeSettings {
+  transition: all 440ms cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  transform: translateX(-110%);
 }
 
-#typeSettings .resizer i {
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  color: white;
-  font-size: 20px;
-  font-size: 2rem;
+#typeSettings.visible {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 
 #typeSettings .js-collapsible .fa,

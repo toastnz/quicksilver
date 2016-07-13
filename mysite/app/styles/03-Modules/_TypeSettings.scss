@@ -1,22 +1,25 @@
 $border-color: #d0d4d9;
 $active-border-color: $primary;
 
-#typeSettings {
+.pageWrap {
+  margin-right: 0;
+  transition: all 330ms $transition-deceleration;
+  float: right;
+  width: 100%;
 
-  .resizer {
-    width: 3rem;
-    height: 3rem;
-    background: $primary;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    cursor: se-resize;
-    text-align: center;
-    i {
-      @include vertical-center;
-      color: white;
-      font-size: 2rem;
-    }
+}
+
+#typeSettings.visible + .pageWrap {
+  width: calc(100% - 239px);
+}
+
+#typeSettings {
+  width: 240px;
+  transition: all 330ms $transition-deceleration;
+  transform: translateX(-100%);
+  &.visible {
+    transform: translateX(0);
+    box-shadow: $z4;
   }
 
   .js-collapsible {
@@ -49,9 +52,9 @@ $active-border-color: $primary;
     position: relative;
     h6 {
       cursor: pointer;
-      background: $primary;
+      background: rgba($grey-light, 0.2);
+      color: $black-mid;
       padding: 1.2rem;
-      color: white;
       margin-bottom: 0;
       @include normal;
     }
@@ -60,17 +63,15 @@ $active-border-color: $primary;
       right: 2rem;
       font-size: 4rem;
       margin-top: -1rem;
+      color: $primary;
     }
   }
 
   &.type-settings {
     position: fixed;
-    border-right: 3px solid $primary;
     left: 0;
     top: 0;
     bottom: 0;
-    width: 500px;
-    box-shadow: $z4;
     background: $white;
     z-index: 9;
     .type-settings__header {
@@ -80,7 +81,7 @@ $active-border-color: $primary;
     }
     .scroll-wrap {
       position: absolute;
-      top: 7rem;
+      top: 5.5rem;
       right: 0;
       bottom: 0;
       left: 0;
