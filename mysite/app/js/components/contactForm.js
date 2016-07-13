@@ -4,8 +4,8 @@
  ------------------------------------------------------------------*/
 
 /* Requirements */
-const $        = require('jquery');
-const parsley  = require('parsleyjs');
+const $ = require('jquery');
+const parsley = require('parsleyjs');
 const alertify = require('alertify.js');
 
 /* Variables */
@@ -14,7 +14,7 @@ const $contactForm = $('#ContactForm_ContactForm');
 if ($contactForm.length) {
     $contactForm.parsley().on('form:submit', () => {
         $.ajax({
-            url : $contactForm.attr('action'),
+            url: $contactForm.attr('action'),
             data: $contactForm.serialize()
         }).done(function (response) {
             let data = JSON.parse(response);

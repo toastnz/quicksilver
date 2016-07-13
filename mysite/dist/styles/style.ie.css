@@ -3044,14 +3044,14 @@ table {
 
 html,
 body {
-  font-size: 7px;
+  font-size: 8px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
 }
 
 html,
 body {
-  font-size: 8px;
+  font-size: 8.5px;
 }
 
 html,
@@ -3760,6 +3760,325 @@ table tr td {
   text-align: left;
 }
 
+#typeSettings {
+  transition: all 440ms cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transform: translateX(-110%);
+  -ms-transform: translateX(-110%);
+  transform: translateX(-110%);
+}
+
+#typeSettings.visible {
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+#typeSettings .js-collapsible .fa,
+#typeSettings .js-collapsible #Password label,
+#Password #typeSettings .js-collapsible label,
+#typeSettings .js-collapsible #Email label,
+#Email #typeSettings .js-collapsible label {
+  transition: all 330ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+#typeSettings .js-collapsible.expanded .fa,
+#typeSettings .js-collapsible.expanded #Password label,
+#Password #typeSettings .js-collapsible.expanded label,
+#typeSettings .js-collapsible.expanded #Email label,
+#Email #typeSettings .js-collapsible.expanded label {
+  -webkit-transform: rotate(-180deg) !important;
+  -ms-transform: rotate(-180deg) !important;
+  transform: rotate(-180deg) !important;
+}
+
+#typeSettings .collapsible {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: relative;
+  overflow: hidden;
+  max-height: 0;
+  padding: 0 10px;
+  padding: 0 1rem;
+  margin-bottom: 2px;
+  margin-bottom: 0.2rem;
+  transition: all 330ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+#typeSettings .collapsible.expanded {
+  padding-top: 20px;
+  padding-top: 2rem;
+  max-height: 1000px;
+  max-height: 100rem;
+  overflow: visible;
+}
+
+#typeSettings .headingWrap {
+  position: relative;
+}
+
+#typeSettings .headingWrap h6 {
+  cursor: pointer;
+  background: #2980b9;
+  padding: 12px;
+  padding: 1.2rem;
+  color: white;
+  margin-bottom: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+#typeSettings .headingWrap .fa,
+#typeSettings .headingWrap #Password label,
+#Password #typeSettings .headingWrap label,
+#typeSettings .headingWrap #Email label,
+#Email #typeSettings .headingWrap label {
+  float: right;
+  right: 20px;
+  right: 2rem;
+  font-size: 40px;
+  font-size: 4rem;
+  margin-top: -10px;
+  margin-top: -1rem;
+}
+
+#typeSettings.type-settings {
+  position: fixed;
+  border-right: 3px solid #2980b9;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 500px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+  background: #fff;
+  z-index: 9;
+}
+
+#typeSettings.type-settings .type-settings__header {
+  background: #2980b9;
+  color: #fff;
+  padding: 10px 20px 1px;
+  padding: 1rem 2rem 0.1rem;
+}
+
+#typeSettings.type-settings .scroll-wrap {
+  position: absolute;
+  top: 70px;
+  top: 7rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0;
+  padding: 2rem 0;
+  overflow: auto;
+}
+
+#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar-track {
+  background-color: #dfdfdf;
+}
+
+#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar {
+  width: 6px;
+  background-color: #dfdfdf;
+}
+
+#typeSettings.type-settings .scroll-wrap::-webkit-scrollbar-thumb {
+  background-color: #2980b9;
+}
+
+#typeSettings .input-wrap,
+#typeSettings .input-wrap__actions,
+#typeSettings .input-wrap__text,
+#typeSettings .input-wrap__number,
+#typeSettings .input-wrap__email,
+#typeSettings .input-wrap__textarea,
+#typeSettings .input-wrap__select,
+#typeSettings .input-wrap__checkbox {
+  position: relative;
+  width: calc(33.333% - 10px);
+  margin: 0 5px 15px;
+  margin: 0 0.5rem 1.5rem;
+  display: block;
+  float: left;
+  min-width: 200px;
+}
+
+#typeSettings .input-wrap select,
+#typeSettings .input-wrap__actions select,
+#typeSettings .input-wrap__text select,
+#typeSettings .input-wrap__number select,
+#typeSettings .input-wrap__email select,
+#typeSettings .input-wrap__textarea select,
+#typeSettings .input-wrap__select select,
+#typeSettings .input-wrap__checkbox select,
+#typeSettings .input-wrap input[type="number"],
+#typeSettings .input-wrap__actions input[type="number"],
+#typeSettings .input-wrap__text input[type="number"],
+#typeSettings .input-wrap__number input[type="number"],
+#typeSettings .input-wrap__email input[type="number"],
+#typeSettings .input-wrap__textarea input[type="number"],
+#typeSettings .input-wrap__select input[type="number"],
+#typeSettings .input-wrap__checkbox input[type="number"],
+#typeSettings .input-wrap input[type="text"],
+#typeSettings .input-wrap__actions input[type="text"],
+#typeSettings .input-wrap__text input[type="text"],
+#typeSettings .input-wrap__number input[type="text"],
+#typeSettings .input-wrap__email input[type="text"],
+#typeSettings .input-wrap__textarea input[type="text"],
+#typeSettings .input-wrap__select input[type="text"],
+#typeSettings .input-wrap__checkbox input[type="text"] {
+  width: 100%;
+  background: white;
+  padding: 24px 50px 7px 8px;
+  padding: 2.4rem 5rem 0.7rem 0.8rem;
+  border: 1px solid #d0d4d9;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
+}
+
+#typeSettings .input-wrap select:active,
+#typeSettings .input-wrap__actions select:active,
+#typeSettings .input-wrap__text select:active,
+#typeSettings .input-wrap__number select:active,
+#typeSettings .input-wrap__email select:active,
+#typeSettings .input-wrap__textarea select:active,
+#typeSettings .input-wrap__select select:active,
+#typeSettings .input-wrap__checkbox select:active,
+#typeSettings .input-wrap select:focus,
+#typeSettings .input-wrap__actions select:focus,
+#typeSettings .input-wrap__text select:focus,
+#typeSettings .input-wrap__number select:focus,
+#typeSettings .input-wrap__email select:focus,
+#typeSettings .input-wrap__textarea select:focus,
+#typeSettings .input-wrap__select select:focus,
+#typeSettings .input-wrap__checkbox select:focus,
+#typeSettings .input-wrap input[type="number"]:active,
+#typeSettings .input-wrap__actions input[type="number"]:active,
+#typeSettings .input-wrap__text input[type="number"]:active,
+#typeSettings .input-wrap__number input[type="number"]:active,
+#typeSettings .input-wrap__email input[type="number"]:active,
+#typeSettings .input-wrap__textarea input[type="number"]:active,
+#typeSettings .input-wrap__select input[type="number"]:active,
+#typeSettings .input-wrap__checkbox input[type="number"]:active,
+#typeSettings .input-wrap input[type="number"]:focus,
+#typeSettings .input-wrap__actions input[type="number"]:focus,
+#typeSettings .input-wrap__text input[type="number"]:focus,
+#typeSettings .input-wrap__number input[type="number"]:focus,
+#typeSettings .input-wrap__email input[type="number"]:focus,
+#typeSettings .input-wrap__textarea input[type="number"]:focus,
+#typeSettings .input-wrap__select input[type="number"]:focus,
+#typeSettings .input-wrap__checkbox input[type="number"]:focus,
+#typeSettings .input-wrap input[type="text"]:active,
+#typeSettings .input-wrap__actions input[type="text"]:active,
+#typeSettings .input-wrap__text input[type="text"]:active,
+#typeSettings .input-wrap__number input[type="text"]:active,
+#typeSettings .input-wrap__email input[type="text"]:active,
+#typeSettings .input-wrap__textarea input[type="text"]:active,
+#typeSettings .input-wrap__select input[type="text"]:active,
+#typeSettings .input-wrap__checkbox input[type="text"]:active,
+#typeSettings .input-wrap input[type="text"]:focus,
+#typeSettings .input-wrap__actions input[type="text"]:focus,
+#typeSettings .input-wrap__text input[type="text"]:focus,
+#typeSettings .input-wrap__number input[type="text"]:focus,
+#typeSettings .input-wrap__email input[type="text"]:focus,
+#typeSettings .input-wrap__textarea input[type="text"]:focus,
+#typeSettings .input-wrap__select input[type="text"]:focus,
+#typeSettings .input-wrap__checkbox input[type="text"]:focus {
+  border-color: #2980b9;
+}
+
+#typeSettings .input-wrap__number span,
+#typeSettings .input-wrap__text span {
+  position: absolute;
+  right: 10px;
+  right: 1rem;
+  bottom: 30px;
+  bottom: 3rem;
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #A0A4AD;
+  font-weight: 400 !important;
+}
+
+#typeSettings .input-wrap__colour {
+  display: none;
+}
+
+#typeSettings .input-wrap__select {
+  margin-top: 0;
+}
+
+#typeSettings .input-wrap__select:after {
+  right: 10%;
+}
+
+#typeSettings .input-wrap__select select {
+  padding: 24px 30px 7px 8px;
+  padding: 2.4rem 3rem 0.7rem 0.8rem;
+}
+
+#typeSettings .input-wrap label,
+#typeSettings .input-wrap__actions label,
+#typeSettings .input-wrap__text label,
+#typeSettings .input-wrap__number label,
+#typeSettings .input-wrap__email label,
+#typeSettings .input-wrap__textarea label,
+#typeSettings .input-wrap__select label,
+#typeSettings .input-wrap__checkbox label {
+  position: absolute;
+  top: 6px;
+  top: 0.6rem;
+  left: 8px;
+  left: 0.8rem;
+  font-size: 10px;
+  font-size: 1rem;
+}
+
+#typeSettings .input-wrap ::-webkit-input-placeholder,
+#typeSettings .input-wrap__actions ::-webkit-input-placeholder,
+#typeSettings .input-wrap__text ::-webkit-input-placeholder,
+#typeSettings .input-wrap__number ::-webkit-input-placeholder,
+#typeSettings .input-wrap__email ::-webkit-input-placeholder,
+#typeSettings .input-wrap__textarea ::-webkit-input-placeholder,
+#typeSettings .input-wrap__select ::-webkit-input-placeholder,
+#typeSettings .input-wrap__checkbox ::-webkit-input-placeholder {
+  color: black;
+}
+
+#typeSettings .input-wrap :-moz-placeholder,
+#typeSettings .input-wrap__actions :-moz-placeholder,
+#typeSettings .input-wrap__text :-moz-placeholder,
+#typeSettings .input-wrap__number :-moz-placeholder,
+#typeSettings .input-wrap__email :-moz-placeholder,
+#typeSettings .input-wrap__textarea :-moz-placeholder,
+#typeSettings .input-wrap__select :-moz-placeholder,
+#typeSettings .input-wrap__checkbox :-moz-placeholder {
+  color: black;
+}
+
+#typeSettings .input-wrap ::-moz-placeholder,
+#typeSettings .input-wrap__actions ::-moz-placeholder,
+#typeSettings .input-wrap__text ::-moz-placeholder,
+#typeSettings .input-wrap__number ::-moz-placeholder,
+#typeSettings .input-wrap__email ::-moz-placeholder,
+#typeSettings .input-wrap__textarea ::-moz-placeholder,
+#typeSettings .input-wrap__select ::-moz-placeholder,
+#typeSettings .input-wrap__checkbox ::-moz-placeholder {
+  color: black;
+}
+
+#typeSettings .input-wrap :-ms-input-placeholder,
+#typeSettings .input-wrap__actions :-ms-input-placeholder,
+#typeSettings .input-wrap__text :-ms-input-placeholder,
+#typeSettings .input-wrap__number :-ms-input-placeholder,
+#typeSettings .input-wrap__email :-ms-input-placeholder,
+#typeSettings .input-wrap__textarea :-ms-input-placeholder,
+#typeSettings .input-wrap__select :-ms-input-placeholder,
+#typeSettings .input-wrap__checkbox :-ms-input-placeholder {
+  color: black;
+}
+
 .login-wrap {
   position: absolute;
   top: 0;
@@ -3909,13 +4228,18 @@ table tr td {
 
 .swatch {
   display: block;
-  width: calc(20% - 20px);
   margin: 10px;
+  margin: 1rem;
   border: 8px solid white;
+  border: 0.8rem solid white;
+  width: calc(33.333% - 2rem);
   position: relative;
   float: left;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12),0 1px 2px rgba(0,0,0,0.24);
-  transition: all 330ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.swatch {
+  width: calc(20% - 2rem);
 }
 
 .swatch:after {
@@ -3934,16 +4258,12 @@ table tr td {
   left: 0;
   right: 0;
   margin: 0 auto;
-  text-align: center;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  text-align: center;
   opacity: 0;
   color: #19191a;
   transition: all 330ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.swatch:hover {
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19),0 6px 6px rgba(0,0,0,0.23);
 }
 
 .swatch:hover p {
@@ -3953,13 +4273,17 @@ table tr td {
 
 .swatch span {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  bottom: -1px;
+  bottom: -0.1rem;
+  left: -1px;
+  left: -0.1rem;
+  right: -1px;
+  right: -0.1rem;
   background: white;
   text-align: center;
   text-transform: uppercase;
-  padding: 4px;
+  padding: 5px;
+  padding: 0.5rem;
 }
 
 pre {
