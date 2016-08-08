@@ -20,7 +20,6 @@ var gulp       = require("gulp"),
     gutil      = require("gulp-util"),
     browserify = require('browserify'),
     rename     = require("gulp-rename"),
-    uglify     = require("gulp-uglify"),
     source     = require('vinyl-source-stream');
 
 function compileScripts(watch) {
@@ -37,9 +36,7 @@ function compileScripts(watch) {
         return stream.on('error', function (error) {
             Message('error', 'red');
             gutil.log(chalk['red'](error.message));
-        })
-            .pipe(source('output.js'))
-            .pipe(gulp.dest(dist + 'js'));
+        }).pipe(source('output.js')).pipe(gulp.dest(dist + 'js'));
     }
 
     bundler.on('update', function () {
@@ -50,16 +47,6 @@ function compileScripts(watch) {
 
 }
 
-/* Minify the JS output */
-
-gulp.task('minify-js', function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Minifying Javascript output'));
-    return gulp.src([dist + 'js/output.js'])
-        .pipe(uglify({compress: {unused: false}}))
-        .pipe(rename({extname: '.min.js'}))
-        .pipe(gulp.dest(dist + 'js/'))
-});
-
 /*------------------------------------------------------------------
  Stylesheets
  ------------------------------------------------------------------*/
@@ -69,19 +56,8 @@ var sass         = require('gulp-sass'),
     pixrem       = require('gulp-pixrem'),
     concat       = require("gulp-concat"),
     plumber      = require("gulp-plumber"),
-    cleanCSS     = require("gulp-clean-css"),
     sourcemaps   = require("gulp-sourcemaps"),
     autoprefixer = require("gulp-autoprefixer");
-
-/* Minify the compiled CSS */
-
-gulp.task('minify-css', ['sass'], function () {
-    gutil.log('Gulp.js:', gutil.colors.green('• Minifying the CSS files'));
-    return gulp.src([dist + 'styles/style.css'])
-        .pipe(cleanCSS({compatibility: 'ie8'}))
-        .pipe(rename({extname: '.min.css'}))
-        .pipe(gulp.dest(dist + 'styles/'))
-});
 
 gulp.task('sass', function () {
     Message('scss', 'green');
@@ -253,6 +229,7 @@ gulp.task('check-for-favicon-update', function (done) {
 /*------------------------------------------------------------------
  Font Awesome Asset Relocationdfs
  ------------------------------------------------------------------*/
+
 gulp.task('fontAwesome', function () {
     gutil.log('Gulp.js:', gutil.colors.green('• Copying the Font Awesome Files'));
     return gulp.src('node_modules/font-awesome/fonts/*').pipe(gulp.dest(dist + 'fonts'))
@@ -275,31 +252,19 @@ gulp.task('finishing', function () {
 });
 
 gulp.task('flat', ['cms'], function () {
-
     gulp.watch(['**/*.scss'], ['cms']).on('change', function (evt) {
         changeEvent(evt);
     });
-
 });
 
 gulp.task('default', ['start', 'sprites', 'sass', 'ie'], function () {
-
     compileScripts(true);
-
-    gulp.watch([app + 'styles/**/*.scss'], ['sass']).on('change', function (evt) {
+    gulp.watch([app + 'styles/**/*.scss'], ['sass', 'ie']).on('change', function (evt) {
         changeEvent(evt);
     });
-
     gulp.watch([app + 'js/components/app.js']).on('change', function (evt) {
         changeEvent(evt);
     });
-
-});
-
-gulp.task('deploy', function (cb) {
-    compileScripts(false);
-    gulpSequence(['start'], ['minify-js'], ['cms'], ['sprites'], ['sass'], ['ie'], ['minify-css'], ['fontAwesome'], ['finishing'])(cb);
-
 });
 
 function Message(message, col) {

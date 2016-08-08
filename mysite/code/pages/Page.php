@@ -4,14 +4,12 @@
  * Class Page
  *
  */
-class Page extends SiteTree
-{
+class Page extends SiteTree {
 
     /**
      * @return FieldList
      */
-    public function getCMSFields()
-    {
+    public function getCMSFields() {
         /** =========================================
          * @var FieldList $fields
          * ========================================*/
@@ -21,13 +19,11 @@ class Page extends SiteTree
         return $fields;
     }
 
-    public function getIsLive()
-    {
+    public function getIsLive() {
         return Director::isLive();
     }
 
-    public function getVariables()
-    {
+    public function getVariables() {
         $variables = file(BASE_PATH . '/mysite/app/styles/00-Utilities/_02-Colours.scss');
         $template = '';
         foreach ($variables as $variable) {
@@ -38,10 +34,21 @@ class Page extends SiteTree
         return $template;
     }
 
+
 }
 
-class Page_Controller extends ContentController
-{
+class Page_Controller extends ContentController {
+
+    public function init() {
+        parent::init();
+        Requirements::combine_files(
+            'foobar.js',
+            array(
+                'mysite/dist/js/output.js',
+            )
+        );
+    }
+
     private static $allowed_actions = array(
         'SubscriptionForm',
         'SaveCSS',
@@ -49,13 +56,11 @@ class Page_Controller extends ContentController
         'LoadTypeSettings'
     );
 
-    public function SubscriptionForm()
-    {
+    public function SubscriptionForm() {
         return SubscriptionForm::create($this, 'SubscriptionForm');
     }
 
-    public function LoadTypeSettings(SS_HTTPRequest $request)
-    {
+    public function LoadTypeSettings(SS_HTTPRequest $request) {
         $data = [];
         $siteConfig = SiteConfig::current_site_config();
         $tags = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p');
@@ -69,8 +74,7 @@ class Page_Controller extends ContentController
         return json_encode($data, true);
     }
 
-    public function SaveCSS(SS_HTTPRequest $request)
-    {
+    public function SaveCSS(SS_HTTPRequest $request) {
         $data = $request->postVars();
         $siteConfig = SiteConfig::current_site_config();
         $siteConfig->setField('TypeSettingsCSS', $data['css']);
@@ -78,8 +82,7 @@ class Page_Controller extends ContentController
         return json_encode($data['css'], true);
     }
 
-    public function SaveTypeSettings(SS_HTTPRequest $request)
-    {
+    public function SaveTypeSettings(SS_HTTPRequest $request) {
         $data = $request->postVars();
 
         $tags = array('h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p');
@@ -97,4 +100,6 @@ class Page_Controller extends ContentController
         $siteConfig->write();
         return json_encode($siteConfig->getField('h1fontweight'), true);
     }
+
+
 }

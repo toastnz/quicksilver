@@ -16,7 +16,9 @@
     </div>
     <% include Footer %>
 </div>
-<script type="text/javascript" src="$Themedir/dist/js/output.js"></script>
+
+    <%--<% require javascript('mysite/dist/js/output.js') %>--%>
+
 
 </body>
 </html>

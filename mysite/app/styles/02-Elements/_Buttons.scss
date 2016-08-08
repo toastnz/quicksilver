@@ -22,7 +22,6 @@ $error-button-color: $red-dark;
         border-color: lighten($button-color, 4%);
     }
     &__outline {
-        @extend .button;
         background: transparent;
         color: $button-color;
         @include active {
@@ -30,7 +29,6 @@ $error-button-color: $red-dark;
         }
     }
     &__disabled {
-        @extend .button;
         border: 2px solid $disabled-button-color;
         background: $disabled-button-color;
         cursor: not-allowed;

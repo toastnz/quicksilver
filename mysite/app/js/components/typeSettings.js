@@ -4,12 +4,78 @@
  Type settings
  ------------------------------------------------------------------*/
 
+var elementTags = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p'];
+
+var typeDefinitions = {
+    fontStyle     : ['normal', 'italic', 'oblique'],
+    fontWeight    : ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    textAlign     : ['left', 'center', 'right', 'justify'],
+    textDecoration: ['none', 'underline', 'overline', 'line-through'],
+    textTransform : ['none', 'capitalize', 'uppercase', 'lowercase']
+};
+
+var defaultValues = {
+    h1: {
+        tag       : 'h1',
+        attributes: {
+            fontSize     : {
+                css  : 'font-size',
+                value: 7,
+                unit : 'rem'
+            },
+            fontWeight   : {
+                css  : 'font-weight',
+                value: 100,
+            },
+            fontStyle    : {
+                css  : 'font-style',
+                value: 'normal',
+            },
+            textAlign    : {
+                css  : 'text-align',
+                value: 'left',
+            },
+            lineHeight   : {
+                css  : 'line-height',
+                value: 1.2,
+            },
+            letterSpacing: {
+                css  : 'letter-spacing',
+                value: 0,
+                unit : 'px'
+            },
+            colour       : {
+                css  : 'color',
+                value: '#333333'
+            },
+            background   : {
+                css  : 'background',
+                value: '#333333'
+            },
+            marginTop    : {
+                css  : "margin-top",
+                value: 0.4,
+                unit : "em"
+            },
+            marginBottom : {
+                css  : "margin-bottom",
+                value: 0.4,
+                unit : "em"
+            }
+        }
+    }
+};
+
+//console.log(typeDefinitions);
+//console.log(defaultValues);
+//console.log(elementTags);
 
 // Requirements
 const $         = require('jquery');
 const _         = require('lodash');
 const CSSJSON   = require('CSSJSON');
 const NProgress = require('nprogress');
+const Combokeys = require("combokeys");
 
 /**
  * TypeSettings class to update the styles in realtime of common
@@ -139,3 +205,18 @@ export class TypeSettings {
         }
     }
 }
+
+//Variables
+const Type    = new TypeSettings('typeSettings', 'typeStyles');
+let combokeys = new Combokeys(document.documentElement);
+
+combokeys.bind(['ctrl+t'], function () {
+    Type.toggle();
+    Type.loadStyles();
+    return false;
+});
+
+$('.js-save-type-settings').click(()=> {
+    Type.saveCSS();
+    Type.saveStyles();
+});

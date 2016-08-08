@@ -42,12 +42,12 @@
         <h2>Buttons</h2>
         <div>
             <button class="button">Normal</button>
-            <button class="button__outline">Outline</button>
-            <button class="button__disabled">Disabled</button>
-            <button class="button__error">Error</button>
+            <button class="button button__outline">Outline</button>
+            <button class="button button__disabled">Disabled</button>
+            <button class="button button__error">Error</button>
         </div>
 
-        <pre class="html">&lt;button class="<span>button</span>"&gt;Normal&lt;/button&gt;<br>&lt;button class="<span>button__outline</span>"&gt;Outline&lt;/button&gt;<br>&lt;button class="<span>button__disabled</span>"&gt;Disabled&lt;/button&gt;<br>&lt;button class="<span>button__error</span>"&gt;Error&lt;/button&gt;</pre>
+        <pre class="html">&lt;button class="<span>button</span>"&gt;Normal&lt;/button&gt;<br>&lt;button class="<span>button button__outline</span>"&gt;Outline&lt;/button&gt;<br>&lt;button class="<span>button button__disabled</span>"&gt;Disabled&lt;/button&gt;<br>&lt;button class="<span>button button__error</span>"&gt;Error&lt;/button&gt;</pre>
     </section>
 
     <section class="forms">
