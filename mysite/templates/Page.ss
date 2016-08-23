@@ -10,15 +10,12 @@
 
 <div class="pageWrap">
     <% include Header %>
-    <% include StyleGuide %>
-    <div class="layout">
+    <div class="">
+        <% include StyleGuide %>
         $Layout
     </div>
     <% include Footer %>
 </div>
-
-    <%--<% require javascript('mysite/dist/js/output.js') %>--%>
-
 
 </body>
 </html>

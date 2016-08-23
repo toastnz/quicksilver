@@ -4,15 +4,11 @@ $active-border-color: $primary;
 .pageWrap {
     margin-right: 0;
     background: white;
-    transition: border 330ms $transition-deceleration, width 220ms $transition-deceleration;
+    transition: border 330ms $transition-standard, width 220ms $transition-standard;
     float: right;
     width: 100%;
-    border: 0 solid $grey-mid;
+    border: 0 solid $grey-dark;
     transition-delay: 120ms;
-}
-
-html {
-    background: $grey-mid;
 }
 
 #typeSettings.visible + .pageWrap {
@@ -20,7 +16,12 @@ html {
     @include media($xl) {
         width: calc(100% - 439px);
     }
-    border: 5rem solid $grey-mid;
+    border-left: 5rem solid $grey-dark;
+    border-right: 5rem solid $grey-dark;
+}
+
+html {
+    background: $grey-dark;
 }
 
 #typeSettings.visible {
@@ -32,7 +33,7 @@ html {
     @include media($xl) {
         width: 440px;
     }
-    transition: all 330ms $transition-deceleration;
+    transition: all 330ms $transition-standard;
     transform: translateX(-100%);
     &.visible {
         transform: translateX(0);
@@ -41,7 +42,7 @@ html {
 
     .js-collapsible {
         .fa {
-            transition: all 330ms $transition-deceleration;
+            transition: all 330ms $transition-standard;
         }
         &.expanded {
             .fa {
@@ -58,7 +59,7 @@ html {
         padding: 0 1rem;
         margin-bottom: 0.2rem;
         @include clearfix;
-        transition: all 330ms $transition-deceleration;
+        transition: all 330ms $transition-standard;
         &.expanded {
             padding: 1rem;
             max-height: 100rem;
@@ -177,7 +178,7 @@ html {
             left: 0.8rem;
             font-size: 0.9rem;
             @include normal;
-            transition: all 120ms $transition-deceleration;
+            transition: all 120ms $transition-standard;
         }
         @include placeholder {
             color: black;

@@ -49,9 +49,11 @@ Login Page
             text-align: center;
             a {
                 color: $text;
+
             }
         }
     }
+
     #Password,
     #Email {
         label {
@@ -86,3 +88,8 @@ Login Page
     @extend .fa;
     @extend .fa-user;
 }
+
+
+
+
+

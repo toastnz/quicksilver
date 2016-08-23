@@ -38,7 +38,8 @@
     "jonom/silverstripe-betternavigator": "*",
     "heyday/silverstripe-cacheinclude": "~4.0",
     "silverstripe-australia/gridfieldextensions": "~1.1",
-    "studiobonito/silverstripe-google-analytics": "^2.0"
+    "studiobonito/silverstripe-google-analytics": "^2.0",
+    "toastnz/type-settings": "dev-master"
   },
   "require-dev": {
     "phpunit/PHPUnit": "~4.8"
