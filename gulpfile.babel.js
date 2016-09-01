@@ -1,7 +1,6 @@
 /*------------------------------------------------------------------
  Imports
  ------------------------------------------------------------------*/
-
 const fs           = require('fs');
 const gulp         = require('gulp');
 const chalk        = require('chalk');
@@ -23,7 +22,6 @@ const bulkSass     = require('gulp-sass-bulk-import');
 /*------------------------------------------------------------------
  Config
  ------------------------------------------------------------------*/
-
 const root  = `${__dirname}/mysite/`;
 const paths = {
     styles : {
@@ -47,7 +45,6 @@ const paths = {
 /*------------------------------------------------------------------
  Styles
  ------------------------------------------------------------------*/
-
 gulp.task('styles', ()=> {
     return gulp.src(paths.styles.src)
         .pipe(plumber(function (error) {
@@ -57,7 +54,6 @@ gulp.task('styles', ()=> {
         }))
         .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(sass())
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(autoprefixer({browsers: ['last 5 versions']}))
         .pipe(pixrem({rootValue: '10px'}))
@@ -68,7 +64,6 @@ gulp.task('styles', ()=> {
 /*------------------------------------------------------------------
  Font Awesome Asset Relocation
  ------------------------------------------------------------------*/
-
 gulp.task('font-awesome', function () {
     return gulp.src('node_modules/font-awesome/fonts/*')
         .pipe(gulp.dest(`${root}dist/fonts`))
@@ -79,20 +74,28 @@ gulp.task('font-awesome', function () {
  ------------------------------------------------------------------*/
 
 const cms = './flat-cms/';
-
 gulp.task('cms', function () {
     Message('scss', 'green');
-    return gulp.src([cms + 'styles/scss/*.scss'])
-        .pipe(plumber())
+    return gulp.src([cms + 'styles/*.scss'])
+        .pipe(plumber(function (error) {
+            gutil.log(`${chalk['yellow'](error.file.toString().replace(paths.reg.root, ''))}`);
+            gutil.log(`${chalk['red'](error['messageOriginal'])}`);
+            this.emit('end');
+        }))
+        .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(order())
-        .pipe(concat('flat-cms.scss'))
-        .on('error', sass.logError)
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(autoprefixer({browsers: ['last 5 versions']}))
         .pipe(sourcemaps.write('./'))
-        .pipe(plumber.stop())
         .pipe(gulp.dest(cms + 'styles/css'))
+});
+
+gulp.task('flat', ['cms'], function () {
+    compileScripts(true);
+    gulp.watch([cms + 'styles/scss/*.scss'], ['cms']).on('change', function (evt) {
+        Message('scss', 'green');
+        gutil.log(chalk['green'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['green'](evt.type));
+    });
 });
 
 /*------------------------------------------------------------------

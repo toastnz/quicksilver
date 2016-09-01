@@ -12,7 +12,7 @@
 <link rel="icon" type="image/png" href="{$BaseHref}mysite/favicons/android-chrome-96x96.png?v={$Now.format('U')}" sizes="96x96">
 <link rel="icon" type="image/png" href="{$BaseHref}mysite/favicons/favicon-16x16.png?v={$Now.format('U')}" sizes="16x16">
 <link rel="manifest" href="{$BaseHref}mysite/favicons/manifest.json">
-<link rel="mask-icon" href="{$BaseHref}mysite/favicons/safari-pinned-tab.svg" color="#5bbad5">
-<meta name="msapplication-TileColor" content="#da532c">
 <meta name="msapplication-TileImage" content="{$BaseHref}mysite/favicons/mstile-144x144.png?v={$Now.format('U')}">
-<meta name="theme-color" content="#ffffff">
+<link rel="mask-icon" href="{$BaseHref}mysite/favicons/safari-pinned-tab.svg" color="#23282d">
+<meta name="msapplication-TileColor" content="#23282d">
+<meta name="theme-color" content="#23282d">
