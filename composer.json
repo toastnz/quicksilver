@@ -23,7 +23,7 @@
   "require": {
     "php": ">=5.3.3",
     "google/recaptcha": "~1.1",
-    "toastnz/flat-cms": "~0.1.0",
+    "toastnz/flat-cms": "~1.0.0",
     "toastnz/toast-seo": "~0.3.0",
     "drewm/mailchimp-api": "~1.0",
     "toastnz/open-graph-meta": "*",

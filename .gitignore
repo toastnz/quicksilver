@@ -26,4 +26,12 @@ _resampled
 /fill-form/
 /twitter-card-meta/
 /silverstripe-cache/
-composer.lock
+/focuspoint
+/reports
+/siteconfig
+/silvershop
+/sqlquerylist
+/omnipay
+/listsorter
+/email-helpers
+/versioned-gridfield
