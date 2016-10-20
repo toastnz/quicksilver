@@ -59,7 +59,7 @@ gulp.task('styles', ()=> {
         .pipe(pixrem({rootValue: '10px'}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.styles.dest));
-})
+});
 
 /*------------------------------------------------------------------
  Font Awesome Asset Relocation
@@ -110,7 +110,7 @@ gulp.task('sprites', ()=> {
         cssTemplate: `${root}app/sprites/sprite_positions.styl.mustache`
     }));
     spriteData.img.pipe(gulp.dest(`${root}dist/images`));
-    spriteData.css.pipe(replace('@1x', '')).pipe(gulp.dest(`${root}styles/01-Sprites`));
+    spriteData.css.pipe(replace('@1x', '')).pipe(gulp.dest(`${root}app/styles/Sprites`));
     let retinaSpriteData = gulp.src(paths.sprites.retina).pipe(spritesmith({
         padding    : 8,
         imgName    : 'sprites-retina.png',
@@ -118,7 +118,7 @@ gulp.task('sprites', ()=> {
         cssTemplate: `${root}app/sprites/retina-sprite_positions.styl.mustache`
     }));
     retinaSpriteData.img.pipe(gulp.dest(`${root}dist/images`));
-    retinaSpriteData.css.pipe(replace('@2x', '')).pipe(gulp.dest(`${root}styles/01-Sprites`));
+    retinaSpriteData.css.pipe(replace('@2x', '')).pipe(gulp.dest(`${root}app/styles/Sprites`));
 });
 
 /*------------------------------------------------------------------
@@ -207,7 +207,7 @@ gulp.task('default', ['font-awesome', 'start', 'sprites', 'styles'], function ()
         Message('scss', 'green');
         gutil.log(chalk['green'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['green'](evt.type));
     });
-    gulp.watch([`${root}/app/js/components/app.js`]).on('change', function (evt) {
+    gulp.watch([`${root}/app/js/**/*.js`, `${root}/app/js/**/*.jsx`]).on('change', function (evt) {
         Message('js', 'green');
         gutil.log(chalk['green'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['green'](evt.type));
     });
