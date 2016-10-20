@@ -4,12 +4,13 @@
  * Class Page
  *
  */
-class Page extends SiteTree {
-
+class Page extends SiteTree
+{
     /**
      * @return FieldList
      */
-    public function getCMSFields() {
+    public function getCMSFields()
+    {
         /** =========================================
          * @var FieldList $fields
          * ========================================*/
@@ -19,20 +20,20 @@ class Page extends SiteTree {
         return $fields;
     }
 
-    public function getIsLive() {
+    public function getIsLive()
+    {
         return Director::isLive();
     }
 
-
-
-
 }
 
-class Page_Controller extends ContentController {
-    public function init() {
+class Page_Controller extends ContentController
+{
+    public function init()
+    {
         parent::init();
         Requirements::combine_files(
-            'foobar.js',
+            'output.js',
             array(
                 'mysite/dist/js/app.js',
             )
