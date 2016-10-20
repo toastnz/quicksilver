@@ -6,7 +6,6 @@
  */
 class Page extends SiteTree
 {
-
     /**
      * @return FieldList
      */
@@ -25,16 +24,20 @@ class Page extends SiteTree
     {
         return Director::isLive();
     }
+
 }
 
 class Page_Controller extends ContentController
 {
-    private static $allowed_actions = array(
-        'SubscriptionForm'
-    );
-
-    public function SubscriptionForm()
+    public function init()
     {
-        return SubscriptionForm::create($this, 'SubscriptionForm');
+        parent::init();
+        Requirements::combine_files(
+            'output.js',
+            array(
+                'mysite/dist/js/app.js',
+            )
+        );
     }
+
 }

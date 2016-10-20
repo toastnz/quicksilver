@@ -5,26 +5,49 @@
     </div>
 
     <section class="text">
-        <h1>Heading 1, 300 Open Sans</h1>
-        <h2>Heading 2, 300 Open Sans</h2>
-        <h3>Heading 3, 300 Open Sans</h3>
-        <h4>Heading 4, 300 Open Sans</h4>
-        <h5>Heading 5, 300 Open Sans</h5>
-        <h6>Heading 6, 300 Open Sans</h6>
-        <p>Aa - <span>400 Merriweather 16px</span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<b>Omnis voluptate distinctio reprehenderit</b>, autem deleniti ad <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <i>Libero mollitia modi ad id quasi illo!</i> Provident corporis unde inventore impedit vel, consequuntur hic eaque officia praesentium! Debitis doloribus fugiat eaque porro eveniet culpa possimus voluptatibus dolores, veritatis quis rem et modi exercitationem, excepturi, ex ratione iste aspernatur sint minus obcaecati illum voluptatum! Eum dicta eius aut qui quo, consectetur vel commodi nam illo facere, quam labore veritatis nihil saepe quisquam quia exercitationem eaque aliquam itaque laudantium quod. Dolorem, explicabo, dignissimos.</p>
+        <h1>Heading 1</h1>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <h2>Heading 2</h2>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <h3>Heading 3</h3>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <h4>Heading 4</h4>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <h5>Heading 5</h5>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <h6>Heading 6</h6>
+        <p>An example paragraph with <strong>strong text</strong> and
+            <em>emphasized text</em>, spanning multiple lines so you can see the line-height.</p>
+        <p>Aa -
+            <span>400 Merriweather 16px</span>. Lorem ipsum dolor sit amet, consectetur adipisicing elit.<b>Omnis voluptate distinctio repre class=htmlhenderit</b>, autem deleniti ad
+            <a href="#0">voluptatum eaque</a>. Optio ea aperiam nisi distinctio nemo repellat, voluptate fugiat. Quidem neque illum, blanditiis!
+        </p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            <i>Libero mollitia modi ad id quasi illo!</i> Provident corporis unde inventore impedit vel, consequuntur hic eaque officia praesentium! Debitis doloribus fugiat eaque porro eveniet culpa possimus voluptatibus dolores, veritatis quis rem et modi exercitationem, excepturi, ex ratione iste aspernatur sint minus obcaecati illum voluptatum! Eum dicta eius aut qui quo, consectetur vel commodi nam illo facere, quam labore veritatis nihil saepe quisquam quia exercitationem eaque aliquam itaque laudantium quod. Dolorem, explicabo, dignissimos.
+        </p>
     </section>
+    <div class="clearfix"></div>
+    <section class="colors">
+        <h2>Colours</h2>
+        $getVariables
+    </section>
+    <div class="clearfix"></div>
 
     <section class="buttons">
         <h2>Buttons</h2>
         <div>
             <button class="button">Normal</button>
-            <button class="button__outline">Outline</button>
-            <button class="button__disabled">Disabled</button>
-            <button class="button__error">Error</button>
+            <button class="button button__outline">Outline</button>
+            <button class="button button__disabled">Disabled</button>
+            <button class="button button__error">Error</button>
         </div>
 
-        <pre>&lt;button class="<span>button</span>"&gt;Normal&lt;/button&gt;<br>&lt;button class="<span>button__outline</span>"&gt;Outline&lt;/button&gt;<br>&lt;button class="<span>button__disabled</span>"&gt;Disabled&lt;/button&gt;<br>&lt;button class="<span>button__error</span>"&gt;Error&lt;/button&gt;</pre>
+        <pre class="html">&lt;button class="<span>button</span>"&gt;Normal&lt;/button&gt;<br>&lt;button class="<span>button button__outline</span>"&gt;Outline&lt;/button&gt;<br>&lt;button class="<span>button button__disabled</span>"&gt;Disabled&lt;/button&gt;<br>&lt;button class="<span>button button__error</span>"&gt;Error&lt;/button&gt;</pre>
     </section>
 
     <section class="forms">
