@@ -21,14 +21,14 @@ $error-button-color: $red-dark;
         background: lighten($button-color, 4%);
         border-color: lighten($button-color, 4%);
     }
-    &__outline {
+    &--outline {
         background: transparent;
         color: $button-color;
         @include active {
             color: $white;
         }
     }
-    &__disabled {
+    &--disabled {
         border: 2px solid $disabled-button-color;
         background: $disabled-button-color;
         cursor: not-allowed;
@@ -37,8 +37,7 @@ $error-button-color: $red-dark;
             background: $disabled-button-color;
         }
     }
-    &__error {
-        @extend .button;
+    &--error {
         border: 2px solid $error-button-color;
         background: $error-button-color;
         @include active {

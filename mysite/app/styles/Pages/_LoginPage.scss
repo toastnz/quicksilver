@@ -14,11 +14,6 @@ Login Page
         padding: 3rem 3.6rem 4rem;
         box-shadow: $z2;
         border-top: 5px solid $primary;
-        &--lost {
-            #Email label {
-                @extend .fa-envelope;
-            }
-        }
         h4 {
             display: block;
             text-align: center;
@@ -77,16 +72,6 @@ Login Page
             width: calc(100% - 4rem);
         }
     }
-}
-
-#Password label {
-    @extend .fa;
-    @extend .fa-unlock-alt;
-}
-
-#Email label {
-    @extend .fa;
-    @extend .fa-user;
 }
 
 

@@ -1,187 +1,187 @@
-$border-color: #d6d8de;
-$active-border-color: $primary;
-
-.pageWrap {
-    margin-right: 0;
-    background: white;
-    transition: border 330ms $transition-standard, width 220ms $transition-standard;
-    float: right;
-    width: 100%;
-    border: 0 solid $grey-dark;
-    transition-delay: 120ms;
-}
-
-#typeSettings.visible + .pageWrap {
-    width: calc(100% - 239px);
-    @include media($xl) {
-        width: calc(100% - 439px);
-    }
-    border-left: 5rem solid $grey-dark;
-    border-right: 5rem solid $grey-dark;
-}
-
-html {
-    background: $grey-dark;
-}
-
-#typeSettings.visible {
-    transition-delay: 330ms;
-}
-
-#typeSettings {
-    width: 240px;
-    @include media($xl) {
-        width: 440px;
-    }
-    transition: all 330ms $transition-standard;
-    transform: translateX(-100%);
-    &.visible {
-        transform: translateX(0);
-        box-shadow: $z4;
-    }
-
-    .js-collapsible {
-        .fa {
-            transition: all 330ms $transition-standard;
-        }
-        &.expanded {
-            .fa {
-                transform: rotate(0) !important;
-            }
-        }
-    }
-
-    .collapsible {
-        backface-visibility: hidden;
-        position: relative;
-        overflow: hidden;
-        max-height: 0;
-        padding: 0 1rem;
-        margin-bottom: 0.2rem;
-        @include clearfix;
-        transition: all 330ms $transition-standard;
-        &.expanded {
-            padding: 1rem;
-            max-height: 100rem;
-            overflow: visible;
-        }
-    }
-
-    .headingWrap {
-        position: relative;
-        h6 {
-            cursor: pointer;
-            background: rgba($grey-light, 0.2);
-            color: $black-mid;
-            padding: 1.2rem;
-            margin-bottom: 0;
-            @include light;
-            font-size: 1.6rem;
-        }
-        .fa {
-            float: right;
-            right: 2rem;
-            font-size: 2.5rem;
-            margin-top: -0rem;
-            color: $primary;
-            transform: rotate(-90deg);
-        }
-    }
-
-    &.type-settings {
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        background: $white;
-        z-index: 9;
-        .type-settings__header {
-            color: $text;
-            box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
-            padding: 1rem 1rem 0.1rem;
-            h5 {
-                @include bold;
-                font-size: 2rem;
-            }
-        }
-        .scroll-wrap {
-            position: absolute;
-            top: 5.5rem;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            padding: 2rem 0;
-            overflow: auto;
-            button {
-                margin: 2rem 6%;
-                width: 86%;
-            }
-        }
-    }
-
-    .input-wrap {
-        position: relative;
-        width: calc(33.333% - 10px);
-        margin: 0 0.5rem 0;
-        display: block;
-        float: left;
-        min-width: 200px;
-        &__select:after {
-            //border-color: $active-border-color transparent transparent transparent;
-        }
-        select,
-        input[type="number"],
-        input[type="text"] {
-            width: 100%;
-            background: white;
-            padding: 2.4rem 5rem 0.7rem 0.8rem;
-            border: 1px solid $border-color;
-            margin-bottom: 0.7rem;
-            outline: none;
-            font-size: 18px;
-            font-weight: 400;
-            color: $black-mid;
-            &:active,
-            &:focus {
-                border-color: $active-border-color;
-                & + label {
-                    color: $active-border-color;
-                }
-            }
-        }
-        &__number,
-        &__text {
-            span {
-                position: absolute;
-                right: 1rem;
-                bottom: 3rem;
-                font-size: 1.8rem;
-                color: #A0A4AD;
-                font-weight: 400 !important;
-            }
-        }
-        &__colour {
-            display: none;
-        }
-        &__select {
-            margin-top: 0;
-            &:after {
-                right: 10%;
-            }
-            select {
-                padding: 2.4rem 3rem 0.7rem 0.8rem;
-            }
-        }
-        label {
-            position: absolute;
-            top: 0.6rem;
-            left: 0.8rem;
-            font-size: 0.9rem;
-            @include normal;
-            transition: all 120ms $transition-standard;
-        }
-        @include placeholder {
-            color: black;
-        }
-    }
-}
+//$border-color: #d6d8de;
+//$active-border-color: $primary;
+//
+//.pageWrap {
+//    margin-right: 0;
+//    background: white;
+//    transition: border 330ms $transition-standard, width 220ms $transition-standard;
+//    float: right;
+//    width: 100%;
+//    border: 0 solid $grey-dark;
+//    transition-delay: 120ms;
+//}
+//
+//#typeSettings.visible + .pageWrap {
+//    width: calc(100% - 239px);
+//    @include media($xl) {
+//        width: calc(100% - 439px);
+//    }
+//    border-left: 5rem solid $grey-dark;
+//    border-right: 5rem solid $grey-dark;
+//}
+//
+//html {
+//    background: $grey-dark;
+//}
+//
+//#typeSettings.visible {
+//    transition-delay: 330ms;
+//}
+//
+//#typeSettings {
+//    width: 240px;
+//    @include media($xl) {
+//        width: 440px;
+//    }
+//    transition: all 330ms $transition-standard;
+//    transform: translateX(-100%);
+//    &.visible {
+//        transform: translateX(0);
+//        box-shadow: $z4;
+//    }
+//
+//    .js-collapsible {
+//        .fa {
+//            transition: all 330ms $transition-standard;
+//        }
+//        &.expanded {
+//            .fa {
+//                transform: rotate(0) !important;
+//            }
+//        }
+//    }
+//
+//    .collapsible {
+//        backface-visibility: hidden;
+//        position: relative;
+//        overflow: hidden;
+//        max-height: 0;
+//        padding: 0 1rem;
+//        margin-bottom: 0.2rem;
+//        @include clearfix;
+//        transition: all 330ms $transition-standard;
+//        &.expanded {
+//            padding: 1rem;
+//            max-height: 100rem;
+//            overflow: visible;
+//        }
+//    }
+//
+//    .headingWrap {
+//        position: relative;
+//        h6 {
+//            cursor: pointer;
+//            background: rgba($grey-light, 0.2);
+//            color: $black-mid;
+//            padding: 1.2rem;
+//            margin-bottom: 0;
+//            @include light;
+//            font-size: 1.6rem;
+//        }
+//        .fa {
+//            float: right;
+//            right: 2rem;
+//            font-size: 2.5rem;
+//            margin-top: -0rem;
+//            color: $primary;
+//            transform: rotate(-90deg);
+//        }
+//    }
+//
+//    &.type-settings {
+//        position: fixed;
+//        left: 0;
+//        top: 0;
+//        bottom: 0;
+//        background: $white;
+//        z-index: 9;
+//        .type-settings__header {
+//            color: $text;
+//            box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.1);
+//            padding: 1rem 1rem 0.1rem;
+//            h5 {
+//                @include bold;
+//                font-size: 2rem;
+//            }
+//        }
+//        .scroll-wrap {
+//            position: absolute;
+//            top: 5.5rem;
+//            right: 0;
+//            bottom: 0;
+//            left: 0;
+//            padding: 2rem 0;
+//            overflow: auto;
+//            button {
+//                margin: 2rem 6%;
+//                width: 86%;
+//            }
+//        }
+//    }
+//
+//    .input-wrap {
+//        position: relative;
+//        width: calc(33.333% - 10px);
+//        margin: 0 0.5rem 0;
+//        display: block;
+//        float: left;
+//        min-width: 200px;
+//        &__select:after {
+//            //border-color: $active-border-color transparent transparent transparent;
+//        }
+//        select,
+//        input[type="number"],
+//        input[type="text"] {
+//            width: 100%;
+//            background: white;
+//            padding: 2.4rem 5rem 0.7rem 0.8rem;
+//            border: 1px solid $border-color;
+//            margin-bottom: 0.7rem;
+//            outline: none;
+//            font-size: 18px;
+//            font-weight: 400;
+//            color: $black-mid;
+//            &:active,
+//            &:focus {
+//                border-color: $active-border-color;
+//                & + label {
+//                    color: $active-border-color;
+//                }
+//            }
+//        }
+//        &__number,
+//        &__text {
+//            span {
+//                position: absolute;
+//                right: 1rem;
+//                bottom: 3rem;
+//                font-size: 1.8rem;
+//                color: #A0A4AD;
+//                font-weight: 400 !important;
+//            }
+//        }
+//        &__colour {
+//            display: none;
+//        }
+//        &__select {
+//            margin-top: 0;
+//            &:after {
+//                right: 10%;
+//            }
+//            select {
+//                padding: 2.4rem 3rem 0.7rem 0.8rem;
+//            }
+//        }
+//        label {
+//            position: absolute;
+//            top: 0.6rem;
+//            left: 0.8rem;
+//            font-size: 0.9rem;
+//            @include normal;
+//            transition: all 120ms $transition-standard;
+//        }
+//        @include placeholder {
+//            color: black;
+//        }
+//    }
+//}
