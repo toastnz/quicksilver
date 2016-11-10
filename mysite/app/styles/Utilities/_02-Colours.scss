@@ -1,21 +1,41 @@
+/*------------------------------------------------------------------
+Site wide colour variables
+------------------------------------------------------------------*/
 $yellow-light: #f1c40f;
 $yellow-dark: #f39c12;
+
 $green-light: #2ecc71;
 $green-dark: #27ae60;
+
 $red-light: #e74c3c;
 $red-dark: #c0392b;
+
 $pink-light: #ea148c;
 $pink-dark: #b7106d;
+
 $blue-light: #3498db;
 $blue-dark: #2980b9;
+
 $purple-light: #9b59b6;
 $purple-dark: #8e44ad;
+
 $white: #ffffff;
 $off-white: #f8f6f7;
+
 $grey-light: #dddddd;
 $grey-mid: #7a7a7a;
 $grey-dark: #333333;
-$black-light: #58585b;
-$black-mid: #19191a;
-$black-dark: #000000;
+
+$black-light: #19191a;
 $black: #000000;
+$black-dark: #000000;
+
+/*------------------------------------------------------------------
+Font Colurs
+------------------------------------------------------------------*/
+
+$text: $black;
+$text-light: $black-light;
+$primary: $blue-dark;
+$secondary: $green-dark;
+$tertiary: $blue-light;

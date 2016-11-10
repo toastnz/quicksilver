@@ -1,0 +1,67 @@
+/*------------------------------------------------------------------
+Font Awesome
+------------------------------------------------------------------*/
+$base: 10px;
+
+@import "../../../node_modules/font-awesome/scss/font-awesome";
+
+/*------------------------------------------------------------------
+Font Weights
+------------------------------------------------------------------*/
+
+@mixin ultra-light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin light {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin regular {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+@mixin semi {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+@mixin bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+@mixin extra-bold {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+/*------------------------------------------------------------------
+Html & Body
+------------------------------------------------------------------*/
+
+html, body {
+    font-size: $base * 0.8;
+    @include media($md) {
+        font-size: $base * 0.85;
+    }
+    @include media($lg) {
+        font-size: $base * 0.9;
+    }
+    @include media($xl) {
+        font-size: $base;
+    }
+    * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    @include regular;
+}
+
+::selection {
+    color: $white;
+    background: $primary;
+}

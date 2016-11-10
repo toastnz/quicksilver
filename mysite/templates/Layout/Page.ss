@@ -1,1 +1,3 @@
-$Content
+<div class="innerWrap">
+    $Content
+</div>

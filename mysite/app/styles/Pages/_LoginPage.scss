@@ -5,18 +5,20 @@ Login Page
 .login-wrap {
     @include full;
     position: fixed;
-    background: linear-gradient(to left, #abbaab, $white);
+    background: #2F3031;
+    background: radial-gradient(circle, #484848, #2F3031);
     &__content {
         background: $white;
         @include vertical-center;
         width: 90%;
         max-width: 400px;
-        padding: 3rem 3.6rem 4rem;
-        box-shadow: $z2;
+        padding: 0 3.6rem 4rem;
+        box-shadow: $z5;
         border-top: 5px solid $primary;
         h4 {
             display: block;
             text-align: center;
+            margin-bottom: 1rem;
         }
         .input-wrap__actions {
             input {
@@ -25,14 +27,10 @@ Login Page
             }
         }
         .logo-wrapper {
+            position: relative;
             width: 100%;
             text-align: center;
-            margin-bottom: 2rem;
-            svg {
-                max-width: 90%;
-                height: auto;
-                transition: all 220ms $transition-deceleration;
-            }
+            margin: 3rem auto;
         }
         #BackToLogin,
         #ForgotPassword {
@@ -40,11 +38,9 @@ Login Page
             margin: 2rem -3.6rem -4rem;
             width: calc(100% + 7.2rem);
             padding: 1rem;
-            @include normal;
             text-align: center;
             a {
                 color: $text;
-
             }
         }
     }

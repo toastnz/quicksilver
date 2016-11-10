@@ -1,0 +1,71 @@
+/*------------------------------------------------------------------
+Typography settings
+------------------------------------------------------------------*/
+
+$base: 10px;
+
+.h1, h1 {
+    font-size: 4.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h2, h2 {
+    font-size: 3.6rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h3, h3 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h4, h4 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h5, h5 {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.h6, h6 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.p, p, .li, li, label, input {
+    font-size: 1.6rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+/*------------------------------------------------------------------
+Font Colurs
+------------------------------------------------------------------*/
+
+$text: $black;
+$text-light: $black-light;
+$primary: $blue-dark;
+$secondary: $green-dark;
+$tertiary: $blue-light;
+
+/*------------------------------------------------------------------
+Layout and Constraits
+------------------------------------------------------------------*/
+
+.innerWrap {
+    padding: 0 2rem;
+    max-width: 1140px;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    @include clearfix;
+}
+

@@ -10,18 +10,21 @@ $error-button-color: $red-dark;
     color: $white;
     background: $button-color;
     border: 2px solid $button-color;
-    @include font(p);
-    margin: 0.6rem 0 2rem;
-    border-radius: .3rem;
+    margin: 0.6rem 1rem 2rem 0;
+    border-radius: 0;
     padding: 0.8em 2.4em;
     cursor: pointer;
     outline: none;
-    transition: all 120ms $transition-standard;
+    transition: all 111ms $transition-standard;
+    text-decoration: none;
+    display: inline-block;
+    @extend .p;
+    @include semi;
     @include active {
         background: lighten($button-color, 4%);
         border-color: lighten($button-color, 4%);
     }
-    &--outline {
+    &--bordered {
         background: transparent;
         color: $button-color;
         @include active {
@@ -38,6 +41,7 @@ $error-button-color: $red-dark;
         }
     }
     &--error {
+        @extend .button;
         border: 2px solid $error-button-color;
         background: $error-button-color;
         @include active {
