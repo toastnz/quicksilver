@@ -12,13 +12,13 @@
 
         <h1 class="subtitle"><span>TYPOGRAPHY</span></h1>
 
-        <h1>Heading 1 - Lorem ipsum dolor sit amet</h1>
-        <h2>Heading 2 - Lorem ipsum dolor sit amet</h2>
-        <h3>Heading 3 - Lorem ipsum dolor sit amet</h3>
-        <h4>Heading 4 - Lorem ipsum dolor sit amet</h4>
-        <h5>Heading 5 - Lorem ipsum dolor sit amet</h5>
-        <h6>Heading 6 - Lorem ipsum dolor sit amet</h6>
-        <p>Paragraph - Lorem ipsum dolor sit amet</p>
+        <h1>Heading 1 - Lorem ipsum dolor sit</h1>
+        <h2>Heading 2 - Lorem ipsum dolor sit</h2>
+        <h3>Heading 3 - Lorem ipsum dolor sit</h3>
+        <h4>Heading 4 - Lorem ipsum dolor sit</h4>
+        <h5>Heading 5 - Lorem ipsum dolor sit</h5>
+        <h6>Heading 6 - Lorem ipsum dolor sit</h6>
+        <p>Paragraph - Lorem ipsum dolor sit</p>
 
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             <a href="">Nam egestas</a>, diam sit amet faucibus dictum, turpis libero porttitor diam, id pellentesque orci

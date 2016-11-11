@@ -3,6 +3,7 @@ WYSIWYG Styles
 ------------------------------------------------------------------*/
 
 .wysiwyg {
+    color: $text;
     .subtitle {
         color: $primary;
         text-align: center;
@@ -31,6 +32,9 @@ WYSIWYG Styles
             position: relative;
             z-index: 2;
         }
+    }
+    h1, h2, h3, h4, h5, h6 {
+        @include bold;
     }
     hr {
         margin: 1rem auto 2rem;
@@ -82,5 +86,11 @@ WYSIWYG Styles
             margin: 0;
             @extend .h5;
         }
+    }
+    .colour--primary {
+        color: $primary;
+    }
+    .colour--secondary {
+        color: $secondary;
     }
 }

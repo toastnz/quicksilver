@@ -5,37 +5,37 @@ Typography settings
 $base: 10px;
 
 .h1, h1 {
-    font-size: 4.4rem;
+    font-size: 6rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .h2, h2 {
-    font-size: 3.6rem;
+    font-size: 5rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .h3, h3 {
-    font-size: 3.2rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .h4, h4 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .h5, h5 {
-    font-size: 2.4rem;
+    font-size: 3rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
 
 .h6, h6 {
-    font-size: 2rem;
+    font-size: 2.5rem;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
@@ -45,16 +45,6 @@ $base: 10px;
     line-height: 1.2;
     margin-bottom: 1rem;
 }
-
-/*------------------------------------------------------------------
-Font Colurs
-------------------------------------------------------------------*/
-
-$text: $black;
-$text-light: $black-light;
-$primary: $blue-dark;
-$secondary: $green-dark;
-$tertiary: $blue-light;
 
 /*------------------------------------------------------------------
 Layout and Constraits
