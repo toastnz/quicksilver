@@ -15,9 +15,12 @@ $box-handle: $primary;
 $box-background-active: $grey-dark;
 $box-background-inactive: $grey-light;
 
+input, select, textarea {
+    -webkit-appearance: none;
+}
+
 %input {
     outline: none;
-    -webkit-appearance: none;
     color: $input-text-colour;
     border: 1px solid $input-border-colour;
     width: 100%;
@@ -25,8 +28,8 @@ $box-background-inactive: $grey-light;
     padding: 1rem 1rem;
     border-radius: 0;
     margin: 0.6rem 0 2rem;
-    @include font(p);
-    transition: all 120ms $transition-standard;
+    transition: all 111ms $transition-standard;
+    @extend .p;
     @include placeholder {
         color: $input-placeholder-colour;
     }
@@ -41,42 +44,69 @@ $box-background-inactive: $grey-light;
     float: left;
     width: 100%;
     label {
-        @include font(p);
         margin: 0.8rem 0 0.3rem;
         display: block;
     }
-    &__half {
+    &--half {
         width: 49%;
         margin-right: 2%;
         &--last {
             Margin-right: 0;
         }
+        @include media($md, max) {
+            width: 100%;
+            margin-right: 0;
+        }
     }
-    &__actions {
+    &--third {
+        width: 32%;
+        margin-right: 2%;
+        &--last {
+            Margin-right: 0;
+        }
+        @include media($md, max) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    &--quarter {
+        width: 23.5%;
+        margin-right: 2%;
+        &--last {
+            Margin-right: 0;
+        }
+        @include media($md, max) {
+            width: 100%;
+            margin-right: 0;
+        }
+    }
+    &__actions,
+    &--actions {
         @extend .input-wrap;
         .action {
             @extend .button;
         }
     }
-    &__text {
+    &--text {
         @extend .input-wrap;
         input {
             @extend %input;
         }
     }
-    &__number {
+    &--numeric,
+    &--number {
         @extend .input-wrap;
         input {
             @extend %input;
         }
     }
-    &__email {
+    &--email {
         @extend .input-wrap;
         input {
             @extend %input;
         }
     }
-    &__textarea {
+    &--textarea {
         @extend .input-wrap;
         textarea {
             @extend %input;
@@ -84,7 +114,8 @@ $box-background-inactive: $grey-light;
             min-height: 160px;
         }
     }
-    &__select {
+    &--dropdown,
+    &--select {
         @extend .input-wrap;
         select {
             @extend %input;
@@ -100,12 +131,16 @@ $box-background-inactive: $grey-light;
             right: 1.5%;
         }
     }
-    &__checkbox {
+    &--checkbox {
         @extend .input-wrap;
         label {
 
         }
     }
+}
+
+.message.validation {
+    display: none;
 }
 
 /*------------------------------------------------------------------

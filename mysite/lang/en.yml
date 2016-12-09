@@ -10,3 +10,4 @@ en:
   SiteTree:
     PLURALNAME: Pages
     SINGULARNAME: Page
+    DEFAULTHOMECONTENT: ''

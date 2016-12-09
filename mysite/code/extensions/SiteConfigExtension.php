@@ -9,11 +9,12 @@
  * @property string PostalAddress
  * @property string Facebook
  * @property string LinkedIn
- * @property string Twitter
+ * @property string Instagram
+ * @property string TwitterHandle
  * @property string MailChimpAPI
  * @property string MailChimpListID
  * @property string MailChimpSuccessMessage
- * @property string TwitterHandle
+ * @property string GoogleMapsApiKey
  */
 class SiteConfigExtension extends DataExtension
 {
@@ -30,7 +31,8 @@ class SiteConfigExtension extends DataExtension
         'TwitterHandle' => 'Varchar(255)',
         'MailChimpAPI' => 'Varchar(255)',
         'MailChimpListID' => 'Varchar(255)',
-        'MailChimpSuccessMessage' => 'Text'
+        'MailChimpSuccessMessage' => 'Text',
+        'GoogleMapsApiKey' => 'Varchar(100)'
     );
 
     /**
@@ -68,8 +70,8 @@ class SiteConfigExtension extends DataExtension
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', array(
             HeaderField::create('', 'Company Details'),
-            Textfield::create('Phone', 'Phone Number'),
-            Textfield::create('Email', 'Public Email Address'),
+            TextField::create('Phone', 'Phone Number'),
+            TextField::create('Email', 'Public Email Address'),
             $address,
             $postalAddress,
             TextField::create('Facebook', 'Facebook'),

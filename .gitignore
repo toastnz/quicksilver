@@ -13,11 +13,7 @@ _resampled
 /.idea/
 /gridfieldextensions/
 /betterbuttons/
-/silverstripe-google-analytics/
-/silverstripe-ipsum/
-/silverstripe-cacheinclude/
 /sortablegridfield/
-/kickassets/
 /dropzone/
 /open-graph-meta/
 /betternavigator/
@@ -26,12 +22,6 @@ _resampled
 /fill-form/
 /twitter-card-meta/
 /silverstripe-cache/
-/focuspoint
 /reports
 /siteconfig
-/silvershop
-/sqlquerylist
-/omnipay
-/listsorter
-/email-helpers
-/versioned-gridfield
+/simple-styleguide
