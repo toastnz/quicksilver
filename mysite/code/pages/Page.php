@@ -4,20 +4,25 @@
  * Class Page
  *
  */
-class Page extends SiteTree {
-    public function getCMSFields() {
+class Page extends SiteTree
+{
+    public function getCMSFields()
+    {
         $fields = parent::getCMSFields();
         return $fields;
     }
 
-    public function getIsLive() {
+    public function getIsLive()
+    {
         return Director::isLive();
     }
 
 }
 
-class Page_Controller extends ContentController {
-    public function init() {
+class Page_Controller extends ContentController
+{
+    public function init()
+    {
         parent::init();
         Requirements::combine_files(
             'output.js',
@@ -28,7 +33,8 @@ class Page_Controller extends ContentController {
     }
 
 
-    public function StyleguideForm() {
+    public function StyleguideForm()
+    {
         $fields = new FieldList(
             TextField::create('SimpleText', 'Text Field')->addExtraClass('input-wrap--half'),
             EmailField::create('Email', "Email Field")->addExtraClass('input-wrap--half input-wrap--half--last'),

@@ -7,16 +7,16 @@ class SubscriptionForm extends Form
 {
     /**
      * @param Controller $controller
-     * @param String $name
-     * @param array $arguments
+     * @param String     $name
+     * @param array      $arguments
      */
     public function __construct($controller, $name, $arguments = array())
     {
         /** =========================================
          * @var EmailField $emailField
-         * @var TextField $nameField
+         * @var TextField  $nameField
          * @var FormAction $submit
-         * @var Form $form
+         * @var Form       $form
         ===========================================*/
 
         /** -----------------------------------------
@@ -82,7 +82,7 @@ class SubscriptionForm extends Form
     {
         /** =========================================
          * @var SiteConfigExtension $siteConfig
-         * @var Form $form
+         * @var Form                $form
         ===========================================*/
 
         /** Set the form data to session */
@@ -147,7 +147,7 @@ class SubscriptionForm extends Form
         /** Clear the form state */
         Session::clear('FormInfo.Form_' . $this->name . '.data');
 
-        $message = $siteConfig->MailChimpSuccessMessage ? : 'Your subscription has been received, you will be sent a confirmation email shortly.';
+        $message = $siteConfig->MailChimpSuccessMessage ?: 'Your subscription has been received, you will be sent a confirmation email shortly.';
 
         $this->setMessage($message, 'success');
 
