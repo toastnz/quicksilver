@@ -6,8 +6,6 @@
             ed.addButton('youtube', {
                 'title'  : 'Embedd youtube video',
                 'onclick': function () {
-                    console.log('poop');
-
                     function get_user_name($) {
                         var name;
                         name = prompt("Please insert a ID (e.g. PfBVIHgQbYk)");

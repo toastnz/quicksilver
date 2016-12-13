@@ -4,7 +4,6 @@ define('SS_DATABASE_SERVER', 'localhost');
 define('SS_DATABASE_USERNAME', 'USERNAME');
 define('SS_DATABASE_PASSWORD', 'PASS');
 define('SS_DATABASE_NAME', 'DBNAME');
-//define('SS_DATABASE_CHOOSE_NAME', 2);
 
 define('SS_ENVIRONMENT_TYPE', 'dev');
 define('SS_ERROR_LOG', '/silverstripe.log');
@@ -12,10 +11,8 @@ define('SS_ERROR_LOG', '/silverstripe.log');
 define('SS_DEFAULT_ADMIN_USERNAME', 'USERNAME');
 define('SS_DEFAULT_ADMIN_PASSWORD', 'PASSWORD');
 
-ini_set('display_errors', 1);
-
 global $_FILE_TO_URL_MAPPING;
-$_FILE_TO_URL_MAPPING['/var/www/'] = 'http://127.0.0.1';
+$_FILE_TO_URL_MAPPING['/var/www/'] = 'http://localhost/';
 
 if (defined('SS_ENVIRONMENT_TYPE') && SS_ENVIRONMENT_TYPE != 'live') {
     // turn on display_errors if we are in dev

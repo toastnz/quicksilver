@@ -15,6 +15,8 @@
  * @property string MailChimpListID
  * @property string MailChimpSuccessMessage
  * @property string GoogleMapsApiKey
+ * @property string GoogleTrackingID
+ * @property string GoogleTagManagerID
  */
 class SiteConfigExtension extends DataExtension
 {
@@ -32,7 +34,9 @@ class SiteConfigExtension extends DataExtension
         'MailChimpAPI' => 'Varchar(255)',
         'MailChimpListID' => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
-        'GoogleMapsApiKey' => 'Varchar(100)'
+        'GoogleMapsApiKey' => 'Varchar(100)',
+        'GoogleTrackingID' => 'Varchar(100)',
+        'GoogleTagManagerID' => 'Varchar(100)',
     );
 
     /**
@@ -50,7 +54,7 @@ class SiteConfigExtension extends DataExtension
         /** =========================================
          * @var TextareaField $address
          * @var TextareaField $postalAddress
-         * @var TextField $mailChimpAPI
+         * @var TextField     $mailChimpAPI
          * @var TextareaField $mailChimpSuccessMessage
         ===========================================*/
 
@@ -80,12 +84,11 @@ class SiteConfigExtension extends DataExtension
             TextField::create('TwitterHandle', 'Twitter Handle')
         ));
 
-
         /** -----------------------------------------
          * Subscription
          * ----------------------------------------*/
 
-        $mailChimpAPI = TextField::create('MailChimpAPI', 'API Key');
+        $mailChimpAPI            = TextField::create('MailChimpAPI', 'API Key');
         $mailChimpSuccessMessage = TextareaField::create('MailChimpSuccessMessage', 'Success Message (optional)');
 
         $mailChimpAPI->setRightTitle('<a href="https://us9.admin.mailchimp.com/account/api-key-popup/" target="_blank"><i>How do I get my MailChimp API Key?</i></a>');
@@ -104,6 +107,19 @@ class SiteConfigExtension extends DataExtension
             $mailChimpSuccessMessage
         ));
 
+        /** -----------------------------------------
+         * SEO
+         * ----------------------------------------*/
+
+        $fields->findOrMakeTab('Root.Settings.SEO');
+
+        $fields->addFieldsToTab('Root.Settings.SEO', [
+            HeaderField::create('', 'Google Tracking'),
+            TextField::create('GoogleTrackingID', 'Tracking ID')
+                ->setAttribute('placeholder', 'UA-XXXXXXXX-X'),
+            TextField::create('GoogleTagManagerID', 'Tag Manager ID')
+                ->setAttribute('placeholder', 'GTM-XXXXXX')
+        ]);
     }
 
     /**

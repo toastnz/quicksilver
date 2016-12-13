@@ -45,30 +45,30 @@ if (!Director::isLive()) {
 
 $formats = [
     [
-        'title'          => 'Colour - Primary',
-        'inline'         => 'span',
-        'classes'        => 'colour--primary',
-        'wrapper'        => true,
+        'title' => 'Colour - Primary',
+        'inline' => 'span',
+        'classes' => 'colour--primary',
+        'wrapper' => true,
         'merge_siblings' => false
     ],
     [
-        'title'          => 'Colour - Secondary',
-        'inline'         => 'span',
-        'classes'        => 'colour--secondary',
-        'wrapper'        => true,
+        'title' => 'Colour - Secondary',
+        'inline' => 'span',
+        'classes' => 'colour--secondary',
+        'wrapper' => true,
         'merge_siblings' => false
     ],
     [
-        'title'    => 'Button - Default',
+        'title' => 'Button - Default',
         'selector' => 'a, button',
-        'classes'  => 'button',
-        'wrapper'  => false,
+        'classes' => 'button',
+        'wrapper' => false,
     ],
     [
-        'title'    => 'Button - Bordered',
+        'title' => 'Button - Bordered',
         'selector' => 'a, button',
-        'classes'  => 'button button--bordered',
-        'wrapper'  => false,
+        'classes' => 'button button--bordered',
+        'wrapper' => false,
     ]
 ];
 
