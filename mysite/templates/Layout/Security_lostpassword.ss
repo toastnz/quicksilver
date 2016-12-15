@@ -3,7 +3,7 @@
         <div class="logo-wrapper">
             $SVG('logo')
         </div>
-        <h4>Lost your password</h4>
+        <h5>Lost your password</h5>
         <br>
         $Form
         <div class="clearfix"></div>

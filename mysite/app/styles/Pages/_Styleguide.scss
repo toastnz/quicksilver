@@ -1,0 +1,33 @@
+/*------------------------------------------------------------------
+Styleguide
+------------------------------------------------------------------*/
+
+.subtitle {
+    color: $primary;
+    text-align: center;
+    display: block;
+    margin: 3rem auto;
+    @include bold;
+    @include media($md) {
+        margin: 6rem auto;
+    }
+    @include clearfix;
+    text-transform: uppercase;
+    position: relative;
+    font-size: 2rem;
+    &:before {
+        @include pseudo;
+        @include vertical-align;
+        left: 0;
+        width: 50%;
+        height: 2px;
+        background: $primary;
+    }
+    span {
+        background: $white;
+        display: inline-block;
+        padding: 0 1rem;
+        position: relative;
+        z-index: 2;
+    }
+}

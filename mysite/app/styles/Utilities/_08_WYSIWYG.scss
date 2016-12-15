@@ -4,35 +4,6 @@ WYSIWYG Styles
 
 .wysiwyg {
     color: $text;
-    .subtitle {
-        color: $primary;
-        text-align: center;
-        display: block;
-        margin: 3rem auto;
-        @include bold;
-        @include media($md) {
-            margin: 6rem auto;
-        }
-        @include clearfix;
-        text-transform: uppercase;
-        position: relative;
-        font-size: 2rem;
-        &:before {
-            @include pseudo;
-            @include vertical-align;
-            left: 0;
-            width: 50%;
-            height: 2px;
-            background: $primary;
-        }
-        span {
-            background: $white;
-            display: inline-block;
-            padding: 0 1rem;
-            position: relative;
-            z-index: 2;
-        }
-    }
     h1, h2, h3, h4, h5, h6 {
         @include bold;
     }
@@ -56,7 +27,6 @@ WYSIWYG Styles
             }
         }
     }
-
     p, li {
         margin: 1.6rem 0;
         line-height: 1.6;
@@ -69,7 +39,6 @@ WYSIWYG Styles
             }
         }
     }
-
     i, em {
         font-style: italic;
     }
@@ -77,7 +46,6 @@ WYSIWYG Styles
     strong, b {
         font-weight: bold;
     }
-
     blockquote {
         margin: 3rem;
         padding: 0 2rem;

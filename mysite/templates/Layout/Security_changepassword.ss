@@ -2,7 +2,7 @@
     <div class="login-wrap__content">
         <div class="logo-wrapper">
             $SVG('logo')
-            <h4>Reset your password</h4>
+            <h5>Reset your password</h5>
         </div>
         <br>
         $Form

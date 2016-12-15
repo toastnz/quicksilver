@@ -2,5 +2,5 @@
  Main Application Container
  ------------------------------------------------------------------*/
 
-
+console.log('hello world.');
 

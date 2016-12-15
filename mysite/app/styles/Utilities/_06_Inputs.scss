@@ -37,7 +37,7 @@ input, select, textarea {
         border-color: $active-input-border-colour;
     }
 }
-
+form{
 .input-wrap {
     position: relative;
     display: block;
@@ -137,6 +137,7 @@ input, select, textarea {
 
         }
     }
+}
 }
 
 .message.validation {
