@@ -39,12 +39,24 @@ class Page_Controller extends ContentController
             TextField::create('SimpleText', 'Text Field')->addExtraClass('input-wrap--half'),
             EmailField::create('Email', "Email Field")->addExtraClass('input-wrap--half input-wrap--half--last'),
             NumericField::create('Number', 'Number Field')->addExtraClass('input-wrap--half'),
+            PasswordField::create('Password', 'Password Field')->addExtraClass('input-wrap--half input-wrap--half--last'),
+            CountryDropdownField::create('Country', 'Country dropdown')->addExtraClass('input-wrap--half'),
             DropdownField::create('Dropdown', 'Normal dropdown', [
                 '1' => 'One option',
                 '2' => 'Two option',
                 '3' => 'Three option',
-                '4' => 'Four option',
             ])->addExtraClass('input-wrap--half input-wrap--half--last'),
+            OptionsetField::create("Foobar", "OptionsetField", [
+                "1" => "Option 1",
+                "2" => "Option 2",
+                "3" => "Option 3",
+            ], "1")->addExtraClass('input-wrap--half'),
+            CheckboxSetField::create(
+                "topics", "CheckboxSetField", [
+                "1" => "Option 1",
+                "2" => "Option 2",
+                "3" => "Option 3",
+            ], "1")->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextField::create('SimpleText2', 'Text Field Third')->addExtraClass('input-wrap--third'),
             TextField::create('SimpleText3', 'Text Field Third')->addExtraClass('input-wrap--third'),
             TextField::create('SimpleText4', 'Text Field Third')->addExtraClass('input-wrap--third input-wrap--third--last'),

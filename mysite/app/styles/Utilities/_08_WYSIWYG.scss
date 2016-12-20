@@ -56,9 +56,9 @@ WYSIWYG Styles
         }
     }
     .colour--primary {
-        color: $primary;
+        color: $primary !important;
     }
     .colour--secondary {
-        color: $secondary;
+        color: $secondary !important;
     }
 }
