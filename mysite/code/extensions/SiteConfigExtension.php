@@ -21,22 +21,22 @@
 class SiteConfigExtension extends DataExtension
 {
     private static $db = array(
-        'Phone' => 'Varchar(255)',
-        'Email' => 'Varchar(255)',
-        'ContactFormEmail' => 'Varchar(255)',
-        'Address' => 'Text',
-        'PostalAddress' => 'Text',
-        'Facebook' => 'Varchar(255)',
-        'LinkedIn' => 'Varchar(255)',
-        'Pinterest' => 'Varchar(255)',
-        'Instagram' => 'Varchar(255)',
-        'TwitterHandle' => 'Varchar(255)',
-        'MailChimpAPI' => 'Varchar(255)',
-        'MailChimpListID' => 'Varchar(255)',
+        'Phone'                   => 'Varchar(255)',
+        'Email'                   => 'Varchar(255)',
+        'ContactFormEmail'        => 'Varchar(255)',
+        'Address'                 => 'Text',
+        'PostalAddress'           => 'Text',
+        'Facebook'                => 'Varchar(255)',
+        'LinkedIn'                => 'Varchar(255)',
+        'Pinterest'               => 'Varchar(255)',
+        'Instagram'               => 'Varchar(255)',
+        'TwitterHandle'           => 'Varchar(255)',
+        'MailChimpAPI'            => 'Varchar(255)',
+        'MailChimpListID'         => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
-        'GoogleMapsApiKey' => 'Varchar(100)',
-        'GoogleTrackingID' => 'Varchar(100)',
-        'GoogleTagManagerID' => 'Varchar(100)',
+        'GoogleMapsApiKey'        => 'Varchar(100)',
+        'GoogleTrackingID'        => 'Varchar(100)',
+        'GoogleTagManagerID'      => 'Varchar(100)',
     );
 
     /**
@@ -74,14 +74,14 @@ class SiteConfigExtension extends DataExtension
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', array(
             HeaderField::create('', 'Company Details'),
-            TextField::create('Phone', 'Phone Number'),
-            TextField::create('Email', 'Public Email Address'),
+            TextField::create('Phone', 'Phone Number')->addExtraClass('input-wrap--half'),
+            TextField::create('Email', 'Public Email Address')->addExtraClass('input-wrap--half input-wrap--half--last'),
             $address,
             $postalAddress,
-            TextField::create('Facebook', 'Facebook'),
-            TextField::create('LinkedIn', 'LinkedIn'),
-            TextField::create('Pinterest', 'Pinterest'),
-            TextField::create('TwitterHandle', 'Twitter Handle')
+            TextField::create('Facebook', 'Facebook')->addExtraClass('input-wrap--half'),
+            TextField::create('LinkedIn', 'LinkedIn')->addExtraClass('input-wrap--half input-wrap--half--last'),
+            TextField::create('Pinterest', 'Pinterest')->addExtraClass('input-wrap--half'),
+            TextField::create('TwitterHandle', 'Twitter Handle')->addExtraClass('input-wrap--half input-wrap--half--last')
         ));
 
         /** -----------------------------------------

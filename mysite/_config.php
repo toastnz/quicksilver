@@ -45,37 +45,40 @@ if (!Director::isLive()) {
 
 $formats = [
     [
-        'title' => 'Colour - Primary',
-        'inline' => 'span',
-        'classes' => 'colour--primary',
-        'wrapper' => true,
+        'title'          => 'Colour - Primary',
+        'inline'         => 'span',
+        'classes'        => 'colour--primary',
+        'styles'         => ['color' => '#2980b9'],
+        'wrapper'        => true,
         'merge_siblings' => false
     ],
     [
-        'title' => 'Colour - Secondary',
-        'inline' => 'span',
-        'classes' => 'colour--secondary',
-        'wrapper' => true,
+        'title'          => 'Colour - Secondary',
+        'inline'         => 'span',
+        'classes'        => 'colour--secondary',
+        'styles'         => ['color' => '#27ae60'],
+        'wrapper'        => true,
         'merge_siblings' => false
     ],
     [
-        'title' => 'Button - Default',
+        'title'    => 'Button - Default',
         'selector' => 'a, button',
-        'classes' => 'button',
-        'wrapper' => false,
+        'classes'  => 'button',
+        'wrapper'  => false,
     ],
     [
-        'title' => 'Button - Bordered',
+        'title'    => 'Button - Bordered',
         'selector' => 'a, button',
-        'classes' => 'button button--bordered',
-        'wrapper' => false,
+        'classes'  => 'button button--bordered',
+        'wrapper'  => false,
     ]
 ];
 
 HtmlEditorConfig::get('cms')->setOption('style_formats', $formats);
 HtmlEditorConfig::get('cms')->setOption('theme_advanced_blockformats', 'h1,h2,h3,h4,h5,h6,p');
-HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect', 'separator', 'bullist', 'numlist',
-    'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'image', 'separator', 'sslink', 'unlink',
-    'separator', 'bold', 'italic', 'underline', 'blockquote');
-HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'code');
-HtmlEditorConfig::get('cms')->setButtonsForLine(3, '');
+HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect', 'separator', 'bullist', 'numlist', 'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'image', 'separator', 'sslink', 'unlink', 'separator', 'bold', 'italic', 'underline', 'blockquote', 'hr');
+HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'code', 'video');
+HtmlEditorConfig::get('cms')->setButtonsForLine(3);
+
+HtmlEditorConfig::get('cms')->enablePlugins(array('video' => '../../../mysite/code/tinymce/video.js'));
+
