@@ -28,10 +28,17 @@ class SVGTemplate extends ViewableData {
      */
     private static $default_extra_classes = array();
 
+    protected $extra_classes = array();
+
     /**
      * @var string
      */
-    private $path;
+    private $name;
+
+    /**
+     * @var string
+     */
+    protected $path;
 
     /**
      * @var string
@@ -48,6 +55,8 @@ class SVGTemplate extends ViewableData {
      */
     private $height;
 
+    protected $out;
+
     /**
      * @var array
      */
@@ -56,14 +65,55 @@ class SVGTemplate extends ViewableData {
     /**
      * @param string $name
      * @param string $id
+     * @param string $basePath
      */
-    public function __construct($name, $id = '') {
-        $this->name = $name;
+    public function __construct($name, $id = '', $basePath = '') {
+        $this->setName($name);
         $this->id = $id;
-        $this->extra_classes = $this->stat('default_extra_classes');
-        $this->extra_classes[] = 'svg-' . $this->name;
+        $this->setExtraClasses([]);
+        $this->setPath($basePath);
         $this->out = new DOMDocument();
         $this->out->formatOutput = true;
+    }
+
+    /**
+     * @param string $name
+     * @return $this
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    public function setPath($path)
+    {
+        if (!empty($path)) {
+            $this->path = $path;
+        } else {
+            $this->path = $this->stat('base_path');
+        }
+    }
+
+    public function getPath()
+    {
+        return $this->path;
+    }
+
+    public function setExtraClasses($extraClasses = array())
+    {
+        $classes = $this->stat('default_extra_classes');
+        $classes[] = 'svg-' . $this->name;
+        if (!empty($extraClasses)) {
+            $classes = array_merge($classes, $extraClasses);
+        }
+        $this->extra_classes = $classes;
+    }
+
+    public function getExtraClasses()
+    {
+        return $this->extra_classes;
     }
 
     /**
@@ -119,7 +169,7 @@ class SVGTemplate extends ViewableData {
      */
     private function process($filePath) {
         if (file_exists($filePath)) {
-            $out = new DOMDocument();
+            $out = $this->out;
             $out->load($filePath);
             $root = $out->documentElement;
             if ($this->fill) {
@@ -131,8 +181,8 @@ class SVGTemplate extends ViewableData {
             if ($this->height) {
                 $root->setAttribute('height', $this->height . 'px');
             }
-            if ($this->extra_classes) {
-                $root->setAttribute('class', implode(' ', $this->extra_classes));
+            if ($this->getExtraClasses()) {
+                $root->setAttribute('class', implode(' ', $this->getExtraClasses()));
             }
             foreach ($out->getElementsByTagName('svg') as $element) {
                 if ($this->id) {
@@ -155,7 +205,7 @@ class SVGTemplate extends ViewableData {
      */
     public function forTemplate() {
         $path = BASE_PATH . DIRECTORY_SEPARATOR .
-                $this->stat('base_path') . DIRECTORY_SEPARATOR .
+                $this->getPath() . DIRECTORY_SEPARATOR .
                 $this->name .
                 '.' . $this->stat('extension');
 
