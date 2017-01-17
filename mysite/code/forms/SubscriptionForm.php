@@ -10,7 +10,7 @@ class SubscriptionForm extends Form
      * @param String     $name
      * @param array      $arguments
      */
-    public function __construct($controller, $name, $arguments = array())
+    public function __construct($controller, $name, $arguments = [])
     {
         /** =========================================
          * @var EmailField $emailField
@@ -99,27 +99,27 @@ class SubscriptionForm extends Form
             $mailChimp = new \Drewm\MailChimp($siteConfig->MailChimpAPI);
 
             // create merge vars
-            $mergeVars = array();
+            $mergeVars = [];
 
             $mergeVars['FNAME'] = $data['Name'];
 
-            $result = $mailChimp->call('lists/subscribe', array(
-                'id' => $listID,
-                'email' => array(
+            $result = $mailChimp->call('lists/subscribe', [
+                'id'         => $listID,
+                'email'      => [
                     'email' => $data['Email']
-                ),
+                ],
                 'merge_vars' => $mergeVars
-            ));
+            ]);
 
         } else {
             /** If not, redirect back and display an error. */
             $this->setMessage('Missing API key, or List ID', 'danger');
 
             if ($this->request->isAjax()) {
-                return json_encode(array(
-                    'error' => true,
+                return json_encode([
+                    'error'   => true,
                     'message' => 'Missing API key, or List ID'
-                ));
+                ]);
             } else {
                 return $this->controller->redirectBack();
             }
@@ -134,10 +134,10 @@ class SubscriptionForm extends Form
                 $this->setMessage($result['error'], 'danger');
 
                 if ($this->request->isAjax()) {
-                    return json_encode(array(
-                        'error' => true,
+                    return json_encode([
+                        'error'   => true,
                         'message' => $result['error']
-                    ));
+                    ]);
                 } else {
                     return $this->controller->redirectBack();
                 }
@@ -152,10 +152,10 @@ class SubscriptionForm extends Form
         $this->setMessage($message, 'success');
 
         if ($this->request->isAjax()) {
-            return json_encode(array(
+            return json_encode([
                 'success' => true,
                 'message' => $message
-            ));
+            ]);
         } else {
             return $this->controller->redirect($this->controller->Link('?success=1'));
         }

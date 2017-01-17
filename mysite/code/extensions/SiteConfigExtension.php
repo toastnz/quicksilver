@@ -20,31 +20,31 @@
  */
 class SiteConfigExtension extends DataExtension
 {
-    private static $db = array(
-        'Phone' => 'Varchar(255)',
-        'Email' => 'Varchar(255)',
-        'ContactFormEmail' => 'Varchar(255)',
-        'Address' => 'Text',
-        'PostalAddress' => 'Text',
-        'Facebook' => 'Varchar(255)',
-        'LinkedIn' => 'Varchar(255)',
-        'Pinterest' => 'Varchar(255)',
-        'Instagram' => 'Varchar(255)',
-        'TwitterHandle' => 'Varchar(255)',
-        'MailChimpAPI' => 'Varchar(255)',
-        'MailChimpListID' => 'Varchar(255)',
+    private static $db = [
+        'Phone'                   => 'Varchar(255)',
+        'Email'                   => 'Varchar(255)',
+        'ContactFormEmail'        => 'Varchar(255)',
+        'Address'                 => 'Text',
+        'PostalAddress'           => 'Text',
+        'Facebook'                => 'Varchar(255)',
+        'LinkedIn'                => 'Varchar(255)',
+        'Pinterest'               => 'Varchar(255)',
+        'Instagram'               => 'Varchar(255)',
+        'TwitterHandle'           => 'Varchar(255)',
+        'MailChimpAPI'            => 'Varchar(255)',
+        'MailChimpListID'         => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
-        'GoogleMapsApiKey' => 'Varchar(100)',
-        'GoogleTrackingID' => 'Varchar(100)',
-        'GoogleTagManagerID' => 'Varchar(100)',
-    );
+        'GoogleMapsApiKey'        => 'Varchar(100)',
+        'GoogleTrackingID'        => 'Varchar(100)',
+        'GoogleTagManagerID'      => 'Varchar(100)',
+    ];
 
     /**
      * @var array
      */
-    public static $defaults = array(
+    public static $defaults = [
         'MailChimpSuccessMessage' => 'Your subscription has been received, you will be sent a confirmation email shortly.'
-    );
+    ];
 
     /**
      * @param FieldList $fields
@@ -72,7 +72,7 @@ class SiteConfigExtension extends DataExtension
         $postalAddress->setRows(8);
 
         $fields->findOrMakeTab('Root.Settings.Details');
-        $fields->addFieldsToTab('Root.Settings.Details', array(
+        $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('', 'Company Details'),
             TextField::create('Phone', 'Phone Number'),
             TextField::create('Email', 'Public Email Address'),
@@ -82,7 +82,7 @@ class SiteConfigExtension extends DataExtension
             TextField::create('LinkedIn', 'LinkedIn'),
             TextField::create('Pinterest', 'Pinterest'),
             TextField::create('TwitterHandle', 'Twitter Handle')
-        ));
+        ]);
 
         /** -----------------------------------------
          * Subscription
@@ -97,7 +97,7 @@ class SiteConfigExtension extends DataExtension
 
         $fields->findOrMakeTab('Root.Settings.Subscription', 'Subscription');
 
-        $fields->addFieldsToTab('Root.Settings.Subscription', array(
+        $fields->addFieldsToTab('Root.Settings.Subscription', [
             HeaderField::create('', 'Newsletter Subscription'),
             LiteralField::create('',
                 '<p>The API key, and list ID are necessary for the Newsletter Subscription form to function.</p>'
@@ -105,7 +105,7 @@ class SiteConfigExtension extends DataExtension
             $mailChimpAPI,
             TextField::create('MailChimpListID', 'List ID'),
             $mailChimpSuccessMessage
-        ));
+        ]);
 
         /** -----------------------------------------
          * SEO
