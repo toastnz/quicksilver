@@ -2,9 +2,9 @@
 only screen and (min--moz-device-pixel-ratio: 1.5),
 only screen and (min-resolution: 240dpi) {
 
-    .icon-close{
-        background-image: url(../images/sprites-retina.png);
-        background-size: (96 / 2 )+px (96 / 2 )+px;
+    .icon-close {
+         background-image: url('../images/sprites-retina.png');
+         background-size: (70 / 2 )+px (70 / 2 )+px;
     }
 
 }

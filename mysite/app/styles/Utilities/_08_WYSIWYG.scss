@@ -1,22 +1,33 @@
-/*------------------------------------------------------------------
-WYSIWYG Styles
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// WYSIWYG Styles
+//------------------------------------------------------------------
 
 .wysiwyg {
     color: $text;
-    h1, h2, h3, h4, h5, h6 {
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         @include bold;
     }
+
     hr {
         margin: 1rem auto 2rem;
         display: block;
         border: 0;
         border-bottom: 2px solid $primary;
     }
-    ol, ul {
+
+    ol,
+    ul {
         padding-left: 4rem;
+
         li {
             position: relative;
+
             &:before {
                 @include pseudo;
                 width: 5px;
@@ -27,37 +38,48 @@ WYSIWYG Styles
             }
         }
     }
-    p, li {
+
+    p,
+    li {
         margin: 1.6rem 0;
         line-height: 1.6;
         color: $text-light;
+
         a {
             color: $primary;
             text-decoration: none;
+
             @include active {
                 text-decoration: underline;
             }
         }
     }
-    i, em {
+
+    i,
+    em {
         font-style: italic;
     }
 
-    strong, b {
+    strong,
+    b {
         font-weight: bold;
     }
+
     blockquote {
         margin: 3rem;
         padding: 0 2rem;
         border-left: 4px solid $primary;
+
         p {
+            @extend %h5;
             margin: 0;
-            @extend .h5;
         }
     }
+
     .colour--primary {
         color: $primary !important;
     }
+
     .colour--secondary {
         color: $secondary !important;
     }

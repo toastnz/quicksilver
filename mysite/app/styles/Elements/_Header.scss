@@ -1,3 +1,63 @@
-/*------------------------------------------------------------------
-Header
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Header
+//------------------------------------------------------------------
+.header {
+    @include clearfix;
+    position: relative;
+    padding: 2rem;
+    overflow: hidden;
+    background: $off-white;
+    z-index: 999;
+
+    &__logo {
+        float: left;
+        position: relative;
+        z-index: 1;
+    }
+
+    &__menu {
+        @include vertical-align;
+        right: 0;
+        margin: 0 auto;
+        top: 3rem;
+        text-align: center;
+
+        @include media($lg, max) {
+            display: none;
+        }
+
+        &__item {
+            display: inline-block;
+            margin: 0 1rem;
+
+            &__link {
+                @extend %p;
+                margin: 0;
+                color: $grey-dark;
+                padding: .5rem 0;
+                position: relative;
+                text-decoration: none;
+
+                &:after {
+                    @include pseudo;
+                    left: 0;
+                    right: 0;
+                    margin: 0 auto;
+                    width: 0;
+                    bottom: -1px;
+                    height: 1px;
+                    background: $grey-dark;
+                    transition: all 222ms $transition-standard;
+                }
+
+                &:hover,
+                &.current {
+                    &:after {
+                        width: 100%;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,6 +1,21 @@
+/* Imports ---------------------------------------------------------*/
+
+import $ from 'jquery';
+
+/* Variables -------------------------------------------------------*/
+
+let $body = $('body');
+
 /*------------------------------------------------------------------
- Main Application Container
+ Mobile Navigation
  ------------------------------------------------------------------*/
 
-console.log('hello world.');
+$body.on('click', '.navburger', function () {
+    $body.toggleClass('mobile-nav');
+});
+
+$body.on('click', '.off-canvas__menu__item span', function () {
+    e.preventDefault();
+    $(this).closest('li').toggleClass('active');
+});
 

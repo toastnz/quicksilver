@@ -1,8 +1,8 @@
-/*------------------------------------------------------------------
-Input Styling
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Input Styling
+//------------------------------------------------------------------
 
-/* Standard Inputs */
+// Standard Inputs
 $input-text-colour: $text;
 $input-placeholder-colour: $text-light;
 $input-background-colour: $white;
@@ -10,29 +10,33 @@ $input-border-colour: $grey-light;
 $active-input-border-colour: $primary;
 $checkbox-active-colour: $active-input-border-colour;
 
-/* Checkbox & Radios */
+// Checkbox & Radios
 $box-handle: $primary;
 $box-background-active: $grey-dark;
 $box-background-inactive: $grey-light;
 
-input, select, textarea {
+input,
+select,
+textarea {
     -webkit-appearance: none;
 }
 
 %input {
+    @extend %p;
     outline: none;
     color: $input-text-colour;
     border: 1px solid $input-border-colour;
     width: 100%;
     background: $input-background-colour;
-    padding: 1rem 1rem;
+    padding: 1rem;
     border-radius: 0;
-    margin: 0.6rem 0 2rem;
+    margin: .6rem 0 2rem;
     transition: all 111ms $transition-standard;
-    @extend .p;
+
     @include placeholder {
         color: $input-placeholder-colour;
     }
+
     &:focus {
         border-color: $active-input-border-colour;
     }
@@ -42,6 +46,7 @@ body {
     .form-wrap {
         ul {
             padding-left: 0;
+
             li {
                 &:before {
                     display: none;
@@ -52,106 +57,129 @@ body {
 }
 
 form {
+    %input-wrap,
     .input-wrap {
         position: relative;
         display: block;
         float: left;
         width: 100%;
+
         label {
-            margin: 0.8rem 0 0.3rem;
+            margin: .8rem 0 .3rem;
             display: block;
         }
+
         &--half {
             width: 49%;
             margin-right: 2%;
-            &--last {
-                Margin-right: 0;
-            }
+
             @include media($md, max) {
                 width: 100%;
                 margin-right: 0;
             }
+
+            &--last {
+                margin-right: 0;
+            }
+
         }
+
         &--third {
             width: 32%;
             margin-right: 2%;
-            &--last {
-                Margin-right: 0;
-            }
+
             @include media($md, max) {
                 width: 100%;
                 margin-right: 0;
             }
+
+            &--last {
+                margin-right: 0;
+            }
         }
+
         &--quarter {
             width: 23.5%;
             margin-right: 2%;
-            &--last {
-                Margin-right: 0;
-            }
+
             @include media($md, max) {
                 width: 100%;
                 margin-right: 0;
             }
+
+            &--last {
+                margin-right: 0;
+            }
         }
+
         &__actions,
         &--actions {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             .action {
-                @extend .button;
+                @extend %button;
             }
         }
+
         &--text {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             input {
                 @extend %input;
             }
         }
+
         &--numeric,
         &--number {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             input {
                 @extend %input;
             }
         }
+
         &--email {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             input {
                 @extend %input;
             }
         }
+
         &--textarea {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             textarea {
                 @extend %input;
                 resize: none;
                 min-height: 160px;
             }
         }
+
         &--countrydropdown,
         &--dropdown,
         &--select {
-            @extend .input-wrap;
+            @extend %input-wrap;
+
             select {
                 @extend %input;
             }
+
             &:after {
                 @include pseudo;
                 width: 0;
                 height: 0;
                 border-style: solid;
-                border-width: 8px 6px 0 6px;
-                border-color: $active-input-border-colour transparent transparent transparent;
+                border-width: 8px 6px 0;
+                border-color: $active-input-border-colour transparent transparent;
                 bottom: 3.6rem;
                 right: 1.5%;
             }
         }
-        &--checkbox {
-            @extend .input-wrap;
-            margin-bottom:1rem;
-            label {
 
-            }
+        &--checkbox {
+            @extend %input-wrap;
+            margin-bottom: 1rem;
         }
     }
 }
@@ -160,15 +188,17 @@ form {
     display: none;
 }
 
-/*------------------------------------------------------------------
-Checkboxes and radio box styles
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Checkboxes and radio box styles
+//------------------------------------------------------------------
 
-input[type="radio"] {
+[type="radio"] {
     position: absolute;
     opacity: 0;
+
     + label {
         cursor: pointer;
+
         &:before {
             content: '';
             background: $off-white;
@@ -186,14 +216,17 @@ input[type="radio"] {
             transition: all 250ms ease;
         }
     }
+
     &:checked {
         + label {
+
             &:before {
                 background-color: $primary;
                 box-shadow: inset 0 0 0 4px $off-white;
             }
         }
     }
+
     &:focus {
         + label {
             &:before {
@@ -202,6 +235,7 @@ input[type="radio"] {
             }
         }
     }
+
     &:disabled {
         + label {
             &:before {
@@ -213,11 +247,13 @@ input[type="radio"] {
     }
 }
 
-input[type="checkbox"] {
+[type="checkbox"] {
     position: absolute;
     opacity: 0;
+
     + label {
         cursor: pointer;
+
         &:before {
             content: '';
             background: $off-white;
@@ -237,14 +273,15 @@ input[type="checkbox"] {
             text-indent: 1px;
         }
     }
+
     &:checked {
         + label {
             &:before {
                 box-shadow: inset 0 0 0 4px $off-white;
-                content: '✓';
             }
         }
     }
+
     &:focus {
         + label {
             &:before {
@@ -253,6 +290,7 @@ input[type="checkbox"] {
             }
         }
     }
+
     &:disabled {
         + label {
             &:before {

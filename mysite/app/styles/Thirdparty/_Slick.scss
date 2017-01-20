@@ -1,6 +1,6 @@
-/*------------------------------------------------------------------
-Slick Styles
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Slick Styles
+//------------------------------------------------------------------
 
 .slick-slider {
     position: relative;
@@ -14,39 +14,41 @@ Slick Styles
     display: block;
     overflow: hidden;
     margin: 0;
-    padding: 0
+    padding: 0;
+
+    &.dragging {
+        cursor: pointer;
+    }
 }
 
 .slick-list:focus {
-    outline: 0
+    outline: 0;
 }
 
-.slick-list.dragging {
-    cursor: pointer;
-}
-
-.slick-slider .slick-track, .slick-slider .slick-list {
-    transform: translate3d(0, 0, 0)
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
 }
 
 .slick-track {
     position: relative;
     top: 0;
     left: 0;
-    display: block
+    display: block;
 }
 
-.slick-track:before, .slick-track:after {
+.slick-track:before,
+.slick-track:after {
     display: table;
-    content: ''
+    content: '';
 }
 
 .slick-track:after {
-    clear: both
+    clear: both;
 }
 
 .slick-loading .slick-track {
-    visibility: hidden
+    visibility: hidden;
 }
 
 .slick-slide {
@@ -54,18 +56,18 @@ Slick Styles
     float: left;
     height: 100%;
     min-height: 1px;
-}
 
-.slick-slide img {
-    display: block
-}
+    &.slick-loading img {
+        display: none;
+    }
 
-.slick-slide.slick-loading img {
-    display: none;
-}
+    &.dragging img {
+        pointer-events: none;
+    }
 
-.slick-slide.dragging img {
-    pointer-events: none;
+    img {
+        display: block;
+    }
 }
 
 .slick-initialized .slick-slide {

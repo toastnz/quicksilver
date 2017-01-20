@@ -1,49 +1,57 @@
-/*------------------------------------------------------------------
-Button Styles
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Button Styles
+// ------------------------------------------------------------------
 
 $button-color: $primary;
 $disabled-button-color: $grey-light;
 $error-button-color: $red-dark;
 
+%button,
 .button {
+    @extend %p;
+    @include semi;
     color: $white;
     background: $button-color;
     border: 2px solid $button-color;
-    margin: 0.6rem 1rem 2rem 0;
+    margin: .6rem 1rem 2rem 0;
     border-radius: 0;
-    padding: 0.8em 2.4em;
+    padding: .8em 2.4em;
     cursor: pointer;
     outline: none;
     transition: all 111ms $transition-standard;
     text-decoration: none;
     display: inline-block;
-    @extend .p;
-    @include semi;
+
     @include active {
         background: lighten($button-color, 4%);
         border-color: lighten($button-color, 4%);
     }
+
     &--bordered {
         background: transparent;
         color: $button-color;
+
         @include active {
             color: $white;
         }
     }
+
     &--disabled {
         border: 2px solid $disabled-button-color;
         background: $disabled-button-color;
         cursor: not-allowed;
+
         @include active {
             border: 2px solid $disabled-button-color;
             background: $disabled-button-color;
         }
     }
+
     &--error {
-        @extend .button;
+        @extend %button;
         border: 2px solid $error-button-color;
         background: $error-button-color;
+
         @include active {
             background: lighten($error-button-color, 4%);
             border-color: lighten($error-button-color, 4%);

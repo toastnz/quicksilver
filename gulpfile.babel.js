@@ -13,6 +13,7 @@ const pixrem       = require('gulp-pixrem');
 const plumber      = require('gulp-plumber');
 const replace      = require('gulp-replace');
 const sourcemaps   = require('gulp-sourcemaps');
+const scsslint     = require('gulp-scss-lint');
 const spritesmith  = require('gulp.spritesmith');
 const autoprefixer = require('gulp-autoprefixer');
 const realFavicon  = require('gulp-real-favicon');
@@ -45,7 +46,20 @@ const paths = {
 /*------------------------------------------------------------------
  Styles
  ------------------------------------------------------------------*/
-gulp.task('styles', ()=> {
+
+gulp.task('scss-lint', function () {
+    return gulp.src([paths.styles.src])
+        .pipe(scsslint({
+            'maxBuffer': 1000000,
+            'config'   : 'scss_lint.yml'
+        }));
+});
+
+/*------------------------------------------------------------------
+ Styles
+ ------------------------------------------------------------------*/
+
+gulp.task('styles', () => {
     return gulp.src(paths.styles.src)
         .pipe(plumber(function (error) {
             gutil.log(`${chalk['yellow'](error.file.toString().replace(paths.reg.root, ''))}`);
@@ -102,7 +116,7 @@ gulp.task('flat', ['cms'], function () {
  Spritesheet Creation
  ------------------------------------------------------------------*/
 
-gulp.task('sprites', ()=> {
+gulp.task('sprites', () => {
     let spriteData = gulp.src(paths.sprites.standard).pipe(spritesmith({
         padding    : 4,
         imgName    : 'sprites.png',
@@ -201,7 +215,7 @@ gulp.task('start', function () {
     Message('start', 'green');
 });
 
-gulp.task('default', ['font-awesome', 'start', 'sprites', 'styles'], function () {
+gulp.task('default', ['scss-lint', 'font-awesome', 'start', 'sprites', 'styles'], function () {
     compileScripts(true);
     gulp.watch([paths.styles.src], ['styles']).on('change', function (evt) {
         Message('scss', 'green');

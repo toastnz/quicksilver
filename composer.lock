@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c521877f9f1fdd81a5cd918bbd72e177",
-    "content-hash": "06cc2828a97e27230a1573c917f0bef3",
+    "hash": "9211a27a6ea5a91e8956370cc8b11185",
+    "content-hash": "9e90ce2da44ea72038847e0bc2037aa5",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -440,7 +440,7 @@
         },
         {
             "name": "toastnz/flat-cms",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/flat-cms.git",
@@ -476,6 +476,147 @@
                 "silverstripe"
             ],
             "time": "2016-09-01 23:34:07"
+        },
+        {
+            "name": "toastnz/open-graph-meta",
+            "version": "0.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/open-graph-meta.git",
+                "reference": "3a1b684a6cbce0b7cacd2c9fe2c90ab887be4789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/3a1b684a6cbce0b7cacd2c9fe2c90ab887be4789",
+                "reference": "3a1b684a6cbce0b7cacd2c9fe2c90ab887be4789",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/cms": "~3.1",
+                "silverstripe/framework": "~3.1"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "email": "danae@toast.co.nz",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Token Chick"
+                }
+            ],
+            "description": "Silverstripe Open Graph Module",
+            "keywords": [
+                "facebook",
+                "open graph",
+                "silverstripe"
+            ],
+            "time": "2016-12-08 04:29:56"
+        },
+        {
+            "name": "toastnz/toast-seo",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/toast-seo.git",
+                "reference": "0636fda1b007198edae6a3d22954bd6ec1744a39"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/0636fda1b007198edae6a3d22954bd6ec1744a39",
+                "reference": "0636fda1b007198edae6a3d22954bd6ec1744a39",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/cms": "~3.1",
+                "silverstripe/framework": "~3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "email": "danae@toast.co.nz",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Token Chick"
+                }
+            ],
+            "description": "Silverstripe SEO Module",
+            "keywords": [
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2016-12-08 22:35:22"
+        },
+        {
+            "name": "toastnz/twitter-card-meta",
+            "version": "0.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/twitter-card-meta.git",
+                "reference": "df966f2e8d9ec9710a03bfe08ca3d32cdb05afed"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/df966f2e8d9ec9710a03bfe08ca3d32cdb05afed",
+                "reference": "df966f2e8d9ec9710a03bfe08ca3d32cdb05afed",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/cms": "~3.1",
+                "silverstripe/framework": "~3.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Tall Guy"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "email": "danae@toast.co.nz",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Token Chick"
+                }
+            ],
+            "description": "Silverstripe Twitter Card Module",
+            "keywords": [
+                "silverstripe",
+                "twitter",
+                "twitter card"
+            ],
+            "time": "2016-11-28 02:14:55"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -594,6 +735,46 @@
                 "silverstripe"
             ],
             "time": "2016-11-24 14:01:29"
+        },
+        {
+            "name": "wilr/silverstripe-googlesitemaps",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wilr/silverstripe-googlesitemaps.git",
+                "reference": "552684ce122c724aa737df3babb8717919e00a35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wilr/silverstripe-googlesitemaps/zipball/552684ce122c724aa737df3babb8717919e00a35",
+                "reference": "552684ce122c724aa737df3babb8717919e00a35",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": ">=3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "googlesitemaps"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
+                }
+            ],
+            "description": "SilverStripe support for the Google Sitemaps XML, enabling Google and other search engines to see all urls on your site. This helps your SilverStripe website rank well in search engines, and to encourage the information on your site to be discovered quickly.",
+            "homepage": "https://github.com/wilr/silverstripe-googlesitemaps",
+            "keywords": [
+                "googlesitemaps",
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2016-10-10 02:59:32"
         }
     ],
     "packages-dev": [],

@@ -15,6 +15,7 @@
     "combokeys": "^2.4.6",
     "fancybox": "^3.0.0",
     "font-awesome": "^4.6.3",
+    "gulp-scss-lint": "^0.4.0",
     "imagesloaded": "^4.1.0",
     "jquery": "^1.11.0",
     "jquery-bridget": "^2.0.1",

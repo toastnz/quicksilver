@@ -1,14 +1,16 @@
-/*------------------------------------------------------------------
- Contact Form Handler
- ------------------------------------------------------------------*/
+/* Imports ---------------------------------------------------------*/
 
-/* Requirements */
-const $        = require('jquery');
-const parsley  = require('parsleyjs');
-const alertify = require('alertify.js');
+import $ from 'jquery';
+import parsley from 'parsleyjs';
+import alertify from 'alertify.js';
 
-/* Variables */
+/* Variables -------------------------------------------------------*/
+
 const $contactForm = $('#ContactForm_ContactForm');
+
+/*------------------------------------------------------------------
+ Contact Form Event Handler
+ ------------------------------------------------------------------*/
 
 if ($contactForm.length) {
     $contactForm.parsley().on('form:submit', () => {

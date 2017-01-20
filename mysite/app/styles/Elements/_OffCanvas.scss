@@ -1,0 +1,159 @@
+//------------------------------------------------------------------
+// Off Canvas Navigation
+// ------------------------------------------------------------------
+
+.navburger {
+    position: relative;
+    z-index: 9;
+    float: right;
+    vertical-align: middle;
+    user-select: none;
+    text-align: right;
+    cursor: pointer;
+    margin-left: 1rem;
+    top: -.5rem;
+
+    @include media($lg) {
+        display: none;
+    }
+
+    b {
+        display: block;
+        width: 33px;
+        height: 3px;
+        background: $grey-dark;
+        margin-right: auto;
+        margin-left: auto;
+        margin-top: 10px;
+        transition: all 330ms $transition-standard;
+    }
+}
+
+.mobile-nav {
+
+    #nav {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .navburger {
+
+        b:nth-child(1) {
+            transform: rotate(45deg) translateX(9px) translateY(9px);
+        }
+
+        b:nth-child(2) {
+            opacity: 0;
+            width: 0;
+        }
+
+        b:nth-child(3) {
+            transform: rotate(-45deg) translateX(9px) translateY(-9px);
+        }
+    }
+}
+
+@include media($lg) {
+    #nav {
+        display: none !important;
+    }
+}
+
+#nav {
+    .navburger {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    box-shadow: $z5;
+    z-index: 99;
+    right: 0;
+    background: $grey-light;
+    display: block;
+    transform: translateY(-180%);
+    transition: all 333ms $transition-standard;
+    li {
+        margin-bottom: 0;
+    }
+    a {
+        color: $grey-dark;
+        display: block;
+        padding: 0.8rem 0;
+        font-size: 1.8rem;
+        text-decoration: none;
+        position: relative;
+        transition: color 111ms $transition-standard;
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 0.5rem;
+            z-index: 9;
+            svg {
+                margin-top: 1px;
+                transition: color 111ms $transition-standard, transform 333ms $transition-standard;
+            }
+        }
+        span {
+            background: rgba(white, 0.5);
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 45px;
+            text-align: center;
+            svg {
+                margin-top: 12px;
+                margin-left: 5px;
+            }
+        }
+    }
+    > ul {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        background: $off-white;
+        > li {
+            width: 100%;
+            > a {
+                padding: 1.2rem 2rem;
+                position: relative;
+            }
+            > ul {
+                max-height: 0;
+
+                overflow: hidden;
+                background: $grey-light;
+                transition: max-height 444ms $transition-standard;
+                > li {
+                    > a {
+                        padding: 1rem 2rem 1rem 3rem;
+                    }
+                    > ul {
+                        max-height: 0;
+                        overflow: hidden;
+                        background: $grey-light;
+                        transition: max-height 444ms $transition-standard;
+                        > li {
+                            > a {
+                                padding: 1rem 2rem 1rem 4rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#nav li.active {
+    > a {
+        span svg {
+            transform: rotate(90deg) translateX(2px);
+        }
+    }
+    > ul {
+        max-height: 500px;
+    }
+}

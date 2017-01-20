@@ -1,6 +1,6 @@
-/*------------------------------------------------------------------
-Table Styles
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Table Styles
+// ------------------------------------------------------------------
 
 table {
     vertical-align: top;
@@ -11,6 +11,7 @@ table {
     border-spacing: 0;
     width: 100%;
     margin: 3rem auto;
+
     tr {
         th {
             padding: 1.2rem;
@@ -19,18 +20,18 @@ table {
             text-align: left;
             color: $white;
         }
-    }
-    tr {
+
         &:nth-child(even) {
             td {
-                background: rgba($off-white, 0.5);
+                background: rgba($off-white, .5);
             }
         }
+
         td {
             color: $text-light;
             border: 1px solid $primary;
             padding: 1rem;
-            background-color: #fff;
+            background-color: $white;
             text-align: left;
         }
     }
