@@ -1,44 +1,48 @@
-/*------------------------------------------------------------------
-Login Page
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Login Page
+//------------------------------------------------------------------
 
 .login-wrap {
     @include full;
     position: fixed;
-    background: #232c33;
-    background: radial-gradient(circle, #484848, #2F3031);
+    background: radial-gradient(circle, $grey-dark, $black-light);
+
     &__content {
-        background: #f7f7f7;
         @include vertical-center;
+        background: $off-white;
         width: 90%;
         max-width: 400px;
         padding: 0 3.6rem 4rem;
         box-shadow: $z5;
+
         &:after {
             @include pseudo;
             top: -1px;
             left: 0;
             right: 0;
             border-top: 5px solid $primary;
-
         }
+
         h4 {
             display: block;
             text-align: center;
             margin-bottom: 1rem;
         }
+
         .input-wrap__actions {
             input {
                 width: 100%;
                 border-radius: 0;
             }
         }
+
         .logo-wrapper {
             position: relative;
             width: 100%;
             text-align: center;
             margin: 3rem auto;
         }
+
         #BackToLogin,
         #ForgotPassword {
             border-radius: 0 0 10px 10px;
@@ -47,6 +51,7 @@ Login Page
             width: calc(100% + 7.2rem);
             padding: 1rem 1.5rem 1.5rem;
             text-align: center;
+
             a {
                 color: $text;
                 padding-bottom: 2px;
@@ -56,6 +61,7 @@ Login Page
                 text-shadow: .03em 0 $grey-light, -.03em 0 $grey-light, 0 .03em $grey-light, 0 -.03em $grey-light, .06em 0 $grey-light, -.06em 0 $grey-light, .09em 0 $grey-light, -.09em 0 $grey-light, .12em 0 $grey-light, -.12em 0 $grey-light, .15em 0 $grey-light, -.15em 0 $grey-light;
                 background-position: 0 87%, 100% 87%, 0 87%;
                 text-decoration: none !important;
+
                 &:hover {
                     color: $primary;
                     background: linear-gradient($grey-light, $grey-light), linear-gradient($grey-light, $grey-light), linear-gradient($primary, $primary);
@@ -77,15 +83,18 @@ Login Page
             width: 4rem;
             text-align: center;
             padding: 1.1rem 0 1rem;
+            top: -.2rem;
+
             @include media($xl) {
-                padding: 1.1rem 0 0.9rem;
+                padding: 1.1rem 0 .9rem;
             }
-            top: -0.2rem;
+
             &:before {
                 font-size: 2rem;
                 color: $primary;
             }
         }
+
         input {
             margin-left: 4rem;
             width: calc(100% - 4rem);

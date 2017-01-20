@@ -31,7 +31,7 @@
 
 .mobile-nav {
 
-    #nav {
+    .nav {
         transform: translateY(0);
         opacity: 1;
     }
@@ -54,17 +54,12 @@
 }
 
 @include media($lg) {
-    #nav {
+    .nav {
         display: none !important;
     }
 }
 
-#nav {
-    .navburger {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-    }
+.nav {
     position: absolute;
     left: 0;
     opacity: 0;
@@ -75,66 +70,85 @@
     display: block;
     transform: translateY(-180%);
     transition: all 333ms $transition-standard;
+
+    .navburger {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
     li {
         margin-bottom: 0;
     }
+
     a {
         color: $grey-dark;
         display: block;
-        padding: 0.8rem 0;
+        padding: .8rem 0;
         font-size: 1.8rem;
         text-decoration: none;
         position: relative;
         transition: color 111ms $transition-standard;
+
         span {
             display: inline-block;
             vertical-align: middle;
-            margin-left: 0.5rem;
+            margin-left: .5rem;
             z-index: 9;
+
             svg {
                 margin-top: 1px;
                 transition: color 111ms $transition-standard, transform 333ms $transition-standard;
             }
         }
+
         span {
-            background: rgba(white, 0.5);
+            background: rgba($white, .5);
             position: absolute;
             right: 0;
             top: 0;
             bottom: 0;
             width: 45px;
             text-align: center;
+
             svg {
                 margin-top: 12px;
                 margin-left: 5px;
             }
         }
     }
+
     > ul {
         padding-top: 1.5rem;
         padding-bottom: 1.5rem;
         background: $off-white;
+
         > li {
             width: 100%;
+
             > a {
                 padding: 1.2rem 2rem;
                 position: relative;
             }
+
             > ul {
                 max-height: 0;
-
                 overflow: hidden;
                 background: $grey-light;
                 transition: max-height 444ms $transition-standard;
+
                 > li {
+
                     > a {
                         padding: 1rem 2rem 1rem 3rem;
                     }
+
                     > ul {
                         max-height: 0;
                         overflow: hidden;
                         background: $grey-light;
                         transition: max-height 444ms $transition-standard;
+
                         > li {
                             > a {
                                 padding: 1rem 2rem 1rem 4rem;
@@ -147,12 +161,14 @@
     }
 }
 
-#nav li.active {
+.nav li.active {
+
     > a {
         span svg {
             transform: rotate(90deg) translateX(2px);
         }
     }
+
     > ul {
         max-height: 500px;
     }

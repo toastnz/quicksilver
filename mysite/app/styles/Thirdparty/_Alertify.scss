@@ -2,11 +2,11 @@
 // Alertify
 //------------------------------------------------------------------
 
-$box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .2);
+$box-shadow: 0 2px 5px 0 rgba($black, .2);
 $padding-base: 12px;
 $success-color: rgba(76, 175, 80, .9);
 $danger-color: rgba(244, 67, 54, .8);
-$text-color: rgba(0, 0, 0, .8);
+$text-color: rgba($black, .8);
 $border-radius: 1px;
 
 .alertify-logs {
@@ -34,7 +34,7 @@ $border-radius: 1px;
 
         &,
         &.default {
-            background: rgba(0, 0, 0, .8);
+            background: rgba($black, .8);
         }
 
         &.error {
@@ -58,7 +58,7 @@ $border-radius: 1px;
 
         > * {
             float: left;
-            transform: translate3d(0, 0, 0);
+            transform: translate3d($black);
             height: auto;
 
             &.show {
@@ -77,7 +77,7 @@ $border-radius: 1px;
 
         > * {
             float: right;
-            transform: translate3d(0, 0, 0);
+            transform: translate3d($black);
 
             &.show {
                 right: 0;
@@ -101,7 +101,7 @@ $border-radius: 1px;
 .alertify {
 
     position: fixed;
-    background-color: rgba(0, 0, 0, .3);
+    background-color: rgba($black, .3);
     left: 0;
     right: 0;
     top: 0;
@@ -139,7 +139,7 @@ $border-radius: 1px;
             text-align: center;
             padding: $padding-base;
             background: $white;
-            box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .14), 0 4px 5px 0 rgba(0, 0, 0, .098), 0 1px 10px 0 rgba(0, 0, 0, .084);
+            box-shadow: 0 2px 4px -1px rgba($black, .14), 0 4px 5px 0 rgba($black, .098), 0 1px 10px 0 rgba($black, .084);
         }
 
         .msg {
@@ -167,7 +167,7 @@ $border-radius: 1px;
 
                 background: transparent;
                 box-sizing: border-box;
-                color: rgba(0, 0, 0, .87);
+                color: rgba($black, .87);
                 position: relative;
                 outline: 0;
                 display: inline-block;
@@ -187,11 +187,11 @@ $border-radius: 1px;
 
                 &:hover,
                 &:active {
-                    background-color: rgba(0, 0, 0, .05);
+                    background-color: rgba($black, .05);
                 }
 
                 &:focus {
-                    border: 1px solid rgba(0, 0, 0, .1);
+                    border: 1px solid rgba($black, .1);
                 }
 
             }

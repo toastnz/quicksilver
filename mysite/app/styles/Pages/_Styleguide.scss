@@ -1,20 +1,22 @@
-/*------------------------------------------------------------------
-Styleguide
-------------------------------------------------------------------*/
+//------------------------------------------------------------------
+// Styleguide
+//------------------------------------------------------------------
 
 .subtitle {
+    @include bold;
+    @include clearfix;
     color: $primary;
     text-align: center;
     display: block;
     margin: 3rem auto;
-    @include bold;
-    @include media($md) {
-        margin: 6rem auto;
-    }
-    @include clearfix;
     text-transform: uppercase;
     position: relative;
     font-size: 2rem;
+
+    @include media($md) {
+        margin: 6rem auto;
+    }
+
     &:before {
         @include pseudo;
         @include vertical-align;
@@ -23,6 +25,7 @@ Styleguide
         height: 2px;
         background: $primary;
     }
+
     span {
         background: $white;
         display: inline-block;

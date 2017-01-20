@@ -99,7 +99,7 @@ linters:
 
   # Checks for the use of an ID selector
   IdSelector:
-    enabled: true
+    enabled: false
 
   # Checks formatting of the basenames of @imported partials
   ImportPath:
@@ -179,7 +179,7 @@ linters:
 
   # Checks for the use of double colons with pseudo elements
   PseudoElement:
-    enabled: true
+    enabled: false
 
   # Checks for element selectors qualifying id, classe, or attribute selectors
   QualifyingElement:
