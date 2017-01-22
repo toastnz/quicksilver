@@ -62,6 +62,8 @@ class SiteConfigExtension extends DataExtension
             $fields->addFieldToTab('Root', TabSet::create('Settings'));
         }
 
+        $fields->removeByName('Theme');
+
         /** -----------------------------------------
          * Details
          * ----------------------------------------*/
@@ -116,9 +118,11 @@ class SiteConfigExtension extends DataExtension
         $fields->addFieldsToTab('Root.Settings.SEO', [
             HeaderField::create('', 'Google Tracking'),
             TextField::create('GoogleTrackingID', 'Tracking ID')
+                ->addExtraClass('input-wrap--half')
                 ->setAttribute('placeholder', 'UA-XXXXXXXX-X'),
             TextField::create('GoogleTagManagerID', 'Tag Manager ID')
                 ->setAttribute('placeholder', 'GTM-XXXXXX')
+                ->addExtraClass('input-wrap--half input-wrap--half--last')
         ]);
     }
 

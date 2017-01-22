@@ -61,6 +61,14 @@ $formats = [
         'merge_siblings' => false
     ],
     [
+        'title'          => 'Colour - Tertiary',
+        'inline'         => 'span',
+        'classes'        => 'colour--tertiary',
+        'styles'         => ['color' => '#8e44ad'],
+        'wrapper'        => true,
+        'merge_siblings' => false
+    ],
+    [
         'title'    => 'Button - Default',
         'selector' => 'a, button',
         'classes'  => 'button',
