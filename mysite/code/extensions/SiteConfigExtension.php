@@ -20,7 +20,7 @@
  */
 class SiteConfigExtension extends DataExtension
 {
-    private static $db = array(
+    private static $db = [
         'Phone'                   => 'Varchar(255)',
         'Email'                   => 'Varchar(255)',
         'ContactFormEmail'        => 'Varchar(255)',
@@ -37,14 +37,14 @@ class SiteConfigExtension extends DataExtension
         'GoogleMapsApiKey'        => 'Varchar(100)',
         'GoogleTrackingID'        => 'Varchar(100)',
         'GoogleTagManagerID'      => 'Varchar(100)',
-    );
+    ];
 
     /**
      * @var array
      */
-    public static $defaults = array(
+    public static $defaults = [
         'MailChimpSuccessMessage' => 'Your subscription has been received, you will be sent a confirmation email shortly.'
-    );
+    ];
 
     /**
      * @param FieldList $fields
@@ -74,7 +74,7 @@ class SiteConfigExtension extends DataExtension
         $postalAddress->setRows(8);
 
         $fields->findOrMakeTab('Root.Settings.Details');
-        $fields->addFieldsToTab('Root.Settings.Details', array(
+        $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('', 'Company Details'),
             TextField::create('Phone', 'Phone Number')->addExtraClass('input-wrap--half'),
             TextField::create('Email', 'Public Email Address')->addExtraClass('input-wrap--half input-wrap--half--last'),
@@ -99,7 +99,7 @@ class SiteConfigExtension extends DataExtension
 
         $fields->findOrMakeTab('Root.Settings.Subscription', 'Subscription');
 
-        $fields->addFieldsToTab('Root.Settings.Subscription', array(
+        $fields->addFieldsToTab('Root.Settings.Subscription', [
             HeaderField::create('', 'Newsletter Subscription'),
             LiteralField::create('',
                 '<p>The API key, and list ID are necessary for the Newsletter Subscription form to function.</p>'
@@ -107,7 +107,7 @@ class SiteConfigExtension extends DataExtension
             $mailChimpAPI,
             TextField::create('MailChimpListID', 'List ID'),
             $mailChimpSuccessMessage
-        ));
+        ]);
 
         /** -----------------------------------------
          * SEO

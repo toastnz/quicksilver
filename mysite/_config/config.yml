@@ -13,11 +13,6 @@ GDBackend:
 
 SiteTree:
   nested_urls: true
-  # Disable creating of default pages (like home) on /dev/build
-  # create_default_pages: false
-
-Email:
-  admin_email: 'email@mysite.com'
 
 LeftAndMain:
   cms_highlight_colour : '#23282d'
@@ -29,5 +24,19 @@ ColorField:
   colors:
     - '#000'
     - '#FFF'
+
 SVGTemplate:
   base_path: mysite/dist/images/svg
+
+---
+Only:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'
+---
+Except:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'

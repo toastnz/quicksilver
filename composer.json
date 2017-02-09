@@ -34,6 +34,7 @@
     "jonom/silverstripe-betternavigator": "*",
     "silverstripe-australia/gridfieldextensions": "~1.1",
     "benmanu/silverstripe-simple-styleguide": "dev-master",
+    "drewm/mailchimp-api": "~1.0",
     "wilr/silverstripe-googlesitemaps": "^1.6"
   },
   "minimum-stability": "dev"
