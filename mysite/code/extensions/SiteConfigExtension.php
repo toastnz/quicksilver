@@ -84,7 +84,7 @@ class SiteConfigExtension extends DataExtension
             TextField::create('LinkedIn', 'LinkedIn')->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextField::create('Pinterest', 'Pinterest')->addExtraClass('input-wrap--half'),
             TextField::create('TwitterHandle', 'Twitter Handle')->addExtraClass('input-wrap--half input-wrap--half--last')
-        ));
+        ]);
 
         /** -----------------------------------------
          * Subscription

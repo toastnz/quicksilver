@@ -24,6 +24,7 @@
     "php": ">=5.3.3",
     "toastnz/flat-cms": "~1.0.0",
     "toastnz/toast-seo": "^0.3.2",
+    "drewm/mailchimp-api": "~1.0",
     "unclecheese/dropzone": "^1.2",
     "silverstripe/cms": ">=3.1.0,<3.4",
     "toastnz/open-graph-meta": "^0.2.0",
@@ -32,10 +33,9 @@
     "undefinedoffset/sortablegridfield": "*",
     "silverstripe/framework": ">=3.1.0,<3.4",
     "jonom/silverstripe-betternavigator": "*",
+    "wilr/silverstripe-googlesitemaps": "^1.6",
     "silverstripe-australia/gridfieldextensions": "~1.1",
-    "benmanu/silverstripe-simple-styleguide": "dev-master",
-    "drewm/mailchimp-api": "~1.0",
-    "wilr/silverstripe-googlesitemaps": "^1.6"
+    "benmanu/silverstripe-simple-styleguide": "dev-master"
   },
   "minimum-stability": "dev"
 }
