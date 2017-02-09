@@ -15,9 +15,6 @@ if (!Director::is_cli() && Director::isLive()) {
 //    Director::forceSSL();
 }
 
-define('PROJECT_THIRDPARTY_DIR', project() . '/thirdparty');
-define('PROJECT_THIRDPARTY_PATH', project() . '/' . PROJECT_THIRDPARTY_DIR);
-
 FulltextSearchable::enable(['SiteTree']);
 
 /**
@@ -30,10 +27,7 @@ if (!Director::isLive()) {
      * set settings that should only be in dev and test
      */
 } else {
-    /**
-     * we are in live mode, send errors per email
-     */
-    SS_Log::add_writer(new SS_LogEmailWriter('myEmail@mysite.com'), SS_Log::ERR);
+
 }
 
 /** -----------------------------------------
