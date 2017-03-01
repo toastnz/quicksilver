@@ -76,14 +76,20 @@ class SiteConfigExtension extends DataExtension
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('', 'Company Details'),
-            TextField::create('Phone', 'Phone Number')->addExtraClass('input-wrap--half'),
-            TextField::create('Email', 'Public Email Address')->addExtraClass('input-wrap--half input-wrap--half--last'),
+            TextField::create('Phone', 'Phone Number')
+                ->addExtraClass('input-wrap--half'),
+            TextField::create('Email', 'Public Email Address')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
             $address,
             $postalAddress,
-            TextField::create('Facebook', 'Facebook')->addExtraClass('input-wrap--half'),
-            TextField::create('LinkedIn', 'LinkedIn')->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextField::create('Pinterest', 'Pinterest')->addExtraClass('input-wrap--half'),
-            TextField::create('TwitterHandle', 'Twitter Handle')->addExtraClass('input-wrap--half input-wrap--half--last')
+            TextField::create('Facebook', 'Facebook')
+                ->addExtraClass('input-wrap--half'),
+            TextField::create('LinkedIn', 'LinkedIn')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+            TextField::create('Pinterest', 'Pinterest')
+                ->addExtraClass('input-wrap--half'),
+            TextField::create('TwitterHandle', 'Twitter Handle')
+                ->addExtraClass('input-wrap--half input-wrap--half--last')
         ]);
 
         /** -----------------------------------------

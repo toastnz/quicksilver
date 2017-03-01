@@ -11,6 +11,9 @@ MySQLDatabase:
 GDBackend:
   default_quality: 90
 
+Image:
+  force_resample: true
+
 SiteTree:
   nested_urls: true
 
@@ -27,6 +30,13 @@ ColorField:
 
 SVGTemplate:
   base_path: mysite/dist/images/svg
+
+#FormSpamProtectionExtension:
+#  default_spam_protector: NocaptchaProtector
+#NocaptchaField:
+#  site_key: ''
+#  secret_key: ''
+#  verify_ssl: false
 
 ---
 Only:

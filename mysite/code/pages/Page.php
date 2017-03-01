@@ -2,23 +2,18 @@
 
 /**
  * Class Page
- *
  */
 class Page extends SiteTree
 {
-    public function getCMSFields()
-    {
-        $fields = parent::getCMSFields();
-        return $fields;
-    }
-
     public function getIsLive()
     {
         return Director::isLive();
     }
-
 }
 
+/**
+ * Class Page_Controller
+ */
 class Page_Controller extends ContentController
 {
     public function init()
@@ -31,7 +26,6 @@ class Page_Controller extends ContentController
             ]
         );
     }
-
 
     public function StyleguideForm()
     {
