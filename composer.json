@@ -36,7 +36,9 @@
     "wilr/silverstripe-googlesitemaps": "^1.6",
     "silverstripe-australia/gridfieldextensions": "~1.1",
     "benmanu/silverstripe-simple-styleguide": "dev-master",
-    "undefinedoffset/silverstripe-nocaptcha": "^0.2.0"
+    "undefinedoffset/silverstripe-nocaptcha": "^0.2.0",
+    "heyday/silverstripe-cacheinclude": "~4.0",
+    "heyday/silverstripe-cacheinclude-manager": "~0.1.0"
   },
   "minimum-stability": "dev"
 }

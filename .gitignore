@@ -27,3 +27,5 @@ _resampled
 /googlesitemaps
 /spamprotection
 /nocaptcha
+/silverstripe-cacheinclude
+/silverstripe-cacheinclude-manager
