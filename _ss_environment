@@ -11,8 +11,9 @@ define('SS_ERROR_LOG', '/silverstripe.log');
 define('SS_DEFAULT_ADMIN_USERNAME', 'USERNAME');
 define('SS_DEFAULT_ADMIN_PASSWORD', 'PASSWORD');
 //define('SS_SEND_ALL_EMAILS_TO', 'your@email.com');
-//define('CACHEINCLUDE_FORCE_EXPIRE', true);
-
+//if (!defined('CACHEINCLUDE_FORCE_EXPIRE')) {
+//    define('CACHEINCLUDE_FORCE_EXPIRE', true);
+//}
 global $_FILE_TO_URL_MAPPING;
 $_FILE_TO_URL_MAPPING['/var/www/'] = 'http://localhost/';
 
