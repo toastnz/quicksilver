@@ -3,7 +3,7 @@
 // ------------------------------------------------------------------
 
 .offCanvas {
-  position: fixed;
+  position: absolute;
   top: -1rem;
   left: -1rem;
   right: -1rem;
@@ -19,18 +19,106 @@
   overflow: auto;
   visibility: hidden;
 
+  > svg {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    height: 30px;
+    width: 126.25px;
+  }
+
   &__menu {
-    margin-top: 4rem;
+    margin-top: 6rem;
     padding: 2rem 0;
+
+    &__item {
+      position: relative;
+      margin: 0;
+
+      &:after {
+        @include pseudo;
+        left: 2rem;
+        right: 2rem;
+        bottom: -1px;
+        height: 1px;
+        background: $off-white;
+      }
+
+      &__link {
+        @include semi;
+        display: block;
+        padding: 1rem 2rem;
+        color: $text;
+        text-decoration: none;
+        position: relative;
+
+        span {
+          width: 4rem;
+          position: absolute;
+          right: 1.8rem;
+          top: 0;
+          bottom: 0;
+          background: $off-white;
+          text-align: center;
+
+          svg {
+            margin: 1rem auto;
+            transition: all 333ms ease;
+          }
+        }
+
+        &.current,
+        &:hover {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .open {
+
+    svg {
+      transform: rotate(90deg);
+    }
+
+    .offCanvas__submenu {
+      padding: 1rem 0 .5rem;
+      max-height: 30rem;
+    }
+  }
+
+  &__submenu {
+    background: $off-white;
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    padding: 0;
+    transition: all 333ms ease;
 
     &__item {
 
       &__link {
         @include semi;
         display: block;
-        padding: .5rem 2rem;
+        padding: .8rem 3rem;
         color: $text;
         text-decoration: none;
+        position: relative;
+
+        span {
+          width: 3.5rem;
+          position: absolute;
+          right: 1.8rem;
+          top: 0;
+          bottom: 0;
+          background: $grey-light;
+          text-align: center;
+
+          svg {
+            margin: .8rem auto;
+
+          }
+        }
 
         &:hover {
           color: $primary;
@@ -61,9 +149,12 @@
       bottom: 1rem;
       margin: 0;
       width: 4rem;
+      padding: 0;
       background: $primary;
       border-radius: .2rem;
       color: $white;
+      text-align: center;
+      -webkit-appearance: none;
     }
   }
 }

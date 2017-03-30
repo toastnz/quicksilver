@@ -10,13 +10,13 @@ let $body = $('body');
  Mobile Navigation
  ------------------------------------------------------------------*/
 
-$body.on('click', '.js-mobile-nav', (e) => {
+$body.on('click', '.js-mobile-nav', function (e) {
     e.preventDefault();
     $body.toggleClass('off-canvas-visible')
 });
 
-$body.on('click', '.off-canvas__menu__item span', function () {
+$body.on('click', '.js-toggle-nav', function (e) {
     e.preventDefault();
-    $(this).closest('li').toggleClass('active');
+    $(this).closest('.offCanvas__menu__item').toggleClass('open');
 });
 
