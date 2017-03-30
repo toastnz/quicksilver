@@ -1,8 +1,0 @@
-# Add cache rules here
-#Footer:
-#  context: no
-#  contains:
-#    - SiteConfig
-#    - MenuItem
-#    - MenuSet
-#  expires: +1 month

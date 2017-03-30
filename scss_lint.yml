@@ -116,7 +116,7 @@ linters:
     enabled: true
     allow_non_nested_indentation: false
     character: space # or 'tab'
-    width: 4
+    width: 2
 
   # Checks for unnecessary leading zeros in numeric values with decimal points
   LeadingZero:

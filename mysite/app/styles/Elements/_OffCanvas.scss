@@ -2,174 +2,68 @@
 // Off Canvas Navigation
 // ------------------------------------------------------------------
 
-.navburger {
-    position: relative;
-    z-index: 9;
-    float: right;
-    vertical-align: middle;
-    user-select: none;
-    text-align: right;
-    cursor: pointer;
-    margin-left: 1rem;
-    top: -.5rem;
+.offCanvas {
+  position: fixed;
+  top: -1rem;
+  left: -1rem;
+  right: -1rem;
+  background: $white;
+  box-shadow: 0 50px 100px rgba(50, 50, 93, .1), 0 15px 35px rgba(50, 50, 93, .15), 0 5px 15px rgba(0, 0, 0, .1);
+  transform: rotate3d(1, 1, 0, -35deg);
+  transform-origin: 100% 0;
+  opacity: 0;
+  will-change: all;
+  transition: all 222ms ease;
+  z-index: 998;
+  border-radius: .4rem;
+  overflow: auto;
+  visibility: hidden;
 
-    @include media($lg) {
-        display: none;
-    }
+  &__menu {
+    margin-top: 4rem;
+    padding: 2rem 0;
 
-    b {
+    &__item {
+
+      &__link {
+        @include semi;
         display: block;
-        width: 33px;
-        height: 3px;
-        background: $grey-dark;
-        margin-right: auto;
-        margin-left: auto;
-        margin-top: 10px;
-        transition: all 330ms $transition-standard;
-    }
-}
-
-.mobile-nav {
-
-    .nav {
-        transform: translateY(0);
-        opacity: 1;
-    }
-
-    .navburger {
-
-        b:nth-child(1) {
-            transform: rotate(45deg) translateX(9px) translateY(9px);
-        }
-
-        b:nth-child(2) {
-            opacity: 0;
-            width: 0;
-        }
-
-        b:nth-child(3) {
-            transform: rotate(-45deg) translateX(9px) translateY(-9px);
-        }
-    }
-}
-
-@include media($lg) {
-    .nav {
-        display: none !important;
-    }
-}
-
-.nav {
-    position: absolute;
-    left: 0;
-    opacity: 0;
-    box-shadow: $z5;
-    z-index: 99;
-    right: 0;
-    background: $grey-light;
-    display: block;
-    transform: translateY(-180%);
-    transition: all 333ms $transition-standard;
-
-    .navburger {
-        position: absolute;
-        right: 1rem;
-        top: 1rem;
-    }
-
-    li {
-        margin-bottom: 0;
-    }
-
-    a {
-        color: $grey-dark;
-        display: block;
-        padding: .8rem 0;
-        font-size: 1.8rem;
+        padding: .5rem 2rem;
+        color: $text;
         text-decoration: none;
-        position: relative;
-        transition: color 111ms $transition-standard;
 
-        span {
-            display: inline-block;
-            vertical-align: middle;
-            margin-left: .5rem;
-            z-index: 9;
-
-            svg {
-                margin-top: 1px;
-                transition: color 111ms $transition-standard, transform 333ms $transition-standard;
-            }
+        &:hover {
+          color: $primary;
         }
+      }
+    }
+  }
 
-        span {
-            background: rgba($white, .5);
-            position: absolute;
-            right: 0;
-            top: 0;
-            bottom: 0;
-            width: 45px;
-            text-align: center;
+  &__search {
+    background: $off-white;
+    position: relative;
+    border-radius: 0 0 .4rem .4rem;
+    padding: 1rem;
 
-            svg {
-                margin-top: 12px;
-                margin-left: 5px;
-            }
-        }
+    #SearchForm_SearchForm_Search {
+      border: 0;
+      margin: 0;
+      background: transparent;
     }
 
-    > ul {
-        padding-top: 1.5rem;
-        padding-bottom: 1.5rem;
-        background: $off-white;
-
-        > li {
-            width: 100%;
-
-            > a {
-                padding: 1.2rem 2rem;
-                position: relative;
-            }
-
-            > ul {
-                max-height: 0;
-                overflow: hidden;
-                background: $grey-light;
-                transition: max-height 444ms $transition-standard;
-
-                > li {
-
-                    > a {
-                        padding: 1rem 2rem 1rem 3rem;
-                    }
-
-                    > ul {
-                        max-height: 0;
-                        overflow: hidden;
-                        background: $grey-light;
-                        transition: max-height 444ms $transition-standard;
-
-                        > li {
-                            > a {
-                                padding: 1rem 2rem 1rem 4rem;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    #SearchForm_SearchForm_action_results {
+      @include semi;
+      position: absolute;
+      right: 2rem;
+      outline: none;
+      border: 0;
+      top: 1rem;
+      bottom: 1rem;
+      margin: 0;
+      width: 4rem;
+      background: $primary;
+      border-radius: .2rem;
+      color: $white;
     }
-}
-
-.nav li.active {
-
-    > a {
-        span svg {
-            transform: rotate(90deg) translateX(2px);
-        }
-    }
-
-    > ul {
-        max-height: 500px;
-    }
+  }
 }

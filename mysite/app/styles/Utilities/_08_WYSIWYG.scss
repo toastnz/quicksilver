@@ -3,88 +3,88 @@
 //------------------------------------------------------------------
 
 .wysiwyg {
-    color: $text;
+  color: $text;
 
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        @include bold;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @include bold;
+  }
 
-    hr {
-        margin: 1rem auto 2rem;
-        display: block;
-        border: 0;
-        border-bottom: 2px solid $primary;
-    }
+  hr {
+    margin: 1rem auto 2rem;
+    display: block;
+    border: 0;
+    border-bottom: 2px solid $primary;
+  }
 
-    ol,
-    ul {
-        padding-left: 4rem;
+  ol,
+  ul {
+    padding-left: 4rem;
 
-        li {
-            position: relative;
-
-            &:before {
-                @include pseudo;
-                width: 5px;
-                height: 5px;
-                background: $primary;
-                top: 1rem;
-                left: -1.3rem;
-            }
-        }
-    }
-
-    p,
     li {
-        margin: 1.6rem 0;
-        line-height: 1.6;
-        color: $text-light;
+      position: relative;
 
-        a {
-            color: $primary;
-            text-decoration: none;
-
-            @include active {
-                text-decoration: underline;
-            }
-        }
+      &:before {
+        @include pseudo;
+        width: 5px;
+        height: 5px;
+        background: $primary;
+        top: 1rem;
+        left: -1.3rem;
+      }
     }
+  }
 
-    i,
-    em {
-        font-style: italic;
+  p,
+  li {
+    margin: 1.6rem 0;
+    line-height: 1.6;
+    color: $text-light;
+
+    a {
+      color: $primary;
+      text-decoration: none;
+
+      @include active {
+        text-decoration: underline;
+      }
     }
+  }
 
-    strong,
-    b {
-        font-weight: bold;
+  i,
+  em {
+    font-style: italic;
+  }
+
+  strong,
+  b {
+    font-weight: bold;
+  }
+
+  blockquote {
+    margin: 3rem;
+    padding: 0 2rem;
+    border-left: 4px solid $primary;
+
+    p {
+      @extend %h5;
+      margin: 0;
     }
+  }
 
-    blockquote {
-        margin: 3rem;
-        padding: 0 2rem;
-        border-left: 4px solid $primary;
+  .colour--primary {
+    color: $primary !important;
+  }
 
-        p {
-            @extend %h5;
-            margin: 0;
-        }
-    }
+  .colour--secondary {
+    color: $secondary !important;
+  }
 
-    .colour--primary {
-        color: $primary !important;
-    }
-
-    .colour--secondary {
-        color: $secondary !important;
-    }
-
-    .colour--tertiary {
-        color: $tertiary !important;
-    }
+  .colour--tertiary {
+    color: $tertiary !important;
+  }
 }

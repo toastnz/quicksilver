@@ -3,31 +3,31 @@
 //------------------------------------------------------------------
 
 .message {
-    display: block;
-    margin-top: 0;
-    padding: 1rem 1.6rem;
+  display: block;
+  margin-top: 0;
+  padding: 1rem 1.6rem;
 
-    &.validation {
-        background: rgba($red-light, .3);
-        border-left: 3px solid $red-light;
-    }
+  &.validation {
+    background: rgba($red-light, .3);
+    border-left: 3px solid $red-light;
+  }
 
-    &.good {
-        background: rgba($green-light, .3);
-        border-left: 3px solid $green-light;
-    }
+  &.good {
+    background: rgba($green-light, .3);
+    border-left: 3px solid $green-light;
+  }
 
-    &.warning {
-        background: rgba($yellow-dark, .3);
-        border-left: 3px solid $yellow-dark;
-    }
+  &.warning {
+    background: rgba($yellow-dark, .3);
+    border-left: 3px solid $yellow-dark;
+  }
 }
 
 .description {
-    @extend %p;
-    display: block;
-    margin-top: 0;
-    padding: 1rem 1.6rem;
-    background: rgba($primary, .3);
-    border-left: 3px solid $primary;
+  @extend %p;
+  display: block;
+  margin-top: 0;
+  padding: 1rem 1.6rem;
+  background: rgba($primary, .3);
+  border-left: 3px solid $primary;
 }

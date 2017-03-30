@@ -3,36 +3,36 @@
 // ------------------------------------------------------------------
 
 table {
-    vertical-align: top;
-    max-width: 100%;
-    overflow-x: auto;
-    white-space: nowrap;
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    margin: 3rem auto;
+  vertical-align: top;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 3rem auto;
 
-    tr {
-        th {
-            padding: 1.2rem;
-            border: 1px solid $primary;
-            background-color: $primary;
-            text-align: left;
-            color: $white;
-        }
-
-        &:nth-child(even) {
-            td {
-                background: rgba($off-white, .5);
-            }
-        }
-
-        td {
-            color: $text-light;
-            border: 1px solid $primary;
-            padding: 1rem;
-            background-color: $white;
-            text-align: left;
-        }
+  tr {
+    th {
+      padding: 1.2rem;
+      border: 1px solid $primary;
+      background-color: $primary;
+      text-align: left;
+      color: $white;
     }
+
+    &:nth-child(even) {
+      td {
+        background: rgba($off-white, .5);
+      }
+    }
+
+    td {
+      color: $text-light;
+      border: 1px solid $primary;
+      padding: 1rem;
+      background-color: $white;
+      text-align: left;
+    }
+  }
 }

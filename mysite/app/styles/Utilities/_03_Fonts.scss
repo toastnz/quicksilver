@@ -15,23 +15,23 @@ $base: 10px;
 //------------------------------------------------------------------
 
 @mixin light {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 300;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 
 @mixin regular {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
 }
 
 @mixin semi {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
 
 @mixin bold {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 900;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 900;
 }
 
 //------------------------------------------------------------------
@@ -40,16 +40,16 @@ $base: 10px;
 
 html,
 body {
-    @include regular;
-    font-size: $base;
+  @include regular;
+  font-size: $base;
 
-    * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-    }
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
 }
 
 ::selection {
-    color: $white;
-    background: $primary;
+  color: $white;
+  background: $primary;
 }

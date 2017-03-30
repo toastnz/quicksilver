@@ -1,27 +1,27 @@
-<nav class="nav">
+<nav class="offCanvas">
 
-    <%----------------------------------------------------------------------%>
-    <%--                            Menu 1                                --%>
-    <%----------------------------------------------------------------------%>
-
-    <ul>
+    <ul class="offCanvas__menu">
         <% loop $Menu(1) %>
-            <li data-target-menu="1" class="js-menu-1">
-                <a href="#">
+            <li class="offCanvas__menu__item">
+                <a href="$Link" class="offCanvas__menu__item__link">
                     $MenuTitle <% if $Children %><span>$SVG('arrow-right')</span> <% end_if %>
                 </a>
-                <% if $Children %>
-                    <ul data-menu-id="1">
-                        <% loop $Children %>
-                            <li>
-                                <a href="#" class="js-menu-2 no-children">
-                                    About Us
-                                </a>
-                            </li>
-                        <% end_loop %>
-                    </ul>
-                <% end_if %>
+                <%--<% if $Children %>--%>
+                <%--<ul class="offCanvas__menu">--%>
+                <%--<% loop $Children %>--%>
+                <%--<li>--%>
+                <%--<a href="$Link" class="js-menu-2 no-children">--%>
+                <%--About Us--%>
+                <%--</a>--%>
+                <%--</li>--%>
+                <%--<% end_loop %>--%>
+                <%--</ul>--%>
+                <%--<% end_if %>--%>
             </li>
         <% end_loop %>
     </ul>
+
+    <div class="offCanvas__search">
+        $SearchForm
+    </div>
 </nav>

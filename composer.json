@@ -37,7 +37,7 @@
     "silverstripe-australia/gridfieldextensions": "~1.1",
     "benmanu/silverstripe-simple-styleguide": "dev-master",
     "undefinedoffset/silverstripe-nocaptcha": "^0.2.0",
-    "SilverStripers/gradify": "*"
+    "toastnz/gradify": "dev-master"
   },
   "minimum-stability": "dev"
 }

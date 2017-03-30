@@ -3,87 +3,87 @@
 //------------------------------------------------------------------
 
 .slick-slider {
-    position: relative;
-    display: block;
-    user-select: none;
-    touch-action: pan-y;
+  position: relative;
+  display: block;
+  user-select: none;
+  touch-action: pan-y;
 }
 
 .slick-list {
-    position: relative;
-    display: block;
-    overflow: hidden;
-    margin: 0;
-    padding: 0;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
 
-    &.dragging {
-        cursor: pointer;
-    }
+  &.dragging {
+    cursor: pointer;
+  }
 }
 
 .slick-list:focus {
-    outline: 0;
+  outline: 0;
 }
 
 .slick-slider .slick-track,
 .slick-slider .slick-list {
-    transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .slick-track {
-    position: relative;
-    top: 0;
-    left: 0;
-    display: block;
+  position: relative;
+  top: 0;
+  left: 0;
+  display: block;
 }
 
 .slick-track:before,
 .slick-track:after {
-    display: table;
-    content: '';
+  display: table;
+  content: '';
 }
 
 .slick-track:after {
-    clear: both;
+  clear: both;
 }
 
 .slick-loading .slick-track {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .slick-slide {
+  display: none;
+  float: left;
+  height: 100%;
+  min-height: 1px;
+
+  &.slick-loading img {
     display: none;
-    float: left;
-    height: 100%;
-    min-height: 1px;
+  }
 
-    &.slick-loading img {
-        display: none;
-    }
+  &.dragging img {
+    pointer-events: none;
+  }
 
-    &.dragging img {
-        pointer-events: none;
-    }
-
-    img {
-        display: block;
-    }
+  img {
+    display: block;
+  }
 }
 
 .slick-initialized .slick-slide {
-    display: block;
+  display: block;
 }
 
 .slick-loading .slick-slide {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 .slick-vertical .slick-slide {
-    display: block;
-    height: auto;
-    border: 1px solid transparent;
+  display: block;
+  height: auto;
+  border: 1px solid transparent;
 }
 
 .slick-arrow.slick-hidden {
-    display: none;
+  display: none;
 }
