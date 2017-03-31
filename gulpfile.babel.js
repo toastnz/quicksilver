@@ -1,6 +1,7 @@
 /*------------------------------------------------------------------
  Imports
  ------------------------------------------------------------------*/
+
 const fs           = require('fs');
 const gulp         = require('gulp');
 const chalk        = require('chalk');
@@ -73,19 +74,11 @@ gulp.task('styles', () => {
         }))
         .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(autoprefixer({ browsers: ['last 5 versions'] }))
-        .pipe(pixrem({ rootValue: '10px' }))
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(autoprefixer({browsers: ['last 5 versions']}))
+        .pipe(pixrem({rootValue: '10px'}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.styles.dest));
-});
-
-/*------------------------------------------------------------------
- Font Awesome Asset Relocation
- ------------------------------------------------------------------*/
-gulp.task('font-awesome', function () {
-    return gulp.src('node_modules/font-awesome/fonts/*')
-        .pipe(gulp.dest(`${root}dist/fonts`))
 });
 
 /*------------------------------------------------------------------
@@ -103,8 +96,8 @@ gulp.task('cms', function () {
         }))
         .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(autoprefixer({ browsers: ['last 5 versions'] }))
+        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(autoprefixer({browsers: ['last 5 versions']}))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(cms + 'styles/css'))
 });
@@ -149,7 +142,7 @@ function compileScripts(watch) {
     props.entries = [`${root}/app/js/components/app.js`];
     props.debug   = true;
     let bundler   = watch ? watchify(browserify(props)) : browserify(props);
-    bundler.transform(babelify, { presets: ['es2015'] });
+    bundler.transform(babelify, {presets: ['es2015']});
     function rebundle() {
         let stream = bundler.bundle();
         return stream.on('error', function (error) {
@@ -220,7 +213,7 @@ gulp.task('start', function () {
     Message('start', 'green');
 });
 
-gulp.task('default', ['scss-lint', 'font-awesome', 'start', 'sprites', 'styles'], function () {
+gulp.task('default', ['scss-lint', 'start', 'sprites', 'styles'], function () {
     compileScripts(true);
     gulp.watch([paths.styles.src], ['styles']).on('change', function (evt) {
         Message('scss', 'green');
@@ -237,7 +230,7 @@ gulp.task('default', ['scss-lint', 'font-awesome', 'start', 'sprites', 'styles']
  ------------------------------------------------------------------*/
 
 function Message(message, col) {
-    let color = (col != undefined) ? col : 'yellow';
+    let color = (col !== undefined) ? col : 'yellow';
     gutil.log(chalk[color](Messages[message]));
 }
 
@@ -249,6 +242,6 @@ const Messages = {
 };
 
 /*
- sudo npm install alertify.js combokeys fancybox font-awesome imagesloaded jquery jquery-bridget jquery-match-height lodash masonry-layout moment nprogress parsleyjs slick-carousel --save
- sudo npm install fs gulp chalk watchify babelify gulp-sass gulp-util browserify gulp-pixrem gulp-plumber gulp-replace gulp-sourcemaps gulp.spritesmith gulp-autoprefixer gulp-real-favicon vinyl-source-stream gulp-sass-bulk-import --save
+ npm install alertify.js combokeys fancybox gulp-scss-lint imagesloaded jquery jquery-bridget jquery-match-height lodash masonry-layout moment nprogress parsleyjs slick-carousel --save
+ npm install babel-preset-es2015 babelify browserify chalk fs gulp gulp-autoprefixer gulp-pixrem gulp-plumber gulp-real-favicon gulp-replace gulp-sass gulp-sass-bulk-import gulp-sourcemaps gulp-util gulp.spritesmith vinyl-source-stream watchify  --save
  */
