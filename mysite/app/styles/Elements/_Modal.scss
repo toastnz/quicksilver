@@ -1,0 +1,16 @@
+//------------------------------------------------------------------
+// Modal Styles
+// ------------------------------------------------------------------
+
+.modal {
+
+  &__header {
+    background: $black-light;
+    padding: 2rem 3rem;
+    color: $white;
+  }
+
+  &__content {
+    padding: 3rem 3rem 2rem;
+  }
+}

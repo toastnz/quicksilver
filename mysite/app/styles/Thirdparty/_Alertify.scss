@@ -4,9 +4,9 @@
 
 $box-shadow: 0 2px 5px 0 rgba($black, .2);
 $padding-base: 12px;
-$success-color: rgba(76, 175, 80, .9);
-$danger-color: rgba(244, 67, 54, .8);
-$text-color: rgba($black, .8);
+$success-color: $green-dark;
+$danger-color: $red-dark;
+$text-color: $text;
 $border-radius: 1px;
 
 .alertify-logs {
@@ -51,7 +51,6 @@ $border-radius: 1px;
     bottom: 16px;
   }
 
-  // All left positions.
   &.left,
   &:not(.right) {
     left: 16px;

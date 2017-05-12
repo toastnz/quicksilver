@@ -25,6 +25,12 @@
             <b>augue adipiscing risus</b>. Nulla id lacus eros. Nam porttitor semper enim, sit amet vestibulum arcu adipiscing sed. Proin dignissim, ligula id rhoncus fringilla, nunc lectus luctus magna, vitae cursus neque arcu id risus. Phasellus eu risus quis mauris consectetur luctus. Sed facilisis diam mauris, a vulputate ligula. Sed nec purus mauris. Nulla euismod massa ac nisl gravida dictum. Fusce leo turpis, accumsan non ultricies sed, consectetur id dui. Suspendisse porttitor odio in ipsum dignissim mollis.
         </p>
 
+        <h1 class="subtitle" id="buttons"><span>MODALS</span></h1>
+
+        <div class="offWhite">
+            <a class="button [ js-modal ]">Normal Modal</a>
+            <a class="button button--hover [ js-confirm ]">Confirmation</a>
+        </div>
 
         <h1 class="subtitle" id="buttons"><span>BUTTONS</span></h1>
 
@@ -60,6 +66,36 @@
             <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
             <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
         </ul>
+
+        <h1 class="subtitle"><span>TABLES</span></h1>
+
+
+        <table>
+            <tr>
+                <th>Entry Header 1</th>
+                <th>Entry Header 2</th>
+                <th>Entry Header 3</th>
+                <th>Entry Header 4</th>
+            </tr>
+            <tr>
+                <td>Entry First Line 1</td>
+                <td>Entry First Line 2</td>
+                <td>Entry First Line 3</td>
+                <td>Entry First Line 4</td>
+            </tr>
+            <tr>
+                <td>Entry Line 1</td>
+                <td>Entry Line 2</td>
+                <td>Entry Line 3</td>
+                <td>Entry Line 4</td>
+            </tr>
+            <tr>
+                <td>Entry Last Line 1</td>
+                <td>Entry Last Line 2</td>
+                <td>Entry Last Line 3</td>
+                <td>Entry Last Line 4</td>
+            </tr>
+        </table>
 
         <h1 class="subtitle" id="blockquote"><span>BLOCKQUOTE</span></h1>
 

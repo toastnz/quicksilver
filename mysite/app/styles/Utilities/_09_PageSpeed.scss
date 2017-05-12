@@ -3,6 +3,7 @@
 //------------------------------------------------------------------
 
 .pageSpeed {
+
   &__item {
     position: relative;
     width: 100%;
@@ -15,6 +16,7 @@
 }
 
 .ps {
+
   &__score {
     @include clearfix;
     display: block;
@@ -88,7 +90,6 @@ $colors: $primary $primary $primary $primary;
 $size: 5rem;
 $thickness: 1rem;
 
-// Calculated variables.
 $lat: ($size - $thickness) / 2;
 $offset: $lat - $thickness;
 

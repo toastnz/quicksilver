@@ -55,20 +55,10 @@
       a {
         color: $text;
         padding-bottom: 2px;
-        background: linear-gradient($grey-light, $grey-light), linear-gradient($grey-light, $grey-light), linear-gradient($text, $text);
-        background-size: .05em 1px, .05em 1px, 1px 1px;
-        background-repeat: no-repeat, no-repeat, repeat-x;
-        text-shadow: .03em 0 $grey-light, -.03em 0 $grey-light, 0 .03em $grey-light, 0 -.03em $grey-light, .06em 0 $grey-light, -.06em 0 $grey-light, .09em 0 $grey-light, -.09em 0 $grey-light, .12em 0 $grey-light, -.12em 0 $grey-light, .15em 0 $grey-light, -.15em 0 $grey-light;
-        background-position: 0 87%, 100% 87%, 0 87%;
         text-decoration: none !important;
 
         &:hover {
           color: $primary;
-          background: linear-gradient($grey-light, $grey-light), linear-gradient($grey-light, $grey-light), linear-gradient($primary, $primary);
-          background-size: .05em 1px, .05em 1px, 1px 1px;
-          background-repeat: no-repeat, no-repeat, repeat-x;
-          text-shadow: .03em 0 $grey-light, -.03em 0 $grey-light, 0 .03em $grey-light, 0 -.03em $grey-light, .06em 0 $grey-light, -.06em 0 $grey-light, .09em 0 $grey-light, -.09em 0 $grey-light, .12em 0 $grey-light, -.12em 0 $grey-light, .15em 0 $grey-light, -.15em 0 $grey-light;
-          background-position: 0 87%, 100% 87%, 0 87%;
         }
       }
     }

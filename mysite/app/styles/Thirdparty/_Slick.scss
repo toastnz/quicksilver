@@ -7,6 +7,10 @@
   display: block;
   user-select: none;
   touch-action: pan-y;
+
+  * {
+    outline: none;
+  }
 }
 
 .slick-list {
