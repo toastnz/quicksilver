@@ -2,7 +2,7 @@
 
 import $ from 'jquery';
 import parsley from 'parsleyjs';
-import alertify from 'alertify.js';
+const alertify = require('alertify.js');
 
 /* Variables -------------------------------------------------------*/
 

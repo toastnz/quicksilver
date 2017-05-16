@@ -20,4 +20,3 @@ $body.on('click', '.js-toggle-nav', function (e) {
     e.preventDefault();
     $(this).closest('.offCanvas__menu__item').toggleClass('open');
 });
-

@@ -3,7 +3,10 @@
 <head>
     <% include Meta %>
 </head>
-<body class="$Classname $URLSegment" data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
+<body class="$Classname $URLSegment"
+      data-classname="$Classname"
+      data-title="$Title"
+      data-url-segment="$URLSegment">
 
     <% if $URLSegment != 'Security' %>
         <% include Header %>

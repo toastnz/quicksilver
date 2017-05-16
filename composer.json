@@ -11,35 +11,34 @@
   "authors": [
     {
       "name": "Jaydn de Graaf",
-      "homepage": "http://pinc.nz/",
-      "role": "Tall Guy"
+      "homepage": "http://pinc.nz/"
     },
     {
       "name": "Danae Miller-Clendon",
-      "homepage": "http://www.toast.co.nz/",
-      "role": "Token Chick"
+      "homepage": "http://www.toast.co.nz/"
     }
   ],
   "require": {
     "php": ">=5.3.3",
+    "jonom/focuspoint": "^2.4",
     "toastnz/flat-cms": "~1.1.0",
     "toastnz/toast-seo": "^0.3.2",
     "drewm/mailchimp-api": "~1.0",
     "unclecheese/dropzone": "^1.2",
+    "toastnz/gradify": "dev-master",
     "silverstripe/cms": "~3.1@stable",
     "toastnz/open-graph-meta": "^0.2.0",
     "unclecheese/betterbuttons": "1.2.*",
     "toastnz/twitter-card-meta": "^0.2.4",
-    "undefinedoffset/sortablegridfield": "*",
     "silverstripe/framework": "~3.1@stable",
+    "undefinedoffset/sortablegridfield": "*",
     "jonom/silverstripe-betternavigator": "*",
+    "sheadawson/silverstripe-linkable": "^1.3",
     "wilr/silverstripe-googlesitemaps": "^1.6",
-    "silverstripe-australia/gridfieldextensions": "~1.1",
-    "benmanu/silverstripe-simple-styleguide": "dev-master",
+    "unclecheese/silverstripe-kickassets": "^3.3",
     "undefinedoffset/silverstripe-nocaptcha": "^0.2.0",
-    "toastnz/gradify": "dev-master",
-    "google/apiclient": "^2.0",
-    "sgrodzicki/pagespeed": "^2.0"
+    "silverstripe-australia/gridfieldextensions": "~1.1",
+    "benmanu/silverstripe-simple-styleguide": "dev-master"
   },
   "minimum-stability": "dev"
 }
