@@ -1,6 +1,9 @@
 /* Imports ---------------------------------------------------------*/
 
 import $ from 'jquery';
+// export for others scripts to use
+window.$ = $;
+
 import './templates';
 
 /* Variables -------------------------------------------------------*/
@@ -13,7 +16,7 @@ let $body = $('body');
 
 $body.on('click', '.js-mobile-nav', function (e) {
     e.preventDefault();
-    $body.toggleClass('off-canvas-visible')
+    $body.toggleClass('off-canvas-visible');
 });
 
 $body.on('click', '.js-toggle-nav', function (e) {

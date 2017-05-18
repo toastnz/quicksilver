@@ -38,7 +38,8 @@
     "unclecheese/silverstripe-kickassets": "^3.3",
     "undefinedoffset/silverstripe-nocaptcha": "^0.2.0",
     "silverstripe-australia/gridfieldextensions": "~1.1",
-    "benmanu/silverstripe-simple-styleguide": "dev-master"
+    "benmanu/silverstripe-simple-styleguide": "dev-master",
+    "sgrodzicki/pagespeed": "^2.0"
   },
   "minimum-stability": "dev"
 }

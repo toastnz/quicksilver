@@ -8,3 +8,10 @@ SiteConfig:
 LeftAndMain:
   extra_requirements_css:
     - mysite/dist/styles/custom.css
+---
+Name: pagespped
+After: framework/routes#coreroutes
+---
+Director:
+  rules:
+    '_pagespeed': 'PagespeedController'
