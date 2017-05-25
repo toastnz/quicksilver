@@ -38,16 +38,9 @@ class ContactMessage extends DataObject
          * @var FieldList $fields
          * ========================================*/
 
-        $fields = parent::getCMSFields();
-
-        $fields->removeByName(['PageID']);
-
-        /** -----------------------------------------
-         * Fields
-         * ----------------------------------------*/
-
-        $fields->addFieldsToTab('Root.Main', [
-            ReadonlyField::create('Name', 'Name'),
+        $fields = FieldList::create([
+            ReadonlyField::create('FirstName', 'FirstName'),
+            ReadonlyField::create('Surname', 'Surname'),
             ReadonlyField::create('Email', 'Email'),
             ReadonlyField::create('Phone', 'Phone'),
             ReadonlyField::create('Message', 'Message')

@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "18620bb25a7f1da46bb427b066e7b34e",
-    "content-hash": "d07d778bced12197a0ce088479bb2a54",
+    "content-hash": "d31f78bd5822574ce30a5d9aab63f826",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -13,17 +12,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/benmanu/silverstripe-simple-styleguide.git",
-                "reference": "1eb5196ffb34f9a982173efbd942aa1c00f0d47e"
+                "reference": "cad330f11efcdf5c8afd629e9094fdb33704aab4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/benmanu/silverstripe-simple-styleguide/zipball/1eb5196ffb34f9a982173efbd942aa1c00f0d47e",
-                "reference": "1eb5196ffb34f9a982173efbd942aa1c00f0d47e",
+                "url": "https://api.github.com/repos/benmanu/silverstripe-simple-styleguide/zipball/cad330f11efcdf5c8afd629e9094fdb33704aab4",
+                "reference": "cad330f11efcdf5c8afd629e9094fdb33704aab4",
                 "shasum": ""
             },
             "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
+                "silverstripe/cms": "~3.2",
+                "silverstripe/framework": "~3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~3.7@stable",
+                "squizlabs/php_codesniffer": "^2.8"
             },
             "type": "silverstripe-module",
             "extra": {
@@ -45,7 +48,7 @@
                 "silverstripe",
                 "styleguide"
             ],
-            "time": "2017-04-20 01:39:31"
+            "time": "2017-05-20 04:42:51"
         },
         {
             "name": "composer/installers",
@@ -159,7 +162,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24 06:37:16"
+            "time": "2017-04-24T06:37:16+00:00"
         },
         {
             "name": "drewm/mailchimp-api",
@@ -196,7 +199,7 @@
             ],
             "description": "Super-simple, minimum abstraction MailChimp API v2 wrapper",
             "homepage": "https://github.com/drewm/mailchimp-api",
-            "time": "2015-07-07 15:38:25"
+            "time": "2015-07-07T15:38:25+00:00"
         },
         {
             "name": "embed/embed",
@@ -246,7 +249,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2015-06-27 17:19:54"
+            "time": "2015-06-27T17:19:54+00:00"
         },
         {
             "name": "guzzle/guzzle",
@@ -381,7 +384,7 @@
                 "image",
                 "silverstripe"
             ],
-            "time": "2017-03-22 23:16:19"
+            "time": "2017-03-22T23:16:19+00:00"
         },
         {
             "name": "jonom/silverstripe-betternavigator",
@@ -421,7 +424,7 @@
                 "navigator",
                 "silverstripe"
             ],
-            "time": "2017-03-22 23:39:21"
+            "time": "2017-03-22T23:39:21+00:00"
         },
         {
             "name": "sgrodzicki/pagespeed",
@@ -467,7 +470,7 @@
                 "api",
                 "google"
             ],
-            "time": "2015-02-09 11:03:26"
+            "time": "2015-02-09T11:03:26+00:00"
         },
         {
             "name": "sheadawson/silverstripe-linkable",
@@ -627,7 +630,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2017-02-20 17:01:15"
+            "time": "2017-02-20T17:01:15+00:00"
         },
         {
             "name": "silverstripe/framework",
@@ -681,7 +684,45 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2017-02-20 17:01:16"
+            "time": "2017-02-20T17:01:16+00:00"
+        },
+        {
+            "name": "silverstripe/redirectedurls",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/silverstripe/silverstripe-redirectedurls.git",
+                "reference": "91a8f1bd4c36d2db404ae0245d775afeb349b5c1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-redirectedurls/zipball/91a8f1bd4c36d2db404ae0245d775afeb349b5c1",
+                "reference": "91a8f1bd4c36d2db404ae0245d775afeb349b5c1",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "~3.1",
+                "silverstripe/framework": "~3.1"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Sam Minnee",
+                    "email": "sam@silverstripe.com"
+                }
+            ],
+            "description": "Provides a system for users to configure arbitrary redirections in the CMS",
+            "keywords": [
+                "redirect",
+                "redirectedurls",
+                "silverstripe",
+                "urls"
+            ],
+            "time": "2017-05-04 05:59:29"
         },
         {
             "name": "silverstripe/reports",
@@ -920,7 +961,7 @@
                 "flat cms",
                 "silverstripe"
             ],
-            "time": "2016-12-20 22:48:09"
+            "time": "2016-12-20T22:48:09+00:00"
         },
         {
             "name": "toastnz/gradify",
@@ -1002,7 +1043,7 @@
                 "open graph",
                 "silverstripe"
             ],
-            "time": "2017-03-01 00:29:46"
+            "time": "2017-03-01T00:29:46+00:00"
         },
         {
             "name": "toastnz/toast-seo",
@@ -1049,7 +1090,7 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2017-03-01 00:30:21"
+            "time": "2017-03-01T00:30:21+00:00"
         },
         {
             "name": "toastnz/twitter-card-meta",
@@ -1098,7 +1139,7 @@
                 "twitter",
                 "twitter card"
             ],
-            "time": "2017-04-21 00:32:38"
+            "time": "2017-04-21T00:32:38+00:00"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -1134,7 +1175,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-12-18 20:44:09"
+            "time": "2015-12-18T20:44:09+00:00"
         },
         {
             "name": "unclecheese/display-logic",
@@ -1181,7 +1222,7 @@
                 "logic",
                 "silverstripe"
             ],
-            "time": "2017-01-06 09:46:49"
+            "time": "2017-01-06T09:46:49+00:00"
         },
         {
             "name": "unclecheese/dropzone",
@@ -1223,7 +1264,7 @@
                 "upload",
                 "uploader"
             ],
-            "time": "2017-03-23 08:31:36"
+            "time": "2017-03-23T08:31:36+00:00"
         },
         {
             "name": "unclecheese/silverstripe-kickassets",
@@ -1271,7 +1312,7 @@
                 "silverstripe",
                 "upload"
             ],
-            "time": "2017-05-09 23:48:32"
+            "time": "2017-05-09T23:48:32+00:00"
         },
         {
             "name": "undefinedoffset/silverstripe-nocaptcha",
@@ -1315,7 +1356,7 @@
                 "silverstripe",
                 "spamprotection"
             ],
-            "time": "2016-09-30 14:01:17"
+            "time": "2016-09-30T14:01:17+00:00"
         },
         {
             "name": "undefinedoffset/sortablegridfield",
@@ -1405,7 +1446,8 @@
         "toastnz/gradify": 20,
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
-        "benmanu/silverstripe-simple-styleguide": 20
+        "benmanu/silverstripe-simple-styleguide": 20,
+        "silverstripe/redirectedurls": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

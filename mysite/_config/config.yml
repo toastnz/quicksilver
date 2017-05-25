@@ -12,6 +12,8 @@ GDBackend:
   default_quality: 90
 
 Image:
+  cms_thumbnail_width:  100
+  cms_thumbnail_height: 80
   force_resample: true
 
 SiteTree:
@@ -22,6 +24,8 @@ LeftAndMain:
   cms_success_color : '#2962ff'
   cms_error_color : '#d54e21'
   cms_style_tinymce: true
+  extra_requirements_css:
+    - mysite/dist/styles/custom.css
 
 ColorField:
   colors:

@@ -31,3 +31,8 @@ _resampled
 /silverstripe-cacheinclude-manager
 /kickassets
 /display_logic
+/silverstripe.log
+/redirectedurls
+/linkable
+/gradify
+/focuspoint
