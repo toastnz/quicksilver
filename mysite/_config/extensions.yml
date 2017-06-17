@@ -5,6 +5,3 @@ After: 'framework/*','cms/*'
 SiteConfig:
   extensions:
     - SiteConfigExtension
-LeftAndMain:
-  extra_requirements_css:
-    - mysite/dist/styles/custom.css

@@ -5,15 +5,6 @@
 .wysiwyg {
   color: $text;
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @include bold;
-  }
-
   hr {
     margin: 1rem auto 2rem;
     display: block;
@@ -23,26 +14,30 @@
 
   ol,
   ul {
-    padding-left: 4rem;
+    padding-left: 2rem;
 
     li {
       position: relative;
 
       &:before {
         @include pseudo;
-        width: 5px;
-        height: 5px;
+        width: .4rem;
+        height: .4rem;
+        border-radius: 1.5rem;
         background: $primary;
-        top: 1rem;
+        top: .8rem;
         left: -1.3rem;
       }
     }
   }
 
+  p {
+    margin-bottom: 1.6rem;
+  }
+
   p,
   li {
-    margin: 1.6rem 0;
-    line-height: 1.6;
+    line-height: 1.3;
     color: $text-light;
 
     a {
@@ -62,7 +57,7 @@
 
   strong,
   b {
-    font-weight: bold;
+    @include bold;
   }
 
   blockquote {

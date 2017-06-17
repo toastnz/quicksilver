@@ -1,0 +1,220 @@
+.tingle-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .8);
+  opacity: 0;
+  cursor: pointer;
+  transition: transform .2s ease;
+
+  * {
+    outline: none;
+  }
+}
+
+.tingle-modal--confirm .tingle-modal-box {
+  text-align: center;
+}
+
+.tingle-modal--noOverlayClose {
+  cursor: default;
+}
+
+.tingle-modal--noClose .tingle-modal__close {
+  display: none;
+}
+
+.tingle-modal__close {
+  position: fixed;
+  top: 10px;
+  right: 28px;
+  z-index: 1000;
+  padding: 0;
+  width: 5rem;
+  height: 5rem;
+  border: 0;
+  background-color: transparent;
+  color: $off-white;
+  font-size: 6rem;
+  font-family: monospace;
+  line-height: 1;
+  cursor: pointer;
+  transition: color .3s ease;
+}
+
+.tingle-modal__closeLabel {
+  display: none;
+}
+
+.tingle-modal__close:hover {
+  color: $white;
+}
+
+.tingle-modal-box {
+  position: relative;
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 80%;
+  background: $white;
+  opacity: 1;
+  cursor: auto;
+  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
+  transform: scale(.8);
+}
+
+.tingle-modal-box__footer {
+  padding: 1.5rem 2rem;
+  width: auto;
+  background-color: $off-white;
+  cursor: auto;
+  text-align: right;
+
+  .button {
+    margin-bottom: 0;
+  }
+}
+
+.tingle-modal-box__footer::after {
+  display: table;
+  clear: both;
+  content: '';
+}
+
+.tingle-modal-box__footer--sticky {
+  position: fixed;
+  bottom: -200px;
+  z-index: 10001;
+  opacity: 1;
+  transition: bottom .3s ease-in-out .3s;
+}
+
+.tingle-enabled {
+  overflow: hidden;
+  height: 100%;
+
+  .tingle-content-wrapper {
+    filter: blur(15px);
+  }
+}
+
+.tingle-modal--visible {
+  visibility: visible;
+  opacity: 1;
+
+  .tingle-modal-box {
+    transform: scale(1);
+  }
+
+  .tingle-modal-box__footer {
+    bottom: 0;
+  }
+}
+
+.tingle-modal--overflow {
+  overflow-y: scroll;
+  padding-top: 8vh;
+}
+
+.tingle-btn {
+  display: inline-block;
+  margin: 0 .5rem;
+  padding: 1rem 2rem;
+  border: 0;
+  background-color: $grey-mid;
+  box-shadow: none;
+  color: $white;
+  vertical-align: middle;
+  text-decoration: none;
+  font-size: inherit;
+  font-family: inherit;
+  line-height: normal;
+  cursor: pointer;
+  transition: background-color .4s ease;
+}
+
+.tingle-btn--primary {
+  background-color: $primary;
+}
+
+.tingle-btn--danger {
+  background-color: $red-dark;
+}
+
+.tingle-btn--default {
+  background-color: $primary;
+}
+
+.tingle-btn--pull-left {
+  float: left;
+}
+
+.tingle-btn--pull-right {
+  float: right;
+}
+
+@media (max-width: 540px) {
+  .tingle-modal-box {
+    width: auto;
+    border-radius: 0;
+    padding-top: 60px;
+  }
+
+  .tingle-modal {
+    top: 0;
+
+    display: block;
+    width: 100%;
+  }
+
+  .tingle-modal--noClose {
+    top: 0;
+  }
+
+  .tingle-modal--overflow {
+    padding: 0;
+  }
+
+  .tingle-modal-box__footer .tingle-btn {
+    display: block;
+    float: none;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .tingle-modal__close {
+    top: 0;
+    right: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 60px;
+    border: 0;
+    background-color: $primary;
+    box-shadow: none;
+    color: $white;
+    line-height: 55px;
+  }
+
+  .tingle-modal__closeLabel {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+
+  .tingle-modal__closeIcon {
+    display: inline-block;
+    margin-right: .5rem;
+    vertical-align: middle;
+    font-size: 4rem;
+  }
+}

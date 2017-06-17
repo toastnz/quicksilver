@@ -51,5 +51,5 @@ body {
 
 ::selection {
   color: $white;
-  background: $primary;
+  background: rgba($primary, .99999);
 }

@@ -16,6 +16,11 @@ class Page extends SiteTree
  */
 class Page_Controller extends ContentController
 {
+    private static $allowed_actions = [
+        'StyleguideForm',
+        'SubscriptionForm'
+    ];
+
     public function init()
     {
         parent::init();
@@ -25,6 +30,11 @@ class Page_Controller extends ContentController
                 'mysite/dist/js/app.js',
             ]
         );
+    }
+
+    public function SubscriptionForm()
+    {
+        return SubscriptionForm::create($this, 'SubscriptionForm');
     }
 
     public function StyleguideForm()

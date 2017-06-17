@@ -10,6 +10,7 @@
  * @property string Facebook
  * @property string LinkedIn
  * @property string Instagram
+ * @property string Youtube
  * @property string TwitterHandle
  * @property string MailChimpAPI
  * @property string MailChimpListID
@@ -30,7 +31,8 @@ class SiteConfigExtension extends DataExtension
         'LinkedIn'                => 'Varchar(255)',
         'Pinterest'               => 'Varchar(255)',
         'Instagram'               => 'Varchar(255)',
-        'TwitterHandle'           => 'Varchar(255)',
+        'Youtube'                 => 'Varchar(255)',
+        'Twitter'                 => 'Varchar(255)',
         'MailChimpAPI'            => 'Varchar(255)',
         'MailChimpListID'         => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
@@ -38,6 +40,11 @@ class SiteConfigExtension extends DataExtension
         'GoogleTrackingID'        => 'Varchar(100)',
         'GoogleTagManagerID'      => 'Varchar(100)',
     ];
+
+    private static $many_many = [
+        'pagespeedpages' => 'Page'
+    ];
+
 
     /**
      * @var array
@@ -73,6 +80,11 @@ class SiteConfigExtension extends DataExtension
         $postalAddress = TextareaField::create('PostalAddress', 'Postal Address');
         $postalAddress->setRows(8);
 
+        $fields->findOrMakeTab('Root.Settings.Pagespeed');
+        $fields->addFieldsToTab('Root.Settings.Pagespeed', [
+            HeaderField::create('', 'Google Page Speed'),
+            TreeMultiselectField::create('PagespeedPages', 'Select pages to test against', 'SiteTree')
+        ]);
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('', 'Company Details'),
@@ -86,9 +98,13 @@ class SiteConfigExtension extends DataExtension
                 ->addExtraClass('input-wrap--half'),
             TextField::create('LinkedIn', 'LinkedIn')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
+            TextField::create('Youtube', 'Youtube')
+                ->addExtraClass('input-wrap--half'),
+            TextField::create('Instagram', 'Instagram')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextField::create('Pinterest', 'Pinterest')
                 ->addExtraClass('input-wrap--half'),
-            TextField::create('TwitterHandle', 'Twitter Handle')
+            TextField::create('Twitter', 'Twitter')
                 ->addExtraClass('input-wrap--half input-wrap--half--last')
         ]);
 
