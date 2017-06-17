@@ -74,9 +74,9 @@ gulp.task('styles', () => {
         }))
         .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(autoprefixer({browsers: ['last 5 versions']}))
-        .pipe(pixrem({rootValue: '10px'}))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer({ browsers: ['last 5 versions'] }))
+        .pipe(pixrem({ rootValue: '10px' }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.styles.dest));
 });
@@ -96,8 +96,8 @@ gulp.task('cms', function () {
         }))
         .pipe(bulkSass())
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
-        .pipe(autoprefixer({browsers: ['last 5 versions']}))
+        .pipe(sass({ outputStyle: 'compressed' }))
+        .pipe(autoprefixer({ browsers: ['last 5 versions'] }))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(cms + 'styles/css'))
 });
@@ -141,8 +141,8 @@ function compileScripts(watch) {
     let props     = watchify.args;
     props.entries = [`${root}/app/js/components/app.js`];
     props.debug   = true;
-    let bundler   = watch ? watchify(browserify(props)) : browserify(props);
-    bundler.transform(babelify, {presets: ['es2015']});
+    let bundler = watch ? watchify(browserify(props)) : browserify(props);
+    bundler.transform(babelify, { presets: ['es2015'] });
     function rebundle() {
         let stream = bundler.bundle();
         return stream.on('error', function (error) {
