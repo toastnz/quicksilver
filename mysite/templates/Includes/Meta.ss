@@ -12,15 +12,29 @@
 <% include ToastSEO %>
 <link rel="stylesheet" href="$Themedir/dist/styles/style.css"/>
 <% include Favicons %>
-<% if $SiteConfig.GoogleTrackingID %>
-    <script>
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-        ga('create', '{$SiteConfig.GoogleTrackingID}', 'auto');
-        ga('send', 'pageview');
+<% with $SiteConfig %>
+    <% if $EnableBugherd && $BHProjectKey %>
+        <script type='text/javascript'>
+            (function (d, t) {
+                var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                bh.type = 'text/javascript';
+                bh.src = 'https://www.bugherd.com/sidebarv2.js?apikey={$BHProjectKey}';
+                s.parentNode.insertBefore(bh, s);
+            })(document, 'script');
+        </script>
+    <% end_if %>
 
-    </script>
-<% end_if %>
+    <% if $GoogleTrackingID %>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+            ga('create', '{$GoogleTrackingID}', 'auto');
+            ga('send', 'pageview');
+
+        </script>
+    <% end_if %>
+<% end_with %>

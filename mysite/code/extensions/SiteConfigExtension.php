@@ -39,12 +39,9 @@ class SiteConfigExtension extends DataExtension
         'GoogleMapsApiKey'        => 'Varchar(100)',
         'GoogleTrackingID'        => 'Varchar(100)',
         'GoogleTagManagerID'      => 'Varchar(100)',
+        'BHProjectKey'            => 'Varchar(100)',
+        'EnableBugherd'           => 'Boolean'
     ];
-
-    private static $many_many = [
-        'pagespeedpages' => 'Page'
-    ];
-
 
     /**
      * @var array
@@ -80,11 +77,6 @@ class SiteConfigExtension extends DataExtension
         $postalAddress = TextareaField::create('PostalAddress', 'Postal Address');
         $postalAddress->setRows(8);
 
-        $fields->findOrMakeTab('Root.Settings.Pagespeed');
-        $fields->addFieldsToTab('Root.Settings.Pagespeed', [
-            HeaderField::create('', 'Google Page Speed'),
-            TreeMultiselectField::create('PagespeedPages', 'Select pages to test against', 'SiteTree')
-        ]);
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('', 'Company Details'),
@@ -109,7 +101,7 @@ class SiteConfigExtension extends DataExtension
         ]);
 
         /** -----------------------------------------
-         * Subscription
+         * Integrations
          * ----------------------------------------*/
 
         $mailChimpAPI            = TextField::create('MailChimpAPI', 'API Key');
@@ -119,16 +111,20 @@ class SiteConfigExtension extends DataExtension
         $mailChimpSuccessMessage->setRows(2)
             ->setRightTitle('Message displayed when a user has successfully subscribed to a list.');
 
-        $fields->findOrMakeTab('Root.Settings.Subscription', 'Subscription');
+        $fields->findOrMakeTab('Root.Settings.Integrations');
 
-        $fields->addFieldsToTab('Root.Settings.Subscription', [
+        $fields->addFieldsToTab('Root.Settings.Integrations', [
             HeaderField::create('', 'Newsletter Subscription'),
             LiteralField::create('',
                 '<p>The API key, and list ID are necessary for the Newsletter Subscription form to function.</p>'
             ),
             $mailChimpAPI,
             TextField::create('MailChimpListID', 'List ID'),
-            $mailChimpSuccessMessage
+            $mailChimpSuccessMessage,
+            HeaderField::create('', 'Bugherd'),
+            CheckboxField::create('EnableBugherd', 'Enable bugherd?'),
+            TextField::create('BHProjectKey', 'Project Key')
+                ->setRightTitle('<a href="https://support.bugherd.com/hc/en-us/articles/204171450-Installing-the-Script" target="_blank"><i>How do I get my BugHerd Project Key?</i></a>')
         ]);
 
         /** -----------------------------------------
