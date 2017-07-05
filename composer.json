@@ -26,11 +26,11 @@
     "drewm/mailchimp-api": "~1.0",
     "unclecheese/dropzone": "^1.2",
     "toastnz/gradify": "dev-master",
-    "silverstripe/cms": "~3.1@stable",
+    "silverstripe/cms": "~3.3@stable",
     "toastnz/open-graph-meta": "^0.2.0",
     "unclecheese/betterbuttons": "1.2.*",
     "toastnz/twitter-card-meta": "^0.2.4",
-    "silverstripe/framework": "~3.1@stable",
+    "silverstripe/framework": "~3.3@stable",
     "undefinedoffset/sortablegridfield": "*",
     "jonom/silverstripe-betternavigator": "*",
     "sheadawson/silverstripe-linkable": "^1.3",
@@ -40,7 +40,7 @@
     "silverstripe-australia/gridfieldextensions": "~1.1",
     "benmanu/silverstripe-simple-styleguide": "dev-master",
     "sgrodzicki/pagespeed": "^2.0",
-    "jacobbuck/silverstripe-dominantcolor": "^1.0"
+    "silverstripe/redirectedurls": "dev-master"
   },
   "minimum-stability": "dev"
 }
