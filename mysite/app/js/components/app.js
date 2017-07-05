@@ -1,8 +1,8 @@
-/* Imports ---------------------------------------------------------*/
+/* Third Party -----------------------------------------------------*/
 
 import $ from 'jquery';
-// export for others scripts to use
-window.$ = $;
+
+/* Imports ---------------------------------------------------------*/
 
 import './templates';
 
@@ -23,3 +23,4 @@ $body.on('click', '.js-toggle-nav', function (e) {
     e.preventDefault();
     $(this).closest('.offCanvas__menu__item').toggleClass('open');
 });
+

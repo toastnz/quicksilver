@@ -30,6 +30,7 @@
         <div class="offWhite">
             <a class="button [ js-modal ]">Normal Modal</a>
             <a class="button button--hover [ js-confirm ]">Confirmation</a>
+            <a class="button button--hover [ js-youtube ]">Youtube</a>
         </div>
 
         <h1 class="subtitle" id="buttons"><span>BUTTONS</span></h1>
