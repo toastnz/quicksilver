@@ -5,10 +5,6 @@
  */
 class Page extends SiteTree
 {
-    public function getIsLive()
-    {
-        return Director::isLive();
-    }
 }
 
 /**

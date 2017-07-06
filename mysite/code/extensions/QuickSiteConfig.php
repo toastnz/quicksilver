@@ -3,23 +3,9 @@
 /**
  * Class SiteConfigExtension
  *
- * @property string Phone
- * @property string Email
- * @property string Address
- * @property string PostalAddress
- * @property string Facebook
- * @property string LinkedIn
- * @property string Instagram
- * @property string Youtube
- * @property string TwitterHandle
- * @property string MailChimpAPI
- * @property string MailChimpListID
- * @property string MailChimpSuccessMessage
- * @property string GoogleMapsApiKey
- * @property string GoogleTrackingID
- * @property string GoogleTagManagerID
+ * @property SiteConfig $owner
  */
-class SiteConfigExtension extends DataExtension
+class QuickSiteConfig extends DataExtension
 {
     private static $db = [
         'Phone'                   => 'Varchar(255)',
@@ -104,36 +90,26 @@ class SiteConfigExtension extends DataExtension
          * Integrations
          * ----------------------------------------*/
 
-        $mailChimpAPI            = TextField::create('MailChimpAPI', 'API Key');
-        $mailChimpSuccessMessage = TextareaField::create('MailChimpSuccessMessage', 'Success Message (optional)');
-
-        $mailChimpAPI->setRightTitle('<a href="https://us9.admin.mailchimp.com/account/api-key-popup/" target="_blank"><i>How do I get my MailChimp API Key?</i></a>');
-        $mailChimpSuccessMessage->setRows(2)
-            ->setRightTitle('Message displayed when a user has successfully subscribed to a list.');
-
         $fields->findOrMakeTab('Root.Settings.Integrations');
 
         $fields->addFieldsToTab('Root.Settings.Integrations', [
+            // Mailchimp
             HeaderField::create('', 'Newsletter Subscription'),
-            LiteralField::create('',
-                '<p>The API key, and list ID are necessary for the Newsletter Subscription form to function.</p>'
-            ),
-            $mailChimpAPI,
-            TextField::create('MailChimpListID', 'List ID'),
-            $mailChimpSuccessMessage,
+            LiteralField::create('', '<p>The API key and list ID are necessary for the Newsletter Subscription form to function. <a href="https://us9.admin.mailchimp.com/account/api-key-popup/" target="_blank"><i>How do I get my MailChimp API Key?</i></a></p>'),
+            TextField::create('MailChimpAPI', 'API Key')
+                ->addExtraClass('input-wrap--half'),
+            TextField::create('MailChimpListID', 'List ID')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+            TextareaField::create('MailChimpSuccessMessage', 'Success Message')->setRows(2)
+                ->setRightTitle('Message displayed when a user has successfully subscribed to a list.'),
+
+            // BugHerd
             HeaderField::create('', 'Bugherd'),
             CheckboxField::create('EnableBugherd', 'Enable bugherd?'),
             TextField::create('BHProjectKey', 'Project Key')
-                ->setRightTitle('<a href="https://support.bugherd.com/hc/en-us/articles/204171450-Installing-the-Script" target="_blank"><i>How do I get my BugHerd Project Key?</i></a>')
-        ]);
+                ->setRightTitle('<a href="https://support.bugherd.com/hc/en-us/articles/204171450-Installing-the-Script" target="_blank"><i>How do I get my BugHerd Project Key?</i></a>'),
 
-        /** -----------------------------------------
-         * SEO
-         * ----------------------------------------*/
-
-        $fields->findOrMakeTab('Root.Settings.SEO');
-
-        $fields->addFieldsToTab('Root.Settings.SEO', [
+            // Google
             HeaderField::create('', 'Google Tracking'),
             TextField::create('GoogleTrackingID', 'Tracking ID')
                 ->addExtraClass('input-wrap--half')

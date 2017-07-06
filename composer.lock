@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ca9420fe2ddce2fb98f06efa33bdc87",
+    "content-hash": "b639f4432f7c63a4e617f7d155f17f27",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -1297,54 +1297,17 @@
             "time": "2016-12-20T22:48:09+00:00"
         },
         {
-            "name": "toastnz/gradify",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/toastnz/gradify.git",
-                "reference": "bc9d6f62a482ed605b757ef7039b9bd8b8e00450"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/gradify/zipball/bc9d6f62a482ed605b757ef7039b9bd8b8e00450",
-                "reference": "bc9d6f62a482ed605b757ef7039b9bd8b8e00450",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/cms": "~3.1",
-                "silverstripe/framework": "~3.1"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "gradify"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "authors": [
-                {
-                    "name": "Nivanka Fonseka",
-                    "email": "nivanka@silverstripers.com"
-                }
-            ],
-            "description": "Gradify php implementation SilverStirpe",
-            "keywords": [
-                "gradify",
-                "images",
-                "silverstripe"
-            ],
-            "time": "2017-03-30 01:14:02"
-        },
-        {
             "name": "toastnz/open-graph-meta",
-            "version": "0.2.3",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/open-graph-meta.git",
-                "reference": "ba700f6ba235b22eca43aecefa9de971bd203526"
+                "reference": "70de177d7d3d662d2096ac72c6aa69ba81bba43a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/ba700f6ba235b22eca43aecefa9de971bd203526",
-                "reference": "ba700f6ba235b22eca43aecefa9de971bd203526",
+                "url": "https://api.github.com/repos/toastnz/open-graph-meta/zipball/70de177d7d3d662d2096ac72c6aa69ba81bba43a",
+                "reference": "70de177d7d3d662d2096ac72c6aa69ba81bba43a",
                 "shasum": ""
             },
             "require": {
@@ -1376,20 +1339,20 @@
                 "open graph",
                 "silverstripe"
             ],
-            "time": "2017-03-01T00:29:46+00:00"
+            "time": "2017-07-06T00:11:02+00:00"
         },
         {
             "name": "toastnz/toast-seo",
-            "version": "0.3.6",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/toast-seo.git",
-                "reference": "2edb156cfce1ebb3351670a4b9eaf8fceb389ba0"
+                "reference": "e8eaea9c678731e1559e4861cea22d90e2aa714c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/2edb156cfce1ebb3351670a4b9eaf8fceb389ba0",
-                "reference": "2edb156cfce1ebb3351670a4b9eaf8fceb389ba0",
+                "url": "https://api.github.com/repos/toastnz/toast-seo/zipball/e8eaea9c678731e1559e4861cea22d90e2aa714c",
+                "reference": "e8eaea9c678731e1559e4861cea22d90e2aa714c",
                 "shasum": ""
             },
             "require": {
@@ -1423,20 +1386,20 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2017-03-01T00:30:21+00:00"
+            "time": "2017-07-05T23:50:11+00:00"
         },
         {
             "name": "toastnz/twitter-card-meta",
-            "version": "0.2.7",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/twitter-card-meta.git",
-                "reference": "182d0bfc5596cdc22b7a380376af8cef6ada495f"
+                "reference": "4fc1b742504d0c5b493f280511886f0785eb5d4e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/182d0bfc5596cdc22b7a380376af8cef6ada495f",
-                "reference": "182d0bfc5596cdc22b7a380376af8cef6ada495f",
+                "url": "https://api.github.com/repos/toastnz/twitter-card-meta/zipball/4fc1b742504d0c5b493f280511886f0785eb5d4e",
+                "reference": "4fc1b742504d0c5b493f280511886f0785eb5d4e",
                 "shasum": ""
             },
             "require": {
@@ -1472,7 +1435,7 @@
                 "twitter",
                 "twitter card"
             ],
-            "time": "2017-04-21T00:32:38+00:00"
+            "time": "2017-07-06T00:15:41+00:00"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -1767,7 +1730,6 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "toastnz/gradify": 20,
         "silverstripe/cms": 0,
         "silverstripe/framework": 0,
         "benmanu/silverstripe-simple-styleguide": 20
