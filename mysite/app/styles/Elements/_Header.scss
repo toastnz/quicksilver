@@ -92,7 +92,48 @@
 
     &__item {
       display: inline-block;
-      margin: 0 1rem;
+      margin: 1rem;
+
+      &:hover {
+        .header__menu__item__child {
+          display: block;
+        }
+      }
+
+      &__child {
+        position: absolute;
+        background: rgba($white, .9);
+        min-width: 20rem;
+        text-align: left;
+        top: 100%;
+        margin-top: -.5rem;
+        display: none;
+        box-shadow: $z2;
+
+        li {
+          margin: 0;
+
+          &:first-of-type {
+            padding-top: .5rem;
+          }
+
+          &:last-of-type {
+            padding-bottom: .5rem;
+          }
+        }
+
+        a {
+          @extend %p;
+          color: $text;
+          text-decoration: none;
+          padding: .7rem 1rem;
+          display: block;
+
+          &:hover {
+            background: $off-white;
+          }
+        }
+      }
 
       &__link {
         @extend %p;

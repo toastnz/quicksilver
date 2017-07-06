@@ -12,5 +12,12 @@
 
   &__content {
     padding: 3rem 3rem 2rem;
+    background: $white;
+
+  }
+
+  .embed-container {
+    max-width: 100%;
+    width: 128rem;
   }
 }
