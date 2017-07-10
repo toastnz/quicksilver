@@ -13,12 +13,12 @@ class QuickSiteConfig extends DataExtension
         'ContactFormEmail'        => 'Varchar(255)',
         'Address'                 => 'Text',
         'PostalAddress'           => 'Text',
-        'Facebook'                => 'Varchar(255)',
-        'LinkedIn'                => 'Varchar(255)',
-        'Pinterest'               => 'Varchar(255)',
-        'Instagram'               => 'Varchar(255)',
-        'Youtube'                 => 'Varchar(255)',
-        'Twitter'                 => 'Varchar(255)',
+        'FacebookPage'            => 'Varchar(255)',
+        'LinkedInPage'            => 'Varchar(255)',
+        'PinterestPage'           => 'Varchar(255)',
+        'InstagramPage'           => 'Varchar(255)',
+        'YoutubePage'             => 'Varchar(255)',
+        'TwitterPage'             => 'Varchar(255)',
         'MailChimpAPI'            => 'Varchar(255)',
         'MailChimpListID'         => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
@@ -52,16 +52,16 @@ class QuickSiteConfig extends DataExtension
             $fields->addFieldToTab('Root', TabSet::create('Settings'));
         }
 
-        $fields->removeByName('Theme');
+        $fields->removeByName(['Theme']);
 
         /** -----------------------------------------
          * Details
          * ----------------------------------------*/
 
         $address = TextareaField::create('Address', 'Address');
-        $address->setRows(8);
+        $address->setRows(8)->addExtraClass('input-wrap--half');
         $postalAddress = TextareaField::create('PostalAddress', 'Postal Address');
-        $postalAddress->setRows(8);
+        $postalAddress->setRows(8)->addExtraClass('input-wrap--half input-wrap--half--last');
 
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
@@ -72,17 +72,18 @@ class QuickSiteConfig extends DataExtension
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
             $address,
             $postalAddress,
-            TextField::create('Facebook', 'Facebook')
+            HeaderField::create('', 'Social Media Pages'),
+            TextField::create('FacebookPage', '<img src="mysite/dist/images/cms/social/Facebook.png" class="inlineIconSocial"> Facebook')
                 ->addExtraClass('input-wrap--half'),
-            TextField::create('LinkedIn', 'LinkedIn')
+            TextField::create('LinkedInPage', '<img src="mysite/dist/images/cms/social/LinkedIn.png" class="inlineIconSocial"> LinkedIn')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextField::create('Youtube', 'Youtube')
+            TextField::create('YoutubePage', '<img src="mysite/dist/images/cms/social/Youtube.png" class="inlineIconSocial"> Youtube')
                 ->addExtraClass('input-wrap--half'),
-            TextField::create('Instagram', 'Instagram')
+            TextField::create('InstagramPage', '<img src="mysite/dist/images/cms/social/Instagram.png" class="inlineIconSocial"> Instagram')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextField::create('Pinterest', 'Pinterest')
+            TextField::create('PinterestPage', '<img src="mysite/dist/images/cms/social/Pinterest.png" class="inlineIconSocial"> Pinterest')
                 ->addExtraClass('input-wrap--half'),
-            TextField::create('Twitter', 'Twitter')
+            TextField::create('TwitterPage', '<img src="mysite/dist/images/cms/social/Twitter.png" class="inlineIconSocial"> Twitter')
                 ->addExtraClass('input-wrap--half input-wrap--half--last')
         ]);
 
@@ -106,7 +107,7 @@ class QuickSiteConfig extends DataExtension
             // BugHerd
             HeaderField::create('', 'Bugherd'),
             CheckboxField::create('EnableBugherd', 'Enable bugherd?'),
-            TextField::create('BHProjectKey', 'Project Key')
+            TextField::create('BHProjectKey', 'Bugherd Project Key')
                 ->setRightTitle('<a href="https://support.bugherd.com/hc/en-us/articles/204171450-Installing-the-Script" target="_blank"><i>How do I get my BugHerd Project Key?</i></a>'),
 
             // Google
@@ -116,7 +117,11 @@ class QuickSiteConfig extends DataExtension
                 ->setAttribute('placeholder', 'UA-XXXXXXXX-X'),
             TextField::create('GoogleTagManagerID', 'Tag Manager ID')
                 ->setAttribute('placeholder', 'GTM-XXXXXX')
-                ->addExtraClass('input-wrap--half input-wrap--half--last')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+
+            // Google Maps
+            HeaderField::create('', 'Google Maps'),
+            TextField::create('GoogleMapsApiKey', 'Google Maps API Key')
         ]);
     }
 

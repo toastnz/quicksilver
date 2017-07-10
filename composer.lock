@@ -4,7 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa3de05e51693e55b2f2e9820a5a351f",
+    "hash": "47b24c52348363f4808f3912e92e8cc0",
+    "content-hash": "4597ee2b07d7a4052c2216a5941be25e",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -91,7 +92,7 @@
                 }
             ],
             "description": "React rendering from PHP",
-            "time": "2014-07-20T21:48:42+00:00"
+            "time": "2014-07-20 21:48:42"
         },
         {
             "name": "composer/installers",
@@ -205,7 +206,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-04-24T06:37:16+00:00"
+            "time": "2017-04-24 06:37:16"
         },
         {
             "name": "doctrine/cache",
@@ -275,7 +276,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29T11:16:17+00:00"
+            "time": "2016-10-29 11:16:17"
         },
         {
             "name": "drewm/mailchimp-api",
@@ -312,7 +313,7 @@
             ],
             "description": "Super-simple, minimum abstraction MailChimp API v2 wrapper",
             "homepage": "https://github.com/drewm/mailchimp-api",
-            "time": "2015-07-07T15:38:25+00:00"
+            "time": "2015-07-07 15:38:25"
         },
         {
             "name": "embed/embed",
@@ -362,7 +363,7 @@
                 "opengraph",
                 "twitter cards"
             ],
-            "time": "2015-06-27T17:19:54+00:00"
+            "time": "2015-06-27 17:19:54"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -427,7 +428,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-02-23T20:35:09+00:00"
+            "time": "2017-02-23 20:35:09"
         },
         {
             "name": "guzzlehttp/streams",
@@ -480,7 +481,7 @@
                 "Guzzle",
                 "stream"
             ],
-            "time": "2014-08-17T21:15:53+00:00"
+            "time": "2014-08-17 21:15:53"
         },
         {
             "name": "heyday/silverstripe-cacheinclude",
@@ -530,7 +531,7 @@
                     "homepage": "https://github.com/camspiers/"
                 }
             ],
-            "time": "2017-06-26T23:29:14+00:00"
+            "time": "2017-06-26 23:29:14"
         },
         {
             "name": "heyday/silverstripe-cacheinclude-manager",
@@ -571,7 +572,7 @@
                 }
             ],
             "description": "CacheInclude Manager",
-            "time": "2014-09-10T22:12:32+00:00"
+            "time": "2014-09-10 22:12:32"
         },
         {
             "name": "jacobbuck/silverstripe-dominantcolor",
@@ -609,7 +610,7 @@
                 "photo",
                 "silverstripe"
             ],
-            "time": "2017-05-20T12:45:23+00:00"
+            "time": "2017-05-20 12:45:23"
         },
         {
             "name": "jonom/focuspoint",
@@ -648,7 +649,7 @@
                 "image",
                 "silverstripe"
             ],
-            "time": "2017-03-22T23:16:19+00:00"
+            "time": "2017-03-22 23:16:19"
         },
         {
             "name": "ksubileau/color-thief-php",
@@ -701,7 +702,7 @@
                 "php",
                 "thief"
             ],
-            "time": "2016-12-18T03:12:25+00:00"
+            "time": "2016-12-18 03:12:25"
         },
         {
             "name": "league/fractal",
@@ -760,7 +761,7 @@
                 "league",
                 "rest"
             ],
-            "time": "2014-07-06T16:48:26+00:00"
+            "time": "2014-07-06 16:48:26"
         },
         {
             "name": "psr/log",
@@ -807,7 +808,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10T12:19:37+00:00"
+            "time": "2016-10-10 12:19:37"
         },
         {
             "name": "sheadawson/silverstripe-linkable",
@@ -967,7 +968,7 @@
                 "cms",
                 "silverstripe"
             ],
-            "time": "2017-06-15T11:50:49+00:00"
+            "time": "2017-06-15 11:50:49"
         },
         {
             "name": "silverstripe/framework",
@@ -1021,7 +1022,7 @@
                 "framework",
                 "silverstripe"
             ],
-            "time": "2017-06-27T11:48:16+00:00"
+            "time": "2017-06-27 11:48:16"
         },
         {
             "name": "silverstripe/redirectedurls",
@@ -1059,7 +1060,7 @@
                 "silverstripe",
                 "urls"
             ],
-            "time": "2017-05-04T05:53:42+00:00"
+            "time": "2017-05-04 05:53:42"
         },
         {
             "name": "silverstripe/reports",
@@ -1248,7 +1249,7 @@
             ],
             "description": "Symfony ExpressionLanguage Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T20:52:29+00:00"
+            "time": "2017-06-01 20:52:29"
         },
         {
             "name": "symfony/process",
@@ -1297,7 +1298,7 @@
             ],
             "description": "Symfony Process Component",
             "homepage": "https://symfony.com",
-            "time": "2017-07-03T08:04:30+00:00"
+            "time": "2017-07-03 08:04:30"
         },
         {
             "name": "symfony/yaml",
@@ -1346,7 +1347,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2017-06-01T20:52:29+00:00"
+            "time": "2017-06-01 20:52:29"
         },
         {
             "name": "toastnz/flat-cms",
@@ -1385,7 +1386,7 @@
                 "flat cms",
                 "silverstripe"
             ],
-            "time": "2016-12-20T22:48:09+00:00"
+            "time": "2016-12-20 22:48:09"
         },
         {
             "name": "toastnz/open-graph-meta",
@@ -1430,7 +1431,7 @@
                 "open graph",
                 "silverstripe"
             ],
-            "time": "2017-07-06T00:11:02+00:00"
+            "time": "2017-07-06 00:11:02"
         },
         {
             "name": "toastnz/toast-seo",
@@ -1477,7 +1478,7 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2017-07-05T23:50:11+00:00"
+            "time": "2017-07-05 23:50:11"
         },
         {
             "name": "toastnz/twitter-card-meta",
@@ -1526,7 +1527,7 @@
                 "twitter",
                 "twitter card"
             ],
-            "time": "2017-07-06T00:15:41+00:00"
+            "time": "2017-07-06 00:15:41"
         },
         {
             "name": "unclecheese/betterbuttons",
@@ -1562,7 +1563,7 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2015-12-18T20:44:09+00:00"
+            "time": "2015-12-18 20:44:09"
         },
         {
             "name": "unclecheese/display-logic",
@@ -1609,7 +1610,7 @@
                 "logic",
                 "silverstripe"
             ],
-            "time": "2017-01-06T09:46:49+00:00"
+            "time": "2017-01-06 09:46:49"
         },
         {
             "name": "unclecheese/dropzone",
@@ -1651,7 +1652,7 @@
                 "upload",
                 "uploader"
             ],
-            "time": "2017-05-30T02:17:18+00:00"
+            "time": "2017-05-30 02:17:18"
         },
         {
             "name": "unclecheese/silverstripe-kickassets",
@@ -1699,7 +1700,7 @@
                 "silverstripe",
                 "upload"
             ],
-            "time": "2017-05-09T23:48:32+00:00"
+            "time": "2017-05-09 23:48:32"
         },
         {
             "name": "undefinedoffset/silverstripe-nocaptcha",
@@ -1743,7 +1744,92 @@
                 "silverstripe",
                 "spamprotection"
             ],
-            "time": "2016-09-30T14:01:17+00:00"
+            "time": "2016-09-30 14:01:17"
+        },
+        {
+            "name": "webbuilders-group/silverstripe-gridfield-deleted-items",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbuilders-group/silverstripe-gridfield-deleted-items.git",
+                "reference": "c65fad9851a92978b166a990cb4cc19afa0db881"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbuilders-group/silverstripe-gridfield-deleted-items/zipball/c65fad9851a92978b166a990cb4cc19afa0db881",
+                "reference": "c65fad9851a92978b166a990cb4cc19afa0db881",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": "~3.3"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "gridfield-deleted-items"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://webbuildersgroup.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a series of components that allows you to view versioned objects that have been deleted from the draft site.",
+            "keywords": [
+                "deleted",
+                "gridfield",
+                "silverstripe",
+                "versioned"
+            ],
+            "time": "2017-06-07 18:10:09"
+        },
+        {
+            "name": "webbuilders-group/silverstripe-siteconfig-error-pages",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbuilders-group/silverstripe-siteconfig-error-pages.git",
+                "reference": "55bc5e3222d88febd85d3cf916e660318e63f326"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbuilders-group/silverstripe-siteconfig-error-pages/zipball/55bc5e3222d88febd85d3cf916e660318e63f326",
+                "reference": "55bc5e3222d88febd85d3cf916e660318e63f326",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/cms": "~3.3",
+                "webbuilders-group/silverstripe-gridfield-deleted-items": "*"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "siteconfig-error-pages"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://webbuildersgroup.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Moves the SilverStripe Error Page management from the page tree to Settings section.",
+            "keywords": [
+                "error pages",
+                "management",
+                "silverstripe",
+                "siteconfig"
+            ],
+            "time": "2017-04-26 14:10:06"
         },
         {
             "name": "wilr/silverstripe-googlesitemaps",
@@ -1815,7 +1901,7 @@
                 }
             ],
             "description": "A Composer post-update-cmd script to automatically add Composer managed SilverStripe modules and themes to .gitignore",
-            "time": "2015-03-05T23:18:02+00:00"
+            "time": "2015-03-05 23:18:02"
         }
     ],
     "aliases": [],

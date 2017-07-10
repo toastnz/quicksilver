@@ -39,7 +39,8 @@
     "silverstripe/redirectedurls": "^1.0.1",
     "heyday/silverstripe-cacheinclude-manager": "~0.1.0",
     "heyday/silverstripe-cacheinclude": "^4.2.0",
-    "jacobbuck/silverstripe-dominantcolor": "^1.0"
+    "jacobbuck/silverstripe-dominantcolor": "^1.0",
+    "webbuilders-group/silverstripe-siteconfig-error-pages": "^0.1.0"
 
   },
   "config": {

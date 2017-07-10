@@ -3,7 +3,8 @@
 <head>
     <% include Meta %>
 </head>
-<body class="$Classname $URLSegment"
+<body class="$Classname"
+      <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %>
       data-classname="$Classname"
       data-title="$Title"
       data-url-segment="$URLSegment">
