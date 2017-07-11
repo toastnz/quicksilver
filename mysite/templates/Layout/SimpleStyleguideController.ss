@@ -30,22 +30,25 @@
         <div class="offWhite">
             <a class="button [ js-modal ]">Normal Modal</a>
             <a class="button button--hover [ js-confirm ]">Confirmation</a>
+            <a class="button button--hover [ js-youtube ]">Youtube</a>
         </div>
 
         <h1 class="subtitle" id="buttons"><span>BUTTONS</span></h1>
 
         <div class="offWhite">
             <a class="button">Standard Button</a>
-            <a class="button button--hover">Standard Hover</a>
-            <br>
             <a class="button button--bordered">Bordered Button</a>
-            <a class="button button--bordered button--bordered--hover">Bordered Hover</a>
-            <br>
+            <a class="button button--bordered--light">Bordered Button</a>
             <a class="button button--disabled">Disabled Button</a>
-            <a class="button button--disabled button--disabled--hover">Disabled Hover</a>
-            <br>
             <a class="button button--error">Error Button</a>
-            <a class="button button--error button--error--hover">Error Hover</a>
+            <br>
+            <br>
+            <a class="button button--round">Standard Button</a>
+            <a class="button button--round button--bordered">Bordered Button</a>
+            <a class="button button--round button--bordered--light">Bordered Button</a>
+            <a class="button button--round button--disabled">Disabled Button</a>
+            <a class="button button--round button--error">Error Button</a>
+
         </div>
 
         <h1 class="subtitle" id="lists"><span>LISTS</span></h1>
@@ -103,9 +106,6 @@
             <p>Sed facilisis diam mauris, a vulputate ligula. Sed nec purus mauris. Nulla euismod massa ac nisl gravida dictum. Fusce leo turpis, accumsan non ultricies sed, consectetur id dui.</p>
         </blockquote>
 
-        <h1 class="subtitle" id="form"><span>FORM</span></h1>
-
-        $StyleguideForm
 
     </div>
 </div>

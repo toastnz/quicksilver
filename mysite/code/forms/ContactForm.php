@@ -96,9 +96,9 @@ class ContactForm extends Form
     public function Submit($data, $form)
     {
         /** =========================================
-         * @var Form                $form
-         * @var SiteConfigExtension $siteConfig
-         * @var Email               $email
+         * @var Form            $form
+         * @var QuickSiteConfig $siteConfig
+         * @var Email           $email
         ===========================================*/
 
         $data       = $form->getData();

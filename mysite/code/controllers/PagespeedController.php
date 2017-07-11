@@ -1,6 +1,6 @@
 <?php
 
-class PagespeedController extends Controller
+class PageSpeedController extends Controller
 {
 
     private static $allowed_actions = [
@@ -16,7 +16,7 @@ class PagespeedController extends Controller
 
         if (0 === preg_match('#http(s)?://.*#i', $request->getVar('url'))) {
             return json_encode('Will not work on local URLs');
-		}
+        }
 
         return json_encode($pageSpeed->getResults($request->getVar('url')));
     }
@@ -26,10 +26,11 @@ class PagespeedController extends Controller
      */
     public function index()
     {
-        if (!Director::isDev() && !Permission::check('ADMIN')) {
+        if (!Director::isDev() || !Permission::check('ADMIN')) {
             return Security::permissionFailure();
         }
 
+        /** @var Page $page */
         $page       = Page::get()->first();
         $controller = ModelAsController::controller_for($page);
         $controller->init();
@@ -37,11 +38,11 @@ class PagespeedController extends Controller
 
         $data = new ArrayData([
             'Title' => 'PageSpeed',
-            'Pages' => $siteConfig->pagespeedpages()
+            'Pages' => $siteConfig->PageSpeedPages()
         ]);
 
 
-        return $controller->customise($data)->renderWith(['Pagespeed', 'Page']);
+        return $controller->customise($data)->renderWith(['PageSpeed', 'Page']);
     }
 
 

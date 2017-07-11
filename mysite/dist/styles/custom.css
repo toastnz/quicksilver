@@ -9,6 +9,7 @@
 .cms .cms-menu-list li.current a:after {
     border-color: transparent #f1f1f1 transparent transparent !important;
 }
+
 .cms .col-AuthorPictureThumb {
     width: 60px !important;
 }
@@ -72,6 +73,16 @@
     display: block;
     float: left;
     margin-left: 0 !important;
+}
+
+textarea {
+    resize: none;
+}
+
+input.input-wrap--half--last,
+textarea.input-wrap--half--last {
+    margin-left: 0 !important;
+    resize: none;
 }
 
 .cms .input-wrap--third {
@@ -153,10 +164,68 @@ img[src*="framework/images/app_icons/pdf_32.gif"] {
 
 .sectionWrapper:last-of-type {
     padding-left: 10px;
-    border:0;
+    border: 0;
 }
 
 .cms .sectionWrapper .field label.right {
     width: auto !important;
     margin-right: 10px;
+}
+
+.flatcms-tiny-styled .mceButtonEnabled .mce_anchor:after {
+    color: #4baf50 !important;
+}
+
+.flatcms-tiny-styled .mce_anchor:after {
+    content: '\e250';
+}
+
+.flatcms-tiny-styled .mce_cell_props:after {
+    content: '\e8f0';
+}
+
+.cms .icon-button-group {
+    border-radius: 0 !important;
+}
+
+.cms .icon-button-group a.icon-button:first-child,
+.cms .icon-button-group .ui-tabs .ui-tabs-nav li a.icon-button:first-child,
+.cms .ui-tabs .ui-tabs-nav li .icon-button-group a.icon-button:first-child,
+.cms .icon-button-group button.ss-ui-button.icon-button:first-child {
+    border-radius: 0 !important;
+}
+
+.cms #preview-mode-dropdown-in-preview .chzn-single:before, .cms #preview-mode-dropdown-in-content-select_chzn .chzn-single:before {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.cms .cms-content-controls .preview-selector a.chzn-single,
+.cms .cms-content-controls .preview-selector a.chzn-single.chzn-single-with-drop {
+    background: #eaeaea !important;
+    border: 1px solid #d0d3d5 !important;
+    border-bottom: 1px solid #b5babd !important;
+}
+
+.cms .font-icon-resize:before {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 5px !important;
+    margin-top: 5px !important;
+}
+
+.inlineIconSocial {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 20px;
+    height: auto;
+}
+
+.cms .field textarea {
+    width: 100%;
 }

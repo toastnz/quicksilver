@@ -37,15 +37,15 @@
     }
 
     .logo-wrapper {
+      @include svg(770, 180);
       position: relative;
-      width: 100%;
       text-align: center;
       margin: 3rem auto;
+      max-width: 20rem;
     }
 
     #BackToLogin,
     #ForgotPassword {
-      border-radius: 0 0 10px 10px;
       background: $grey-light;
       margin: 2rem -3.6rem -4rem;
       width: calc(100% + 7.2rem);

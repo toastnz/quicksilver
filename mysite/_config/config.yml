@@ -16,9 +16,6 @@ Image:
   cms_thumbnail_height: 80
   force_resample: true
 
-SiteTree:
-  nested_urls: true
-
 LeftAndMain:
   cms_highlight_colour : '#23282d'
   cms_success_color : '#2962ff'
@@ -26,11 +23,6 @@ LeftAndMain:
   cms_style_tinymce: true
   extra_requirements_css:
     - mysite/dist/styles/custom.css
-
-ColorField:
-  colors:
-    - '#000'
-    - '#FFF'
 
 SVGTemplate:
   base_path: mysite/dist/images/svg
@@ -54,3 +46,10 @@ Except:
 ---
 Email:
   admin_email: 'email@mysite.com'
+---
+Name: remove-help
+After: 'framework/*','cms/*'
+---
+LeftAndMain:
+  extensions:
+    - LeftAndMainDecorator

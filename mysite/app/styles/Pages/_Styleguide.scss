@@ -2,6 +2,11 @@
 // Styleguide
 //------------------------------------------------------------------
 
+.offWhite {
+  background: $grey-dark;
+  padding: 4rem 4rem 3rem;
+}
+
 .subtitle {
   @include bold;
   @include clearfix;

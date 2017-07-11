@@ -4,4 +4,4 @@ After: 'framework/*','cms/*'
 ---
 SiteConfig:
   extensions:
-    - SiteConfigExtension
+    - QuickSiteConfig
