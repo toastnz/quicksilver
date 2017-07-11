@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fa3de05e51693e55b2f2e9820a5a351f",
+    "content-hash": "79839509233fe27a13332806339824e9",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -863,59 +863,6 @@
             "time": "2017-05-30 04:39:42"
         },
         {
-            "name": "silverstripe-australia/gridfieldextensions",
-            "version": "1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/silverstripe-australia/silverstripe-gridfieldextensions.git",
-                "reference": "5c1f9cca01dedbcefb8e56eedf51e0b33f7a1f9e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe-australia/silverstripe-gridfieldextensions/zipball/5c1f9cca01dedbcefb8e56eedf51e0b33f7a1f9e",
-                "reference": "5c1f9cca01dedbcefb8e56eedf51e0b33f7a1f9e",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "~3.1"
-            },
-            "replace": {
-                "ajshort/silverstripe-gridfieldextensions": "self.version"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "gridfieldextensions",
-                "branch-alias": {
-                    "dev-master": "1.4.x-dev"
-                },
-                "screenshots": [
-                    "docs/en/_images/editable-rows.png",
-                    "docs/en/_images/add-existing-search.png"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Marcus Nyeholt",
-                    "email": "marcus@silverstripe.com.au"
-                },
-                {
-                    "name": "Andrew Short",
-                    "email": "andrewjshort@gmail.com"
-                }
-            ],
-            "description": "A collection of useful grid field components",
-            "homepage": "http://github.com/silverstripe-australia/silverstripe-gridfieldextensions",
-            "keywords": [
-                "gridfield",
-                "silverstripe"
-            ],
-            "time": "2017-05-03 04:48:33"
-        },
-        {
             "name": "silverstripe/cms",
             "version": "3.6.1",
             "source": {
@@ -1022,6 +969,46 @@
                 "silverstripe"
             ],
             "time": "2017-06-27T11:48:16+00:00"
+        },
+        {
+            "name": "silverstripe/googlesitemaps",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wilr/silverstripe-googlesitemaps.git",
+                "reference": "552684ce122c724aa737df3babb8717919e00a35"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wilr/silverstripe-googlesitemaps/zipball/552684ce122c724aa737df3babb8717919e00a35",
+                "reference": "552684ce122c724aa737df3babb8717919e00a35",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": ">=3.1"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "googlesitemaps"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
+                }
+            ],
+            "description": "SilverStripe support for the Google Sitemaps XML, enabling Google and other search engines to see all urls on your site. This helps your SilverStripe website rank well in search engines, and to encourage the information on your site to be discovered quickly.",
+            "homepage": "https://github.com/wilr/silverstripe-googlesitemaps",
+            "keywords": [
+                "googlesitemaps",
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2016-10-10T02:59:32+00:00"
         },
         {
             "name": "silverstripe/redirectedurls",
@@ -1200,6 +1187,59 @@
                 "spamprotection"
             ],
             "time": "2017-06-15 15:49:46"
+        },
+        {
+            "name": "symbiote/silverstripe-gridfieldextensions",
+            "version": "1.4.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symbiote/silverstripe-gridfieldextensions.git",
+                "reference": "ff12337e6ee9af31e60d5d86dae71fef2ac75ea1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symbiote/silverstripe-gridfieldextensions/zipball/ff12337e6ee9af31e60d5d86dae71fef2ac75ea1",
+                "reference": "ff12337e6ee9af31e60d5d86dae71fef2ac75ea1",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~3.1"
+            },
+            "replace": {
+                "ajshort/silverstripe-gridfieldextensions": "self.version"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "gridfieldextensions",
+                "branch-alias": {
+                    "dev-master": "1.4.x-dev"
+                },
+                "screenshots": [
+                    "docs/en/_images/editable-rows.png",
+                    "docs/en/_images/add-existing-search.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Marcus Nyeholt",
+                    "email": "marcus@silverstripe.com.au"
+                },
+                {
+                    "name": "Andrew Short",
+                    "email": "andrewjshort@gmail.com"
+                }
+            ],
+            "description": "A collection of useful grid field components",
+            "homepage": "http://github.com/silverstripe-australia/silverstripe-gridfieldextensions",
+            "keywords": [
+                "gridfield",
+                "silverstripe"
+            ],
+            "time": "2017-07-05T14:26:38+00:00"
         },
         {
             "name": "symfony/expression-language",
@@ -1613,16 +1653,16 @@
         },
         {
             "name": "unclecheese/dropzone",
-            "version": "1.4.11",
+            "version": "1.4.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unclecheese/silverstripe-dropzone.git",
-                "reference": "bd14e955f4789863a59877b4dac3f3d4a4243287"
+                "reference": "fb00c68cdb4a25b52ffa45c4af6a8da7bd7111c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unclecheese/silverstripe-dropzone/zipball/bd14e955f4789863a59877b4dac3f3d4a4243287",
-                "reference": "bd14e955f4789863a59877b4dac3f3d4a4243287",
+                "url": "https://api.github.com/repos/unclecheese/silverstripe-dropzone/zipball/fb00c68cdb4a25b52ffa45c4af6a8da7bd7111c0",
+                "reference": "fb00c68cdb4a25b52ffa45c4af6a8da7bd7111c0",
                 "shasum": ""
             },
             "require": {
@@ -1651,7 +1691,7 @@
                 "upload",
                 "uploader"
             ],
-            "time": "2017-05-30T02:17:18+00:00"
+            "time": "2017-07-07T10:17:50+00:00"
         },
         {
             "name": "unclecheese/silverstripe-kickassets",
@@ -1744,46 +1784,6 @@
                 "spamprotection"
             ],
             "time": "2016-09-30T14:01:17+00:00"
-        },
-        {
-            "name": "wilr/silverstripe-googlesitemaps",
-            "version": "1.x-dev",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/wilr/silverstripe-googlesitemaps.git",
-                "reference": "552684ce122c724aa737df3babb8717919e00a35"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/wilr/silverstripe-googlesitemaps/zipball/552684ce122c724aa737df3babb8717919e00a35",
-                "reference": "552684ce122c724aa737df3babb8717919e00a35",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": ">=3.1"
-            },
-            "type": "silverstripe-module",
-            "extra": {
-                "installer-name": "googlesitemaps"
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Will Rossiter",
-                    "email": "will@fullscreen.io"
-                }
-            ],
-            "description": "SilverStripe support for the Google Sitemaps XML, enabling Google and other search engines to see all urls on your site. This helps your SilverStripe website rank well in search engines, and to encourage the information on your site to be discovered quickly.",
-            "homepage": "https://github.com/wilr/silverstripe-googlesitemaps",
-            "keywords": [
-                "googlesitemaps",
-                "seo",
-                "silverstripe"
-            ],
-            "time": "2016-10-10 02:59:32"
         }
     ],
     "packages-dev": [

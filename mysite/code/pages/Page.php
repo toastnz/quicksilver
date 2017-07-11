@@ -5,6 +5,7 @@
  */
 class Page extends SiteTree
 {
+
 }
 
 /**
