@@ -229,3 +229,8 @@ img[src*="framework/images/app_icons/pdf_32.gif"] {
 .cms .field textarea {
     width: 100%;
 }
+
+.cms #_BH_frame {
+    height: calc(100% - 65px) !important;
+    bottom: 65px !important;
+}
