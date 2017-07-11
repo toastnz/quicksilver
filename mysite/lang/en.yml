@@ -13,3 +13,5 @@ en:
     DEFAULTHOMECONTENT: ' '
     DEFAULTABOUTCONTENT: ' '
     DEFAULTCONTACTCONTENT: ' '
+  SearchForm:
+    SEARCH: 'Enter your search term...'

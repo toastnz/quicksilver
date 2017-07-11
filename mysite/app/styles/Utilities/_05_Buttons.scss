@@ -6,6 +6,10 @@ $button-color: $primary;
 $disabled-button-color: $grey-light;
 $error-button-color: $red-dark;
 
+.action {
+  cursor: pointer;
+}
+
 %button,
 .button {
   @extend %p;

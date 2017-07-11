@@ -6,6 +6,28 @@
 class Page extends SiteTree
 {
 
+
+    public function getIsLive()
+    {
+        return Director::isLive();
+    }
+
+    function requireDefaultRecords()
+    {
+        if (class_exists('StaticBlocks') && !DataObject::get_one('StaticBlocks')) {
+            $page               = StaticBlocks::create();
+            $page->Title        = 'Static Blocks';
+            $page->URLSegment   = 'blocks';
+            $page->ShowInMenus  = 0;
+            $page->ShowInSearch = 0;
+            $page->CanViewType  = 'LoggedInUsers';
+            $page->Status       = 'Published';
+            $page->write();
+            $page->publish('Stage', 'Live');
+            $page->flushCache();
+            DB::alteration_message('Blocks Page created.', 'created');
+        }
+    }
 }
 
 /**
@@ -21,7 +43,6 @@ class Page_Controller extends ContentController
     public function init()
     {
         parent::init();
-        Requirements::css('mysite/dist/styles/style.css');
         Requirements::combine_files(
             'output.js',
             [
