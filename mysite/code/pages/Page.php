@@ -5,8 +5,6 @@
  */
 class Page extends SiteTree
 {
-
-
     public function getIsLive()
     {
         return Director::isLive();
@@ -14,14 +12,14 @@ class Page extends SiteTree
 
     function requireDefaultRecords()
     {
-        if (class_exists('StaticBlocks') && !DataObject::get_one('StaticBlocks')) {
-            $page               = StaticBlocks::create();
-            $page->Title        = 'Static Blocks';
-            $page->URLSegment   = 'blocks';
-            $page->ShowInMenus  = 0;
-            $page->ShowInSearch = 0;
-            $page->CanViewType  = 'LoggedInUsers';
-            $page->Status       = 'Published';
+        if (!DataObject::get_one('StaticBlocks')) {
+            $page = StaticBlocks::create([
+                'Title'        => 'Static Blocks',
+                'URLSegment'   => 'blocks',
+                'ShowInMenus'  => 0,
+                'ShowInSearch' => 0,
+                'CanViewType'  => 'LoggedInUsers'
+            ]);
             $page->write();
             $page->publish('Stage', 'Live');
             $page->flushCache();
@@ -36,7 +34,6 @@ class Page extends SiteTree
 class Page_Controller extends ContentController
 {
     private static $allowed_actions = [
-        'StyleguideForm',
         'SubscriptionForm'
     ];
 
