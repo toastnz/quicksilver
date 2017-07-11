@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "79839509233fe27a13332806339824e9",
+    "content-hash": "0c344e7647fa4b751f3b48a81f6582fa",
     "packages": [
         {
             "name": "benmanu/silverstripe-simple-styleguide",
@@ -1784,6 +1784,91 @@
                 "spamprotection"
             ],
             "time": "2016-09-30T14:01:17+00:00"
+        },
+        {
+            "name": "webbuilders-group/silverstripe-gridfield-deleted-items",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbuilders-group/silverstripe-gridfield-deleted-items.git",
+                "reference": "c65fad9851a92978b166a990cb4cc19afa0db881"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbuilders-group/silverstripe-gridfield-deleted-items/zipball/c65fad9851a92978b166a990cb4cc19afa0db881",
+                "reference": "c65fad9851a92978b166a990cb4cc19afa0db881",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/framework": "~3.3"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "gridfield-deleted-items"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://webbuildersgroup.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Provides a series of components that allows you to view versioned objects that have been deleted from the draft site.",
+            "keywords": [
+                "deleted",
+                "gridfield",
+                "silverstripe",
+                "versioned"
+            ],
+            "time": "2017-06-07T18:10:09+00:00"
+        },
+        {
+            "name": "webbuilders-group/silverstripe-siteconfig-error-pages",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/webbuilders-group/silverstripe-siteconfig-error-pages.git",
+                "reference": "55bc5e3222d88febd85d3cf916e660318e63f326"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/webbuilders-group/silverstripe-siteconfig-error-pages/zipball/55bc5e3222d88febd85d3cf916e660318e63f326",
+                "reference": "55bc5e3222d88febd85d3cf916e660318e63f326",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/cms": "~3.3",
+                "webbuilders-group/silverstripe-gridfield-deleted-items": "*"
+            },
+            "type": "silverstripe-module",
+            "extra": {
+                "installer-name": "siteconfig-error-pages"
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://webbuildersgroup.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Moves the SilverStripe Error Page management from the page tree to Settings section.",
+            "keywords": [
+                "error pages",
+                "management",
+                "silverstripe",
+                "siteconfig"
+            ],
+            "time": "2017-04-26T14:10:06+00:00"
         }
     ],
     "packages-dev": [
