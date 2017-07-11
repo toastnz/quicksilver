@@ -25,6 +25,7 @@
     "toastnz/toast-seo": "^1.0.0",
     "drewm/mailchimp-api": "~1.0",
     "unclecheese/dropzone": "^1.2",
+    "sgrodzicki/pagespeed": "^2.0",
     "silverstripe/cms": "~3.3@stable",
     "toastnz/open-graph-meta": "^1.0.0",
     "unclecheese/betterbuttons": "1.2.*",

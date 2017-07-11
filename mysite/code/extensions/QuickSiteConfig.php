@@ -36,6 +36,10 @@ class QuickSiteConfig extends DataExtension
         'MailChimpSuccessMessage' => 'Your subscription has been received, you will be sent a confirmation email shortly.'
     ];
 
+    private static $many_many = [
+        'PageSpeedPages' => 'Page'
+    ];
+
     /**
      * @param FieldList $fields
      */
@@ -121,7 +125,12 @@ class QuickSiteConfig extends DataExtension
 
             // Google Maps
             HeaderField::create('', 'Google Maps'),
-            TextField::create('GoogleMapsApiKey', 'Google Maps API Key')
+            TextField::create('GoogleMapsApiKey', 'Google Maps API Key'),
+
+            // Pagespeed
+            HeaderField::create('', 'Google Page Speed'),
+            TreeMultiselectField::create('PageSpeedPages', 'Select pages to test against', 'SiteTree')
+
         ]);
     }
 
