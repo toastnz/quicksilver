@@ -222,6 +222,8 @@ img[src*="framework/images/app_icons/pdf_32.gif"] {
     vertical-align: middle;
     position: relative;
     top: -1px;
+    width: 20px;
+    height: auto;
 }
 
 .cms .field textarea {
