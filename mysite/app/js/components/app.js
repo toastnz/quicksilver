@@ -24,3 +24,8 @@ $body.on('click', '.js-toggle-nav', function (e) {
     $(this).closest('.offCanvas__menu__item').toggleClass('open');
 });
 
+/*------------------------------------------------------------------
+ Search Placeholder
+ ------------------------------------------------------------------*/
+
+$('#SearchForm_SearchForm_Search').attr('placeholder', $('#SearchForm_SearchForm_Search').val()).val('');

@@ -35,7 +35,7 @@ textarea {
   transition: all 111ms $transition-standard;
 
   @include placeholder {
-    color: $input-placeholder-colour;
+    opacity: .5;
   }
 
   &:focus {
