@@ -15,7 +15,7 @@ $error-button-color: $red-dark;
   border: 2px solid $button-color;
   margin: 0 1rem 1rem 0;
   border-radius: 0;
-  padding: 1.4rem 3rem;
+  padding: 1rem 3rem;
   cursor: pointer;
   outline: none;
   transition: all 111ms $transition-standard;
@@ -27,12 +27,28 @@ $error-button-color: $red-dark;
     border-color: lighten($button-color, 4%);
   }
 
+  &--round {
+    border-radius: 10rem;
+  }
+
   &--bordered {
     background: transparent;
     color: $button-color;
 
     @include active {
       color: $white;
+    }
+  }
+
+  &--bordered--light {
+    background: transparent;
+    color: $white;
+    border-color: $white;
+
+    @include active {
+      border-color: $white;
+      color: $text;
+      background: $white;
     }
   }
 

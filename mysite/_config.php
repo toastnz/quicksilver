@@ -42,7 +42,7 @@ $formats = [
         'title'          => 'Colour - Primary',
         'inline'         => 'span',
         'classes'        => 'colour--primary',
-        'styles'         => ['color' => '#2980b9'],
+        'styles'         => ['color' => '#000000'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -50,7 +50,7 @@ $formats = [
         'title'          => 'Colour - Secondary',
         'inline'         => 'span',
         'classes'        => 'colour--secondary',
-        'styles'         => ['color' => '#27ae60'],
+        'styles'         => ['color' => '#666666'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -58,7 +58,7 @@ $formats = [
         'title'          => 'Colour - Tertiary',
         'inline'         => 'span',
         'classes'        => 'colour--tertiary',
-        'styles'         => ['color' => '#8e44ad'],
+        'styles'         => ['color' => '#999999'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -66,21 +66,50 @@ $formats = [
         'title'    => 'Button - Default',
         'selector' => 'a, button',
         'classes'  => 'button',
+        'styles'   => ['background' => '#ebebeb'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Bordered',
         'selector' => 'a, button',
         'classes'  => 'button button--bordered',
+        'styles'   => ['background' => '#ebebeb'],
+        'wrapper'  => false,
+    ],
+    [
+        'title'    => 'Button - Bordered - Light',
+        'selector' => 'a, button',
+        'classes'  => 'button button--bordered--light',
+        'styles'   => ['background' => '#ebebeb'],
+        'wrapper'  => false,
+    ],
+    [
+        'title'    => 'Button - Default - Round',
+        'selector' => 'a, button',
+        'classes'  => 'button button--round',
+        'styles'   => ['background' => '#d2d5d8'],
+        'wrapper'  => false,
+    ],
+    [
+        'title'    => 'Button - Bordered - Round',
+        'selector' => 'a, button',
+        'classes'  => 'button button--bordered button--round',
+        'styles'   => ['background' => '#d2d5d8'],
+        'wrapper'  => false,
+    ],
+    [
+        'title'    => 'Button - Bordered - Light - Round',
+        'selector' => 'a, button',
+        'classes'  => 'button button--bordered--light button--round',
+        'styles'   => ['background' => '#d2d5d8'],
         'wrapper'  => false,
     ]
 ];
 
 HtmlEditorConfig::get('cms')->setOption('style_formats', $formats);
 HtmlEditorConfig::get('cms')->setOption('theme_advanced_blockformats', 'h1,h2,h3,h4,h5,h6,p');
-HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect', 'separator', 'bullist', 'numlist', 'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'image', 'separator', 'sslink', 'unlink', 'separator', 'bold', 'italic', 'underline', 'blockquote', 'hr');
-HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'code', 'video');
+HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect', 'separator', 'bullist', 'numlist', 'separator', 'justifyleft', 'justifycenter', 'justifyright', 'separator', 'image', 'separator', 'sslink', 'unlink', 'anchor', 'separator', 'bold', 'italic', 'underline', 'blockquote', 'hr');
+HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'row_props', 'cell_props', 'code', 'video', 'removeformat');
 HtmlEditorConfig::get('cms')->setButtonsForLine(3);
 
-HtmlEditorConfig::get('cms')->enablePlugins(array('video' => '../../../mysite/code/tinymce/video.js'));
 

@@ -46,3 +46,10 @@ Except:
 ---
 Email:
   admin_email: 'email@mysite.com'
+---
+Name: remove-help
+After: 'framework/*','cms/*'
+---
+LeftAndMain:
+  extensions:
+    - LeftAndMainDecorator
