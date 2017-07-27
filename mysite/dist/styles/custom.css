@@ -240,30 +240,30 @@ img[src*="framework/images/app_icons/pdf_32.gif"] {
 /*=================*/
 
 /* Colour - Primary */
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(2) span.mceText {
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(2) span.mceText {
     color: #000000 !important;
 }
 
 /* Colour - Secondary */
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(3) span.mceText {
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(3) span.mceText {
     color: #666666 !important;;
 }
 
 /* Colour - Tertiary */
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(4) span.mceText {
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(4) span.mceText {
     color: #999999 !important;;
 }
 
 /* Button - Default */
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(5) span.mceText,
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(6) span.mceText,
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(7) span.mceText {
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(5) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(6) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(7) span.mceText {
     background-color: #ebebeb !important;;
 }
 
 /* Button - Round */
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(8) span.mceText,
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(9) span.mceText,
-.cms .defaultSkin .mceMenu .mceMenuItem:nth-child(10) span.mceText {
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(8) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(9) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(10) span.mceText {
     background-color: #d2d5d8 !important;;
 }

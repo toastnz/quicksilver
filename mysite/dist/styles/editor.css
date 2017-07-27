@@ -5,6 +5,11 @@ body.mceContentBody p {
     margin: 0;
 }
 
+body.mceContentBody {
+    padding-top: 10px;
+}
+
+
 /*=================*/
 /* Headings        */
 /*=================*/
