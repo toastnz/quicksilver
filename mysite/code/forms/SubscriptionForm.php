@@ -81,8 +81,8 @@ class SubscriptionForm extends Form
     public function Subscribe($data, $form)
     {
         /** =========================================
-         * @var QuickSiteConfig $siteConfig
-         * @var Form            $form
+         * @var SiteConfigExtension $siteConfig
+         * @var Form                $form
         ===========================================*/
 
         /** Set the form data to session */

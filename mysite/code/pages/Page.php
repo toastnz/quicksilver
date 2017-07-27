@@ -9,23 +9,6 @@ class Page extends SiteTree
     {
         return Director::isLive();
     }
-
-    function requireDefaultRecords()
-    {
-        if (!DataObject::get_one('StaticBlocks')) {
-            $page = StaticBlocks::create([
-                'Title'        => 'Static Blocks',
-                'URLSegment'   => 'blocks',
-                'ShowInMenus'  => 0,
-                'ShowInSearch' => 0,
-                'CanViewType'  => 'LoggedInUsers'
-            ]);
-            $page->write();
-            $page->publish('Stage', 'Live');
-            $page->flushCache();
-            DB::alteration_message('Blocks Page created.', 'created');
-        }
-    }
 }
 
 /**

@@ -4,4 +4,8 @@ After: 'framework/*','cms/*'
 ---
 SiteConfig:
   extensions:
-    - QuickSiteConfig
+    - SiteConfigExtension
+
+LeftAndMain:
+  extensions:
+    - LeftAndMainDecorator
