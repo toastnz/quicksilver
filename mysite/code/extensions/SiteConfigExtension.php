@@ -5,7 +5,7 @@
  *
  * @property SiteConfig $owner
  */
-class QuickSiteConfig extends DataExtension
+class SiteConfigExtension extends DataExtension
 {
     private static $db = [
         'Phone'                   => 'Varchar(255)',

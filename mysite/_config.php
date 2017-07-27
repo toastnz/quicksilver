@@ -42,7 +42,6 @@ $formats = [
         'title'          => 'Colour - Primary',
         'inline'         => 'span',
         'classes'        => 'colour--primary',
-        'styles'         => ['color' => '#000000'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -50,7 +49,6 @@ $formats = [
         'title'          => 'Colour - Secondary',
         'inline'         => 'span',
         'classes'        => 'colour--secondary',
-        'styles'         => ['color' => '#666666'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -58,7 +56,6 @@ $formats = [
         'title'          => 'Colour - Tertiary',
         'inline'         => 'span',
         'classes'        => 'colour--tertiary',
-        'styles'         => ['color' => '#999999'],
         'wrapper'        => true,
         'merge_siblings' => false
     ],
@@ -66,42 +63,36 @@ $formats = [
         'title'    => 'Button - Default',
         'selector' => 'a, button',
         'classes'  => 'button',
-        'styles'   => ['background' => '#ebebeb'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Bordered',
         'selector' => 'a, button',
         'classes'  => 'button button--bordered',
-        'styles'   => ['background' => '#ebebeb'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Bordered - Light',
         'selector' => 'a, button',
         'classes'  => 'button button--bordered--light',
-        'styles'   => ['background' => '#ebebeb'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Default - Round',
         'selector' => 'a, button',
         'classes'  => 'button button--round',
-        'styles'   => ['background' => '#d2d5d8'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Bordered - Round',
         'selector' => 'a, button',
         'classes'  => 'button button--bordered button--round',
-        'styles'   => ['background' => '#d2d5d8'],
         'wrapper'  => false,
     ],
     [
         'title'    => 'Button - Bordered - Light - Round',
         'selector' => 'a, button',
         'classes'  => 'button button--bordered--light button--round',
-        'styles'   => ['background' => '#d2d5d8'],
         'wrapper'  => false,
     ]
 ];
@@ -112,4 +103,4 @@ HtmlEditorConfig::get('cms')->setButtonsForLine(1, 'styleselect', 'formatselect'
 HtmlEditorConfig::get('cms')->setButtonsForLine(2, 'undo', 'redo', 'cut', 'copy', 'paste', 'table', 'row_props', 'cell_props', 'code', 'video', 'removeformat');
 HtmlEditorConfig::get('cms')->setButtonsForLine(3);
 
-
+HtmlEditorConfig::get('cms')->setOption('content_css', project() . '/dist/styles/editor.css');
