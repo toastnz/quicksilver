@@ -52,8 +52,4 @@
     <% end_if %>
 <% end_with %>
 
-<% if $IsLive %>
-    <link rel="stylesheet" href="$Themedir/dist/styles/style.css"/>
-<% else %>
-    <% require css("mysite/dist/styles/style.css") %>
-<% end_if %>
+<% require css("themes/quicksilver/dist/styles/style.css") %>
