@@ -26,7 +26,7 @@ class Page_Controller extends ContentController
         Requirements::combine_files(
             'output.js',
             [
-                'mysite/dist/js/app.js',
+                $this->ThemeDir() . '/dist/js/app.js',
             ]
         );
     }

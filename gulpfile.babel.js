@@ -24,7 +24,7 @@ const bulkSass     = require('gulp-sass-bulk-import');
 /*------------------------------------------------------------------
  Config
  ------------------------------------------------------------------*/
-const root  = `${__dirname}/mysite/`;
+const root  = `${__dirname}/themes/quicksilver/`;
 const paths = {
     styles : {
         src : `${root}app/styles/**/*.scss`,

@@ -1,6 +1,8 @@
 ---
 Name: myextensions
-After: 'framework/*','cms/*'
+After:
+  - 'framework/*'
+  - 'cms/*'
 ---
 SiteConfig:
   extensions:

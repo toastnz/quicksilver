@@ -1,9 +1,11 @@
 ---
 Name: mysite
-After: 'framework/*','cms/*'
+After:
+  - 'framework/*'
+  - 'cms/*'
 ---
 SSViewer:
-  theme_enabled: false
+  theme: 'quicksilver'
 
 MySQLDatabase:
   connection_charset: 'utf8'
@@ -25,7 +27,7 @@ LeftAndMain:
     - mysite/dist/styles/custom.css
 
 SVGTemplate:
-  base_path: mysite/dist/images/svg
+  base_path: themes/quicksilver/dist/images/svg
 
 #FormSpamProtectionExtension:
 #  default_spam_protector: NocaptchaProtector

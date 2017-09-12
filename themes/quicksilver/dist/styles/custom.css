@@ -1,0 +1,269 @@
+.cms .CompositeField {
+    padding-bottom: 0 !important;
+}
+
+.breadcrumbs-wrapper .icon-cmspagescontroller {
+    display: none !important;
+}
+
+.cms .cms-menu-list li.current a:after {
+    border-color: transparent #f1f1f1 transparent transparent !important;
+}
+
+.cms .col-AuthorPictureThumb {
+    width: 60px !important;
+}
+
+.cms .col-Icon {
+    width: 40px !important;
+}
+
+.cms .col-Icon img {
+    width: 40px !important;
+    height: auto !important;
+}
+
+.cms .field.checkbox {
+    padding-left: 0;
+    width: 100%;
+}
+
+.cms .field.checkbox .right {
+    padding: 0 10px;
+    line-height: 3;
+    display: block;
+}
+
+.cms .field.checkbox .right:before {
+    margin-top: 10px !important;
+    margin-left: 5px !important;
+}
+
+.cms .field.checkbox .right:after {
+    margin-top: 10px !important;
+    margin-left: 5px !important;
+}
+
+.cms .ui-button-text-icon-primary .ui-button-text, .cms .ui-button-text-icons .ui-button-text {
+    padding: 0.5em 1em !important;
+}
+
+.cms .mce_row_props:after {
+    content: '\e22c';
+}
+
+.cms .togglecomposite,
+.cms .input-wrap {
+    width: calc(100% - 10px);
+    padding-right: 10px;
+    display: block;
+    float: left;
+}
+
+.cms .input-wrap--half {
+    width: calc(50% - 10px);
+    padding-right: 10px;
+    display: block;
+    float: left;
+}
+
+.cms div.input-wrap--half--last {
+    width: calc(48%) !important;
+    padding-right: 0 !important;
+    display: block;
+    float: left;
+    margin-left: 0 !important;
+}
+
+textarea {
+    resize: none;
+}
+
+input.input-wrap--half--last,
+textarea.input-wrap--half--last {
+    margin-left: 0 !important;
+    resize: none;
+}
+
+.cms .input-wrap--third {
+    width: calc(50% - 10px);
+    padding-right: 10px;
+    display: block;
+    float: left;
+}
+
+span#Form_ItemEditForm_OrderDetails {
+    white-space: pre-line;
+}
+
+#Form_ItemEditForm label {
+    /*font-weight: bold !important;*/
+}
+
+#Form_ItemEditForm .field {
+    /*border-bottom: 1px solid #0073aa;*/
+}
+
+#Form_ItemEditForm_Organisation_Holder {
+    padding-bottom: 22px;
+}
+
+#Form_ItemEditForm_Organisation_Holder,
+#Form_ItemEditForm_OrderCompleted_Holder,
+#Form_ItemEditForm_PostCode_Holder,
+#Form_ItemEditForm_TownCity_Holder,
+#Form_ItemEditForm_Phone_Holder,
+#Form_ItemEditForm_EmailAddress_Holder,
+#Form_ItemEditForm_LastName_Holder,
+#Form_ItemEditForm_FirstName_Holder {
+    display: block;
+    float: left;
+    width: 48%;
+    margin-right: 1%;
+}
+
+img[src*="framework/images/app_icons/pdf_32.gif"] {
+    background: transparent !important;
+    content: url('../images/cms/pdf-icon.png');
+    width: 40px;
+    height: auto;
+}
+
+.cms .field.checkbox.input-wrap--half {
+    width: 48%;
+}
+
+.cms .mce_removeformat:after {
+    content: '\e14c';
+}
+
+.cms #Form_EditForm_Tags_Holder .treedropdownfield-panel ul {
+    max-height: 1000px !important;
+}
+
+.cms table.ss-gridfield-table td.col-StripThumbnail img {
+    width: 50px;
+    height: 50px;
+}
+
+.flatcms-tiny-styled .mceButtonEnabled .mce_anchor:after {
+    color: #4baf50 !important;
+}
+
+.flatcms-tiny-styled .mce_anchor:after {
+    content: '\e250';
+}
+
+.sectionWrapper {
+    display: block;
+    float: left;
+    position: relative;
+    width: 48%;
+    border-right: 1px solid #ebebeb;
+}
+
+.sectionWrapper:last-of-type {
+    padding-left: 10px;
+    border: 0;
+}
+
+.cms .sectionWrapper .field label.right {
+    width: auto !important;
+    margin-right: 10px;
+}
+
+.flatcms-tiny-styled .mceButtonEnabled .mce_anchor:after {
+    color: #4baf50 !important;
+}
+
+.flatcms-tiny-styled .mce_anchor:after {
+    content: '\e250';
+}
+
+.flatcms-tiny-styled .mce_cell_props:after {
+    content: '\e8f0';
+}
+
+.cms .icon-button-group {
+    border-radius: 0 !important;
+}
+
+.cms .icon-button-group a.icon-button:first-child,
+.cms .icon-button-group .ui-tabs .ui-tabs-nav li a.icon-button:first-child,
+.cms .ui-tabs .ui-tabs-nav li .icon-button-group a.icon-button:first-child,
+.cms .icon-button-group button.ss-ui-button.icon-button:first-child {
+    border-radius: 0 !important;
+}
+
+.cms #preview-mode-dropdown-in-preview .chzn-single:before, .cms #preview-mode-dropdown-in-content-select_chzn .chzn-single:before {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    margin-top: 5px;
+}
+
+.cms .cms-content-controls .preview-selector a.chzn-single,
+.cms .cms-content-controls .preview-selector a.chzn-single.chzn-single-with-drop {
+    background: #eaeaea !important;
+    border: 1px solid #d0d3d5 !important;
+    border-bottom: 1px solid #b5babd !important;
+}
+
+.cms .font-icon-resize:before {
+    width: 16px !important;
+    height: 16px !important;
+    margin-left: 5px !important;
+    margin-top: 5px !important;
+}
+
+.inlineIconSocial {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+    width: 20px;
+    height: auto;
+}
+
+.cms .field textarea {
+    width: 100%;
+}
+
+.cms #_BH_frame {
+    height: calc(100% - 65px) !important;
+    bottom: 65px !important;
+}
+
+/*=================*/
+/* Styles Dropdown */
+/*=================*/
+
+/* Colour - Primary */
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(2) span.mceText {
+    color: #000000 !important;
+}
+
+/* Colour - Secondary */
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(3) span.mceText {
+    color: #666666 !important;;
+}
+
+/* Colour - Tertiary */
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(4) span.mceText {
+    color: #999999 !important;;
+}
+
+/* Button - Default */
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(5) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(6) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(7) span.mceText {
+    background-color: #ebebeb !important;;
+}
+
+/* Button - Round */
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(8) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(9) span.mceText,
+.cms  #menu_Form_EditForm_Content_Form_EditForm_Content_styleselect_menu .mceMenuItem:nth-child(10) span.mceText {
+    background-color: #d2d5d8 !important;;
+}
