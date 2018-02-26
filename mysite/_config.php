@@ -3,6 +3,9 @@
 global $project;
 $project = 'mysite';
 
+global $database;
+$database = 'ss_quicksilver';
+
 /** Use the _ss_environment.php file for configuration */
 require_once('conf/ConfigureFromEnv.php');
 
