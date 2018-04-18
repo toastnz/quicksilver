@@ -19,7 +19,15 @@
         }
     ],
     "require": {
-        "silverstripe/recipe-cms": "^1.0"
+        "silverstripe/recipe-cms": "^1.0",
+        "jonom/focuspoint": "~3.0.0",
+        "drewm/mailchimp-api": "v2.5",
+        "unclecheese/betterbuttons": "2.x-dev",
+        "silverstripe/googlesitemaps": "~2.1.2",
+        "silverstripe/redirectedurls": "2.x-dev",
+        "sheadawson/silverstripe-linkable": "dev-master",
+        "undefinedoffset/silverstripe-nocaptcha": "2.0.x-dev",
+        "symbiote/silverstripe-gridfieldextensions": "~3.1.1"
     },
     "config": {
         "preferred-install": "dist"
