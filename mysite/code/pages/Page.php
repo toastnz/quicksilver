@@ -28,12 +28,13 @@ class PageController extends ContentController
     public function init()
     {
         parent::init();
-        Requirements::combine_files(
-            'output.js',
-            [
-                $this->ThemeDir() . '/dist/js/app.js',
-            ]
-        );
+
+        Requirements::backend()->setWriteHeaderComment(false);
+        Requirements::combine_files('combined.css', ['themes/quicksilver/dist/styles/style.css']);
+        Requirements::process_combined_files();
+        Requirements::combine_files('app.js', ['themes/quicksilver/dist/js/app.js']);
+        Requirements::process_combined_files();
+
     }
 
     public function SubscriptionForm()

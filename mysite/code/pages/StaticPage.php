@@ -2,10 +2,12 @@
 
 namespace QuickStatic;
 
+use SilverStripe\Control\Director;
+
 /**
- * Class Page
+ * Class StaticPage
  */
-class Page extends SiteTree
+class StaticPage extends \Page
 {
     public function getIsLive()
     {
@@ -14,28 +16,9 @@ class Page extends SiteTree
 }
 
 /**
- * Class Page_Controller
+ * Class StaticPageController
  */
-class PageController extends ContentController
+class StaticPageController extends \PageController
 {
-    private static $allowed_actions = [
-        'SubscriptionForm'
-    ];
-
-    public function init()
-    {
-        parent::init();
-        Requirements::combine_files(
-            'output.js',
-            [
-                $this->ThemeDir() . '/dist/js/app.js',
-            ]
-        );
-    }
-
-    public function SubscriptionForm()
-    {
-        return SubscriptionForm::create($this, 'SubscriptionForm');
-    }
 
 }

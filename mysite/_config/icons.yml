@@ -1,8 +1,5 @@
 ---
 Name: myicons
-After:
-  - 'framework/*'
-  - 'cms/*'
 ---
 TaxonomyAdmin:
   icon: 'label_outline'

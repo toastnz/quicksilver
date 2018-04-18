@@ -1,7 +1,0 @@
----
-Name: pagespeed
-After: framework/routes#coreroutes
----
-Director:
-  rules:
-    '_pagespeed': 'PageSpeedController'
