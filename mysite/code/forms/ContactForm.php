@@ -13,6 +13,7 @@ use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\Core\Config\Config;
+use Toast\Extensions\SiteConfigExtension;
 
 /**
  * Class Contact
@@ -67,7 +68,6 @@ class ContactForm extends Form
 
         parent::__construct($controller, $name, $fields, $actions, $required);
 
-        $this->setFormMethod('get');
         $this->setAttribute('data-parsley-validate', true);
         $this->setAttribute('autocomplete', 'on');
         $this->addExtraClass('form');
@@ -160,10 +160,5 @@ class ContactForm extends Form
         } else {
             return $this->controller->redirect($this->controller->data()->Link('?success=1'));
         }
-    }
-
-    public function getSuccess()
-    {
-        return isset($_REQUEST['success']) && $_REQUEST['success'] == "1";
     }
 }
