@@ -3,5 +3,11 @@
 </div>
 
 <div class="innerWrap">
-    $ContactForm
+    <% if $ContactForm.Message %>
+        <% with $ContactForm %>
+            <p id="{$FormName}_error" class="message $MessageType">$Message</p>
+        <% end_with %>
+    <% else %>
+        $ContactForm
+    <% end_if %>
 </div>

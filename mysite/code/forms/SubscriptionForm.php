@@ -1,5 +1,20 @@
 <?php
 
+use DrewM\MailChimp\MailChimp;
+use SilverStripe\Control\Controller;
+use SilverStripe\Control\HTTPResponse;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\EmailField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\Form;
+use SilverStripe\Control\Session;
+use SilverStripe\SiteConfig\SiteConfig;
+use Toast\Extensions\SiteConfigExtension;
+
+
 /**
  * Class SubscriptionForm
  */
@@ -23,10 +38,10 @@ class SubscriptionForm extends Form
          * Fields
          * ----------------------------------------*/
 
-        $emailField = EmailField::create('Email', 'Email Address');
+        $emailField = EmailField::create(Email::class, 'Email Address');
 
         $emailField->addExtraClass('form-control')
-            ->setAttribute('placeholder', 'Email')
+            ->setAttribute('placeholder', Email::class)
             ->setAttribute('data-parsley-required-message', 'Please enter your <strong>Email</strong>')
             ->setCustomValidationMessage('Please enter your <strong>Email</strong>');
 
@@ -61,7 +76,8 @@ class SubscriptionForm extends Form
         );
 
         $form = Form::create($this, $name, $fields, $actions, $required);
-        if ($formData = Session::get('FormInfo.Form_' . $name . '.data')) {
+
+        if ($formData = $this->getRequest()->getSession()->get('FormInfo.Form_' . $name . '.data')) {
             $form->loadDataFrom($formData);
         }
 
@@ -76,7 +92,7 @@ class SubscriptionForm extends Form
      *
      * @param $data
      * @param $form
-     * @return bool|SS_HTTPResponse
+     * @return bool|HTTPResponse
      */
     public function Subscribe($data, $form)
     {
@@ -87,7 +103,8 @@ class SubscriptionForm extends Form
 
         /** Set the form data to session */
         $data = $form->getData();
-        Session::set('FormInfo.Form_' . $this->name . '.data', $data);
+
+        $this->getRequest()->getSession()->set('FormInfo.Form_' . $this->name . '.data', $data);
 
         $siteConfig = SiteConfig::current_site_config();
 
@@ -96,17 +113,21 @@ class SubscriptionForm extends Form
 
         /** Check if the API key, and List ID have been set. */
         if ($siteConfig->MailChimpAPI && $listID) {
-            $mailChimp = new \Drewm\MailChimp($siteConfig->MailChimpAPI);
+            try {
+                $mailChimp = new MailChimp($siteConfig->MailChimpAPI);
+            } catch (Exception $e) {
+                return Controller::curr()->getStandardJsonResponse([], 'Subscribe', $e->getMessage(), 500, 'error');
+            }
 
             // create merge vars
             $mergeVars = [];
 
             $mergeVars['FNAME'] = $data['Name'];
 
-            $result = $mailChimp->call('lists/subscribe', [
+            $result = $mailChimp->get('lists/subscribe', [
                 'id'         => $listID,
                 'email'      => [
-                    'email' => $data['Email']
+                    'email' => $data[Email::class]
                 ],
                 'merge_vars' => $mergeVars
             ]);
@@ -116,10 +137,7 @@ class SubscriptionForm extends Form
             $this->setMessage('Missing API key, or List ID', 'danger');
 
             if ($this->request->isAjax()) {
-                return json_encode([
-                    'error'   => true,
-                    'message' => 'Missing API key, or List ID'
-                ]);
+                return Controller::curr()->getStandardJsonResponse([], 'Subscribe', 'Missing API key, or List ID', 500, 'error');
             } else {
                 return $this->controller->redirectBack();
             }
@@ -134,10 +152,7 @@ class SubscriptionForm extends Form
                 $this->setMessage($result['error'], 'danger');
 
                 if ($this->request->isAjax()) {
-                    return json_encode([
-                        'error'   => true,
-                        'message' => $result['error']
-                    ]);
+                    return Controller::curr()->getStandardJsonResponse([], 'Subscribe',  $result['error'], 500, 'error');
                 } else {
                     return $this->controller->redirectBack();
                 }
@@ -145,19 +160,16 @@ class SubscriptionForm extends Form
         }
 
         /** Clear the form state */
-        Session::clear('FormInfo.Form_' . $this->name . '.data');
+        $this->getRequest()->getSession()->clear('FormInfo.Form_' . $this->name . '.data');
 
         $message = $siteConfig->MailChimpSuccessMessage ?: 'Your subscription has been received, you will be sent a confirmation email shortly.';
 
-        $this->setMessage($message, 'success');
+        $form->sessionMessage($message, 'success');
 
         if ($this->request->isAjax()) {
-            return json_encode([
-                'success' => true,
-                'message' => $message
-            ]);
+            return Controller::curr()->getStandardJsonResponse([], 'Subscribe',  $message);
         } else {
-            return $this->controller->redirect($this->controller->Link('?success=1'));
+            return $this->controller->redirectBack();
         }
     }
 

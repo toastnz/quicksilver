@@ -5,7 +5,11 @@
             <p>You searched for <span class="colour--primary">‘{$Query}’</span></p>
         <% end_if %>
         <% if $Results %>
-            <p>There are $Results.TotalItems results.<% if $Results.MoreThanOnePage %> You are on page {$Results.CurrentPage} of {$Results.TotalPages}.<% end_if %></p>
+            <% if $Results.Count == 1 %>
+                <p>There is 1 result.</p>
+            <% else %>
+                <p>There are $Results.TotalItems results.<% if $Results.MoreThanOnePage %> You are on page {$Results.CurrentPage} of {$Results.TotalPages}.<% end_if %></p>
+            <% end_if %>
         <% end_if %>
         <hr>
     </div>
@@ -21,7 +25,7 @@
                         <% if $Summary%>
                             <p>$Summary</p>
                         <% else %>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.</p>
+                            <p>{$Content.Summary}</p>
                         <% end_if %>
                         <a href="$Link" class="button">READ MORE</a>
                     </div>

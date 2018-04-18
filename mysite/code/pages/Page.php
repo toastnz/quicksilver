@@ -1,4 +1,9 @@
 <?php
+use SilverStripe\Control\Director;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\View\Requirements;
+use SilverStripe\CMS\Controllers\ContentController;
+
 
 /**
  * Class Page
@@ -12,9 +17,9 @@ class Page extends SiteTree
 }
 
 /**
- * Class Page_Controller
+ * Class PageController
  */
-class Page_Controller extends ContentController
+class PageController extends ContentController
 {
     private static $allowed_actions = [
         'SubscriptionForm'
@@ -23,17 +28,15 @@ class Page_Controller extends ContentController
     public function init()
     {
         parent::init();
-        Requirements::combine_files(
-            'output.js',
-            [
-                $this->ThemeDir() . '/dist/js/app.js',
-            ]
-        );
+
+        Requirements::backend()->setWriteHeaderComment(false);
+        Requirements::combine_files('app.js', ['themes/quicksilver/dist/js/app.js']);
+        Requirements::process_combined_files();
+
     }
 
     public function SubscriptionForm()
     {
         return SubscriptionForm::create($this, 'SubscriptionForm');
     }
-
 }

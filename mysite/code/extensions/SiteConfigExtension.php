@@ -1,5 +1,20 @@
 <?php
 
+namespace Toast\Extensions;
+
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\TabSet;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\HeaderField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\LiteralField;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\TreeMultiselectField;
+use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\ORM\DataExtension;
+
 /**
  * Class SiteConfigExtension
  *
@@ -69,26 +84,19 @@ class SiteConfigExtension extends DataExtension
 
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
-            HeaderField::create('', 'Company Details'),
-            TextField::create('Phone', 'Phone Number')
-                ->addExtraClass('input-wrap--half'),
+            HeaderField::create('DetailsHeader', 'Company Details'),
+            TextField::create('Phone', 'Phone Number'),
             TextField::create('Email', 'Public Email Address')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
             $address,
             $postalAddress,
-            HeaderField::create('', 'Social Media Pages'),
-            TextField::create('FacebookPage', '<img src="mysite/dist/images/cms/social/Facebook.png" class="inlineIconSocial"> Facebook')
-                ->addExtraClass('input-wrap--half'),
-            TextField::create('LinkedInPage', '<img src="mysite/dist/images/cms/social/LinkedIn.png" class="inlineIconSocial"> LinkedIn')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextField::create('YoutubePage', '<img src="mysite/dist/images/cms/social/Youtube.png" class="inlineIconSocial"> Youtube')
-                ->addExtraClass('input-wrap--half'),
-            TextField::create('InstagramPage', '<img src="mysite/dist/images/cms/social/Instagram.png" class="inlineIconSocial"> Instagram')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextField::create('PinterestPage', '<img src="mysite/dist/images/cms/social/Pinterest.png" class="inlineIconSocial"> Pinterest')
-                ->addExtraClass('input-wrap--half'),
-            TextField::create('TwitterPage', '<img src="mysite/dist/images/cms/social/Twitter.png" class="inlineIconSocial"> Twitter')
-                ->addExtraClass('input-wrap--half input-wrap--half--last')
+            HeaderField::create('DetailsHeader', 'Social Media Pages'),
+            TextField::create('FacebookPage', 'Facebook'),
+            TextField::create('LinkedInPage', 'LinkedIn'),
+            TextField::create('YoutubePage', 'Youtube'),
+            TextField::create('InstagramPage', 'Instagram'),
+            TextField::create('PinterestPage', 'Pinterest'),
+            TextField::create('TwitterPage', 'Twitter')
         ]);
 
         /** -----------------------------------------
@@ -99,23 +107,22 @@ class SiteConfigExtension extends DataExtension
 
         $fields->addFieldsToTab('Root.Settings.Integrations', [
             // Mailchimp
-            HeaderField::create('', 'Newsletter Subscription'),
-            LiteralField::create('', '<p>The API key and list ID are necessary for the Newsletter Subscription form to function. <a href="https://us9.admin.mailchimp.com/account/api-key-popup/" target="_blank"><i>How do I get my MailChimp API Key?</i></a></p>'),
-            TextField::create('MailChimpAPI', 'API Key')
-                ->addExtraClass('input-wrap--half'),
-            TextField::create('MailChimpListID', 'List ID')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
-            TextareaField::create('MailChimpSuccessMessage', 'Success Message')->setRows(2)
-                ->setRightTitle('Message displayed when a user has successfully subscribed to a list.'),
+            HeaderField::create('NewsletterHeading', 'Newsletter Subscription'),
+            LiteralField::create('MailchimpTooltip', '<p>The API key and list ID are necessary for the Newsletter Subscription form to function. <a href="https://us9.admin.mailchimp.com/account/api-key-popup/" target="_blank"><i>How do I get my MailChimp API Key?</i></a></p>'),
+            TextField::create('MailChimpAPI', 'API Key'),
+            TextField::create('MailChimpListID', 'List ID'),
+            TextareaField::create('MailChimpSuccessMessage', 'Success Message')
+                ->setRows(2)
+                ->setDescription('Message displayed when a user has successfully subscribed to a list.'),
 
             // BugHerd
-            HeaderField::create('', 'Bugherd'),
+            HeaderField::create('BugherdHeading', 'Bugherd'),
             CheckboxField::create('EnableBugherd', 'Enable bugherd?'),
             TextField::create('BHProjectKey', 'Bugherd Project Key')
                 ->setRightTitle('<a href="https://support.bugherd.com/hc/en-us/articles/204171450-Installing-the-Script" target="_blank"><i>How do I get my BugHerd Project Key?</i></a>'),
 
             // Google
-            HeaderField::create('', 'Google Tracking'),
+            HeaderField::create('GoogleHeading', 'Google Tracking'),
             TextField::create('GoogleTrackingID', 'Tracking ID')
                 ->addExtraClass('input-wrap--half')
                 ->setAttribute('placeholder', 'UA-XXXXXXXX-X'),
@@ -124,24 +131,9 @@ class SiteConfigExtension extends DataExtension
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
 
             // Google Maps
-            HeaderField::create('', 'Google Maps'),
+            HeaderField::create('GoogleMapsHeading', 'Google Maps'),
             TextField::create('GoogleMapsApiKey', 'Google Maps API Key'),
 
-            // Pagespeed
-            HeaderField::create('', 'Google Page Speed'),
-            TreeMultiselectField::create('PageSpeedPages', 'Select pages to test against', 'SiteTree')
-
         ]);
-    }
-
-    /**
-     * @return bool|mixed
-     */
-    public function getFormattedPhone()
-    {
-        if ($phone = (string)SiteConfig::current_site_config()->Phone) {
-            return preg_replace('/\s+/', '', $phone);
-        }
-        return false;
     }
 }

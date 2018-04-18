@@ -1,5 +1,11 @@
 <?php
 
+use SilverStripe\Forms\ReadonlyField;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Security\Permission;
+use SilverStripe\ORM\DataObject;
+
 /**
  * Class ContactMessage
  *
@@ -11,6 +17,8 @@
  */
 class ContactMessage extends DataObject
 {
+    private static $table_name = 'ContactMessage';
+
     private static $db = [
         'FirstName' => 'Varchar(500)',
         'Surname'   => 'Varchar(500)',
@@ -28,6 +36,10 @@ class ContactMessage extends DataObject
     ];
 
     private static $default_sort = 'Created DESC';
+
+    private static $has_one = [
+        'Page' => 'ContactPage'
+    ];
 
     /**
      * @return FieldList
@@ -73,7 +85,7 @@ class ContactMessage extends DataObject
         return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
     }
 
-    public function canCreate($member = null)
+    public function canCreate($member = null, $context = [])
     {
         return Permission::check('CMS_ACCESS_CMSMain', 'any', $member);
     }
