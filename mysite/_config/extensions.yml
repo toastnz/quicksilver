@@ -7,7 +7,3 @@ After:
 SiteConfig:
   extensions:
     - SiteConfigExtension
-
-LeftAndMain:
-  extensions:
-    - LeftAndMainDecorator

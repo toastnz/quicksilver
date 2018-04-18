@@ -1,0 +1,32 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: mysite
+
+SSViewer:
+  theme: 'quicksilver'
+
+MySQLDatabase:
+  connection_charset: 'utf8'
+
+GDBackend:
+  default_quality: 90
+
+Image:
+  cms_thumbnail_width:  100
+  cms_thumbnail_height: 80
+  force_resample: true
+
+---
+Only:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'
+---
+Except:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'

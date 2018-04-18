@@ -1,56 +1,44 @@
 {
-  "name": "toastnz/quicksilver",
-  "description": "SilverStripe Boilerplate",
-  "type": "project",
-  "keywords": [
-    "silverstripe",
-    "theme",
-    "boilerplate"
-  ],
-  "license": "BSD-3-Clause",
-  "authors": [
-    {
-      "name": "Jaydn de Graaf",
-      "homepage": "http://pinc.nz/"
+    "name": "toastnz/quicksilver",
+    "description": "SilverStripe Boilerplate",
+    "type": "project",
+    "keywords": [
+        "silverstripe",
+        "theme",
+        "boilerplate"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Jaydn de Graaf",
+            "homepage": "http://pinc.nz/"
+        },
+        {
+            "name": "Danae Miller-Clendon",
+            "homepage": "http://www.toast.co.nz/"
+        }
+    ],
+    "require": {
+        "silverstripe/recipe-cms": "^1.0"
     },
-    {
-      "name": "Danae Miller-Clendon",
-      "homepage": "http://www.toast.co.nz/"
+    "config": {
+        "preferred-install": "dist"
+    },
+    "minimum-stability": "dev",
+    "extra": {
+        "project-files-installed": [
+            "app/.htaccess",
+            "app/_config.php",
+            "app/_config/mysite.yml",
+            "app/src/Page.php",
+            "app/src/PageController.php"
+        ],
+        "public-files-installed": [
+            ".htaccess",
+            "index.php",
+            "install-frameworkmissing.html",
+            "install.php",
+            "web.config"
+        ]
     }
-  ],
-  "require": {
-    "php": ">=5.3.3",
-    "jonom/focuspoint": "^2.4",
-    "toastnz/flat-cms": "~1.1.0",
-    "toastnz/toast-seo": "^1.0.0",
-    "drewm/mailchimp-api": "~1.0",
-    "unclecheese/dropzone": "^1.2",
-    "sgrodzicki/pagespeed": "^2.0",
-    "silverstripe/cms": "~3.3@stable",
-    "toastnz/open-graph-meta": "^1.0.0",
-    "unclecheese/betterbuttons": "1.2.*",
-    "toastnz/twitter-card-meta": "^1.0.0",
-    "silverstripe/framework": "~3.3@stable",
-    "silverstripe/googlesitemaps": "^1.7.1",
-    "silverstripe/redirectedurls": "^1.0.1",
-    "sheadawson/silverstripe-linkable": "^1.3",
-    "heyday/silverstripe-cacheinclude": "^4.2.0",
-    "unclecheese/silverstripe-kickassets": "^3.3",
-    "undefinedoffset/silverstripe-nocaptcha": "^0.2.0",
-    "symbiote/silverstripe-gridfieldextensions": "~1.1",
-    "heyday/silverstripe-cacheinclude-manager": "~0.1.0",
-    "benmanu/silverstripe-simple-styleguide": "dev-master",
-    "webbuilders-group/silverstripe-siteconfig-error-pages": "^0.1.0"
-
-  },
-  "config": {
-    "preferred-install": "dist"
-  },
-  "minimum-stability": "dev",
-  "require-dev": {
-    "gdmedia/ss-auto-git-ignore": "~0.0.1"
-  },
-  "scripts": {
-    "post-update-cmd": "GDM\\SSAutoGitIgnore\\UpdateScript::Go"
-  }
 }

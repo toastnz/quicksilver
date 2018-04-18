@@ -1,4 +1,4 @@
-<% include Static__Template %>
+<% include QuickStatic\Template %>
 
 <%---------------------------------------------------------------%>
 <%--                Static Block Descriptive Text              --%>

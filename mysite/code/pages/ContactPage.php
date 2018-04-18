@@ -11,7 +11,7 @@ class ContactPage extends Page
     private static $icon = 'mysite/dist/images/cms/envelope-at-sign.png';
 }
 
-class ContactPage_Controller extends Page_Controller
+class ContactPageController extends PageController
 {
     private static $allowed_actions = [
         'ContactForm'

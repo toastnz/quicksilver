@@ -1,5 +1,7 @@
 <?php
 
+namespace QuickStatic;
+
 /**
  * Class Page
  */
