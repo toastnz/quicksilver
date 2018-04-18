@@ -1,4 +1,9 @@
 <?php
+use SilverStripe\Control\Director;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\View\Requirements;
+use SilverStripe\CMS\Controllers\ContentController;
+
 
 /**
  * Class Page
@@ -35,5 +40,6 @@ class PageController extends ContentController
     {
         return SubscriptionForm::create($this, 'SubscriptionForm');
     }
+
 
 }

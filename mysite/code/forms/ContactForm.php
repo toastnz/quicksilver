@@ -1,5 +1,19 @@
 <?php
 
+use SilverStripe\Control\Controller;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\Form;
+use SilverStripe\Control\Session;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\EmailField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\SiteConfig\SiteConfig;
+use SilverStripe\Core\Config\Config;
+
 /**
  * Class Contact
  */
@@ -32,6 +46,7 @@ class ContactForm extends Form
 
         $required = RequiredFields::create([
             'FirstName',
+            'Surname',
             'Email',
             'Message'
         ]);
@@ -40,23 +55,24 @@ class ContactForm extends Form
          * Form
          * ----------------------------------------*/
 
-        $form = Form::create($this, $name, $fields, $actions, $required);
+        $form = Form::create($controller, $name, $fields, $actions, $required);
 
         if ($arguments) {
             $form->loadDataFrom($arguments);
         }
 
-        if ($formData = Session::get('FormInfo.Form_' . $name . '.data')) {
+        if ($formData = $this->getRequest()->getSession()->get('FormInfo.Form_' . $name . '.data')) {
             $form->loadDataFrom($formData);
         }
 
         parent::__construct($controller, $name, $fields, $actions, $required);
 
+        $this->setFormMethod('get');
         $this->setAttribute('data-parsley-validate', true);
         $this->setAttribute('autocomplete', 'on');
         $this->addExtraClass('form');
 
-        $this->enableSpamProtection();
+//        $this->enableSpamProtection();
     }
 
     /**
@@ -75,19 +91,20 @@ class ContactForm extends Form
 
         $fields = FieldList::create([
             TextField::create('FirstName', 'First Name')
-                ->setAttribute('placeholder', 'First Name')
-                ->addExtraClass('input-wrap__half'),
+                ->setAttribute('data-parsley-error-message', 'Please enter your first name')
+                ->addExtraClass('input-wrap--half'),
             TextField::create('Surname', 'Last Name')
-                ->setAttribute('placeholder', 'Last Name')
-                ->addExtraClass('input-wrap__half input-wrap__half--last'),
-            EmailField::create('Email', 'Email')
-                ->setAttribute('placeholder', 'Email')
-                ->addExtraClass('input-wrap__half'),
+                ->setAttribute('data-parsley-error-message', 'Please enter your last name')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextField::create('Phone', 'Phone')
-                ->setAttribute('placeholder', 'Phone')
-                ->addExtraClass('input-wrap__half input-wrap__half--last'),
+                ->setAttribute('placeholder', 'e.g; 021 123 4567')
+                ->addExtraClass('input-wrap--half'),
+            EmailField::create('Email', 'Email Address')
+                ->setAttribute('data-parsley-error-message', 'Please enter your email address')
+                ->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextareaField::create('Message', 'Message')
-                ->setAttribute('placeholder', 'Message')
+                ->setAttribute('data-parsley-error-message', 'Please enter a message'),
+            CheckboxField::create('Subscribe', 'I would like to sign up for the newslettter')
         ]);
 
         return $fields;
@@ -105,7 +122,7 @@ class ContactForm extends Form
         $siteConfig = SiteConfig::current_site_config();
 
         // Save data to session
-        Session::set('FormInfo.Form_' . $this->name . '.data', $data);
+        $this->getRequest()->getSession()->set('FormInfo.Form_' . $this->name . '.data', $data);
 
         /** -----------------------------------------
          * Email
@@ -117,8 +134,8 @@ class ContactForm extends Form
 
         $email = Email::create($from, $to, 'Enquiry received');
 
-        $email->setTemplate('ContactEmail')
-            ->populateTemplate($data)
+        $email->setHTMLTemplate('email/ContactEmail')
+            ->setData($data)
             ->send();
 
         /** -----------------------------------------
@@ -126,23 +143,20 @@ class ContactForm extends Form
          * ----------------------------------------*/
 
         $record = ContactMessage::create($data);
-        $record->write();
+        $recordID = $record->write();
 
         /** -----------------------------------------
          * Finish
          * ----------------------------------------*/
 
-        Session::clear('FormInfo.Form_' . $this->name . '.data');
+        $this->getRequest()->getSession()->clear('FormInfo.Form_' . $this->name . '.data');
 
         $message = 'Your enquiry has been received.';
 
         $form->sessionMessage($message, 'success');
 
         if ($this->request->isAjax()) {
-            return json_encode([
-                'success' => true,
-                'message' => $message
-            ]);
+            return Controller::curr()->getStandardJsonResponse(['message_id' => $recordID], 'doSubmit', $message);
         } else {
             return $this->controller->redirect($this->controller->data()->Link('?success=1'));
         }

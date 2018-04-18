@@ -1,9 +1,10 @@
 ---
 Name: myextensions
-After:
-  - 'framework/*'
-  - 'cms/*'
 ---
-SiteConfig:
+SilverStripe\SiteConfig\SiteConfig:
   extensions:
-    - SiteConfigExtension
+    - Toast\Extensions\SiteConfigExtension
+
+SilverStripe\Control\Controller:
+  extensions:
+    - Toast\Extensions\ControllerExtension

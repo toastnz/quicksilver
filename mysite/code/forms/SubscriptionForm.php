@@ -1,4 +1,14 @@
 <?php
+use SilverStripe\Control\Email\Email;
+use SilverStripe\Forms\EmailField;
+use SilverStripe\Forms\TextField;
+use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\FormAction;
+use SilverStripe\Forms\RequiredFields;
+use SilverStripe\Forms\Form;
+use SilverStripe\Control\Session;
+use SilverStripe\SiteConfig\SiteConfig;
+
 
 /**
  * Class SubscriptionForm
@@ -23,10 +33,10 @@ class SubscriptionForm extends Form
          * Fields
          * ----------------------------------------*/
 
-        $emailField = EmailField::create('Email', 'Email Address');
+        $emailField = EmailField::create(Email::class, 'Email Address');
 
         $emailField->addExtraClass('form-control')
-            ->setAttribute('placeholder', 'Email')
+            ->setAttribute('placeholder', Email::class)
             ->setAttribute('data-parsley-required-message', 'Please enter your <strong>Email</strong>')
             ->setCustomValidationMessage('Please enter your <strong>Email</strong>');
 
@@ -57,7 +67,7 @@ class SubscriptionForm extends Form
 
         $required = RequiredFields::create(
             'Name',
-            'Email'
+            Email::class
         );
 
         $form = Form::create($this, $name, $fields, $actions, $required);
@@ -106,7 +116,7 @@ class SubscriptionForm extends Form
             $result = $mailChimp->call('lists/subscribe', [
                 'id'         => $listID,
                 'email'      => [
-                    'email' => $data['Email']
+                    'email' => $data[Email::class]
                 ],
                 'merge_vars' => $mergeVars
             ]);

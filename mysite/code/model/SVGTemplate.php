@@ -1,4 +1,6 @@
 <?php
+use SilverStripe\View\ViewableData;
+
 /*
  * Author: Ryan Potter
  * https://github.com/Rhym

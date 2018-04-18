@@ -1,4 +1,9 @@
 <?php
+use SilverStripe\i18n\i18n;
+use SilverStripe\Control\Director;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\ORM\Search\FulltextSearchable;
+
 
 global $project;
 $project = 'mysite';
@@ -15,7 +20,7 @@ if (!Director::is_cli() && Director::isLive()) {
 //    Director::forceSSL();
 }
 
-FulltextSearchable::enable(['SiteTree']);
+FulltextSearchable::enable([SiteTree::class]);
 
 /**
  * it is suggested to set SS_ERROR_LOG in _ss_environment.php to enable logging,

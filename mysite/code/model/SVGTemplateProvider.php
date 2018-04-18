@@ -1,4 +1,6 @@
 <?php
+use SilverStripe\View\TemplateGlobalProvider;
+
 /*
  * Author: Ryan Potter
  * https://github.com/Rhym
