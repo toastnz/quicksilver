@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef1948df93276b162dcc24f564582267",
+    "content-hash": "efff1960c87ae53a114342924de504ba",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -2281,6 +2281,42 @@
                 "versioned"
             ],
             "time": "2018-04-10T03:00:35+00:00"
+        },
+        {
+            "name": "stevie-mayhew/silverstripe-svg",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/stevie-mayhew/silverstripe-svg.git",
+                "reference": "3c032ebc41ac26a6677b5d5a8bca30430fbf5a26"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/stevie-mayhew/silverstripe-svg/zipball/3c032ebc41ac26a6677b5d5a8bca30430fbf5a26",
+                "reference": "3c032ebc41ac26a6677b5d5a8bca30430fbf5a26",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Stevie Mayhew",
+                    "email": "stevie@stevie.co.nz"
+                }
+            ],
+            "description": "Basic SVG support for SilverStripe",
+            "keywords": [
+                "silverstripe",
+                "svg",
+                "template"
+            ],
+            "time": "2017-10-19T22:33:09+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

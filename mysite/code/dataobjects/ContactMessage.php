@@ -17,6 +17,8 @@ use SilverStripe\ORM\DataObject;
  */
 class ContactMessage extends DataObject
 {
+    private static $table_name = 'ContactMessage';
+
     private static $db = [
         'FirstName' => 'Varchar(500)',
         'Surname'   => 'Varchar(500)',
@@ -34,6 +36,10 @@ class ContactMessage extends DataObject
     ];
 
     private static $default_sort = 'Created DESC';
+
+    private static $has_one = [
+        'Page' => 'ContactPage'
+    ];
 
     /**
      * @return FieldList

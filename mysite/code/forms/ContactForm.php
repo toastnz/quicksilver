@@ -38,6 +38,7 @@ class ContactForm extends Form
 
         $actions = FieldList::create(
             FormAction::create('Submit')
+                ->addExtraClass('button button--primary')
                 ->setTitle('SUBMIT')
         );
 
@@ -103,8 +104,7 @@ class ContactForm extends Form
                 ->setAttribute('data-parsley-error-message', 'Please enter your email address')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
             TextareaField::create('Message', 'Message')
-                ->setAttribute('data-parsley-error-message', 'Please enter a message'),
-            CheckboxField::create('Subscribe', 'I would like to sign up for the newslettter')
+                ->setAttribute('data-parsley-error-message', 'Please enter a message')
         ]);
 
         return $fields;
@@ -118,7 +118,15 @@ class ContactForm extends Form
          * @var Email               $email
         ===========================================*/
 
-        $data       = $form->getData();
+        $data = $form->getData();
+
+        /** @var ContactPage $page */
+        $page = $this->getController()->data();
+
+        if ($page) {
+            $data['PageID'] = $page->ID;
+        }
+
         $siteConfig = SiteConfig::current_site_config();
 
         // Save data to session
@@ -128,7 +136,7 @@ class ContactForm extends Form
          * Email
          * ----------------------------------------*/
 
-        $to = $siteConfig->Email ?: Config::inst()->get('Email', 'admin_email');
+        $to = $page->NotificationEmail ? : $siteConfig->Email ?: Config::inst()->get('Email', 'admin_email');
 
         $from = $data['Email'];
 
@@ -142,7 +150,7 @@ class ContactForm extends Form
          * Record
          * ----------------------------------------*/
 
-        $record = ContactMessage::create($data);
+        $record   = ContactMessage::create($data);
         $recordID = $record->write();
 
         /** -----------------------------------------
@@ -151,14 +159,14 @@ class ContactForm extends Form
 
         $this->getRequest()->getSession()->clear('FormInfo.Form_' . $this->name . '.data');
 
-        $message = 'Your enquiry has been received.';
+        $message = $page->SuccessMessage ? : 'Your enquiry has been received.';
 
         $form->sessionMessage($message, 'success');
 
         if ($this->request->isAjax()) {
             return Controller::curr()->getStandardJsonResponse(['message_id' => $recordID], 'doSubmit', $message);
         } else {
-            return $this->controller->redirect($this->controller->data()->Link('?success=1'));
+            return $this->controller->redirectBack();
         }
     }
 }

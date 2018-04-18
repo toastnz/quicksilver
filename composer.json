@@ -27,7 +27,8 @@
         "silverstripe/redirectedurls": "2.x-dev",
         "sheadawson/silverstripe-linkable": "dev-master",
         "undefinedoffset/silverstripe-nocaptcha": "2.0.x-dev",
-        "symbiote/silverstripe-gridfieldextensions": "~3.1.1"
+        "symbiote/silverstripe-gridfieldextensions": "~3.1.1",
+        "stevie-mayhew/silverstripe-svg": "^2.1.0"
     },
     "config": {
         "preferred-install": "dist"
