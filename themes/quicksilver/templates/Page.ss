@@ -9,15 +9,12 @@
       data-title="$Title"
       data-url-segment="$URLSegment">
 <div class="tingle-content-wrapper">
-    <% if $URLSegment != 'Security' %>
-        <% include Header %>
-    <% end_if %>
+
+    <% include Header %>
 
     $Layout
 
-    <% if $URLSegment != 'Security' %>
-        <% include Footer %>
-    <% end_if %>
+    <% include Footer %>
 
     <% if $SiteConfig.GoogleTagManagerID %>
         <!-- Google Tag Manager (noscript) -->

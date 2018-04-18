@@ -17,7 +17,7 @@ class Page extends SiteTree
 }
 
 /**
- * Class Page_Controller
+ * Class PageController
  */
 class PageController extends ContentController
 {
@@ -30,8 +30,6 @@ class PageController extends ContentController
         parent::init();
 
         Requirements::backend()->setWriteHeaderComment(false);
-        Requirements::combine_files('combined.css', ['themes/quicksilver/dist/styles/style.css']);
-        Requirements::process_combined_files();
         Requirements::combine_files('app.js', ['themes/quicksilver/dist/js/app.js']);
         Requirements::process_combined_files();
 
@@ -41,6 +39,4 @@ class PageController extends ContentController
     {
         return SubscriptionForm::create($this, 'SubscriptionForm');
     }
-
-
 }

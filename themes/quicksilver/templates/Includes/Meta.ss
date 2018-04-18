@@ -2,7 +2,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 <% base_tag %>
-<% include ToastSEO %>
 <% include Favicons %>
 
 <% if $SiteConfig.GoogleTagManagerID %>
@@ -52,4 +51,4 @@
     <% end_if %>
 <% end_with %>
 
-<% require css("themes/quicksilver/dist/styles/style.css") %>
+<% require themedCSS("/dist/styles/style") %>

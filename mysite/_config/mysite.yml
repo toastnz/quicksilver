@@ -4,16 +4,16 @@ Name: myproject
 SilverStripe\Core\Manifest\ModuleManifest:
   project: mysite
 
-SSViewer:
-  theme: 'quicksilver'
+SilverStripe\View\SSViewer:
+  theme: quicksilver
 
-MySQLDatabase:
+SilverStripe\ORM\Connect\MySQLDatabase:
   connection_charset: 'utf8'
 
 GDBackend:
   default_quality: 90
 
-Image:
+SilverStripe\AssetsImage:
   cms_thumbnail_width:  100
   cms_thumbnail_height: 80
   force_resample: true
