@@ -19,7 +19,10 @@
         }
     ],
     "require": {
-        "silverstripe/recipe-cms": "^1.0",
+        "silverstripe/recipe-plugin": "^1.2",
+        "silverstripe/framework": "4.*@stable",
+        "silverstripe/cms": "4.*@stable",
+        "silverstripe/siteconfig": "4.*@stable",
         "jonom/focuspoint": "~3.0.0",
         "drewm/mailchimp-api": "v2.5",
         "unclecheese/betterbuttons": "2.x-dev",
