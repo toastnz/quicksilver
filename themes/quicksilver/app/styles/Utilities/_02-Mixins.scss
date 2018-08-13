@@ -73,11 +73,10 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 }
 
 @mixin vertical-center {
-  top: 50%;
-  transform: translateY(-50%);
   position: absolute;
-  left: 0;
-  right: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
   margin: 0 auto;
 }
 
