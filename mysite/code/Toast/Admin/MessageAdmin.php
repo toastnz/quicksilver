@@ -1,6 +1,9 @@
 <?php
-use SilverStripe\Admin\ModelAdmin;
 
+namespace Toast\Admin;
+
+use SilverStripe\Admin\ModelAdmin;
+use Toast\Model\ContactMessage;
 
 /**
  * Class MessageAdmin
@@ -12,7 +15,7 @@ class MessageAdmin extends ModelAdmin
     private static $icon = 'message';
 
     private static $managed_models = [
-        'ContactMessage' => [
+        ContactMessage::class => [
             'title' => 'Messages'
         ]
     ];

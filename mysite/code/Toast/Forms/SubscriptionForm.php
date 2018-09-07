@@ -1,9 +1,11 @@
 <?php
 
+namespace Toast\Forms;
+
 use DrewM\MailChimp\MailChimp;
 use SilverStripe\Control\Controller;
 use SilverStripe\Control\HTTPResponse;
-use SilverStripe\Control\Email\Email;
+use SilverStripe\Dev\Debug;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\Forms\FieldList;
@@ -38,10 +40,10 @@ class SubscriptionForm extends Form
          * Fields
          * ----------------------------------------*/
 
-        $emailField = EmailField::create(Email::class, 'Email Address');
+        $emailField = EmailField::create('Email', 'Email Address');
 
         $emailField->addExtraClass('form-control')
-            ->setAttribute('placeholder', Email::class)
+            ->setAttribute('placeholder', 'Email')
             ->setAttribute('data-parsley-required-message', 'Please enter your <strong>Email</strong>')
             ->setCustomValidationMessage('Please enter your <strong>Email</strong>');
 
@@ -75,7 +77,7 @@ class SubscriptionForm extends Form
             'Email'
         );
 
-        $form = Form::create($this, $name, $fields, $actions, $required);
+        $form = Form::create($controller, $name, $fields, $actions, $required);
 
         if ($formData = $this->getRequest()->getSession()->get('FormInfo.Form_' . $name . '.data')) {
             $form->loadDataFrom($formData);
@@ -124,17 +126,15 @@ class SubscriptionForm extends Form
 
             $mergeVars['FNAME'] = $data['Name'];
 
-            $result = $mailChimp->get('lists/subscribe', [
-                'id'         => $listID,
-                'email'      => [
-                    'email' => $data[Email::class]
-                ],
-                'merge_vars' => $mergeVars
+            $result = $mailChimp->post("lists/$listID/members", [
+                'email_address' => $data['Email'],
+                'status'        => 'subscribed',
+                'merge_fields'  => $mergeVars
             ]);
 
         } else {
             /** If not, redirect back and display an error. */
-            $this->setMessage('Missing API key, or List ID', 'danger');
+//            $this->setMessage('Missing API key, or List ID', 'danger');
 
             if ($this->request->isAjax()) {
                 return Controller::curr()->getStandardJsonResponse([], 'Subscribe', 'Missing API key, or List ID', 500, 'error');
@@ -147,12 +147,18 @@ class SubscriptionForm extends Form
          * If the status of the request returns an error,
          * display the error
          */
+
         if (isset($result['status'])) {
-            if ($result['status'] == 'error') {
-                $this->setMessage($result['error'], 'danger');
+            if ($result['status'] != 'subscribed') {
+
+                $message = $result['title'];
 
                 if ($this->request->isAjax()) {
-                    return Controller::curr()->getStandardJsonResponse([], 'Subscribe',  $result['error'], 500, 'error');
+                    if ($message == 'Member Exists') {
+                        $message = "Looks like you've already signed up to receive info about the Pilot Programme!";
+                    }
+
+                    return Controller::curr()->getStandardJsonResponse($result, 'Subscribe', $message, 500, 'error');
                 } else {
                     return $this->controller->redirectBack();
                 }

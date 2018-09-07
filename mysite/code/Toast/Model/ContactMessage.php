@@ -1,5 +1,7 @@
 <?php
 
+namespace Toast\Model;
+
 use SilverStripe\Forms\ReadonlyField;
 use SilverStripe\Control\Email\Email;
 use SilverStripe\Forms\FieldList;

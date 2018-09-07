@@ -15,3 +15,5 @@ _resampled
 /.env
 /resources/
 /betterbuttons/
+/Vagrantfile
+/.vagrant

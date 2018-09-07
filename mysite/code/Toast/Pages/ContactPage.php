@@ -1,9 +1,12 @@
 <?php
 
+namespace Toast\Pages;
+
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\TextareaField;
+use Toast\Forms\ContactForm;
 
 /**
  * Class ContactPage
@@ -17,6 +20,7 @@ class ContactPage extends \Page
     private static $plural_name = 'Contact Pages';
     private static $description = 'Displays a contact form which receives enquiries from the end user';
     private static $icon = 'mysite/dist/images/cms/envelope-at-sign.png';
+    private static $table_name = 'ContactPage';
 
     private static $db = [
         'NotificationEmail' => 'Varchar(100)',

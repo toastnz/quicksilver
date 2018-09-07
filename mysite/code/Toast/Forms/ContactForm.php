@@ -1,5 +1,7 @@
 <?php
 
+namespace Toast\Forms;
+
 use SilverStripe\Control\Controller;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FormAction;
@@ -14,6 +16,8 @@ use SilverStripe\Forms\TextareaField;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\Core\Config\Config;
 use Toast\Extensions\SiteConfigExtension;
+use Toast\Model\ContactMessage;
+use Toast\Pages\ContactPage;
 
 /**
  * Class Contact

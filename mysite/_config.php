@@ -20,29 +20,12 @@ try {
 
 //CMSMenu::remove_menu_item('SilverStripe-CampaignAdmin-CampaignAdmin');
 
-$formats = [
-    [
-        'title'          => 'Colour - Primary',
-        'inline'         => 'span',
-        'classes'        => 'colour--primary',
-        'wrapper'        => true,
-        'merge_siblings' => false
-    ],
-    [
-        'title'    => 'Button - Default',
-        'selector' => 'a, button',
-        'classes'  => 'button',
-        'wrapper'  => false,
-    ],
-];
 
-//HtmlEditorConfig::get('cms')->setOption('style_formats', $formats);
-//TinyMCEConfig::get('cms')->setOption('theme_advanced_blockformats','h1,h2,h3,h4,h5,h6,p,subtitle');
+TinyMCEConfig::get('cms')->enablePlugins(['hr']);
 
 TinyMCEConfig::get('cms')
     ->addButtonsToLine(2, 'styleselect')
+    ->addButtonsToLine(1, 'hr')
     ->setOptions([
-        'importcss_append' => true,
-        'style_formats'    => $formats,
+        'importcss_append' => true
     ]);
-

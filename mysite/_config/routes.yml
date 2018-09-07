@@ -1,0 +1,9 @@
+---
+Name: mysiteroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    api/v1.0//$Action: Toast\Controllers\ApiController

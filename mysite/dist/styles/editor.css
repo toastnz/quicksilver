@@ -1,54 +1,59 @@
-body.mceContentBody a.ss-broken { background-color: #FF7B71; border: 1px red solid; color: #fff; padding: 1px; text-decoration: underline; }
+body a.ss-broken {
+    background-color: #FF7B71;
+    border:           1px red solid;
+    color:            #fff;
+    padding:          1px;
+    text-decoration:  underline;
+}
 
-body.mceContentBody p {
+body p {
     padding-bottom: 1em;
-    margin: 0;
+    margin:         0;
 }
 
-body.mceContentBody {
-    padding-top: 10px;
+body {
+    padding-top: 12px;
 }
-
 
 /*=================*/
 /* Headings        */
 /*=================*/
 
-body.mceContentBody {
-    font-size: 10px;
+body {
+    font-size: 12px;
 }
 
-body.mceContentBody h1 {
+body h1 {
     font-size: 2.5em;
 }
 
-body.mceContentBody h2 {
+body h2 {
     font-size: 2em;
 }
 
-body.mceContentBody h3 {
+body h3 {
     font-size: 1.75em;
 }
 
-body.mceContentBody h4 {
+body h4 {
     font-size: 1.5em;
 }
 
-body.mceContentBody h5 {
+body h5 {
     font-size: 1.3em;
 }
 
-body.mceContentBody h6 {
+body h6 {
     font-size: 1.2em;
 }
 
-body.mceContentBody h1,
-body.mceContentBody h2,
-body.mceContentBody, h3,
-body.mceContentBody h4,
-body.mceContentBody h5,
-body.mceContentBody h6 {
-    margin-top: 0;
+body h1,
+body h2,
+body, h3,
+body h4,
+body h5,
+body h6 {
+    margin-top:    0;
     margin-bottom: 10px;
 }
 
@@ -56,38 +61,74 @@ body.mceContentBody h6 {
 /* Styles          */
 /*=================*/
 
-body.mceContentBody span.colour--secondary {
-    color: #666666;
+.colour--primary {
+    color: #e75931;
 }
 
-body.mceContentBody span.colour--tertiary {
-    color: #999999;
+.colour--secondary {
+    color: #333;
 }
 
 /*=================*/
 /* Buttons         */
 /*=================*/
 
-body.mceContentBody a.button {
+a.button {
     background-color: #e75931;
-    border: 1px solid #e75931;
-    color: #fff;
-    padding: 3px 5px;
-    text-decoration: none;
-    display: inline-block;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
 }
 
-body.mceContentBody a.button.button--bordered {
+a.button--bordered {
     background-color: transparent;
-    color: #e75931;
+    color:            #e75931;
 }
 
-body.mceContentBody a.button.button--bordered--light {
-    border-color: #000;
-    background-color: transparent;
-    color: #000;
+a.button--round {
+    border-radius: .5rem;
 }
 
-body.mceContentBody a.button.button--round {
-    border-radius: 10rem;
+/*=================*/
+/* Lists           */
+/*=================*/
+
+ul,
+ol {
+    padding-left: 1.2rem !important;
+}
+
+ul li,
+ol li {
+    position: relative;
+}
+
+ol {
+    list-style: decimal !important;
+}
+
+ul li:before {
+    position:      absolute;
+    content:       '';
+    display:       block;
+    width:         .4rem;
+    height:        .4rem;
+    border-radius: 1.5rem;
+    background:    #ff6e32;
+    top:           .4rem;
+    left:          -1rem;
+}
+
+/*=================*/
+/* Type         */
+/*=================*/
+
+em, i {
+    font-style: italic !important;
+}
+
+strong, b {
+    font-weight: bold !important;
 }
