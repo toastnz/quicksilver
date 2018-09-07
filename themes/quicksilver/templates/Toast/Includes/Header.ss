@@ -1,5 +1,3 @@
-
-
 <div class="header">
     <div class="innerWrap">
 
@@ -26,7 +24,7 @@
             </ul>
         </nav>
 
-        <% include OffCanvas %>
+        <% include Toast\OffCanvas %>
 
         <div class="header__navburger [ js-mobile-nav ]">
             <b></b>

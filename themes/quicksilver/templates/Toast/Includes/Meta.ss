@@ -6,7 +6,7 @@
 $MetaTags('false')
 <title>{$Title} | {$SiteConfig.Title}</title>
 
-<% include Favicons %>
+<% include Toast\Favicons %>
 
 <% if $SiteConfig.GoogleTagManagerID %>
     <script>(function (w, d, s, l, i) {

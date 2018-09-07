@@ -26,7 +26,7 @@
             </ul>
         </nav>
 
-        <% include OffCanvas %>
+        <% include QuickStatic\OffCanvas %>
 
         <div class="header__navburger [ js-mobile-nav ]">
             <b></b>

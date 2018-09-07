@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <% include Meta %>
+    <% include Toast\Meta %>
 </head>
 <body class="$Classname"
       <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %>
@@ -10,11 +10,11 @@
       data-url-segment="$URLSegment">
 <div class="tingle-content-wrapper">
 
-    <% include Header %>
+    <% include Toast\Header %>
 
     $Layout
 
-    <% include Footer %>
+    <% include Toast\Footer %>
 
     <% if $SiteConfig.GoogleTagManagerID %>
         <!-- Google Tag Manager (noscript) -->
