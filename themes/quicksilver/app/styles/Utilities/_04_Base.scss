@@ -13,6 +13,10 @@ $secondary-font: 'open sans', sans-serif;
 $tertiary-font: 'open sans', sans-serif;
 
 //------------------------------------------------------------------
+// Link Colour
+$link-colour: $primary;
+
+//------------------------------------------------------------------
 // Table Colours
 $table-heading-background: $primary;
 $table-heading-colour: $white;
@@ -172,6 +176,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  a {
+    &:not(.button) {
+      color: $link-colour;
+    }
+  }
 }
 
 ::selection {
@@ -205,7 +215,7 @@ body {
   }
 }
 
-// Loop our $paragraph-text-elements and extend the %paragraphTextStyles to avoid code repetition
+// Loop our $paragraph-text-elements and extend the %p to avoid code repetition
 @each $element in $paragraph-text-elements {
   #{$element}, .#{$element} {
     @extend %p;
