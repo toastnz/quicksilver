@@ -180,6 +180,7 @@ body {
   a {
     &:not(.button) {
       color: $link-colour;
+      text-decoration: none;
     }
   }
 }
