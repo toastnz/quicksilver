@@ -2,7 +2,7 @@
 // Login Page
 //------------------------------------------------------------------
 
-.login-wrap {
+.loginWrap {
   @include full;
   position: fixed;
   background: radial-gradient(circle, $grey-mid, $grey-dark);
@@ -11,32 +11,11 @@
     @include vertical-center;
     background: $off-white;
     width: 90%;
-    max-width: 400px;
-    padding: 0 3.6rem 4rem;
+    max-width: 40rem;
+    padding: 0 4rem 4rem;
     box-shadow: $z5;
 
-    &:after {
-      @include pseudo;
-      top: -1px;
-      left: 0;
-      right: 0;
-      border-top: 5px solid $primary;
-    }
-
-    h4 {
-      display: block;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .input-wrap__actions {
-      input {
-        width: 100%;
-        border-radius: 0;
-      }
-    }
-
-    .logo-wrapper {
+    &__logo {
       @include svg(770, 180);
       position: relative;
       text-align: center;
@@ -44,52 +23,25 @@
       max-width: 20rem;
     }
 
+    .action {
+      @extend %button;
+      width: 100%;
+    }
+
     #BackToLogin,
     #ForgotPassword {
       background: $grey-light;
-      margin: 2rem -3.6rem -4rem;
-      width: calc(100% + 7.2rem);
+      margin: 2rem -4rem -4rem;
+      width: calc(100% + 8rem);
       padding: 1rem 1.5rem 1.5rem;
       text-align: center;
 
       a {
         color: $text;
-        padding-bottom: 2px;
-        text-decoration: none !important;
-
-        &:hover {
-          color: $primary;
-        }
       }
     }
   }
 
-  #Password,
-  #Email {
-    label {
-      font-size: 0;
-      position: absolute;
-      background: $grey-light;
-      width: 4rem;
-      text-align: center;
-      padding: 1.1rem 0 1rem;
-      top: -.2rem;
-
-      @include media($xl) {
-        padding: 1.1rem 0 .9rem;
-      }
-
-      &:before {
-        font-size: 2rem;
-        color: $primary;
-      }
-    }
-
-    input {
-      margin-left: 4rem;
-      width: calc(100% - 4rem);
-    }
-  }
 }
 
 

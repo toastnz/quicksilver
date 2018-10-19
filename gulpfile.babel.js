@@ -1,11 +1,10 @@
 /*------------------------------------------------------------------
  Imports
  ------------------------------------------------------------------*/
-
-const fs           = require('fs');
 const gulp         = require('gulp');
 const chalk        = require('chalk');
 const watchify     = require('watchify');
+const exorcist     = require('exorcist');
 const babelify     = require('babelify');
 const sass         = require('gulp-sass');
 const gutil        = require('gulp-util');
@@ -14,7 +13,6 @@ const pixrem       = require('gulp-pixrem');
 const plumber      = require('gulp-plumber');
 const replace      = require('gulp-replace');
 const sourcemaps   = require('gulp-sourcemaps');
-const scsslint     = require('gulp-scss-lint');
 const spritesmith  = require('gulp.spritesmith');
 const autoprefixer = require('gulp-autoprefixer');
 const realFavicon  = require('gulp-real-favicon');
@@ -43,23 +41,6 @@ const paths = {
         dist: new RegExp(root + 'dist/', 'g')
     }
 };
-
-/*------------------------------------------------------------------
- Styles
- ------------------------------------------------------------------*/
-
-gulp.task('scss-lint', function () {
-    return gulp.src([
-        paths.styles.src,
-        `!${root}app/styles/Sprites`,
-        `!${root}app/styles/Elements/_OffCanvas.scss`,
-        `!${root}app/styles/Sprites/**`,
-    ])
-        .pipe(scsslint({
-            'maxBuffer': 1000000,
-            'config'   : 'scss_lint.yml'
-        }));
-});
 
 /*------------------------------------------------------------------
  Styles
@@ -141,10 +122,11 @@ function compileScripts(watch) {
     let props     = watchify.args;
     props.entries = [`${root}/app/js/components/app.js`];
     props.debug   = true;
-    let bundler = watch ? watchify(browserify(props)) : browserify(props);
+    let bundler   = watch ? watchify(browserify(props)) : browserify(props);
     bundler.transform(babelify, { presets: ['es2015'] });
+
     function rebundle() {
-        let stream = bundler.bundle();
+        let stream = bundler.bundle().pipe(exorcist(`${paths.scripts.dest}app.js.map`));
         return stream.on('error', function (error) {
             gutil.log(`${chalk['yellow'](error.toString().replace(paths.reg.root, ''))}`);
             gutil.log((error['codeFrame']));
@@ -164,6 +146,12 @@ function compileScripts(watch) {
  Favicon Generation
  ------------------------------------------------------------------*/
 
+let project = {
+    site_name   : 'Quicksilver',
+    site_url    : 'http://localhost/quicksilver',
+    theme_colour: '#f0ff0f'
+};
+
 gulp.task('favicon', function (done) {
     realFavicon.generateFavicon({
         masterPicture: 'icon.png',
@@ -176,14 +164,14 @@ gulp.task('favicon', function (done) {
             desktopBrowser : {},
             windows        : {
                 pictureAspect  : 'noChange',
-                backgroundColor: '#e61b36',
+                backgroundColor: project.theme_colour,
                 onConflict     : 'override'
             },
             androidChrome  : {
                 pictureAspect: 'noChange',
-                themeColor   : '#e61b36',
+                themeColor   : project.theme_colour,
                 manifest     : {
-                    name       : 'My App',
+                    name       : project.site_name,
                     display    : 'browser',
                     orientation: 'notSet',
                     onConflict : 'override',
@@ -192,7 +180,7 @@ gulp.task('favicon', function (done) {
             },
             safariPinnedTab: {
                 pictureAspect: 'silhouette',
-                themeColor   : '#e61b36'
+                themeColor   : project.theme_colour
             }
         },
         settings     : {
@@ -209,26 +197,22 @@ gulp.task('favicon', function (done) {
  Task Declaration
  ------------------------------------------------------------------*/
 
-gulp.task('start', function () {
-    Message('start', 'green');
-});
-
-gulp.task('default', ['scss-lint', 'start', 'sprites', 'styles'], function () {
+gulp.task('default', ['styles'], function () {
+    Message('start', 'cyan');
     compileScripts(true);
     gulp.watch([paths.styles.src], ['styles']).on('change', function (evt) {
-        Message('scss', 'green');
-        gutil.log(chalk['green'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['green'](evt.type));
+        Message('scss', 'cyan');
+        gutil.log(chalk['cyan'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['blue'](evt.type));
     });
     gulp.watch([`${root}/app/js/**/*.js`, `${root}/app/js/**/*.jsx`]).on('change', function (evt) {
-        Message('js', 'green');
-        gutil.log(chalk['green'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['green'](evt.type));
+        Message('js', 'cyan');
+        gutil.log(chalk['cyan'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['blue'](evt.type));
     });
 });
 
 /*------------------------------------------------------------------
  Output Messages
  ------------------------------------------------------------------*/
-
 function Message(message, col) {
     let color = (col !== undefined) ? col : 'yellow';
     gutil.log(chalk[color](Messages[message]));
@@ -240,8 +224,3 @@ const Messages = {
     js   : '╔════════════════════════╗\n           ║       JS bundled       ║\n           ╚════════════════════════╝',
     error: '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
 };
-
-/*
- npm install alertify.js combokeys fancybox gulp-scss-lint imagesloaded jquery jquery-bridget jquery-match-height lodash masonry-layout moment nprogress parsleyjs slick-carousel --save
- npm install babel-preset-es2015 babelify browserify chalk fs gulp gulp-autoprefixer gulp-pixrem gulp-plumber gulp-real-favicon gulp-replace gulp-sass gulp-sass-bulk-import gulp-sourcemaps gulp-util gulp.spritesmith vinyl-source-stream watchify  --save
- */

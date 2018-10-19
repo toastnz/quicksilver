@@ -1,9 +1,14 @@
+<%----------------------------------------------------------------
+Meta
+----------------------------------------------------------------%>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
 <% base_tag %>
 
 $MetaTags('false')
+
 <title>{$Title} | {$SiteConfig.Title}</title>
 
 <% include Favicons %>
@@ -41,8 +46,8 @@ $MetaTags('false')
             (function (i, s, o, g, r, a, m) {
                 i['GoogleAnalyticsObject'] = r;
                 i[r] = i[r] || function () {
-                            (i[r].q = i[r].q || []).push(arguments)
-                        }, i[r].l = 1 * new Date();
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
                 a = s.createElement(o),
                         m = s.getElementsByTagName(o)[0];
                 a.async = 1;

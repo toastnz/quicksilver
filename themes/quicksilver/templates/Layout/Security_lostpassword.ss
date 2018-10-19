@@ -1,10 +1,9 @@
-<div class="login-wrap">
-    <div class="login-wrap__content login-wrap__content--lost">
-        <div class="logo-wrapper">
+<div class="loginWrap">
+    <div class="loginWrap__content">
+        <div class="loginWrap__content__logo">
             $SVG('logo')
         </div>
-        <h5>Lost your password</h5>
-        <br>
+        <h5 class="loginWrap__content__title">Lost your password</h5>
         $Form
         <div class="clearfix"></div>
         <p id="BackToLogin">

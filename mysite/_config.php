@@ -18,13 +18,18 @@ try {
     user_error($e->getMessage(), E_USER_NOTICE);
 }
 
-//CMSMenu::remove_menu_item('SilverStripe-CampaignAdmin-CampaignAdmin');
-
 $formats = [
     [
         'title'          => 'Colour - Primary',
         'inline'         => 'span',
         'classes'        => 'colour--primary',
+        'wrapper'        => true,
+        'merge_siblings' => false
+    ],
+    [
+        'title'          => 'Colour - Secondary',
+        'inline'         => 'span',
+        'classes'        => 'colour--secondary',
         'wrapper'        => true,
         'merge_siblings' => false
     ],
