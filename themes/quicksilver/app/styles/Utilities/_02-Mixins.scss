@@ -232,6 +232,7 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 // Embed Responsivley for Youtube and Vimeo videos
 //------------------------------------------------------------------
 
+.responsiveEmbed,
 .wysiwyg .media,
 .embed-container {
   position: relative;

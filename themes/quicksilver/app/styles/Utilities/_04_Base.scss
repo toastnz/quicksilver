@@ -468,9 +468,10 @@ table {
   }
 }
 
-// ---------------------------------------------
+//------------------------------------------------------------------
 // Text Alignment
-// ---------------------------------------------
+//------------------------------------------------------------------
+
 .text-left {
   text-align: left;
 }
@@ -483,20 +484,29 @@ table {
   text-align: center;
 }
 
-@each $bp, $value in $breakpoints {
+@each $breakpoint, $value in $breakpoints {
 
   @include media($value) {
 
-    .#{$bp}-text-left {
+    .#{$breakpoint}-text-left {
       text-align: left;
     }
 
-    .#{$bp}-text-right {
+    .#{$breakpoint}-text-right {
       text-align: right;
     }
 
-    .#{$bp}-text-center {
+    .#{$breakpoint}-text-center {
       text-align: center;
     }
   }
+}
+
+//------------------------------------------------------------------
+// Images
+//------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
 }
