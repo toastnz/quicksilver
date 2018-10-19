@@ -376,8 +376,6 @@ b {
 table {
   vertical-align: top;
   max-width: 100%;
-  overflow-x: auto;
-  white-space: nowrap;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
@@ -468,17 +466,4 @@ table {
       margin: 0;
     }
   }
-}
-
-//------------------------------------------------------------------
-// Layout and Constraits
-//------------------------------------------------------------------
-
-.innerWrap {
-  @include clearfix;
-  padding: 0 2rem;
-  max-width: $lg;
-  display: block;
-  margin: 0 auto;
-  position: relative;
 }
