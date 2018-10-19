@@ -403,7 +403,7 @@ table {
     td {
       @extend %p;
       color: $table-cell-colour;
-      border: 1px solid $grey-light;
+      border: 1px solid darken($table-cell-background, 15%);
       padding: 1rem;
       background-color: $table-cell-background;
       text-align: left;

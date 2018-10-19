@@ -138,23 +138,13 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
   display: block;
 }
 
-//------------------------------------------------------------------
-// Full Cover Positioning
-//------------------------------------------------------------------
-
-@mixin full {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
 
 //------------------------------------------------------------------
 // Positioning
 //------------------------------------------------------------------
 
-@mixin pos($p: relative, $t: auto, $r: $t, $b: $t, $l: $r) {
+@mixin pos($p: absolute, $t: auto, $r: $t, $b: $t, $l: $r) {
+
   position: $p;
   top: $t;
   right: $r;
@@ -198,13 +188,21 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 }
 
 //------------------------------------------------------------------
+// Full Cover Positioning
+//------------------------------------------------------------------
+
+@mixin full {
+  @include pos(absolute, 0);
+}
+
+//------------------------------------------------------------------
 // Overlay Colour
 //------------------------------------------------------------------
 
 @mixin overlay($color, $opacity) {
   &:before {
+    @include full;
     content: '';
-    @include pos(absolute, 0);
     background-color: rgba($color, $opacity);
   }
 }

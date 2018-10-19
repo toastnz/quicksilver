@@ -6,14 +6,14 @@
 $input-text-colour: $text;
 $input-placeholder-colour: $text-light;
 $input-background-colour: $white;
-$input-border-colour: $grey-light;
+$input-border-colour: darken($input-background-colour, 15%);
 $active-input-border-colour: $primary;
 $checkbox-active-colour: $active-input-border-colour;
 
 // Checkbox & Radios
 $box-handle: $primary;
-$box-background-active: $grey-dark;
-$box-background-inactive: $grey-light;
+$box-background-active: darken($input-background-colour, 25%);
+$box-background-inactive: darken($input-background-colour, 15%);
 
 button,
 input,
@@ -183,6 +183,11 @@ form {
       margin-bottom: 2.4rem;
     }
   }
+  
+  [type="submit"]{
+   @extend %button;
+  }  
+
 }
 
 .message.validation {
