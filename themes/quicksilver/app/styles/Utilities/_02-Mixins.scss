@@ -151,6 +151,18 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 }
 
 //------------------------------------------------------------------
+// Positioning
+//------------------------------------------------------------------
+
+@mixin pos($p: relative, $t: auto, $r: $t, $b: $t, $l: $r) {
+  position: $p;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
+}
+
+//------------------------------------------------------------------
 // Dynamic Aspect Ratios
 //------------------------------------------------------------------
 
@@ -173,6 +185,28 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+}
+
+//------------------------------------------------------------------
+// Background Contain
+//------------------------------------------------------------------
+
+@mixin contain {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+//------------------------------------------------------------------
+// Overlay Colour
+//------------------------------------------------------------------
+
+@mixin overlay($color, $opacity) {
+  &:before {
+    content: '';
+    @include pos(absolute, 0);
+    background-color: rgba($color, $opacity);
+  }
 }
 
 //------------------------------------------------------------------
