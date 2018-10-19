@@ -14,8 +14,8 @@
 
     $Layout
 
-    <div class="block textBlock wysiwyg">
-        <div class="textBlock__wrap">
+    <div class="wysiwyg">
+        <div class="">
             <h1>This is the primary heading and there should only be one of these per page</h1>
             <h2>This is an h2, it is slightly smaller</h2>
             <h3>This is an h3, it is slightly smaller</h3>
@@ -256,22 +256,26 @@
             </p>
 
             <p>
-                <a href="" class="button button--blue">BUTTON BLUE</a>
+                <a href="" class="button button--primary">BUTTON PRIMARY</a>
             </p>
             <p>
-                <a href="" class="button button--green">BUTTON GREEN</a>
+                <a href="" class="button button--secondary">BUTTON SECONDARY</a>
             </p>
             <p>
-                <a href="" class="button button--red">BUTTON RED</a>
+                <a href="" class="button button--tertiary">BUTTON TERTIARY</a>
             </p>
             <p>
-                <a href="" class="button button--teal">BUTTON TEAL</a>
+                <a href="" class="button button--success">BUTTON SUCCESS</a>
             </p>
             <p>
-                <a href="" class="button button--yellow">BUTTON YELLOW</a>
+                <a href="" class="button button--warning">BUTTON WARNING</a>
             </p>
             <p>
-                <a href="" class="button button--white">BUTTON WHITE</a>
+                <a href="" class="button button--error">BUTTON ERROR</a>
+            </p>
+
+            <p>
+                <a href="" class="button button--disabled">BUTTON DISABLED</a>
             </p>
 
             <blockquote>

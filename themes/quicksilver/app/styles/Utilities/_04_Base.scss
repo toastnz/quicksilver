@@ -467,3 +467,36 @@ table {
     }
   }
 }
+
+// ---------------------------------------------
+// Text Alignment
+// ---------------------------------------------
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@each $bp, $value in $breakpoints {
+
+  @include media($value) {
+
+    .#{$bp}-text-left {
+      text-align: left;
+    }
+
+    .#{$bp}-text-right {
+      text-align: right;
+    }
+
+    .#{$bp}-text-center {
+      text-align: center;
+    }
+  }
+}

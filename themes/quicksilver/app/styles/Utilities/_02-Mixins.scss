@@ -2,6 +2,13 @@
 //                          Break Points
 //------------------------------------------------------------------
 
+$globalWidth: 131rem;
+$globalWidthPX: 1310px;
+$globalWidthMax: 192rem;
+$globalWidthMaxPX: 1920px;
+$columnCount: 12;
+$gutterWidth: 2rem;
+
 $xxs: 480px;
 $xs: 540px;
 $sm: 640px;
@@ -10,6 +17,20 @@ $xmd: 968px;
 $lg: 1024px;
 $xl: 1280px;
 $xxl: 1440px;
+$xxxl: 1640px;
+
+$breakpoints: (
+  'init': 0,
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'xmd': $xmd,
+  'lg': $lg,
+  'xl': $xl,
+  'xxl': $xxl,
+  'xxxl': $xxxl,
+);
 
 //------------------------------------------------------------------
 // Box Shadows

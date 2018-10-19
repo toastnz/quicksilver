@@ -5,7 +5,7 @@
 $button-colour: $white;
 $button-background: $primary;
 
-$disabled-button-color: lighten($button-background, 20%);
+$disabled-button-color: lighten($black, 50%);
 $error-button-color: $error-colour;
 
 %button,
