@@ -306,7 +306,7 @@ ol {
 }
 
 ul {
-  &:not(.unstyled, .coloured) {
+  &:not(.unstyled):not(.coloured) {
     list-style: disc;
   }
 
