@@ -26,7 +26,7 @@ $purple-dark: #8e44ad;
 $white: #fff;
 $off-white: #f7f7f7;
 
-$grey-light: #ddd;
+$grey-light: #f3f3f3;
 $grey-mid: #7a7a7a;
 $grey-dark: #333;
 
@@ -39,7 +39,22 @@ $black-dark: #000;
 //------------------------------------------------------------------
 
 $text: $black-light;
-$text-light: $black-light;
-$primary: $orange-light;
-$secondary: $green-dark;
-$tertiary: $purple-dark;
+$text-light: $grey-dark;
+$primary: #8dccc7;
+$secondary: #367974;
+$tertiary: #333;
+
+// Add colours to this map to add colour classes globally
+$colour-map: (
+        'white': $white,
+        'black': $black,
+        'primary': $primary,
+        'secondary': $secondary,
+        'tertiary': $tertiary,
+);
+
+@each $colour, $value in $colour-map {
+  .colour--#{$colour} {
+    color: $value;
+  }
+}

@@ -1,59 +1,58 @@
 //------------------------------------------------------------------
 // Button Styles
-// ------------------------------------------------------------------
+//------------------------------------------------------------------
 
-$button-color: $primary;
+$button-colour: $white;
+$button-background: $primary;
+
 $disabled-button-color: $grey-light;
 $error-button-color: $red-dark;
-
-.action {
-  cursor: pointer;
-}
 
 %button,
 .button {
   @extend %p;
-  @include semi;
-  color: $white;
-  background: $button-color;
-  border: 2px solid $button-color;
+  @include bold(primary);
+  display: inline-block;
+  color: $button-colour;
+  background-color: $button-background;
+  border: 2px solid $button-background;
   margin: 0 1rem 1rem 0;
-  border-radius: 0;
+  border-radius: 3rem;
   padding: 1rem 3rem;
   cursor: pointer;
   outline: none;
-  transition: all 111ms $transition-standard;
   text-decoration: none;
-  display: inline-block;
+  text-transform: uppercase;
+  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
 
   @include active {
-    background: lighten($button-color, 4%);
-    border-color: lighten($button-color, 4%);
+    background-color: lighten($button-background, 4%);
+    border-color: lighten($button-background, 4%);
+  }
+
+  @each $colour, $value in $colour-map {
+    &--#{$colour} {
+      background-color: $value;
+      border-color: $value;
+
+      @include active {
+        background-color: lighten($value, 4%);
+        border-color: lighten($value, 4%);
+      }
+    }
+
+    &--bordered--#{$colour} {
+      background-color: transparent;
+      border-color: $value;
+
+      @include active {
+        border-color: lighten($value, 4%);
+      }
+    }
   }
 
   &--round {
     border-radius: 10rem;
-  }
-
-  &--bordered {
-    background: transparent;
-    color: $button-color;
-
-    @include active {
-      color: $white;
-    }
-  }
-
-  &--bordered--light {
-    background: transparent;
-    color: $white;
-    border-color: $white;
-
-    @include active {
-      border-color: $white;
-      color: $text;
-      background: $white;
-    }
   }
 
   &--disabled {
@@ -77,4 +76,9 @@ $error-button-color: $red-dark;
       border-color: lighten($error-button-color, 4%);
     }
   }
+}
+
+.textBlock {
+  max-width: $xmd;
+  margin: 0 auto;
 }

@@ -1,79 +1,473 @@
 //------------------------------------------------------------------
-// Typography settings
+// Typography variables
 //------------------------------------------------------------------
 
 $base: 10px;
+$base-line-height: 1.4;
+$base-type-margin: .8em;
 
-.h1,
+//------------------------------------------------------------------
+// Declear our font-familys
+$primary-font: 'open sans', sans-serif;
+$secondary-font: 'open sans', sans-serif;
+$tertiary-font: 'open sans', sans-serif;
+
+//------------------------------------------------------------------
+// Table Colours
+$table-heading-background: $primary;
+$table-heading-colour: $white;
+
+$table-cell-background: $white;
+$table-cell-colour: $black;
+
+//------------------------------------------------------------------
+// list of all elements that we want styled as paragraph text.
+$paragraph-text-elements: p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
+
+//------------------------------------------------------------------
+// Font Families
+//------------------------------------------------------------------
+
+// Font family extentions
+%primaryFont {
+  font-family: $primary-font;
+}
+
+%secondaryFont {
+  font-family: $secondary-font;
+}
+
+%tertiaryFont {
+  font-family: $tertiary-font;
+}
+
+// Mixins to include font-familys
+@mixin primary-font($weight) {
+  @extend %primaryFont;
+  font-weight: $weight;
+}
+
+@mixin secondary-font($weight) {
+  @extend %secondaryFont;
+  font-weight: $weight;
+}
+
+@mixin tertiary-font($weight) {
+  @extend %tertiaryFont;
+  font-weight: $weight;
+}
+
+// Create font-weight mixins to call elsewhere
+// Use @include thin; or @include thin(secondary);
+
+// Thin: 100
+@mixin thin($family: primary) {
+  @if $family == secondary {
+    @include primary-font(100);
+  } @else if $family == tertiary {
+    @include secondary-font(100);
+  } @else {
+    @include tertiary-font(100);
+  }
+}
+
+// Extra Light: 200
+@mixin extralight($family: primary) {
+  @if $family == secondary {
+    @include primary-font(200);
+  } @else if $family == tertiary {
+    @include secondary-font(200);
+  } @else {
+    @include tertiary-font(200);
+  }
+}
+
+// Light: 300
+@mixin light($family: primary) {
+  @if $family == secondary {
+    @include primary-font(300);
+  } @else if $family == tertiary {
+    @include secondary-font(300);
+  } @else {
+    @include tertiary-font(300);
+  }
+}
+
+// Regular: 400
+@mixin regular($family: primary) {
+  @if $family == secondary {
+    @include primary-font(400);
+  } @else if $family == tertiary {
+    @include secondary-font(400);
+  } @else {
+    @include tertiary-font(400);
+  }
+}
+
+// Medium: 500
+@mixin medium($family: primary) {
+  @if $family == secondary {
+    @include primary-font(500);
+  } @else if $family == tertiary {
+    @include secondary-font(500);
+  } @else {
+    @include tertiary-font(500);
+  }
+}
+
+// Semi Bold: 600
+@mixin semi($family: primary) {
+  @if $family == secondary {
+    @include primary-font(600);
+  } @else if $family == tertiary {
+    @include secondary-font(600);
+  } @else {
+    @include tertiary-font(600);
+  }
+}
+
+// Bold: 700
+@mixin bold($family: primary) {
+  @if $family == secondary {
+    @include primary-font(700);
+  } @else if $family == tertiary {
+    @include secondary-font(700);
+  } @else {
+    @include tertiary-font(700);
+  }
+}
+
+// Extra Bold: 800
+@mixin extrabold($family: primary) {
+  @if $family == secondary {
+    @include primary-font(800);
+  } @else if $family == tertiary {
+    @include secondary-font(800);
+  } @else {
+    @include tertiary-font(800);
+  }
+}
+
+// Black: 900
+@mixin black($family: primary) {
+  @if $family == secondary {
+    @include primary-font(900);
+  } @else if $family == tertiary {
+    @include secondary-font(900);
+  } @else {
+    @include tertiary-font(900);
+  }
+}
+
+//------------------------------------------------------------------
+// Base body styles 
+//------------------------------------------------------------------
+
+html,
+body {
+  @include regular;
+  font-size: $base;
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+::selection {
+  color: $white;
+  background: rgba($primary, .99999);
+}
+
+//------------------------------------------------------------------
+// WYSIWYG defaults
+//------------------------------------------------------------------
+
+%globalTypeSettings {
+  line-height: $base-line-height;
+}
+
+// Here's a mixin to output our desired font-size on mobile and desktop
+@mixin font-size($mobile, $desktop) {
+  font-size: $mobile;
+
+  @include media($lg) {
+    font-size: $desktop;
+  }
+}
+
+// Default font-size for paragraphs
+%p {
+  @extend %globalTypeSettings;
+  @include font-size(1.4rem, 1.8rem);
+  &.large {
+    @include font-size(1.6rem, 2rem);
+  }
+}
+
+// Loop our $paragraph-text-elements and extend the %paragraphTextStyles to avoid code repetition
+@each $element in $paragraph-text-elements {
+  #{$element}, .#{$element} {
+    @extend %p;
+  }
+}
+
+// Make sure all text that appears in a .wysiwyg follows the appropriate font-size, not the $base font-size.
+.wysiwyg {
+  @extend %p;
+
+  p:not(:last-child) {
+    margin-bottom: $base-type-margin;
+  }
+}
+
+// create h1-h6 default styles
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i},
+  %h#{$i} {
+    @extend %globalTypeSettings;
+    margin-bottom: $base-type-margin;
+  }
+}
+
+//------------------------------------------------------------------
+// Heading font-size
+// -----------------------------------------------------------------
+
 h1,
+.h1,
 %h1 {
-  font-size: 6rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(3.5rem, 5rem);
 }
 
-.h2,
 h2,
+.h2,
 %h2 {
-  font-size: 5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(3rem, 4rem);
 }
 
-.h3,
 h3,
+.h3,
 %h3 {
-  font-size: 4rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(2.4rem, 3.2rem);
 }
 
-.h4,
 h4,
+.h4,
 %h4 {
-  font-size: 3.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(2rem, 2.8rem);
 }
 
-.h5,
 h5,
+.h5,
 %h5 {
-  font-size: 3rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(1.8rem, 2.2rem);
 }
 
-.h6,
 h6,
+.h6,
 %h6 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+  @include font-size(1.6rem, 1.8rem);
 }
 
-.p,
-p,
-%p,
-.li,
-li,
-label,
-input {
-  font-size: 1.4rem;
-  line-height: 1.2;
-  margin-bottom: 1rem;
+//------------------------------------------------------------------
+// Lists
+//------------------------------------------------------------------
+
+ul,
+ol {
+
+  &:not(.unstyled) {
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+
+    li {
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+
+      ul,
+      ol {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+ul {
+  &:not(.unstyled, .coloured) {
+    list-style: disc;
+  }
+
+  &.coloured {
+
+    li {
+      position: relative;
+
+      &:before {
+        @include pseudo;
+        width: .6rem;
+        height: .6rem;
+        border-radius: 50%;
+        top: .5em;
+        left: -1.9rem;
+        background: $primary;
+      }
+    }
+
+    ul:not(.unstyled):not(.coloured) {
+      li {
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    // See Colours.scss
+    @each $colour, $value in $colour-map {
+      &.coloured--#{$colour} {
+        li {
+          &:before {
+            background: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+ol {
+  &:not(.unstyled) {
+    list-style: decimal;
+  }
+}
+
+//------------------------------------------------------------------
+// Font Styles
+//------------------------------------------------------------------
+
+.italic,
+em,
+i {
+  font-style: italic;
+}
+
+.bold,
+strong,
+b {
+  @include bold;
+}
+
+//------------------------------------------------------------------
+// Tables
+//------------------------------------------------------------------
+
+table {
+  vertical-align: top;
+  max-width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 3rem auto;
+
+  tr {
+    th {
+      @extend %p;
+      @include semi;
+      padding: 1.2rem;
+      border: 1px solid $table-heading-background;
+      background-color: $table-heading-background;
+      text-align: left;
+      color: $table-heading-colour;
+    }
+
+    &:nth-child(even) {
+      td {
+        background: darken($table-cell-background, 2%);
+      }
+    }
+
+    td {
+      @extend %p;
+      color: $table-cell-colour;
+      border: 1px solid $grey-light;
+      padding: 1rem;
+      background-color: $table-cell-background;
+      text-align: left;
+    }
+  }
+}
+
+//------------------------------------------------------------------
+// WYSIWYG Image Text Wrap
+//------------------------------------------------------------------
+
+.wysiwyg {
+
+  img {
+    display: block;
+    margin-bottom: 15px;
+
+    @include media($lg, max) {
+      width: 100%;
+      height: auto;
+    }
+
+    @include media($lg) {
+      &.left {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+
+      &.right {
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+      }
+
+      &:not([width]) {
+        max-width: 100%;
+      }
+
+      &:not([height]) {
+        height: auto;
+      }
+    }
+  }
+
+  //------------------------------------------------------------------
+  // WYSIWYG block quote
+  //------------------------------------------------------------------
+
+  blockquote {
+    margin: 3rem;
+    padding: 0 2rem;
+    border-left: 4px solid $primary;
+
+    @each $colour, $value in $colour-map {
+      &.quote--#{$colour} {
+        border-color: $value;
+      }
+    }
+
+    p {
+      margin: 0;
+    }
+  }
 }
 
 //------------------------------------------------------------------
 // Layout and Constraits
-// ------------------------------------------------------------------
+//------------------------------------------------------------------
 
 .innerWrap {
   @include clearfix;
   padding: 0 2rem;
-  max-width: 1140px;
+  max-width: $lg;
   display: block;
   margin: 0 auto;
   position: relative;
 }
-
