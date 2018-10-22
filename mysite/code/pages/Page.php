@@ -1,4 +1,6 @@
 <?php
+
+use QuickStatic\StaticPage;
 use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\View\Requirements;
@@ -13,6 +15,12 @@ class Page extends SiteTree
     public function getIsLive()
     {
         return Director::isLive();
+    }
+
+    public function getAllStaticPages()
+    {
+        return StaticPage::get();
+
     }
 }
 

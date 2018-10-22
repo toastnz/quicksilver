@@ -14,6 +14,17 @@
 
     $Layout
 
+    <% if not $IsLive %>
+        <div class="navigator">
+            <div class="navigator__toggle">+</div>
+            <div class="navigator__items">
+                <% loop $AllStaticPages %>
+                    <a href="$Link" class="navigator__items__link">$MenuTitle</a>
+                <% end_loop %>
+            </div>
+        </div>
+    <% end_if %>
+
     <% include QuickStatic\Footer %>
 
     <% if $SiteConfig.GoogleTagManagerID %>
