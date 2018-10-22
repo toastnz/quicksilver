@@ -2,55 +2,38 @@
 // Site wide colour variables
 //------------------------------------------------------------------
 
-$yellow-light: #f1c40f;
-$yellow-dark: #f39c12;
-
-$green-light: #8bc34a;
-$green-dark: #4caf50;
-
-$orange-light: #e75931;
-$orange-dark: #e75931;
-
-$red-light: #e74c3c;
-$red-dark: #c0392b;
-
-$pink-light: #ea148c;
-$pink-dark: #b7106d;
-
-$blue-light: #5e86f6;
-$blue-dark: #2962ff;
-
-$purple-light: #9b59b6;
-$purple-dark: #8e44ad;
+$success-colour: #65b922;
+$warning-colour: #ffd33a;
+$error-colour: #e44e4e;
 
 $white: #fff;
 $off-white: #f7f7f7;
-
-$grey-light: #f3f3f3;
-$grey-mid: #7a7a7a;
-$grey-dark: #333;
-
-$black-light: #19191a;
 $black: #000;
-$black-dark: #000;
+
+$text: $black;
+$text-light: #262626;
 
 //------------------------------------------------------------------
-// Font Colurs
+// Brand Colours
 //------------------------------------------------------------------
 
-$text: $black-light;
-$text-light: $grey-dark;
-$primary: #8dccc7;
-$secondary: #367974;
-$tertiary: #333;
+$primary: #e75930;
+$secondary: #232427;
+$tertiary: #a6ba38;
 
 // Add colours to this map to add colour classes globally
 $colour-map: (
-        'white': $white,
-        'black': $black,
-        'primary': $primary,
-        'secondary': $secondary,
-        'tertiary': $tertiary,
+	'success': $success-colour,
+	'warning': $warning-colour,
+	'error': $error-colour,
+    'white': $white,
+    'off-white': $off-white,
+    'black': $black,
+    'text': $text,
+    'text-light': $text-light,
+    'primary': $primary,
+    'secondary': $secondary,
+    'tertiary': $tertiary,
 );
 
 @each $colour, $value in $colour-map {

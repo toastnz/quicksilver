@@ -10,6 +10,20 @@ $xmd: 968px;
 $lg: 1024px;
 $xl: 1280px;
 $xxl: 1440px;
+$xxxl: 1640px;
+
+$breakpoints: (
+  'init': 0,
+  'xxs': $xxs,
+  'xs': $xs,
+  'sm': $sm,
+  'md': $md,
+  'xmd': $xmd,
+  'lg': $lg,
+  'xl': $xl,
+  'xxl': $xxl,
+  'xxxl': $xxxl,
+);
 
 //------------------------------------------------------------------
 // Box Shadows
@@ -129,16 +143,18 @@ $z5: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .22);
   display: block;
 }
 
+
 //------------------------------------------------------------------
-// Full Cover Positioning
+// Positioning
 //------------------------------------------------------------------
 
-@mixin full {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@mixin pos($p: absolute, $t: auto, $r: $t, $b: $t, $l: $r) {
+
+  position: $p;
+  top: $t;
+  right: $r;
+  bottom: $b;
+  left: $l;
 }
 
 //------------------------------------------------------------------
@@ -167,9 +183,40 @@ $z5: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .22);
 }
 
 //------------------------------------------------------------------
+// Background Contain
+//------------------------------------------------------------------
+
+@mixin contain {
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+//------------------------------------------------------------------
+// Full Cover Positioning
+//------------------------------------------------------------------
+
+@mixin full {
+  @include pos(absolute, 0);
+}
+
+//------------------------------------------------------------------
+// Overlay Colour
+//------------------------------------------------------------------
+
+@mixin overlay($color, $opacity) {
+  &:before {
+    @include full;
+    content: '';
+    background-color: rgba($color, $opacity);
+  }
+}
+
+//------------------------------------------------------------------
 // Embed Responsivley for Youtube and Vimeo videos
 //------------------------------------------------------------------
 
+.responsiveEmbed,
 .wysiwyg .media,
 .embed-container {
   position: relative;

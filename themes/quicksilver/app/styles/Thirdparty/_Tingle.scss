@@ -130,7 +130,7 @@
   margin: 0 .5rem;
   padding: 1rem 2rem;
   border: 0;
-  background-color: $grey-mid;
+  background-color: darken($white, 10%);
   box-shadow: none;
   color: $white;
   vertical-align: middle;
@@ -147,7 +147,7 @@
 }
 
 .tingle-btn--danger {
-  background-color: $red-dark;
+  background-color: $error-colour;
 }
 
 .tingle-btn--default {

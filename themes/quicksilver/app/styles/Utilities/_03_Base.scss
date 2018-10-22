@@ -306,7 +306,7 @@ ol {
 }
 
 ul {
-  &:not(.unstyled, .coloured) {
+  &:not(.unstyled):not(.coloured) {
     list-style: disc;
   }
 
@@ -401,7 +401,7 @@ table {
     td {
       @extend %p;
       color: $table-cell-colour;
-      border: 1px solid $grey-light;
+      border: 1px solid darken($table-cell-background, 15%);
       padding: 1rem;
       background-color: $table-cell-background;
       text-align: left;
@@ -466,4 +466,47 @@ table {
       margin: 0;
     }
   }
+}
+
+//------------------------------------------------------------------
+// Text Alignment
+//------------------------------------------------------------------
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@each $breakpoint, $value in $breakpoints {
+
+  @include media($value) {
+
+    .#{$breakpoint}-text-left {
+      text-align: left;
+    }
+
+    .#{$breakpoint}-text-right {
+      text-align: right;
+    }
+
+    .#{$breakpoint}-text-center {
+      text-align: center;
+    }
+  }
+}
+
+//------------------------------------------------------------------
+// Images
+//------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
 }
