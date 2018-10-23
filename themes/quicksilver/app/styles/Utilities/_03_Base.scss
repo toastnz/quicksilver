@@ -8,16 +8,21 @@ $base-type-margin: .8em;
 
 //------------------------------------------------------------------
 // Declear our font-familys
-$primary-font: 'open sans', sans-serif;
-$secondary-font: 'open sans', sans-serif;
-$tertiary-font: 'open sans', sans-serif;
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$primary-font: 'Open Sans', sans-serif;
+$secondary-font: 'Open Sans', sans-serif;
+$tertiary-font: 'Open Sans', sans-serif;
 
 //------------------------------------------------------------------
 // Link Colour
+
 $link-colour: $primary;
 
 //------------------------------------------------------------------
 // Table Colours
+
 $table-heading-background: $primary;
 $table-heading-colour: $white;
 
@@ -26,6 +31,7 @@ $table-cell-colour: $black;
 
 //------------------------------------------------------------------
 // list of all elements that we want styled as paragraph text.
+
 $paragraph-text-elements: p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
 
 //------------------------------------------------------------------
@@ -211,6 +217,7 @@ body {
 %p {
   @extend %globalTypeSettings;
   @include font-size(1.4rem, 1.8rem);
+
   &.large {
     @include font-size(1.6rem, 2rem);
   }
@@ -218,7 +225,8 @@ body {
 
 // Loop our $paragraph-text-elements and extend the %p to avoid code repetition
 @each $element in $paragraph-text-elements {
-  #{$element}, .#{$element} {
+  #{$element},
+  .#{$element} {
     @extend %p;
   }
 }
@@ -466,6 +474,17 @@ table {
       margin: 0;
     }
   }
+
+  //------------------------------------------------------------------
+  // WYSIWYG horizontal rule
+  //------------------------------------------------------------------
+
+  hr {
+    border: 0;
+    border-top: 1px solid $grey-light;
+    margin: 3rem auto;
+  }
+
 }
 
 //------------------------------------------------------------------

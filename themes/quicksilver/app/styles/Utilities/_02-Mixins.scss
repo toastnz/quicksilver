@@ -13,16 +13,16 @@ $xxl: 1440px;
 $xxxl: 1640px;
 
 $breakpoints: (
-  'init': 0,
-  'xxs': $xxs,
-  'xs': $xs,
-  'sm': $sm,
-  'md': $md,
-  'xmd': $xmd,
-  'lg': $lg,
-  'xl': $xl,
-  'xxl': $xxl,
-  'xxxl': $xxxl,
+        'init': 0,
+        'xxs': $xxs,
+        'xs': $xs,
+        'sm': $sm,
+        'md': $md,
+        'xmd': $xmd,
+        'lg': $lg,
+        'xl': $xl,
+        'xxl': $xxl,
+        'xxxl': $xxxl,
 );
 
 //------------------------------------------------------------------
@@ -143,18 +143,16 @@ $z5: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .22);
   display: block;
 }
 
-
 //------------------------------------------------------------------
 // Positioning
 //------------------------------------------------------------------
 
-@mixin pos($p: absolute, $t: auto, $r: $t, $b: $t, $l: $r) {
-
-  position: $p;
-  top: $t;
-  right: $r;
-  bottom: $b;
-  left: $l;
+@mixin pos($position: absolute, $top: auto, $right: $top, $bottom: $top, $left: $right) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
 //------------------------------------------------------------------
