@@ -15,16 +15,16 @@ $xxxl: 1640px;
 
 // Grid system must start at 0 -> init value;
 $breakpoints: (
-  'init': 0,
-  'xxs': $xxs,
-  'xs': $xs,
-  'sm': $sm,
-  'md': $md,
-  'xmd': $xmd,
-  'lg': $lg,
-  'xl': $xl,
-  'xxl': $xxl,
-  'xxxl': $xxxl,
+        'init': 0,
+        'xxs': $xxs,
+        'xs': $xs,
+        'sm': $sm,
+        'md': $md,
+        'xmd': $xmd,
+        'lg': $lg,
+        'xl': $xl,
+        'xxl': $xxl,
+        'xxxl': $xxxl,
 );
 
 //------------------------------------------------------------------
@@ -36,15 +36,6 @@ $z2: 0 3px 6px rgba($black, .16), 0 3px 6px rgba($black, .23);
 $z3: 0 10px 20px rgba($black, .19), 0 6px 6px rgba($black, .23);
 $z4: 0 14px 28px rgba($black, .25), 0 10px 10px rgba($black, .22);
 $z5: 0 19px 38px rgba($black, .3), 0 15px 12px rgba($black, .22);
-
-//------------------------------------------------------------------
-// Material Easing Beziers
-//------------------------------------------------------------------
-
-$transition-sharp: cubic-bezier(.4, 0, .6, 1);
-$transition-standard: cubic-bezier(.4, 0, .2, 1);
-$transition-acceleration: cubic-bezier(.4, 0, 1, 1);
-$transition-deceleration: cubic-bezier(0, 0, .2, 1);
 
 //------------------------------------------------------------------
 // HAF
@@ -154,18 +145,16 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
   display: block;
 }
 
-
 //------------------------------------------------------------------
 // Positioning
 //------------------------------------------------------------------
 
-@mixin pos($p: absolute, $t: auto, $r: $t, $b: $t, $l: $r) {
-
-  position: $p;
-  top: $t;
-  right: $r;
-  bottom: $b;
-  left: $l;
+@mixin pos($position: absolute, $top: auto, $right: $top, $bottom: $top, $left: $right) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
 }
 
 //------------------------------------------------------------------

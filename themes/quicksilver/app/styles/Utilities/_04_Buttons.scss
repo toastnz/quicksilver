@@ -4,7 +4,6 @@
 
 $button-colour: $white;
 $button-background: $primary;
-
 $disabled-button-color: lighten($black, 50%);
 $error-button-color: $error-colour;
 
@@ -17,7 +16,6 @@ $error-button-color: $error-colour;
   background-color: $button-background;
   border: 2px solid $button-background;
   margin: 0 1rem 1rem 0;
-  border-radius: 3rem;
   padding: 1rem 3rem;
   cursor: pointer;
   outline: none;
@@ -38,6 +36,11 @@ $error-button-color: $error-colour;
       @include active {
         background-color: lighten($value, 4%);
         border-color: lighten($value, 4%);
+        color: $white !important;
+      }
+
+      &.button--outline {
+        color: $value;
       }
     }
 
@@ -60,9 +63,14 @@ $error-button-color: $error-colour;
     background: $disabled-button-color;
     cursor: not-allowed;
 
+    &.button--outline {
+      color: $disabled-button-color;
+    }
+
     @include active {
       border: 2px solid $disabled-button-color;
       background: $disabled-button-color;
+      color: $white;
     }
   }
 
@@ -75,5 +83,9 @@ $error-button-color: $error-colour;
       background: lighten($error-button-color, 4%);
       border-color: lighten($error-button-color, 4%);
     }
+  }
+
+  &--outline {
+    background: transparent;
   }
 }

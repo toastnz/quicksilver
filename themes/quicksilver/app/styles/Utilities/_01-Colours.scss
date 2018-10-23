@@ -8,6 +8,7 @@ $error-colour: #e44e4e;
 
 $white: #fff;
 $off-white: #f7f7f7;
+$grey-light: #ebebeb;
 $black: #000;
 
 $text: $black;
@@ -23,17 +24,17 @@ $tertiary: #a6ba38;
 
 // Add colours to this map to add colour classes globally
 $colour-map: (
-	'success': $success-colour,
-	'warning': $warning-colour,
-	'error': $error-colour,
-    'white': $white,
-    'off-white': $off-white,
-    'black': $black,
-    'text': $text,
-    'text-light': $text-light,
-    'primary': $primary,
-    'secondary': $secondary,
-    'tertiary': $tertiary,
+        'success': $success-colour,
+        'warning': $warning-colour,
+        'error': $error-colour,
+        'white': $white,
+        'off-white': $off-white,
+        'black': $black,
+        'text': $text,
+        'text-light': $text-light,
+        'primary': $primary,
+        'secondary': $secondary,
+        'tertiary': $tertiary,
 );
 
 @each $colour, $value in $colour-map {

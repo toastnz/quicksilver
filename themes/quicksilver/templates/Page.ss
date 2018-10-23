@@ -12,7 +12,7 @@
 
     <% include Header %>
 
-    <%-- $Layout --%>
+    $Layout
     
     <div class="row">
         <div class="column">

@@ -4,7 +4,7 @@
 
 // Standard Inputs
 $input-text-colour: $text;
-$input-placeholder-colour: $text-light; 
+$input-placeholder-colour: $text-light;
 $input-background-colour: $white;
 $input-border-colour: darken($input-background-colour, 15%);
 $active-input-border-colour: $primary;
@@ -32,7 +32,7 @@ textarea {
   padding: 1rem;
   border-radius: 0;
   margin: .6rem 0 2rem;
-  transition: all 111ms $transition-standard;
+  transition: all 111ms ease;
 
   @include placeholder {
     opacity: .5;
@@ -183,10 +183,10 @@ form {
       margin-bottom: 2.4rem;
     }
   }
-  
-  [type="submit"]{
-   @extend %button;
-  }  
+
+  [type="submit"] {
+    @extend %button;
+  }
 
 }
 
