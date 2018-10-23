@@ -12,6 +12,8 @@ $xl: 1280px;
 $xxl: 1440px;
 $xxxl: 1640px;
 
+
+// Grid system must start at 0 -> init value;
 $breakpoints: (
   'init': 0,
   'xxs': $xxs,

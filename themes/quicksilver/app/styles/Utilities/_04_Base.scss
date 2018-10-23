@@ -17,6 +17,22 @@ $tertiary-font: 'open sans', sans-serif;
 $link-colour: $primary;
 
 //------------------------------------------------------------------
+// Font Sizes
+
+// 'element': (intial size, $lg size),
+$font-size-map: (
+  'h1'      : (3.5rem, 5.0rem),
+  'h2'      : (3.0rem, 4.0rem),
+  'h3'      : (2.4rem, 2.8rem),
+  'h4'      : (2.0rem, 2.8rem),
+  'h5'      : (1.8rem, 2.2rem),
+  'h6'      : (1.6rem, 1.8rem),
+  'p'       : (1.4rem, 1.8rem),
+  'p.large' : (1.6rem, 2.0rem),
+  'small'   : (1.0rem, 1.3rem),
+);
+
+//------------------------------------------------------------------
 // Table Colours
 $table-heading-background: $primary;
 $table-heading-colour: $white;
@@ -207,12 +223,17 @@ body {
   }
 }
 
-// Default font-size for paragraphs
-%p {
-  @extend %globalTypeSettings;
-  @include font-size(1.4rem, 1.8rem);
-  &.large {
-    @include font-size(1.6rem, 2rem);
+//------------------------------------------------------------------
+// font-size
+//------------------------------------------------------------------
+
+@each $element, $size in $font-size-map {
+  #{$element},
+  .#{$element},
+  %#{$element} {
+    @include font-size($size...);
+    @extend %globalTypeSettings;
+    margin-bottom: $base-type-margin;
   }
 }
 
@@ -226,61 +247,8 @@ body {
 // Make sure all text that appears in a .wysiwyg follows the appropriate font-size, not the $base font-size.
 .wysiwyg {
   @extend %p;
-
-  p:not(:last-child) {
-    margin-bottom: $base-type-margin;
-  }
 }
 
-// create h1-h6 default styles
-@for $i from 1 through 6 {
-  h#{$i},
-  .h#{$i},
-  %h#{$i} {
-    @extend %globalTypeSettings;
-    margin-bottom: $base-type-margin;
-  }
-}
-
-//------------------------------------------------------------------
-// Heading font-size
-// -----------------------------------------------------------------
-
-h1,
-.h1,
-%h1 {
-  @include font-size(3.5rem, 5rem);
-}
-
-h2,
-.h2,
-%h2 {
-  @include font-size(3rem, 4rem);
-}
-
-h3,
-.h3,
-%h3 {
-  @include font-size(2.4rem, 3.2rem);
-}
-
-h4,
-.h4,
-%h4 {
-  @include font-size(2rem, 2.8rem);
-}
-
-h5,
-.h5,
-%h5 {
-  @include font-size(1.8rem, 2.2rem);
-}
-
-h6,
-.h6,
-%h6 {
-  @include font-size(1.6rem, 1.8rem);
-}
 
 //------------------------------------------------------------------
 // Lists
@@ -410,6 +378,15 @@ table {
 }
 
 //------------------------------------------------------------------
+// Images
+//------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//------------------------------------------------------------------
 // WYSIWYG Image Text Wrap
 //------------------------------------------------------------------
 
@@ -457,7 +434,7 @@ table {
     border-left: 4px solid $primary;
 
     @each $colour, $value in $colour-map {
-      &.quote--#{$colour} {
+      &.blockquote--#{$colour} {
         border-color: $value;
       }
     }
@@ -500,13 +477,4 @@ table {
       text-align: center;
     }
   }
-}
-
-//------------------------------------------------------------------
-// Images
-//------------------------------------------------------------------
-
-img {
-  max-width: 100%;
-  height: auto;
 }
