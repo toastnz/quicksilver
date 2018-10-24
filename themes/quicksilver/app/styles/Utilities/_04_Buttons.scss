@@ -47,9 +47,11 @@ $error-button-color: $error-colour;
     &--bordered--#{$colour} {
       background-color: transparent;
       border-color: $value;
+      color: $value;
 
       @include active {
         border-color: lighten($value, 4%);
+        background-color: transparent;
       }
     }
   }

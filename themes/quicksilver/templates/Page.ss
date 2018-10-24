@@ -265,25 +265,46 @@
 
                     <p>
                         <a href="" class="button button--primary">BUTTON PRIMARY</a>
+                        <a href="" class="button button--primary button--round">BUTTON PRIMARY ROUND</a>
+                        <a href="" class="button button--bordered--primary button--round">BUTTON BORDERED PRIMARY</a>
+                        <a href="" class="button button--bordered--primary">BUTTON BORDERED PRIMARY</a>
                     </p>
                     <p>
                         <a href="" class="button button--secondary">BUTTON SECONDARY</a>
+                        <a href="" class="button button--secondary button--round">BUTTON SECONDARY ROUND</a>
+                        <a href="" class="button button--bordered--secondary button--round">BUTTON BORDERED SECONDARY</a>
+                        <a href="" class="button button--bordered--secondary">BUTTON BORDERED SECONDARY</a>
                     </p>
                     <p>
                         <a href="" class="button button--tertiary">BUTTON TERTIARY</a>
+                        <a href="" class="button button--tertiary button--round">BUTTON TERTIARY ROUND</a>
+                        <a href="" class="button button--bordered--tertiary button--round">BUTTON BORDERED TERTIARY</a>
+                        <a href="" class="button button--bordered--tertiary">BUTTON BORDERED TERTIARY</a>
                     </p>
                     <p>
                         <a href="" class="button button--success">BUTTON SUCCESS</a>
+                        <a href="" class="button button--success button--round">BUTTON SUCCESS ROUND</a>
+                        <a href="" class="button button--bordered--success button--round">BUTTON BORDERED SUCCESS</a>
+                        <a href="" class="button button--bordered--success">BUTTON BORDERED SUCCESS</a>
                     </p>
                     <p>
                         <a href="" class="button button--warning">BUTTON WARNING</a>
+                        <a href="" class="button button--warning button--round">BUTTON WARNING ROUND</a>
+                        <a href="" class="button button--bordered--warning button--round">BUTTON BORDERED WARNING</a>
+                        <a href="" class="button button--bordered--warning">BUTTON BORDERED WARNING</a>
                     </p>
                     <p>
                         <a href="" class="button button--error">BUTTON ERROR</a>
+                        <a href="" class="button button--error button--round">BUTTON ERROR ROUND</a>
+                        <a href="" class="button button--bordered--error button--round">BUTTON BORDERED ERROR</a>
+                        <a href="" class="button button--bordered--error">BUTTON BORDERED ERROR</a>
                     </p>
 
                     <p>
                         <a href="" class="button button--disabled">BUTTON DISABLED</a>
+                        <a href="" class="button button--disabled button--round">BUTTON DISABLED ROUND</a>
+                        <a href="" class="button button--bordered--disabled button--round">BUTTON BORDERED DISABLED</a>
+                        <a href="" class="button button--bordered--disabled">BUTTON BORDERED DISABLED</a>
                     </p>
 
                     <blockquote>
