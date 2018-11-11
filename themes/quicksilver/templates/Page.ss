@@ -303,8 +303,6 @@
                     <p>
                         <a href="" class="button button--disabled">BUTTON DISABLED</a>
                         <a href="" class="button button--disabled button--round">BUTTON DISABLED ROUND</a>
-                        <a href="" class="button button--bordered--disabled button--round">BUTTON BORDERED DISABLED</a>
-                        <a href="" class="button button--bordered--disabled">BUTTON BORDERED DISABLED</a>
                     </p>
 
                     <blockquote>

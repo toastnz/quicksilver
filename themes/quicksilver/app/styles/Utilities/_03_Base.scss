@@ -251,6 +251,21 @@ body {
   }
 }
 
+
+// This allows any text elements contained in h tags to inherit the h tag font size
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i},
+  %h#{$i} {
+
+    @each $element in $paragraph-text-elements {
+      > #{$element}, > .#{$element} {
+        font-size: inherit;
+      }
+    }
+  }
+}
+
 // Make sure all text that appears in a .wysiwyg follows the appropriate font-size, not the $base font-size.
 .wysiwyg {
   @extend %p;
