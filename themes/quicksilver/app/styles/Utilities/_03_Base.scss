@@ -25,15 +25,15 @@ $link-colour: $primary;
 
 // 'element': (intial size, $lg size),
 $font-size-map: (
-  'h1'      : (3.5rem, 5.0rem),
-  'h2'      : (3.0rem, 4.0rem),
-  'h3'      : (2.4rem, 2.8rem),
-  'h4'      : (2.0rem, 2.8rem),
-  'h5'      : (1.8rem, 2.2rem),
-  'h6'      : (1.6rem, 1.8rem),
-  'p'       : (1.4rem, 1.8rem),
-  'p.large' : (1.6rem, 2.0rem),
-  'small'   : (1.0rem, 1.3rem),
+        'h1' : (3.5rem, 5.0rem),
+        'h2' : (3.0rem, 4.0rem),
+        'h3' : (2.4rem, 2.8rem),
+        'h4' : (2.0rem, 2.8rem),
+        'h5' : (1.8rem, 2.2rem),
+        'h6' : (1.6rem, 1.8rem),
+        'p' : (1.4rem, 1.8rem),
+        'p.large' : (1.6rem, 2.0rem),
+        'small' : (1.0rem, 1.3rem),
 );
 
 //------------------------------------------------------------------

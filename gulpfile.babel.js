@@ -16,9 +16,10 @@ const sourcemaps   = require('gulp-sourcemaps');
 const spritesmith  = require('gulp.spritesmith');
 const autoprefixer = require('gulp-autoprefixer');
 const realFavicon  = require('gulp-real-favicon');
+const buffer       = require('vinyl-buffer');
 const source       = require('vinyl-source-stream');
 const bulkSass     = require('gulp-sass-bulk-import');
-
+const development = process.env.NODE_ENV !== 'production';
 /*------------------------------------------------------------------
  Config
  ------------------------------------------------------------------*/
@@ -120,26 +121,30 @@ gulp.task('sprites', () => {
 
 function compileScripts(watch) {
     let props     = watchify.args;
-    props.entries = [`${root}/app/js/components/app.js`];
+    props.entries = [`${root}/app/js/app.js`];
     props.debug   = true;
     let bundler   = watch ? watchify(browserify(props)) : browserify(props);
-    bundler.transform(babelify, { presets: ['es2015'] });
+    bundler.transform(babelify);
 
     function rebundle() {
-        let stream = bundler.bundle().pipe(exorcist(`${paths.scripts.dest}app.js.map`));
+        let stream = bundler.bundle();
         return stream.on('error', function (error) {
             gutil.log(`${chalk['yellow'](error.toString().replace(paths.reg.root, ''))}`);
             gutil.log((error['codeFrame']));
             this.emit('end');
         })
             .pipe(source('app.js'))
+            .pipe(buffer())
+            .pipe(sourcemaps.init({ loadMaps: true }))
+            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest(paths.scripts.dest));
     }
 
     bundler.on('update', function () {
         rebundle();
     });
-    return rebundle();
+
+    return rebundle(); 
 }
 
 /*------------------------------------------------------------------
@@ -204,7 +209,7 @@ gulp.task('default', ['styles'], function () {
         Message('scss', 'cyan');
         gutil.log(chalk['cyan'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['blue'](evt.type));
     });
-    gulp.watch([`${root}/app/js/**/*.js`, `${root}/app/js/**/*.jsx`]).on('change', function (evt) {
+    gulp.watch([`${root}/app/js/**/*.js`, `${root}/app/js/**/*.jsx`, `${root}/app/js/**/**/*.js`, `${root}/app/js/**/**/*.jsx`, `${root}/app/js/**/*.vue`]).on('change', function (evt) {
         Message('js', 'cyan');
         gutil.log(chalk['cyan'](' => ') + chalk['blue'](evt.path.replace(/^.*\/(?=[^\/]*$)/, '')) + ' was ' + chalk['blue'](evt.type));
     });
@@ -224,3 +229,22 @@ const Messages = {
     js   : '╔════════════════════════╗\n           ║       JS bundled       ║\n           ╚════════════════════════╝',
     error: '╔═══════════════════════╗\n           ║ An error has occurred ║\n           ╚═══════════════════════╝',
 };
+
+let uglify  = require('gulp-uglify');
+let pump    = require('pump');
+const shell = require('gulp-shell');
+
+gulp.task('fire', function () {
+    pump([
+            gulp.src(`${paths.scripts.dest}app.js`),
+            uglify(),
+            gulp.dest(paths.scripts.dest)
+        ],
+        shell.task(['firebase deploy'])
+    );
+});
+
+
+gulp.task('w', function(){
+    console.log(development);
+});
