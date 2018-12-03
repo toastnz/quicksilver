@@ -238,8 +238,8 @@ body {
   #{$element},
   .#{$element},
   %#{$element} {
-    @include font-size($size...);
     @extend %globalTypeSettings;
+    @include font-size($size...);
     margin-bottom: $base-type-margin;
   }
 }
@@ -265,12 +265,6 @@ body {
     }
   }
 }
-
-// Make sure all text that appears in a .wysiwyg follows the appropriate font-size, not the $base font-size.
-.wysiwyg {
-  @extend %p;
-}
-
 
 //------------------------------------------------------------------
 // Lists
@@ -410,9 +404,11 @@ img {
 
 //------------------------------------------------------------------
 // WYSIWYG Image Text Wrap
-//--------------------------------------------------------------- ---
+//------------------------------------------------------------------
 
-.wysiwyg {
+.contentBlock {
+  // Make sure all text that appears in a .contentBlock follows the appropriate font-size, not the $base font-size.
+  @extend %p;
 
   img {
     display: block;

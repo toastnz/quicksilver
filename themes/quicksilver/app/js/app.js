@@ -2,13 +2,11 @@
 Imports
 ------------------------------------------------------------------*/
 
-import $ from 'jquery'; 
+import $ from 'jquery';
+import './components/videoBlock'
 
 /*------------------------------------------------------------------
 Variables
 ------------------------------------------------------------------*/
 
-let $body = $('body');
 
-console.log('Hello World: Jquery ', $body);
-       

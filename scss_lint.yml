@@ -261,7 +261,7 @@ linters:
 
   # Checks for unnecessary trailing zeros in numeric values with decimal points
   TrailingZero:
-    enabled: true
+    enabled: false
 
   # Checks for explicitly transitioned properties instead of transition all
   TransitionAll:
@@ -269,7 +269,7 @@ linters:
 
   # Checks for the unnecessary inclusion of a zero-value mantissa in numbers. (e.g. `4.0` could be written as just `4`)
   UnnecessaryMantissa:
-    enabled: true
+    enabled: false
 
   # Checks for unnecessary uses of the parent reference (&) in nested selectors
   UnnecessaryParentReference:
