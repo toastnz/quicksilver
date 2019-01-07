@@ -93,16 +93,16 @@ class ContactForm extends Form
         $fields = FieldList::create([
             TextField::create('FirstName', 'First Name')
                 ->setAttribute('data-parsley-error-message', 'Please enter your first name')
-                ->addExtraClass('input-wrap--half'),
+                ->addExtraClass('inputWrap--half'),
             TextField::create('Surname', 'Last Name')
                 ->setAttribute('data-parsley-error-message', 'Please enter your last name')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+                ->addExtraClass('inputWrap--half inputWrap--half--last'),
             TextField::create('Phone', 'Phone')
                 ->setAttribute('placeholder', 'e.g; 021 123 4567')
-                ->addExtraClass('input-wrap--half'),
+                ->addExtraClass('inputWrap--half'),
             EmailField::create('Email', 'Email Address')
                 ->setAttribute('data-parsley-error-message', 'Please enter your email address')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+                ->addExtraClass('inputWrap--half inputWrap--half--last'),
             TextareaField::create('Message', 'Message')
                 ->setAttribute('data-parsley-error-message', 'Please enter a message')
         ]);

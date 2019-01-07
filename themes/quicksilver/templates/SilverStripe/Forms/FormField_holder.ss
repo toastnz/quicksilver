@@ -1,4 +1,4 @@
-<div id="$HolderID" class="field input-wrap input-wrap--<% if $extraClass %>$extraClass<% end_if %> <% if $extraClass %>$extraClass<% end_if %>">
+<div id="$HolderID" class="field inputWrap inputWrap--<% if $extraClass %>$extraClass<% end_if %> <% if $extraClass %>$extraClass<% end_if %>">
     <% if $Title %><label class="left" for="$ID">$Title</label><% end_if %>
     $Field
     <% if $RightTitle %><label class="right" for="$ID">$RightTitle</label><% end_if %>

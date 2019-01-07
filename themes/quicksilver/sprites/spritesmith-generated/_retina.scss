@@ -5,7 +5,37 @@ only screen and (min-resolution: 240dpi) {
   %icon-checkbox-checked,
   .icon-checkbox-checked {
     background-image: url('../dist/images/sprites/sprite@2x.png');
-    background-size: (20 ) + px (20 ) + px;
+    background-size: (72 ) + px (48 ) + px;
+  }
+
+  %icon-checkbox-focused,
+  .icon-checkbox-focused {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: (72 ) + px (48 ) + px;
+  }
+
+  %icon-checkbox-unchecked,
+  .icon-checkbox-unchecked {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: (72 ) + px (48 ) + px;
+  }
+
+  %icon-radio-checked,
+  .icon-radio-checked {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: (72 ) + px (48 ) + px;
+  }
+
+  %icon-radio-focused,
+  .icon-radio-focused {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: (72 ) + px (48 ) + px;
+  }
+
+  %icon-radio-unchecked,
+  .icon-radio-unchecked {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: (72 ) + px (48 ) + px;
   }
 
 }

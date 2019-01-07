@@ -78,16 +78,16 @@ class SiteConfigExtension extends DataExtension
          * ----------------------------------------*/
 
         $address = TextareaField::create('Address', 'Address');
-        $address->setRows(8)->addExtraClass('input-wrap--half');
+        $address->setRows(8)->addExtraClass('inputWrap--half');
         $postalAddress = TextareaField::create('PostalAddress', 'Postal Address');
-        $postalAddress->setRows(8)->addExtraClass('input-wrap--half input-wrap--half--last');
+        $postalAddress->setRows(8)->addExtraClass('inputWrap--half inputWrap--half--last');
 
         $fields->findOrMakeTab('Root.Settings.Details');
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('DetailsHeader', 'Company Details'),
             TextField::create('Phone', 'Phone Number'),
             TextField::create('Email', 'Public Email Address')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+                ->addExtraClass('inputWrap--half inputWrap--half--last'),
             $address,
             $postalAddress,
             HeaderField::create('DetailsHeader', 'Social Media Pages'),
@@ -124,11 +124,11 @@ class SiteConfigExtension extends DataExtension
             // Google
             HeaderField::create('GoogleHeading', 'Google Tracking'),
             TextField::create('GoogleTrackingID', 'Tracking ID')
-                ->addExtraClass('input-wrap--half')
+                ->addExtraClass('inputWrap--half')
                 ->setAttribute('placeholder', 'UA-XXXXXXXX-X'),
             TextField::create('GoogleTagManagerID', 'Tag Manager ID')
                 ->setAttribute('placeholder', 'GTM-XXXXXX')
-                ->addExtraClass('input-wrap--half input-wrap--half--last'),
+                ->addExtraClass('inputWrap--half inputWrap--half--last'),
 
             // Google Maps
             HeaderField::create('GoogleMapsHeading', 'Google Maps'),

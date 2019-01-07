@@ -47,6 +47,18 @@
 }
 
 
+#MemberLoginForm_LoginForm_Password_Holder,
+#MemberLoginForm_LoginForm_Email_Holder {
+  margin-bottom:1rem;
+  position: relative;
 
+  label {
+    @include vertical-align;
+    margin: 0;
+  }
 
+  input {
+    margin: 0;
+  }
+}
 
