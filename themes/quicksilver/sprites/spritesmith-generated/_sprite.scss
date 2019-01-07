@@ -1,0 +1,96 @@
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+
+  %icon-checkbox-checked,
+  .icon-checkbox-checked {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+  %icon-checkbox-focused,
+  .icon-checkbox-focused {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+  %icon-checkbox-unchecked,
+  .icon-checkbox-unchecked {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+  %icon-radio-checked,
+  .icon-radio-checked {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+  %icon-radio-focused,
+  .icon-radio-focused {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+  %icon-radio-unchecked,
+  .icon-radio-unchecked {
+    background-image: url('./images/sprites-retina.png');
+    background-size: (64 / 2) + px (44 / 2) + px;
+}
+
+}
+
+    %icon-checkbox-checked,
+    .icon-checkbox-checked {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: -22px -22px;
+    width: 20px;
+    height: 20px;
+    }
+
+    %icon-checkbox-focused,
+    .icon-checkbox-focused {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: -44px 0px;
+    width: 20px;
+    height: 20px;
+    }
+
+    %icon-checkbox-unchecked,
+    .icon-checkbox-unchecked {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: -44px -20px;
+    width: 20px;
+    height: 20px;
+    }
+
+    %icon-radio-checked,
+    .icon-radio-checked {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: 0px 0px;
+    width: 22px;
+    height: 22px;
+    }
+
+    %icon-radio-focused,
+    .icon-radio-focused {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: -22px 0px;
+    width: 22px;
+    height: 22px;
+    }
+
+    %icon-radio-unchecked,
+    .icon-radio-unchecked {
+    display: inline-block;
+    background-image: url('./images/sprites.png');
+    background-position: 0px -22px;
+    width: 22px;
+    height: 22px;
+    }
+

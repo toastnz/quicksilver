@@ -1,17 +1,18 @@
 //------------------------------------------------------------------
 // Base imports
 //------------------------------------------------------------------
-//
+//Ordered
 @import 'Utilities/Reset';
 @import 'Utilities/Colours';
 @import 'Utilities/Mixins';
 @import 'Utilities/Base';
 @import 'Utilities/Buttons';
 @import 'Utilities/Inputs';
-
+//Ordered
+@import '../sprites/spritesmith-generated/_sprite.scss';
 @import 'Sprites/Sprites';
-@import 'Sprites/Sprites-retina';
+//UnOrdered
+@import 'External/*';
+@import 'Elements/*';
+@import 'Blocks/*';
 
-//@import 'External/*';
-//@import 'Elements/*';
-//@import 'Blocks/*';

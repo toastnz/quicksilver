@@ -4,6 +4,8 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const { getIfUtils, removeEmpty } = require('webpack-config-utils');
 const ExtractTextPlugin           = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin        = require("mini-css-extract-plugin");
+const glob                        = require('glob');
+const SpritesmithPlugin           = require('webpack-spritesmith');
 
 const stats = {
     colors      : true,
@@ -29,6 +31,7 @@ module.exports = (env, argv) => {
         mode   : ifProduction('production', 'development'),
         entry  : path.resolve(__dirname, '../js/app.js'),
         stats,
+        devtool: 'source-map',
         output : {
             path             : path.resolve(__dirname, '../dist/scripts'),
             filename         : 'bundle.js',
@@ -36,37 +39,56 @@ module.exports = (env, argv) => {
         },
         module : {
             rules: [
+
                 { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
                 {
-                    test: /\.(sa|sc|c)ss$/,
+                    test: /\.scss$/,
                     use : [
                         MiniCssExtractPlugin.loader,
-                        'css-loader',
-                        'postcss-loader',
-                        'sass-loader',
-                    ],
-                }
+                        {
+                            loader : 'css-loader',
+                            options: { sourceMap: true }
+                        },
+                        {
+                            loader : 'sass-loader',
+                            options: { sourceMap: true }
+                        },
+                        {
+                            loader : 'import-glob-loader',
+                            options: { sourceMap: true }
+                        },
+                    ]
+                },
 
-                //{
-                //    test: /\.css$/,
-                //    use : [
-                //        {
-                //            loader : MiniCssExtractPlugin.loader,
-                //            options: {
-                //                publicPath: '../'
-                //            }
-                //        },
-                //        "css-loader"
-                //    ]
-                //}
             ]
+        },
+        resolve: {
+            modules: ["node_modules", "spritesmith-generated"]
         },
         plugins: removeEmpty([
             new FriendlyErrorsWebpackPlugin(),
             new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
             new MiniCssExtractPlugin({
-                filename     : "[name].css",
+                filename     : "../styles/[name].scss",
                 chunkFilename: "[id].css"
+            }),
+            new SpritesmithPlugin({
+                src            : {
+                    cwd : path.resolve(__dirname, '../sprites'),
+                    glob: '*.png'
+                },
+                target         : {
+                    image: path.resolve(__dirname, '../sprites/spritesmith-generated/sprite.png'),
+                    css  : [[path.resolve(__dirname, '../sprites/spritesmith-generated/_sprite.scss'), { format: 'template_name' }]]
+                },
+                retina         : '@2x',
+                apiOptions     : {
+                    cssImageRef: "~sprite.png"
+                },
+                customTemplates: {
+                    template_name       : path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
+                    template_name_retina: path.resolve(__dirname, '../sprites/retina-sprite_positions.styl.mustache'),
+                }
             })
         ])
     }

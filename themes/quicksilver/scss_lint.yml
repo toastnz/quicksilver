@@ -142,7 +142,7 @@ linters:
 
   # Checks that `@extend` is always used with a placeholder selector
   PlaceholderInExtend:
-    enabled: true
+    enabled: false
 
   # Checks that the number of properties in a rule set is under a defined limit
   PropertyCount:

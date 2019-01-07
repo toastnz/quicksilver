@@ -18,6 +18,7 @@
         <div class="column">
             <div class="wysiwyg">
                 <div class="">
+                    <i class="icon icon-checkbox-checked"></i>
                     <h1>This is the primary heading and there should only be one of these per page</h1>
                     <h2>This is an h2, it is slightly smaller</h2>
                     <h3>This is an h3, it is slightly smaller</h3>

@@ -4,9 +4,9 @@ import './../scss/style.scss'
 Variables
 ------------------------------------------------------------------*/
 
-import $ from 'jquery';
+//import $ from 'jquery';
 
-console.log(`Hello Worlds: ${new Date()}`);
+console.log(`Hello World: ${new Date()}`);
 
 
 

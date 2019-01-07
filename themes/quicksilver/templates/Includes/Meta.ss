@@ -60,4 +60,4 @@ $MetaTags('false')
     <% end_if %>
 <% end_with %>
 
-<% require themedCSS("dist/styles/style") %>
+<% require themedCSS("dist/styles/main") %>
