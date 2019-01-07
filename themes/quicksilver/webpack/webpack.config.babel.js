@@ -1,7 +1,7 @@
 const path                        = require('path');
 const webpack                     = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const { getIfUtils, removeEmpty } = require('webpack-config-utils');
+const {getIfUtils, removeEmpty}   = require('webpack-config-utils');
 const ExtractTextPlugin           = require('extract-text-webpack-plugin');
 const MiniCssExtractPlugin        = require("mini-css-extract-plugin");
 const glob                        = require('glob');
@@ -25,7 +25,7 @@ const stats = {
 };
 
 module.exports = (env, argv) => {
-    const { ifProduction, ifNotProduction } = getIfUtils(argv.mode);
+    const {ifProduction, ifNotProduction} = getIfUtils(argv.mode);
 
     return {
         mode   : ifProduction('production', 'development'),
@@ -39,57 +39,71 @@ module.exports = (env, argv) => {
         },
         module : {
             rules: [
-
-                { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' },
+                {
+                    test  : /\.js$/, exclude: /node_modules/,
+                    loader: 'babel-loader'
+                },
                 {
                     test: /\.scss$/,
                     use : [
                         MiniCssExtractPlugin.loader,
                         {
                             loader : 'css-loader',
-                            options: { sourceMap: true }
+                            options: {sourceMap: true}
                         },
                         {
                             loader : 'sass-loader',
-                            options: { sourceMap: true }
+                            options: {sourceMap: true}
                         },
                         {
                             loader : 'import-glob-loader',
-                            options: { sourceMap: true }
+                            options: {sourceMap: true}
                         },
                     ]
                 },
-
+                {
+                    test   : /\.(png|jpg|gif)$/,
+                    loader : 'file-loader',
+                    options: {
+                        outputPath: '../images',
+                        name      : '[name].[ext]',
+                    },
+                },
             ]
-        },
-        resolve: {
-            modules: ["node_modules", "spritesmith-generated"]
         },
         plugins: removeEmpty([
             new FriendlyErrorsWebpackPlugin(),
             new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
             new MiniCssExtractPlugin({
-                filename     : "../styles/[name].scss",
+                filename     : "../styles/[name].css",
                 chunkFilename: "[id].css"
             }),
             new SpritesmithPlugin({
-                src            : {
+                src               : {
                     cwd : path.resolve(__dirname, '../sprites'),
                     glob: '*.png'
                 },
-                target         : {
-                    image: path.resolve(__dirname, '../sprites/spritesmith-generated/sprite.png'),
-                    css  : [[path.resolve(__dirname, '../sprites/spritesmith-generated/_sprite.scss'), { format: 'template_name' }]]
+                target            : {
+                    image: path.resolve(__dirname, '../dist/images/sprites/sprite.png'),
+                    css  : [
+                        [path.resolve(__dirname, '../sprites/spritesmith-generated/_normal.scss'), {format: 'normal'}],
+                        [path.resolve(__dirname, '../sprites/spritesmith-generated/_retina.scss'), {format: 'retina'}]
+                    ]
                 },
-                retina         : '@2x',
-                apiOptions     : {
+                retina            : '@2x',
+                apiOptions        : {
                     cssImageRef: "~sprite.png"
                 },
-                customTemplates: {
-                    template_name       : path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
-                    template_name_retina: path.resolve(__dirname, '../sprites/retina-sprite_positions.styl.mustache'),
+                customTemplates   : {
+                    normal       : path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
+                    normal_retina: path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
+                    retina       : path.resolve(__dirname, '../sprites/retina-sprite_positions.styl.mustache'),
+                    retina_retina: path.resolve(__dirname, '../sprites/retina-sprite_positions.styl.mustache'),
+                },
+                spritesmithOptions: {
+                    padding: 4
                 }
             })
         ])
-    }
+    };
 };

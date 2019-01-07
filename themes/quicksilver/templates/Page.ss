@@ -14,7 +14,7 @@
 
     $Layout
     
-    <div class="row">
+    <div class="row" style=" padding:8rem;">
         <div class="column">
             <div class="wysiwyg">
                 <div class="">
