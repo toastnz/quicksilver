@@ -13,11 +13,12 @@
     <% include Header %>
 
     $Layout
-    
+
     <div class="row" style=" padding:8rem;">
         <div class="column">
             <div class="wysiwyg">
                 <div class="">
+                    <div class="banner"></div>
                     <i class="icon icon-checkbox-checked"></i>
                     <h1>This is the primary heading and there should only be one of these per page</h1>
                     <h2>This is an h2, it is slightly smaller</h2>
