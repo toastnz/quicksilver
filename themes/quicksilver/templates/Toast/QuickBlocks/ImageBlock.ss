@@ -5,6 +5,9 @@ Image Block
     <div class="imageBlock__wrap row">
         <div class="column">
 
+            <%----------------------------------------------------------------
+            Image Block
+            ----------------------------------------------------------------%>
             <% with $Image %>
                 <img class="imageBlock__wrap__image" src="{$Fit(1280,800).URL}" alt="{$Title}">
             <% end_with %>

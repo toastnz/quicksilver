@@ -9,7 +9,8 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "jquery": "^3.3.1",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.11",
+    "tingle.js": "^0.14.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

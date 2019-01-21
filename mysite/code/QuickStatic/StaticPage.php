@@ -6,6 +6,7 @@ use SilverStripe\CMS\Controllers\ContentController;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Control\Director;
 use SilverStripe\View\ArrayData;
+use SilverStripe\View\Requirements;
 
 /**
  * Class StaticPage
@@ -36,8 +37,18 @@ class StaticPage extends SiteTree
     public function fauxVideoBlock()
     {
         $arrayData = new ArrayData([
+            'Placeholder' => '//placehold.it/1920x1080',
             'VideoType'   => 'youtube',
-            'Testimonial' => '9xwazD5SyVg',
+            'VideoID'     => 'ScMzIvxBSi4',
+            'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+        ]);
+        echo $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
+    }
+
+    public function fauxImageBlock()
+    {
+        $arrayData = new ArrayData([
+            'Placeholder' => '//placehold.it/1920x1080',
             'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
         ]);
         echo $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
@@ -49,5 +60,14 @@ class StaticPage extends SiteTree
  */
 class StaticPageController extends ContentController
 {
+    public function init()
+    {
+        parent::init();
+
+        Requirements::backend()->setWriteHeaderComment(false);
+        Requirements::combine_files('app.js', ['themes/quicksilver/dist/scripts/bundle.js']);
+        Requirements::process_combined_files();
+
+    }
 
 }

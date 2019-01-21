@@ -194,7 +194,7 @@ b, table tr th,
 .button--error,
 form .inputWrap__actions .action,
 form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .action,
-.button, .tingle-modal__closeLabel, .testimonialBlock__wrap__content, .testimonialBlock__wrap__credit {
+.button, .testimonialBlock__wrap__content, .testimonialBlock__wrap__credit {
   font-family: "Montserrat", Helvetica, sans-serif; }
 
 html,
@@ -233,7 +233,7 @@ form .inputWrap--email input.large,
 form .inputWrap--textarea textarea.large,
 form .inputWrap--countrydropdown select.large,
 form .inputWrap--dropdown select.large,
-form .inputWrap--select select.large, .large.tingle-modal__closeLabel, p,
+form .inputWrap--select select.large, p,
 .p, span,
 b, em, i, li, input, textarea, td, tr, tl, dl, dt,
 strong, pre, label, table tr th, table tr td, .contentBlock,
@@ -248,7 +248,7 @@ form .inputWrap--email input,
 form .inputWrap--textarea textarea,
 form .inputWrap--countrydropdown select,
 form .inputWrap--dropdown select,
-form .inputWrap--select select, .tingle-modal__closeLabel, small,
+form .inputWrap--select select, small,
 .small {
   line-height: 1.4; }
 
@@ -343,8 +343,7 @@ form .inputWrap--email input.large,
 form .inputWrap--textarea textarea.large,
 form .inputWrap--countrydropdown select.large,
 form .inputWrap--dropdown select.large,
-form .inputWrap--select select.large,
-.large.tingle-modal__closeLabel {
+form .inputWrap--select select.large {
   font-size: 1.6rem;
   margin-bottom: 1.8rem; }
   @media only screen and (min-width: 1024px) {
@@ -381,8 +380,7 @@ form .inputWrap--select select.large,
     form .inputWrap--textarea textarea.large,
     form .inputWrap--countrydropdown select.large,
     form .inputWrap--dropdown select.large,
-    form .inputWrap--select select.large,
-    .large.tingle-modal__closeLabel {
+    form .inputWrap--select select.large {
       font-size: 2rem; } }
 
 p,
@@ -418,8 +416,7 @@ form .inputWrap--email input,
 form .inputWrap--textarea textarea,
 form .inputWrap--countrydropdown select,
 form .inputWrap--dropdown select,
-form .inputWrap--select select,
-.tingle-modal__closeLabel {
+form .inputWrap--select select {
   font-size: 1.4rem;
   margin-bottom: 1.8rem; }
   @media only screen and (min-width: 1024px) {
@@ -456,8 +453,7 @@ form .inputWrap--select select,
     form .inputWrap--textarea textarea,
     form .inputWrap--countrydropdown select,
     form .inputWrap--dropdown select,
-    form .inputWrap--select select,
-    .tingle-modal__closeLabel {
+    form .inputWrap--select select {
       font-size: 1.6rem; } }
 
 small,
@@ -1930,6 +1926,9 @@ form .inputWrap {
 .slick-arrow.slick-hidden {
   display: none; }
 
+/*------------------------------------------------------------------
+Tingle v0.14.0
+------------------------------------------------------------------*/
 .tingle-modal {
   position: fixed;
   top: 0;
@@ -1942,18 +1941,26 @@ form .inputWrap {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  -webkit-overflow-scrolling: touch;
   background: rgba(0, 0, 0, 0.8);
   opacity: 0;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   cursor: pointer;
   transition: -webkit-transform .2s ease;
   transition: transform .2s ease;
   transition: transform .2s ease, -webkit-transform .2s ease; }
-  .tingle-modal * {
-    outline: none; }
 
+/*------------------------------------------------------------------
+Confirm & Alerts
+------------------------------------------------------------------*/
 .tingle-modal--confirm .tingle-modal-box {
   text-align: center; }
 
+/*------------------------------------------------------------------
+Modal
+------------------------------------------------------------------*/
 .tingle-modal--noOverlayClose {
   cursor: default; }
 
@@ -1968,9 +1975,9 @@ form .inputWrap {
   padding: 0;
   width: 5rem;
   height: 5rem;
-  border: 0;
+  border: none;
   background-color: transparent;
-  color: #f7f7f7;
+  color: #f0f0f0;
   font-size: 6rem;
   font-family: monospace;
   line-height: 1;
@@ -1978,7 +1985,6 @@ form .inputWrap {
   transition: color .3s ease; }
 
 .tingle-modal__closeLabel {
-  font-weight: 400;
   display: none; }
 
 .tingle-modal__close:hover {
@@ -1989,7 +1995,9 @@ form .inputWrap {
   flex-shrink: 0;
   margin-top: auto;
   margin-bottom: auto;
-  max-width: 80%;
+  width: 60%;
+  border-radius: 4px;
+  background: transparent;
   opacity: 1;
   cursor: auto;
   transition: -webkit-transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -1998,19 +2006,21 @@ form .inputWrap {
   -webkit-transform: scale(0.8);
           transform: scale(0.8); }
 
+.tingle-modal-box__content {
+  padding: 0; }
+
 .tingle-modal-box__footer {
   padding: 1.5rem 2rem;
   width: auto;
-  background-color: #f7f7f7;
-  cursor: auto;
-  text-align: right; }
-  .tingle-modal-box__footer .button {
-    margin-bottom: 0; }
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #f5f5f5;
+  cursor: auto; }
 
 .tingle-modal-box__footer::after {
   display: table;
   clear: both;
-  content: ''; }
+  content: ""; }
 
 .tingle-modal-box__footer--sticky {
   position: fixed;
@@ -2019,32 +2029,42 @@ form .inputWrap {
   opacity: 1;
   transition: bottom .3s ease-in-out .3s; }
 
+/* state
+-------------------------------------------------------------- */
 .tingle-enabled {
-  overflow: hidden;
-  height: 100%; }
-  .tingle-enabled .tingle-content-wrapper {
-    -webkit-filter: blur(15px);
-            filter: blur(15px); }
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow: hidden; }
+
+.tingle-modal--visible .tingle-modal-box__footer {
+  bottom: 0; }
+
+.tingle-enabled .tingle-content-wrapper {
+  -webkit-filter: blur(8px);
+          filter: blur(8px); }
 
 .tingle-modal--visible {
   visibility: visible;
   opacity: 1; }
-  .tingle-modal--visible .tingle-modal-box {
-    -webkit-transform: scale(1);
-            transform: scale(1); }
-  .tingle-modal--visible .tingle-modal-box__footer {
-    bottom: 0; }
+
+.tingle-modal--visible .tingle-modal-box {
+  -webkit-transform: scale(1);
+          transform: scale(1); }
 
 .tingle-modal--overflow {
   overflow-y: scroll;
   padding-top: 8vh; }
 
+/*------------------------------------------------------------------
+Button
+------------------------------------------------------------------*/
 .tingle-btn {
   display: inline-block;
   margin: 0 .5rem;
   padding: 1rem 2rem;
-  border: 0;
-  background-color: #e6e6e6;
+  border: none;
+  background-color: grey;
   box-shadow: none;
   color: #fff;
   vertical-align: middle;
@@ -2056,13 +2076,13 @@ form .inputWrap {
   transition: background-color .4s ease; }
 
 .tingle-btn--primary {
-  background-color: #e65a30; }
+  background-color: #3498db; }
 
 .tingle-btn--danger {
-  background-color: #e44e4e; }
+  background-color: #e74c3c; }
 
 .tingle-btn--default {
-  background-color: #e65a30; }
+  background-color: #34495e; }
 
 .tingle-btn--pull-left {
   float: left; }
@@ -2070,19 +2090,24 @@ form .inputWrap {
 .tingle-btn--pull-right {
   float: right; }
 
+/*------------------------------------------------------------------
+Responsive
+------------------------------------------------------------------*/
 @media (max-width: 540px) {
-  .tingle-modal-box {
-    width: auto;
-    border-radius: 0;
-    margin: 8rem auto; }
   .tingle-modal {
     top: 0;
     display: block;
+    padding-top: 60px;
     width: 100%; }
+  .tingle-modal-box {
+    width: auto;
+    border-radius: 0; }
+  .tingle-modal-box__content {
+    overflow-y: scroll; }
   .tingle-modal--noClose {
     top: 0; }
-  .tingle-modal--overflow {
-    padding: 0; }
+  .tingle-modal--noOverlayClose {
+    padding-top: 0; }
   .tingle-modal-box__footer .tingle-btn {
     display: block;
     float: none;
@@ -2094,19 +2119,74 @@ form .inputWrap {
     left: 0;
     display: block;
     width: 100%;
-    height: 50px;
-    border: 0;
-    background-color: transparent;
+    height: 60px;
+    border: none;
+    background-color: #2c3e50;
     box-shadow: none;
-    color: #fff; }
+    color: #fff;
+    line-height: 55px; }
   .tingle-modal__closeLabel {
-    display: none; }
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif; }
   .tingle-modal__closeIcon {
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-            transform: translateY(-50%);
+    display: inline-block;
+    margin-right: .5rem;
+    vertical-align: middle;
+    font-size: 4rem; } }
+
+@supports ((-webkit-backdrop-filter: blur(12px)) or (backdrop-filter: blur(12px))) {
+  .tingle-modal {
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px); }
+  @media (max-width: 540px) {
+    .tingle-modal {
+      -webkit-backdrop-filter: blur(8px);
+              backdrop-filter: blur(8px); } }
+  .tingle-enabled .tingle-content-wrapper {
+    -webkit-filter: none;
+            filter: none; } }
+
+/*------------------------------------------------------------------
+Custom Styles
+------------------------------------------------------------------*/
+.tingle-modal__close {
+  -webkit-transform: translateY(-150%);
+          transform: translateY(-150%);
+  transition: all 444ms ease; }
+
+.closeIcon {
+  position: relative; }
+  .closeIcon:after {
+    content: '';
+    position: relative;
+    display: block;
+    padding-bottom: 100%; }
+  .closeIcon svg {
     position: absolute;
-    right: 1rem; } }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+  @media only screen and (max-width: 767px) {
+    .closeIcon {
+      max-width: 4rem; } }
+
+.tingle-modal-box__content {
+  opacity: 0;
+  transition: all 444ms ease;
+  -webkit-transform: translateY(5rem);
+          transform: translateY(5rem); }
+
+.active .tingle-modal__close {
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
+
+.active .tingle-modal-box__content {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0); }
 
 .banner {
   background-size: cover;
@@ -2237,6 +2317,20 @@ form .inputWrap {
   .testimonialBlock__wrap__credit {
     font-weight: 700;
     color: #e65a30; }
+
+.videoBlock__wrap__thumbnail {
+  position: relative;
+  cursor: pointer; }
+  .videoBlock__wrap__thumbnail__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translateY(-50%) translateX(-50%);
+            transform: translateY(-50%) translateX(-50%);
+    margin: 0 auto;
+    text-align: center; }
+    .videoBlock__wrap__thumbnail__icon svg {
+      margin: 0 auto; }
 
 
 /*# sourceMappingURL=../quicksilver/bundle.map.js*/

@@ -1,3 +1,22 @@
 //------------------------------------------------------------------
 // Text Block
 //------------------------------------------------------------------
+
+.videoBlock {
+  &__wrap {
+    &__thumbnail {
+      position: relative;
+      cursor: pointer;
+
+      &__icon {
+        @include vertical-center;
+        text-align: center;
+
+        svg {
+          margin: 0 auto;
+        }
+      }
+
+    }
+  }
+}

@@ -4,10 +4,11 @@ Stylesheets
 import './../scss/style.scss'
 
 /*------------------------------------------------------------------
-Variables
+Imports
 ------------------------------------------------------------------*/
 
-console.log(`Hello World: ${new Date()}`);
+import './components/videoBlock';
+
 
 
 

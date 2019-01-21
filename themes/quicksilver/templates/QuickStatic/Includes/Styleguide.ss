@@ -1,3 +1,4 @@
+$fauxImageBlock
 $fauxVideoBlock
 $fauxTestimonialBlock
 
