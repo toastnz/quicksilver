@@ -1,0 +1,16 @@
+//------------------------------------------------------------------
+// Content Block
+//------------------------------------------------------------------
+
+.contentBlock {
+  @include clearfix;
+  margin: 4rem auto;
+
+  &__wrap {
+    padding: 0 2rem;
+    max-width: $xmd;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+  }
+}

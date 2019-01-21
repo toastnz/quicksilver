@@ -1,3 +1,7 @@
+$fauxVideoBlock
+$fauxTestimonialBlock
+
+
 <div class="wysiwyg" style="max-width:1024px;margin:4rem auto;padding:0 2rem;">
     <div class="">
         <h1>This is the primary heading and there should only be one of these per page</h1>
@@ -169,9 +173,7 @@
 
         <blockquote>
             <p><em>This is a properly formatted blockquote, btw.</em> Measuring programming progress by lines of code is like measuring aircraft building progress by weight.</p>
-            <footer>
-                — <cite><a href="http://www.thegatesnotes.com">Bill Gates</a></cite>
-            </footer>
+            <cite><a href="http://www.thegatesnotes.com">Bill Gates</a></cite>
         </blockquote>
 
         <h4>A sub heading which is not as important as the second, but should be used with consideration</h4>
@@ -183,16 +185,6 @@
                 “Ooh - a blockquote! Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.”
             </p>
         </blockquote>
-
-        <pre>
-  <code>
-  #header h1 a {
-    display: block;
-    width: 300px;
-    height: 80px;
-  }
-  </code>
-  </pre>
 
         <h5>A sub heading which is not as important as the second, but should be used with consideration</h5>
         <p>

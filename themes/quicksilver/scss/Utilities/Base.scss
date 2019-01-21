@@ -4,26 +4,31 @@
 
 $base: 10px;
 $base-line-height: 1.4;
-$base-type-margin: .8em;
+$base-type-margin: 1.8rem;
+
 
 //------------------------------------------------------------------
-// Declear our font-familys
+// Declare our font-familys
+//------------------------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900');
 
-$primary-font: "Source Sans Pro", Helvetica, sans-serif;
-$secondary-font: "Source Sans Pro", Helvetica, sans-serif;
-$tertiary-font: "Source Sans Pro", Helvetica, sans-serif;
+
+$primary-font: "Montserrat", Helvetica, sans-serif;
+$secondary-font: "Montserrat", Helvetica, sans-serif;
+$tertiary-font: "Montserrat", Helvetica, sans-serif;
 
 //------------------------------------------------------------------
 // Link Colour
+//------------------------------------------------------------------
 
 $link-colour: $primary;
 
 //------------------------------------------------------------------
 // Font Sizes
-
 // 'element': (intial size, $lg size),
+//------------------------------------------------------------------
+
 $font-size-map: (
         'h1' : (3.5rem, 5.0rem),
         'h2' : (3.0rem, 4.0rem),
@@ -32,14 +37,15 @@ $font-size-map: (
         'h5' : (1.8rem, 2.2rem),
         'h6' : (1.6rem, 1.8rem),
         'p.large' : (1.6rem, 2.0rem),
-        'p' : (1.4rem, 1.8rem),
+        'p' : (1.4rem, 1.6rem),
         'small' : (1.0rem, 1.3rem),
 );
 
 //------------------------------------------------------------------
 // Table Colours
+//------------------------------------------------------------------
 
-$table-heading-background: $primary;
+$table-heading-background: $text-light;
 $table-heading-colour: $white;
 
 $table-cell-background: $white;
@@ -48,6 +54,7 @@ $table-cell-colour: $black;
 //------------------------------------------------------------------
 // list of all elements that we want styled as paragraph text.
 // note: <p> does not need to be included in this list.
+//------------------------------------------------------------------
 
 $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
 
@@ -93,8 +100,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(100);
   } @else if $family == tertiary {
     @include tertiary-font(100);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(100);
+  } @else {
+    font-weight: 100;
   }
 }
 
@@ -104,8 +113,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(200);
   } @else if $family == tertiary {
     @include tertiary-font(200);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(200);
+  } @else {
+    font-weight: 200;
   }
 }
 
@@ -115,8 +126,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(300);
   } @else if $family == tertiary {
     @include tertiary-font(300);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(300);
+  } @else {
+    font-weight: 300;
   }
 }
 
@@ -126,8 +139,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(400);
   } @else if $family == tertiary {
     @include tertiary-font(400);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(400);
+  } @else {
+    font-weight: 400;
   }
 }
 
@@ -137,8 +152,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(500);
   } @else if $family == tertiary {
     @include tertiary-font(500);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(500);
+  } @else {
+    font-weight: 500;
   }
 }
 
@@ -148,8 +165,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(600);
   } @else if $family == tertiary {
     @include tertiary-font(600);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(600);
+  } @else {
+    font-weight: 600;
   }
 }
 
@@ -159,8 +178,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(700);
   } @else if $family == tertiary {
     @include tertiary-font(700);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(700);
+  } @else {
+    font-weight: 700;
   }
 }
 
@@ -170,8 +191,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(800);
   } @else if $family == tertiary {
     @include tertiary-font(800);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(800);
+  } @else {
+    font-weight: 800;
   }
 }
 
@@ -181,8 +204,10 @@ $paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, d
     @include secondary-font(900);
   } @else if $family == tertiary {
     @include tertiary-font(900);
-  } @else {
+  } @else if $family == primary {
     @include primary-font(900);
+  } @else {
+    font-weight: 900;
   }
 }
 
@@ -466,17 +491,24 @@ img {
     }
   }
 
-  //------------------------------------------------------------------
-  // WYSIWYG horizontal rule
-  //------------------------------------------------------------------
-
-  hr {
-    border: 0;
-    border-top: 1px solid $grey-light;
-    margin: 3rem auto;
-  }
-
 }
+
+cite {
+  @extend %h6;
+  margin-bottom: 2rem;
+  display: block;
+}
+
+//------------------------------------------------------------------
+// WYSIWYG horizontal rule
+//------------------------------------------------------------------
+
+hr {
+  border: 0;
+  border-top: 1px solid $grey-light;
+  margin: 3rem auto;
+}
+
 
 //------------------------------------------------------------------
 // Text Alignment
@@ -511,3 +543,17 @@ img {
     }
   }
 }
+
+//------------------------------------------------------------------
+// Heading Weights (optional)
+//------------------------------------------------------------------
+//
+//@for $i from 1 through 6 {
+//  h#{$i},
+//  .h#{$i},
+//  %h#{$i} {
+//    @extend %primaryFont;
+//    @include bold;
+//    line-height: 1.2;
+//  }
+//}
