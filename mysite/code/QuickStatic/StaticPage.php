@@ -49,9 +49,8 @@ class StaticPage extends SiteTree
     {
         $arrayData = new ArrayData([
             'Placeholder' => '//placehold.it/1920x1080',
-            'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
+        echo $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
     }
 }
 
