@@ -2296,6 +2296,9 @@ Custom Styles
     display: table; }
   .contentBlock:after {
     clear: both; }
+  @media only screen and (max-width: 767px) {
+    .contentBlock {
+      margin: 2rem auto; } }
   .contentBlock__wrap {
     padding: 0 2rem;
     max-width: 968px;
