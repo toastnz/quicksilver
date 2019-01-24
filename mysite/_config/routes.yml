@@ -1,0 +1,10 @@
+---
+Name: mysiteroutes
+After:
+  - '#rootroutes'
+  - '#coreroutes'
+---
+SilverStripe\Control\Director:
+  rules:
+    '_styleguide': 'StyleGuideController'
+

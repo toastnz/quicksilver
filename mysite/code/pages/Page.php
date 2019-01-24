@@ -22,6 +22,7 @@ class Page extends SiteTree
         return StaticPage::get();
 
     }
+
 }
 
 /**
@@ -47,4 +48,5 @@ class PageController extends ContentController
     {
         return SubscriptionForm::create($this, 'SubscriptionForm');
     }
+
 }
