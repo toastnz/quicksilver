@@ -8,19 +8,3 @@ SilverStripe\SiteConfig\SiteConfig:
 SilverStripe\Control\Controller:
   extensions:
     - Toast\Extensions\ControllerExtension
-Page:
-  extensions:
-    - Toast\QuickBlocks\QuickBlocksExtension
-
-Toast\QuickBlocks\QuickBlocksExtension:
-  available_blocks:
-    - Toast\QuickBlocks\TextBlock
-    - Toast\QuickBlocks\DownloadBlock
-    - Toast\QuickBlocks\VideoBlock
-    - Toast\QuickBlocks\AccordionBlock
-    - Toast\QuickBlocks\SplitBlock
-    - Toast\QuickBlocks\ImageBlock
-    - Toast\QuickBlocks\TestimonialBlock
-
-Security:
-  login_url: Account/Login
