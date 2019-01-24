@@ -13,6 +13,8 @@ use SilverStripe\View\Requirements;
  */
 class StaticPage extends SiteTree
 {
+    private static $icon = 'mysite/dist/images/cms/svg/home.svg';
+
     public function getIsLive()
     {
         return Director::isLive();

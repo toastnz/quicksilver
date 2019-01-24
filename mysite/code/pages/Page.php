@@ -12,6 +12,9 @@ use SilverStripe\CMS\Controllers\ContentController;
  */
 class Page extends SiteTree
 {
+
+    private static $icon = 'mysite/dist/images/cms/svg/page.svg';
+
     public function getIsLive()
     {
         return Director::isLive();

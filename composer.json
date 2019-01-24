@@ -19,19 +19,17 @@
         }
     ],
     "require": {
-        "silverstripe/recipe-plugin": "^1.2",
-        "silverstripe/framework": "4.*@stable",
-        "silverstripe/cms": "4.*@stable",
-        "silverstripe/siteconfig": "4.*@stable",
+        "silverstripe/recipe-cms": "^4.3.0",
         "jonom/focuspoint": "~3.0.0",
         "drewm/mailchimp-api": "v2.5",
         "unclecheese/betterbuttons": "2.x-dev",
-        "silverstripe/googlesitemaps": "~2.1.2",
-        "silverstripe/redirectedurls": "2.x-dev",
-        "sheadawson/silverstripe-linkable": "dev-master",
-        "undefinedoffset/silverstripe-nocaptcha": "2.0.x-dev",
-        "symbiote/silverstripe-gridfieldextensions": "~3.1.1",
-        "stevie-mayhew/silverstripe-svg": "^2.1.0"
+        "silverstripe/googlesitemaps": "^2.1.3",
+        "silverstripe/redirectedurls": "^2.0.0",
+        "sheadawson/silverstripe-linkable": "^2.0.0",
+        "undefinedoffset/silverstripe-nocaptcha": "^2.0.0",
+        "symbiote/silverstripe-gridfieldextensions": "^3.2.1",
+        "stevie-mayhew/silverstripe-svg": "^2.1.0",
+        "permanentinc/beautiful": "dev-master"
     },
     "config": {
         "preferred-install": "dist"
