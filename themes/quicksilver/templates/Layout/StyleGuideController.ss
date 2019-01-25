@@ -4,6 +4,12 @@ $fauxVideoBlock
 
 $fauxImageBlock
 
+$fauxAccordionBlock
+
+$fauxQuickBlock
+
+$fauxDownloadBlock
+
 
 <div class="wysiwyg" style="max-width:1024px;margin:4rem auto;padding:0 2rem;">
     <div class="">
