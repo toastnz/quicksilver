@@ -12,12 +12,11 @@ Download Block
 
                 <ul class="downloadBlock__wrap__list unstyled">
                     <% loop $Files %>
-
                         <%----------------------------------------------------------------
                         Download Block Item
                         ----------------------------------------------------------------%>
                         <li class="downloadBlock__wrap__list__item">
-                            <a href="{$DownloadLink}" title="{$Title}" download="$Title">
+                            <a href="$FileContent" title="{$Title}" download="$Title">
 
                                 <div class="downloadBlock__wrap__item__icon">
                                     $SVG('download')

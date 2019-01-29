@@ -1,6 +1,8 @@
 <?php
 
 
+use Sheadawson\Linkable\Models\Link;
+use SilverStripe\Assets\File;
 use SilverStripe\Control\Controller;
 use SilverStripe\ORM\ArrayList;
 use SilverStripe\Security\Security;
@@ -54,16 +56,22 @@ class StyleGuideController extends Controller
     public function fauxAccordionBlock()
     {
 
-        $accordionItems = new ArrayList([]);
-        $accordionItems->push([
-            'DisplayTitle' => 'Accordion Heading',
-            'Content' => 'Accordion Content',
-
-        ]);
+        $accordionItems = new ArrayList(array(
+            new ArrayData(array(
+                'DisplayTitle' => 'Accordion Heading 1',
+                'Content' => 'Accordion Content 1'
+            )),
+            new ArrayData(array(
+                'DisplayTitle' => 'Accordion Heading 2',
+                'Content' => 'Accordion Content 2'
+            )),
+            new ArrayData(array(
+                'DisplayTitle' => 'Accordion Heading 3',
+                'Content' => 'Accordion Content 3'
+            )),
+        ));
 
         $arrayData = new ArrayData([
-            'DisplayTitle'   => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit',
-            'Content'        => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
            'AccordionItems' => $accordionItems
         ]);
 
@@ -73,19 +81,32 @@ class StyleGuideController extends Controller
     public function fauxQuickBlock()
     {
         $arrayData = new ArrayData([
-
             'Content'=>'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.'
         ]);
         echo $arrayData->renderWith('Toast\QuickBlocks\QuickBlock');
     }
 
-//    public function fauxDownloadBlock()
-//    {
-//        $arrayData = new ArrayData([
-//
-//            'Files'=>'themes/quicksilver/dist/images/standard/placeholder.png'
+    public function fauxDownloadBlock()
+    {
+//        $files = new ArrayList([]);
+//        $files->push([
+//            'Title' => 'File Title',
+//            'Files' => File::class,
 //        ]);
-//        echo $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
-//    }
+        $files = new ArrayList(array(
+            new ArrayData(array(
+                'Title' => 'File Title 1',
+                'FileContent' => 'themes/quicksilver/dist/pdf/sample.pdf',
+            )),
+            new ArrayData(array(
+                'Title' => 'File Title 2',
+                'FileContent' => 'themes/quicksilver/dist/pdf/sample.pdf',
+            )),
+        ));
+        $arrayData = new ArrayData([
+            'Files' => $files
+        ]);
+        echo $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
+    }
 }
 
