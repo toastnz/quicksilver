@@ -72,7 +72,7 @@ class StyleGuideController extends Controller
         ));
 
         $arrayData = new ArrayData([
-           'AccordionItems' => $accordionItems
+           'accordionItems' => $accordionItems
         ]);
 
         echo $arrayData->renderWith('Toast\QuickBlocks\AccordionBlock');
@@ -88,25 +88,30 @@ class StyleGuideController extends Controller
 
     public function fauxDownloadBlock()
     {
-//        $files = new ArrayList([]);
-//        $files->push([
-//            'Title' => 'File Title',
-//            'Files' => File::class,
-//        ]);
         $files = new ArrayList(array(
             new ArrayData(array(
                 'Title' => 'File Title 1',
-                'FileContent' => 'themes/quicksilver/dist/pdf/sample.pdf',
+                'DownloadLink' => 'themes/quicksilver/dist/pdf/sample.pdf',
             )),
             new ArrayData(array(
                 'Title' => 'File Title 2',
-                'FileContent' => 'themes/quicksilver/dist/pdf/sample.pdf',
+                'DownloadLink' => 'themes/quicksilver/dist/pdf/sample.pdf',
             )),
         ));
         $arrayData = new ArrayData([
             'Files' => $files
         ]);
         echo $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
+    }
+    public function fauxSplitBlock()
+    {
+        $arrayData = new ArrayData([
+            'LeftContent'  => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
+            'RightContent' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
+            'LeftWidth'  => '200px',
+            'RightWidth' => '200px'
+        ]);
+        echo $arrayData->renderWith('Toast\QuickBlocks\SplitBlock');
     }
 }
 
