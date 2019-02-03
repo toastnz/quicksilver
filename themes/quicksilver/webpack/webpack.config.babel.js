@@ -2,10 +2,8 @@ const path                        = require('path');
 const webpack                     = require('webpack');
 const autoprefixer                = require('autoprefixer');
 const SpritesmithPlugin           = require('webpack-spritesmith');
-const CleanWebpackPlugin          = require('clean-webpack-plugin');
 const { getIfUtils, removeEmpty } = require('webpack-config-utils');
-const WebappWebpackPlugin         = require('webapp-webpack-plugin');
-const MiniCssExtractPlugin        = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin        = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
 const stats = {
@@ -22,10 +20,11 @@ const stats = {
     errors      : false,
     errorDetails: false,
     warnings    : false,
-    publicPath  : false
+    publicPath  : false,
 };
 
 module.exports = (env, argv) => {
+
     const { ifProduction } = getIfUtils(argv.mode);
 
     return {
@@ -97,12 +96,11 @@ module.exports = (env, argv) => {
             ]
         },
         plugins: removeEmpty([
-            new CleanWebpackPlugin(['images/generated'], { exclude: ['.gitkeep'], root: path.resolve(__dirname, '../dist/') }),
             new FriendlyErrorsWebpackPlugin(),
             new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
             new MiniCssExtractPlugin({
-                filename     : "../styles/[name].css",
-                chunkFilename: "[id].css"
+                filename     : '../styles/[name].css',
+                chunkFilename: '[id].css'
             }),
             new SpritesmithPlugin({
                 src               : {
@@ -117,7 +115,7 @@ module.exports = (env, argv) => {
                     ]
                 },
                 retina            : '@2x',
-                apiOptions        : { cssImageRef: "~sprite.png" },
+                apiOptions        : { cssImageRef: '~sprite.png' },
                 customTemplates   : {
                     normal       : path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
                     normal_retina: path.resolve(__dirname, '../sprites/sprite_positions.styl.mustache'),
@@ -126,10 +124,6 @@ module.exports = (env, argv) => {
                 },
                 spritesmithOptions: { padding: 4 }
             }),
-            //new WebappWebpackPlugin({
-            //    logo  : path.resolve(__dirname, '../../../icon.png'),
-            //    prefix: '/icons/xxx-[hash]/',
-            //})
         ])
     };
 };
