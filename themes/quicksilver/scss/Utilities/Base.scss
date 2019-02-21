@@ -41,15 +41,6 @@ $font-size-map: (
         'small' : (1.0rem, 1.3rem),
 );
 
-//------------------------------------------------------------------
-// Table Colours
-//------------------------------------------------------------------
-
-$table-heading-background: $text-light;
-$table-heading-colour: $white;
-
-$table-cell-background: $white;
-$table-cell-colour: $black;
 
 //------------------------------------------------------------------
 // list of all elements that we want styled as paragraph text.
@@ -386,6 +377,29 @@ caption {
   @extend %h3;
 }
 
+.js-table {
+  position: relative;
+  overflow: auto;
+  padding: 0 2rem;
+  margin: 0 -2rem 2rem;
+
+
+  &::-webkit-scrollbar-track {
+    background-color: $grey-light;
+  }
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+    background-color: $grey-light;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $primary;
+    border: 0;
+  }
+}
+
 table {
   vertical-align: top;
   max-width: 100%;
@@ -393,31 +407,45 @@ table {
   border-spacing: 0;
   width: 100%;
   margin: 3rem auto;
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba($blue-dark, .2), 0 5px 15px rgba($blue-dark, .14);
+  min-width: $md;
+  border: 2px solid $white;
+
+  thead {
+    border-radius: .5rem;
+  }
 
   tr {
+    background: $off-white;
+    border-bottom: 2px solid $white;
+    margin-bottom: 5px;
+
+
+    tr:nth-child(even) {
+      background: $grey-light;
+    }
+
     th {
-      @extend %p;
-      @include semi;
-      padding: 1.2rem;
-      border: 1px solid $table-heading-background;
-      background-color: $table-heading-background;
-      text-align: left;
-      color: $table-heading-colour;
+      @extend %h6;
+      @include bold;
+      background: $primary !important;
+      color: $white;
     }
 
     &:nth-child(even) {
       td {
-        background: darken($table-cell-background, 2%);
+        background: darken($grey-light, 2%);
       }
     }
 
+    th,
     td {
-      @extend %p;
-      color: $table-cell-colour;
-      border: 1px solid darken($table-cell-background, 15%);
-      padding: 1rem;
-      background-color: $table-cell-background;
       text-align: left;
+      padding: 1.5rem;
+      border-right: 2px solid $white;
     }
   }
 }

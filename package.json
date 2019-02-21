@@ -10,7 +10,9 @@
   "dependencies": {
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
-    "tingle.js": "^0.14.0"
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "tingle.js": "^0.14.0",
+    "uglifyjs-webpack-plugin": "^2.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",

@@ -5,6 +5,8 @@ const SpritesmithPlugin           = require('webpack-spritesmith');
 const { getIfUtils, removeEmpty } = require('webpack-config-utils');
 const MiniCssExtractPlugin        = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+const OptimizeCssAssetsPlugin     = require('optimize-css-assets-webpack-plugin');
+const UglifyJsPlugin              = require("uglifyjs-webpack-plugin");
 
 const stats = {
     colors      : true,
@@ -28,16 +30,16 @@ module.exports = (env, argv) => {
     const { ifProduction } = getIfUtils(argv.mode);
 
     return {
-        mode   : ifProduction('production', 'development'),
-        entry  : path.resolve(__dirname, '../js/app.js'),
+        mode        : ifProduction('production', 'development'),
+        entry       : path.resolve(__dirname, '../js/app.js'),
         stats,
-        devtool: 'source-map',
-        output : {
+        devtool     : ifProduction('eval', 'source-map'),
+        output      : {
             path             : path.resolve(__dirname, '../dist/scripts'),
             filename         : 'bundle.js',
             sourceMapFilename: 'bundle.map.js'
         },
-        module : {
+        module      : {
             rules: [
                 {
                     test   : /\.js$/,
@@ -50,12 +52,12 @@ module.exports = (env, argv) => {
                         MiniCssExtractPlugin.loader,
                         {
                             loader : 'css-loader',
-                            options: { sourceMap: true }
+                            options: { sourceMap: ifProduction(true, false) }
                         },
                         {
                             loader : 'postcss-loader',
                             options: {
-                                sourceMap: true,
+                                sourceMap: ifProduction(true, false),
                                 plugins  : [
                                     autoprefixer({
                                         browsers: [
@@ -72,11 +74,11 @@ module.exports = (env, argv) => {
                         },
                         {
                             loader : 'sass-loader',
-                            options: { sourceMap: true }
+                            options: { sourceMap: ifProduction(true, false) }
                         },
                         {
                             loader : 'import-glob-loader',
-                            options: { sourceMap: true }
+                            options: { sourceMap: ifProduction(true, false) }
                         },
                     ]
                 },
@@ -95,7 +97,20 @@ module.exports = (env, argv) => {
                 },
             ]
         },
-        plugins: removeEmpty([
+        optimization: {
+            minimizer: [
+                new UglifyJsPlugin({
+                    cache    : true,
+                    parallel : true,
+                    sourceMap: ifProduction(true, false)
+                }),
+                new OptimizeCssAssetsPlugin({
+                    cssProcessorOptions: { discardComments: { removeAll: true } },
+                    canPrint           : true
+                })
+            ]
+        },
+        plugins     : removeEmpty([
             new FriendlyErrorsWebpackPlugin(),
             new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
             new MiniCssExtractPlugin({

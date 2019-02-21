@@ -127,7 +127,7 @@ table {
   color: #65b922; }
 
 .colour--warning {
-  color: #ffd33a; }
+  color: #997e26; }
 
 .colour--error {
   color: #e44e4e; }
@@ -148,13 +148,13 @@ table {
   color: #262626; }
 
 .colour--primary {
-  color: #e65a30; }
+  color: #e75930; }
 
 .colour--secondary {
   color: #232427; }
 
 .colour--tertiary {
-  color: #a6ba38; }
+  color: #6e8224; }
 
 .clearfix:before,
 .clearfix:after {
@@ -207,12 +207,12 @@ body {
     -moz-osx-font-smoothing: grayscale; }
   html a:not(.button),
   body a:not(.button) {
-    color: #e65a30;
+    color: #e75930;
     text-decoration: none; }
 
 ::selection {
   color: #fff;
-  background: rgba(230, 90, 48, 0.99999); }
+  background: rgba(231, 89, 48, 0.99999); }
 
 h1,
 .h1, h2,
@@ -220,8 +220,8 @@ h1,
 .h3, caption, h4,
 .h4, h5,
 .h5, h6,
-.h6, cite, p.large,
-.p.large, span.large, b.large, em.large, i.large, li.large, input.large, textarea.large, td.large, tr.large, tl.large, dl.large, dt.large, strong.large, pre.large, label.large, table tr th.large, table tr td.large, .large.contentBlock,
+.h6, table tr th, cite, p.large,
+.p.large, span.large, b.large, em.large, i.large, li.large, input.large, textarea.large, td.large, tr.large, tl.large, dl.large, dt.large, strong.large, pre.large, label.large, .large.contentBlock,
 .large.button--error,
 form .inputWrap__actions .large.action,
 form .inputWrap--actions .large.action, form .large[type="submit"], .loginWrap__content .large.action,
@@ -236,7 +236,7 @@ form .inputWrap--dropdown select.large,
 form .inputWrap--select select.large, p,
 .p, span,
 b, em, i, li, input, textarea, td, tr, tl, dl, dt,
-strong, pre, label, table tr th, table tr td, .contentBlock,
+strong, pre, label, .contentBlock,
 .button--error,
 form .inputWrap__actions .action,
 form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .action,
@@ -301,12 +301,14 @@ h5,
 
 h6,
 .h6,
+table tr th,
 cite {
   font-size: 1.6rem;
   margin-bottom: 1.8rem; }
   @media only screen and (min-width: 1024px) {
     h6,
     .h6,
+    table tr th,
     cite {
       font-size: 1.8rem; } }
 
@@ -327,8 +329,6 @@ dt.large,
 strong.large,
 pre.large,
 label.large,
-table tr th.large,
-table tr td.large,
 .large.contentBlock,
 .large.button--error,
 form .inputWrap__actions .large.action,
@@ -364,8 +364,6 @@ form .inputWrap--select select.large {
     strong.large,
     pre.large,
     label.large,
-    table tr th.large,
-    table tr td.large,
     .large.contentBlock,
     .large.button--error,
     form .inputWrap__actions .large.action,
@@ -400,8 +398,6 @@ dt,
 strong,
 pre,
 label,
-table tr th,
-table tr td,
 .contentBlock,
 .button--error,
 form .inputWrap__actions .action,
@@ -437,8 +433,6 @@ form .inputWrap--select select {
     strong,
     pre,
     label,
-    table tr th,
-    table tr td,
     .contentBlock,
     .button--error,
     form .inputWrap__actions .action,
@@ -873,105 +867,135 @@ h5 > label, h5 > .label,
 h6 > span, h6 > .span,
 .h6 > span,
 .h6 > .span,
+table tr th > span,
 cite > span,
+table tr th > .span,
 cite > .span {
   font-size: inherit; }
 
 h6 > b, h6 > .b,
 .h6 > b,
 .h6 > .b,
+table tr th > b,
 cite > b,
+table tr th > .b,
 cite > .b {
   font-size: inherit; }
 
 h6 > em, h6 > .em,
 .h6 > em,
 .h6 > .em,
+table tr th > em,
 cite > em,
+table tr th > .em,
 cite > .em {
   font-size: inherit; }
 
 h6 > i, h6 > .i,
 .h6 > i,
 .h6 > .i,
+table tr th > i,
 cite > i,
+table tr th > .i,
 cite > .i {
   font-size: inherit; }
 
 h6 > li, h6 > .li,
 .h6 > li,
 .h6 > .li,
+table tr th > li,
 cite > li,
+table tr th > .li,
 cite > .li {
   font-size: inherit; }
 
 h6 > input, h6 > .input,
 .h6 > input,
 .h6 > .input,
+table tr th > input,
 cite > input,
+table tr th > .input,
 cite > .input {
   font-size: inherit; }
 
 h6 > textarea, h6 > .textarea,
 .h6 > textarea,
 .h6 > .textarea,
+table tr th > textarea,
 cite > textarea,
+table tr th > .textarea,
 cite > .textarea {
   font-size: inherit; }
 
 h6 > td, h6 > .td,
 .h6 > td,
 .h6 > .td,
+table tr th > td,
 cite > td,
+table tr th > .td,
 cite > .td {
   font-size: inherit; }
 
 h6 > tr, h6 > .tr,
 .h6 > tr,
 .h6 > .tr,
+table tr th > tr,
 cite > tr,
+table tr th > .tr,
 cite > .tr {
   font-size: inherit; }
 
 h6 > tl, h6 > .tl,
 .h6 > tl,
 .h6 > .tl,
+table tr th > tl,
 cite > tl,
+table tr th > .tl,
 cite > .tl {
   font-size: inherit; }
 
 h6 > dl, h6 > .dl,
 .h6 > dl,
 .h6 > .dl,
+table tr th > dl,
 cite > dl,
+table tr th > .dl,
 cite > .dl {
   font-size: inherit; }
 
 h6 > dt, h6 > .dt,
 .h6 > dt,
 .h6 > .dt,
+table tr th > dt,
 cite > dt,
+table tr th > .dt,
 cite > .dt {
   font-size: inherit; }
 
 h6 > strong, h6 > .strong,
 .h6 > strong,
 .h6 > .strong,
+table tr th > strong,
 cite > strong,
+table tr th > .strong,
 cite > .strong {
   font-size: inherit; }
 
 h6 > pre, h6 > .pre,
 .h6 > pre,
 .h6 > .pre,
+table tr th > pre,
 cite > pre,
+table tr th > .pre,
 cite > .pre {
   font-size: inherit; }
 
 h6 > label, h6 > .label,
 .h6 > label,
 .h6 > .label,
+table tr th > label,
 cite > label,
+table tr th > .label,
 cite > .label {
   font-size: inherit; }
 
@@ -1003,7 +1027,7 @@ ul.coloured li {
     border-radius: 50%;
     top: .5em;
     left: -1.9rem;
-    background: #e65a30; }
+    background: #e75930; }
 
 ul.coloured ul:not(.unstyled):not(.coloured) li:before {
   content: none; }
@@ -1012,7 +1036,7 @@ ul.coloured.coloured--success li:before {
   background: #65b922; }
 
 ul.coloured.coloured--warning li:before {
-  background: #ffd33a; }
+  background: #997e26; }
 
 ul.coloured.coloured--error li:before {
   background: #e44e4e; }
@@ -1033,13 +1057,13 @@ ul.coloured.coloured--text-light li:before {
   background: #262626; }
 
 ul.coloured.coloured--primary li:before {
-  background: #e65a30; }
+  background: #e75930; }
 
 ul.coloured.coloured--secondary li:before {
   background: #232427; }
 
 ul.coloured.coloured--tertiary li:before {
-  background: #a6ba38; }
+  background: #6e8224; }
 
 ol:not(.unstyled) {
   list-style: decimal; }
@@ -1054,28 +1078,53 @@ strong,
 b {
   font-weight: 700; }
 
+.js-table {
+  position: relative;
+  overflow: auto;
+  padding: 0 2rem;
+  margin: 0 -2rem 2rem; }
+  .js-table::-webkit-scrollbar-track {
+    background-color: #ebebeb; }
+  .js-table::-webkit-scrollbar {
+    width: 2px;
+    height: 4px;
+    background-color: #ebebeb; }
+  .js-table::-webkit-scrollbar-thumb {
+    background-color: #e75930;
+    border: 0; }
+
 table {
   vertical-align: top;
   max-width: 100%;
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  margin: 3rem auto; }
-  table tr th {
-    font-weight: 600;
-    padding: 1.2rem;
-    border: 1px solid #262626;
-    background-color: #262626;
-    text-align: left;
-    color: #fff; }
-  table tr:nth-child(even) td {
-    background: #fafafa; }
-  table tr td {
-    color: #000;
-    border: 1px solid #d9d9d9;
-    padding: 1rem;
-    background-color: #fff;
-    text-align: left; }
+  margin: 3rem auto;
+  border-radius: .5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(32, 46, 60, 0.2), 0 5px 15px rgba(32, 46, 60, 0.14);
+  min-width: 768px;
+  border: 2px solid #fff; }
+  table thead {
+    border-radius: .5rem; }
+  table tr {
+    background: #f7f7f7;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 5px; }
+    table tr tr:nth-child(even) {
+      background: #ebebeb; }
+    table tr th {
+      font-weight: 700;
+      background: #e75930 !important;
+      color: #fff; }
+    table tr:nth-child(even) td {
+      background: #e6e6e6; }
+    table tr th,
+    table tr td {
+      text-align: left;
+      padding: 1.5rem;
+      border-right: 2px solid #fff; }
 
 img {
   max-width: 100%;
@@ -1105,11 +1154,11 @@ img {
 .contentBlock blockquote {
   margin: 3rem;
   padding: 0 2rem;
-  border-left: 4px solid #e65a30; }
+  border-left: 4px solid #e75930; }
   .contentBlock blockquote.blockquote--success {
     border-color: #65b922; }
   .contentBlock blockquote.blockquote--warning {
-    border-color: #ffd33a; }
+    border-color: #997e26; }
   .contentBlock blockquote.blockquote--error {
     border-color: #e44e4e; }
   .contentBlock blockquote.blockquote--white {
@@ -1123,11 +1172,11 @@ img {
   .contentBlock blockquote.blockquote--text-light {
     border-color: #262626; }
   .contentBlock blockquote.blockquote--primary {
-    border-color: #e65a30; }
+    border-color: #e75930; }
   .contentBlock blockquote.blockquote--secondary {
     border-color: #232427; }
   .contentBlock blockquote.blockquote--tertiary {
-    border-color: #a6ba38; }
+    border-color: #6e8224; }
   .contentBlock blockquote p {
     margin: 0; }
 
@@ -1237,8 +1286,8 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
   font-weight: 700;
   display: inline-block;
   color: #fff;
-  background-color: #e65a30;
-  border: 2px solid #e65a30;
+  background-color: #e75930;
+  border: 2px solid #e75930;
   margin: 0 1rem 1rem 0;
   padding: .4rem 2rem;
   cursor: pointer;
@@ -1260,8 +1309,8 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
   .button:hover,
   .button:active,
   .button:focus {
-    background-color: #e86942;
-    border-color: #e86942; }
+    background-color: #e96842;
+    border-color: #e96842; }
   
   .button--success {
     background-color: #65b922;
@@ -1289,28 +1338,28 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
       background-color: transparent; }
   
   .button--warning {
-    background-color: #ffd33a;
-    border-color: #ffd33a; }
+    background-color: #997e26;
+    border-color: #997e26; }
     
     .button--warning:hover,
     .button--warning:active,
     .button--warning:focus {
-      background-color: #ffd84e;
-      border-color: #ffd84e;
+      background-color: #a98b2a;
+      border-color: #a98b2a;
       color: #fff !important; }
     
     .button--warning.button--outline {
-      color: #ffd33a; }
+      color: #997e26; }
   
   .button--bordered--warning {
     background-color: transparent;
-    border-color: #ffd33a;
-    color: #ffd33a; }
+    border-color: #997e26;
+    color: #997e26; }
     
     .button--bordered--warning:hover,
     .button--bordered--warning:active,
     .button--bordered--warning:focus {
-      border-color: #ffd84e;
+      border-color: #a98b2a;
       background-color: transparent; }
   
   .button--error {
@@ -1464,28 +1513,28 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
       background-color: transparent; }
   
   .button--primary {
-    background-color: #e65a30;
-    border-color: #e65a30; }
+    background-color: #e75930;
+    border-color: #e75930; }
     
     .button--primary:hover,
     .button--primary:active,
     .button--primary:focus {
-      background-color: #e86942;
-      border-color: #e86942;
+      background-color: #e96842;
+      border-color: #e96842;
       color: #fff !important; }
     
     .button--primary.button--outline {
-      color: #e65a30; }
+      color: #e75930; }
   
   .button--bordered--primary {
     background-color: transparent;
-    border-color: #e65a30;
-    color: #e65a30; }
+    border-color: #e75930;
+    color: #e75930; }
     
     .button--bordered--primary:hover,
     .button--bordered--primary:active,
     .button--bordered--primary:focus {
-      border-color: #e86942;
+      border-color: #e96842;
       background-color: transparent; }
   
   .button--secondary {
@@ -1514,28 +1563,28 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
       background-color: transparent; }
   
   .button--tertiary {
-    background-color: #a6ba38;
-    border-color: #a6ba38; }
+    background-color: #6e8224;
+    border-color: #6e8224; }
     
     .button--tertiary:hover,
     .button--tertiary:active,
     .button--tertiary:focus {
-      background-color: #b1c641;
-      border-color: #b1c641;
+      background-color: #7c9228;
+      border-color: #7c9228;
       color: #fff !important; }
     
     .button--tertiary.button--outline {
-      color: #a6ba38; }
+      color: #6e8224; }
   
   .button--bordered--tertiary {
     background-color: transparent;
-    border-color: #a6ba38;
-    color: #a6ba38; }
+    border-color: #6e8224;
+    color: #6e8224; }
     
     .button--bordered--tertiary:hover,
     .button--bordered--tertiary:active,
     .button--bordered--tertiary:focus {
-      border-color: #b1c641;
+      border-color: #7c9228;
       background-color: transparent; }
   
   .button--round {
@@ -1647,7 +1696,7 @@ form .inputWrap--select select {
   form .inputWrap--countrydropdown select:hover,
   form .inputWrap--dropdown select:hover,
   form .inputWrap--select select:hover {
-    border-color: #e65a30; }
+    border-color: #e75930; }
   
   form .inputWrap--text input:focus,
   form .inputWrap--numeric input:focus,
@@ -1657,7 +1706,7 @@ form .inputWrap--select select {
   form .inputWrap--countrydropdown select:focus,
   form .inputWrap--dropdown select:focus,
   form .inputWrap--select select:focus {
-    border-color: #e65a30;
+    border-color: #e75930;
     outline: 0;
     box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.2); }
 
@@ -1738,7 +1787,7 @@ form .inputWrap {
     height: 0;
     border-style: solid;
     border-width: 8px 6px 0;
-    border-color: #e65a30 transparent transparent;
+    border-color: #e75930 transparent transparent;
     bottom: 3.6rem;
     right: 1.5%; }
   
@@ -2289,6 +2338,19 @@ Custom Styles
   max-width: 100%;
   width: 128rem; }
 
+.styleguide__aside {
+  background: #f7f7f7;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  padding: 4rem;
+  width: 30rem; }
+
+.styleguide__content {
+  padding-left: 34rem;
+  padding-right: 4rem; }
+
 .contentBlock {
   margin: 4rem auto; }
   .contentBlock:before, .contentBlock:after {
@@ -2312,14 +2374,14 @@ Custom Styles
     display: block;
     margin-bottom: 2rem; }
     .testimonialBlock__wrap__icon path {
-      fill: #e65a30; }
+      fill: #e75930; }
   .testimonialBlock__wrap__content {
     font-weight: 300;
     margin: 3rem auto;
     color: #262626; }
   .testimonialBlock__wrap__credit {
     font-weight: 700;
-    color: #e65a30; }
+    color: #e75930; }
 
 .videoBlock__wrap__thumbnail {
   position: relative;
