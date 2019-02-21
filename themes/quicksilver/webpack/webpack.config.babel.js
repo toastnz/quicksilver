@@ -125,8 +125,8 @@ module.exports = (env, argv) => {
                 target            : {
                     image: path.resolve(__dirname, '../dist/images/sprites/sprite.png'),
                     css  : [
-                        [path.resolve(__dirname, '../sprites/spritesmith-generated/_normal.scss'), { format: 'normal' }],
-                        [path.resolve(__dirname, '../sprites/spritesmith-generated/_retina.scss'), { format: 'retina' }]
+                        [path.resolve(__dirname, '../spritesmith-generated/_normal.scss'), { format: 'normal' }],
+                        [path.resolve(__dirname, '../spritesmith-generated/_retina.scss'), { format: 'retina' }]
                     ]
                 },
                 retina            : '@2x',

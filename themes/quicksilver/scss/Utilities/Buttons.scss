@@ -10,29 +10,40 @@ $error-button-color: $error-colour;
 %button,
 .button {
   @extend %p;
-  @include bold(primary);
   display: inline-block;
   color: $button-colour;
   background-color: $button-background;
-  border: 2px solid $button-background;
   margin: 0 1rem 1rem 0;
-  padding: .4rem 2rem;
+  padding: .9rem 2rem .8rem;
   cursor: pointer;
   outline: none;
-  border-radius: .4rem;
+  border-radius: .3rem;
   text-decoration: none;
-  text-transform: uppercase;
-  transition: color .3s ease, border-color .3s ease, background-color .3s ease;
+  transition: all 111ms ease;
 
-  @include active {
-    background-color: lighten($button-background, 4%);
-    border-color: lighten($button-background, 4%);
+  &:hover {
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 1px;
+  }
+
+  &:active {
+    transform: translateY(1px);
+  }
+
+  &--secondary {
+    background-color: $secondary;
+    border-color: $secondary;
+
+    @include active {
+      background-color: lighten($secondary, 4%);
+      border-color: lighten($secondary, 4%);
+      color: $white !important;
+    }
   }
 
   @each $colour, $value in $colour-map {
     &--#{$colour} {
       background-color: $value;
-      border-color: $value;
+      border: $value;
 
       @include active {
         background-color: lighten($value, 4%);
@@ -45,10 +56,11 @@ $error-button-color: $error-colour;
       }
     }
 
-    &--bordered--#{$colour} {
+    &--outline--#{$colour} {
       background-color: transparent;
-      border-color: $value;
       color: $value;
+      border: 1px solid $value;
+      padding: .8rem 1.9rem .7rem;
 
       @include active {
         border-color: lighten($value, 4%);
@@ -62,7 +74,7 @@ $error-button-color: $error-colour;
   }
 
   &--disabled {
-    border: 2px solid $disabled-button-color;
+    border: 1px solid $disabled-button-color;
     background: $disabled-button-color;
     cursor: not-allowed;
 
@@ -70,11 +82,17 @@ $error-button-color: $error-colour;
       color: $disabled-button-color;
     }
 
-    @include active {
-      border: 2px solid $disabled-button-color;
+    &:hover {
+      border: 1px solid $disabled-button-color;
       background: $disabled-button-color;
-      color: $white;
     }
+
+    &:active {
+      border: 1px solid $disabled-button-color;
+      background: $disabled-button-color;
+      transform: translateY(1px);
+    }
+
   }
 
   &--error {

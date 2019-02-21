@@ -1,7 +1,7 @@
 //------------------------------------------------------------------
 // Styleguide
 //------------------------------------------------------------------
-
+$theme: #3473d6;
 
 .styleguide {
 
@@ -13,11 +13,59 @@
     left: 0;
     padding: 4rem;
     width: 30rem;
+
+    h6 {
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    a {
+      @extend %p;
+      display: block;
+      color: $theme !important;
+    }
   }
 
   &__content {
     padding-left: 34rem;
     padding-right: 4rem;
+
+    &__section {
+      color: $blue-dark;
+      margin-bottom: 4rem;
+      border-bottom: 4px solid $grey-light;
+
+      &__heading {
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        position: relative;
+
+        &:after {
+          @include pseudo;
+          left: 0;
+          top: 100%;
+          height: .4rem;
+          width: 5rem;
+          background: $theme;
+        }
+      }
+
+      &__subtitle {
+        margin-top: 5rem;
+        margin-bottom: 4rem;
+      }
+
+      &__paragraph {
+        opacity: .6;
+      }
+
+      &__sandbox {
+        padding: 4rem;
+        border: 1px solid $grey-light;
+        border-radius: .5rem;
+        margin-bottom: 6rem;
+      }
+    }
   }
 }
 

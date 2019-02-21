@@ -215,7 +215,7 @@ form {
     padding-left: 3rem;
 
     &:before {
-      @extend %icon-radio-unchecked;
+      //@extend %icon-radio-unchecked;
       @include pseudo;
       left: 0;
     }
@@ -224,7 +224,7 @@ form {
   &:focus {
     + label {
       &:before {
-        @extend %icon-radio-focused;
+        //@extend %icon-radio-focused;
       }
     }
   }
@@ -234,7 +234,7 @@ form {
     + label {
 
       &:before {
-        @extend %icon-radio-checked;
+        //@extend %icon-radio-checked;
       }
     }
   }
@@ -242,7 +242,7 @@ form {
   &:disabled {
     + label {
       &:before {
-        @extend %icon-radio-checked;
+        //@extend %icon-radio-checked;
         opacity: .6;
       }
     }
@@ -259,7 +259,7 @@ form {
     padding-left: 3rem;
 
     &:before {
-      @extend %icon-checkbox-unchecked;
+      //@extend %icon-checkbox-unchecked;
       @include pseudo;
       left: 0;
     }
@@ -268,7 +268,7 @@ form {
   &:focus {
     + label {
       &:before {
-        @extend %icon-checkbox-focused;
+        //@extend %icon-checkbox-focused;
       }
     }
   }
@@ -277,7 +277,7 @@ form {
   &:checked {
     + label {
       &:before {
-        @extend %icon-checkbox-checked;
+        //@extend %icon-checkbox-checked;
       }
     }
   }
@@ -285,7 +285,7 @@ form {
   &:disabled {
     + label {
       &:before {
-        @extend %icon-checkbox-unchecked;
+        //@extend %icon-checkbox-unchecked;
         opacity: .6;
       }
     }
