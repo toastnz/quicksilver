@@ -2,6 +2,10 @@
 // Content Block
 //------------------------------------------------------------------
 
+.styleguide__content__section__sandbox .contentBlock {
+  margin: 0 auto;
+}
+
 .contentBlock {
   @include clearfix;
   margin: 4rem auto;

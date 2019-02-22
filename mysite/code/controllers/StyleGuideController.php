@@ -44,7 +44,7 @@ class StyleGuideController extends Controller
             'Attribution' => 'First name, Last Name',
             'Location'    => 'Location'
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\TestimonialBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\TestimonialBlock');
     }
 
     public function fauxVideoBlock()
@@ -55,7 +55,7 @@ class StyleGuideController extends Controller
             'VideoID'     => 'ScMzIvxBSi4',
             'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
     }
 
     public function fauxImageBlock()
@@ -63,7 +63,7 @@ class StyleGuideController extends Controller
         $arrayData = new ArrayData([
             'Placeholder' => 'themes/quicksilver/dist/images/standard/placeholder.png',
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
     }
 
     public function fauxAccordionBlock()
@@ -88,15 +88,15 @@ class StyleGuideController extends Controller
             'accordionItems' => $accordionItems
         ]);
 
-        echo $arrayData->renderWith('Toast\QuickBlocks\AccordionBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\AccordionBlock');
     }
 
     public function fauxQuickBlock()
     {
         $arrayData = new ArrayData([
-            'Content' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.'
+            'Content' => 'This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and'
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\QuickBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\QuickBlock');
     }
 
     public function fauxDownloadBlock()
@@ -114,7 +114,7 @@ class StyleGuideController extends Controller
         $arrayData = new ArrayData([
             'Files' => $files
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
     }
 
     public function fauxSplitBlock()
@@ -125,7 +125,7 @@ class StyleGuideController extends Controller
             'LeftWidth'    => '200px',
             'RightWidth'   => '200px'
         ]);
-        echo $arrayData->renderWith('Toast\QuickBlocks\SplitBlock');
+        return $arrayData->renderWith('Toast\QuickBlocks\SplitBlock');
     }
 }
 

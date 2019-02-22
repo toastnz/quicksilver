@@ -293,6 +293,11 @@ ol {
     padding-left: 2rem;
     margin-bottom: 3rem;
 
+    ul,
+    ol {
+      margin-bottom: 0;
+    }
+
     li {
       padding-left: 1rem;
       margin-bottom: 1rem;
@@ -349,7 +354,7 @@ ul {
 
 ol {
   &:not(.unstyled) {
-    list-style: decimal;
+    list-style: decimal outside;
   }
 }
 

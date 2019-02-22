@@ -10493,7 +10493,7 @@ __webpack_require__.r(__webpack_exports__);
 /*------------------------------------------------------------------
 Hello world - versionsing
 ------------------------------------------------------------------*/
-console.log('%cQUICKSILVER 4.0', 'padding:5px;color: #fff; background: #78bc42;');
+console.log('%cQUICKSILVER 4.0', 'padding:5px;color: #fff; background: #377cff;');
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/

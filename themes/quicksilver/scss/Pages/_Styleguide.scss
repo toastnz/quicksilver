@@ -1,7 +1,7 @@
 //------------------------------------------------------------------
 // Styleguide
 //------------------------------------------------------------------
-$theme: #3473d6;
+$theme: #377bff;
 
 .styleguide {
 
@@ -32,8 +32,9 @@ $theme: #3473d6;
 
     &__section {
       color: $blue-dark;
-      margin-bottom: 4rem;
-      border-bottom: 4px solid $grey-light;
+      margin-bottom: 6rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid $grey-light;
 
       &__heading {
         margin-top: 5rem;

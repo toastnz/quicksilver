@@ -74,7 +74,6 @@ $error-button-color: $error-colour;
   }
 
   &--disabled {
-    border: 1px solid $disabled-button-color;
     background: $disabled-button-color;
     cursor: not-allowed;
 
@@ -83,12 +82,10 @@ $error-button-color: $error-colour;
     }
 
     &:hover {
-      border: 1px solid $disabled-button-color;
       background: $disabled-button-color;
     }
 
     &:active {
-      border: 1px solid $disabled-button-color;
       background: $disabled-button-color;
       transform: translateY(1px);
     }
