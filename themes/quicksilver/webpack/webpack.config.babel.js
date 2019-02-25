@@ -61,7 +61,7 @@ module.exports = (env, argv) => {
                                 plugins  : [
                                     autoprefixer({
                                         browsers: [
-                                            'ie >= 11',
+                                            'ie >= 9',
                                             'ie_mob >= 11',
                                             'Safari >= 10',
                                             'Android >= 4.4',

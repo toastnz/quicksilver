@@ -8,8 +8,8 @@ use SilverStripe\ORM\ArrayList;
 use SilverStripe\Security\Security;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
-
-
+use SilverStripe\Assets\Image;
+use SilverStripe\Versioned\Versioned;
 class StyleGuideController extends Controller
 {
 
@@ -19,6 +19,20 @@ class StyleGuideController extends Controller
 
     public function init()
     {
+
+        $image = File::find('styleguide_placeholder.jpg');
+
+        if (!$image) {
+
+            $file = Image::create();
+            $file->setFromLocalFile('themes/quicksilver/dist/images/standard/_styleguide_placeholder.jpg', 'styleguide_placeholder.jpg');
+            $file->write();
+            if (class_exists(Versioned::class)) {
+                $file->copyVersionToStage(Versioned::DRAFT, Versioned::LIVE);
+            }
+        }
+
+
         parent::init();
 
         Requirements::backend()->setWriteHeaderComment(false);
@@ -50,10 +64,10 @@ class StyleGuideController extends Controller
     public function fauxVideoBlock()
     {
         $arrayData = new ArrayData([
-            'Placeholder' => 'themes/quicksilver/dist/images/standard/placeholder.png',
             'VideoType'   => 'youtube',
             'VideoID'     => 'ScMzIvxBSi4',
             'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+            'Thumbnail'   => Image::find('styleguide_placeholder.jpg')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
     }
@@ -61,7 +75,7 @@ class StyleGuideController extends Controller
     public function fauxImageBlock()
     {
         $arrayData = new ArrayData([
-            'Placeholder' => 'themes/quicksilver/dist/images/standard/placeholder.png',
+            'Image'   => Image::find('styleguide_placeholder.jpg')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
     }

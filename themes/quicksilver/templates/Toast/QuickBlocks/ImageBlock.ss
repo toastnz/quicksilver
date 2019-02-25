@@ -8,13 +8,12 @@ Image Block
             <%----------------------------------------------------------------
             Image Block
             ----------------------------------------------------------------%>
-            <% if $Placeholder %>
-                <img class="imageBlock__wrap__image" src="{$Placeholder}" alt="Placeholder Image" title="Placeholder Image">
-            <% else %>
-                <% with $Image %>
-                    <img class="imageBlock__wrap__image" src="{$Fit(1280,800).URL}" alt="{$Title}">
-                <% end_with %>
-            <% end_if %>
+            <picture>
+                <source media="(min-width: 1200px)" srcset="$Image.FocusFill(1920,1080).URL">
+                <source media="(min-width: 800px)" srcset="$Image.FocusFill(960,540).URL">
+                <source media="(min-width: 320px)" srcset="$Image.FocusFill(480,270).URL">
+                <img src="$Image.FocusFill(1920,1080).URL" alt="$Image.Title">
+            </picture>
         </div>
 
     </div>

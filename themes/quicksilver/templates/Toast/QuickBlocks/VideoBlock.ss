@@ -8,13 +8,15 @@ Video Block
             <%----------------------------------------------------------------
             Video Thumbnail
             ----------------------------------------------------------------%>
+
             <div class="videoBlock__wrap__thumbnail [ js-video-modal ]" data-video-type="$VideoType" data-video-id="$VideoID">
 
-                <% if $Placeholder%>
-                    <img src="{$Placeholder}" alt="placeholder" title="placeholder image">
-                <% else_if $Thumbnail %>
-                    {$Thumbnail.FocusFill(1280,720)}
-                <% end_if %>
+                <picture>
+                    <source media="(min-width: 1200px)" srcset="$Thumbnail.FocusFill(1920,1080).URL">
+                    <source media="(min-width: 800px)" srcset="$Thumbnail.FocusFill(960,540).URL">
+                    <source media="(min-width: 320px)" srcset="$Thumbnail.FocusFill(480,270).URL">
+                    <img src="$Thumbnail.FocusFill(1920,1080).URL" alt="$Thumbnail.Title">
+                </picture>
 
                 <%----------------------------------------------------------------
                 Play Icon
