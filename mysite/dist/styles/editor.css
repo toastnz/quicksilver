@@ -1,4 +1,10 @@
-body.mceContentBody a.ss-broken { background-color: #FF7B71; border: 1px red solid; color: #fff; padding: 1px; text-decoration: underline; }
+body.mceContentBody a.ss-broken {
+    background-color: #FF7B71;
+    border: 1px red solid;
+    color: #fff;
+    padding: 1px;
+    text-decoration: underline;
+}
 
 body.mceContentBody p {
     padding-bottom: 1em;
@@ -56,38 +62,35 @@ body.mceContentBody h6 {
 /* Styles          */
 /*=================*/
 
-body.mceContentBody span.colour--secondary {
-    color: #666666;
+body.mceContentBody span.colour--primary {
+    color: #377cff;
 }
 
-body.mceContentBody span.colour--tertiary {
-    color: #999999;
+body.mceContentBody span.colour--secondary {
+    color: #222426;
 }
 
 /*=================*/
 /* Buttons         */
 /*=================*/
 
-body.mceContentBody a.button {
-    background-color: #e75931;
-    border: 1px solid #e75931;
+ a.button {
+    background-color: #377cff;
+    border: 1px solid #377cff;
     color: #fff;
     padding: 3px 5px;
     text-decoration: none;
     display: inline-block;
 }
 
-body.mceContentBody a.button.button--bordered {
-    background-color: transparent;
-    color: #e75931;
+ a.button.button--secondary {
+    color: #222426;
+    background-color: #222426;
+    border: 1px solid #222426;
 }
 
-body.mceContentBody a.button.button--bordered--light {
-    border-color: #000;
+ a.button.button--outline--primary {
+    border-color: #377cff;
     background-color: transparent;
-    color: #000;
-}
-
-body.mceContentBody a.button.button--round {
-    border-radius: 10rem;
+    color: #377cff;
 }

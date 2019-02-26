@@ -319,7 +319,7 @@
         </div>
 
         <div class="styleguide__content__section" id="Text">
-            <h3 class="styleguide__content__section__heading">Video Block</h3>
+            <h3 class="styleguide__content__section__heading">Text Block</h3>
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
             <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">

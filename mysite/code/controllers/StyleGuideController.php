@@ -10,6 +10,7 @@ use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
 use SilverStripe\Assets\Image;
 use SilverStripe\Versioned\Versioned;
+
 class StyleGuideController extends Controller
 {
 
@@ -23,7 +24,6 @@ class StyleGuideController extends Controller
         $image = File::find('styleguide_placeholder.jpg');
 
         if (!$image) {
-
             $file = Image::create();
             $file->setFromLocalFile('themes/quicksilver/dist/images/standard/_styleguide_placeholder.jpg', 'styleguide_placeholder.jpg');
             $file->write();
@@ -64,10 +64,10 @@ class StyleGuideController extends Controller
     public function fauxVideoBlock()
     {
         $arrayData = new ArrayData([
-            'VideoType'   => 'youtube',
-            'VideoID'     => 'ScMzIvxBSi4',
-            'Caption'     => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-            'Thumbnail'   => Image::find('styleguide_placeholder.jpg')
+            'VideoType' => 'youtube',
+            'VideoID'   => 'ScMzIvxBSi4',
+            'Caption'   => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+            'Thumbnail' => Image::find('styleguide_placeholder.jpg')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
     }
@@ -75,7 +75,7 @@ class StyleGuideController extends Controller
     public function fauxImageBlock()
     {
         $arrayData = new ArrayData([
-            'Image'   => Image::find('styleguide_placeholder.jpg')
+            'Image' => Image::find('styleguide_placeholder.jpg')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
     }
@@ -116,14 +116,8 @@ class StyleGuideController extends Controller
     public function fauxDownloadBlock()
     {
         $files     = new ArrayList([
-            new ArrayData([
-                'Title'        => 'File Title 1',
-                'DownloadLink' => 'themes/quicksilver/dist/pdf/sample.pdf',
-            ]),
-            new ArrayData([
-                'Title'        => 'File Title 2',
-                'DownloadLink' => 'themes/quicksilver/dist/pdf/sample.pdf',
-            ]),
+            Image::find('styleguide_placeholder.jpg'),
+            Image::find('styleguide_placeholder.jpg'),
         ]);
         $arrayData = new ArrayData([
             'Files' => $files

@@ -39,6 +39,18 @@ $formats = [
         'classes'  => 'button',
         'wrapper'  => false,
     ],
+    [
+        'title'    => 'Button - Secondary',
+        'selector' => 'a, button',
+        'classes'  => 'button button--secondary',
+        'wrapper'  => false,
+    ],
+    [
+        'title'    => 'Button - Outline',
+        'selector' => 'a, button',
+        'classes'  => 'button button--outline--primary',
+        'wrapper'  => false,
+    ],
 ];
 
 //HtmlEditorConfig::get('cms')->setOption('style_formats', $formats);
@@ -50,4 +62,6 @@ TinyMCEConfig::get('cms')
         'importcss_append' => true,
         'style_formats'    => $formats,
     ]);
+
+
 
