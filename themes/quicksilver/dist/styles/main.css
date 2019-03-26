@@ -2271,13 +2271,14 @@ Custom Styles
     .styleguide__content__section__heading {
       margin-top: 5rem;
       margin-bottom: 5rem;
-      position: relative; }
+      position: relative;
+      text-transform: uppercase; }
       .styleguide__content__section__heading:after {
         position: absolute;
         content: '';
         display: block;
         left: 0;
-        top: 100%;
+        top: 120%;
         height: 0.4rem;
         width: 5rem;
         background: var(--primary-colour); }

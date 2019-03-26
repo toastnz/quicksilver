@@ -169,12 +169,13 @@
         <div class="styleguide__content__section" id="Buttons">
             <h3 class="styleguide__content__section__heading">Buttons</h3>
             <p class="styleguide__content__section__paragraph">A simple Button component.</p>
-
+<%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Usage</h5>
             <pre><code class="language-html">&lt;a href="#" class="button">Normal Button&lt;/a>
 &lt;a href="#" class="button button--outline--primary">Outline Mode&lt;/a></code></pre>
-
+  
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+            ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <a href="#" class="button">Normal Button</a>
                 <a href="#" class="button button--secondary">Secondary Button</a>
@@ -190,7 +191,7 @@
         <div class="styleguide__content__section" id="Tables">
             <h3 class="styleguide__content__section__heading">Tables</h3>
             <p class="styleguide__content__section__paragraph">Table styles for the entire site.</p>
-
+   <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Usage</h5>
             <pre><code class="language-html">&lt;table>
     &lt;tr>
@@ -211,9 +212,9 @@
         &lt;/tr>
     &lt;/tbody>
 &lt;/table></code></pre>
-
+    
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
-
+----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <table>
                     <tr>
@@ -254,6 +255,7 @@
         <div class="styleguide__content__section" id="Lists">
             <h3 class="styleguide__content__section__heading">Lists</h3>
             <p class="styleguide__content__section__paragraph">Ordered and unordered list components.</p>
+                  <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Usage</h5>
             <pre><code class="language-html">&lt;ul>&lt;!--Change to  ol for numbered lists-->
     &lt;li>This is an unordered list item&lt;/li>
@@ -265,6 +267,7 @@
 &lt;/ul>
             </code></pre>
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+            ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <ul>
                     <li>This is an unordered list item</li>
@@ -299,8 +302,9 @@
         <div class="styleguide__content__section" id="Typograhpy">
             <h3 class="styleguide__content__section__heading">Typograhpy</h3>
             <p class="styleguide__content__section__paragraph">Heading components without overrides</p>
-
+   <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+             ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">
                     <h1>This is an H1, the most important heading on a page</h1>
@@ -320,7 +324,9 @@
 
         <div class="styleguide__content__section" id="Text">
             <h3 class="styleguide__content__section__heading">Text Block</h3>
+   <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+             ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">
                     $fauxQuickBlock
@@ -330,7 +336,9 @@
 
         <div class="styleguide__content__section" id="Video">
             <h3 class="styleguide__content__section__heading">Video Block</h3>
+              <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+             ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">
                     $fauxVideoBlock
@@ -340,8 +348,10 @@
 
         <div class="styleguide__content__section" id="Testimonial">
             <h3 class="styleguide__content__section__heading">Testimonial Block</h3>
+   <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
-            <div class="styleguide__content__section__sandbox">
+             ----------------------------------------------------------------%>
+                         <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">
                     $fauxTestimonialBlock
                 </div>
@@ -350,7 +360,9 @@
 
         <div class="styleguide__content__section" id="Image">
             <h3 class="styleguide__content__section__heading">Image Block</h3>
+   <%----------------------------------------------------------------
             <h5 class="styleguide__content__section__subtitle">Demonstration</h5>
+             ----------------------------------------------------------------%>
             <div class="styleguide__content__section__sandbox">
                 <div class="contentBlock">
                     $fauxImageBlock
