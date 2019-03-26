@@ -10490,6 +10490,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_videoBlock__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/videoBlock */ "./themes/quicksilver/js/components/videoBlock.js");
 /* harmony import */ var _components_responsiveTables__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/responsiveTables */ "./themes/quicksilver/js/components/responsiveTables.js");
+/* harmony import */ var _components_accordions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/accordions */ "./themes/quicksilver/js/components/accordions.js");
 /*------------------------------------------------------------------
 Hello world - versionsing
 ------------------------------------------------------------------*/
@@ -10505,6 +10506,42 @@ Imports
 
 
 
+
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/components/accordions.js":
+/*!********************************************************!*\
+  !*** ./themes/quicksilver/js/components/accordions.js ***!
+  \********************************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/*------------------------------------------------------------------
+Sticky header
+------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+Variables
+------------------------------------------------------------------*/
+
+var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
+$body.on('click', '.js-accordion-trigger', function (e) {
+  e.preventDefault();
+  var $accordion = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).closest('.js-accordion-item');
+
+  if ($accordion.hasClass('active')) {
+    $accordion.removeClass('active');
+    $accordion.find('.js-accordion-target').slideUp();
+  } else {
+    $accordion.addClass('active');
+    $accordion.find('.js-accordion-target').slideDown();
+  }
+});
 
 /***/ }),
 

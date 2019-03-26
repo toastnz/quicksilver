@@ -1,7 +1,6 @@
 <?php
 
 
-use Sheadawson\Linkable\Models\Link;
 use SilverStripe\Assets\File;
 use SilverStripe\Control\Controller;
 use SilverStripe\ORM\ArrayList;
@@ -10,13 +9,15 @@ use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
 use SilverStripe\Assets\Image;
 use SilverStripe\Versioned\Versioned;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\FieldType\DBHTMLText;
 
 class StyleGuideController extends Controller
 {
 
-    private static $allowed_actions = ['index'];
-
     private static $url_segment = '_styleguide';
+
+    private static $allowed_actions = ['index'];
 
     public function init()
     {
@@ -65,7 +66,7 @@ class StyleGuideController extends Controller
         $arrayData = new ArrayData([
             'VideoType' => 'youtube',
             'VideoID'   => 'ScMzIvxBSi4',
-            'Caption'   => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+            'Caption'   => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ipsum dolor sit amet.',
             'Thumbnail' => Image::find('styleguide_placeholder.jpg')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\VideoBlock');
@@ -74,7 +75,8 @@ class StyleGuideController extends Controller
     public function fauxImageBlock()
     {
         $arrayData = new ArrayData([
-            'Image' => Image::find('styleguide_placeholder.jpg')
+            'Image'   => Image::find('styleguide_placeholder.jpg'),
+            'Caption' => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ipsum dolor sit amet.',
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\ImageBlock');
     }
@@ -85,20 +87,20 @@ class StyleGuideController extends Controller
         $accordionItems = new ArrayList([
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 1',
-                'Content'      => 'Accordion Content 1'
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p><p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p><p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
             ]),
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 2',
-                'Content'      => 'Accordion Content 2'
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
             ]),
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 3',
-                'Content'      => 'Accordion Content 3'
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
             ]),
         ]);
 
         $arrayData = new ArrayData([
-            'accordionItems' => $accordionItems
+            'Children' => $accordionItems
         ]);
 
         return $arrayData->renderWith('Toast\QuickBlocks\AccordionBlock');
@@ -107,7 +109,7 @@ class StyleGuideController extends Controller
     public function fauxQuickBlock()
     {
         $arrayData = new ArrayData([
-            'Content' => 'This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and This is body copy Lorem Ipsum is simply dummy text of the printing and'
+            'Content' => DBField::create_field(DBHTMLText::class, '<h5 class="colour--primary"><b>BUSINESS OVERVIEW</b></h5><h1 class="h2">We are a major Australian manufacturer of roll-formed steel building products.</h1><h6>Including roof and wall cladding, guttering, fascia, purlins, flooring and structural formwork.</h6><p>These products, along with complementary products and services, are delivered through a nationwide network of manufacturing and distribution centres, strategically located to ensure coverage of major metropolitan and regional markets.</p>')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\QuickBlock');
     }
@@ -115,6 +117,7 @@ class StyleGuideController extends Controller
     public function fauxDownloadBlock()
     {
         $files     = new ArrayList([
+            Image::find('styleguide_placeholder.jpg'),
             Image::find('styleguide_placeholder.jpg'),
             Image::find('styleguide_placeholder.jpg'),
         ]);
@@ -134,6 +137,7 @@ class StyleGuideController extends Controller
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\SplitBlock');
     }
+
 
     public function getTags()
     {

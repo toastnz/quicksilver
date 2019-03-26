@@ -6,13 +6,11 @@ $base: 10px;
 $base-line-height: 1.4;
 $base-type-margin: 1.8rem;
 
-
 //------------------------------------------------------------------
 // Declare our font-familys
 //------------------------------------------------------------------
 
-@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900');
-
+@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900");
 
 $primary-font: "Montserrat", Helvetica, sans-serif;
 $secondary-font: "Montserrat", Helvetica, sans-serif;
@@ -30,24 +28,50 @@ $link-colour: $primary;
 //------------------------------------------------------------------
 
 $font-size-map: (
-        'h1' : (3.5rem, 5.0rem),
-        'h2' : (3.0rem, 4.0rem),
-        'h3' : (2.4rem, 2.8rem),
-        'h4' : (2.0rem, 2.8rem),
-        'h5' : (1.8rem, 2.2rem),
-        'h6' : (1.6rem, 1.8rem),
-        'p.large' : (1.6rem, 2.0rem),
-        'p' : (1.4rem, 1.6rem),
-        'small' : (1.0rem, 1.3rem),
+  "h1": (
+    3.5rem,
+    5rem
+  ),
+  "h2": (
+    3rem,
+    4rem
+  ),
+  "h3": (
+    2.4rem,
+    2.8rem
+  ),
+  "h4": (
+    2rem,
+    2.8rem
+  ),
+  "h5": (
+    1.8rem,
+    2.2rem
+  ),
+  "h6": (
+    1.6rem,
+    1.8rem
+  ),
+  "p.large": (
+    1.6rem,
+    2rem
+  ),
+  "p": (
+    1.4rem,
+    1.6rem
+  ),
+  "small": (
+    1rem,
+    1.3rem
+  )
 );
-
 
 //------------------------------------------------------------------
 // list of all elements that we want styled as paragraph text.
 // note: <p> does not need to be included in this list.
 //------------------------------------------------------------------
 
-$paragraph-text-elements:  b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
+$paragraph-text-elements: b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
 
 //------------------------------------------------------------------
 // Font Families
@@ -224,11 +248,6 @@ body {
   }
 }
 
-::selection {
-  color: $white;
-  background: rgba($primary, .99999);
-}
-
 //------------------------------------------------------------------
 // WYSIWYG defaults
 //------------------------------------------------------------------
@@ -261,26 +280,25 @@ body {
 }
 
 // Loop our $paragraph-text-elements and extend the %p to avoid code repetition
-@each $element in $paragraph-text-elements {
-  #{$element} {
-    @extend %p;
-  }
-} 
+// @each $element in $paragraph-text-elements {
+//   #{$element} {
+//     @extend %p;
+//   }
+// }
 
+// // This allows any text elements contained in h tags to inherit the h tag font size
+// @for $i from 1 through 6 {
+//   h#{$i},
+//   .h#{$i},
+//   %h#{$i} {
 
-// This allows any text elements contained in h tags to inherit the h tag font size
-@for $i from 1 through 6 {
-  h#{$i},
-  .h#{$i},
-  %h#{$i} {
-
-    @each $element in $paragraph-text-elements {
-      > #{$element}, > .#{$element} {
-        font-size: inherit;
-      }
-    }
-  }
-}
+//     // @each $element in $paragraph-text-elements {
+//       // > #{$element}, > .#{$element} {
+//         // font-size: inherit;
+//       // }
+//     // }
+//   }
+// }
 
 //------------------------------------------------------------------
 // Lists
@@ -288,7 +306,6 @@ body {
 
 ul,
 ol {
-
   &:not(.unstyled) {
     padding-left: 2rem;
     margin-bottom: 3rem;
@@ -316,16 +333,15 @@ ul {
   }
 
   &.coloured {
-
     li {
       position: relative;
 
       &:before {
         @include pseudo;
-        width: .6rem;
-        height: .6rem;
+        width: 0.6rem;
+        height: 0.6rem;
         border-radius: 50%;
-        top: .5em;
+        top: 0.5em;
         left: -1.9rem;
         background: $primary;
       }
@@ -338,7 +354,6 @@ ul {
         }
       }
     }
-
   }
 }
 
@@ -361,7 +376,7 @@ i {
 .bold,
 strong,
 b {
-  @include bold;
+  font-weight: bold !important;
 }
 
 //------------------------------------------------------------------
@@ -375,9 +390,8 @@ caption {
 .js-table {
   position: relative;
   overflow: auto;
-  padding: 0 2rem;
-  margin: 0 -2rem 2rem;
-
+  padding: 0 2rem 4rem;
+  margin: 0 -2rem 0rem;
 
   &::-webkit-scrollbar-track {
     background-color: $grey-light;
@@ -402,22 +416,21 @@ table {
   border-spacing: 0;
   width: 100%;
   margin: 3rem auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba($blue-dark, .2), 0 5px 15px rgba($blue-dark, .14);
+  box-shadow: 0 15px 25px rgba($blue-dark, 0.2), 0 5px 10px rgba($blue-dark, 0.14);
   min-width: $md;
   border: 2px solid $white;
 
   thead {
-    border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 
   tr {
     background: $off-white;
     border-bottom: 2px solid $white;
     margin-bottom: 5px;
-
 
     tr:nth-child(even) {
       background: $grey-light;
@@ -507,7 +520,6 @@ img {
       margin: 0;
     }
   }
-
 }
 
 cite {
@@ -526,7 +538,6 @@ hr {
   margin: 3rem auto;
 }
 
-
 //------------------------------------------------------------------
 // Text Alignment
 //------------------------------------------------------------------
@@ -544,9 +555,7 @@ hr {
 }
 
 @each $breakpoint, $value in $breakpoints {
-
   @include media($value) {
-
     .#{$breakpoint}-text-left {
       text-align: left;
     }

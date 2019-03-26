@@ -2,3 +2,84 @@
 // Accordion Block
 //------------------------------------------------------------------
 
+.accordionBlock {
+  &--fullwidth {
+    .accordionBlock__wrap {
+      max-width: 100%;
+    }
+  }
+
+  &__wrap {
+    &__item {
+      position: relative;
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+      margin-bottom: -1px;
+
+      &.active {
+        .accordionBlock__wrap__item__header:before,
+        .accordionBlock__wrap__item__header:after {
+          transform: rotate(180deg);
+        }
+      }
+
+      &__header {
+        position: relative;
+        padding: 2rem 0;
+        cursor: pointer;
+
+        &.active,
+        &:hover {
+          * {
+            color: $primary;
+          }
+
+          &:before,
+          &:after {
+            background: $primary;
+          }
+        }
+
+        h5 {
+          margin-bottom: 0;
+          padding-right: 2.5rem;
+
+          * {
+            transition: all 111ms ease;
+          }
+        }
+
+        &:before {
+          @include pseudo;
+          width: 2.2rem;
+          height: 0.3rem;
+          background: black;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -1px;
+          transform: rotate(90deg);
+          transition: transform 444ms ease, background 111ms ease;
+        }
+
+        &:after {
+          @include pseudo;
+          width: 2.2rem;
+          height: 0.3rem;
+          background: black;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -1px;
+          transition: transform 444ms ease, background 111ms ease;
+        }
+      }
+
+      &__content {
+        &__wrap {
+          padding: 1rem 0 2rem;
+        }
+      }
+    }
+  }
+}

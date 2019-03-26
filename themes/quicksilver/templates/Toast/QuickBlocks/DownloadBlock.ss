@@ -1,8 +1,8 @@
 <%----------------------------------------------------------------
 Download Block
 ----------------------------------------------------------------%>
-<div class="contentBlock downloadBlock">
-    <div class="downloadBlock__wrap row">
+<div class="contentBlock downloadBlock <% if $Fullwidth %>downloadBlock--fullwidth<% end_if %>">
+    <div class="contentBlock__wrap downloadBlock__wrap row">
         <div class="column">
 
             <%----------------------------------------------------------------
@@ -17,13 +17,13 @@ Download Block
                         Download Block Item
                         ----------------------------------------------------------------%>
                         <li class="downloadBlock__wrap__list__item">
-                            <a href="{$DownloadLink}" title="{$Title}" download="$Title">
+                            <a href="{$DownloadLink}" title="{$Title}" download="$Title" class="downloadBlock__wrap__list__item__link">
 
-                                <div class="downloadBlock__wrap__item__icon">
+                                <div class="downloadBlock__wrap__list__item__link__icon">
                                     $SVG('download')
                                 </div>
 
-                                <p class="downloadBlock__wrap__list__item__details">
+                                <p class="downloadBlock__wrap__list__item__link__details">
                                     <strong>{$Title}</strong>{$FileInfo}
                                 </p>
                             </a>

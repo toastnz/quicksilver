@@ -14,7 +14,8 @@ Imports
 ------------------------------------------------------------------*/
 
 import './components/videoBlock';
-import './components/responsiveTables';
+import './components/responsiveTables'; 
+import './components/accordions';
 
 
 

@@ -188,9 +188,7 @@ table {
     height: 100%; }
 
 html,
-body, .bold,
-strong,
-b, table tr th, .testimonialBlock__wrap__content, .testimonialBlock__wrap__credit {
+body, table tr th, .testimonialBlock__wrap__content, .testimonialBlock__wrap__credit {
   font-family: "Montserrat", Helvetica, sans-serif; }
 
 html,
@@ -206,10 +204,6 @@ body {
     color: var(--primary-colour);
     text-decoration: none; }
 
-::selection {
-  color: #fff;
-  background: rgba(var(--primary-colour), 0.99999); }
-
 h1,
 .h1, h2,
 .h2, h3,
@@ -217,10 +211,8 @@ h1,
 .h4, h5,
 .h5, h6,
 .h6, table tr th, cite, p.large,
-.p.large, b.large, em.large, i.large, li.large, input.large, textarea.large, td.large, tr.large, tl.large, dl.large, dt.large, strong.large, pre.large, label.large, .large.contentBlock,
-.large.button--error,
-form .inputWrap__actions .large.action,
-form .inputWrap--actions .large.action, form .large[type="submit"], .loginWrap__content .large.action,
+.p.large, .large.contentBlock,
+.large.button--error, form .large[type="submit"],
 .large.button,
 form .inputWrap--text input.large,
 form .inputWrap--numeric input.large,
@@ -230,9 +222,7 @@ form .inputWrap--textarea textarea.large,
 form .inputWrap--countrydropdown select.large,
 form .inputWrap--dropdown select.large,
 form .inputWrap--select select.large, .styleguide__aside a.large, p,
-.p,
-b, em, i, li, input, textarea, td, tr, tl, dl, dt,
-strong, pre, label, .contentBlock,
+.p, .contentBlock,
 .button--error,
 form .inputWrap__actions .action,
 form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .action,
@@ -310,20 +300,6 @@ cite {
 
 p.large,
 .p.large,
-b.large,
-em.large,
-i.large,
-li.large,
-input.large,
-textarea.large,
-td.large,
-tr.large,
-tl.large,
-dl.large,
-dt.large,
-strong.large,
-pre.large,
-label.large,
 .large.contentBlock,
 .large.button--error,
 form .inputWrap__actions .large.action,
@@ -345,20 +321,6 @@ form .inputWrap--select select.large,
   @media only screen and (min-width: 1024px) {
     p.large,
     .p.large,
-    b.large,
-    em.large,
-    i.large,
-    li.large,
-    input.large,
-    textarea.large,
-    td.large,
-    tr.large,
-    tl.large,
-    dl.large,
-    dt.large,
-    strong.large,
-    pre.large,
-    label.large,
     .large.contentBlock,
     .large.button--error,
     form .inputWrap__actions .large.action,
@@ -379,20 +341,6 @@ form .inputWrap--select select.large,
 
 p,
 .p,
-b,
-em,
-i,
-li,
-input,
-textarea,
-td,
-tr,
-tl,
-dl,
-dt,
-strong,
-pre,
-label,
 .contentBlock,
 .button--error,
 form .inputWrap__actions .action,
@@ -414,20 +362,6 @@ form .inputWrap--select select,
   @media only screen and (min-width: 1024px) {
     p,
     .p,
-    b,
-    em,
-    i,
-    li,
-    input,
-    textarea,
-    td,
-    tr,
-    tl,
-    dl,
-    dt,
-    strong,
-    pre,
-    label,
     .contentBlock,
     .button--error,
     form .inputWrap__actions .action,
@@ -454,510 +388,6 @@ small,
     small,
     .small {
       font-size: 1.3rem; } }
-
-h1 > b, h1 > .b,
-.h1 > b,
-.h1 > .b {
-  font-size: inherit; }
-
-h1 > em, h1 > .em,
-.h1 > em,
-.h1 > .em {
-  font-size: inherit; }
-
-h1 > i, h1 > .i,
-.h1 > i,
-.h1 > .i {
-  font-size: inherit; }
-
-h1 > li, h1 > .li,
-.h1 > li,
-.h1 > .li {
-  font-size: inherit; }
-
-h1 > input, h1 > .input,
-.h1 > input,
-.h1 > .input {
-  font-size: inherit; }
-
-h1 > textarea, h1 > .textarea,
-.h1 > textarea,
-.h1 > .textarea {
-  font-size: inherit; }
-
-h1 > td, h1 > .td,
-.h1 > td,
-.h1 > .td {
-  font-size: inherit; }
-
-h1 > tr, h1 > .tr,
-.h1 > tr,
-.h1 > .tr {
-  font-size: inherit; }
-
-h1 > tl, h1 > .tl,
-.h1 > tl,
-.h1 > .tl {
-  font-size: inherit; }
-
-h1 > dl, h1 > .dl,
-.h1 > dl,
-.h1 > .dl {
-  font-size: inherit; }
-
-h1 > dt, h1 > .dt,
-.h1 > dt,
-.h1 > .dt {
-  font-size: inherit; }
-
-h1 > strong, h1 > .strong,
-.h1 > strong,
-.h1 > .strong {
-  font-size: inherit; }
-
-h1 > pre, h1 > .pre,
-.h1 > pre,
-.h1 > .pre {
-  font-size: inherit; }
-
-h1 > label, h1 > .label,
-.h1 > label,
-.h1 > .label {
-  font-size: inherit; }
-
-h2 > b, h2 > .b,
-.h2 > b,
-.h2 > .b {
-  font-size: inherit; }
-
-h2 > em, h2 > .em,
-.h2 > em,
-.h2 > .em {
-  font-size: inherit; }
-
-h2 > i, h2 > .i,
-.h2 > i,
-.h2 > .i {
-  font-size: inherit; }
-
-h2 > li, h2 > .li,
-.h2 > li,
-.h2 > .li {
-  font-size: inherit; }
-
-h2 > input, h2 > .input,
-.h2 > input,
-.h2 > .input {
-  font-size: inherit; }
-
-h2 > textarea, h2 > .textarea,
-.h2 > textarea,
-.h2 > .textarea {
-  font-size: inherit; }
-
-h2 > td, h2 > .td,
-.h2 > td,
-.h2 > .td {
-  font-size: inherit; }
-
-h2 > tr, h2 > .tr,
-.h2 > tr,
-.h2 > .tr {
-  font-size: inherit; }
-
-h2 > tl, h2 > .tl,
-.h2 > tl,
-.h2 > .tl {
-  font-size: inherit; }
-
-h2 > dl, h2 > .dl,
-.h2 > dl,
-.h2 > .dl {
-  font-size: inherit; }
-
-h2 > dt, h2 > .dt,
-.h2 > dt,
-.h2 > .dt {
-  font-size: inherit; }
-
-h2 > strong, h2 > .strong,
-.h2 > strong,
-.h2 > .strong {
-  font-size: inherit; }
-
-h2 > pre, h2 > .pre,
-.h2 > pre,
-.h2 > .pre {
-  font-size: inherit; }
-
-h2 > label, h2 > .label,
-.h2 > label,
-.h2 > .label {
-  font-size: inherit; }
-
-h3 > b, h3 > .b,
-.h3 > b,
-.h3 > .b,
-caption > b,
-caption > .b {
-  font-size: inherit; }
-
-h3 > em, h3 > .em,
-.h3 > em,
-.h3 > .em,
-caption > em,
-caption > .em {
-  font-size: inherit; }
-
-h3 > i, h3 > .i,
-.h3 > i,
-.h3 > .i,
-caption > i,
-caption > .i {
-  font-size: inherit; }
-
-h3 > li, h3 > .li,
-.h3 > li,
-.h3 > .li,
-caption > li,
-caption > .li {
-  font-size: inherit; }
-
-h3 > input, h3 > .input,
-.h3 > input,
-.h3 > .input,
-caption > input,
-caption > .input {
-  font-size: inherit; }
-
-h3 > textarea, h3 > .textarea,
-.h3 > textarea,
-.h3 > .textarea,
-caption > textarea,
-caption > .textarea {
-  font-size: inherit; }
-
-h3 > td, h3 > .td,
-.h3 > td,
-.h3 > .td,
-caption > td,
-caption > .td {
-  font-size: inherit; }
-
-h3 > tr, h3 > .tr,
-.h3 > tr,
-.h3 > .tr,
-caption > tr,
-caption > .tr {
-  font-size: inherit; }
-
-h3 > tl, h3 > .tl,
-.h3 > tl,
-.h3 > .tl,
-caption > tl,
-caption > .tl {
-  font-size: inherit; }
-
-h3 > dl, h3 > .dl,
-.h3 > dl,
-.h3 > .dl,
-caption > dl,
-caption > .dl {
-  font-size: inherit; }
-
-h3 > dt, h3 > .dt,
-.h3 > dt,
-.h3 > .dt,
-caption > dt,
-caption > .dt {
-  font-size: inherit; }
-
-h3 > strong, h3 > .strong,
-.h3 > strong,
-.h3 > .strong,
-caption > strong,
-caption > .strong {
-  font-size: inherit; }
-
-h3 > pre, h3 > .pre,
-.h3 > pre,
-.h3 > .pre,
-caption > pre,
-caption > .pre {
-  font-size: inherit; }
-
-h3 > label, h3 > .label,
-.h3 > label,
-.h3 > .label,
-caption > label,
-caption > .label {
-  font-size: inherit; }
-
-h4 > b, h4 > .b,
-.h4 > b,
-.h4 > .b {
-  font-size: inherit; }
-
-h4 > em, h4 > .em,
-.h4 > em,
-.h4 > .em {
-  font-size: inherit; }
-
-h4 > i, h4 > .i,
-.h4 > i,
-.h4 > .i {
-  font-size: inherit; }
-
-h4 > li, h4 > .li,
-.h4 > li,
-.h4 > .li {
-  font-size: inherit; }
-
-h4 > input, h4 > .input,
-.h4 > input,
-.h4 > .input {
-  font-size: inherit; }
-
-h4 > textarea, h4 > .textarea,
-.h4 > textarea,
-.h4 > .textarea {
-  font-size: inherit; }
-
-h4 > td, h4 > .td,
-.h4 > td,
-.h4 > .td {
-  font-size: inherit; }
-
-h4 > tr, h4 > .tr,
-.h4 > tr,
-.h4 > .tr {
-  font-size: inherit; }
-
-h4 > tl, h4 > .tl,
-.h4 > tl,
-.h4 > .tl {
-  font-size: inherit; }
-
-h4 > dl, h4 > .dl,
-.h4 > dl,
-.h4 > .dl {
-  font-size: inherit; }
-
-h4 > dt, h4 > .dt,
-.h4 > dt,
-.h4 > .dt {
-  font-size: inherit; }
-
-h4 > strong, h4 > .strong,
-.h4 > strong,
-.h4 > .strong {
-  font-size: inherit; }
-
-h4 > pre, h4 > .pre,
-.h4 > pre,
-.h4 > .pre {
-  font-size: inherit; }
-
-h4 > label, h4 > .label,
-.h4 > label,
-.h4 > .label {
-  font-size: inherit; }
-
-h5 > b, h5 > .b,
-.h5 > b,
-.h5 > .b {
-  font-size: inherit; }
-
-h5 > em, h5 > .em,
-.h5 > em,
-.h5 > .em {
-  font-size: inherit; }
-
-h5 > i, h5 > .i,
-.h5 > i,
-.h5 > .i {
-  font-size: inherit; }
-
-h5 > li, h5 > .li,
-.h5 > li,
-.h5 > .li {
-  font-size: inherit; }
-
-h5 > input, h5 > .input,
-.h5 > input,
-.h5 > .input {
-  font-size: inherit; }
-
-h5 > textarea, h5 > .textarea,
-.h5 > textarea,
-.h5 > .textarea {
-  font-size: inherit; }
-
-h5 > td, h5 > .td,
-.h5 > td,
-.h5 > .td {
-  font-size: inherit; }
-
-h5 > tr, h5 > .tr,
-.h5 > tr,
-.h5 > .tr {
-  font-size: inherit; }
-
-h5 > tl, h5 > .tl,
-.h5 > tl,
-.h5 > .tl {
-  font-size: inherit; }
-
-h5 > dl, h5 > .dl,
-.h5 > dl,
-.h5 > .dl {
-  font-size: inherit; }
-
-h5 > dt, h5 > .dt,
-.h5 > dt,
-.h5 > .dt {
-  font-size: inherit; }
-
-h5 > strong, h5 > .strong,
-.h5 > strong,
-.h5 > .strong {
-  font-size: inherit; }
-
-h5 > pre, h5 > .pre,
-.h5 > pre,
-.h5 > .pre {
-  font-size: inherit; }
-
-h5 > label, h5 > .label,
-.h5 > label,
-.h5 > .label {
-  font-size: inherit; }
-
-h6 > b, h6 > .b,
-.h6 > b,
-.h6 > .b,
-table tr th > b,
-cite > b,
-table tr th > .b,
-cite > .b {
-  font-size: inherit; }
-
-h6 > em, h6 > .em,
-.h6 > em,
-.h6 > .em,
-table tr th > em,
-cite > em,
-table tr th > .em,
-cite > .em {
-  font-size: inherit; }
-
-h6 > i, h6 > .i,
-.h6 > i,
-.h6 > .i,
-table tr th > i,
-cite > i,
-table tr th > .i,
-cite > .i {
-  font-size: inherit; }
-
-h6 > li, h6 > .li,
-.h6 > li,
-.h6 > .li,
-table tr th > li,
-cite > li,
-table tr th > .li,
-cite > .li {
-  font-size: inherit; }
-
-h6 > input, h6 > .input,
-.h6 > input,
-.h6 > .input,
-table tr th > input,
-cite > input,
-table tr th > .input,
-cite > .input {
-  font-size: inherit; }
-
-h6 > textarea, h6 > .textarea,
-.h6 > textarea,
-.h6 > .textarea,
-table tr th > textarea,
-cite > textarea,
-table tr th > .textarea,
-cite > .textarea {
-  font-size: inherit; }
-
-h6 > td, h6 > .td,
-.h6 > td,
-.h6 > .td,
-table tr th > td,
-cite > td,
-table tr th > .td,
-cite > .td {
-  font-size: inherit; }
-
-h6 > tr, h6 > .tr,
-.h6 > tr,
-.h6 > .tr,
-table tr th > tr,
-cite > tr,
-table tr th > .tr,
-cite > .tr {
-  font-size: inherit; }
-
-h6 > tl, h6 > .tl,
-.h6 > tl,
-.h6 > .tl,
-table tr th > tl,
-cite > tl,
-table tr th > .tl,
-cite > .tl {
-  font-size: inherit; }
-
-h6 > dl, h6 > .dl,
-.h6 > dl,
-.h6 > .dl,
-table tr th > dl,
-cite > dl,
-table tr th > .dl,
-cite > .dl {
-  font-size: inherit; }
-
-h6 > dt, h6 > .dt,
-.h6 > dt,
-.h6 > .dt,
-table tr th > dt,
-cite > dt,
-table tr th > .dt,
-cite > .dt {
-  font-size: inherit; }
-
-h6 > strong, h6 > .strong,
-.h6 > strong,
-.h6 > .strong,
-table tr th > strong,
-cite > strong,
-table tr th > .strong,
-cite > .strong {
-  font-size: inherit; }
-
-h6 > pre, h6 > .pre,
-.h6 > pre,
-.h6 > .pre,
-table tr th > pre,
-cite > pre,
-table tr th > .pre,
-cite > .pre {
-  font-size: inherit; }
-
-h6 > label, h6 > .label,
-.h6 > label,
-.h6 > .label,
-table tr th > label,
-cite > label,
-table tr th > .label,
-cite > .label {
-  font-size: inherit; }
 
 ul:not(.unstyled),
 ol:not(.unstyled) {
@@ -987,10 +417,10 @@ ul.coloured li {
     position: absolute;
     content: '';
     display: block;
-    width: .6rem;
-    height: .6rem;
+    width: 0.6rem;
+    height: 0.6rem;
     border-radius: 50%;
-    top: .5em;
+    top: 0.5em;
     left: -1.9rem;
     background: var(--primary-colour); }
 
@@ -1008,13 +438,13 @@ i {
 .bold,
 strong,
 b {
-  font-weight: 700; }
+  font-weight: bold !important; }
 
 .js-table {
   position: relative;
   overflow: auto;
-  padding: 0 2rem;
-  margin: 0 -2rem 2rem; }
+  padding: 0 2rem 4rem;
+  margin: 0 -2rem 0rem; }
   .js-table::-webkit-scrollbar-track {
     background-color: #ebebeb; }
   .js-table::-webkit-scrollbar {
@@ -1032,14 +462,14 @@ table {
   border-spacing: 0;
   width: 100%;
   margin: 3rem auto;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 15px 35px rgba(32, 46, 60, 0.2), 0 5px 15px rgba(32, 46, 60, 0.14);
+  box-shadow: 0 15px 25px rgba(32, 46, 60, 0.2), 0 5px 10px rgba(32, 46, 60, 0.14);
   min-width: 768px;
   border: 2px solid #fff; }
   table thead {
-    border-radius: .5rem; }
+    border-radius: 0.5rem; }
   table tr {
     background: #f7f7f7;
     border-bottom: 2px solid #fff;
@@ -2293,6 +1723,66 @@ Custom Styles
       border-radius: 0.5rem;
       margin-bottom: 6rem; }
 
+.accordionBlock--fullwidth .accordionBlock__wrap {
+  max-width: 100%; }
+
+.accordionBlock__wrap__item {
+  position: relative;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin-bottom: -1px; }
+  .accordionBlock__wrap__item.active .accordionBlock__wrap__item__header:before,
+  .accordionBlock__wrap__item.active .accordionBlock__wrap__item__header:after {
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg); }
+  .accordionBlock__wrap__item__header {
+    position: relative;
+    padding: 2rem 0;
+    cursor: pointer; }
+    .accordionBlock__wrap__item__header.active *, .accordionBlock__wrap__item__header:hover * {
+      color: var(--primary-colour); }
+    .accordionBlock__wrap__item__header.active:before, .accordionBlock__wrap__item__header.active:after, .accordionBlock__wrap__item__header:hover:before, .accordionBlock__wrap__item__header:hover:after {
+      background: var(--primary-colour); }
+    .accordionBlock__wrap__item__header h5 {
+      margin-bottom: 0;
+      padding-right: 2.5rem; }
+      .accordionBlock__wrap__item__header h5 * {
+        transition: all 111ms ease; }
+    .accordionBlock__wrap__item__header:before {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 2.2rem;
+      height: 0.3rem;
+      background: black;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -1px;
+      -webkit-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+              transform: rotate(90deg);
+      transition: background 111ms ease, -webkit-transform 444ms ease;
+      transition: transform 444ms ease, background 111ms ease;
+      transition: transform 444ms ease, background 111ms ease, -webkit-transform 444ms ease; }
+    .accordionBlock__wrap__item__header:after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 2.2rem;
+      height: 0.3rem;
+      background: black;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      margin-top: -1px;
+      transition: background 111ms ease, -webkit-transform 444ms ease;
+      transition: transform 444ms ease, background 111ms ease;
+      transition: transform 444ms ease, background 111ms ease, -webkit-transform 444ms ease; }
+  .accordionBlock__wrap__item__content__wrap {
+    padding: 1rem 0 2rem; }
+
 .styleguide__content__section__sandbox .contentBlock {
   margin: 0 auto; }
 
@@ -2312,6 +1802,40 @@ Custom Styles
     display: block;
     margin: 0 auto;
     position: relative; }
+
+.downloadBlock__wrap__list__item {
+  border-bottom: 1px solid #000;
+  margin: 0; }
+  .downloadBlock__wrap__list__item:first-of-type {
+    border-top: 1px solid #000; }
+  .downloadBlock__wrap__list__item__link {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    width: 100%;
+    color: #000;
+    padding: 1.4rem 2rem 1rem; }
+    .downloadBlock__wrap__list__item__link strong {
+      display: block;
+      margin: 0;
+      transition: all 222ms ease; }
+    .downloadBlock__wrap__list__item__link__icon {
+      margin-right: 2rem; }
+      .downloadBlock__wrap__list__item__link__icon svg {
+        overflow: visible; }
+        .downloadBlock__wrap__list__item__link__icon svg path {
+          transition: all 222ms ease; }
+    .downloadBlock__wrap__list__item__link__details {
+      margin-bottom: 1rem; }
+    .downloadBlock__wrap__list__item__link:hover strong {
+      color: var(--primary-colour); }
+    .downloadBlock__wrap__list__item__link:hover path {
+      fill: var(--primary-colour); }
+      .downloadBlock__wrap__list__item__link:hover path:last-of-type {
+        -webkit-transform: translateY(3px);
+            -ms-transform: translateY(3px);
+                transform: translateY(3px); }
 
 .testimonialBlock {
   margin: 4rem auto; }
