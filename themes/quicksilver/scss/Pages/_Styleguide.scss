@@ -1,13 +1,12 @@
 //------------------------------------------------------------------
 // Styleguide
 //------------------------------------------------------------------
-$theme: #377bff;
+$theme: var(--primary-colour);
 
 .styleguide {
-
   &__aside {
     background: $off-white;
-    position: fixed;
+    position: fixed; 
     top: 0;
     bottom: 0;
     left: 0;
@@ -45,7 +44,7 @@ $theme: #377bff;
           @include pseudo;
           left: 0;
           top: 100%;
-          height: .4rem;
+          height: 0.4rem;
           width: 5rem;
           background: $theme;
         }
@@ -57,13 +56,13 @@ $theme: #377bff;
       }
 
       &__paragraph {
-        opacity: .6;
+        opacity: 0.6;
       }
 
       &__sandbox {
         padding: 4rem;
         border: 1px solid $grey-light;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         margin-bottom: 6rem;
       }
     }

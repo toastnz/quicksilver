@@ -34,8 +34,8 @@ $error-button-color: $error-colour;
     border-color: $secondary;
 
     @include active {
-      background-color: lighten($secondary, 4%);
-      border-color: lighten($secondary, 4%);
+      // background-color: lighten($secondary, 4%);
+      // border-color: lighten($secondary, 4%);
       color: $white !important;
     }
   }
@@ -46,8 +46,6 @@ $error-button-color: $error-colour;
       border: $value;
 
       @include active {
-        background-color: lighten($value, 4%);
-        border-color: lighten($value, 4%);
         color: $white !important;
       }
 
@@ -63,7 +61,6 @@ $error-button-color: $error-colour;
       padding: .8rem 1.9rem .7rem;
 
       @include active {
-        border-color: lighten($value, 4%);
         background-color: transparent;
       }
     }

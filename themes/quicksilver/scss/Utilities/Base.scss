@@ -47,7 +47,7 @@ $font-size-map: (
 // note: <p> does not need to be included in this list.
 //------------------------------------------------------------------
 
-$paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
+$paragraph-text-elements:  b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
 
 //------------------------------------------------------------------
 // Font Families
@@ -265,7 +265,7 @@ body {
   #{$element} {
     @extend %p;
   }
-}
+} 
 
 
 // This allows any text elements contained in h tags to inherit the h tag font size
@@ -339,16 +339,6 @@ ul {
       }
     }
 
-    // See Colours.scss
-    @each $colour, $value in $colour-map {
-      &.coloured--#{$colour} {
-        li {
-          &:before {
-            background: $value;
-          }
-        }
-      }
-    }
   }
 }
 
@@ -512,12 +502,6 @@ img {
     margin: 3rem;
     padding: 0 2rem;
     border-left: 4px solid $primary;
-
-    @each $colour, $value in $colour-map {
-      &.blockquote--#{$colour} {
-        border-color: $value;
-      }
-    }
 
     p {
       margin: 0;

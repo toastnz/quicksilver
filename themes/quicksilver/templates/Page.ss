@@ -10,12 +10,15 @@
       data-url-segment="$URLSegment">
 <div class="tingle-content-wrapper">
 
+<% include Type %>
+
+<div id="type">
     <% include Header %>
 
     $Layout
 
     <% include Footer %>
-
+</div>
     <% if $SiteConfig.GoogleTagManagerID %>
         <!-- Google Tag Manager (noscript) -->
         <noscript>

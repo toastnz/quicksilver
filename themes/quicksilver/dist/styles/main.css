@@ -148,10 +148,10 @@ table {
   color: #262626; }
 
 .colour--primary {
-  color: #377bff; }
+  color: var(--primary-colour); }
 
 .colour--secondary {
-  color: #232427; }
+  color: var(--secondary-colour); }
 
 .colour--tertiary {
   color: #6e8224; }
@@ -203,12 +203,12 @@ body {
     -moz-osx-font-smoothing: grayscale; }
   html a:not(.button),
   body a:not(.button) {
-    color: #377bff;
+    color: var(--primary-colour);
     text-decoration: none; }
 
 ::selection {
   color: #fff;
-  background: rgba(55, 123, 255, 0.99999); }
+  background: rgba(var(--primary-colour), 0.99999); }
 
 h1,
 .h1, h2,
@@ -217,7 +217,7 @@ h1,
 .h4, h5,
 .h5, h6,
 .h6, table tr th, cite, p.large,
-.p.large, span.large, b.large, em.large, i.large, li.large, input.large, textarea.large, td.large, tr.large, tl.large, dl.large, dt.large, strong.large, pre.large, label.large, .large.contentBlock,
+.p.large, b.large, em.large, i.large, li.large, input.large, textarea.large, td.large, tr.large, tl.large, dl.large, dt.large, strong.large, pre.large, label.large, .large.contentBlock,
 .large.button--error,
 form .inputWrap__actions .large.action,
 form .inputWrap--actions .large.action, form .large[type="submit"], .loginWrap__content .large.action,
@@ -230,7 +230,7 @@ form .inputWrap--textarea textarea.large,
 form .inputWrap--countrydropdown select.large,
 form .inputWrap--dropdown select.large,
 form .inputWrap--select select.large, .styleguide__aside a.large, p,
-.p, span,
+.p,
 b, em, i, li, input, textarea, td, tr, tl, dl, dt,
 strong, pre, label, .contentBlock,
 .button--error,
@@ -310,7 +310,6 @@ cite {
 
 p.large,
 .p.large,
-span.large,
 b.large,
 em.large,
 i.large,
@@ -346,7 +345,6 @@ form .inputWrap--select select.large,
   @media only screen and (min-width: 1024px) {
     p.large,
     .p.large,
-    span.large,
     b.large,
     em.large,
     i.large,
@@ -381,7 +379,6 @@ form .inputWrap--select select.large,
 
 p,
 .p,
-span,
 b,
 em,
 i,
@@ -417,7 +414,6 @@ form .inputWrap--select select,
   @media only screen and (min-width: 1024px) {
     p,
     .p,
-    span,
     b,
     em,
     i,
@@ -458,11 +454,6 @@ small,
     small,
     .small {
       font-size: 1.3rem; } }
-
-h1 > span, h1 > .span,
-.h1 > span,
-.h1 > .span {
-  font-size: inherit; }
 
 h1 > b, h1 > .b,
 .h1 > b,
@@ -534,11 +525,6 @@ h1 > label, h1 > .label,
 .h1 > .label {
   font-size: inherit; }
 
-h2 > span, h2 > .span,
-.h2 > span,
-.h2 > .span {
-  font-size: inherit; }
-
 h2 > b, h2 > .b,
 .h2 > b,
 .h2 > .b {
@@ -607,13 +593,6 @@ h2 > pre, h2 > .pre,
 h2 > label, h2 > .label,
 .h2 > label,
 .h2 > .label {
-  font-size: inherit; }
-
-h3 > span, h3 > .span,
-.h3 > span,
-.h3 > .span,
-caption > span,
-caption > .span {
   font-size: inherit; }
 
 h3 > b, h3 > .b,
@@ -714,11 +693,6 @@ caption > label,
 caption > .label {
   font-size: inherit; }
 
-h4 > span, h4 > .span,
-.h4 > span,
-.h4 > .span {
-  font-size: inherit; }
-
 h4 > b, h4 > .b,
 .h4 > b,
 .h4 > .b {
@@ -789,11 +763,6 @@ h4 > label, h4 > .label,
 .h4 > .label {
   font-size: inherit; }
 
-h5 > span, h5 > .span,
-.h5 > span,
-.h5 > .span {
-  font-size: inherit; }
-
 h5 > b, h5 > .b,
 .h5 > b,
 .h5 > .b {
@@ -862,15 +831,6 @@ h5 > pre, h5 > .pre,
 h5 > label, h5 > .label,
 .h5 > label,
 .h5 > .label {
-  font-size: inherit; }
-
-h6 > span, h6 > .span,
-.h6 > span,
-.h6 > .span,
-table tr th > span,
-cite > span,
-table tr th > .span,
-cite > .span {
   font-size: inherit; }
 
 h6 > b, h6 > .b,
@@ -1032,43 +992,10 @@ ul.coloured li {
     border-radius: 50%;
     top: .5em;
     left: -1.9rem;
-    background: #377bff; }
+    background: var(--primary-colour); }
 
 ul.coloured ul:not(.unstyled):not(.coloured) li:before {
   content: none; }
-
-ul.coloured.coloured--success li:before {
-  background: #65b922; }
-
-ul.coloured.coloured--warning li:before {
-  background: #997e26; }
-
-ul.coloured.coloured--error li:before {
-  background: #e44e4e; }
-
-ul.coloured.coloured--white li:before {
-  background: #fff; }
-
-ul.coloured.coloured--off-white li:before {
-  background: #f7f7f7; }
-
-ul.coloured.coloured--black li:before {
-  background: #000; }
-
-ul.coloured.coloured--text li:before {
-  background: #000; }
-
-ul.coloured.coloured--text-light li:before {
-  background: #262626; }
-
-ul.coloured.coloured--primary li:before {
-  background: #377bff; }
-
-ul.coloured.coloured--secondary li:before {
-  background: #232427; }
-
-ul.coloured.coloured--tertiary li:before {
-  background: #6e8224; }
 
 ol:not(.unstyled) {
   list-style: decimal outside; }
@@ -1095,7 +1022,7 @@ b {
     height: 4px;
     background-color: #ebebeb; }
   .js-table::-webkit-scrollbar-thumb {
-    background-color: #377bff;
+    background-color: var(--primary-colour);
     border: 0; }
 
 table {
@@ -1121,7 +1048,7 @@ table {
       background: #ebebeb; }
     table tr th {
       font-weight: 700;
-      background: #377bff !important;
+      background: var(--primary-colour) !important;
       color: #fff; }
     table tr:nth-child(even) td {
       background: #e6e6e6; }
@@ -1159,29 +1086,7 @@ img {
 .contentBlock blockquote {
   margin: 3rem;
   padding: 0 2rem;
-  border-left: 4px solid #377bff; }
-  .contentBlock blockquote.blockquote--success {
-    border-color: #65b922; }
-  .contentBlock blockquote.blockquote--warning {
-    border-color: #997e26; }
-  .contentBlock blockquote.blockquote--error {
-    border-color: #e44e4e; }
-  .contentBlock blockquote.blockquote--white {
-    border-color: #fff; }
-  .contentBlock blockquote.blockquote--off-white {
-    border-color: #f7f7f7; }
-  .contentBlock blockquote.blockquote--black {
-    border-color: #000; }
-  .contentBlock blockquote.blockquote--text {
-    border-color: #000; }
-  .contentBlock blockquote.blockquote--text-light {
-    border-color: #262626; }
-  .contentBlock blockquote.blockquote--primary {
-    border-color: #377bff; }
-  .contentBlock blockquote.blockquote--secondary {
-    border-color: #232427; }
-  .contentBlock blockquote.blockquote--tertiary {
-    border-color: #6e8224; }
+  border-left: 4px solid var(--primary-colour); }
   .contentBlock blockquote p {
     margin: 0; }
 
@@ -1290,7 +1195,7 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
 .button {
   display: inline-block;
   color: #fff;
-  background-color: #377bff;
+  background-color: var(--primary-colour);
   margin: 0 1rem 1rem 0;
   padding: .9rem 2rem .8rem;
   cursor: pointer;
@@ -1314,14 +1219,12 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
             transform: translateY(1px); }
   
   .button--secondary {
-    background-color: #232427;
-    border-color: #232427; }
+    background-color: var(--secondary-colour);
+    border-color: var(--secondary-colour); }
     
     .button--secondary:hover,
     .button--secondary:active,
     .button--secondary:focus {
-      background-color: #2d2e32;
-      border-color: #2d2e32;
       color: #fff !important; }
   
   .button--success {
@@ -1331,8 +1234,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--success:hover,
     .button--success:active,
     .button--success:focus {
-      background-color: #6eca25;
-      border-color: #6eca25;
       color: #fff !important; }
     
     .button--success.button--outline {
@@ -1347,7 +1248,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--success:hover,
     .button--outline--success:active,
     .button--outline--success:focus {
-      border-color: #6eca25;
       background-color: transparent; }
   
   .button--warning {
@@ -1357,8 +1257,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--warning:hover,
     .button--warning:active,
     .button--warning:focus {
-      background-color: #a98b2a;
-      border-color: #a98b2a;
       color: #fff !important; }
     
     .button--warning.button--outline {
@@ -1373,7 +1271,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--warning:hover,
     .button--outline--warning:active,
     .button--outline--warning:focus {
-      border-color: #a98b2a;
       background-color: transparent; }
   
   .button--error {
@@ -1383,8 +1280,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--error:hover,
     .button--error:active,
     .button--error:focus {
-      background-color: #e76060;
-      border-color: #e76060;
       color: #fff !important; }
     
     .button--error.button--outline {
@@ -1399,7 +1294,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--error:hover,
     .button--outline--error:active,
     .button--outline--error:focus {
-      border-color: #e76060;
       background-color: transparent; }
   
   .button--white {
@@ -1409,8 +1303,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--white:hover,
     .button--white:active,
     .button--white:focus {
-      background-color: white;
-      border-color: white;
       color: #fff !important; }
     
     .button--white.button--outline {
@@ -1425,7 +1317,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--white:hover,
     .button--outline--white:active,
     .button--outline--white:focus {
-      border-color: white;
       background-color: transparent; }
   
   .button--off-white {
@@ -1435,8 +1326,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--off-white:hover,
     .button--off-white:active,
     .button--off-white:focus {
-      background-color: white;
-      border-color: white;
       color: #fff !important; }
     
     .button--off-white.button--outline {
@@ -1451,7 +1340,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--off-white:hover,
     .button--outline--off-white:active,
     .button--outline--off-white:focus {
-      border-color: white;
       background-color: transparent; }
   
   .button--black {
@@ -1461,8 +1349,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--black:hover,
     .button--black:active,
     .button--black:focus {
-      background-color: #0a0a0a;
-      border-color: #0a0a0a;
       color: #fff !important; }
     
     .button--black.button--outline {
@@ -1477,7 +1363,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--black:hover,
     .button--outline--black:active,
     .button--outline--black:focus {
-      border-color: #0a0a0a;
       background-color: transparent; }
   
   .button--text {
@@ -1487,8 +1372,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--text:hover,
     .button--text:active,
     .button--text:focus {
-      background-color: #0a0a0a;
-      border-color: #0a0a0a;
       color: #fff !important; }
     
     .button--text.button--outline {
@@ -1503,7 +1386,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--text:hover,
     .button--outline--text:active,
     .button--outline--text:focus {
-      border-color: #0a0a0a;
       background-color: transparent; }
   
   .button--text-light {
@@ -1513,8 +1395,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--text-light:hover,
     .button--text-light:active,
     .button--text-light:focus {
-      background-color: #303030;
-      border-color: #303030;
       color: #fff !important; }
     
     .button--text-light.button--outline {
@@ -1529,59 +1409,52 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--text-light:hover,
     .button--outline--text-light:active,
     .button--outline--text-light:focus {
-      border-color: #303030;
       background-color: transparent; }
   
   .button--primary {
-    background-color: #377bff;
-    border: #377bff; }
+    background-color: var(--primary-colour);
+    border: var(--primary-colour); }
     
     .button--primary:hover,
     .button--primary:active,
     .button--primary:focus {
-      background-color: #4b88ff;
-      border-color: #4b88ff;
       color: #fff !important; }
     
     .button--primary.button--outline {
-      color: #377bff; }
+      color: var(--primary-colour); }
   
   .button--outline--primary {
     background-color: transparent;
-    color: #377bff;
-    border: 1px solid #377bff;
+    color: var(--primary-colour);
+    border: 1px solid var(--primary-colour);
     padding: .8rem 1.9rem .7rem; }
     
     .button--outline--primary:hover,
     .button--outline--primary:active,
     .button--outline--primary:focus {
-      border-color: #4b88ff;
       background-color: transparent; }
   
   .button--secondary {
-    background-color: #232427;
-    border: #232427; }
+    background-color: var(--secondary-colour);
+    border: var(--secondary-colour); }
     
     .button--secondary:hover,
     .button--secondary:active,
     .button--secondary:focus {
-      background-color: #2d2e32;
-      border-color: #2d2e32;
       color: #fff !important; }
     
     .button--secondary.button--outline {
-      color: #232427; }
+      color: var(--secondary-colour); }
   
   .button--outline--secondary {
     background-color: transparent;
-    color: #232427;
-    border: 1px solid #232427;
+    color: var(--secondary-colour);
+    border: 1px solid var(--secondary-colour);
     padding: .8rem 1.9rem .7rem; }
     
     .button--outline--secondary:hover,
     .button--outline--secondary:active,
     .button--outline--secondary:focus {
-      border-color: #2d2e32;
       background-color: transparent; }
   
   .button--tertiary {
@@ -1591,8 +1464,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--tertiary:hover,
     .button--tertiary:active,
     .button--tertiary:focus {
-      background-color: #7c9228;
-      border-color: #7c9228;
       color: #fff !important; }
     
     .button--tertiary.button--outline {
@@ -1607,7 +1478,6 @@ form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .act
     .button--outline--tertiary:hover,
     .button--outline--tertiary:active,
     .button--outline--tertiary:focus {
-      border-color: #7c9228;
       background-color: transparent; }
   
   .button--round {
@@ -1720,7 +1590,7 @@ form .inputWrap--select select {
   form .inputWrap--countrydropdown select:hover,
   form .inputWrap--dropdown select:hover,
   form .inputWrap--select select:hover {
-    border-color: #377bff; }
+    border-color: var(--primary-colour); }
   
   form .inputWrap--text input:focus,
   form .inputWrap--numeric input:focus,
@@ -1730,7 +1600,7 @@ form .inputWrap--select select {
   form .inputWrap--countrydropdown select:focus,
   form .inputWrap--dropdown select:focus,
   form .inputWrap--select select:focus {
-    border-color: #377bff;
+    border-color: var(--primary-colour);
     outline: 0;
     box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.2); }
 
@@ -1811,7 +1681,7 @@ form .inputWrap {
     height: 0;
     border-style: solid;
     border-width: 8px 6px 0;
-    border-color: #377bff transparent transparent;
+    border-color: var(--primary-colour) transparent transparent;
     bottom: 3.6rem;
     right: 1.5%; }
   
@@ -2388,7 +2258,7 @@ Custom Styles
     position: relative; }
   .styleguide__aside a {
     display: block;
-    color: #377bff !important; }
+    color: var(--primary-colour) !important; }
 
 .styleguide__content {
   padding-left: 34rem;
@@ -2408,18 +2278,18 @@ Custom Styles
         display: block;
         left: 0;
         top: 100%;
-        height: .4rem;
+        height: 0.4rem;
         width: 5rem;
-        background: #377bff; }
+        background: var(--primary-colour); }
     .styleguide__content__section__subtitle {
       margin-top: 5rem;
       margin-bottom: 4rem; }
     .styleguide__content__section__paragraph {
-      opacity: .6; }
+      opacity: 0.6; }
     .styleguide__content__section__sandbox {
       padding: 4rem;
       border: 1px solid #ebebeb;
-      border-radius: .5rem;
+      border-radius: 0.5rem;
       margin-bottom: 6rem; }
 
 .styleguide__content__section__sandbox .contentBlock {
@@ -2448,14 +2318,14 @@ Custom Styles
     display: block;
     margin-bottom: 2rem; }
     .testimonialBlock__wrap__icon path {
-      fill: #377bff; }
+      fill: var(--primary-colour); }
   .testimonialBlock__wrap__content {
     font-weight: 300;
     margin: 3rem auto;
     color: #262626; }
   .testimonialBlock__wrap__credit {
     font-weight: 700;
-    color: #377bff; }
+    color: var(--primary-colour); }
 
 .videoBlock__wrap__thumbnail {
   position: relative;
