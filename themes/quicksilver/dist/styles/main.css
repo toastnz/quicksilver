@@ -1694,8 +1694,6 @@ Custom Styles
   padding-left: 34rem;
   padding-right: 4rem; }
   .styleguide__content__section {
-    color: #202e3c;
-    margin-bottom: 6rem;
     padding-bottom: 2rem;
     border-bottom: 1px solid #ebebeb; }
     .styleguide__content__section__heading {
@@ -1715,8 +1713,6 @@ Custom Styles
     .styleguide__content__section__subtitle {
       margin-top: 5rem;
       margin-bottom: 4rem; }
-    .styleguide__content__section__paragraph {
-      opacity: 0.6; }
     .styleguide__content__section__sandbox {
       padding: 4rem;
       border: 1px solid #ebebeb;
@@ -1745,7 +1741,7 @@ Custom Styles
     .accordionBlock__wrap__item__header.active:before, .accordionBlock__wrap__item__header.active:after, .accordionBlock__wrap__item__header:hover:before, .accordionBlock__wrap__item__header:hover:after {
       background: var(--primary-colour); }
     .accordionBlock__wrap__item__header h5 {
-      margin-bottom: 0;
+      margin-bottom: 0 !important;
       padding-right: 2.5rem; }
       .accordionBlock__wrap__item__header h5 * {
         transition: all 111ms ease; }

@@ -109,7 +109,7 @@ class StyleGuideController extends Controller
     public function fauxQuickBlock()
     {
         $arrayData = new ArrayData([
-            'Content' => DBField::create_field(DBHTMLText::class, '<h5 class="colour--primary"><b>BUSINESS OVERVIEW</b></h5><h1 class="h2">We are a major Australian manufacturer of roll-formed steel building products.</h1><h6>Including roof and wall cladding, guttering, fascia, purlins, flooring and structural formwork.</h6><p>These products, along with complementary products and services, are delivered through a nationwide network of manufacturing and distribution centres, strategically located to ensure coverage of major metropolitan and regional markets.</p>')
+            'Content' => DBField::create_field(DBHTMLText::class, '<h5 class="colour--primary"><b>ALIQUAM TINCIDUNT</b></h5><h1 class="h2">Morbi in sem quis dui placerat ornare</h1><h6>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat.</h6><p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\QuickBlock');
     }
