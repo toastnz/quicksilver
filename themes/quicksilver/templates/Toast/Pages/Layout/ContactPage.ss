@@ -6,6 +6,7 @@
     <% if $ContactForm.Message %>
         <% with $ContactForm %>
             <p id="{$FormName}_error" class="message $MessageType">$Message</p>
+            $MessageClear
         <% end_with %>
     <% else %>
         $ContactForm

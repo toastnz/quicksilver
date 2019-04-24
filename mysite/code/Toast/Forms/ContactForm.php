@@ -173,4 +173,9 @@ class ContactForm extends Form
             return $this->controller->redirectBack();
         }
     }
+
+    public function MessageClear() {
+        $this->clearMessage();
+    }
+
 }
