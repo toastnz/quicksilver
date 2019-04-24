@@ -1,7 +1,5 @@
 <?php
 
-use SilverStripe\Control\Director;
-use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\View\Requirements;
