@@ -33,7 +33,6 @@ class StyleGuideController extends Controller
             }
         }
 
-
         parent::init();
 
         Requirements::backend()->setWriteHeaderComment(false);
@@ -87,15 +86,15 @@ class StyleGuideController extends Controller
         $accordionItems = new ArrayList([
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 1',
-                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p><p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p><p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 2',
-                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
             new ArrayData([
                 'DisplayTitle' => 'Accordion Heading 3',
-                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Yes. As a Stramit account holder you have that option. Your rep or local Stramit office will be able to confirm product availability or suitable alternatives available in other states. They’ll also tell you about expected lead times and delivery charges that may apply if you go with these options.</p>')
+                'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
         ]);
 

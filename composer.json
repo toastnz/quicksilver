@@ -29,7 +29,8 @@
         "undefinedoffset/silverstripe-nocaptcha": "^2.0.0",
         "symbiote/silverstripe-gridfieldextensions": "^3.2.1",
         "stevie-mayhew/silverstripe-svg": "^2.1.0",
-        "permanentinc/beautiful": "dev-master"
+        "permanentinc/beautiful": "dev-master",
+        "permanentinc/type": "dev-master"
     },
     "config": {
         "preferred-install": "dist"

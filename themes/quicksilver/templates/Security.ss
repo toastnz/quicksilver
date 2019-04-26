@@ -4,8 +4,12 @@
     <% include Meta %>
 </head>
 <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
+<% include Type %>
+    
+   
 
 <div class="tingle-content-wrapper">
+
 
     $Layout
 
@@ -27,5 +31,7 @@
     <% end_if %>
 
 </div>
+
+ <canvas class="animation" id="animation"></canvas>
 </body>
 </html>

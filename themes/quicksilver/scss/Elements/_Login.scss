@@ -12,21 +12,14 @@
     background: $white;
     width: 90%;
     max-width: 40rem;
-    padding: 0 4rem 4rem;
+    padding: 4rem;
     box-shadow: $z5;
-    border-radius: .5rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-
-    &__logo {
-      @include svg(770, 180);
-      position: relative;
-      text-align: center;
-      margin: 3rem auto;
-      max-width: 20rem;
-    }
 
     .action {
       @extend %button;
+      @extend %button--secondary;
       width: 100%;
     }
 
@@ -43,18 +36,18 @@
       }
     }
   }
-
 }
 
-
+#LostPasswordForm_lostPasswordForm_Email_Holder,
 #MemberLoginForm_LoginForm_Password_Holder,
 #MemberLoginForm_LoginForm_Email_Holder {
-  margin-bottom:1rem;
+  margin-bottom: 1rem;
   position: relative;
 
   label {
-    @include vertical-align;
-    margin: 0;
+    @include bold;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
 
   input {
@@ -62,3 +55,23 @@
   }
 }
 
+// .navigator {
+//   display: none;
+// }
+
+// html,
+// body {
+//   margin: 0;
+//   height: 100%;
+// }
+
+// .animation {
+//   width: 100%;
+//   height: 100%;
+//   display: block;
+//   margin: 0;
+//   background: black;
+//   z-index: 1;
+//   position: relative;
+//   border: 1px solid red;
+// }
