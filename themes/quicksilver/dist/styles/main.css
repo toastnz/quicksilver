@@ -626,7 +626,7 @@ form .inputWrap__actions .action,
 form .inputWrap--actions .action, form [type="submit"], .loginWrap__content .action,
 .button {
   display: inline-block;
-  color: #fff;
+  color: #000;
   background-color: var(--primary-colour);
   margin: 0 1rem 1rem 0;
   padding: 0.9rem 2rem 0.8rem;
@@ -1139,7 +1139,7 @@ form .inputWrap {
 [type="checkbox"]:focus:checked + label:before, [type="checkbox"]:checked + label:before,
 .icon-check-checked {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: 0px 0px;
   width: 22px;
   height: 22px; }
@@ -1147,7 +1147,7 @@ form .inputWrap {
 [type="checkbox"]:disabled + label:before,
 .icon-check-disabled {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: 0px -52px;
   width: 22px;
   height: 22px; }
@@ -1155,7 +1155,7 @@ form .inputWrap {
 [type="checkbox"]:focus + label:before,
 .icon-check-focus {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: 0px -26px;
   width: 22px;
   height: 22px; }
@@ -1163,7 +1163,7 @@ form .inputWrap {
 [type="checkbox"] + label:before,
 .icon-check {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -26px -26px;
   width: 22px;
   height: 22px; }
@@ -1171,7 +1171,7 @@ form .inputWrap {
 
 .icon-checkbox-checked {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -78px -50px;
   width: 20px;
   height: 20px; }
@@ -1179,7 +1179,7 @@ form .inputWrap {
 
 .icon-checkbox-focused {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -78px -26px;
   width: 20px;
   height: 20px; }
@@ -1187,7 +1187,7 @@ form .inputWrap {
 
 .icon-checkbox-unchecked {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: 0px -78px;
   width: 20px;
   height: 20px; }
@@ -1195,7 +1195,7 @@ form .inputWrap {
 
 .icon-radio-checked {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -26px -52px;
   width: 22px;
   height: 22px; }
@@ -1203,7 +1203,7 @@ form .inputWrap {
 
 .icon-radio-disabled {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -52px -52px;
   width: 22px;
   height: 22px; }
@@ -1211,7 +1211,7 @@ form .inputWrap {
 
 .icon-radio-focus {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -78px 0px;
   width: 22px;
   height: 22px; }
@@ -1219,7 +1219,7 @@ form .inputWrap {
 
 .icon-radio-focused {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -52px -26px;
   width: 22px;
   height: 22px; }
@@ -1227,7 +1227,7 @@ form .inputWrap {
 
 .icon-radio-unchecked {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -52px 0px;
   width: 22px;
   height: 22px; }
@@ -1235,63 +1235,63 @@ form .inputWrap {
 
 .icon-radio {
   display: inline-block;
-  background-image: url(../images/generated/sprite6dd92078629f78e2a9c9ad04865a6701.png);
+  background-image: url(../images/generated/spritec0ee499aafb029f08bf613a7b2aa7db5.png);
   background-position: -26px 0px;
   width: 22px;
   height: 22px; }
 
-@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2.5), only screen and (min-resolution: 240dpi) {
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-webkit-min-device-pixel-ratio: 2.5), only screen and (min-resolution: 240dpi) {
   [type="checkbox"]:focus:checked + label:before, [type="checkbox"]:checked + label:before,
   .icon-check-checked {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   [type="checkbox"]:disabled + label:before,
   .icon-check-disabled {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   [type="checkbox"]:focus + label:before,
   .icon-check-focus {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   [type="checkbox"] + label:before,
   .icon-check {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-checkbox-checked {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-checkbox-focused {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-checkbox-unchecked {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio-checked {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio-disabled {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio-focus {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio-focused {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio-unchecked {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; }
   
   .icon-radio {
-    background-image: url(../images/generated/sprite@2xc783626618fee272849b884a0fea15f6.png);
+    background-image: url(../images/generated/sprite@2x67b0a3c613e7b9bfd9738e11e439b0d2.png);
     background-size: 100px 98px; } }
 
 .icon {

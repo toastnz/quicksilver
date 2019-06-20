@@ -2,7 +2,7 @@
 // Button Styles
 //------------------------------------------------------------------
 
-$button-colour: $white;
+$button-colour: $text;
 $button-background: $primary;
 $disabled-button-color: lighten($black, 50%);
 $error-button-color: $error-colour;
@@ -14,7 +14,7 @@ $error-button-color: $error-colour;
   color: $button-colour;
   background-color: $button-background;
   margin: 0 1rem 1rem 0;
-  padding: 0.9rem 2rem 0.8rem;
+  padding: 0.9rem 2rem 0.8rem; 
   cursor: pointer;
   outline: none;
   border-radius: 0.3rem;
