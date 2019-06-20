@@ -10,11 +10,9 @@ $base-type-margin: 1.8rem;
 // Declare our font-familys
 //------------------------------------------------------------------
 
-@import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700,900");
-
-$primary-font: "Montserrat", Helvetica, sans-serif;
-$secondary-font: "Montserrat", Helvetica, sans-serif;
-$tertiary-font: "Montserrat", Helvetica, sans-serif;
+$primary-font: "Arial", Helvetica, sans-serif;
+$secondary-font: "Arial", Helvetica, sans-serif;
+$tertiary-font: "Arial", Helvetica, sans-serif;
 
 //------------------------------------------------------------------
 // Link Colour
@@ -583,3 +581,7 @@ hr {
 //    line-height: 1.2;
 //  }
 //}
+
+* {
+  font-display: fallback;
+}
