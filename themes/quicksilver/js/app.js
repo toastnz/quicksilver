@@ -2,7 +2,7 @@
 Hello world - versionsing
 ------------------------------------------------------------------*/
 
-// console.log('%cQUICKSILVER 4.0', 'padding:5px;color: #fff; background: #377cff;');
+console.log('%cQUICKSILVER 4.1', 'padding:5px;color: #fff; background: #377cff;');
 
 /*------------------------------------------------------------------
 Stylesheets
@@ -14,10 +14,32 @@ import './../scss/style.scss';
 Imports
 ------------------------------------------------------------------*/
 
-import './components/videoBlock';
-import './components/responsiveTables';
-import './components/accordions';
-// import './components/login';
+let $ = (element) => document.querySelectorAll(element);
+
+/*------------------------------------------------------------------
+Videos (Code Splitting)
+------------------------------------------------------------------*/
+
+if ($('.js-video-modal').length) import('./components/videoBlock')
+
+/*------------------------------------------------------------------
+Tables (Code Splitting)
+------------------------------------------------------------------*/
+
+if ($('table').length) import('./components/responsiveTables')
+
+/*------------------------------------------------------------------
+Accordions (Code Splitting)
+------------------------------------------------------------------*/
+
+if ($('.js-accordion-trigger').length) import('./components/accordions')
+
+/*------------------------------------------------------------------
+Login (Code Splitting)
+------------------------------------------------------------------*/
+
+if ($('login').length) import('./components/login')
+
 
 
 

@@ -9,6 +9,7 @@ import tingle from 'tingle.js';
 Variables
 ------------------------------------------------------------------*/
 
+
 let $body = $('body');
 
 $body.on('click', '.js-video-modal', function (e) {

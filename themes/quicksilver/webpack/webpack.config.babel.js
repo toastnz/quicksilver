@@ -35,6 +35,7 @@ module.exports = (env, argv) => {
         stats,
         devtool: ifProduction('', 'source-map'),
         output: {
+            publicPath: '/themes/quicksilver/dist/scripts/', 
             path: path.resolve(__dirname, '../dist/scripts'),
             filename: 'bundle.js',
             sourceMapFilename: 'bundle.map.js'
