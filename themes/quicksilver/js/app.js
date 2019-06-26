@@ -20,10 +20,8 @@ Components
 ------------------------------------------------------------------*/
 
 document.addEventListener('DOMContentLoaded', () => {
-
     if ($('.js-video-modal').length) import('./components/videoBlock')
     if ($('table').length) import('./components/responsiveTables')
     if ($('.js-accordion-trigger').length) import('./components/accordions')
     if ($('login').length) import('./components/login')
-
 });
