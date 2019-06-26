@@ -1,8 +1,11 @@
 /*------------------------------------------------------------------
-Hello world - versionsing
+Versioning & Debug Information
 ------------------------------------------------------------------*/
 
-console.log('%cQUICKSILVER 4.1', 'padding:5px;color: #fff; background: #377cff;');
+window.debug = window.location.host.includes('.test');
+
+if (debug) console.log('%cQUICKSILVER: v4.1', 'padding:5px;color: #fff; background: #377cff;');
+if (debug) console.log(`%cTEMPLATE: ${document.body.dataset.pageTemplate || 'Custom'}`, 'padding:5px;color: #fff; background: #c792ea;');
 
 /*------------------------------------------------------------------
 Stylesheets
@@ -10,36 +13,17 @@ Stylesheets
 
 import './../scss/style.scss';
 
-/*------------------------------------------------------------------
-Imports
-------------------------------------------------------------------*/
-
 let $ = (element) => document.querySelectorAll(element);
 
 /*------------------------------------------------------------------
-Videos (Code Splitting)
+Components
 ------------------------------------------------------------------*/
 
-if ($('.js-video-modal').length) import('./components/videoBlock')
+document.addEventListener('DOMContentLoaded', () => {
 
-/*------------------------------------------------------------------
-Tables (Code Splitting)
-------------------------------------------------------------------*/
+    if ($('.js-video-modal').length) import('./components/videoBlock')
+    if ($('table').length) import('./components/responsiveTables')
+    if ($('.js-accordion-trigger').length) import('./components/accordions')
+    if ($('login').length) import('./components/login')
 
-if ($('table').length) import('./components/responsiveTables')
-
-/*------------------------------------------------------------------
-Accordions (Code Splitting)
-------------------------------------------------------------------*/
-
-if ($('.js-accordion-trigger').length) import('./components/accordions')
-
-/*------------------------------------------------------------------
-Login (Code Splitting)
-------------------------------------------------------------------*/
-
-if ($('login').length) import('./components/login')
-
-
-
-
+});

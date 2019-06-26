@@ -7,7 +7,8 @@
       <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %>
       data-classname="$Classname"
       data-title="$Title"
-      data-url-segment="$URLSegment">
+      data-url-segment="$URLSegment"
+      data-page-template="$Classname">
 <div class="tingle-content-wrapper">
 
 <% include Type %>
