@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 const stats = {
     colors: true,
@@ -35,10 +36,10 @@ module.exports = (env, argv) => {
         stats,
         devtool: ifProduction('', 'source-map'),
         output: {
-            publicPath: '/themes/quicksilver/dist/scripts/', 
+            publicPath: '/themes/quicksilver/dist/scripts/',
             path: path.resolve(__dirname, '../dist/scripts'),
-            filename: 'bundle.js',
-            sourceMapFilename: 'bundle.map.js'
+            filename: 'app.js',
+            sourceMapFilename: 'app.map.js'
         },
         module: {
             rules: [
@@ -96,6 +97,14 @@ module.exports = (env, argv) => {
                     parallel: true,
                     sourceMap: ifProduction(true, false)
                 }),
+                new TerserPlugin({
+                    sourceMap: true,
+                    terserOptions: {
+                        compress: {
+                            drop_console: true,
+                        },
+                    },
+                }),
                 new OptimizeCssAssetsPlugin({
                     cssProcessorOptions: { discardComments: { removeAll: true } },
                     canPrint: true
@@ -105,15 +114,9 @@ module.exports = (env, argv) => {
         plugins: removeEmpty([
             new FriendlyErrorsWebpackPlugin(),
             new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
-            new MiniCssExtractPlugin({
-                filename: '../styles/[name].css',
-                chunkFilename: '[id].css'
-            }),
+            new MiniCssExtractPlugin({ filename: '../styles/[name].css', chunkFilename: '[id].css' }),
             new SpritesmithPlugin({
-                src: {
-                    cwd: path.resolve(__dirname, '../sprites'),
-                    glob: '*.png'
-                },
+                src: { cwd: path.resolve(__dirname, '../sprites'), glob: '*.png' },
                 target: {
                     image: path.resolve(__dirname, '../dist/images/sprites/sprite.png'),
                     css: [
