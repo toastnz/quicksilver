@@ -1,8 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[2],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[5],{
 
-/***/ "./themes/quicksilver/js/components/accordions.js":
+/***/ "./themes/quicksilver/js/components/Accordions.js":
 /*!********************************************************!*\
-  !*** ./themes/quicksilver/js/components/accordions.js ***!
+  !*** ./themes/quicksilver/js/components/Accordions.js ***!
   \********************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -36,4 +36,4 @@ $body.on('click', '.js-accordion-trigger', function (e) {
 /***/ })
 
 }]);
-//# sourceMappingURL=bundle.map.js
+//# sourceMappingURL=app.map.js

@@ -1,8 +1,8 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[4],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
 
-/***/ "./themes/quicksilver/js/components/responsiveTables.js":
+/***/ "./themes/quicksilver/js/components/ResponsiveTables.js":
 /*!**************************************************************!*\
-  !*** ./themes/quicksilver/js/components/responsiveTables.js ***!
+  !*** ./themes/quicksilver/js/components/ResponsiveTables.js ***!
   \**************************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -26,4 +26,4 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()('table').each(function (index, tab
 /***/ })
 
 }]);
-//# sourceMappingURL=bundle.map.js
+//# sourceMappingURL=app.map.js

@@ -1,11 +1,9 @@
 /*------------------------------------------------------------------
 Versioning & Debug Information
 ------------------------------------------------------------------*/
-
 window.debug = window.location.host.includes('.test');
 
-if (debug) console.log('%cQUICKSILVER: v4.1', 'padding:5px;color: #fff; background: #377cff;');
-if (debug) console.log(`%cTEMPLATE: ${document.body.dataset.pageTemplate || 'Custom'}`, 'padding:5px;color: #fff; background: #c792ea;');
+if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:#fff;text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2);');
 
 /*------------------------------------------------------------------
 Stylesheets
@@ -13,15 +11,49 @@ Stylesheets
 
 import './../scss/style.scss';
 
-let $ = (element) => document.querySelectorAll(element);
+
+const D = document
+window.$ = D.querySelector.bind(D)
+window.$$ = (selector, elem = D) => elem.querySelectorAll(selector);
+
+window.Array.prototype.on = function (type, listener, options) {
+    this.map(el => {
+        if (el instanceof Element) {
+            el.addEventListener(type, listener, options)
+        }
+    })
+    return this // for chaining
+}
 
 /*------------------------------------------------------------------
-Components
+Imports
 ------------------------------------------------------------------*/
 
-document.addEventListener('DOMContentLoaded', () => {
-    if ($('.js-video-modal').length) import('./components/videoBlock')
-    if ($('table').length) import('./components/responsiveTables')
-    if ($('.js-accordion-trigger').length) import('./components/accordions')
-    if ($('login').length) import('./components/login')
-});
+/*------------------------------------------------------------------
+Responsive tables
+- Wraps all tables inside of a div to make them responsive
+------------------------------------------------------------------*/
+
+// if ($$('table').length) import('./components/ResponsiveTables');
+
+/*------------------------------------------------------------------
+Accordions
+- Event handlers for toggling accordion content
+------------------------------------------------------------------*/
+
+// if ($$('.js-accordion-trigger').length) import('./components/Accordions');
+
+/*------------------------------------------------------------------
+Video Modal
+- Video block modal to play vimeo or youtube videos
+------------------------------------------------------------------*/
+
+if ($$('.js-video-modal').length) import('./components/VideoModal');
+
+/*------------------------------------------------------------------
+Video Modal
+- Video block modal to play vimeo or youtube videos
+------------------------------------------------------------------*/
+
+// if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
+

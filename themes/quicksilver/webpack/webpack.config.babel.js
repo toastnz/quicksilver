@@ -32,14 +32,14 @@ module.exports = (env, argv) => {
 
     return {
         mode: ifProduction('production', 'development'),
-        entry: path.resolve(__dirname, '../js/mercury.js'),
+        entry: path.resolve(__dirname, '../js/app.js'),
         stats,
         devtool: ifProduction('', 'source-map'),
         output: {
-            publicPath: '/themes/sorted/mercury/dist/scripts/',
+            publicPath: '/themes/quicksilver/dist/scripts/',
             path: path.resolve(__dirname, '../dist/scripts'),
-            filename: 'mercury.js',
-            sourceMapFilename: 'mercury.map.js'
+            filename: 'app.js',
+            sourceMapFilename: 'app.map.js'
         },
         module: {
             rules: [
@@ -62,9 +62,9 @@ module.exports = (env, argv) => {
                                 sourceMap: ifProduction(true, false),
                                 plugins: [
                                     autoprefixer({
-                                        'overrideBrowserslist': [ 'last 10 versions']
+                                        'overrideBrowserslist': ['last 10 versions']
                                     })
-                                ] 
+                                ]
                             }
                         },
                         {
@@ -115,7 +115,7 @@ module.exports = (env, argv) => {
         },
         plugins: removeEmpty([
             new FriendlyErrorsWebpackPlugin(),
-            new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/mercury.scss')),
+            new webpack.PrefetchPlugin(path.resolve(__dirname, '../scss/style.scss')),
             new MiniCssExtractPlugin({ filename: '../styles/[name].css', chunkFilename: '[id].css' }),
             new SpritesmithPlugin({
                 src: { cwd: path.resolve(__dirname, '../sprites'), glob: '*.png' },

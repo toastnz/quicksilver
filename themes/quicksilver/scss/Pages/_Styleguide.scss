@@ -12,6 +12,7 @@ $theme: var(--primary-colour);
     left: 0;
     padding: 4rem;
     width: 30rem;
+    display: none;
 
     h6 {
       margin-top: 3rem;
@@ -26,7 +27,7 @@ $theme: var(--primary-colour);
   }
 
   &__content {
-    padding-left: 34rem;
+    padding-left: 4rem;
     padding-right: 4rem;
 
     &__section {

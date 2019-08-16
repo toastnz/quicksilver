@@ -58,7 +58,7 @@ class ContactForm extends Form
          * ----------------------------------------*/
 
         $form = Form::create($controller, $name, $fields, $actions, $required);
-
+        
         if ($arguments) {
             $form->loadDataFrom($arguments);
         }
@@ -69,11 +69,11 @@ class ContactForm extends Form
 
         parent::__construct($controller, $name, $fields, $actions, $required);
 
-        $this->setAttribute('data-parsley-validate', true);
+        $this->setAttribute('novalidate', true);
         $this->setAttribute('autocomplete', 'on');
         $this->addExtraClass('form');
 
-//        $this->enableSpamProtection();
+        //        $this->enableSpamProtection();
     }
 
     /**
@@ -136,7 +136,7 @@ class ContactForm extends Form
          * Email
          * ----------------------------------------*/
 
-        $to = $page->NotificationEmail ? : $siteConfig->Email ?: Config::inst()->get('Email', 'admin_email');
+        $to = $page->NotificationEmail ?: $siteConfig->Email ?: Config::inst()->get('Email', 'admin_email');
 
         $from = $data['Email'];
 
@@ -159,7 +159,7 @@ class ContactForm extends Form
 
         $this->getRequest()->getSession()->clear('FormInfo.Form_' . $this->name . '.data');
 
-        $message = $page->SuccessMessage ? : 'Your enquiry has been received.';
+        $message = $page->SuccessMessage ?: 'Your enquiry has been received.';
 
         $form->sessionMessage($message, 'success');
 

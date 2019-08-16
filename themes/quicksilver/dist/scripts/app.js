@@ -10,7 +10,7 @@
 /******/ 		var moduleId, chunkId, i = 0, resolves = [];
 /******/ 		for(;i < chunkIds.length; i++) {
 /******/ 			chunkId = chunkIds[i];
-/******/ 			if(installedChunks[chunkId]) {
+/******/ 			if(Object.prototype.hasOwnProperty.call(installedChunks, chunkId) && installedChunks[chunkId]) {
 /******/ 				resolves.push(installedChunks[chunkId][0]);
 /******/ 			}
 /******/ 			installedChunks[chunkId] = 0;
@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + chunkId + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + chunkId + ".app.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -216,28 +216,56 @@ __webpack_require__.r(__webpack_exports__);
 Versioning & Debug Information
 ------------------------------------------------------------------*/
 window.debug = window.location.host.includes('.test');
-if (debug) console.log('%cQUICKSILVER: v4.1', 'padding:5px;color: #fff; background: #377cff;');
-if (debug) console.log("%cTEMPLATE: ".concat(document.body.dataset.pageTemplate || 'Custom'), 'padding:5px;color: #fff; background: #c792ea;');
+if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:#fff;text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2);');
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
 
 
+var D = document;
+window.$ = D.querySelector.bind(D);
 
-var $ = function $(element) {
-  return document.querySelectorAll(element);
+window.$$ = function (selector) {
+  var elem = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : D;
+  return elem.querySelectorAll(selector);
+};
+
+window.Array.prototype.on = function (type, listener, options) {
+  this.map(function (el) {
+    if (el instanceof Element) {
+      el.addEventListener(type, listener, options);
+    }
+  });
+  return this; // for chaining
 };
 /*------------------------------------------------------------------
-Components
+Imports
+------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+Responsive tables
+- Wraps all tables inside of a div to make them responsive
+------------------------------------------------------------------*/
+// if ($$('table').length) import('./components/ResponsiveTables');
+
+/*------------------------------------------------------------------
+Accordions
+- Event handlers for toggling accordion content
+------------------------------------------------------------------*/
+// if ($$('.js-accordion-trigger').length) import('./components/Accordions');
+
+/*------------------------------------------------------------------
+Video Modal
+- Video block modal to play vimeo or youtube videos
 ------------------------------------------------------------------*/
 
 
-document.addEventListener('DOMContentLoaded', function () {
-  if ($('.js-video-modal').length) Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./components/videoBlock */ "./themes/quicksilver/js/components/videoBlock.js"));
-  if ($('table').length) Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./components/responsiveTables */ "./themes/quicksilver/js/components/responsiveTables.js"));
-  if ($('.js-accordion-trigger').length) Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./components/accordions */ "./themes/quicksilver/js/components/accordions.js"));
-  if ($('login').length) __webpack_require__.e(/*! import() */ 3).then(__webpack_require__.t.bind(null, /*! ./components/login */ "./themes/quicksilver/js/components/login.js", 7));
-});
+if ($$('.js-video-modal').length) __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/VideoModal */ "./themes/quicksilver/js/components/VideoModal.js"));
+/*------------------------------------------------------------------
+Video Modal
+- Video block modal to play vimeo or youtube videos
+------------------------------------------------------------------*/
+// if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
 
 /***/ }),
 
@@ -253,4 +281,4 @@ document.addEventListener('DOMContentLoaded', function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.map.js
+//# sourceMappingURL=app.map.js

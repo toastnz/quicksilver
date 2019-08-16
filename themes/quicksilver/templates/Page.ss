@@ -11,7 +11,7 @@
       data-page-template="$Classname">
 <div class="tingle-content-wrapper">
 
-<% include Type %>
+<%-- <% include Type %> --%>
 
 <div id="type">
     <% include Header %>

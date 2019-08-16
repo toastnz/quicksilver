@@ -15,19 +15,58 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;!function(t,o)
 
 /***/ }),
 
-/***/ "./themes/quicksilver/js/components/videoBlock.js":
+/***/ "./themes/quicksilver/js/components/Templates.js":
+/*!*******************************************************!*\
+  !*** ./themes/quicksilver/js/components/Templates.js ***!
+  \*******************************************************/
+/*! exports provided: closeModal, videoModal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "videoModal", function() { return videoModal; });
+/**
+ * Close modal template
+ */
+var closeModal = function closeModal() {
+  return (
+    /*html*/
+    "<div class=\"closeIcon\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"86\" height=\"85\" viewBox=\"0 0 86 85\" class=\"svg-close\"><polygon fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3.78\" points=\"840 88.29 824.516 73 799.999 97.207 775.484 73 760 88.29 784.515 112.499 760 136.708 775.484 152 799.999 127.789 824.516 152 840 136.708 815.483 112.499\" transform=\"translate(-757 -70)\"></polygon></svg>\n    </div>"
+  );
+};
+/** 
+ * Video modal template
+ * @param {*} id 
+ * @param {*} type 
+ */
+
+var videoModal = function videoModal(id) {
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'youtube';
+  return (
+    /*html*/
+    "<div class=\"modal__close\">\n        <a href=\"#\" class=\"modal__close__icon [ js-close-modal ]\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"86\" height=\"85\" viewBox=\"0 0 86 85\" class=\"svg-close\"><polygon fill=\"none\" stroke=\"#704C99\" stroke-width=\"3.78\" points=\"840 88.29 824.516 73 799.999 97.207 775.484 73 760 88.29 784.515 112.499 760 136.708 775.484 152 799.999 127.789 824.516 152 840 136.708 815.483 112.499\" transform=\"translate(-757 -70)\"></polygon></svg>\n        </a>\n    </div>\n    <div class=\"modal wysiwyg\">\n        <div class=\"embed-container\">\n        ".concat(type === 'vimeo' ?
+    /*html*/
+    "<iframe src=\"https://player.vimeo.com/video/".concat(id, "?title=0&byline=0&portrait=0&autoplay=1\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>") :
+    /*html*/
+    "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/".concat(id, "?controls=0&autoplay=1&rel=0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"), "\n        </div>\n    </div>")
+  );
+};
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/components/VideoModal.js":
 /*!********************************************************!*\
-  !*** ./themes/quicksilver/js/components/videoBlock.js ***!
+  !*** ./themes/quicksilver/js/components/VideoModal.js ***!
   \********************************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var tingle_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tingle.js */ "./node_modules/tingle.js/dist/tingle.min.js");
-/* harmony import */ var tingle_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(tingle_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var tingle_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tingle.js */ "./node_modules/tingle.js/dist/tingle.min.js");
+/* harmony import */ var tingle_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(tingle_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Templates__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Templates */ "./themes/quicksilver/js/components/Templates.js");
 /*------------------------------------------------------------------
 Imports
 ------------------------------------------------------------------*/
@@ -37,32 +76,39 @@ Imports
 Variables
 ------------------------------------------------------------------*/
 
-var $body = jquery__WEBPACK_IMPORTED_MODULE_0___default()('body');
-$body.on('click', '.js-video-modal', function (e) {
-  e.preventDefault();
-  var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
-  var videoModal = new tingle_js__WEBPACK_IMPORTED_MODULE_1___default.a.modal({
-    cssClass: ['videoModal'],
+var buttons = document.querySelectorAll('.js-video-modal');
+buttons.forEach(function (button) {
+  return button.addEventListener('click', function (e) {
+    return createModal(e.currentTarget);
+  });
+});
+/** 
+ * 
+ * @param {*} e 
+ */
+
+var createModal = function createModal(e) {
+  var modal = new tingle_js__WEBPACK_IMPORTED_MODULE_0___default.a.modal({
     onClose: function onClose() {
-      videoModal.destroy();
-    },
-    onOpen: function onOpen() {
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.tingle-modal__close').html("<div class=\"closeIcon\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"86\" height=\"85\" viewBox=\"0 0 86 85\" class=\"svg-close\"><polygon fill=\"none\" stroke=\"#ffffff\" stroke-width=\"3.78\" points=\"840 88.29 824.516 73 799.999 97.207 775.484 73 760 88.29 784.515 112.499 760 136.708 775.484 152 799.999 127.789 824.516 152 840 136.708 815.483 112.499\" transform=\"translate(-757 -70)\"></polygon></svg></div>");
-      jquery__WEBPACK_IMPORTED_MODULE_0___default()('.tingle-modal').addClass('active');
+      modal.destroy();
     }
   });
+  setContent(modal, e.dataset.videoType, e.dataset.videoId);
+  modal.open();
+};
+/**
+ * 
+ * @param {*} modal 
+ * @param {*} video_id 
+ * @param {*} video_source 
+ */
 
-  if (jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-video-source') === 'vimeo') {
-    videoModal.setContent("<div class=\"modal__close\"><a href=\"#\" class=\"modal__close__icon [ js-close-modal ]\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"86\" height=\"85\" viewBox=\"0 0 86 85\" class=\"svg-close\"><polygon fill=\"none\" stroke=\"#704C99\" stroke-width=\"3.78\" points=\"840 88.29 824.516 73 799.999 97.207 775.484 73 760 88.29 784.515 112.499 760 136.708 775.484 152 799.999 127.789 824.516 152 840 136.708 815.483 112.499\" transform=\"translate(-757 -70)\"></polygon></svg></a></div><div class=\"modal wysiwyg\"><div class=\"embed-container\"><iframe src=\"https://player.vimeo.com/video/".concat(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-video-id'), "?title=0&byline=0&portrait=0&autoplay=1\" width=\"640\" height=\"360\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>"));
-  } else {
-    console.log(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).attr('data-video-id'));
-    videoModal.setContent("<div class=\"modal__close\">\n                                 <a href=\"#\" class=\"modal__close__icon [ js-close-modal ]\">\n                                    <svg xmlns=\"http://www.w3.org/2000/svg\" width=\"86\" height=\"85\" viewBox=\"0 0 86 85\" class=\"svg-close\"><polygon fill=\"none\" stroke=\"#704C99\" stroke-width=\"3.78\" points=\"840 88.29 824.516 73 799.999 97.207 775.484 73 760 88.29 784.515 112.499 760 136.708 775.484 152 799.999 127.789 824.516 152 840 136.708 815.483 112.499\" transform=\"translate(-757 -70)\"></polygon></svg>\n                                 </a>\n                               </div>\n                               <div class=\"modal wysiwyg\">\n                                 <div class=\"embed-container\">\n                                   <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/".concat($this.attr('data-video-id'), "?controls=0&autoplay=1&rel=0\" frameborder=\"0\" allow=\"accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>\n                                 </div>\n                               </div>"));
-  }
 
-  videoModal.open();
-});
+var setContent = function setContent(modal, video_id, video_source) {
+  modal.setContent(_Templates__WEBPACK_IMPORTED_MODULE_1__["videoModal"](video_id, video_source));
+};
 
 /***/ })
 
 }]);
-//# sourceMappingURL=bundle.map.js
+//# sourceMappingURL=app.map.js

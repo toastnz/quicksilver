@@ -55,7 +55,7 @@ class PageController extends ContentController
         parent::init();
 
         Requirements::backend()->setWriteHeaderComment(false);
-        Requirements::combine_files('app.js', ['themes/quicksilver/dist/scripts/bundle.js']);
+        Requirements::combine_files('app.js', ['themes/quicksilver/dist/scripts/app.js']);
         Requirements::process_combined_files();
     }
 
