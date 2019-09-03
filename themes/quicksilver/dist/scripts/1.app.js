@@ -84,7 +84,7 @@ buttons.forEach(function (button) {
 });
 /** 
  * 
- * @param {*} e 
+ * @param {Event} e 
  */
 
 var createModal = function createModal(e) {
@@ -98,9 +98,9 @@ var createModal = function createModal(e) {
 };
 /**
  * 
- * @param {*} modal 
- * @param {*} video_id 
- * @param {*} video_source 
+ * @param {object} modal 
+ * @param {string} video_id 
+ * @param {string} video_source 
  */
 
 

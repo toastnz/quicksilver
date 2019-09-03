@@ -222,22 +222,6 @@ Stylesheets
 ------------------------------------------------------------------*/
 
 
-var D = document;
-window.$ = D.querySelector.bind(D);
-
-window.$$ = function (selector) {
-  var elem = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : D;
-  return elem.querySelectorAll(selector);
-};
-
-window.Array.prototype.on = function (type, listener, options) {
-  this.map(function (el) {
-    if (el instanceof Element) {
-      el.addEventListener(type, listener, options);
-    }
-  });
-  return this; // for chaining
-};
 /*------------------------------------------------------------------
 Imports
 ------------------------------------------------------------------*/
@@ -258,7 +242,6 @@ Accordions
 Video Modal
 - Video block modal to play vimeo or youtube videos
 ------------------------------------------------------------------*/
-
 
 if ($$('.js-video-modal').length) __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/VideoModal */ "./themes/quicksilver/js/components/VideoModal.js"));
 /*------------------------------------------------------------------

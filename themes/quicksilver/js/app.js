@@ -12,18 +12,6 @@ Stylesheets
 import './../scss/style.scss';
 
 
-const D = document
-window.$ = D.querySelector.bind(D)
-window.$$ = (selector, elem = D) => elem.querySelectorAll(selector);
-
-window.Array.prototype.on = function (type, listener, options) {
-    this.map(el => {
-        if (el instanceof Element) {
-            el.addEventListener(type, listener, options)
-        }
-    })
-    return this // for chaining
-}
 
 /*------------------------------------------------------------------
 Imports
