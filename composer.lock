@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c7e1ed3bf544869abc110f75310e7d4",
+    "content-hash": "55ccedad104f7488fa2b1df19ce8f6c3",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -39,6 +39,59 @@
             ],
             "description": "Child process management",
             "time": "2015-12-06T21:13:18+00:00"
+        },
+        {
+            "name": "axllent/silverstripe-form-fields",
+            "version": "1.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/axllent/silverstripe-form-fields.git",
+                "reference": "a7284113086b1a656f27f968cef3f518d29a37d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/axllent/silverstripe-form-fields/zipball/a7284113086b1a656f27f968cef3f518d29a37d2",
+                "reference": "a7284113086b1a656f27f968cef3f518d29a37d2",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0",
+                "silverstripe/vendor-plugin": "^1.0"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "optional: if you require VideoLink titles or Vimeo thumbnail images"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "css",
+                    "javascript"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Axllent\\FormFields\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Slooten",
+                    "homepage": "http://www.axllent.org/"
+                }
+            ],
+            "description": "Custom forms & fields for the SilverStripe framework & CMS",
+            "homepage": "https://github.com/axllent/silverstripe-form-fields",
+            "keywords": [
+                "Forms",
+                "cms",
+                "framework",
+                "silverstripe"
+            ],
+            "time": "2019-02-02T20:05:51+00:00"
         },
         {
             "name": "axllent/silverstripe-minifier",
@@ -1048,6 +1101,49 @@
             "time": "2019-06-24T14:06:31+00:00"
         },
         {
+            "name": "jaedb/iconfield",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jaedb/IconField.git",
+                "reference": "3404270c1659d74fd9b54b8520f44898ddd35d02"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jaedb/IconField/zipball/3404270c1659d74fd9b54b8520f44898ddd35d02",
+                "reference": "3404270c1659d74fd9b54b8520f44898ddd35d02",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4",
+                "silverstripe/vendor-plugin": "^1"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "css"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "James Barnsley",
+                    "email": "james@barnsley.co.nz",
+                    "homepage": "http://jamesbarnsley.co.nz"
+                }
+            ],
+            "description": "Icon field for SilverStripe",
+            "homepage": "http://jamesbarnsley.co.nz",
+            "keywords": [
+                "silverstripe"
+            ],
+            "time": "2018-06-12T23:07:46+00:00"
+        },
+        {
             "name": "jeremeamia/superclosure",
             "version": "2.4.0",
             "source": {
@@ -1161,6 +1257,52 @@
                 "silverstripe"
             ],
             "time": "2019-07-01T22:51:15+00:00"
+        },
+        {
+            "name": "jonom/silverstripe-share-care",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-share-care.git",
+                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-share-care/zipball/f0df5e7af6c52077ed059a9e7d8179c1457f216b",
+                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "*",
+                "silverstripe/framework": "^4.0",
+                "tractorcow/silverstripe-opengraph": "^4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "JonoM\\ShareCare\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Social media sharing previews and customisation for SilverStripe",
+            "keywords": [
+                "facebook",
+                "open graph",
+                "opengraph",
+                "share",
+                "silverstripe",
+                "social media"
+            ],
+            "time": "2019-05-07T16:24:01+00:00"
         },
         {
             "name": "jonom/silverstripe-text-target-length",
@@ -4537,6 +4679,108 @@
                 "silverstripe"
             ],
             "time": "2019-07-28T21:55:02+00:00"
+        },
+        {
+            "name": "toastnz/silverstripe-socialnav",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/silverstripe-socialnav.git",
+                "reference": "12c7dc5cee4c596bce06ef8d4f21caaf0d8bcc27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/silverstripe-socialnav/zipball/12c7dc5cee4c596bce06ef8d4f21caaf0d8bcc27",
+                "reference": "12c7dc5cee4c596bce06ef8d4f21caaf0d8bcc27",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "ilateral\\SilverStripe\\SocialNav\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "ilateral",
+                    "email": "info@ilateral.co.uk"
+                }
+            ],
+            "description": "Adds a list of social media services that generates a list of links in a template",
+            "homepage": "http://github.com/i-lateral/silverstripe-socialnav",
+            "keywords": [
+                "facebook",
+                "google plus",
+                "linked in",
+                "silverstripe",
+                "social",
+                "twitter",
+                "you tube"
+            ],
+            "time": "2018-11-15T17:11:17+00:00"
+        },
+        {
+            "name": "tractorcow/silverstripe-opengraph",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tractorcow/silverstripe-opengraph.git",
+                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tractorcow/silverstripe-opengraph/zipball/f701656dc3d2b71528d069237e89e87c2df3d375",
+                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/recipe-core": "^1 || ^4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "silverstripe/recipe-cms": "^1 || ^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "opengraph",
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
+                "expose": [
+                    "images"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "TractorCow\\OpenGraph\\": "src/",
+                    "TractorCow\\OpenGraph\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian.mooyman@gmail.com"
+                }
+            ],
+            "description": "Implementation of the Facebook Open Graph protocol for SilverStripe",
+            "keywords": [
+                "facebook",
+                "opengraph",
+                "silverstripe"
+            ],
+            "time": "2018-07-25T03:07:22+00:00"
         },
         {
             "name": "unclecheese/display-logic",
