@@ -1,0 +1,29 @@
+---
+Name: oauthmysite
+---
+
+# https://github.com/bigfork/silverstripe-oauth-login
+
+SilverStripe\Core\Injector\Injector:
+  Bigfork\SilverStripeOAuth\Client\Factory\ProviderFactory:
+    properties:
+      providers:
+        'Facebook': '%$FacebookProvider'
+  FacebookProvider:
+    class: 'League\OAuth2\Client\Provider\Facebook'
+    constructor:
+      Options:
+        clientId: ''
+        clientSecret: ''
+        graphApiVersion: 'v2.6'
+Bigfork\SilverStripeOAuth\Client\Authenticator\Authenticator:
+  providers:
+    'Facebook': # Matches the key for '$%FacebookProvider' above
+      name: 'The Facebooks'
+      scopes: ['email', 'public_profile']
+
+
+#Bigfork\SilverStripeOAuth\Client\Mapper\GenericMemberMapper:
+#  mapping:
+#    'Facebook':
+#      'Site-ColumnNameHere' => 'Facebook-ColumnNameHere'

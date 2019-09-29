@@ -1,0 +1,40 @@
+---
+Name: myproject
+---
+SilverStripe\Core\Manifest\ModuleManifest:
+  project: app
+
+SilverStripe\View\SSViewer:
+  theme: quicksilver
+
+StevieMayhew\SilverStripeSVG\SVGTemplate:
+  base_path: 'themes/quicksilver/dist/images/svg/'
+
+SilverStripe\ORM\Connect\MySQLDatabase:
+  connection_charset: 'utf8'
+
+SilverStripe\Assets\Image_Backend:
+  quality: 90
+
+SilverStripe\Assets\Image:
+  cms_thumbnail_width:  100
+  cms_thumbnail_height: 80
+  force_resample: true
+
+SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
+  editor_css:
+    - 'app/dist/styles/editor.css'
+
+---
+Only:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'
+
+---
+Except:
+  environment: dev
+---
+Email:
+  admin_email: 'email@mysite.com'
