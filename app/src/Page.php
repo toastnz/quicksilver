@@ -1,6 +1,5 @@
 <?php
 
-
 use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\CMS\Controllers\ContentController;
@@ -30,17 +29,3 @@ class Page extends SiteTree
     }
 
 }
-
-
-class PageController extends ContentController
-{
-    private static $allowed_actions = [];
-
-    protected function init()
-    {
-        parent::init();
-    }
-
-}
-
-
