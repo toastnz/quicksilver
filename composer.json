@@ -24,7 +24,7 @@
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
-        "toastnz/quickblocks": "dev-feature/quicksilver"
+        "toastnz/quickblocks": "dev-feature/quicksilver#6eccffe4f096ca4e9db2c7b554fade13f11de2de"
     },
     "extra": {
         "project-files-installed": [
