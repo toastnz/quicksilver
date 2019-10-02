@@ -168,7 +168,7 @@ body {
   color: #fff;
   background: rgba(140, 140, 140, 0.99999); }
 
-span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
+p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
 form textarea, .styleguide__aside a {
   font-size: 1.6rem; }
 
@@ -189,170 +189,6 @@ hr {
   border-width: .1rem 0 0 0;
   border-style: solid;
   margin: 3rem auto; }
-
-h1,
-.h1 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 3.5rem; }
-  @media only screen and (min-width: 1024px) {
-    h1,
-    .h1 {
-      font-size: 5.4rem; } }
-
-h2,
-.h2 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 3rem; }
-  @media only screen and (min-width: 1024px) {
-    h2,
-    .h2 {
-      font-size: 5.2rem; } }
-
-h3,
-.h3 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 2.4rem; }
-  @media only screen and (min-width: 1024px) {
-    h3,
-    .h3 {
-      font-size: 4rem; } }
-
-h4,
-.h4 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 2.4rem; }
-  @media only screen and (min-width: 1024px) {
-    h4,
-    .h4 {
-      font-size: 3.6rem; } }
-
-h5,
-.h5 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 1.8rem; }
-  @media only screen and (min-width: 1024px) {
-    h5,
-    .h5 {
-      font-size: 2.4rem; } }
-
-h6,
-.h6 {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 1.6rem; }
-  @media only screen and (min-width: 1024px) {
-    h6,
-    .h6 {
-      font-size: 1.6rem; } }
-
-p,
-.p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
-form textarea, .styleguide__aside a {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 1.6rem; }
-  @media only screen and (min-width: 1024px) {
-    p,
-    .p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
-    form textarea, .styleguide__aside a {
-      font-size: 1.6rem; } }
-
-p.large,
-.p.large,
-span.large,
-b.large,
-em.large,
-i.large,
-li.large,
-input.large,
-textarea.large,
-td.large,
-tr.large,
-tl.large,
-dl.large,
-dt.large,
-strong.large,
-pre.large,
-label.large,
-button.large,
-form input.large:not([type="submit"]),
-.styleguide__aside a.large {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 2.4rem; }
-  @media only screen and (min-width: 1024px) {
-    p.large,
-    .p.large,
-    span.large,
-    b.large,
-    em.large,
-    i.large,
-    li.large,
-    input.large,
-    textarea.large,
-    td.large,
-    tr.large,
-    tl.large,
-    dl.large,
-    dt.large,
-    strong.large,
-    pre.large,
-    label.large,
-    button.large,
-    form input.large:not([type="submit"]),
-    .styleguide__aside a.large {
-      font-size: 3.2rem; } }
-
-small,
-.small {
-  line-height: 1.5;
-  margin-bottom: .8em;
-  font-size: 1rem; }
-  @media only screen and (min-width: 1024px) {
-    small,
-    .small {
-      font-size: 1.3rem; } }
-
-h1 {
-  line-height: 1.2; }
-  h1 * {
-    font-size: inherit;
-    line-height: inherit; }
-
-h2 {
-  line-height: 1.2; }
-  h2 * {
-    font-size: inherit;
-    line-height: inherit; }
-
-h3 {
-  line-height: 1.2; }
-  h3 * {
-    font-size: inherit;
-    line-height: inherit; }
-
-h4 {
-  line-height: 1.2; }
-  h4 * {
-    font-size: inherit;
-    line-height: inherit; }
-
-h5 {
-  line-height: 1.2; }
-  h5 * {
-    font-size: inherit;
-    line-height: inherit; }
-
-h6 {
-  line-height: 1.2; }
-  h6 * {
-    font-size: inherit;
-    line-height: inherit; }
 
 .login {
   position: relative;
@@ -787,6 +623,58 @@ h6 {
   .column.lg-12 {
     width: 100%; } }
 
+p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
+form textarea, .styleguide__aside a, h1, h2, h3, h4, h5, h6, small {
+  line-height: 1.5;
+  margin-bottom: .8em; }
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2; }
+  h1 *, h2 *, h3 *, h4 *, h5 *, h6 * {
+    font-size: inherit;
+    line-height: inherit; }
+
+p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
+form textarea, .styleguide__aside a {
+  font-size: 1.6rem; }
+
+h1 {
+  font-size: 3.5rem; }
+
+h2 {
+  font-size: 3rem; }
+
+h3 {
+  font-size: 2.4rem; }
+
+h4 {
+  font-size: 2.4rem; }
+
+h5 {
+  font-size: 1.8rem; }
+
+h6 {
+  font-size: 1.6rem; }
+
+small {
+  font-size: 1rem; }
+
+@media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 5.4rem; }
+  h2 {
+    font-size: 5.2rem; }
+  h3 {
+    font-size: 4rem; }
+  h4 {
+    font-size: 3.6rem; }
+  h5 {
+    font-size: 2.4rem; }
+  h6 {
+    font-size: 1.6rem; }
+  small {
+    font-size: 1.3rem; } }
+
 .alignContent {
   display: table; }
   .alignContent--fixed, .alignContent.row {
@@ -923,32 +811,6 @@ ol:not(.unstyled) {
 ol:not(.unstyled) {
   list-style: decimal; }
 
-ul.coloured--white:before, ul.coloured--off-white:before, ul.coloured--black:before, ul.coloured--primary:before, ul.coloured--secondary:before, ul.coloured--tertiary:before {
-  content: '';
-  width: .6rem;
-  height: .6rem;
-  border-radius: 50%;
-  top: .5em;
-  left: -1.9rem; }
-
-ul.coloured--white:before {
-  background-color: "white"; }
-
-ul.coloured--off-white:before {
-  background-color: "off-white"; }
-
-ul.coloured--black:before {
-  background-color: "black"; }
-
-ul.coloured--primary:before {
-  background-color: "primary"; }
-
-ul.coloured--secondary:before {
-  background-color: "secondary"; }
-
-ul.coloured--tertiary:before {
-  background-color: "tertiary"; }
-
 table {
   vertical-align: top;
   max-width: 100%;
@@ -983,18 +845,6 @@ blockquote {
   padding: 0 2rem;
   border-width: 0 0 0 .4rem;
   border-style: solid; }
-  blockquote.blockquote--white {
-    border-color: "white"; }
-  blockquote.blockquote--off-white {
-    border-color: "off-white"; }
-  blockquote.blockquote--black {
-    border-color: "black"; }
-  blockquote.blockquote--primary {
-    border-color: "primary"; }
-  blockquote.blockquote--secondary {
-    border-color: "secondary"; }
-  blockquote.blockquote--tertiary {
-    border-color: "tertiary"; }
 
 button {
   border: 0;
@@ -1289,27 +1139,24 @@ form {
   position: relative;
   margin-top: 5rem;
   margin-bottom: 5rem; }
-  @media only screen and (min-width: 968px) {
-    .contentBlock {
-      margin-top: 10rem;
-      margin-bottom: 10rem; } }
-  @media only screen and (min-width: 968px) {
-    .contentBlock.extraSpace {
-      margin-top: 20rem;
-      margin-bottom: 20rem; } }
   .contentBlock--padding {
     margin-top: 0 !important;
     margin-bottom: 0 !important;
     padding-top: 5rem;
     padding-bottom: 5rem; }
-    @media only screen and (min-width: 968px) {
+  @media only screen and (min-width: 968px) {
+    .contentBlock {
+      margin-top: 10rem;
+      margin-bottom: 10rem; }
+      .contentBlock.extraSpace {
+        margin-top: 20rem;
+        margin-bottom: 20rem; }
       .contentBlock--padding {
         padding-top: 10rem;
-        padding-bottom: 10rem; } }
-    @media only screen and (min-width: 968px) {
-      .contentBlock--padding.extraSpace {
-        padding-top: 20rem;
-        padding-bottom: 20rem; } }
+        padding-bottom: 10rem; }
+        .contentBlock--padding.extraSpace {
+          padding-top: 20rem;
+          padding-bottom: 20rem; } }
   .contentBlock > .row {
     position: relative; }
 
@@ -1777,93 +1624,6 @@ Custom Styles
       transition: color 0.2s ease; }
       .mainNav .nav__item__link.current, .mainNav .nav__item__link:hover, .mainNav .nav__item__link:active, .mainNav .nav__item__link:focus {
         color: #8C8C8C; }
-
-.mobileNav {
-  display: none;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  background-color: rgba(67, 67, 67, 0.98);
-  opacity: 0;
-  padding: 10rem 0;
-  -webkit-transition: opacity 0.2s ease;
-  -o-transition: opacity 0.2s ease;
-  transition: opacity 0.2s ease; }
-  .mobileNav.js-active {
-    opacity: 1; }
-    .mobileNav.js-active .nav {
-      opacity: 1;
-      -webkit-transform: translateY(0);
-          -ms-transform: translateY(0);
-              transform: translateY(0); }
-  .mobileNav__close {
-    position: absolute;
-    border: none;
-    -webkit-box-shadow: none;
-            box-shadow: none;
-    background-color: transparent;
-    height: 6rem;
-    width: 6rem;
-    top: 2rem;
-    right: 2rem;
-    cursor: pointer;
-    outline: none; }
-    .mobileNav__close:before, .mobileNav__close:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 0.7rem;
-      background-color: #fff; }
-    .mobileNav__close:before {
-      -webkit-transform: translate(-50%, -50%) rotate(45deg);
-          -ms-transform: translate(-50%, -50%) rotate(45deg);
-              transform: translate(-50%, -50%) rotate(45deg); }
-    .mobileNav__close:after {
-      -webkit-transform: translate(-50%, -50%) rotate(-45deg);
-          -ms-transform: translate(-50%, -50%) rotate(-45deg);
-              transform: translate(-50%, -50%) rotate(-45deg); }
-  .mobileNav .nav {
-    opacity: 0;
-    -webkit-transform: translateY(4rem);
-        -ms-transform: translateY(4rem);
-            transform: translateY(4rem);
-    -webkit-transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
-    transition: opacity 0.2s ease, -webkit-transform 0.2s ease;
-    -o-transition: opacity 0.2s ease, transform 0.2s ease;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    transition: opacity 0.2s ease, transform 0.2s ease, -webkit-transform 0.2s ease;
-    display: table;
-    width: 100%;
-    height: 100%;
-    text-align: center; }
-    .mobileNav .nav__item {
-      display: table-row;
-      margin: 0; }
-      .mobileNav .nav__item:not(:last-child) a {
-        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.25); }
-      .mobileNav .nav__item__link {
-        display: table-cell;
-        vertical-align: middle;
-        padding: 0 2rem;
-        color: #fff;
-        font-size: 3rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-        -webkit-transition: color .3s ease;
-        -o-transition: color .3s ease;
-        transition: color .3s ease;
-        -webkit-transition: color 0.2s ease, background-color 0.2s ease;
-        -o-transition: color 0.2s ease, background-color 0.2s ease;
-        transition: color 0.2s ease, background-color 0.2s ease; }
-        .mobileNav .nav__item__link:hover, .mobileNav .nav__item__link:active, .mobileNav .nav__item__link:focus {
-          color: #8C8C8C;
-          background-color: rgba(255, 255, 255, 0.25); }
 
 .slick-slider .slick-arrow {
   position: absolute;

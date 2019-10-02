@@ -5,32 +5,28 @@
     margin-top: $min;
     margin-bottom: $min;
 
-    @include media($xmd) {
-      margin-top: $max;
-      margin-bottom: $max;
-    }
-
-    &.extraSpace {
-      @include media($xmd) {
-        margin-top: $max * 2;
-        margin-bottom: $max * 2;
-      }
-    }
-
     &--padding {
       margin-top: 0!important;
       margin-bottom: 0!important;
 
       padding-top: $min;
       padding-bottom: $min;
+    }
 
-      @include media($xmd) {
-        padding-top: $max;
-        padding-bottom: $max;
+    @include media($xmd) {
+      margin-top: $max;
+      margin-bottom: $max;
+      
+      &.extraSpace {
+        margin-top: $max * 2;
+        margin-bottom: $max * 2;
       }
 
-      &.extraSpace {
-        @include media($xmd) {
+      &--padding {
+        padding-top: $max;
+        padding-bottom: $max;
+
+        &.extraSpace {
           padding-top: $max * 2;
           padding-bottom: $max * 2;
         }

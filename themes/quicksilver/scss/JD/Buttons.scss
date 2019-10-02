@@ -38,8 +38,8 @@ $error-button-color: $error-colour;
     }
   }
 
-  @each $colour, $value in $colour-map {
-    &--#{$colour} {
+  @each $color, $value in $color-map {
+    &--#{$color} {
       background-color: $value;
       border: $value;
 
@@ -52,7 +52,7 @@ $error-button-color: $error-colour;
       }
     }
 
-    &--outline--#{$colour} {
+    &--outline--#{$color} {
       background-color: transparent;
       color: $value;
       border: 1px solid $value;

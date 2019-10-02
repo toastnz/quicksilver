@@ -2,26 +2,32 @@
 // Colour Styles
 //------------------------------------------------------------------
 
-$color-map: (
-  'white': $white,
-  'off-white': $off-white,
-  'black': $black,
-  'primary': $primary,
-  'secondary': $secondary,
-  'tertiary': $tertiary,
-);
+// List our styles we want to alter with our classes
+$style-list: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 
 @mixin ColorStyles {
-  // List our styles we want to alter with our classes
-  $style-list: 'color', 'background-color', 'border-color', 'fill', 'stroke';
-
   // example @extend %background-color--primary;
   @each $color, $value in $color-map {
     @each $style in $style-list {
-      .#{$style}--#{$color},
       %#{$style}--#{$color} {
         #{$style}: $value;
       }
     }
   }
+}
+
+@mixin ColorClasses {
+  // example .background-color--primary;
+  @each $color, $value in $color-map {
+    @each $style in $style-list {
+      .#{$style}--#{$color} {
+        #{$style}: $value;
+      }
+    }
+  }
+}
+
+@mixin Colors {
+  @include ColorStyles;
+  @include ColorClasses;
 }
