@@ -1,7 +1,6 @@
 {
     "require": {
         "silverstripe/recipe-cms": "^4.4",
-        "toastnz/quickblocks": "^5.0",
         "silverstripe/userforms": "^5.4",
         "silverstripe/blog": "^3.4",
         "silverstripe/taxonomy": "^2.0",
@@ -20,11 +19,12 @@
         "bummzack/sortablefile": "^2.1",
         "bigfork/silverstripe-oauth-login": "*",
         "symbiote/silverstripe-queuedjobs": "^4.4",
-        "jaedb/iconfield": "^1.0",
+        "jaedb/iconfield": "1.0.2",
         "axllent/silverstripe-form-fields": "^1.3",
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
-        "quinninteractive/silverstripe-seo": "^1.0"
+        "quinninteractive/silverstripe-seo": "^1.0",
+        "toastnz/quickblocks": "dev-feature/quicksilver"
     },
     "extra": {
         "project-files-installed": [
