@@ -11,6 +11,7 @@
 @import 'Emmanuel/Forms';
 @import 'Emmanuel/Spacing';
 @import 'Emmanuel/LoginPage';
+@import 'Emmanuel/Sliders';
 
 //------------------------------------------------------------------
 // Grid Overrides
@@ -44,6 +45,7 @@ $breakpoint-map: (
 @include Buttons;
 @include FormStyles;
 @include SpacingStyles;
+@include SliderStyles;
 
 //------------------------------------------------------------------
 // Global Variables

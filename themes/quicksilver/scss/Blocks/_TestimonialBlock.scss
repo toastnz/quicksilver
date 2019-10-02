@@ -1,0 +1,35 @@
+//------------------------------------------------------------------
+// Testimonial Block
+//------------------------------------------------------------------
+
+.testimonialBlock {
+	&__wrap {
+		&__item {
+			position: relative;
+			padding-top: 6rem;
+			&__icon {
+				position: absolute;
+				top: 0;
+				left: 50%;
+				transform: translateX(-50%);
+
+				margin-bottom: 0;
+				font-size: 8rem;
+			}
+
+			&__quote, 
+			&__credit {
+				text-align: center;
+			}
+
+			&__quote {
+				margin-bottom: $gutterWidth * 2;
+
+				p {
+					font-size: 2rem;
+					font-style: italic;
+				}
+			}
+		}
+	}
+}
