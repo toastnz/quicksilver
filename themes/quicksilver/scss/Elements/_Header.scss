@@ -9,7 +9,7 @@
   left: 0;
   width: 100%;
   box-shadow: 0 0 2rem 0 rgba($black, .05);
-  @extend %background-color--white;
+  background-color: $white;
 
   &__wrap {
 
@@ -22,7 +22,11 @@
         &__link {
           display: block;
           width: 100%;
-          @include svg($logoDimentions...);
+          @if variable-exists(logoDimentions) {
+            @include svg($logoDimentions...);
+          }@else {
+            @include svg(1,1);
+          }
         }
       }
 
@@ -30,5 +34,9 @@
         // See _Nav.scss
       }
     }
+  }
+  
+  + .contentBlock {
+    margin-top: 0;
   }
 }

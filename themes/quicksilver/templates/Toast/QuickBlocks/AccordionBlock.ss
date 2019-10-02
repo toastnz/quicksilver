@@ -1,4 +1,4 @@
-<section class="accordionBlock marginBlock contentBlock [ js-accordion ]">
+<section class="accordionBlock contentBlock [ js-accordion ]">
     <% if $Heading || $Summary %>
         <% include Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>

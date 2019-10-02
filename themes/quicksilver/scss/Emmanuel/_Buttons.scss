@@ -3,8 +3,18 @@
 //-----------------------------------------------------------------
 
 @mixin ButtonStyles {
-	%button-defaults {
 
+	// Button Reset
+	button {
+		border: 0;
+		padding: 0;
+		margin: 0;
+		outline: 0;
+		cursor: pointer;	
+		background-color: transparent;
+	}
+
+	%button-defaults {
 		font-weight: bold;
 		display: inline-block;
 		margin: 0 1rem 1rem 0;
@@ -18,9 +28,9 @@
 		text-decoration: none;
 		border-width: .2rem;
 		border-style: solid;
-		transition: color .3s ease, border-color .3s ease, background-color .3s ease;
-
+		@include transition((color, border-color, background-color));
 	}
+	
 	.button,
 	[type="submit"] {
 		@extend %button-defaults;

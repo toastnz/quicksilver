@@ -1,4 +1,4 @@
-<section class="videoBlock marginBlock">
+<section class="videoBlock contentBlock">
     <% if $Heading || $Summary %>
         <% include Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>

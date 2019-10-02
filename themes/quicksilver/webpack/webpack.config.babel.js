@@ -23,7 +23,7 @@ const stats = {
     errors: false,
     errorDetails: false,
     warnings: false,
-    publicPath: false,
+    publicPath: false, 
 };
 
 module.exports = (env, argv) => {
@@ -38,8 +38,7 @@ module.exports = (env, argv) => {
         output: {
             publicPath: '/themes/quicksilver/dist/scripts/',
             path: path.resolve(__dirname, '../dist/scripts'),
-            filename: 'app.js',
-            sourceMapFilename: 'app.map.js'
+            filename: 'app.js'
         },
         module: {
             rules: [

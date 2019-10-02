@@ -8,13 +8,18 @@
     padding: 0 2rem;
     border-width: 0 0 0 .4rem;
     border-style: solid;
+  }
+}
 
-    @if($color-map) {
-      @each $color, $value in $color-map {
-        &.blockquote--#{$color} {
-          border-color: $color;
-        }
-      }
+@mixin BlockQuoteClasses {
+  @each $color, $value in $color-map {
+    &.blockquote--#{$color} {
+      border-color: $color;
     }
   }
+}
+
+@mixin Blockquotes {
+  @include BlockquoteStyles;
+  @include BlockQuoteClasses;
 }

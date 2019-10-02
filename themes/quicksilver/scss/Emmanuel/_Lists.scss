@@ -33,7 +33,9 @@
       list-style: decimal;
     }
   }
+}
 
+@mixin ListClasses {
   //------------------------------------------------------------------
   // Coloured Bullets
   
@@ -59,4 +61,9 @@
       }
     }
   }
+}
+
+@mixin Lists {
+  @include ListStyles;
+  @include ListClasses;
 }
