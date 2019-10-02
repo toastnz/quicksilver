@@ -1,10 +1,15 @@
-<div class="login-wrap">
-    <div class="login-wrap__content">
-        <div class="logo-wrapper">
-            $SVG('logo')
-            <h5>Reset your password</h5>
-        </div>
-        <br>
-        $Form
-    </div>
-</div>
+<section class="login alignContent">
+	<div class="login__wrap verticalAlign">
+		<div class="login__wrap__content">
+			<div class="login__wrap__content__header">
+				$SVG('logo')
+			</div>
+			<div class="login__wrap__content__text">
+				<h5 class="login__wrap__content__text__heading">Reset your password</h5>
+			</div>
+			<div class="login__wrap__content__form">
+				$Form
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,4 +1,4 @@
-<div id="$Name" class="input-wrap input-wrap--<% if $extraClass %>$extraClass<% end_if %> field<% if $extraClass %> $extraClass<% end_if %>">
+<div id="$Name" class="inputWrap inputWrap--<% if $extraClass %>$extraClass<% end_if %> field<% if $extraClass %> $extraClass<% end_if %>">
     <% if $Title %><label class="left">$Title</label><% end_if %>
     <div class="middleColumn">
         $Field

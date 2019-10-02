@@ -1,0 +1,349 @@
+//------------------------------------------------------------------
+// Typography variables
+//------------------------------------------------------------------
+
+$base: 10px;
+$base-line-height: 1.5;
+$base-type-margin: .8em;
+$logoDimentions: 202,48;
+
+//------------------------------------------------------------------
+// Declare our font-familys
+
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+$font-primary: 'Poppins', sans-serif;
+
+//------------------------------------------------------------------
+// Font Sizes
+
+// 'element': (intial size, $lg size),
+$font-size-map: (
+  'h1'      : (3.5rem, 5.4rem),
+  'h2'      : (3.0rem, 5.2rem),
+  'h3'      : (2.4rem, 4.0rem),
+  'h4'      : (2.4rem, 3.6rem),
+  'h5'      : (1.8rem, 2.4rem),
+  'h6'      : (1.6rem, 1.6rem),
+  'p'       : (1.6rem, 1.6rem),
+  'p.large' : (2.4rem, 3.2rem),
+  'small'   : (1.0rem, 1.3rem),
+);
+
+//------------------------------------------------------------------
+// list of all elements that we want styled as paragraph text.
+// note: <p> does not need to be included in this list.
+
+$paragraph-text-elements: span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label;
+
+//------------------------------------------------------------------
+// Font Families
+//------------------------------------------------------------------
+
+// Mixins to include font-familys
+@mixin font($weight: 400, $family: $font-primary) {
+  font-family: $family;
+  font-weight: $weight;
+}
+
+//------------------------------------------------------------------
+// Base body styles
+//------------------------------------------------------------------
+
+html,
+body {
+  @include font;
+  font-size: $base;
+  color: $text;
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+}
+
+a {
+  @extend %color--primary;
+  text-decoration: none;
+}
+
+::selection {
+  color: $white;
+  background: rgba($primary, .99999);
+}
+
+//------------------------------------------------------------------
+// WYSIWYG defaults
+//------------------------------------------------------------------
+
+%globalTypeSettings {
+  line-height: $base-line-height;
+}
+
+// Here's a mixin to output our desired font-size on mobile and desktop
+@mixin font-size($mobile, $desktop) {
+  font-size: $mobile;
+
+  @include media($lg) {
+    font-size: $desktop;
+  }
+}
+
+//------------------------------------------------------------------
+// font-size
+//------------------------------------------------------------------
+
+@each $element, $size in $font-size-map {
+  #{$element},
+  .#{$element},
+  %#{$element} {
+    @include font-size($size...);
+    @extend %globalTypeSettings;
+    margin-bottom: $base-type-margin;
+  }
+}
+
+// Loop our $paragraph-text-elements and extend the %p to avoid code repetition
+@each $element in $paragraph-text-elements {
+  #{$element} {
+    @extend %p;
+  }
+}
+
+
+// This allows any text elements contained in h tags to inherit the h tag font size
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i},
+  %h#{$i} {
+
+    line-height: 1.2!important;
+    // text-transform: uppercase;
+
+    @each $element in $paragraph-text-elements {
+      > #{$element}, > .#{$element} {
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+  }
+}
+
+// Make sure all text that appears in a .wysiwyg follows the appropriate font-size, not the $base font-size.
+.wysiwyg {
+  @extend %p;
+}
+
+
+//------------------------------------------------------------------
+// Lists
+//------------------------------------------------------------------
+
+ul,
+ol {
+
+  &:not(.unstyled) {
+    padding-left: 2rem;
+    margin-bottom: 3rem;
+
+    @include media($xmd) {
+      padding-left: 6rem;
+    }
+
+    li {
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+
+      ul,
+      ol {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
+
+ul {
+  &:not(.unstyled):not(.coloured) {
+    list-style: disc;
+  }
+
+  &.coloured {
+
+    li {
+      position: relative;
+
+      &:before {
+        @extend %background-color--primary;
+        @include pseudo;
+        width: .6rem;
+        height: .6rem;
+        border-radius: 50%;
+        top: .5em;
+        left: -1.9rem;
+      }
+    }
+
+    ul:not(.unstyled):not(.coloured) {
+      li {
+        &:before {
+          content: none;
+        }
+      }
+    }
+
+    // See Colours.scss
+    @each $color, $value in $color-map {
+      &.coloured--#{$color} {
+        li {
+          &:before {
+            background: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+ol {
+  &:not(.unstyled) {
+    list-style: decimal;
+  }
+}
+
+//------------------------------------------------------------------
+// Font Styles
+//------------------------------------------------------------------
+
+.italic,
+em,
+i {
+  font-style: italic;
+}
+
+.bold,
+strong,
+b {
+  @include font(700);
+}
+
+//------------------------------------------------------------------
+// Tables
+//------------------------------------------------------------------
+
+table {
+  vertical-align: top;
+  max-width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  margin: 3rem auto;
+
+  tr {
+    th {
+      @extend 
+        %p,
+        %color--white,
+        %border-color--tertiary,
+        %background-color--primary;
+      @include font(600);
+      padding: 1.2rem;
+      border-width: .1rem;
+      border-style: solid;
+      text-align: left;
+    }
+
+    &:nth-child(even) {
+      td {
+        @extend %background-color--off-white;
+      }
+    }
+
+    td {
+      @extend 
+        %p,
+        %color--black,
+        %border-color--tertiary,
+        %background-color--white;
+
+      border-width: .1rem;
+      border-style: solid;
+      padding: 1rem;
+      text-align: left;
+    }
+  }
+}
+
+//------------------------------------------------------------------
+// Images
+//------------------------------------------------------------------
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+//------------------------------------------------------------------
+// WYSIWYG Image Text Wrap
+//--------------------------------------------------------------- ---
+
+.wysiwyg {
+
+  img {
+    display: block;
+    margin-bottom: 15px;
+
+    @include media($lg, max) {
+      width: 100%;
+      height: auto;
+    }
+
+    @include media($lg) {
+      &.left {
+        float: left;
+        margin-right: 15px;
+        margin-bottom: 15px;
+      }
+
+      &.right {
+        float: right;
+        margin-left: 15px;
+        margin-bottom: 15px;
+      }
+
+      &:not([width]) {
+        max-width: 100%;
+      }
+
+      &:not([height]) {
+        height: auto;
+      }
+    }
+  }
+
+  //------------------------------------------------------------------
+  // WYSIWYG block quote
+  //------------------------------------------------------------------
+
+  blockquote {
+    @extend %border-color--primary;
+    margin: 3rem;
+    padding: 0 2rem;
+    border-width: 0 0 0 .4rem;
+    border-style: solid;
+
+
+    @each $color, $value in $color-map {
+      &.blockquote--#{$color} {
+        @extend %border-color--#{$color};
+      }
+    }
+  }
+}
+
+hr {
+  @extend %border-color--secondary;
+  border-width: .1rem 0 0 0;
+  border-style: solid;
+  margin: 3rem auto;
+}

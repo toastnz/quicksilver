@@ -1,0 +1,20 @@
+{
+// Default options
+'functions': true
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-resolution: 240dpi) {
+
+{{#items}}
+  %icon-{{name}},
+  .icon-{{name}} {
+    background-image: url('../dist/images/sprites/sprite@2x.png');
+    background-size: ({{total_width }} ) + px ({{total_height }} ) + px;
+  }
+
+{{/items}}
+}
+
+

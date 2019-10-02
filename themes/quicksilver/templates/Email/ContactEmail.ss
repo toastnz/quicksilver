@@ -4,13 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>{$Subject}</title>
-    <!-- Designed by https://github.com/kaytcat -->
-    <!-- Robot header image designed by Freepik.com -->
-
     <style type="text/css">
         @import url(http://fonts.googleapis.com/css?family=Droid+Sans);
-
-        /* Take care of image borders and formatting */
 
         img {
             max-width: 600px;
@@ -29,8 +24,6 @@
         a img {
             border: none;
         }
-
-        /* General styling */
 
         td, h1, h2, h3 {
             font-family: "Trebuchet MS", Helvetica, sans-serif;
@@ -69,7 +62,6 @@
 
     <style type="text/css" media="screen">
         @media screen {
-            /*Thanks Outlook 2013! http://goo.gl/XLxpyl*/
             td, h1, h2, h3 {
                 font-family: 'Droid Sans', 'Helvetica Neue', 'Arial', 'sans-serif' !important;
             }
@@ -77,7 +69,6 @@
     </style>
 
     <style type="text/css" media="only screen and (max-width: 480px)">
-        /* Mobile styles */
         @media only screen and (max-width: 480px) {
 
             table[class="w320"] {

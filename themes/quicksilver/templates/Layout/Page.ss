@@ -1,5 +1,3 @@
-<div class="innerWrap">
-    $Content
-
-    $Form
-</div>
+<% loop $ContentBlocks.sort('SortOrder') %>
+    $ForTemplate
+<% end_loop %>

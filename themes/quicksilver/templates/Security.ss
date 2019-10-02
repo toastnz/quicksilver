@@ -1,14 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <% include Toast\Meta %>
+    <% include Meta %>
 </head>
-<body class="$Classname"
-      <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %>
-      data-classname="$Classname"
-      data-title="$Title"
-      data-url-segment="$URLSegment">
+<body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
+<% include Type %>
+    
+   
+
 <div class="tingle-content-wrapper">
+
 
     $Layout
 
@@ -17,6 +18,20 @@
             <iframe src="https://www.googletagmanager.com/ns.html?id={$SiteConfig.GoogleTagManagerID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
         </noscript>
     <% end_if %>
+
+    <% if not $IsLive %>
+        <div class="navigator">
+            <div class="navigator__toggle">+</div>
+            <div class="navigator__items">
+                <% loop $AllStaticPages %>
+                    <a href="$Link" class="navigator__items__link">$MenuTitle</a>
+                <% end_loop %>
+            </div>
+        </div>
+    <% end_if %>
+
 </div>
+
+ <canvas class="animation" id="animation"></canvas>
 </body>
 </html>

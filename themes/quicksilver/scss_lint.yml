@@ -1,0 +1,300 @@
+# http://www.rubydoc.info/github/brigade/scss-lint/SCSSLint/Linter/
+
+scss_files: "**/*.scss"
+plugin_directories: ['.scss-linters']
+
+# List of gem names to load custom linters from (make sure they are already installed)
+plugin_gems: []
+
+linters:
+  # Checks spacing of ! declarations, like !important and !default
+  BangFormat:
+    enabled: true
+    space_before_bang: true
+    space_after_bang: false
+
+  # Checks for BEM selectors with more elements than a specified maximum number
+  BemDepth:
+    enabled: false
+    max_elements: 1
+
+  # Enforce a particular value for empty borders
+  BorderZero:
+    enabled: true
+    convention: zero # or `none`
+
+  # Checks for uses of chained classes
+  ChainedClasses:
+    enabled: false
+
+  # Checks for uses of a color keyword instead of the preferred hexadecimal form
+  ColorKeyword:
+    enabled: true
+
+  # Ensures color literals are used only in variable declarations
+  ColorVariable:
+    enabled: true
+
+  # Checks for uses of renderable comments (/* … */)
+  Comment:
+    enabled: true
+    style: silent
+
+  # Superclass for linters that apply to codebases using the Compass framework
+  Compass::*:
+    enabled: false
+
+  # Checks for leftover `@debug` statements
+  DebugStatement:
+    enabled: true
+
+  # Checks the order of nested items within a rule set
+  DeclarationOrder:
+    enabled: true
+
+  # Checks for “reason” comments above linter-disabling comments
+  DisableLinterReason:
+    enabled: false
+
+  # Checks for a property declared twice in a rule set
+  DuplicateProperty:
+    enabled: true
+
+  # Checks where `@else` and `@else if` directives are placed with respect to the previous curly brace
+  ElsePlacement:
+    enabled: true
+    style: same_line # or 'new_line'
+
+  # Reports the lack of empty lines between block defintions
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
+
+  # Checks for rules with no content
+  EmptyRule:
+    enabled: true
+
+  # Checks that `@extend` is never used
+  ExtendDirective:
+    enabled: false
+
+  # Checks for final newlines at the end of a file
+  FinalNewline:
+    enabled: true
+    present: true
+
+  # Checks that hexadecimal colors are written in the desired number of characters
+  HexLength:
+    enabled: true
+    style: short # or 'long'
+
+  # Checks if hexadecimal colors are written lowercase / uppercase
+  HexNotation:
+    enabled: true
+    style: lowercase # or 'uppercase'
+
+  # Checks for invalid hexadecimal colors
+  HexValidation:
+    enabled: true
+
+  # Checks for the use of an ID selector
+  IdSelector:
+    enabled: false
+
+  # Checks formatting of the basenames of @imported partials
+  ImportPath:
+    enabled: true
+    leading_underscore: false
+    filename_extension: false
+
+  # Reports the use of !important in properties
+  ImportantRule:
+    enabled: false
+
+  # Checks for consistent indentation of nested declarations and rule sets
+  Indentation:
+    enabled: true
+    allow_non_nested_indentation: false
+    character: space # or 'tab'
+    width: 2
+
+  # Checks for unnecessary leading zeros in numeric values with decimal points
+  LeadingZero:
+    enabled: true
+    style: exclude_zero # or 'include_zero'
+
+  # Checks for rule sets that can be merged with other rule sets
+  MergeableSelector:
+    enabled: true
+    force_nesting: true
+
+  # Checks the format of declared names of functions, mixins, and variables
+  NameFormat:
+    enabled: true
+    allow_leading_underscore: true
+    convention: hyphenated_lowercase # or 'camel_case', or 'snake_case', or a regex pattern
+
+  # Checks for rule sets nested deeper than a specified maximum depth
+  NestingDepth:
+    enabled: false
+    max_depth: 5
+    ignore_parent_selectors: false
+
+  # Checks that `@extend` is always used with a placeholder selector
+  PlaceholderInExtend:
+    enabled: false
+
+  # Checks that the number of properties in a rule set is under a defined limit
+  PropertyCount:
+    enabled: false
+    include_nested: false
+    max_properties: 10
+
+  # Checks the declaration order of properties
+  PropertySortOrder:
+    enabled: false
+    ignore_unspecified: false
+    min_properties: 2
+    separate_groups: false
+
+  # Checks for misspelled properties
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+    disabled_properties: []
+
+  # Check for allowed units
+  PropertyUnits:
+    enabled: true
+    global: [
+      'ch', 'em', 'ex', 'rem',                 # Font-relative lengths
+      'cm', 'in', 'mm', 'pc', 'pt', 'px', 'q', # Absolute lengths
+      'vh', 'vw', 'vmin', 'vmax',              # Viewport-percentage lengths
+      'deg', 'grad', 'rad', 'turn',            # Angle
+      'ms', 's',                               # Duration
+      'Hz', 'kHz',                             # Frequency
+      'dpi', 'dpcm', 'dppx',                   # Resolution
+      '%']                                     # Other
+    properties: {}
+
+  # Checks for the use of double colons with pseudo elements
+  PseudoElement:
+    enabled: false
+
+  # Checks for element selectors qualifying id, classe, or attribute selectors
+  QualifyingElement:
+    enabled: true
+    allow_element_with_attribute: false
+    allow_element_with_class: false
+    allow_element_with_id: false
+
+  # Checks for selectors with large depths of applicability
+  SelectorDepth:
+    enabled: false
+    max_depth: 5
+
+  # Checks that selector names use a specified convention
+  SelectorFormat:
+    enabled: false
+    convention: hyphenated_lowercase # or 'strict_BEM', or 'hyphenated_BEM', or 'snake_case', or 'camel_case', or a regex pattern
+
+  # Checks for the use of the shortest form for properties that can be written in shorthand
+  Shorthand:
+    enabled: true
+    allowed_shorthands: [1, 2, 3, 4]
+
+  # Checks that all properties in a rule set are on their own distinct lines
+  SingleLinePerProperty:
+    enabled: true
+    allow_single_line_rule_sets: true
+
+  # Checks that selector sequences are split over multiple lines by comma
+  SingleLinePerSelector:
+    enabled: true
+
+  # Checks for spaces after commas in argument lists
+  SpaceAfterComma:
+    enabled: true
+    style: one_space # or 'no_space', or 'at_least_one_space'
+
+  # Checks for spaces following the colon that separates a property's name from its value
+  SpaceAfterPropertyColon:
+    enabled: true
+    style: one_space # or 'no_space', or 'at_least_one_space', or 'aligned'
+
+  # Checks for spaces following the name of a property and before the colon separating the property's name from its value
+  SpaceAfterPropertyName:
+    enabled: true
+
+  # Checks for spaces following the name of a variable and before the colon separating the variables's name from its value
+  SpaceAfterVariableName:
+    enabled: true
+
+  # Checks for space around operators on values
+  SpaceAroundOperator:
+    enabled: true
+    style: one_space # or 'at_least_one_space', or 'no_space'
+
+  # Checks for the presence of a single space before an opening brace
+  SpaceBeforeBrace:
+    enabled: true
+    style: space # or 'new_line'
+    allow_single_line_padding: false
+
+  # Checks for the presence of spaces between parentheses
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
+
+  # Checks the type of quotes used in string literals
+  StringQuotes:
+    enabled: true
+    style: single_quotes # or double_quotes
+
+  # Checks for a trailing semicolon on statements within rule sets
+  TrailingSemicolon:
+    enabled: true
+
+  # Checks for trailing whitespace on a line
+  TrailingWhitespace:
+    enabled: true
+
+  # Checks for unnecessary trailing zeros in numeric values with decimal points
+  TrailingZero:
+    enabled: false
+
+  # Checks for explicitly transitioned properties instead of transition all
+  TransitionAll:
+    enabled: false
+
+  # Checks for the unnecessary inclusion of a zero-value mantissa in numbers. (e.g. `4.0` could be written as just `4`)
+  UnnecessaryMantissa:
+    enabled: false
+
+  # Checks for unnecessary uses of the parent reference (&) in nested selectors
+  UnnecessaryParentReference:
+    enabled: true
+
+  # Checks the format of URLs for unnecessary protocols or domains
+  UrlFormat:
+    enabled: true
+
+  # Checks for quotes in URLs
+  UrlQuotes:
+    enabled: true
+
+  # Reports the use of literals for properties where variables are prefered
+  VariableForProperty:
+    enabled: false
+    properties: []
+
+  # Checks for vendor prefixes
+  VendorPrefix:
+    enabled: false
+    identifier_list: base
+    additional_identifiers: []
+    excluded_identifiers: []
+
+  # Checks for unnecessary units on zero values
+  ZeroUnit:
+    enabled: true

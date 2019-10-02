@@ -1,0 +1,16 @@
+//------------------------------------------------------------------
+// Gallery Block
+//------------------------------------------------------------------
+
+.galleryBlock {
+	&__wrap {
+		&__item {
+			display: block;
+			margin-bottom: $gutterWidth * 2;
+			&__media {
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}

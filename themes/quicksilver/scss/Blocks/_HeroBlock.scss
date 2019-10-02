@@ -1,0 +1,108 @@
+//------------------------------------------------------------------
+// Hero
+//------------------------------------------------------------------
+
+.heroBlock {
+  position: relative;
+  overflow: hidden;
+
+  .height {
+    height: 40rem;
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: $gutterWidth;
+    left: 50%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    transform: translateX(-50%);
+
+    li {
+      display: inline-block;
+      margin: 0 .5rem;
+
+      button {
+        @extend %background-color--white;
+        font-size: 0;
+        padding: 0;
+        margin: 0;
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 50%;
+        border: 0;
+        cursor: pointer;
+        @include transition(background-color);
+      }
+
+      &.slick-active {
+        button {
+          @extend %background-color--primary;
+        }
+      }
+    }
+  }
+
+  .slick-list {
+    .bannerContent {
+      opacity: 0;
+    }
+  }
+  
+  .slick-active {
+    .bannerContent {
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+
+    &__background {
+      @include cover;
+      position: absolute;
+      top: -5rem;
+      left: 0;
+      right: 0;
+      bottom: -5rem;
+      width: 100%;
+
+      @include overlay($black, .2);
+    }
+
+    &__wrap {
+      position: relative;
+      z-index: 1;
+      height: 65rem;
+      padding-top: 20rem;
+      padding-bottom: 20rem;
+
+      @include media($xmd) {
+        height: 100rem;
+      }
+
+      &__content {
+        @extend %color--white;
+        position: relative;
+        opacity: 1;
+        @include transition(opacity, 3s);
+
+        a {
+          @extend %color--white;
+        }
+        
+        @include media($xmd) {
+          p {
+            font-size: 2.2rem;
+          }
+        }
+
+        :last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

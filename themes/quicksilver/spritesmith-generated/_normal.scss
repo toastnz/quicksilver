@@ -1,0 +1,117 @@
+%icon-check-checked,
+.icon-check-checked {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: 0px 0px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-check-disabled,
+.icon-check-disabled {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: 0px -52px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-check-focus,
+.icon-check-focus {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: 0px -26px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-check,
+.icon-check {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -26px -26px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-checkbox-checked,
+.icon-checkbox-checked {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -78px -50px;
+  width: 20px;
+  height: 20px;
+}
+
+%icon-checkbox-focused,
+.icon-checkbox-focused {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -78px -26px;
+  width: 20px;
+  height: 20px;
+}
+
+%icon-checkbox-unchecked,
+.icon-checkbox-unchecked {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: 0px -78px;
+  width: 20px;
+  height: 20px;
+}
+
+%icon-radio-checked,
+.icon-radio-checked {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -26px -52px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-radio-disabled,
+.icon-radio-disabled {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -52px -52px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-radio-focus,
+.icon-radio-focus {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -78px 0px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-radio-focused,
+.icon-radio-focused {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -52px -26px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-radio-unchecked,
+.icon-radio-unchecked {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -52px 0px;
+  width: 22px;
+  height: 22px;
+}
+
+%icon-radio,
+.icon-radio {
+  display: inline-block;
+  background-image: url('../dist/images/sprites/sprite.png');
+  background-position: -26px 0px;
+  width: 22px;
+  height: 22px;
+}
+

@@ -1,0 +1,1 @@
+<% include Toast\QuickBlocks\HeroBlock Slides=$Slides %>

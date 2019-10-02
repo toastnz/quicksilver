@@ -1,0 +1,126 @@
+//------------------------------------------------------------------
+// Nav
+//------------------------------------------------------------------
+
+.mainNav {
+
+  .nav {
+    text-align: center;
+  }
+  
+  &:first-child {
+    .nav {
+      text-align: left;
+    }
+  }
+
+  &:nth-last-child(2) {
+    .nav {
+      text-align: right;
+    }
+  }
+
+  .nav {
+    white-space: nowrap;
+
+    &__item {
+      display: inline-block;
+      margin: 0 1rem!important;
+
+      &__link {
+        display: block;
+        position: relative;
+        font-size: 1.5rem;
+        color: $secondary;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color .3s ease;
+        @include transition(color);
+        
+        &:after {
+          content: '';
+          position: absolute;
+          left: 50%;
+          bottom: calc(100% + 1rem);
+          height: 5rem;
+          width: .2rem;
+          background-color: transparent;
+          @include transition(background-color);
+          transform: translateX(-50%);
+        }
+
+        @include active('current') {
+          color: $primary;
+        }
+
+        &.current {
+          &:after {
+            background-color: $primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.mobileNav {
+  display: none;
+  @include pos(fixed, 0);
+  z-index: 1000;
+  background-color: rgba($black-light, .98);
+  opacity: 0;
+  padding: 10rem 0;
+  @include transition(opacity);
+
+  &.js-active {
+    opacity: 1;
+    .nav {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  &__close {
+    @include closeBtn(6rem, .7rem, $white);
+  }
+
+  .nav {
+    opacity: 0;
+    transform: translateY(4rem);
+    @include transition((opacity, transform));
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+
+    &__item {
+      display: table-row;
+      margin: 0;
+
+      &:not(:last-child) {
+        a {
+          border-bottom: .1rem solid rgba($white, .25);
+        }
+      }
+
+      &__link {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 0 $gutterWidth;
+        color: $white;
+        font-size: 3rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: color .3s ease;
+        @include transition((color, background-color));
+
+        @include active {
+          color: $primary;
+          background-color: rgba($white, .25);
+        }
+      }
+    }
+  }
+}
