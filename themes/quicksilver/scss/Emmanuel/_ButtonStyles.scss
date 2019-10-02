@@ -3,6 +3,7 @@
 //-----------------------------------------------------------------
 
 @mixin ButtonStyles {
+
 	// Button Reset
 	button {
 		border: 0;
@@ -27,9 +28,9 @@
 		text-decoration: none;
 		border-width: .2rem;
 		border-style: solid;
-		transition: color .3s ease, border-color .3s ease, background-color .3s ease;
-
+		@include transition((color, border-color, background-color));
 	}
+	
 	.button,
 	[type="submit"] {
 		@extend %button-defaults;
