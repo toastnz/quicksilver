@@ -1,4 +1,4 @@
-<section class="heroBlock [ js-slider--hero ]" data-equalize>
+<section class="heroBlock contentBlock [ js-slider--hero ]" data-equalize>
     <%-- <% loop $Slides %> --%>
         <div class="heroBlock__item" data-parallax>
             <div class="heroBlock__item__background" data-parallax-watch style="background-image: url('https://via.placeholder.com/1920x1000');"></div>

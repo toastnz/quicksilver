@@ -1,14 +1,7 @@
 @mixin SpacingStyles($min: 5rem, $max: 10rem) {
-  .marginBlock,
-  .paddingBlock {
+  
+  .contentBlock {
     position: relative;
-    
-    > .row {
-      position: relative;
-    }
-  }
-
-  .marginBlock {
     margin-top: $min;
     margin-bottom: $min;
 
@@ -23,22 +16,29 @@
         margin-bottom: $max * 2;
       }
     }
-  }
 
-  .paddingBlock {
-    padding-top: $min;
-    padding-bottom: $min;
+    &--padding {
+      margin-top: 0!important;
+      margin-bottom: 0!important;
 
-    @include media($xmd) {
-      padding-top: $max;
-      padding-bottom: $max;
+      padding-top: $min;
+      padding-bottom: $min;
+
+      @include media($xmd) {
+        padding-top: $max;
+        padding-bottom: $max;
+      }
+
+      &.extraSpace {
+        @include media($xmd) {
+          padding-top: $max * 2;
+          padding-bottom: $max * 2;
+        }
+      }
     }
 
-    &.extraSpace {
-      @include media($xmd) {
-        padding-top: $max * 2;
-        padding-bottom: $max * 2;
-      }
+    > .row {
+      position: relative;
     }
   }
 }

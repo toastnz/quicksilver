@@ -1,4 +1,4 @@
-<section class="galleryBlock marginBlock">
+<section class="galleryBlock contentBlock">
     <% if $Heading || $Summary %>
         <% include Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>

@@ -26,5 +26,7 @@
         <iframe src="https://www.googletagmanager.com/ns.html?id={$SiteConfig.GoogleTagManagerID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
       </noscript>
     <% end_if %>
+    
+    <% require javascript("themes/quicksilver/dist/scripts/app.js") %>
   </body>
 </html>

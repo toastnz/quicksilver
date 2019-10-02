@@ -7,7 +7,7 @@
 		&__tabs {
 
 			&__option {
-				@extend %border-color--primary;
+				border-color: $primary;
 				border-style: solid;
 				border-radius: 0;
 				border-width: 0 .2rem;
@@ -34,8 +34,8 @@
 					@include transition((background-color, color));
 
 					&.js-active {
-						@extend %color--white,
-						%background-color--secondary;
+						color: $white;
+						background-color: $secondary;
 						cursor: default;
 					}
 

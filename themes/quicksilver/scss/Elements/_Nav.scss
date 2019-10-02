@@ -14,7 +14,7 @@
     }
   }
 
-  &:nth-last-child(2) {
+  &:last-child {
     .nav {
       text-align: right;
     }
@@ -37,27 +37,9 @@
         text-decoration: none;
         transition: color .3s ease;
         @include transition(color);
-        
-        &:after {
-          content: '';
-          position: absolute;
-          left: 50%;
-          bottom: calc(100% + 1rem);
-          height: 5rem;
-          width: .2rem;
-          background-color: transparent;
-          @include transition(background-color);
-          transform: translateX(-50%);
-        }
-
+      
         @include active('current') {
           color: $primary;
-        }
-
-        &.current {
-          &:after {
-            background-color: $primary;
-          }
         }
       }
     }

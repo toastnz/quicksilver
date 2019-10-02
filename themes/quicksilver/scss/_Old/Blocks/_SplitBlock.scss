@@ -1,0 +1,41 @@
+//------------------------------------------------------------------
+// Split Block
+//------------------------------------------------------------------
+
+.splitBlock {
+	&__wrap {
+		.content + .content{
+			.media {
+				right: auto;
+				left: 0;
+			}
+		}
+
+		&__content {
+			position: relative;
+			padding-top: 5rem;
+			padding-bottom: 5rem;
+			@include media($xmd) {
+				padding-top: 10rem;
+				padding-bottom: 10rem;
+			}
+			&__media {
+				@include cover;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				right: 0;
+				left: auto;
+
+				@include media($globalWidthPX) {
+					width: 50vw;
+				}
+			}
+
+			&__text {
+				position: relative;
+			}
+		}
+	}
+}

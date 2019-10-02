@@ -29,7 +29,7 @@
 				padding-bottom: $gutterWidth;
 
 				&__title {
-					@extend %color--primary;
+					color: $primary;
 					margin-bottom: 0;
 				}
 

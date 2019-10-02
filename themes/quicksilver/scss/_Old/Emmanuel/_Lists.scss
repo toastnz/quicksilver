@@ -1,0 +1,62 @@
+//------------------------------------------------------------------
+// Lists
+
+@mixin ListStyles {
+  ul,
+  ol {
+    &:not(.unstyled) {
+      padding-left: 2rem;
+      margin-bottom: 3rem;
+
+      @include media($xmd) {
+        padding-left: 6rem;
+      }
+
+      &:before {
+        content: none;
+      }
+
+      li {
+        padding-left: 1rem;
+        margin-bottom: 1rem;
+
+        ul,
+        ol {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+
+  ol {
+    &:not(.unstyled) {
+      list-style: decimal;
+    }
+  }
+
+  //------------------------------------------------------------------
+  // Coloured Bullets
+  
+  %bullet {
+    &:before {
+      content: '';
+      width: .6rem;
+      height: .6rem;
+      border-radius: 50%;
+      top: .5em;
+      left: -1.9rem;
+    }
+  }
+
+  ul {
+    @each $color, $value in $color-map {
+      &.coloured--#{$color} {
+        @extend %bullet;
+
+        &:before {
+          background-color: $color;
+        }
+      }
+    }
+  }
+}
