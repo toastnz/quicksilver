@@ -33,7 +33,7 @@ class Parallax {
   }
 
   init() {
-    attach('resize click', () => this.updateCoordinates(), 500);
+    attach('resize', () => this.updateCoordinates(), 500);
     attach('scroll', () => this.parallax(), 50);
 
     this.children.forEach((child) => {

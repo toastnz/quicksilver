@@ -14,3 +14,14 @@
 		}
 	}
 }
+
+.galleryModal {
+	&__wrap {
+		&__content {
+			&__item {
+				@include cover;
+				padding-bottom: 60%;
+			}
+		}
+	}
+}

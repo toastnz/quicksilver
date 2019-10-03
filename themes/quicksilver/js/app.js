@@ -14,15 +14,14 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
-import './components/accordions';
-import './components/sliders';
-
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
+import Gallery from './components/gallery';
 
 document.querySelectorAll('.js-tabs').forEach((group) => new Tabs(group));
+document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group));
 document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
 document.querySelectorAll('[data-parallax]').forEach((group) => new Parallax(group));
 
@@ -32,3 +31,6 @@ document.querySelectorAll('[data-video]').forEach((el) => {
 		el.insertAdjacentHTML('beforeend', new VideoEmbed(el.dataset.video, { autoplay: 1 }).render());
 	})
 });
+
+import './components/accordions';
+import './components/sliders';

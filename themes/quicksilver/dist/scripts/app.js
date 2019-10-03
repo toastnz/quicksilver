@@ -13728,12 +13728,13 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../scss/style.scss */ "./themes/quicksilver/scss/style.scss");
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_accordions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/accordions */ "./themes/quicksilver/js/components/accordions.js");
-/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sliders */ "./themes/quicksilver/js/components/sliders.js");
-/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tabs */ "./themes/quicksilver/js/components/tabs.js");
-/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
-/* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
-/* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
+/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/tabs */ "./themes/quicksilver/js/components/tabs.js");
+/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
+/* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
+/* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/gallery */ "./themes/quicksilver/js/components/gallery.js");
+/* harmony import */ var _components_accordions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/accordions */ "./themes/quicksilver/js/components/accordions.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/sliders */ "./themes/quicksilver/js/components/sliders.js");
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
@@ -13752,24 +13753,28 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 
 
 
-
 document.querySelectorAll('.js-tabs').forEach(function (group) {
-  return new _components_tabs__WEBPACK_IMPORTED_MODULE_3__["default"](group);
+  return new _components_tabs__WEBPACK_IMPORTED_MODULE_1__["default"](group);
+});
+document.querySelectorAll('.js-gallery').forEach(function (group) {
+  return new _components_gallery__WEBPACK_IMPORTED_MODULE_5__["default"](group);
 });
 document.querySelectorAll('[data-equalize]').forEach(function (group) {
-  return new _components_equalizer__WEBPACK_IMPORTED_MODULE_5__["default"](group);
+  return new _components_equalizer__WEBPACK_IMPORTED_MODULE_3__["default"](group);
 });
 document.querySelectorAll('[data-parallax]').forEach(function (group) {
-  return new _components_parallax__WEBPACK_IMPORTED_MODULE_4__["default"](group);
+  return new _components_parallax__WEBPACK_IMPORTED_MODULE_2__["default"](group);
 });
 document.querySelectorAll('[data-video]').forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
-    el.insertAdjacentHTML('beforeend', new _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__["default"](el.dataset.video, {
+    el.insertAdjacentHTML('beforeend', new _components_videoEmbed__WEBPACK_IMPORTED_MODULE_4__["default"](el.dataset.video, {
       autoplay: 1
     }).render());
   });
 });
+
+
 
 /***/ }),
 
@@ -14012,6 +14017,73 @@ function () {
 
 /***/ }),
 
+/***/ "./themes/quicksilver/js/components/gallery.js":
+/*!*****************************************************!*\
+  !*** ./themes/quicksilver/js/components/gallery.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Gallery =
+/*#__PURE__*/
+function () {
+  function Gallery(el) {
+    _classCallCheck(this, Gallery);
+
+    this.container = el; // this.items = Array.from(this.container.querySelectorAll('.js-gallery--item'));
+    // this.template = this.createModal(this.items);
+
+    this.init();
+  }
+
+  _createClass(Gallery, [{
+    key: "init",
+    value: function init() {// this.clickHandler();
+      // this.container.insertAdjacentHTML('beforeend', this.template);
+      // console.log(this.template);
+    }
+  }]);
+
+  return Gallery;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Gallery); // ======================================================
+// JavaScript Usage
+// ======================================================
+// import Equalizer from './equalizer';
+// document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
+// ======================================================
+// HTML Usage
+// ======================================================
+// <section data-equalize>
+//   <div data-equalize-watch></div>
+//   <div data-equalize-watch></div>
+// </section>
+// OR ===================================================
+// <section data-equalize="selector">
+//   <div data-equalize-watch="selector"></div>
+//   <div data-equalize-watch="selector"></div>
+// </section>
+// OR ===================================================
+// <section data-equalize="selector1, selector2">
+//   <div data-equalize-watch="selector1">
+//      <div data-equalize-watch="selector2"></div>
+//   </div>
+//   <div data-equalize-watch="selector1">
+//      <div data-equalize-watch="selector2"></div>
+//   </div>
+// </section>
+
+/***/ }),
+
 /***/ "./themes/quicksilver/js/components/parallax.js":
 /*!******************************************************!*\
   !*** ./themes/quicksilver/js/components/parallax.js ***!
@@ -14086,7 +14158,7 @@ function () {
     value: function init() {
       var _this3 = this;
 
-      attach('resize click', function () {
+      attach('resize', function () {
         return _this3.updateCoordinates();
       }, 500);
       attach('scroll', function () {
@@ -14195,6 +14267,14 @@ makeSlider('.js-slider--hero', {
 
 }, false);
 makeSlider('.js-slider--testimonials', {
+  // Options
+  infinite: true,
+  dots: true,
+  arrows: true,
+  prevArrow: "<button class=\"slick-left\"><svg width=\"40\" height=\"13\" viewBox=\"0 0 40 13\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M3.386 5.547l3.97-3.876a.964.964 0 0 0 0-1.38L7.348.285a1 1 0 0 0-1.397 0L.29 5.81a.961.961 0 0 0 0 1.38l5.66 5.526a1 1 0 0 0 1.397 0l.008-.008a.964.964 0 0 0 0-1.38l-3.924-3.83h35.592a.976.976 0 0 0 0-1.951H3.386z\" fill=\"#000\" fill-rule=\"evenodd\"/></svg></button>",
+  nextArrow: "<button class=\"slick-right pull-right\"><svg width=\"40\" height=\"13\" viewBox=\"0 0 40 13\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M36.614 5.547l-3.97-3.876a.964.964 0 0 1 0-1.38l.008-.007a1 1 0 0 1 1.397 0l5.66 5.526a.961.961 0 0 1 0 1.38l-5.66 5.526a1 1 0 0 1-1.397 0l-.008-.008a.964.964 0 0 1 0-1.38l3.924-3.83H.976a.976.976 0 0 1 0-1.951h35.638z\" fill=\"#000\" fill-rule=\"evenodd\"/></svg></button>"
+}, false);
+makeSlider('.js-slider--gallery', {
   // Options
   infinite: true,
   dots: true,
