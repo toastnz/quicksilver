@@ -16,15 +16,20 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 
 import './components/accordions';
 
-const Slider = require('./components/sliders');
+import Slider from'./components/sliders';
 
-const sliders = {
+const sliderSettings = {
 	'.js-slider--hero': {},
+	'.js-slider--gallery': {},
 }
 
-Object.keys(sliders).map((selector) => {
-	document.querySelectorAll(selector).forEach((el) => Slider(el, sliders[selector]));
+const sliders = [];
+
+Object.keys(sliderSettings).map((selector) => {
+	document.querySelectorAll(selector).forEach((el) => sliders.push(new Slider(el, sliders[selector])));
 });
+
+// console.log(sliders);
 
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
@@ -33,7 +38,7 @@ import VideoEmbed from './components/videoEmbed';
 import Gallery from './components/gallery';
 
 document.querySelectorAll('.js-tabs').forEach((group) => new Tabs(group));
-document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group));
+document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
 document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
 document.querySelectorAll('[data-parallax]').forEach((group) => new Parallax(group));
 

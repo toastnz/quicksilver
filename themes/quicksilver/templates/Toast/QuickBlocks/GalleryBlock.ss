@@ -18,12 +18,22 @@
     <button class="js-close"></button>
     <div class="galleryModal__wrap row alignContent">
         <div class="galleryModal__wrap__content column verticalAlign">
-            <div class="galleryModal__wrap__content__slider row [ js-slider--gallery ]">
-                <% loop $GalleryImages %>
-                    <div class="galleryModal__wrap__content__slider__item column [ js-gallery--item ]">
-                        <div class="galleryModal__wrap__content__slider__item__media [ js-gallery--media ]" style="background-image: url('{$GalleryImage.URL}');"></div>
-                    </div>
-                <% end_loop %>
+            <div class="galleryModal__wrap__content__slider row">
+                <div class="column [ js-slider--gallery ]">
+                    <% loop $GalleryImages %>
+                        <%-- <% if $Video %> --%>
+                            <div class="galleryModal__wrap__content__slider__item">
+                                <a href="#" class="galleryModal__wrap__content__slider__item__media [ js-embed ]" data-video="https://www.youtube.com/watch?v=xl96OgXwUBk" style="background-image: url('{$GalleryImage.URL}');">
+                                    $SVG('play')
+                                </a>
+                            </div>
+                        <%-- <% end_if %> --%>
+                            <div class="galleryModal__wrap__content__slider__item">
+                                <div class="galleryModal__wrap__content__slider__item__media" style="background-image: url('{$GalleryImage.URL}');"></div>
+                            </div>
+                        <%-- <% else %> --%>
+                    <% end_loop %>
+                </div>
             </div>
         </div>
     </div>

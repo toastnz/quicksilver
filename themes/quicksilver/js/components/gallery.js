@@ -1,45 +1,56 @@
-import $ from 'jquery';
-
 class Gallery {
-  constructor(el) {
-    this.container = el;
+	constructor(el, sliders = false) {
+		this.container = el;
+		this.sliders = sliders;
 
-    // If there is a modal in the template, trigger the click handler!
-    if (this.findModal()) {
-      this.clickHandler();
-    }
-  }
+	    if (this.findModal() && this.sliders) this.init();
+	}
 
-  clickHandler() {
-    this.thumbnails.forEach((thumbnail) => {
-      thumbnail.addEventListener('click', () => {
-        // Add events to be fired on click of a thumbnail
-        this.selectSlide(this.thumbnails.indexOf(thumbnail));
-      })
-    })
-  }
+	clickHandlers() {
+		this.thumbnails.forEach((thumbnail) => {
+			thumbnail.addEventListener('click', () => {
+				this.tns.goTo(this.thumbnails.indexOf(thumbnail))
+				this.showModal();
+			});
+		});
 
-  // This function selects the appropriate slide within the modal.
-  selectSlide(index) {
-    this.$slider.slick('slickGoTo', index);
-  }
+		this.close.addEventListener('click', () => {
+			this.showModal(false);
+		});
+	}
 
-  toggleModal() {
-    console.log(index);
-  }
+	showModal(toggle = true) {
+		if (toggle) {
+			this.modal.style.display = 'block';
+			setTimeout(() => this.modal.style.opacity = 1, 50);
+		}else {
+			this.modal.style.opacity = 0;
+			setTimeout(() => this.modal.style.display = 'none', 300);
+		}
+	}
 
-  findModal() {
-    let nextSibling = this.container.nextElementSibling;
+	findModal() {
+		let nextSibling = this.container.nextElementSibling;
 
-    // If a modal is found initialise the variables
-    if (nextSibling.matches('.js-gallery--modal')) {
-      this.modal = nextSibling;
-      this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
-      this.media = Array.from(this.modal.querySelectorAll('.js-gallery--media'));
-      this.$slider = $(this.modal).find('.js-slider--gallery');
-      return true;
-    }
-  }
+	    if (nextSibling.matches('.js-gallery--modal')) {
+	    	this.modal = nextSibling;
+	    	this.modal.style.opacity = 0;
+			this.modal.style.transition = 'opacity .2s ease';
+	    	return true;
+	    }
+	}
+
+	init() {
+    	this.slider = this.modal.querySelector('.js-slider--gallery');
+		this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
+		this.close = this.modal.querySelector('.js-close');
+
+    	this.sliders.forEach((slider, i) => {
+			if (this.slider === slider.settings.container) this.tns = slider.tns;
+		});
+
+		this.clickHandlers();
+	}
 }
 
 export default Gallery;

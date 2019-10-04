@@ -14551,11 +14551,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../scss/style.scss */ "./themes/quicksilver/scss/style.scss");
 /* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _components_accordions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/accordions */ "./themes/quicksilver/js/components/accordions.js");
-/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/tabs */ "./themes/quicksilver/js/components/tabs.js");
-/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
-/* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
-/* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
-/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/gallery */ "./themes/quicksilver/js/components/gallery.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/sliders */ "./themes/quicksilver/js/components/sliders.js");
+/* harmony import */ var _components_tabs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/tabs */ "./themes/quicksilver/js/components/tabs.js");
+/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
+/* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
+/* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
+/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/gallery */ "./themes/quicksilver/js/components/gallery.js");
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
@@ -14571,37 +14572,38 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 
 
 
-var Slider = __webpack_require__(/*! ./components/sliders */ "./themes/quicksilver/js/components/sliders.js");
-
-var sliders = {
-  '.js-slider--hero': {}
+var sliderSettings = {
+  '.js-slider--hero': {},
+  '.js-slider--gallery': {}
 };
-Object.keys(sliders).map(function (selector) {
+var sliders = [];
+Object.keys(sliderSettings).map(function (selector) {
   document.querySelectorAll(selector).forEach(function (el) {
-    return Slider(el, sliders[selector]);
+    return sliders.push(new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](el, sliders[selector]));
   });
-});
+}); // console.log(sliders);
+
 
 
 
 
 
 document.querySelectorAll('.js-tabs').forEach(function (group) {
-  return new _components_tabs__WEBPACK_IMPORTED_MODULE_2__["default"](group);
+  return new _components_tabs__WEBPACK_IMPORTED_MODULE_3__["default"](group);
 });
 document.querySelectorAll('.js-gallery').forEach(function (group) {
-  return new _components_gallery__WEBPACK_IMPORTED_MODULE_6__["default"](group);
+  return new _components_gallery__WEBPACK_IMPORTED_MODULE_7__["default"](group, sliders);
 });
 document.querySelectorAll('[data-equalize]').forEach(function (group) {
-  return new _components_equalizer__WEBPACK_IMPORTED_MODULE_4__["default"](group);
+  return new _components_equalizer__WEBPACK_IMPORTED_MODULE_5__["default"](group);
 });
 document.querySelectorAll('[data-parallax]').forEach(function (group) {
-  return new _components_parallax__WEBPACK_IMPORTED_MODULE_3__["default"](group);
+  return new _components_parallax__WEBPACK_IMPORTED_MODULE_4__["default"](group);
 });
 document.querySelectorAll('[data-video]').forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
-    el.insertAdjacentHTML('beforeend', new _components_videoEmbed__WEBPACK_IMPORTED_MODULE_5__["default"](el.dataset.video, {
+    el.insertAdjacentHTML('beforeend', new _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__["default"](el.dataset.video, {
       autoplay: 1
     }).render());
   });
@@ -14857,64 +14859,84 @@ function () {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-
-
 var Gallery =
 /*#__PURE__*/
 function () {
   function Gallery(el) {
+    var sliders = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+
     _classCallCheck(this, Gallery);
 
-    this.container = el; // If there is a modal in the template, trigger the click handler!
-
-    if (this.findModal()) {
-      this.clickHandler();
-    }
+    this.container = el;
+    this.sliders = sliders;
+    if (this.findModal() && this.sliders) this.init();
   }
 
   _createClass(Gallery, [{
-    key: "clickHandler",
-    value: function clickHandler() {
+    key: "clickHandlers",
+    value: function clickHandlers() {
       var _this = this;
 
       this.thumbnails.forEach(function (thumbnail) {
         thumbnail.addEventListener('click', function () {
-          // Add events to be fired on click of a thumbnail
-          _this.selectSlide(_this.thumbnails.indexOf(thumbnail));
+          _this.tns.goTo(_this.thumbnails.indexOf(thumbnail));
+
+          _this.showModal();
         });
       });
-    } // This function selects the appropriate slide within the modal.
-
-  }, {
-    key: "selectSlide",
-    value: function selectSlide(index) {
-      this.$slider.slick('slickGoTo', index);
+      this.close.addEventListener('click', function () {
+        _this.showModal(false);
+      });
     }
   }, {
-    key: "toggleModal",
-    value: function toggleModal() {
-      console.log(index);
+    key: "showModal",
+    value: function showModal() {
+      var _this2 = this;
+
+      var toggle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+
+      if (toggle) {
+        this.modal.style.display = 'block';
+        setTimeout(function () {
+          return _this2.modal.style.opacity = 1;
+        }, 50);
+      } else {
+        this.modal.style.opacity = 0;
+        setTimeout(function () {
+          return _this2.modal.style.display = 'none';
+        }, 300);
+      }
     }
   }, {
     key: "findModal",
     value: function findModal() {
-      var nextSibling = this.container.nextElementSibling; // If a modal is found initialise the variables
+      var nextSibling = this.container.nextElementSibling;
 
       if (nextSibling.matches('.js-gallery--modal')) {
         this.modal = nextSibling;
-        this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
-        this.media = Array.from(this.modal.querySelectorAll('.js-gallery--media'));
-        this.$slider = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this.modal).find('.js-slider--gallery');
+        this.modal.style.opacity = 0;
+        this.modal.style.transition = 'opacity .2s ease';
         return true;
       }
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this3 = this;
+
+      this.slider = this.modal.querySelector('.js-slider--gallery');
+      this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
+      this.close = this.modal.querySelector('.js-close');
+      this.sliders.forEach(function (slider, i) {
+        if (_this3.slider === slider.settings.container) _this3.tns = slider.tns;
+      });
+      this.clickHandlers();
     }
   }]);
 
@@ -15058,77 +15080,138 @@ function () {
 /*!*****************************************************!*\
   !*** ./themes/quicksilver/js/components/sliders.js ***!
   \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-var _require = __webpack_require__(/*! tiny-slider/src/tiny-slider.module.js */ "./node_modules/tiny-slider/src/tiny-slider.module.js"),
-    tns = _require.tns; // https://github.com/ganlanyuan/tiny-slider
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var tiny_slider_src_tiny_slider_module_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tiny-slider/src/tiny-slider.module.js */ "./node_modules/tiny-slider/src/tiny-slider.module.js");
+/* harmony import */ var _functions_elFromStr__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../functions/elFromStr */ "./themes/quicksilver/js/functions/elFromStr.js");
+/* harmony import */ var _functions_elFromStr__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_functions_elFromStr__WEBPACK_IMPORTED_MODULE_1__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+ // https://github.com/ganlanyuan/tiny-slider
 
 
-var elFromStr = __webpack_require__(/*! ../functions/elFromStr */ "./themes/quicksilver/js/functions/elFromStr.js");
 
-var sliderBreakpoints = function sliderBreakpoints() {
-  var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+var Slider =
+/*#__PURE__*/
+function () {
+  function Slider(el, options) {
+    _classCallCheck(this, Slider);
 
-  if (el) {
-    var breakpoints = {
-      init: 0,
-      xxs: 480,
-      xs: 540,
-      sm: 640,
-      md: 768,
-      xmd: 968,
-      lg: 1024,
-      xl: 1280,
-      xxl: 1440
-    };
-    var responsiveBreakpoints = {};
-    var classBreakpoints = el.className.split(' ');
-    var slidesToScroll;
-    classBreakpoints.forEach(function (value) {
-      if (value.indexOf("-up-") > -1) {
-        var breakpoint = value.split('-')[0];
-        var slides = parseInt(value.split('-').pop().trim());
-        responsiveBreakpoints[breakpoints[breakpoint]] = {
-          items: slides
+    this.settings = Object.assign({
+      container: el,
+      mouseDrag: true,
+      touch: true,
+      navPosition: 'bottom',
+      prevButton: '<button class="slider-button slider-button--left"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M3.386 5.547l3.97-3.876a.964.964 0 0 0 0-1.38L7.348.285a1 1 0 0 0-1.397 0L.29 5.81a.961.961 0 0 0 0 1.38l5.66 5.526a1 1 0 0 0 1.397 0l.008-.008a.964.964 0 0 0 0-1.38l-3.924-3.83h35.592a.976.976 0 0 0 0-1.951H3.386z" fill="#000" fill-rule="evenodd"/></svg></button>',
+      nextButton: '<button class="slider-button slider-button--right"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M36.614 5.547l-3.97-3.876a.964.964 0 0 1 0-1.38l.008-.007a1 1 0 0 1 1.397 0l5.66 5.526a.961.961 0 0 1 0 1.38l-5.66 5.526a1 1 0 0 1-1.397 0l-.008-.008a.964.964 0 0 1 0-1.38l3.924-3.83H.976a.976.976 0 0 1 0-1.951h35.638z" fill="#000" fill-rule="evenodd"/></svg></button>',
+      responsive: this.sliderBreakpoints(el)
+    }, options);
+    if (this.settings.prevButton || this.settings.nextButton) this.settings = this.createButtons(this.settings);
+    this.tns = Object(tiny_slider_src_tiny_slider_module_js__WEBPACK_IMPORTED_MODULE_0__["tns"])(this.settings);
+  }
+
+  _createClass(Slider, [{
+    key: "sliderBreakpoints",
+    value: function sliderBreakpoints() {
+      var el = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
+
+      if (el) {
+        var breakpoints = {
+          init: 0,
+          xxs: 480,
+          xs: 540,
+          sm: 640,
+          md: 768,
+          xmd: 968,
+          lg: 1024,
+          xl: 1280,
+          xxl: 1440
         };
+        var responsiveBreakpoints = {};
+        var classBreakpoints = el.className.split(' ');
+        classBreakpoints.forEach(function (value) {
+          if (value.indexOf("-up-") > -1) {
+            var breakpoint = value.split('-')[0];
+            var slides = parseInt(value.split('-').pop().trim());
+            responsiveBreakpoints[breakpoints[breakpoint]] = {
+              items: slides
+            };
+          }
+        });
+        return responsiveBreakpoints;
       }
-    });
-    return responsiveBreakpoints;
-  }
-};
+    }
+  }, {
+    key: "createButtons",
+    value: function createButtons(settings) {
+      if (settings.prevButton) {
+        settings.prevButton = _functions_elFromStr__WEBPACK_IMPORTED_MODULE_1___default()(settings.prevButton).firstChild;
+        settings.container.parentNode.insertBefore(settings.prevButton, settings.container);
+      }
 
-var createButtons = function createButtons(settings) {
-  if (settings.prevButton) {
-    settings.prevButton = elFromStr(settings.prevButton).firstChild;
-    settings.container.parentNode.insertBefore(settings.prevButton, settings.container);
-  }
+      if (settings.nextButton) {
+        settings.nextButton = _functions_elFromStr__WEBPACK_IMPORTED_MODULE_1___default()(settings.nextButton).firstChild;
+        settings.container.parentNode.insertBefore(settings.nextButton, settings.container);
+      }
 
-  if (settings.nextButton) {
-    settings.nextButton = elFromStr(settings.nextButton).firstChild;
-    settings.container.parentNode.insertBefore(settings.nextButton, settings.container);
-  }
+      return settings;
+    }
+  }]);
 
-  return settings;
-};
+  return Slider;
+}();
 
-function Slider(el) {
-  var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-  var defaults = {
-    container: el,
-    mouseDrag: true,
-    touch: true,
-    navPosition: 'bottom',
-    prevButton: '<button class="slider-button slider-button--left"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M3.386 5.547l3.97-3.876a.964.964 0 0 0 0-1.38L7.348.285a1 1 0 0 0-1.397 0L.29 5.81a.961.961 0 0 0 0 1.38l5.66 5.526a1 1 0 0 0 1.397 0l.008-.008a.964.964 0 0 0 0-1.38l-3.924-3.83h35.592a.976.976 0 0 0 0-1.951H3.386z" fill="#000" fill-rule="evenodd"/></svg></button>',
-    nextButton: '<button class="slider-button slider-button--right"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M36.614 5.547l-3.97-3.876a.964.964 0 0 1 0-1.38l.008-.007a1 1 0 0 1 1.397 0l5.66 5.526a.961.961 0 0 1 0 1.38l-5.66 5.526a1 1 0 0 1-1.397 0l-.008-.008a.964.964 0 0 1 0-1.38l3.924-3.83H.976a.976.976 0 0 1 0-1.951h35.638z" fill="#000" fill-rule="evenodd"/></svg></button>',
-    responsive: sliderBreakpoints(el)
-  };
-  var settings = Object.assign(defaults, options);
-  if (settings.prevButton || settings.nextButton) settings = createButtons(Object.assign(defaults, options));
-  tns(settings);
-}
-
-module.exports = Slider;
+/* harmony default export */ __webpack_exports__["default"] = (Slider); // const sliderBreakpoints = (el = false) => {
+// 	if (el) {
+// 		const breakpoints = {init: 0,xxs: 480,xs: 540,sm: 640,md: 768,xmd: 968,lg: 1024,xl: 1280,xxl: 1440};
+// 		const responsiveBreakpoints = {};
+// 		let classBreakpoints = el.className.split(' ');
+// 		let slidesToScroll;
+// 		classBreakpoints.forEach(function (value) {
+// 			if(value.indexOf(`-up-`) > -1){
+// 				let breakpoint = value.split('-')[0];
+// 				let slides = parseInt(value.split('-').pop().trim());
+// 				responsiveBreakpoints[breakpoints[breakpoint]] = {
+// 					items: slides,
+// 				}
+// 			}
+// 		});
+// 		return responsiveBreakpoints;
+// 	}
+// }
+// const createButtons = (settings) => {
+// 	if (settings.prevButton) {
+// 		settings.prevButton = elFromStr(settings.prevButton).firstChild;
+// 		settings.container.parentNode.insertBefore(settings.prevButton, settings.container);
+// 	}
+// 	if (settings.nextButton) {
+// 		settings.nextButton = elFromStr(settings.nextButton).firstChild;
+// 		settings.container.parentNode.insertBefore(settings.nextButton, settings.container);
+// 	}
+// 	return settings;
+// }
+// function Slider(el, options = {}) {
+//   	const defaults = {
+// 		container: el,
+// 		mouseDrag: true,
+// 		touch: true,
+// 		navPosition: 'bottom',
+// 		prevButton:'<button class="slider-button slider-button--left"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M3.386 5.547l3.97-3.876a.964.964 0 0 0 0-1.38L7.348.285a1 1 0 0 0-1.397 0L.29 5.81a.961.961 0 0 0 0 1.38l5.66 5.526a1 1 0 0 0 1.397 0l.008-.008a.964.964 0 0 0 0-1.38l-3.924-3.83h35.592a.976.976 0 0 0 0-1.951H3.386z" fill="#000" fill-rule="evenodd"/></svg></button>',
+// 		nextButton:'<button class="slider-button slider-button--right"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M36.614 5.547l-3.97-3.876a.964.964 0 0 1 0-1.38l.008-.007a1 1 0 0 1 1.397 0l5.66 5.526a.961.961 0 0 1 0 1.38l-5.66 5.526a1 1 0 0 1-1.397 0l-.008-.008a.964.964 0 0 1 0-1.38l3.924-3.83H.976a.976.976 0 0 1 0-1.951h35.638z" fill="#000" fill-rule="evenodd"/></svg></button>',
+// 		responsive: sliderBreakpoints(el),
+// 	};
+// 	let settings = Object.assign(defaults, options);
+// 	if (settings.prevButton || settings.nextButton) settings = createButtons(settings);
+// 	tns(settings);
+// }
+// module.exports = Slider;
 
 /***/ }),
 

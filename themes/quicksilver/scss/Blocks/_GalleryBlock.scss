@@ -16,12 +16,11 @@
 }
 
 .galleryModal {
-	// display: none;
-	// @include pos(fixed, 0);
+	display: none;
+	@include pos(fixed, 0);
 	z-index: 1000;
 	padding: 10rem 0 5rem;
 	overflow: auto;
-	height: 50rem;
 	background-color: rgba($white, .9);
 
 	&__wrap {
@@ -36,7 +35,11 @@
 
 					&__media {
 						@include contain;
-						padding-bottom: 60%;
+						padding-bottom: 56.25%;
+
+						&.js-embed {
+							@include videoEmbed;
+						}
 					}
 				}
 			}
