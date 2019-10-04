@@ -9,6 +9,9 @@
 @import 'Utilities/BaseSettings';
 @import 'Utilities/Grid'; // Here for variables - will not bulk css without using @include
 
+@import 'External/TinySlider';
+// @import 'External/Tingle';
+
 //------------------------------------------------------------------
 // Users
 
@@ -16,7 +19,6 @@
 // @import 'Utilities/JD';
 
 //UnOrdered
-@import 'External/*';
 @import 'Elements/*';
 @import 'Pages/*';
 @import 'Blocks/*';

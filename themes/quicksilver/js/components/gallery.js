@@ -1,16 +1,44 @@
+import $ from 'jquery';
+
 class Gallery {
   constructor(el) {
     this.container = el;
-    // this.items = Array.from(this.container.querySelectorAll('.js-gallery--item'));
-    // this.template = this.createModal(this.items);
 
-    this.init();
+    // If there is a modal in the template, trigger the click handler!
+    if (this.findModal()) {
+      this.clickHandler();
+    }
   }
 
-  init() {
-    // this.clickHandler();
-    // this.container.insertAdjacentHTML('beforeend', this.template);
-    // console.log(this.template);
+  clickHandler() {
+    this.thumbnails.forEach((thumbnail) => {
+      thumbnail.addEventListener('click', () => {
+        // Add events to be fired on click of a thumbnail
+        this.selectSlide(this.thumbnails.indexOf(thumbnail));
+      })
+    })
+  }
+
+  // This function selects the appropriate slide within the modal.
+  selectSlide(index) {
+    this.$slider.slick('slickGoTo', index);
+  }
+
+  toggleModal() {
+    console.log(index);
+  }
+
+  findModal() {
+    let nextSibling = this.container.nextElementSibling;
+
+    // If a modal is found initialise the variables
+    if (nextSibling.matches('.js-gallery--modal')) {
+      this.modal = nextSibling;
+      this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
+      this.media = Array.from(this.modal.querySelectorAll('.js-gallery--media'));
+      this.$slider = $(this.modal).find('.js-slider--gallery');
+      return true;
+    }
   }
 }
 

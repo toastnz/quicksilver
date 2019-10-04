@@ -14,6 +14,18 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
+import './components/accordions';
+
+const Slider = require('./components/sliders');
+
+const sliders = {
+	'.js-slider--hero': {},
+}
+
+Object.keys(sliders).map((selector) => {
+	document.querySelectorAll(selector).forEach((el) => Slider(el, sliders[selector]));
+});
+
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
@@ -32,5 +44,3 @@ document.querySelectorAll('[data-video]').forEach((el) => {
 	})
 });
 
-import './components/accordions';
-import './components/sliders';

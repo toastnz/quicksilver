@@ -16,12 +16,34 @@
 }
 
 .galleryModal {
+	// display: none;
+	// @include pos(fixed, 0);
+	z-index: 1000;
+	padding: 10rem 0 5rem;
+	overflow: auto;
+	height: 50rem;
+	background-color: rgba($white, .9);
+
 	&__wrap {
+		// overflow: hidden;
+		height: 100%;
+
 		&__content {
-			&__item {
-				@include cover;
-				padding-bottom: 60%;
+
+			&__slider {
+
+				&__item {
+
+					&__media {
+						@include contain;
+						padding-bottom: 60%;
+					}
+				}
 			}
 		}
+	}
+
+	.js-close {
+		@include closeBtn(4rem, .4rem, $primary);
 	}
 }

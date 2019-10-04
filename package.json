@@ -18,6 +18,7 @@
     "superagent": "^5.1.0",
     "three": "^0.103.0",
     "tingle.js": "^0.14.0",
+    "tiny-slider": "^2.9.2",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "validate.js": "^0.13.1",
     "wretch": "^1.5.4"
