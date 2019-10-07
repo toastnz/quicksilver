@@ -17,7 +17,6 @@
         "drewm/mailchimp-api": "^2.5",
         "betterbrief/silverstripe-googlemapfield": "^2.2",
         "bummzack/sortablefile": "^2.1",
-        "bigfork/silverstripe-oauth-login": "*",
         "symbiote/silverstripe-queuedjobs": "^4.4",
         "jaedb/iconfield": "1.0.2",
         "axllent/silverstripe-form-fields": "^1.3",
