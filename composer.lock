@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4c6dbb7492deaa809492598987582359",
+    "content-hash": "d25dee369a444764d94bea1fc25c5f2d",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -1825,6 +1825,57 @@
                 "random"
             ],
             "time": "2019-01-03T20:59:08+00:00"
+        },
+        {
+            "name": "permanentinc/beautiful",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/beautiful.git",
+                "reference": "61eedf266d967e0c9f004a1ef9d10a3d28939d88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/beautiful/zipball/61eedf266d967e0c9f004a1ef9d10a3d28939d88",
+                "reference": "61eedf266d967e0c9f004a1ef9d10a3d28939d88",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "beautiful",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot1.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "CMS Theme - based on shards",
+            "homepage": "http://github.com/permanentinc/beautiful",
+            "keywords": [
+                "admin",
+                "cms",
+                "flat",
+                "permanentinc",
+                "pinc",
+                "silverstripe",
+                "theme"
+            ],
+            "time": "2019-08-12T04:44:48+00:00"
         },
         {
             "name": "psr/cache",

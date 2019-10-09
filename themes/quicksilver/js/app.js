@@ -14,8 +14,9 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
-import './components/accordions';
+const selectAll = require('./functions/selectAll');
 
+import './components/accordions';
 import Slider from'./components/sliders';
 
 const sliderSettings = {
@@ -26,7 +27,7 @@ const sliderSettings = {
 const sliders = [];
 
 Object.keys(sliderSettings).map((selector) => {
-	document.querySelectorAll(selector).forEach((el) => sliders.push(new Slider(el, sliders[selector])));
+	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliders[selector])));
 });
 
 // console.log(sliders);
@@ -37,12 +38,12 @@ import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
 import Gallery from './components/gallery';
 
-document.querySelectorAll('.js-tabs').forEach((group) => new Tabs(group));
-document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
-document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
-document.querySelectorAll('[data-parallax]').forEach((group) => new Parallax(group));
+selectAll('.js-tabs').forEach((group) => new Tabs(group));
+selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
+selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
+selectAll('[data-parallax]').forEach((group) => new Parallax(group));
 
-document.querySelectorAll('[data-video]').forEach((el) => {
+selectAll('[data-video]').forEach((el) => {
 	el.addEventListener('click', (e) => {
 		e.preventDefault();
 		el.insertAdjacentHTML('beforeend', new VideoEmbed(el.dataset.video, { autoplay: 1 }).render());

@@ -14570,6 +14570,8 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
+var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quicksilver/js/functions/selectAll.js");
+
 
 
 var sliderSettings = {
@@ -14578,7 +14580,7 @@ var sliderSettings = {
 };
 var sliders = [];
 Object.keys(sliderSettings).map(function (selector) {
-  document.querySelectorAll(selector).forEach(function (el) {
+  selectAll(selector).forEach(function (el) {
     return sliders.push(new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](el, sliders[selector]));
   });
 }); // console.log(sliders);
@@ -14588,19 +14590,19 @@ Object.keys(sliderSettings).map(function (selector) {
 
 
 
-document.querySelectorAll('.js-tabs').forEach(function (group) {
+selectAll('.js-tabs').forEach(function (group) {
   return new _components_tabs__WEBPACK_IMPORTED_MODULE_3__["default"](group);
 });
-document.querySelectorAll('.js-gallery').forEach(function (group) {
+selectAll('.js-gallery').forEach(function (group) {
   return new _components_gallery__WEBPACK_IMPORTED_MODULE_7__["default"](group, sliders);
 });
-document.querySelectorAll('[data-equalize]').forEach(function (group) {
+selectAll('[data-equalize]').forEach(function (group) {
   return new _components_equalizer__WEBPACK_IMPORTED_MODULE_5__["default"](group);
 });
-document.querySelectorAll('[data-parallax]').forEach(function (group) {
+selectAll('[data-parallax]').forEach(function (group) {
   return new _components_parallax__WEBPACK_IMPORTED_MODULE_4__["default"](group);
 });
-document.querySelectorAll('[data-video]').forEach(function (el) {
+selectAll('[data-video]').forEach(function (el) {
   el.addEventListener('click', function (e) {
     e.preventDefault();
     el.insertAdjacentHTML('beforeend', new _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__["default"](el.dataset.video, {
@@ -14778,11 +14780,17 @@ function () {
     value: function getChildren() {
       var _this2 = this;
 
-      var targetArray = this.container.dataset.equalize.split(',');
       var childArray = [];
-      targetArray.forEach(function (id) {
-        return childArray.push(_this2.container.querySelectorAll("[data-equalize-watch=\"".concat(id, "\"]")));
-      });
+
+      try {
+        var targetArray = this.container.dataset.equalize.split(',');
+        targetArray.forEach(function (id) {
+          return childArray.push(_this2.container.querySelectorAll("[data-equalize-watch=\"".concat(id, "\"]")));
+        });
+      } catch (_unused) {
+        childArray.push(this.container.querySelectorAll("[data-equalize-watch]"));
+      }
+
       return childArray;
     }
   }, {
@@ -14792,17 +14800,17 @@ function () {
 
       // set height to auto so it can be adjusted
       this.children.forEach(function (group) {
-        group.forEach(function (child) {
+        Array.from(group).forEach(function (child) {
           child.style.height = 'auto';
         });
       }); // now match all their heights
 
       this.children.forEach(function (group) {
         _this3.height = 0;
-        group.forEach(function (child) {
+        Array.from(group).forEach(function (child) {
           if (child.clientHeight > _this3.height) _this3.height = child.clientHeight;
         });
-        group.forEach(function (child) {
+        Array.from(group).forEach(function (child) {
           return child.style.height = _this3.height + 'px';
         });
       });
@@ -15002,7 +15010,7 @@ function () {
     _classCallCheck(this, Parallax);
 
     this.container = el;
-    this.children = this.container.querySelectorAll('[data-parallax-watch]');
+    this.children = Array.from(this.container.querySelectorAll('[data-parallax-watch]'));
     this.scale = scale;
     setTimeout(function () {
       return _this.init();
@@ -15019,12 +15027,12 @@ function () {
   }, {
     key: "inView",
     value: function inView() {
-      return window.scrollY + this.lastWindowHeight >= this.offset && window.scrollY <= this.offset + this.container.clientHeight;
+      return window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.container.clientHeight;
     }
   }, {
     key: "yPercent",
     value: function yPercent() {
-      return (this.offset - window.scrollY) / this.lastWindowHeight * 100;
+      return (this.offset - window.pageYOffset) / this.lastWindowHeight * 100;
     }
   }, {
     key: "transform",
@@ -15477,6 +15485,21 @@ function offsetY(el) {
 }
 
 module.exports = offsetY;
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/functions/selectAll.js":
+/*!******************************************************!*\
+  !*** ./themes/quicksilver/js/functions/selectAll.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function selectAll(selector) {
+  return Array.from(document.querySelectorAll(selector));
+}
+
+module.exports = selectAll;
 
 /***/ }),
 
