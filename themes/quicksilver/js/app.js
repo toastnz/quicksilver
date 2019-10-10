@@ -14,6 +14,7 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
+const loadContent = require('./functions/loadContent');
 const selectAll = require('./functions/selectAll');
 
 import './components/accordions';
@@ -50,3 +51,9 @@ selectAll('[data-video]').forEach((el) => {
 	})
 });
 
+// loadContent({
+// 	url: '/contact-us',
+// 	success: (response) => {
+// 		console.log(response);
+// 	}
+// });

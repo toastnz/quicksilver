@@ -14570,6 +14570,8 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 // User
 // ------------------------------------------------------------------
 
+var loadContent = __webpack_require__(/*! ./functions/loadContent */ "./themes/quicksilver/js/functions/loadContent.js");
+
 var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quicksilver/js/functions/selectAll.js");
 
 
@@ -14609,7 +14611,12 @@ selectAll('[data-video]').forEach(function (el) {
       autoplay: 1
     }).render());
   });
-});
+}); // loadContent({
+// 	url: '/contact-us',
+// 	success: (response) => {
+// 		console.log(response);
+// 	}
+// });
 
 /***/ }),
 
@@ -15463,6 +15470,35 @@ function lastInRow() {
 }
 
 module.exports = lastInRow;
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/functions/loadContent.js":
+/*!********************************************************!*\
+  !*** ./themes/quicksilver/js/functions/loadContent.js ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function loadContent(options) {
+  var httpRequest = new XMLHttpRequest();
+  var settings = Object.assign({
+    url: '/',
+    method: 'GET',
+    load: function load(response) {
+      if (settings.success !== undefined && typeof settings.success === 'function') settings.success(response.explicitOriginalTarget.response);
+    },
+    error: function error(response) {
+      console.warn(response);
+    }
+  }, options);
+  httpRequest.addEventListener("load", settings.load);
+  httpRequest.addEventListener("error", settings.error);
+  httpRequest.open(settings.method, settings.url);
+  httpRequest.send();
+}
+
+module.exports = loadContent;
 
 /***/ }),
 
