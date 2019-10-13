@@ -3,6 +3,7 @@ function loadContent(options) {
 	const settings = Object.assign({
 		url: '/',
 		method: 'GET',
+		data: '',
 		load: (response) => {
 			if (settings.success !== undefined && typeof settings.success === 'function') settings.success(response.explicitOriginalTarget.response);
 		},
@@ -15,7 +16,7 @@ function loadContent(options) {
 	httpRequest.addEventListener("error", settings.error);
 
     httpRequest.open(settings.method, settings.url);
-    httpRequest.send();
+    httpRequest.send(data);
 }
 
 module.exports = loadContent;

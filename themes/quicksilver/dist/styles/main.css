@@ -1501,6 +1501,17 @@ button::-moz-focus-inner {
     .accordionBlock__wrap__item__content :last-child {
       margin-bottom: 0; }
 
+.columnBlock {
+  background-color: #f0f0f0; }
+  .columnBlock__header {
+    margin-bottom: 6rem; }
+    .columnBlock__header__title {
+      margin-bottom: 0; }
+  .columnBlock__wrap__item {
+    margin-bottom: 6rem; }
+    .columnBlock__wrap__item__content__heading {
+      margin-bottom: 2rem; }
+
 .downloadBlock__wrap__item {
   display: block;
   border-width: 0 0 .2rem 0;

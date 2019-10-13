@@ -51,9 +51,10 @@ selectAll('[data-video]').forEach((el) => {
 	})
 });
 
-// loadContent({
-// 	url: '/contact-us',
-// 	success: (response) => {
-// 		console.log(response);
-// 	}
-// });
+loadContent({
+	url: '/contact-us',
+	method: 'POST',
+	success: (response) => {
+		console.log(response);
+	}
+});

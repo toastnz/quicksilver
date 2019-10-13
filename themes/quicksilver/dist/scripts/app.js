@@ -14611,12 +14611,14 @@ selectAll('[data-video]').forEach(function (el) {
       autoplay: 1
     }).render());
   });
-}); // loadContent({
-// 	url: '/contact-us',
-// 	success: (response) => {
-// 		console.log(response);
-// 	}
-// });
+});
+loadContent({
+  url: '/contact-us',
+  method: 'POST',
+  success: function success(response) {
+    console.log(response);
+  }
+});
 
 /***/ }),
 
@@ -15485,6 +15487,7 @@ function loadContent(options) {
   var settings = Object.assign({
     url: '/',
     method: 'GET',
+    data: '',
     load: function load(response) {
       if (settings.success !== undefined && typeof settings.success === 'function') settings.success(response.explicitOriginalTarget.response);
     },
@@ -15495,7 +15498,7 @@ function loadContent(options) {
   httpRequest.addEventListener("load", settings.load);
   httpRequest.addEventListener("error", settings.error);
   httpRequest.open(settings.method, settings.url);
-  httpRequest.send();
+  httpRequest.send(data);
 }
 
 module.exports = loadContent;
