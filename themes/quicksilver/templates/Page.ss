@@ -17,7 +17,7 @@
     <% include Toast\QuickBlocks\SplitBlock %>
     <% include Toast\QuickBlocks\VideoBlock %> --%>
 
-    <% include Toast\QuickBlocks\ColumnBlock %>    
+    <%-- <% include Toast\QuickBlocks\ColumnBlock %>     --%>
 
     $Layout
 
