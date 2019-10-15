@@ -1,6 +1,6 @@
 {
     "require": {
-        "silverstripe/recipe-cms": "^4.4",
+        "silverstripe/recipe-cms": "^4.4.4",
         "silverstripe/userforms": "^5.4",
         "silverstripe/blog": "^3.4",
         "silverstripe/taxonomy": "^2.0",
