@@ -8,3 +8,8 @@ SilverStripe\SiteConfig\SiteConfig:
 SilverStripe\Control\Controller:
   extensions:
     - Toast\Extensions\ControllerExtension
+
+Heyday\MenuManager\MenuSet:
+  default_sets:
+    - Main
+    - Footer

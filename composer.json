@@ -28,7 +28,8 @@
         "sheadawson/silverstripe-linkable": "dev-master",
         "undefinedoffset/silverstripe-nocaptcha": "2.0.x-dev",
         "symbiote/silverstripe-gridfieldextensions": "~3.1.1",
-        "stevie-mayhew/silverstripe-svg": "^2.1.0"
+        "stevie-mayhew/silverstripe-svg": "^2.1.0",
+        "heyday/silverstripe-menumanager": "dev-master"
     },
     "config": {
         "preferred-install": "dist"

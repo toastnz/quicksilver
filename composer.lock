@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "51c2ad3965e7c8473465371e496bdee0",
+    "content-hash": "45077a9b09e9047230d46c2bc764ab3a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -343,6 +343,48 @@
                 "url"
             ],
             "time": "2018-07-29T08:09:46+00:00"
+        },
+        {
+            "name": "heyday/silverstripe-menumanager",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heyday/silverstripe-menumanager.git",
+                "reference": "a2c2ad395599773762f005973f5f57a0cb4584f2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heyday/silverstripe-menumanager/zipball/a2c2ad395599773762f005973f5f57a0cb4584f2",
+                "reference": "a2c2ad395599773762f005973f5f57a0cb4584f2",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~4.0",
+                "silverstripe/vendor-plugin": "^1.0",
+                "symbiote/silverstripe-gridfieldextensions": "^3.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "dev-master": "3.0.x-dev"
+            },
+            "autoload": {
+                "psr-4": {
+                    "Heyday\\MenuManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Heyday Developers",
+                    "email": "dev@heyday.co.nz",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Allows complex menu management to be handled through the CMS when a simple tree structure is not enough.",
+            "time": "2018-09-09T04:41:47+00:00"
         },
         {
             "name": "intervention/image",
@@ -3174,7 +3216,8 @@
         "unclecheese/betterbuttons": 20,
         "silverstripe/redirectedurls": 20,
         "sheadawson/silverstripe-linkable": 20,
-        "undefinedoffset/silverstripe-nocaptcha": 20
+        "undefinedoffset/silverstripe-nocaptcha": 20,
+        "heyday/silverstripe-menumanager": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
