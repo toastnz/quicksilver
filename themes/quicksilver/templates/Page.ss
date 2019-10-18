@@ -8,14 +8,16 @@
     <% include Toast\Header %>
     <% include Toast\Banner %>
 
-    <%--<% include Toast\QuickBlocks\AccordionBlock %>
-    <% include Toast\QuickBlocks\DownloadsBlock %>
+    <%-- <% include Toast\QuickBlocks\AccordionBlock %>
+    <% include Toast\QuickBlocks\DownloadBlock %>
     <% include Toast\QuickBlocks\ImageBlock %>
     <% include Toast\QuickBlocks\HeroBlock %>
     <% include Toast\QuickBlocks\GalleryBlock %>
     <% include Toast\QuickBlocks\TabBlock %>
     <% include Toast\QuickBlocks\SplitBlock %>
-    <% include Toast\QuickBlocks\VideoBlock %>--%>
+    <% include Toast\QuickBlocks\VideoBlock %> --%>
+
+    <%-- <% include Toast\QuickBlocks\ColumnBlock %>     --%>
 
     $Layout
 

@@ -7,6 +7,11 @@ SilverStripe\Core\Manifest\ModuleManifest:
 SilverStripe\View\SSViewer:
   theme: quicksilver
 
+# disabling rate limit for security
+SilverStripe\Control\Director:
+  rules:
+    'Security//$Action/$ID/$OtherID': SilverStripe\Security\Security
+
 StevieMayhew\SilverStripeSVG\SVGTemplate:
   base_path: 'themes/quicksilver/dist/images/svg/'
 

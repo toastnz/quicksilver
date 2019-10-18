@@ -22,11 +22,11 @@
                 <div class="column [ js-slider--gallery ]">
                     <% loop $GalleryImages %>
                         <%-- <% if $Video %> --%>
-                            <div class="galleryModal__wrap__content__slider__item">
+<%--                             <div class="galleryModal__wrap__content__slider__item">
                                 <a href="#" class="galleryModal__wrap__content__slider__item__media [ js-embed ]" data-video="https://www.youtube.com/watch?v=xl96OgXwUBk" style="background-image: url('{$GalleryImage.URL}');">
                                     $SVG('play')
                                 </a>
-                            </div>
+                            </div> --%>
                         <%-- <% end_if %> --%>
                             <div class="galleryModal__wrap__content__slider__item">
                                 <div class="galleryModal__wrap__content__slider__item__media" style="background-image: url('{$GalleryImage.URL}');"></div>

@@ -9,10 +9,15 @@ class Equalizer {
   }
 
   getChildren() {
-    let targetArray = this.container.dataset.equalize.split(',');
     let childArray = [];
+    
+    try {
+      let targetArray = this.container.dataset.equalize.split(',');
+      targetArray.forEach((id) => childArray.push(this.container.querySelectorAll(`[data-equalize-watch="${id}"]`)));
+    } catch {
+      childArray.push(this.container.querySelectorAll(`[data-equalize-watch]`));
+    }
 
-    targetArray.forEach((id) => childArray.push(this.container.querySelectorAll(`[data-equalize-watch="${id}"]`)));
 
     return childArray;
   }
@@ -20,7 +25,7 @@ class Equalizer {
   matchHeight() {
     // set height to auto so it can be adjusted
     this.children.forEach((group) => {
-      group.forEach((child) => {
+      Array.from(group).forEach((child) => {
         child.style.height = 'auto';
       });
     });
@@ -28,11 +33,11 @@ class Equalizer {
     // now match all their heights
     this.children.forEach((group) => {
       this.height = 0;
-      group.forEach((child) => {
+      Array.from(group).forEach((child) => {
         if (child.clientHeight > this.height) this.height = child.clientHeight;
       });
 
-      group.forEach((child) => child.style.height = this.height + 'px');
+      Array.from(group).forEach((child) => child.style.height = this.height + 'px');
     });
   }
 

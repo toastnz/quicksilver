@@ -4,7 +4,7 @@ const offsetY = require('../functions/offsetY');
 class Parallax {
   constructor(el, scale = 0.2) {
     this.container = el;
-    this.children = this.container.querySelectorAll('[data-parallax-watch]');
+    this.children = Array.from(this.container.querySelectorAll('[data-parallax-watch]'));
     this.scale = scale;
 
     setTimeout(() => this.init(), 100);
@@ -17,11 +17,11 @@ class Parallax {
   }
 
   inView() {
-    return (window.scrollY + this.lastWindowHeight >= this.offset && window.scrollY <= this.offset + this.container.clientHeight);
+    return (window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.container.clientHeight);
   }
 
   yPercent() {
-    return ((this.offset - window.scrollY) / this.lastWindowHeight * 100);
+    return ((this.offset - window.pageYOffset) / this.lastWindowHeight * 100);
   }
 
   transform(child, percent = this.yPercent() - 33.333) {

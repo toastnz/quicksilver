@@ -29,3 +29,15 @@ class Page extends SiteTree
     }
 
 }
+
+
+class PageController extends ContentController
+{
+    private static $allowed_actions = [];
+
+    protected function init()
+    {
+        parent::init();
+    }
+
+}

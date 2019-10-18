@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "ae1b0d55eb11d6e400db468cb81c1dd4",
+=======
+    "content-hash": "de5805810415dadf8a985a9b23bd3b95",
+>>>>>>> 13f311c7c7157ff42e5dfeab5199234cd8f60a8a
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -234,110 +238,6 @@
                 "silverstripe"
             ],
             "time": "2018-09-24T08:20:12+00:00"
-        },
-        {
-            "name": "bigfork/silverstripe-oauth",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bigfork/silverstripe-oauth.git",
-                "reference": "50dd9728369452788d1951e3d1981b2775c2b81d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bigfork/silverstripe-oauth/zipball/50dd9728369452788d1951e3d1981b2775c2b81d",
-                "reference": "50dd9728369452788d1951e3d1981b2775c2b81d",
-                "shasum": ""
-            },
-            "require": {
-                "league/oauth2-client": "^2",
-                "silverstripe/framework": "^4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7"
-            },
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bigfork\\SilverStripeOAuth\\Client\\": "src/",
-                    "Bigfork\\SilverStripeOAuth\\Client\\Test\\": "tests/src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Loz Calver",
-                    "email": "lozcalver@bigfork.co.uk"
-                }
-            ],
-            "description": "SilverStripe OAuth2 authentication, based on the PHP League's OAuth2 client",
-            "keywords": [
-                "Authentication",
-                "oauth",
-                "oauth2",
-                "silverstripe"
-            ],
-            "time": "2019-03-07T09:06:11+00:00"
-        },
-        {
-            "name": "bigfork/silverstripe-oauth-login",
-            "version": "2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bigfork/silverstripe-oauth-login.git",
-                "reference": "0969f5935270a5b5f811262234210b445306064d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bigfork/silverstripe-oauth-login/zipball/0969f5935270a5b5f811262234210b445306064d",
-                "reference": "0969f5935270a5b5f811262234210b445306064d",
-                "shasum": ""
-            },
-            "require": {
-                "bigfork/silverstripe-oauth": "^2",
-                "silverstripe/framework": "^4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7"
-            },
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Bigfork\\SilverStripeOAuth\\Client\\": "src/",
-                    "Bigfork\\SilverStripeOAuth\\Client\\Test\\": "tests/src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Loz Calver",
-                    "email": "lozcalver@bigfork.co.uk"
-                }
-            ],
-            "description": "SilverStripe logins via OAuth2, using the PHP League's OAuth2 client",
-            "keywords": [
-                "login",
-                "oauth",
-                "oauth2",
-                "silverstripe"
-            ],
-            "time": "2019-01-28T14:08:20+00:00"
         },
         {
             "name": "bramus/ansi-php",
@@ -1456,16 +1356,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.55",
+            "version": "1.0.56",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6"
+                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/33c91155537c6dc899eacdc54a13ac6303f156e6",
-                "reference": "33c91155537c6dc899eacdc54a13ac6303f156e6",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/90e3f83cb10ef6b058d70f95267030e7a6236518",
+                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518",
                 "shasum": ""
             },
             "require": {
@@ -1536,74 +1436,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-08-24T11:17:19+00:00"
-        },
-        {
-            "name": "league/oauth2-client",
-            "version": "2.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth2-client.git",
-                "reference": "cc114abc622a53af969e8664722e84ca36257530"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-client/zipball/cc114abc622a53af969e8664722e84ca36257530",
-                "reference": "cc114abc622a53af969e8664722e84ca36257530",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.0",
-                "paragonie/random_compat": "^1|^2|^9.99",
-                "php": "^5.6|^7.0"
-            },
-            "require-dev": {
-                "eloquent/liberator": "^2.0",
-                "eloquent/phony-phpunit": "^1.0|^3.0",
-                "jakub-onderka/php-parallel-lint": "^0.9.2",
-                "phpunit/phpunit": "^5.7|^6.0",
-                "squizlabs/php_codesniffer": "^2.3|^3.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth2\\Client\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Bilbie",
-                    "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Woody Gilk",
-                    "homepage": "https://github.com/shadowhand",
-                    "role": "Contributor"
-                }
-            ],
-            "description": "OAuth 2.0 Client Library",
-            "keywords": [
-                "Authentication",
-                "SSO",
-                "authorization",
-                "identity",
-                "idp",
-                "oauth",
-                "oauth2",
-                "single sign on"
-            ],
-            "time": "2018-11-22T18:33:57+00:00"
+            "time": "2019-10-12T13:05:59+00:00"
         },
         {
             "name": "m1/env",
@@ -1996,6 +1829,57 @@
                 "random"
             ],
             "time": "2019-01-03T20:59:08+00:00"
+        },
+        {
+            "name": "permanentinc/beautiful",
+            "version": "v0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/beautiful.git",
+                "reference": "61eedf266d967e0c9f004a1ef9d10a3d28939d88"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/beautiful/zipball/61eedf266d967e0c9f004a1ef9d10a3d28939d88",
+                "reference": "61eedf266d967e0c9f004a1ef9d10a3d28939d88",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "beautiful",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot1.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "CMS Theme - based on shards",
+            "homepage": "http://github.com/permanentinc/beautiful",
+            "keywords": [
+                "admin",
+                "cms",
+                "flat",
+                "permanentinc",
+                "pinc",
+                "silverstripe",
+                "theme"
+            ],
+            "time": "2019-08-12T04:44:48+00:00"
         },
         {
             "name": "psr/cache",
@@ -4071,16 +3955,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "6a9cc3ed7f61c6c2bc042d0594cdb807b6fea62c"
+                "reference": "5c7bd827617fcb9b13e04e423c31c0fb0bcf0160"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/6a9cc3ed7f61c6c2bc042d0594cdb807b6fea62c",
-                "reference": "6a9cc3ed7f61c6c2bc042d0594cdb807b6fea62c",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/5c7bd827617fcb9b13e04e423c31c0fb0bcf0160",
+                "reference": "5c7bd827617fcb9b13e04e423c31c0fb0bcf0160",
                 "shasum": ""
             },
             "require": {
@@ -4137,20 +4021,20 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-08-26T07:52:58+00:00"
+            "time": "2019-09-29T21:19:44+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "24a60c0d7ad98a0fa5d1f892e9286095a389404f"
+                "reference": "717ad66b5257e9752ae3c5722b5810bb4c40b236"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/24a60c0d7ad98a0fa5d1f892e9286095a389404f",
-                "reference": "24a60c0d7ad98a0fa5d1f892e9286095a389404f",
+                "url": "https://api.github.com/repos/symfony/config/zipball/717ad66b5257e9752ae3c5722b5810bb4c40b236",
+                "reference": "717ad66b5257e9752ae3c5722b5810bb4c40b236",
                 "shasum": ""
             },
             "require": {
@@ -4201,11 +4085,11 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-26T07:52:57+00:00"
+            "time": "2019-09-19T15:32:51+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -4255,16 +4139,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "1fcad80b440abcd1451767349906b6f9d3961d37"
+                "reference": "2b6a666d6ff7fb65d10b97d817c8e7930944afb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/1fcad80b440abcd1451767349906b6f9d3961d37",
-                "reference": "1fcad80b440abcd1451767349906b6f9d3961d37",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
+                "reference": "2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
                 "shasum": ""
             },
             "require": {
@@ -4300,7 +4184,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-14T09:39:58+00:00"
+            "time": "2019-09-01T21:32:23+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -4649,16 +4533,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.31",
+            "version": "v3.4.32",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3dc414b7db30695bae671a1d86013d03f4ae9834"
+                "reference": "768f817446da74a776a31eea335540f9dcb53942"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3dc414b7db30695bae671a1d86013d03f4ae9834",
-                "reference": "3dc414b7db30695bae671a1d86013d03f4ae9834",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/768f817446da74a776a31eea335540f9dcb53942",
+                "reference": "768f817446da74a776a31eea335540f9dcb53942",
                 "shasum": ""
             },
             "require": {
@@ -4704,7 +4588,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T13:31:17+00:00"
+            "time": "2019-09-10T10:38:46+00:00"
         },
         {
             "name": "toastnz/quickblocks",

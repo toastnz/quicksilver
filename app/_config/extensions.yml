@@ -9,6 +9,10 @@ SilverStripe\Control\Controller:
   extensions:
     - Toast\Extensions\ControllerExtension
 
+SilverStripe\ErrorPage\ErrorPage:
+  extensions:
+    - Toast\Extensions\ErrorPageExtension
+
 # QuickBlocks
 Page:
   extensions:
