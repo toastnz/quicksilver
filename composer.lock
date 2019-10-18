@@ -4,11 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "ae1b0d55eb11d6e400db468cb81c1dd4",
-=======
     "content-hash": "de5805810415dadf8a985a9b23bd3b95",
->>>>>>> 13f311c7c7157ff42e5dfeab5199234cd8f60a8a
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -1356,16 +1352,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.56",
+            "version": "1.0.57",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518"
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/90e3f83cb10ef6b058d70f95267030e7a6236518",
-                "reference": "90e3f83cb10ef6b058d70f95267030e7a6236518",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
                 "shasum": ""
             },
             "require": {
@@ -1436,7 +1432,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-10-12T13:05:59+00:00"
+            "time": "2019-10-16T21:01:05+00:00"
         },
         {
             "name": "m1/env",
@@ -4742,16 +4738,16 @@
         },
         {
             "name": "unclecheese/display-logic",
-            "version": "2.0.2",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/unclecheese/silverstripe-display-logic.git",
-                "reference": "845ab12189439422b6dcd1becd20c9d5a94eb558"
+                "reference": "c5f807dc24765438b427814350cc884ca70498b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/unclecheese/silverstripe-display-logic/zipball/845ab12189439422b6dcd1becd20c9d5a94eb558",
-                "reference": "845ab12189439422b6dcd1becd20c9d5a94eb558",
+                "url": "https://api.github.com/repos/unclecheese/silverstripe-display-logic/zipball/c5f807dc24765438b427814350cc884ca70498b0",
+                "reference": "c5f807dc24765438b427814350cc884ca70498b0",
                 "shasum": ""
             },
             "require": {
@@ -4798,7 +4794,7 @@
                 "logic",
                 "silverstripe"
             ],
-            "time": "2018-11-14T23:16:44+00:00"
+            "time": "2019-10-15T23:31:03+00:00"
         },
         {
             "name": "undefinedoffset/silverstripe-nocaptcha",
