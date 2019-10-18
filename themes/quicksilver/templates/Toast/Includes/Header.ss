@@ -6,7 +6,7 @@
                 <a href="{$BaseURL}" class="header__wrap__inner__logo__link">$SVG('logo')</a>
             </div>
             <nav class="header__wrap__inner__nav navLinks mainNav verticalAlign">
-                <% include Nav %>
+                <% include Toast\Nav %>
             </nav>
         </div>
     </div>

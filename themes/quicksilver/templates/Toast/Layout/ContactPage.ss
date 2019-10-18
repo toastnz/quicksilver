@@ -4,6 +4,9 @@ Static Header
 
 <div class="innerWrap">
     $Content
+    $ContactForm
+            $UserDefinedForm
+            $Form
 </div>
 
 <div class="innerWrap">
@@ -13,5 +16,7 @@ Static Header
         <% end_with %>
     <% else %>
         $ContactForm
+        $UserDefinedForm
+        $Form
     <% end_if %>
 </div>
