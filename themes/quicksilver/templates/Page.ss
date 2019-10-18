@@ -6,7 +6,7 @@
   <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
 
     <% include Toast\Header %>
-    <% include Toast\Banner %>
+<%--    <% include Toast\Banner %>--%>
 
     <%-- <% include Toast\QuickBlocks\AccordionBlock %>
     <% include Toast\QuickBlocks\DownloadBlock %>

@@ -1,6 +1,8 @@
-<div class="innerWrap">
-    $Content
-</div>
+<section class="contentBlock">
+    <div class="innerWrap">
+        $Content
+    </div>
+</section>
 
 <% loop $ContentBlocks.Sort('SortOrder') %>
     $ForTemplate
