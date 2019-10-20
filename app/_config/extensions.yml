@@ -24,7 +24,7 @@ Toast\QuickBlocks\QuickBlocksExtension:
 #    - Toast\QuickBlocks\ColumnsBlock
     - Toast\QuickBlocks\DownloadBlock
     - Toast\QuickBlocks\GalleryBlock
-#    - Toast\QuickBlocks\HeroBlock
+    - Toast\QuickBlocks\HeroBlock
     - Toast\QuickBlocks\ImageBlock
     - Toast\QuickBlocks\TextBlock
     - Toast\QuickBlocks\SplitBlock
