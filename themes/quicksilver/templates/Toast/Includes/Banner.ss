@@ -1,6 +1,6 @@
 <section class="heroBlock contentBlock" data-equalize>
 
-    <div>
+    <div class="[ js-slider--hero ]">
 
         <% loop $BannerImages %>
             <div class="heroBlock__item" data-parallax>
