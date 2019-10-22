@@ -919,8 +919,8 @@
             "authors": [
                 {
                     "name": "Heyday Developers",
-                    "role": "Developer",
-                    "email": "dev@heyday.co.nz"
+                    "email": "dev@heyday.co.nz",
+                    "role": "Developer"
                 }
             ],
             "description": "Allows complex menu management to be handled through the CMS when a simple tree structure is not enough.",
