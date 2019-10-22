@@ -26,11 +26,10 @@ Toast\QuickBlocks\QuickBlocksExtension:
     - Toast\QuickBlocks\GalleryBlock
     - Toast\QuickBlocks\HeroBlock
     - Toast\QuickBlocks\ImageBlock
-    - Toast\QuickBlocks\TextBlock
-    - Toast\QuickBlocks\SplitBlock
+    - Toast\QuickBlocks\LinkBlock
+    - Toast\QuickBlocks\NewsBlock
+    - Toast\QuickBlocks\PercentageBlock
     - Toast\QuickBlocks\TabbedContentBlock
     - Toast\QuickBlocks\TestimonialsBlock
+    - Toast\QuickBlocks\TextBlock
     - Toast\QuickBlocks\VideoBlock
-    - Toast\QuickBlocks\LinkBlock
-    - Toast\QuickBlocks\PercentageBlock
-    - Toast\QuickBlocks\NewsBlock
