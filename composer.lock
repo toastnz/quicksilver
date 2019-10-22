@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b11258bdac271f7a929da7fa43b92881",
+    "content-hash": "1055c60b6799185387547352aa9511bc",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -4592,12 +4592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "6c24f0a050002a48fec5e95f2838301e75b0362f"
+                "reference": "da07afe2f36e216f6eb89177b241d88925d4b41a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/6c24f0a050002a48fec5e95f2838301e75b0362f",
-                "reference": "6c24f0a050002a48fec5e95f2838301e75b0362f",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/da07afe2f36e216f6eb89177b241d88925d4b41a",
+                "reference": "da07afe2f36e216f6eb89177b241d88925d4b41a",
                 "shasum": ""
             },
             "require": {
@@ -4632,7 +4632,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-10-22T22:36:17+00:00"
+            "time": "2019-10-22T22:48:59+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",

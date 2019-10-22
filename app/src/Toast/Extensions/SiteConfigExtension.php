@@ -4,6 +4,8 @@ namespace Toast\Extensions;
 
 use Sheadawson\Linkable\Forms\LinkField;
 use Sheadawson\Linkable\Models\Link;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\Image;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\TabSet;
@@ -46,7 +48,12 @@ class SiteConfigExtension extends DataExtension
 
     private static $has_one = [
         'TermsLink' => Link::class,
-        'PrivacyLink' => Link::class
+        'PrivacyLink' => Link::class,
+        'DefaultImage' => Image::class
+    ];
+
+    private static $owns = [
+        'DefaultImage',
     ];
 
     public static $defaults = [
@@ -76,6 +83,8 @@ class SiteConfigExtension extends DataExtension
             TextField::create('Phone', 'Phone Number'),
             TextField::create('Email', 'Public Email Address')
                 ->addExtraClass('input-wrap--half input-wrap--half--last'),
+            UploadField::create('DefaultImage', 'Default Image')
+                ->setFolderName('Uploads/page-images'),
             $address,
             $postalAddress
         ]);
