@@ -33,3 +33,4 @@ Toast\QuickBlocks\QuickBlocksExtension:
     - Toast\QuickBlocks\VideoBlock
     - Toast\QuickBlocks\LinkBlock
     - Toast\QuickBlocks\PercentageBlock
+    - Toast\QuickBlocks\NewsBlock
