@@ -59,33 +59,17 @@ export default Gallery;
 // JavaScript Usage
 // ======================================================
 
-// import Equalizer from './equalizer';
+// import Gallery from './gallery';
 
-// document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
+// document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group));
 
 // ======================================================
 // HTML Usage
 // ======================================================
 
-// <section data-equalize>
-//   <div data-equalize-watch></div>
-//   <div data-equalize-watch></div>
-// </section>
-
-// OR ===================================================
-
-// <section data-equalize="selector">
-//   <div data-equalize-watch="selector"></div>
-//   <div data-equalize-watch="selector"></div>
-// </section>
-
-// OR ===================================================
-
-// <section data-equalize="selector1, selector2">
-//   <div data-equalize-watch="selector1">
-//      <div data-equalize-watch="selector2"></div>
-//   </div>
-//   <div data-equalize-watch="selector1">
-//      <div data-equalize-watch="selector2"></div>
+// <section class="js-gallery">
+//   <div class="js-gallery--thumbnail"></div>
+//   <div class="js-gallery--modal">
+//     <div class="js-slider--gallery"></div>
 //   </div>
 // </section>
