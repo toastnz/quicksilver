@@ -45,7 +45,6 @@ class Slider {
 			if (Object.entries(responsiveBreakpoints).length === 0) {
 				return null;
 			}else {
-				console.log(responsiveBreakpoints);
 				return responsiveBreakpoints;
 			}
 
