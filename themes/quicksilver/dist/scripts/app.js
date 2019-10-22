@@ -14576,17 +14576,16 @@ var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quick
 
 
 
+var sliders = [];
 var sliderSettings = {
   '.js-slider--hero': {},
   '.js-slider--gallery': {}
 };
-var sliders = [];
 Object.keys(sliderSettings).map(function (selector) {
   selectAll(selector).forEach(function (el) {
-    return sliders.push(new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](el, sliders[selector]));
+    return sliders.push(new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](el, sliderSettings[selector]));
   });
-}); // console.log(sliders);
-
+});
 
 
 
@@ -14612,13 +14611,56 @@ selectAll('[data-video]').forEach(function (el) {
     }).render());
   });
 });
-loadContent({
-  url: '/contact-us',
-  method: 'POST',
-  success: function success(response) {
-    console.log(response);
-  }
-});
+selectAll('.js-sliderGallery').forEach(function (group) {
+  var sliderMain = group.querySelector('.js-sliderGallery--main');
+  var sliderNav = group.querySelector('.js-sliderGallery--nav');
+  var navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
+  var gallery = {
+    main: new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderMain, {
+      loop: false,
+      nav: false,
+      mode: "gallery"
+    }).tns,
+    nav: new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderNav, {
+      loop: false,
+      nav: false,
+      controls: false,
+      gutter: 40
+    }).tns
+  };
+  var changing = null;
+  var hasChanged = 0;
+
+  var changeSlides = function changeSlides(sliderToChange, index) {
+    clearTimeout(changing);
+    hasChanged = 1;
+    changing = setTimeout(function () {
+      hasChanged = 0;
+      sliderToChange.goTo(index);
+    }, 200);
+  };
+
+  navItems.forEach(function (item) {
+    item.addEventListener('click', function () {
+      var index = navItems.indexOf(item);
+      console.log(index);
+      gallery.nav.goTo(index);
+      changeSlides(gallery.main, index);
+    });
+  });
+  gallery.main.events.on('transitionEnd', function (e) {
+    changeSlides(gallery.nav, e.index);
+  });
+  gallery.nav.events.on('transitionEnd', function (e) {
+    changeSlides(gallery.main, e.index);
+  });
+}); // loadContent({
+// 	url: '/contact-us',
+// 	method: 'POST',
+// 	success: (response) => {
+// 		console.log(response);
+// 	}
+// });
 
 /***/ }),
 
@@ -14963,27 +15005,15 @@ function () {
 /* harmony default export */ __webpack_exports__["default"] = (Gallery); // ======================================================
 // JavaScript Usage
 // ======================================================
-// import Equalizer from './equalizer';
-// document.querySelectorAll('[data-equalize]').forEach((group) => new Equalizer(group));
+// import Gallery from './gallery';
+// document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group));
 // ======================================================
 // HTML Usage
 // ======================================================
-// <section data-equalize>
-//   <div data-equalize-watch></div>
-//   <div data-equalize-watch></div>
-// </section>
-// OR ===================================================
-// <section data-equalize="selector">
-//   <div data-equalize-watch="selector"></div>
-//   <div data-equalize-watch="selector"></div>
-// </section>
-// OR ===================================================
-// <section data-equalize="selector1, selector2">
-//   <div data-equalize-watch="selector1">
-//      <div data-equalize-watch="selector2"></div>
-//   </div>
-//   <div data-equalize-watch="selector1">
-//      <div data-equalize-watch="selector2"></div>
+// <section class="js-gallery">
+//   <div class="js-gallery--thumbnail"></div>
+//   <div class="js-gallery--modal">
+//     <div class="js-slider--gallery"></div>
 //   </div>
 // </section>
 
@@ -15123,6 +15153,7 @@ function () {
 
     this.settings = Object.assign({
       container: el,
+      controls: true,
       mouseDrag: true,
       touch: true,
       navPosition: 'bottom',
@@ -15130,7 +15161,14 @@ function () {
       nextButton: '<button class="slider-button slider-button--right"><svg width="40" height="13" viewBox="0 0 40 13" xmlns="http://www.w3.org/2000/svg"><path d="M36.614 5.547l-3.97-3.876a.964.964 0 0 1 0-1.38l.008-.007a1 1 0 0 1 1.397 0l5.66 5.526a.961.961 0 0 1 0 1.38l-5.66 5.526a1 1 0 0 1-1.397 0l-.008-.008a.964.964 0 0 1 0-1.38l3.924-3.83H.976a.976.976 0 0 1 0-1.951h35.638z" fill="#000" fill-rule="evenodd"/></svg></button>',
       responsive: this.sliderBreakpoints(el)
     }, options);
-    if (this.settings.prevButton || this.settings.nextButton) this.settings = this.createButtons(this.settings);
+
+    if (this.settings.controls) {
+      if (this.settings.prevButton || this.settings.nextButton) this.settings = this.createButtons(this.settings);
+    } else {
+      this.settings.prevButton = false;
+      this.settings.nextButton = false;
+    }
+
     this.tns = Object(tiny_slider_src_tiny_slider_module_js__WEBPACK_IMPORTED_MODULE_0__["tns"])(this.settings);
   }
 
@@ -15162,7 +15200,13 @@ function () {
             };
           }
         });
-        return responsiveBreakpoints;
+
+        if (Object.entries(responsiveBreakpoints).length === 0) {
+          return null;
+        } else {
+          console.log(responsiveBreakpoints);
+          return responsiveBreakpoints;
+        }
       }
     }
   }, {

@@ -1,0 +1,22 @@
+//------------------------------------------------------------------
+// Slider Block
+//------------------------------------------------------------------
+
+.sliderBlock {
+	&__wrap {
+		&__slider {
+			position: relative;
+			margin-bottom: $gutterWidth * 2;
+		}
+
+		&__nav {
+			&__item {
+				&__media {
+					@include cover;
+					width: 100%;
+					padding-bottom: 100%;
+				}
+			}
+		}
+	}
+}

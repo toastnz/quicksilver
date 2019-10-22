@@ -1390,6 +1390,8 @@ button::-moz-focus-inner {
     left: 2rem; }
   .slider-button--right {
     right: 2rem; }
+  .slider-button[disabled] {
+    opacity: 0.5; }
 
 .tns-nav {
   padding: 2rem 2rem;
@@ -1689,6 +1691,17 @@ button::-moz-focus-inner {
 .imageBlock__wrap__media {
   width: 100%;
   height: auto; }
+
+.sliderBlock__wrap__slider {
+  position: relative;
+  margin-bottom: 4rem; }
+
+.sliderBlock__wrap__nav__item__media {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding-bottom: 100%; }
 
 .splitBlock__wrap .content + .content .media {
   right: auto;

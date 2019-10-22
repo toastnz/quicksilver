@@ -7,6 +7,7 @@ class Slider {
 	constructor(el, options) {
 		this.settings = Object.assign({
 			container: el,
+			controls: true,
 			mouseDrag: true,
 			touch: true,
 			navPosition: 'bottom',
@@ -15,7 +16,12 @@ class Slider {
 			responsive: this.sliderBreakpoints(el),
 		}, options);
 
-		if (this.settings.prevButton || this.settings.nextButton) this.settings = this.createButtons(this.settings);
+		if (this.settings.controls) {
+			if (this.settings.prevButton || this.settings.nextButton) this.settings = this.createButtons(this.settings);
+		} else {
+			this.settings.prevButton = false;
+			this.settings.nextButton = false;
+		}
 
 		this.tns = tns(this.settings);
 	}
@@ -36,7 +42,13 @@ class Slider {
 				}
 			});
 
-			return responsiveBreakpoints;
+			if (Object.entries(responsiveBreakpoints).length === 0) {
+				return null;
+			}else {
+				console.log(responsiveBreakpoints);
+				return responsiveBreakpoints;
+			}
+
 		}
 	}
 

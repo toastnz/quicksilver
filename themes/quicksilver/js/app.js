@@ -20,18 +20,15 @@ const selectAll = require('./functions/selectAll');
 import './components/accordions';
 import Slider from'./components/sliders';
 
+const sliders = [];
 const sliderSettings = {
 	'.js-slider--hero': {},
 	'.js-slider--gallery': {},
 }
 
-const sliders = [];
-
 Object.keys(sliderSettings).map((selector) => {
-	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliders[selector])));
+	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliderSettings[selector])));
 });
-
-// console.log(sliders);
 
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
@@ -51,10 +48,58 @@ selectAll('[data-video]').forEach((el) => {
 	})
 });
 
-loadContent({
-	url: '/contact-us',
-	method: 'POST',
-	success: (response) => {
-		console.log(response);
+selectAll('.js-sliderGallery').forEach((group) => {
+	const sliderMain = group.querySelector('.js-sliderGallery--main');
+	const sliderNav = group.querySelector('.js-sliderGallery--nav');
+	const navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
+	const gallery =  {
+		main: new Slider(sliderMain, {
+			loop: false,
+			nav: false,
+			mode: "gallery",
+		}).tns,
+		nav: new Slider(sliderNav, {
+			loop: false,
+			nav: false,
+			controls: false,
+			gutter: 40
+		}).tns,
+	};
+
+	let changing = null;
+	let hasChanged = 0;
+
+	const changeSlides = (sliderToChange, index) => {
+		clearTimeout(changing);
+		hasChanged = 1;
+		changing = setTimeout(() => {
+			hasChanged = 0;
+			sliderToChange.goTo(index);
+		}, 200);
 	}
+
+	navItems.forEach((item) => {
+		item.addEventListener('click', () => {
+			let index = navItems.indexOf(item);
+			console.log(index);
+			gallery.nav.goTo(index);
+			changeSlides(gallery.main, index);
+		});
+	});
+
+	gallery.main.events.on('transitionEnd', (e) => {
+		changeSlides(gallery.nav, e.index);
+	});
+
+	gallery.nav.events.on('transitionEnd', (e) => {
+		changeSlides(gallery.main, e.index);
+	});
 });
+
+// loadContent({
+// 	url: '/contact-us',
+// 	method: 'POST',
+// 	success: (response) => {
+// 		console.log(response);
+// 	}
+// });
