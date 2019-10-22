@@ -49,49 +49,53 @@ selectAll('[data-video]').forEach((el) => {
 });
 
 selectAll('.js-sliderGallery').forEach((group) => {
+	const gallery = {};
 	const sliderMain = group.querySelector('.js-sliderGallery--main');
 	const sliderNav = group.querySelector('.js-sliderGallery--nav');
-	const navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
-	const gallery =  {
-		main: new Slider(sliderMain, {
-			loop: false,
-			nav: false,
-			mode: "gallery",
-		}).tns,
-		nav: new Slider(sliderNav, {
+
+	gallery.main = new Slider(sliderMain, {
+		loop: false,
+		nav: false,
+		mode: "gallery",
+	}).tns;
+
+	if (sliderNav !== null) {
+		const navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
+
+		gallery.nav = new Slider(sliderNav, {
 			loop: false,
 			nav: false,
 			controls: false,
-		}).tns,
-	};
+		}).tns;
 
-	let changing = null;
-	let hasChanged = 0;
+		let changing = null;
+		let hasChanged = 0;
 
-	const changeSlides = (sliderToChange, index) => {
-		clearTimeout(changing);
-		hasChanged = 1;
-		changing = setTimeout(() => {
-			hasChanged = 0;
-			sliderToChange.goTo(index);
-		}, 200);
-	}
+		const changeSlides = (sliderToChange, index) => {
+			clearTimeout(changing);
+			hasChanged = 1;
+			changing = setTimeout(() => {
+				hasChanged = 0;
+				sliderToChange.goTo(index);
+			}, 200);
+		}
 
-	navItems.forEach((item) => {
-		item.addEventListener('click', () => {
-			let index = navItems.indexOf(item);
-			gallery.nav.goTo(index);
-			changeSlides(gallery.main, index);
+		navItems.forEach((item) => {
+			item.addEventListener('click', () => {
+				let index = navItems.indexOf(item);
+				gallery.nav.goTo(index);
+				changeSlides(gallery.main, index);
+			});
 		});
-	});
 
-	gallery.main.events.on('transitionEnd', (e) => {
-		changeSlides(gallery.nav, e.index);
-	});
+		gallery.main.events.on('transitionEnd', (e) => {
+			changeSlides(gallery.nav, e.index);
+		});
 
-	gallery.nav.events.on('transitionEnd', (e) => {
-		changeSlides(gallery.main, e.index);
-	});
+		gallery.nav.events.on('transitionEnd', (e) => {
+			changeSlides(gallery.main, e.index);
+		});
+	}
 });
 
 // loadContent({

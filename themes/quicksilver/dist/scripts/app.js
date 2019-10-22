@@ -14609,46 +14609,48 @@ selectAll('[data-video]').forEach(function (el) {
   });
 });
 selectAll('.js-sliderGallery').forEach(function (group) {
+  var gallery = {};
   var sliderMain = group.querySelector('.js-sliderGallery--main');
   var sliderNav = group.querySelector('.js-sliderGallery--nav');
-  var navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
-  var gallery = {
-    main: new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderMain, {
-      loop: false,
-      nav: false,
-      mode: "gallery"
-    }).tns,
-    nav: new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderNav, {
+  gallery.main = new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderMain, {
+    loop: false,
+    nav: false,
+    mode: "gallery"
+  }).tns;
+
+  if (sliderNav !== null) {
+    var navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
+    gallery.nav = new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderNav, {
       loop: false,
       nav: false,
       controls: false
-    }).tns
-  };
-  var changing = null;
-  var hasChanged = 0;
+    }).tns;
+    var changing = null;
+    var hasChanged = 0;
 
-  var changeSlides = function changeSlides(sliderToChange, index) {
-    clearTimeout(changing);
-    hasChanged = 1;
-    changing = setTimeout(function () {
-      hasChanged = 0;
-      sliderToChange.goTo(index);
-    }, 200);
-  };
+    var changeSlides = function changeSlides(sliderToChange, index) {
+      clearTimeout(changing);
+      hasChanged = 1;
+      changing = setTimeout(function () {
+        hasChanged = 0;
+        sliderToChange.goTo(index);
+      }, 200);
+    };
 
-  navItems.forEach(function (item) {
-    item.addEventListener('click', function () {
-      var index = navItems.indexOf(item);
-      gallery.nav.goTo(index);
-      changeSlides(gallery.main, index);
+    navItems.forEach(function (item) {
+      item.addEventListener('click', function () {
+        var index = navItems.indexOf(item);
+        gallery.nav.goTo(index);
+        changeSlides(gallery.main, index);
+      });
     });
-  });
-  gallery.main.events.on('transitionEnd', function (e) {
-    changeSlides(gallery.nav, e.index);
-  });
-  gallery.nav.events.on('transitionEnd', function (e) {
-    changeSlides(gallery.main, e.index);
-  });
+    gallery.main.events.on('transitionEnd', function (e) {
+      changeSlides(gallery.nav, e.index);
+    });
+    gallery.nav.events.on('transitionEnd', function (e) {
+      changeSlides(gallery.main, e.index);
+    });
+  }
 }); // loadContent({
 // 	url: '/contact-us',
 // 	method: 'POST',
@@ -15089,7 +15091,6 @@ function () {
         if (Object.entries(responsiveBreakpoints).length === 0) {
           return null;
         } else {
-          console.log(responsiveBreakpoints);
           return responsiveBreakpoints;
         }
       }
