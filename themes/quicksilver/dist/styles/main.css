@@ -1694,14 +1694,16 @@ button::-moz-focus-inner {
 
 .sliderBlock__wrap__slider {
   position: relative;
-  margin-bottom: 4rem; }
+  margin-bottom: 2rem; }
 
-.sliderBlock__wrap__nav__item__media {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  padding-bottom: 100%; }
+.sliderBlock__wrap__nav__item {
+  padding: 0 2rem 0 0; }
+  .sliderBlock__wrap__nav__item__media {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 100%; }
 
 .splitBlock__wrap .content + .content .media {
   right: auto;
