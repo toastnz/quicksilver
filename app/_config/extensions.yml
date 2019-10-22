@@ -31,3 +31,5 @@ Toast\QuickBlocks\QuickBlocksExtension:
     - Toast\QuickBlocks\TabbedContentBlock
     - Toast\QuickBlocks\TestimonialsBlock
     - Toast\QuickBlocks\VideoBlock
+    - Toast\QuickBlocks\LinkBlock
+    - Toast\QuickBlocks\PercentageBlock
