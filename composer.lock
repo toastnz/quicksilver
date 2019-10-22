@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "61f564b081a7a470a0fc2f5e1b60bbaf",
+    "content-hash": "bc222f6b7bc76e931caa358dbf3fd8a4",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -919,8 +919,8 @@
             "authors": [
                 {
                     "name": "Heyday Developers",
-                    "email": "dev@heyday.co.nz",
-                    "role": "Developer"
+                    "role": "Developer",
+                    "email": "dev@heyday.co.nz"
                 }
             ],
             "description": "Allows complex menu management to be handled through the CMS when a simple tree structure is not enough.",
@@ -4592,12 +4592,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "04f3eabe3f7a013123aee5603f8d2cfc82394346"
+                "reference": "144ab92bf44600fbc1c91b01f348afe98d50ca2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/04f3eabe3f7a013123aee5603f8d2cfc82394346",
-                "reference": "04f3eabe3f7a013123aee5603f8d2cfc82394346",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/144ab92bf44600fbc1c91b01f348afe98d50ca2f",
+                "reference": "144ab92bf44600fbc1c91b01f348afe98d50ca2f",
                 "shasum": ""
             },
             "require": {
@@ -4632,7 +4632,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-10-22T02:45:47+00:00"
+            "time": "2019-10-22T06:23:53+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
