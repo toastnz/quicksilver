@@ -14556,7 +14556,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
 /* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
 /* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
-/* harmony import */ var _components_gallery__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/gallery */ "./themes/quicksilver/js/components/gallery.js");
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
@@ -14589,14 +14588,12 @@ Object.keys(sliderSettings).map(function (selector) {
 
 
 
-
+ // import Gallery from './components/gallery';
 
 selectAll('.js-tabs').forEach(function (group) {
   return new _components_tabs__WEBPACK_IMPORTED_MODULE_3__["default"](group);
-});
-selectAll('.js-gallery').forEach(function (group) {
-  return new _components_gallery__WEBPACK_IMPORTED_MODULE_7__["default"](group, sliders);
-});
+}); // selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
+
 selectAll('[data-equalize]').forEach(function (group) {
   return new _components_equalizer__WEBPACK_IMPORTED_MODULE_5__["default"](group);
 });
@@ -14902,116 +14899,6 @@ function () {
 //   </div>
 //   <div data-equalize-watch="selector1">
 //      <div data-equalize-watch="selector2"></div>
-//   </div>
-// </section>
-
-/***/ }),
-
-/***/ "./themes/quicksilver/js/components/gallery.js":
-/*!*****************************************************!*\
-  !*** ./themes/quicksilver/js/components/gallery.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var Gallery =
-/*#__PURE__*/
-function () {
-  function Gallery(el) {
-    var sliders = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-    _classCallCheck(this, Gallery);
-
-    this.container = el;
-    this.sliders = sliders;
-    if (this.findModal() && this.sliders) this.init();
-  }
-
-  _createClass(Gallery, [{
-    key: "clickHandlers",
-    value: function clickHandlers() {
-      var _this = this;
-
-      this.thumbnails.forEach(function (thumbnail) {
-        thumbnail.addEventListener('click', function () {
-          _this.tns.goTo(_this.thumbnails.indexOf(thumbnail));
-
-          _this.showModal();
-        });
-      });
-      this.close.addEventListener('click', function () {
-        _this.showModal(false);
-      });
-    }
-  }, {
-    key: "showModal",
-    value: function showModal() {
-      var _this2 = this;
-
-      var toggle = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
-      if (toggle) {
-        this.modal.style.display = 'block';
-        setTimeout(function () {
-          return _this2.modal.style.opacity = 1;
-        }, 50);
-      } else {
-        this.modal.style.opacity = 0;
-        setTimeout(function () {
-          return _this2.modal.style.display = 'none';
-        }, 300);
-      }
-    }
-  }, {
-    key: "findModal",
-    value: function findModal() {
-      var nextSibling = this.container.nextElementSibling;
-
-      if (nextSibling.matches('.js-gallery--modal')) {
-        this.modal = nextSibling;
-        this.modal.style.opacity = 0;
-        this.modal.style.transition = 'opacity .2s ease';
-        return true;
-      }
-    }
-  }, {
-    key: "init",
-    value: function init() {
-      var _this3 = this;
-
-      this.slider = this.modal.querySelector('.js-slider--gallery');
-      this.thumbnails = Array.from(this.container.querySelectorAll('.js-gallery--thumbnail'));
-      this.close = this.modal.querySelector('.js-close');
-      this.sliders.forEach(function (slider, i) {
-        if (_this3.slider === slider.settings.container) _this3.tns = slider.tns;
-      });
-      this.clickHandlers();
-    }
-  }]);
-
-  return Gallery;
-}();
-
-/* harmony default export */ __webpack_exports__["default"] = (Gallery); // ======================================================
-// JavaScript Usage
-// ======================================================
-// import Gallery from './gallery';
-// document.querySelectorAll('.js-gallery').forEach((group) => new Gallery(group));
-// ======================================================
-// HTML Usage
-// ======================================================
-// <section class="js-gallery">
-//   <div class="js-gallery--thumbnail"></div>
-//   <div class="js-gallery--modal">
-//     <div class="js-slider--gallery"></div>
 //   </div>
 // </section>
 

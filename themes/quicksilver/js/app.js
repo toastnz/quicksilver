@@ -34,10 +34,10 @@ import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
-import Gallery from './components/gallery';
+// import Gallery from './components/gallery';
 
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
-selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
+// selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
 selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
 selectAll('[data-parallax]').forEach((group) => new Parallax(group));
 
