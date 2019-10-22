@@ -33,3 +33,4 @@ Toast\QuickBlocks\QuickBlocksExtension:
     - Toast\QuickBlocks\TestimonialsBlock
     - Toast\QuickBlocks\TextBlock
     - Toast\QuickBlocks\VideoBlock
+    - Toast\QuickBlocks\ColumnBlock
