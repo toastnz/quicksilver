@@ -14624,8 +14624,7 @@ selectAll('.js-sliderGallery').forEach(function (group) {
     nav: new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderNav, {
       loop: false,
       nav: false,
-      controls: false,
-      gutter: 40
+      controls: false
     }).tns
   };
   var changing = null;
@@ -14643,7 +14642,6 @@ selectAll('.js-sliderGallery').forEach(function (group) {
   navItems.forEach(function (item) {
     item.addEventListener('click', function () {
       var index = navItems.indexOf(item);
-      console.log(index);
       gallery.nav.goTo(index);
       changeSlides(gallery.main, index);
     });

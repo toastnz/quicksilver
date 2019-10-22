@@ -32,8 +32,8 @@
 </section>
 
 
-<section class="galleryBlock contentBlock [ js-gallery ]" data-block-id="{$ID}">
-    <% if $Heading || $Summary %>
+<%-- <section class="galleryBlock contentBlock [ js-gallery ]" data-block-id="{$ID}"> --%>
+<%--     <% if $Heading || $Summary %>
         <% include Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>
     <div class="galleryBlock__wrap row md-up-2 xmd-up-3 lg-up-4 centered">
@@ -51,14 +51,13 @@
         <% end_loop %>
     </div>
 </section>
-<%-- Modal --%>
 <section class="galleryModal [ js-gallery--modal ]" data-block-id="{$ID}">
     <button class="js-close"></button>
     <div class="galleryModal__wrap row alignContent">
         <div class="galleryModal__wrap__content column verticalAlign">
             <div class="galleryModal__wrap__content__slider row">
                 <div class="column [ js-slider--gallery ]">
-                    <% loop $GalleryImages %>
+                    <% loop $GalleryImages %> --%>
                         <%-- <% if $Video %>
                             <div class="galleryModal__wrap__content__slider__item">
                                 <a href="#" class="galleryModal__wrap__content__slider__item__media [ js-embed ]" data-video="https://www.youtube.com/watch?v=xl96OgXwUBk" style="background-image: url('{$GalleryImage.URL}');">
@@ -66,17 +65,18 @@
                                 </a>
                             </div>
                         <% else %> --%>
-                            <div class="galleryModal__wrap__content__slider__item">
+<%--                             <div class="galleryModal__wrap__content__slider__item">
                                 <% if $GalleryImage %>
                                     <div class="galleryModal__wrap__content__slider__item__media" style="background-image: url('{$GalleryImage.URL}');"></div>
                                 <% else %>
                                     <div class="galleryModal__wrap__content__slider__item__media" style="background-image: url('https://via.placeholder.com/1920x1000');"></div>
                                 <% end_if %>
-                            </div>
+                            </div> --%>
                         <%-- <% end_if %> --%>
-                    <% end_loop %>
+<%--                     <% end_loop %>
                 </div>
             </div>
         </div>
     </div>
 </section>
+ --%>

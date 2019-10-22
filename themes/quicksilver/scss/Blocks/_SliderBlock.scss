@@ -6,11 +6,12 @@
 	&__wrap {
 		&__slider {
 			position: relative;
-			margin-bottom: $gutterWidth * 2;
+			margin-bottom: $gutterWidth;
 		}
 
 		&__nav {
 			&__item {
+				padding: 0 $gutterWidth 0 0;
 				&__media {
 					@include cover;
 					width: 100%;

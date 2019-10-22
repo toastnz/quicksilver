@@ -62,7 +62,6 @@ selectAll('.js-sliderGallery').forEach((group) => {
 			loop: false,
 			nav: false,
 			controls: false,
-			gutter: 40
 		}).tns,
 	};
 
@@ -81,7 +80,6 @@ selectAll('.js-sliderGallery').forEach((group) => {
 	navItems.forEach((item) => {
 		item.addEventListener('click', () => {
 			let index = navItems.indexOf(item);
-			console.log(index);
 			gallery.nav.goTo(index);
 			changeSlides(gallery.main, index);
 		});
