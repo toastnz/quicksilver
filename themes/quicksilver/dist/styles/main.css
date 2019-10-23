@@ -1722,6 +1722,28 @@ button::-moz-focus-inner {
     -o-transition: color 0.2s ease;
     transition: color 0.2s ease; }
 
+.percentageBlock__wrap:not(.explode) {
+  padding-left: 2rem;
+  padding-right: 2rem; }
+
+.percentageBlock__wrap__item {
+  position: relative;
+  padding-top: 5rem;
+  padding-bottom: 5rem; }
+  .percentageBlock__wrap__item__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat; }
+  .percentageBlock__wrap__item__content {
+    position: relative; }
+    .percentageBlock__wrap__item__content__heading, .percentageBlock__wrap__item__content__body {
+      margin-bottom: 2rem; }
+
 .sliderBlock__wrap__slider {
   position: relative;
   margin-bottom: 2rem; }

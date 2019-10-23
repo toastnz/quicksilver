@@ -1,0 +1,34 @@
+//------------------------------------------------------------------
+// Percentage
+//------------------------------------------------------------------
+
+.percentageBlock {
+
+  &__wrap {
+
+    &:not(.explode) {
+      padding-left: $gutterWidth;
+      padding-right: $gutterWidth;
+    }
+
+    &__item {
+      position: relative;
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+
+      &__media {
+        @include pos(absolute, 0);
+        @include cover;
+      }
+
+      &__content {
+        position: relative;
+
+        &__heading,
+        &__body {
+          margin-bottom: $gutterWidth;
+        }
+      }
+    }
+  }
+}

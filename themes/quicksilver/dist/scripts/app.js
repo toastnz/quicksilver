@@ -14578,7 +14578,8 @@ var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quick
 var sliders = [];
 var sliderSettings = {
   '.js-slider--hero': {},
-  '.js-slider--gallery': {}
+  '.js-slider--gallery': {},
+  '.js-slider--testimonials': {}
 };
 Object.keys(sliderSettings).map(function (selector) {
   selectAll(selector).forEach(function (el) {
