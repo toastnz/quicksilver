@@ -23,7 +23,7 @@
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
-        "toastnz/quickblocks": "dev-feature/quicksilver#8626e96a2ba84a5eb229f399e508183d8ef7c75d",
+        "toastnz/quickblocks": "dev-feature/quicksilver#95a80bfecaaff8595cf7acadccd8d2a99af54a77",
         "permanentinc/beautiful": "^0.3.0"
     },
     "extra": {
