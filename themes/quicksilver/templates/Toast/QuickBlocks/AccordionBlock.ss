@@ -1,6 +1,6 @@
 <section class="accordionBlock contentBlock [ js-accordion ]">
     <% if $Heading || $Summary %>
-        <% include Heading Heading=$Heading, Summary=$Summary %>
+        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>
     <div class="accordionBlock__wrap row">
         <div class="column">

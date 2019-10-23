@@ -1,6 +1,6 @@
 <section class="columnBlock paddingBlock" <% if $Columns >= 2 %>data-equalize<% end_if %>>
     <% if $Heading || $Summary %>
-        <% include Heading Heading=$Heading, Summary=$Summary %>
+        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>
     <div class="columnBlock__wrap row <% if $Items.Count() >= 2 %>xmd-up-2 lg-up-{$Columns}<% end_if %>" >
         <% loop $Items %>
