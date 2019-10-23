@@ -15,7 +15,7 @@
 
 			@include active {
 				.title {
-					color: $secondary;
+					color: $primary;
 				}
 			}
 
@@ -36,7 +36,7 @@
 				padding-bottom: $gutterWidth;
 
 				&__title {
-					color: $primary;
+					color: $text;
 					margin-bottom: 0;
 					@include transition(color);
 				}
@@ -51,7 +51,7 @@
 
 					svg {
 						path {
-							fill: $primary;
+							fill: $text;
 						}
 					}
 				}

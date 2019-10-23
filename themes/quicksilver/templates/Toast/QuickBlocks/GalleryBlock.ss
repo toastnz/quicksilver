@@ -36,7 +36,7 @@
 
 <%-- <section class="galleryBlock contentBlock [ js-gallery ]" data-block-id="{$ID}"> --%>
 <%--     <% if $Heading || $Summary %>
-        <% include Heading Heading=$Heading, Summary=$Summary %>
+        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
     <% end_if %>
     <div class="galleryBlock__wrap row md-up-2 xmd-up-3 lg-up-4 centered">
         <% loop $GalleryImages %>
