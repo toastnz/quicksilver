@@ -43,7 +43,8 @@ class SiteConfigExtension extends DataExtension
         'GoogleTrackingID' => 'Varchar(100)',
         'GoogleTagManagerID' => 'Varchar(100)',
         'BHProjectKey' => 'Varchar(100)',
-        'EnableBugherd' => 'Boolean'
+        'EnableBugherd' => 'Boolean',
+        'Sidebar'      => 'Boolean'
     ];
 
     private static $has_one = [
@@ -86,7 +87,8 @@ class SiteConfigExtension extends DataExtension
             UploadField::create('DefaultImage', 'Default Image')
                 ->setFolderName('Uploads/page-images'),
             $address,
-            $postalAddress
+            $postalAddress,
+            CheckboxField::create('Sidebar', 'Show Sidebar'),
         ]);
 
         /** -----------------------------------------
