@@ -10,11 +10,18 @@
 			border-style: solid;
 			border-color: rgba($primary, .2);
 			text-align: left;
-			margin-bottom: $gutterWidth * 2;
+			// margin-bottom: $gutterWidth * 2;
 
-			// &:first-child {
-			// 	border-width: .1rem 0;
-			// }
+
+			@include active {
+				.title {
+					color: $secondary;
+				}
+			}
+
+			&:first-child {
+				border-width: .2rem 0;
+			}
 
 			&__media {
 				@include cover;
@@ -24,22 +31,29 @@
 			&__heading {
 				display: block;
 				position: relative;
-				padding-right: 6rem;
+				padding-left: 6rem;
 				padding-top: $gutterWidth;
 				padding-bottom: $gutterWidth;
 
 				&__title {
 					color: $primary;
 					margin-bottom: 0;
+					@include transition(color);
 				}
 
 				.icon {
-					@include svg(20,16);
+					@include svg(33,42);
 					position: absolute;
-					bottom: $gutterWidth;
-					right: 0;
-					width: 2rem;
+					top: 50%;
+					left: 0;
+					width: 3.3rem;
 					transform: translateY(-50%);
+
+					svg {
+						path {
+							fill: $primary;
+						}
+					}
 				}
 			}
 		}
