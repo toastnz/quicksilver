@@ -24,6 +24,7 @@ const sliders = [];
 const sliderSettings = {
 	'.js-slider--hero': {},
 	'.js-slider--gallery': {},
+	'.js-slider--testimonials': {},
 }
 
 Object.keys(sliderSettings).map((selector) => {
