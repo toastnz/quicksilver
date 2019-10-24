@@ -73,7 +73,7 @@ body h6 {
 /* Buttons         */
 /*=================*/
 
-a.button {
+a.button--primary {
     background-color: #e75931;
     border:           1px solid #e75931;
     color:            #fff;
@@ -82,13 +82,65 @@ a.button {
     display:          inline-block;
 }
 
-a.button--bordered {
+a.button--bordered--primary {
     background-color: transparent;
     color:            #e75931;
 }
 
-a.button--round {
-    border-radius: .5rem;
+a.button--secondary {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button--bordered--secondary {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button--tertiary {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button--bordered--tertiary {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button--white {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button--bordered--white {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button--black {
+    background-color: #000;
+    border:           1px solid #000;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button--bordered--black {
+    background-color: transparent;
+    color:            #000;
 }
 
 /*=================*/

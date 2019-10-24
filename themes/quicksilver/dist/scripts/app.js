@@ -14937,13 +14937,13 @@ function () {
   function Parallax(el) {
     var _this = this;
 
-    var scale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0.2;
+    var scale = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 20;
 
     _classCallCheck(this, Parallax);
 
     this.container = el;
     this.children = Array.from(this.container.querySelectorAll('[data-parallax-watch]'));
-    this.scale = scale;
+    this.scale = scale / 100;
     setTimeout(function () {
       return _this.init();
     }, 100);
@@ -14959,7 +14959,7 @@ function () {
   }, {
     key: "inView",
     value: function inView() {
-      return window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.container.clientHeight;
+      return window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.height;
     }
   }, {
     key: "yPercent",
@@ -14970,7 +14970,11 @@ function () {
     key: "transform",
     value: function transform(child) {
       var percent = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.yPercent() - 33.333;
-      child.style.transform = "translateY(".concat(percent * -this.scale, "%)");
+      child.style.msTransform = "translateY(".concat(percent * -this.scale, "%)");
+      child.style.webkitTransform = "translateY(".concat(percent * -this.scale, "%)");
+      child.style.MozTransform = "translateY(".concat(percent * -this.scale, "%)");
+      child.style.OTransform = "translateY(".concat(percent * -this.scale, "%)");
+      child.style.msTransform = "translateY(".concat(percent * -this.scale, "%)");
     }
   }, {
     key: "parallax",
@@ -14992,9 +14996,20 @@ function () {
       attach('scroll', function () {
         return _this3.parallax();
       }, 50);
-      this.children.forEach(function (child) {
-        child.style.transition = 'transform .2s ease';
-        _this3.inView() ? _this3.transform(child) : _this3.transform(child, 66.666);
+      setTimeout(function () {
+        _this3.children.forEach(function (child) {
+          child.style.msTransition = '-ms-transform .25s ease-out'; //IE
+
+          child.style.webkitTransition = '-webkit-transform .25s ease-out'; //Chrome and Safari
+
+          child.style.MozTransition = '-moz-transform .25s ease-out'; //Firefox
+
+          child.style.OTransition = '-o-transform .25s ease-out'; //Opera
+
+          child.style.transform = 'transform .25s ease-out'; //Someday this may get adopted and become a standard, so I put it in here.
+
+          _this3.inView() ? _this3.transform(child) : _this3.transform(child, 66.666);
+        });
       });
     }
   }]);

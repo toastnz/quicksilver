@@ -1,7 +1,4 @@
 <section class="downloadBlock contentBlock" data-equalize>
-    <% if $Heading || $Summary %>
-        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
-    <% end_if %>
     <div class="downloadBlock__wrap row">
         <div class="column">
             <% loop $Files %>

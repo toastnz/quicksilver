@@ -1,13 +1,9 @@
 <section class="heroBlock contentBlock" data-equalize>
-
     <div class="[ js-slider--hero ]">
-
         <% loop $BannerImages %>
             <div class="heroBlock__item" data-parallax>
                 <% if $SliderImage %>
                     <div class="heroBlock__item__background" data-parallax-watch style="background-image: url('{$SliderImage.URL}');"></div>
-                <% else %>
-                    <div class="heroBlock__item__background" data-parallax-watch style="background-image: url('https://via.placeholder.com/1920x1000');"></div>
                 <% end_if %>
 
                 <% if $Content || $Title %>
@@ -28,7 +24,5 @@
                 <% end_if %>
             </div>
         <% end_loop %>
-
     </div>
-
 </section>

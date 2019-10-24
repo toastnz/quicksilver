@@ -34,7 +34,7 @@ $breakpoint-map: (
 
 @include ColorClasses;
 @include TheGrid;
-// @include TextAlignment;
+@include TextAlignment;
 // @include FloatClasses;
 // @include ShowHide;
 @include FontStyles;
@@ -121,3 +121,49 @@ button::-moz-focus-inner {
   }
 }
 
+//------------------------------------------------------------------
+// Theme Colurs
+//------------------------------------------------------------------
+
+// 
+// Object
+// 
+
+$theme-map: (
+    'black': '#000000',
+    'white': '#ffffff',
+    'primary': '#0093cc',
+    'secondary': '#015d92',
+    'tertiary': '#b2b2b2',
+);
+
+//------------------------------------------------------------------
+// Theme Colour Class Generator
+//------------------------------------------------------------------
+
+// 
+// Array
+// 
+
+// List our styles we want to alter with our classes
+$style-list: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+
+// For each of the themes listed in $theme-map
+@each $theme, $colors in $theme-map {
+    
+    // Loop each of the colours listed in each theme colour
+    @each $color, $value in $colors {
+        
+        // Class to show we're interested in grabbing the theme colour :)
+        // e.g siteTheme--primary
+        .siteTheme--#{$color} {
+            // We then give the element a class name relevant to the style we are changing, e.g background-color
+            // an element with the class siteTheme--primary & background-color will be given the style background-color: #0093cc;
+            @each $style in $style-list {
+                &.#{$style} {
+                    #{$style}: $value;
+                }
+            }
+        }
+    }
+}

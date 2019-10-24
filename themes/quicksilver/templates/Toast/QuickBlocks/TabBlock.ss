@@ -1,7 +1,4 @@
 <section class="tabBlock contentBlock [ js-tabs ]">
-    <% if $Heading || $Summary %>
-        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
-    <% end_if %>
     <div class="tabBlock__wrap row">
         <ul class="tabBlock__wrap__tabs unstyled column xmd-4 lg-3">
         	<% loop $Tabs %>

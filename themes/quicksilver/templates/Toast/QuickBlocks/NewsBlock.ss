@@ -1,8 +1,4 @@
 <section class="newsBlock contentBlock" data-equalize>
-	<% if $Title || $Content %>
-        <% include Toast\Includes\Heading Heading=$Title, Summary=$Content %>
-    <% end_if %>
-
     <div class="newsBlock__wrap row sm-up-2 md-up-3">
     	<% loop $Items %>
     		<a href="$Link.LinkURL" class="newsBlock__wrap__item column">

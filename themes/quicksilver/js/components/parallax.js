@@ -2,10 +2,10 @@ const attach  = require('../functions/attach');
 const offsetY = require('../functions/offsetY');
 
 class Parallax {
-  constructor(el, scale = 0.2) {
+  constructor(el, scale = 20) {
     this.container = el;
     this.children = Array.from(this.container.querySelectorAll('[data-parallax-watch]'));
-    this.scale = scale;
+    this.scale = scale / 100;
 
     setTimeout(() => this.init(), 100);
   }
@@ -17,7 +17,7 @@ class Parallax {
   }
 
   inView() {
-    return (window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.container.clientHeight);
+    return (window.pageYOffset + this.lastWindowHeight >= this.offset && window.pageYOffset <= this.offset + this.height);
   }
 
   yPercent() {
@@ -25,7 +25,11 @@ class Parallax {
   }
 
   transform(child, percent = this.yPercent() - 33.333) {
-    child.style.transform = `translateY(${percent * -this.scale}%)`;
+    child.style.msTransform = `translateY(${percent * -this.scale}%)`;
+    child.style.webkitTransform = `translateY(${percent * -this.scale}%)`;
+    child.style.MozTransform = `translateY(${percent * -this.scale}%)`;
+    child.style.OTransform = `translateY(${percent * -this.scale}%)`;
+    child.style.msTransform = `translateY(${percent * -this.scale}%)`;
   }
 
   parallax() {
@@ -36,9 +40,15 @@ class Parallax {
     attach('resize', () => this.updateCoordinates(), 500);
     attach('scroll', () => this.parallax(), 50);
 
-    this.children.forEach((child) => {
-      child.style.transition = 'transform .2s ease';
-      (this.inView()) ? this.transform(child) : this.transform(child, 66.666);
+    setTimeout(() => {
+      this.children.forEach((child) => {
+        child.style.msTransition = '-ms-transform .25s ease-out';       //IE
+        child.style.webkitTransition = '-webkit-transform .25s ease-out';   //Chrome and Safari
+        child.style.MozTransition = '-moz-transform .25s ease-out';      //Firefox
+        child.style.OTransition = '-o-transform .25s ease-out';        //Opera
+        child.style.transform = 'transform .25s ease-out';         //Someday this may get adopted and become a standard, so I put it in here.
+        (this.inView()) ? this.transform(child) : this.transform(child, 66.666);
+      });
     });
   }
 }

@@ -1,6 +1,6 @@
 <section class="testimonialBlock contentBlock">
     <div class="testimonialBlock__wrap row [ js-slider--testimonials ]">
-    	<%-- <% loop Testimonials %> --%>
+    	<% loop Testimonials %>
 	    	<div class="testimonialBlock__wrap__item column">
 	    		<h4 class="testimonialBlock__wrap__item__icon">&quot;</h4>
 	    		<div class="testimonialBlock__wrap__item__quote">
@@ -12,6 +12,6 @@
 					<% end_if %>
 				</div>
 	    	</div>
-    	<%-- <% end_loop %> --%>
+    	<% end_loop %>
     </div>
 </section>

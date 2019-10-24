@@ -1,7 +1,9 @@
 <div class="percentageBlock__wrap__item column xmd-{$Width} verticalAlign verticalAlign--top">
-    <div class="percentageBlock__wrap__item__media $Position media <% if not $ContentWidth %>full-width<% end_if %> " style="background-image:url('{$Media}')"></div>
+    <% if $Media %>
+        <div class="percentageBlock__wrap__item__media media {$Position} <% if not $ContentWidth %>full-width<% end_if %> " style="background-image:url('{$Media}')"></div>
+    <% end_if %>
     
-    <div class="percentageBlock__wrap__item__content">
+    <div class="percentageBlock__wrap__item__content content">
         <div class="percentageBlock__wrap__item__content__heading" data-equalize-watch="heading">
             <% if $Heading %>
                 <h4 class="colour--white">$Heading</h4>

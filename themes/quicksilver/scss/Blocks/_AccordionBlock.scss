@@ -5,7 +5,7 @@
 .accordionBlock {
 	&__wrap {
 		&__item {
-			border-color: rgba($primary, .2);
+			// border-color: rgba($primary, .2);
 			border-width: 0 0 .2rem 0;
 			border-style: solid;
 
@@ -21,7 +21,7 @@
 				padding-bottom: $gutterWidth;
 
 				&__title {
-					color: $primary;
+					// color: $primary;
 					margin-bottom: 0;
 				}
 				
@@ -37,7 +37,7 @@
 				}
 
 				.plus {
-					background-color: $primary;
+					// background-color: $primary;
 					position: absolute;
 					right: 0;
 					top: 50%;

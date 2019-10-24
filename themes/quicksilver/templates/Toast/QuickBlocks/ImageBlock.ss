@@ -1,7 +1,4 @@
 <section class="imageBlock contentBlock">
-    <% if $Heading || $Summary %>
-        <% include Toast\Includes\Heading Heading=$Heading, Summary=$Summary %>
-    <% end_if %>
     <div class="imageBlock__wrap row">
         <div class="column">
         <% if $Image %>
