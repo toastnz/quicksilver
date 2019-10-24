@@ -2,6 +2,7 @@
 
 namespace Toast\Extensions;
 
+use RyanPotter\SilverStripeColorField\Forms\ColorField;
 use Sheadawson\Linkable\Forms\LinkField;
 use Sheadawson\Linkable\Models\Link;
 use SilverStripe\AssetAdmin\Forms\UploadField;
@@ -17,6 +18,7 @@ use SilverStripe\Forms\LiteralField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\Forms\TreeMultiselectField;
+use SilverStripe\ORM\FieldType\DBVarchar;
 use SilverStripe\SiteConfig\SiteConfig;
 use SilverStripe\ORM\DataExtension;
 
@@ -44,7 +46,8 @@ class SiteConfigExtension extends DataExtension
         'GoogleTagManagerID' => 'Varchar(100)',
         'BHProjectKey' => 'Varchar(100)',
         'EnableBugherd' => 'Boolean',
-        'Sidebar'      => 'Boolean'
+        'Sidebar'      => 'Boolean',
+        'SidebarColor' => DBVarchar::class . '(7)',
     ];
 
     private static $has_one = [
@@ -89,6 +92,7 @@ class SiteConfigExtension extends DataExtension
             $address,
             $postalAddress,
             CheckboxField::create('Sidebar', 'Show Sidebar'),
+            ColorField::create('SidebarColor')
         ]);
 
         /** -----------------------------------------

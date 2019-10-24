@@ -9,7 +9,7 @@ use SilverStripe\ORM\DataExtension;
 class UserDefinedFormExtension extends DataExtension
 {
     private static $singular_name = 'UserDefinedForm';
-    private static $plural_name = 'UserDefinedForma';
+    private static $plural_name = 'UserDefinedForm';
     private static $table_name = 'UserDefinedFormExtension';
 
     private static $db = [
@@ -18,9 +18,6 @@ class UserDefinedFormExtension extends DataExtension
 
     public function updateCMSFields(FieldList $fields)
     {
-//        $fields->addFieldsToTab('Root.Main', [
-//            CheckboxField::create('Map','Turn on map'),
-//        ]);
         $fields->insertAfter(
             'MenuTitle',
             CheckboxField::create('Map', 'Turn on map')
@@ -28,3 +25,4 @@ class UserDefinedFormExtension extends DataExtension
         return $fields;
     }
 }
+
