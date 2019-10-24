@@ -1,5 +1,5 @@
 <div class="percentageBlock__wrap__item column xmd-{$Width} verticalAlign verticalAlign--top">
-    <div class="percentageBlock__wrap__item__media" style="background-image:url('{$Media}')"></div>
+    <div class="percentageBlock__wrap__item__media $Position media <% if not $ContentWidth %>full-width<% end_if %> " style="background-image:url('{$Media}')"></div>
     
     <div class="percentageBlock__wrap__item__content">
         <div class="percentageBlock__wrap__item__content__heading" data-equalize-watch="heading">

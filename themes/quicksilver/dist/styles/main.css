@@ -1739,6 +1739,16 @@ button::-moz-focus-inner {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat; }
+  @media only screen and (min-width: 968px) {
+    .percentageBlock__wrap__item .media.full-width {
+      width: calc(50vw - 2rem); }
+      .percentageBlock__wrap__item .media.full-width.left {
+        left: auto; }
+      .percentageBlock__wrap__item .media.full-width.right {
+        right: auto; } }
+  @media only screen and (min-width: 1100px) {
+    .percentageBlock__wrap__item .media.full-width {
+      width: calc(100% + 50vw - 55rem); } }
   .percentageBlock__wrap__item__content {
     position: relative; }
     .percentageBlock__wrap__item__content__heading, .percentageBlock__wrap__item__content__body {

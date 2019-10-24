@@ -21,6 +21,26 @@
         @include cover;
       }
 
+      @include media($xmd) {
+        .media.full-width {
+          width: calc(50vw - #{$gutterWidth});
+
+          &.left {
+            left: auto;
+          }
+
+          &.right {
+            right: auto;
+          }
+        }
+      }
+
+      @include media($globalWidthPX) {
+        .media.full-width {
+          width: calc(100% + 50vw - #{$globalWidth / 2});
+        }
+      }
+
       &__content {
         position: relative;
 
