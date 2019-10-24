@@ -63,6 +63,8 @@ selectAll('.js-sliderGallery').forEach((group) => {
 	if (sliderNav !== null) {
 		const navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
 
+		navItems[0].classList.add('tns-slide-current');
+
 		gallery.nav = new Slider(sliderNav, {
 			loop: false,
 			nav: false,
@@ -75,6 +77,8 @@ selectAll('.js-sliderGallery').forEach((group) => {
 		const changeSlides = (sliderToChange, index) => {
 			clearTimeout(changing);
 			hasChanged = 1;
+			navItems.forEach((item) => item.classList.remove('tns-slide-current'));
+			navItems[index].classList.add('tns-slide-current');
 			changing = setTimeout(() => {
 				hasChanged = 0;
 				sliderToChange.goTo(index);
@@ -89,11 +93,11 @@ selectAll('.js-sliderGallery').forEach((group) => {
 			});
 		});
 
-		gallery.main.events.on('transitionEnd', (e) => {
+		gallery.main.events.on('indexChanged', (e) => {
 			changeSlides(gallery.nav, e.index);
 		});
 
-		gallery.nav.events.on('transitionEnd', (e) => {
+		gallery.nav.events.on('indexChanged', (e) => {
 			changeSlides(gallery.main, e.index);
 		});
 	}

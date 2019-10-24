@@ -1749,11 +1749,18 @@ button::-moz-focus-inner {
   margin-bottom: 2rem; }
 
 .sliderBlock__wrap__nav__item {
-  padding: 0 2rem 0 0; }
+  padding: 0 2rem 0 0;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.2s ease;
+  -o-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease; }
+  .sliderBlock__wrap__nav__item.tns-slide-current {
+    opacity: 1; }
   .sliderBlock__wrap__nav__item__media {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+    cursor: pointer;
     width: 100%;
     padding-bottom: 100%; }
 

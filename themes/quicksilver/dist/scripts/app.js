@@ -14621,6 +14621,7 @@ selectAll('.js-sliderGallery').forEach(function (group) {
 
   if (sliderNav !== null) {
     var navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
+    navItems[0].classList.add('tns-slide-current');
     gallery.nav = new _components_sliders__WEBPACK_IMPORTED_MODULE_2__["default"](sliderNav, {
       loop: false,
       nav: false,
@@ -14632,6 +14633,10 @@ selectAll('.js-sliderGallery').forEach(function (group) {
     var changeSlides = function changeSlides(sliderToChange, index) {
       clearTimeout(changing);
       hasChanged = 1;
+      navItems.forEach(function (item) {
+        return item.classList.remove('tns-slide-current');
+      });
+      navItems[index].classList.add('tns-slide-current');
       changing = setTimeout(function () {
         hasChanged = 0;
         sliderToChange.goTo(index);
@@ -14645,10 +14650,10 @@ selectAll('.js-sliderGallery').forEach(function (group) {
         changeSlides(gallery.main, index);
       });
     });
-    gallery.main.events.on('transitionEnd', function (e) {
+    gallery.main.events.on('indexChanged', function (e) {
       changeSlides(gallery.nav, e.index);
     });
-    gallery.nav.events.on('transitionEnd', function (e) {
+    gallery.nav.events.on('indexChanged', function (e) {
       changeSlides(gallery.main, e.index);
     });
   }
