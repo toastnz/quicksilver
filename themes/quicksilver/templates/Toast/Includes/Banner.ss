@@ -1,16 +1,16 @@
-<section class="heroBlock contentBlock" data-equalize>
+<section class="banner" data-equalize>
     <div class="[ js-slider--hero ]">
         <% loop $BannerImages %>
-            <div class="heroBlock__item" data-parallax>
+            <div class="banner__item" data-parallax>
                 <% if $SliderImage %>
-                    <div class="heroBlock__item__background" data-parallax-watch style="background-image: url('{$SliderImage.URL}');"></div>
+                    <div class="banner__item__background" data-parallax-watch style="background-image: url('{$SliderImage.URL}');"></div>
                 <% end_if %>
 
                 <% if $Content || $Title %>
-                    <div class="heroBlock__item__wrap height alignContent">
+                    <div class="banner__item__wrap height alignContent">
                         <div class="verticalAlign">
                             <div class="row">
-                                <div class="heroBlock__item__wrap__content column xmd-7 heroContent" data-equalize-watch>
+                                <div class="banner__item__wrap__content column xmd-7 heroContent" data-equalize-watch>
                                 <% if $Title %>
                                     <h1>$Title</h1>
                                 <% end_if %>

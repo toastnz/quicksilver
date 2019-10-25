@@ -184,3 +184,39 @@ em, i {
 strong, b {
     font-weight: bold !important;
 }
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+img.rightAlone {
+    display: block;
+    margin-left: auto;
+}
+
+img.leftAlone {
+    display: block;
+    margin-right: auto;
+}
+
+img.right {
+    float: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+img.left {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

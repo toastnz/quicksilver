@@ -5,8 +5,8 @@ width: --25 --33 --50 --66 --75 --100
 
 <section class="percentageBlock contentBlock">
 
-    <div class="percentageBlock__wrap row xmd-up-alignContent" data-equalize="heading,content">
-        <% include Toast\Includes\PercentageBlock__Content Position='left', Width=$getWidth('left'), Media=$LeftBackgroundImageURL, ContentWidth=$ContentWidth, Heading=$LeftHeading, Content=$LeftContent, Link=$LeftLink %>
-        <% include Toast\Includes\PercentageBlock__Content Position='right', Width=$getWidth('right'), Media=$RightBackgroundImageURL, ContentWidth=$ContentWidth, Heading=$RightHeading, Content=$RightContent, Link=$RightLink %>
+    <div class="percentageBlock__wrap row xmd-up-alignContent" data-equalize>
+        <% include Toast\Includes\PercentageBlock__Content Position='left', Width=$getWidth('left'), Media=$LeftBackgroundImageURL, ContentWidth=$ContentWidth, Content=$LeftContent, Link=$LeftLink %>
+        <% include Toast\Includes\PercentageBlock__Content Position='right', Width=$getWidth('right'), Media=$RightBackgroundImageURL, ContentWidth=$ContentWidth, Content=$RightContent, Link=$RightLink %>
     </div>
 </section>

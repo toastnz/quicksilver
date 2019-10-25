@@ -56,7 +56,33 @@ b {
 img {
   max-width: 100%;
   height: auto;
+
+  &.rightAlone {
+    display: block;
+    margin-left: auto;
+  }
+
+  &.leftAlone {
+    display: block;
+    margin-right: auto;
+  }
+
+  &.right {
+    float: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &.left {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
+
+
 
 //------------------------------------------------------------------
 // HR

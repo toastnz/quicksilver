@@ -17,6 +17,7 @@
   &__item {
     position: relative;
     overflow: hidden;
+    @include overlay($black, .2);
 
     &__background {
       @include cover;
@@ -27,7 +28,6 @@
       bottom: -5rem;
       width: 100%;
 
-      @include overlay($black, .2);
     }
 
     &__wrap {

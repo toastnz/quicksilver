@@ -4,13 +4,13 @@
     <% end_if %>
     
     <div class="percentageBlock__wrap__item__content content">
-        <div class="percentageBlock__wrap__item__content__heading" data-equalize-watch="heading">
+        <%-- <div class="percentageBlock__wrap__item__content__heading" data-equalize-watch="heading">
             <% if $Heading %>
                 <h4 class="colour--white">$Heading</h4>
             <% end_if %>
-        </div>
+        </div> --%>
 
-        <div class="percentageBlock__wrap__item__content__body" data-equalize-watch="content">
+        <div class="percentageBlock__wrap__item__content__body" data-equalize-watch>
             $Content
         </div>
 
