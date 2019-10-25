@@ -12,4 +12,4 @@
     		</a>
     	<% end_loop %>
 	</div>
-</div>
+</section>

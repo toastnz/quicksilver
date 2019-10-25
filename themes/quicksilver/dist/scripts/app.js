@@ -14845,6 +14845,7 @@ function () {
         childArray.push(this.container.querySelectorAll("[data-equalize-watch]"));
       }
 
+      console.log(childArray);
       return childArray;
     }
   }, {

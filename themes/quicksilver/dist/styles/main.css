@@ -1738,6 +1738,28 @@ button::-moz-focus-inner {
   width: 100%;
   height: auto; }
 
+.linkBlock__wrap__item {
+  display: block;
+  cursor: pointer;
+  color: #434343;
+  margin-bottom: 4rem; }
+  .linkBlock__wrap__item:hover .link, .linkBlock__wrap__item:active .link, .linkBlock__wrap__item:focus .link {
+    color: #C0C0C0; }
+  .linkBlock__wrap__item__media {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-bottom: 2rem; }
+  .linkBlock__wrap__item__details {
+    margin-bottom: 2rem; }
+  .linkBlock__wrap__item__link {
+    color: #8C8C8C;
+    -webkit-transition: color 0.2s ease;
+    -o-transition: color 0.2s ease;
+    transition: color 0.2s ease; }
+
 .newsBlock__wrap__item {
   display: block;
   cursor: pointer;
