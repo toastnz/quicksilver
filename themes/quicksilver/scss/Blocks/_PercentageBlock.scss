@@ -6,7 +6,7 @@
 
   &__wrap {
 
-    &:not(.explode) {
+    &:not(.collapse) {
       padding-left: $gutterWidth;
       padding-right: $gutterWidth;
     }
@@ -19,6 +19,11 @@
       &__media {
         @include pos(absolute, 0);
         @include cover;
+      }
+
+      @include media($xmd, max) {
+        padding-left: $gutterWidth!important;
+        padding-right: $gutterWidth!important;
       }
 
       @include media($xmd) {
