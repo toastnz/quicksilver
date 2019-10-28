@@ -5,6 +5,7 @@
 .tabBlock {
 	&__wrap {
 		&__tabs {
+			margin-bottom: $gutterWidth * 2;
 
 			&__option {
 				border-color: $primary;

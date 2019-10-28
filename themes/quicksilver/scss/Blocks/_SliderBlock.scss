@@ -22,8 +22,8 @@
 				padding: 0 $gutterWidth 0 0;
 				opacity: 0.5;
 				@include transition(opacity);
-
-				&.tns-slide-current {
+				
+				@include active(tns-slide-current) {
 					opacity: 1;
 				}
 
