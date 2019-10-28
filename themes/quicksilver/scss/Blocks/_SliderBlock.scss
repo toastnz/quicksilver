@@ -7,6 +7,14 @@
 		&__slider {
 			position: relative;
 			margin-bottom: $gutterWidth;
+
+			&__item {
+				&__media {
+					width: 100%;
+					padding-bottom: 56.25%;
+					@include contain;
+				}
+			}
 		}
 
 		&__nav {
