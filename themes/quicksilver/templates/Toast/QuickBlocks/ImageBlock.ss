@@ -1,6 +1,6 @@
 <% if $Image %>
     <section class="imageBlock contentBlock">
-        <div class="imageBlock__wrap row">
+        <div class="imageBlock__wrap row <% if not $ContentWidth %>explode<% end_if %>">
             <div class="column">
             <% if $Image %>
                 <% with $Image %>
