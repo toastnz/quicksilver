@@ -33,7 +33,7 @@ $breakpoint-map: (
 );
 
 // List our styles we want to alter with our ColourClasses
-$ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+$colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 
 //------------------------------------------------------------------
 // Components
@@ -47,7 +47,7 @@ $ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 @include TableAlignmentClasses($breakpoint-map);
 //------------------------------------------------------------------
 
-@include ColourClasses;
+@include ColourClasses($colour-styles);
 
 // Generic Styles --------------------------------------------------
 @include FontStyles;
