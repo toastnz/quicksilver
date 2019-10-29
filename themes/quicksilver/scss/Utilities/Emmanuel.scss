@@ -46,9 +46,10 @@ $breakpoint-map: (
 @include TableAlignmentClasses($breakpoint-map);
 //------------------------------------------------------------------
 
-
 @include ColorClasses;
 
+// Generic Styles 
+//------------------------------------------------------------------
 @include FontStyles;
 @include ListStyles;
 @include TableStyles;
