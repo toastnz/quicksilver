@@ -8,7 +8,7 @@ $ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 @mixin ColourStyles {
   // example @extend %background-color--primary;
   @each $color, $value in $color-map {
-    @each $style in ColourStyles {
+    @each $style in $ColourStyles {
       %#{$style}--#{$color} {
         #{$style}: $value;
       }
@@ -16,7 +16,7 @@ $ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
   }
 }
 
-@mixin ColourClasses($styles: ColourStyles) {
+@mixin ColourClasses($styles: $ColourStyles) {
   // example .background-color--primary;
   @each $color, $value in $color-map {
     @each $style in $styles {
