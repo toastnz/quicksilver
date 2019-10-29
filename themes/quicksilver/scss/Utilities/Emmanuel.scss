@@ -12,7 +12,7 @@
 @import 'Emmanuel/LoginPage';
 
 //------------------------------------------------------------------
-// Grid Overrides
+// Include Overrides
 
 $globalWidth: 110rem;
 $globalWidthPX: 1100px;
@@ -32,6 +32,9 @@ $breakpoint-map: (
   'lg': $lg,
 );
 
+// List our styles we want to alter with our ColourClasses
+$ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+
 //------------------------------------------------------------------
 // Components
 
@@ -44,7 +47,7 @@ $breakpoint-map: (
 @include TableAlignmentClasses($breakpoint-map);
 //------------------------------------------------------------------
 
-@include ColorClasses;
+@include ColourClasses;
 
 // Generic Styles --------------------------------------------------
 @include FontStyles;

@@ -3,12 +3,12 @@
 //------------------------------------------------------------------
 
 // List our styles we want to alter with our classes
-$style-list: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+$ColourStyles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 
-@mixin ColorStyles {
+@mixin ColourStyles {
   // example @extend %background-color--primary;
   @each $color, $value in $color-map {
-    @each $style in $style-list {
+    @each $style in ColourStyles {
       %#{$style}--#{$color} {
         #{$style}: $value;
       }
@@ -16,18 +16,24 @@ $style-list: 'color', 'background-color', 'border-color', 'fill', 'stroke';
   }
 }
 
-@mixin ColorClasses {
+@mixin ColourClasses($styles: ColourStyles) {
   // example .background-color--primary;
   @each $color, $value in $color-map {
-    @each $style in $style-list {
-      .#{$style}--#{$color} {
-        #{$style}: $value;
+    @each $style in $styles {
+      @if ($style == 'color') {
+        .colour--#{$color} {
+          #{$style}: $value;
+        }
+      }@else {
+        .#{$style}--#{$color} {
+          #{$style}: $value;
+        }
       }
     }
   }
 }
 
-@mixin Colors {
-  @include ColorStyles;
-  @include ColorClasses;
+@mixin Colours {
+  @include ColourStyles;
+  @include ColourClasses;
 }
