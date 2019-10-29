@@ -7,6 +7,8 @@ $globalWidthPX: 1100px;
 $globalWidthMax: 144rem;
 $globalWidthMaxPX: 1440px;
 $columnCount: 12;
+$rowClasses: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$columnClasses: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
 $gutterWidth: 2rem;
 
 $breakpoint-map: (
@@ -101,14 +103,17 @@ $grid-map: (
   // ---------------------------------------------
   // Row Classes
 
-  .row {
-    @each $bp, $value in $breakpoints {
-      @include media($value) {
-        @for $i from 1 through $columnCount {
-          &.#{$bp}-up-#{$i} {
-            > .column {
-              $j: $columnCount / $i;
-              width: percentage($j / $columnCount);
+  @if($rowClasses) {
+    .row {
+      @each $bp, $value in $breakpoints {
+        @include media($value) {
+          @each $i in $rowClasses {
+            // @for $i from 1 through $columnCount {
+            &.#{$bp}-up-#{$i} {
+              > .column {
+                $j: $columnCount / $i;
+                width: percentage($j / $columnCount);
+              }
             }
           }
         }
@@ -119,10 +124,11 @@ $grid-map: (
   // ---------------------------------------------
   // Column Sizes
 
-  @each $bp, $value in $breakpoints {
-    @include media($value) {
-      @for $i from 0 through $columnCount {
-        @if $i != 0 {
+  @if($columnClasses) {
+    @each $bp, $value in $breakpoints {
+      @include media($value) {
+        @each $i in $columnClasses {
+          // @for $i from 1 through $columnCount {
           .column {
             &.#{$bp}-#{$i} {
               width: percentage($i / $columnCount);
@@ -156,27 +162,13 @@ $grid-map: (
         }
       }
 
-      @for $i from 0 through $columnCount {
-        .column {
-
-          @if $i != 0 {
-
+      @if($columnClasses) {
+        @each $i in $columnClasses {
+          // @for $i from 0 through $columnCount {
+          .column {
             &.#{$bp}-#{$i} {
               width: percentage($i / $columnCount);
             }
-          }
-          @if $i == 0 {
-
-            &.#{$bp}-pull-#{$i} {
-              margin-left: 0;
-            }
-
-            &.#{$bp}-push-#{$i} {
-              margin-left: 0;
-              margin-right: 0;
-            }
-
-          }@else {
 
             &.#{$bp}-pull-#{$i} {
               margin-right: -#{$i / $columnCount * 100} + 0.0%;
@@ -184,6 +176,17 @@ $grid-map: (
 
             &.#{$bp}-push-#{$i} {
               margin-right: #{$i / $columnCount * 100} + 0.0%;
+            }
+          }
+
+          .column {
+            &.#{$bp}-pull-0 {
+              margin-left: 0;
+            }
+
+            &.#{$bp}-push-0 {
+              margin-left: 0;
+              margin-right: 0;
             }
           }
         }
@@ -305,7 +308,7 @@ $grid-map: (
     .hide-for-#{$bp} {
 
       @include media($value) {
-        display: none;
+        display: none!important;
       }
     }
   }

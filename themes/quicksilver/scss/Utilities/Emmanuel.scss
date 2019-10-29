@@ -22,6 +22,10 @@ $globalWidthMaxPX: 1440px;
 $columnCount: 12;
 $gutterWidth: 2rem;
 
+// Include neccessary column numbers for project here - HINT: false = no classes;
+$rowClasses: 2, 3, 4, 5, 6, 7; // e.g md-up-4
+$columnClasses: 3, 4, 6, 7, 8, 9, 10; // e.g md-4
+
 // Include neccessary breakpoints for project here;
 $breakpoint-map: (
   'md': $md,
