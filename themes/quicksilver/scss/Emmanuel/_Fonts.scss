@@ -17,6 +17,7 @@ $paragraph-text-elements: p, span, b, em, i, li, input, textarea, td, tr, tl, dl
 
 @mixin headings($start: 1, $stop: 6) {
   @for $i from $start through $stop {
+    .h#{$i},
     h#{$i} {
       @content;
     }
