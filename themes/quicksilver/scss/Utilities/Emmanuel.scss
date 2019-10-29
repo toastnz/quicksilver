@@ -37,8 +37,7 @@ $breakpoint-map: (
 
 @include TheGrid;
 
-// Inject these includes with $breakpoint-map if needed
-//------------------------------------------------------------------
+// Inject these includes with $breakpoint-map if needed ------------
 @include TextAlignmentClasses;
 // @include FloatClasses($breakpoint-map);
 // @include ShowHideClasses($breakpoint-map);
@@ -47,8 +46,7 @@ $breakpoint-map: (
 
 @include ColorClasses;
 
-// Generic Styles 
-//------------------------------------------------------------------
+// Generic Styles --------------------------------------------------
 @include FontStyles;
 @include ListStyles;
 @include TableStyles;

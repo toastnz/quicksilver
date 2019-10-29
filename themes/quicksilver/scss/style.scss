@@ -2,13 +2,16 @@
 // Base imports
 //------------------------------------------------------------------
 
+//------------------------------------------------------------------
 //Ordered
+
 @import 'Utilities/Reset';
 @import 'Utilities/Colours';
 @import 'Utilities/Mixins';
 @import 'Utilities/BaseSettings';
 @import 'Utilities/Grid'; // Here for variables - will not bulk css without using @include
 
+// External --------------------------------------------------------
 @import 'External/TinySlider';
 // @import 'External/Tingle';
 
@@ -18,7 +21,9 @@
 @import 'Utilities/Emmanuel';
 // @import 'Utilities/JD';
 
+//------------------------------------------------------------------
 //UnOrdered
+
 @import 'Elements/*';
 @import 'Pages/*';
 @import 'Blocks/*';
