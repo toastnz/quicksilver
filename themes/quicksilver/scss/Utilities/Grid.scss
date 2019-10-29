@@ -35,15 +35,12 @@ $grid-map: (
   $breakpoints: map-merge($grid-map, $breakpoint-map);
 
   .row {
+
     @include clearfix;
     width: 100%;
     max-width: $globalWidth;
     margin: 0 auto;
 
-    .row {
-      max-width: calc(100% + #{$gutterWidth * 2})!important;
-    }
-    
     &.max {
       max-width: $globalWidthMax;
     }
@@ -74,6 +71,10 @@ $grid-map: (
         vertical-align: top;
         float: none;
       }
+    }
+
+    .row {
+      max-width: none;
     }
   }
 
@@ -152,10 +153,12 @@ $grid-map: (
     @include media($value) {
       
       .column {
+
         &.#{$bp}-centered {
           float: none;
           margin: 0 auto;
         }
+
         &.#{$bp}-uncentered {
           float: left;
           margin: 0;
@@ -166,6 +169,7 @@ $grid-map: (
         @each $i in $columnClasses {
           // @for $i from 0 through $columnCount {
           .column {
+
             &.#{$bp}-#{$i} {
               width: percentage($i / $columnCount);
             }
@@ -178,16 +182,17 @@ $grid-map: (
               margin-right: #{$i / $columnCount * 100} + 0.0%;
             }
           }
+        }
 
-          .column {
-            &.#{$bp}-pull-0 {
-              margin-left: 0;
-            }
+        .column {
 
-            &.#{$bp}-push-0 {
-              margin-left: 0;
-              margin-right: 0;
-            }
+          &.#{$bp}-pull-0 {
+            margin-left: 0;
+          }
+
+          &.#{$bp}-push-0 {
+            margin-left: 0;
+            margin-right: 0;
           }
         }
       }
@@ -199,9 +204,7 @@ $grid-map: (
 // Text Alignment
 // ---------------------------------------------
 
-@mixin TextAlignment {
-  $breakpoints: map-merge($breakpoint-map, $grid-map);
-
+@mixin TextAlignmentClasses($breakpoints: false) {
   .text-left {
     text-align: left;
   }
@@ -213,21 +216,21 @@ $grid-map: (
   .text-center {
     text-align: center;
   }
+  
+  @if($breakpoints) {
+    @each $bp, $value in $breakpoints {
+      @include media($value) {
+        .#{$bp}-text-left {
+          text-align: left;
+        }
 
-  @each $bp, $value in $breakpoints {
+        .#{$bp}-text-right {
+          text-align: right;
+        }
 
-    @include media($value) {
-
-      .#{$bp}-text-left {
-        text-align: left;
-      }
-
-      .#{$bp}-text-right {
-        text-align: right;
-      }
-
-      .#{$bp}-text-center {
-        text-align: center;
+        .#{$bp}-text-center {
+          text-align: center;
+        }
       }
     }
   }
@@ -237,8 +240,7 @@ $grid-map: (
 // Float Classes
 // ---------------------------------------------
 
-@mixin FloatClasses {
-  $breakpoints: map-merge($breakpoint-map, $grid-map);
+@mixin FloatClasses($breakpoints: false) {
 
   .float-left {
     float: left!important;
@@ -251,21 +253,23 @@ $grid-map: (
   .float-none {
     float: none!important;
   }
+  
+  @if($breakpoints) {
+    @each $bp, $value in $breakpoints {
 
-  @each $bp, $value in $breakpoints {
+      @include media($value) {
 
-    @include media($value) {
+        .#{$bp}-float-left {
+          float: left!important;
+        }
 
-      .#{$bp}-float-left {
-        float: left!important;
-      }
+        .#{$bp}-float-right {
+          float: right!important;
+        }
 
-      .#{$bp}-float-right {
-        float: right!important;
-      }
-
-      .#{$bp}-float-none {
-        float: none!important;
+        .#{$bp}-float-none {
+          float: none!important;
+        }
       }
     }
   }
@@ -274,41 +278,25 @@ $grid-map: (
 // ---------------------------------------------
 // Show/Hide
 // ---------------------------------------------
-@mixin ShowHide {
-  $breakpoints: map-merge($breakpoint-map, $grid-map);
+@mixin ShowHideClasses($breakpoints: false) {
 
   .hide {
-    display: none;
+    display: none!important;
   }
-
-  @each $bp, $value in $breakpoints {
-
-    .show-for-#{$bp} {
-      display: none;
-
-      @include media($value) {
-        display: block;
-      }
-
-      &--inline {
-        display: none;
-        @include media($value) {
-          display: inline;
+  
+  @if($breakpoints) {
+    @each $bp, $value in $breakpoints {
+      
+      @include media($value, max) {    
+        .show-for-#{$bp} {
+          display: none!important;
         }
       }
 
-      &--inline-block {
-        display: none;
-        @include media($value) {
-          display: inline-block;
-        }
-      }
-    }
-
-    .hide-for-#{$bp} {
-
       @include media($value) {
-        display: none!important;
+        .hide-for-#{$bp} {
+          display: none!important;
+        }
       }
     }
   }
@@ -318,72 +306,47 @@ $grid-map: (
 // Table Aignment
 // ---------------------------------------------
 
-@mixin TableAlignment {
-  $breakpoints: map-merge($breakpoint-map, $grid-map);
+@mixin TableAlignmentStyles {
+  display: table;
 
-  .alignContent {
-    display: table;
-    // height: 100%;
-
-    &--fixed,
-    &.row {
-      table-layout: fixed;
-    }
-
-    &:not(.column) {
-      width: 100%;
-    }
-
-    > .contentRow {
-      display: table-row;
-    }
-
-    > .verticalAlign,
-    > .contentRow > .verticalAlign {
-      display: table-cell;
-      vertical-align: middle;
-      float: none;
-      &--top {
-        vertical-align: top;
-      }
-      &--bottom {
-        vertical-align: bottom;
-      }
-    }
+  &--fixed,
+  &.row {
+    table-layout: fixed;
   }
 
-  @each $bp, $value in $breakpoints {
+  &:not(.column) {
+    width: 100%;
+  }
 
-    @include media($value) {
+  > .contentRow {
+    display: table-row;
+  }
 
-      .#{$bp}-up-alignContent {
-        display: table;
-        height: 100%;
+  > .verticalAlign,
+  > .contentRow > .verticalAlign {
+    display: table-cell;
+    vertical-align: middle;
+    float: none;
+    &--top {
+      vertical-align: top;
+    }
+    &--bottom {
+      vertical-align: bottom;
+    }
+  }
+}
 
-        &--fixed,
-        .row {
-          table-layout: fixed;
-        }
-
-        &:not(.column) {
-          width: 100%;
-        }
-
-        > .contentRow {
-          display: table-row;
-        }
-
-        > .verticalAlign,
-        > .contentRow > .verticalAlign {
-          display: table-cell;
-          float: none;
-          vertical-align: middle;
-          &--top {
-            vertical-align: top;
-          }
-          &--bottom {
-            vertical-align: bottom;
-          }
+@mixin TableAlignmentClasses($breakpoints: false) {
+  
+  .alignContent {
+    @include TableAlignmentStyles;
+  }
+  
+  @if($breakpoints) {
+    @each $bp, $value in $breakpoints {
+      @include media($value) {
+        .#{$bp}-up-alignContent {
+          @include TableAlignmentStyles;
         }
       }
     }
