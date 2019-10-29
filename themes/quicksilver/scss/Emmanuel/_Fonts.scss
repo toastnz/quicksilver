@@ -10,10 +10,23 @@ $font-size-map: (
   'h5'      : (1.8rem, 2.4rem),
   'h6'      : (1.6rem, 1.6rem),
   'small'   : (1.0rem, 1.3rem),
-  );
+);
 
-$paragraph-text-elements: p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button;
 // list of all elements that we want styled as paragraph text.
+$paragraph-text-elements: p, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button;
+
+@mixin headings($start: 1, $stop: 6) {
+  @for $i from $start through $stop {
+    h#{$i} {
+      @content;
+    }
+  }
+}
+
+@mixin font($weight: 400, $family: $font-primary) {
+  font-family: $family;
+  font-weight: $weight;
+}
 
 @mixin FontStyles {
   %base-font-styles {
