@@ -385,6 +385,7 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 
 @mixin videoEmbed($color: $primary) {
   @include cover;
+  @include overlay($black, .3);
   display: block;
   position: relative;
   width: 100%;
@@ -392,12 +393,20 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
 
   svg {
     position: absolute;
+    z-index: 1;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%) scale(1);
+    @include transition(transform);
 
     path {
-      fill: $primary;
+      fill: $white;
+    }
+  }
+
+  @include active {
+    svg {
+      transform: translate(-50%,-50%) scale(1.1);
     }
   }
 
@@ -405,6 +414,6 @@ $transition-deceleration: cubic-bezier(0, 0, .2, 1);
     @include pos(absolute, 0);
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
   }
 }

@@ -5,18 +5,39 @@
   position: absolute;
   z-index: 100;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(0, -50%);
+  @include transition(transform);
 
   &--left {
     left: $gutterWidth;
+
+    @include active {
+      transform: translate(-1rem, -50%);
+    }
   }
 
   &--right {
     right: $gutterWidth;
+
+    @include active {
+      transform: translate(1rem, -50%);
+    }
   }
   
   &[disabled] {
     opacity: 0.5;
+  }
+
+  @include media($globalWidthPX + 200) {
+    &--left {
+      left: auto;
+      right: calc(100% + #{$gutterWidth});
+    }
+
+    &--right {
+      right: auto;
+      left: calc(100% + #{$gutterWidth});
+    }
   }
 }
 

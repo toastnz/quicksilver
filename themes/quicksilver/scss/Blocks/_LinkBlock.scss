@@ -12,7 +12,8 @@
       
       @include active {
         .link {
-          color: $secondary;
+          text-decoration: underline;
+          // color: $secondary;
         }
       }
 
@@ -30,7 +31,6 @@
       &__link {
         color: $primary;
         @include transition(color);
-
       }
     }
   }

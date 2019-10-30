@@ -8,41 +8,26 @@
 			margin-bottom: $gutterWidth * 2;
 
 			&__option {
-				border-color: $primary;
-				border-style: solid;
-				border-radius: 0;
-				border-width: 0 .2rem;
 				margin-bottom: 0;
-
-				&:first-child {
-					border-radius: .2rem .2rem 0 0;
-					border-width: .2rem .2rem 0;
-				}
-
-				&:last-child {
-					border-radius: 0 0 .2rem .2rem;
-					border-width: 0 .2rem .2rem;
-				}
-
-				&:only-child {
-					border-radius: .2rem;
-					border-width: .2rem;
-				}
 
 				&__link {
 					display: block;
-					padding: 1rem;
-					@include transition((background-color, color));
+					padding: 1rem 2rem;
+					@include font(700);
+
+					box-shadow: inset .4rem 0 0 0 rgba($primary, .2);
+					@include transition((box-shadow, background-color));
 
 					&.js-active {
-						color: $white;
-						background-color: $secondary;
+
+						background-color: rgba($primary, .05);
+						box-shadow: inset .4rem 0 0 0 $primary;
 						cursor: default;
 					}
 
 					&:not(.js-active) {
 						@include active {
-							background-color: rgba($secondary, .3);
+							box-shadow: inset .4rem 0 0 0 $primary;
 						}
 					}
 
@@ -57,6 +42,7 @@
 
 			&__item {
 				display: none;
+				// box-shadow: inset .6rem 0 0 0 $primary;
 
 				&.js-active {
 					display: block;

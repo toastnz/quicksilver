@@ -16,9 +16,15 @@
 			&__heading {
 				display: block;
 				position: relative;
-				padding-right: 6rem;
+				padding-right: 8rem;
+				padding-left: $gutterWidth;
 				padding-top: $gutterWidth;
 				padding-bottom: $gutterWidth;
+				@include transition(background-color);
+
+				@include active(js-active) {
+					background-color: $off-white;
+				}
 
 				&__title {
 					color: $primary;
@@ -39,7 +45,7 @@
 				.plus {
 					background-color: $primary;
 					position: absolute;
-					right: 0;
+					right: 2rem;
 					top: 50%;
 					height: .2rem;
 					width: 2rem;

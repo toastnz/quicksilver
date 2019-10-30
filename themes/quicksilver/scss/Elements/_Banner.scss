@@ -10,8 +10,14 @@
     height: 40rem;
   }
 
-  .slick-dots {
-    bottom: 2rem;
+  .slider-button {
+    &--left {
+      left: $gutterWidth;
+    }
+
+    &--right {
+      right: $gutterWidth;
+    }
   }
 
   &__item {
