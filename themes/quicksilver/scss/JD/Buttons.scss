@@ -38,7 +38,7 @@ $error-button-color: $error-colour;
     }
   }
 
-  @each $color, $value in $color-map {
+  @each $color, $value in $colour-map {
     &--#{$color} {
       background-color: $value;
       border: $value;

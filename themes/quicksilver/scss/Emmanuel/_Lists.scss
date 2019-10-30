@@ -51,7 +51,7 @@
   }
 
   ul {
-    @each $color, $value in $color-map {
+    @each $color, $value in $colour-map {
       &.coloured--#{$color} {
         @extend %bullet;
 

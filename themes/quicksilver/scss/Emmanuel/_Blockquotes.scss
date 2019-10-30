@@ -12,7 +12,7 @@
 }
 
 @mixin BlockQuoteClasses {
-  @each $color, $value in $color-map {
+  @each $color, $value in $colour-map {
     &.blockquote--#{$color} {
       border-color: $color;
     }

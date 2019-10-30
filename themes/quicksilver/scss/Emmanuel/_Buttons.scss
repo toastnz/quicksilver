@@ -78,16 +78,14 @@
 }
 
 @mixin ButtonClasses {
-	@if($color-map) {
-		.button {
-			@each $color, $value in $color-map {
-				&.button--#{$color} {
-					@include button($value);
-				}
+	.button {
+		@each $color, $value in $colour-map {
+			&.button--#{$color} {
+				@include button($value);
+			}
 
-				&.button--bordered--#{$color} {
-					@include button($value, true);
-				}
+			&.button--bordered--#{$color} {
+				@include button($value, true);
 			}
 		}
 	}
