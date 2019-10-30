@@ -19,7 +19,6 @@
 					@include transition((box-shadow, background-color));
 
 					&.js-active {
-
 						background-color: rgba($primary, .05);
 						box-shadow: inset .4rem 0 0 0 $primary;
 						cursor: default;
