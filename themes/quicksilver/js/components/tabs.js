@@ -1,8 +1,14 @@
+// const toggleHeight = require('../functions/toggleHeight');
+
+import toggleHeight from '../functions/toggleHeight';
+
 class Tabs {
   constructor(el) {
     this.container = el;
     this.links = Array.from(this.container.querySelectorAll('.js-tabs--link'));
     this.items = Array.from(this.container.querySelectorAll('.js-tabs--item'));
+
+    this.toggleHeight = new toggleHeight(this.container);
 
     setTimeout(() => this.init(), 100);
   }
@@ -27,6 +33,8 @@ class Tabs {
       // Toggle active state on tab item
       (item === this.items[index]) ? item.classList.add('js-active') : item.classList.remove('js-active');
     });
+
+    this.toggleHeight.animate();
   }
 
   init() {
