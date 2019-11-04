@@ -4,6 +4,7 @@
 	<% end_if %>
 
 	<section class="contentBlocks">
+
 		<% loop $ContentBlocks.Sort('SortOrder') %>
 		    $ForTemplate
 		<% end_loop %>
