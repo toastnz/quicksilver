@@ -2,13 +2,18 @@
 
 namespace Toast\Pages;
 
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\HeaderField;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\ORM\FieldType\DBHTMLText;
+use SilverStripe\UserForms\Model\UserDefinedForm;
 use Toast\Forms\ContactForm;
 
-class ContactPage extends \Page
+class ContactPage extends UserDefinedForm
 {
     private static $singular_name = 'Contact Page';
     private static $plural_name = 'Contact Pages';
@@ -18,7 +23,9 @@ class ContactPage extends \Page
 
     private static $db = [
         'NotificationEmail' => 'Varchar(100)',
-        'SuccessMessage' => 'Text'
+        'SuccessMessage' => 'Text',
+        'Map'      => 'Boolean',
+        //'FormContent'  => 'HTMLText'
     ];
 
     public function getCMSFields()
@@ -28,10 +35,20 @@ class ContactPage extends \Page
         $fields->addFieldsToTab('Root.Form', [
             HeaderField::create('FormHeader', 'Form'),
             EmailField::create('NotificationEmail', 'Notification Email'),
-            TextareaField::create('SuccessMessage', 'Success Message')
+            TextareaField::create('SuccessMessage', 'Success Message'),
+            //HTMLEditorField::create('Content', 'Content')
         ]);
+        $fields->addFieldsToTab('Root.Main', [
 
+            $fields->insertAfter(
+                'MenuTitle',
+                CheckboxField::create('Map', 'Turn on map'))
+        ]);
         return $fields;
+    }
+    public function getUser()
+    {
+        return DBField::create_field(DBHTMLText::class, '$UserDefinedForm' );
     }
 }
 

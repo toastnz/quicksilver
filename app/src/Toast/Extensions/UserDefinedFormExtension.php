@@ -4,6 +4,7 @@ namespace Toast\Extensions;
 
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\FieldList;
+use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
 use SilverStripe\ORM\DataExtension;
 
 class UserDefinedFormExtension extends DataExtension
@@ -13,16 +14,12 @@ class UserDefinedFormExtension extends DataExtension
     private static $table_name = 'UserDefinedFormExtension';
 
     private static $db = [
-        'Map'      => 'Boolean'
+
     ];
 
     public function updateCMSFields(FieldList $fields)
     {
-        $fields->insertAfter(
-            'MenuTitle',
-            CheckboxField::create('Map', 'Turn on map')
-        );
-        return $fields;
+
     }
 }
 
