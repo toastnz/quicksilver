@@ -1,0 +1,50 @@
+//------------------------------------------------------------------
+// Breadcrumbs
+//------------------------------------------------------------------
+
+.breadcrumbs {
+	border-bottom: .1rem solid #e4e4e4;
+	margin: 0 0 $gutterWidth * 2;
+	&__list {
+		list-style: none;
+		padding: $gutterWidth 0!important;
+		margin: 0!important;
+
+		&__item {
+			display: inline-block;
+			vertical-align: middle;
+			margin-bottom: 0!important;
+
+			svg {
+				margin: 0 1rem;
+			}
+
+			&__link {
+				color: #9b9b9b;
+
+				svg {
+					margin: 0;
+					path {
+						@include transition(fill);
+					}
+				}
+
+				@include active {
+					svg {
+						path {
+							fill: $primary;
+						}
+					}
+				}
+			}
+
+			a {
+				@include transition(color);
+
+				@include active {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

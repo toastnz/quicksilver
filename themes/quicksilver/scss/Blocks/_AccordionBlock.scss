@@ -22,7 +22,7 @@
 				padding-bottom: $gutterWidth;
 				@include transition(background-color);
 
-				@include active(js-active) {
+				&.js-active {
 					background-color: $off-white;
 				}
 
@@ -62,9 +62,18 @@
 			}
 
 			// .js-accordion--target {
-			// 	height: 0;
 			// 	overflow: hidden;
+
 			// }
+
+			.js-accordion--trigger {
+				&:not(.js-active) {
+
+					+ .js-accordion--target {
+						height: 0!important;
+					}
+				}
+			}
 
 			&__content {
 				// display: none;

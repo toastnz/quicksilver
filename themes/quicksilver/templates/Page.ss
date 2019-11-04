@@ -9,15 +9,17 @@
 
     <%-- <div data-equalize-watch="body"></div> --%>
 
-    <div data-smooth-scroll>
-      <div data-smooth-scroll--content>
+    <%-- <div data-smooth-scroll> --%>
+      <%-- <div data-smooth-scroll--content> --%>
         <% include Toast\Banner %>
+
+        $Breadcrumbs
 
         $Layout
 
         <% include Toast\Footer %>
-      </div>
-    </div>
+      <%-- </div> --%>
+    <%-- </div> --%>
 
     <% if $SiteConfig.GoogleTagManagerID %>
       <noscript>

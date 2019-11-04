@@ -6,7 +6,8 @@
 .login {
   position: relative;
   height: 100vh;
-  background: radial-gradient(circle, darken($white, 80%), darken($white, 100%));
+  // background: radial-gradient(circle, darken($white, 80%), darken($white, 100%));
+  background: radial-gradient(circle, $primary 0%, darken($primary, 20%));
 
   &:before,
   &:after {
@@ -16,12 +17,13 @@
   }
 
   &:before {
-    background: linear-gradient(45deg, rgba($primary, 1) 0%, rgba($tertiary, 1) 100%);
+    opacity: 0.2;
+    background: linear-gradient(45deg, darken($white, 80%), darken($white, 100%));
   }
 
   &:after {
     // @include media($sm, max) {
-      background-color: rgba($white, 0.8);
+      // background-color: rgba($white, 0.8);
     // }
   }
 
@@ -39,6 +41,7 @@
       width: 100%;
       max-width: 60rem;
       border-radius: 0;
+      color: $white;
 
       transition: border-radius .3s ease, padding .3s ease, width .3s ease;
 
@@ -78,9 +81,10 @@
         }
 
         input:not([type="submit"]) {
+          color: $white;
           border: none!important;
           border-radius: .5rem!important;
-          background-color: rgba($primary, .1)!important;
+          background-color: rgba($white, .1)!important;
           @include media($xmd) {
             border-radius: 1rem;
           }
@@ -88,7 +92,17 @@
 
         [type="submit"] {
           width: 100%;
-          @include button($primary, true);
+          @include button($white, true);
+        }
+
+        [type="checkbox"] + label {
+          &:before {
+            border-color: $white;
+          }
+
+          &:after {
+            background-color: $white;
+          }
         }
 
         .btn-toolbar {
@@ -104,7 +118,11 @@
           padding-top: 3rem;
           border-top: .2rem solid rgba($white, 0.3);
           a {
-            color: $text;
+            color: $white;
+
+            @include active {
+              text-decoration: underline;
+            }
           }
         }
       }
