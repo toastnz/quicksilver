@@ -18,6 +18,7 @@ const loadContent = require('./functions/loadContent');
 const selectAll = require('./functions/selectAll');
 
 import './components/accordions';
+import './components/forms';
 import Slider from'./components/sliders';
 
 const sliders = [];
@@ -35,6 +36,7 @@ import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
+import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
 
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
@@ -48,6 +50,8 @@ selectAll('[data-video]').forEach((el) => {
 		el.insertAdjacentHTML('beforeend', new VideoEmbed(el.dataset.video, { autoplay: 1 }).render());
 	})
 });
+
+new SmoothScroll(document.querySelector('[data-smooth-scroll]'));
 
 selectAll('.js-sliderGallery').forEach((group) => {
 	const gallery = {};

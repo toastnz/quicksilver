@@ -6,22 +6,18 @@
   <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
 
     <% include Toast\Header %>
-    <% include Toast\Banner %>
 
-    <%-- <% include Toast\QuickBlocks\AccordionBlock %>
-    <% include Toast\QuickBlocks\DownloadBlock %>
-    <% include Toast\QuickBlocks\ImageBlock %>
-    <% include Toast\QuickBlocks\HeroBlock %>
-    <% include Toast\QuickBlocks\GalleryBlock %>
-    <% include Toast\QuickBlocks\TabBlock %>
-    <% include Toast\QuickBlocks\SplitBlock %>
-    <% include Toast\QuickBlocks\VideoBlock %> --%>
+    <%-- <div data-equalize-watch="body"></div> --%>
 
-    <%-- <% include Toast\QuickBlocks\ColumnBlock %>     --%>
+    <div data-smooth-scroll>
+      <div data-smooth-scroll--content>
+        <% include Toast\Banner %>
 
-    $Layout
+        $Layout
 
-    <% include Toast\Footer %>
+        <% include Toast\Footer %>
+      </div>
+    </div>
 
     <% if $SiteConfig.GoogleTagManagerID %>
       <noscript>
