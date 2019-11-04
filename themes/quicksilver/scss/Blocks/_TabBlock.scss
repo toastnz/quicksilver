@@ -35,16 +35,29 @@
 		}
 
 		&__content {
+			position: relative;
 			@include media($lg) {
 				padding-left: 10rem;
 			}
 
 			&__item {
-				display: none;
-				// box-shadow: inset .6rem 0 0 0 $primary;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				opacity: 0;
+
+				@include media($lg) {
+					left: 10rem;
+				}
+
+				@include transition((opacity, z-index));
 
 				&.js-active {
-					display: block;
+					position: relative;
+					opacity: 1;
+					z-index: 10;
+					left: 0;
 				}
 			}
 		}

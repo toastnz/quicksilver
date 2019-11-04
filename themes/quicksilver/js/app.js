@@ -17,7 +17,7 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 const loadContent = require('./functions/loadContent');
 const selectAll = require('./functions/selectAll');
 
-import './components/accordions';
+// import './components/accordions';
 import './components/forms';
 import Slider from'./components/sliders';
 
@@ -32,13 +32,15 @@ Object.keys(sliderSettings).map((selector) => {
 	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliderSettings[selector])));
 });
 
+import Accordion from './components/accordion';
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
-import SmoothScroll from './components/smoothScroll';
+// import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
 
+selectAll('.js-accordion').forEach((group) => new Accordion(group));
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
 // selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
 selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
@@ -51,7 +53,7 @@ selectAll('[data-video]').forEach((el) => {
 	})
 });
 
-new SmoothScroll(document.querySelector('[data-smooth-scroll]'));
+// new SmoothScroll(document.querySelector('[data-smooth-scroll]'));
 
 selectAll('.js-sliderGallery').forEach((group) => {
 	const gallery = {};

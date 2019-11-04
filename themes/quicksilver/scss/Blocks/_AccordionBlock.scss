@@ -61,9 +61,14 @@
 				}
 			}
 
+			// .js-accordion--target {
+			// 	height: 0;
+			// 	overflow: hidden;
+			// }
+
 			&__content {
-				display: none;
-				padding: 0 2rem 2rem;
+				// display: none;
+				padding: 2rem;
 
 				:last-child {
 					margin-bottom: 0;

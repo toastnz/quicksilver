@@ -32,16 +32,20 @@ class toggleHeight {
     this.currentHeight = this.el.clientHeight;
   }
 
-  animate() {
+  animate(to = 'auto') {
     this.update();
 
-    this.el.style.height = 'auto';
-    this.newHeight = this.el.clientHeight;
-    this.el.style.height = this.currentHeight + 'px';
+    if (to === 'auto') {
+      this.el.style.height = 'auto';
+      this.newHeight = this.el.clientHeight;
+      this.el.style.height = this.currentHeight + 'px';
 
-    setTimeout(() => {
-      this.el.style.height = this.newHeight + 'px';
-    }, 50);
+      setTimeout(() => {
+        this.el.style.height = this.newHeight + 'px';
+      }, 50);
+    } else {
+      this.el.style.height = to + 'px';
+    }
   }
 }
 
