@@ -1,6 +1,6 @@
 <% if $Items %>
     <section class="linkBlock contentBlock" data-equalize>
-        <div class="linkBlock__wrap row md-up-2 xmd-up-3">
+        <div class="linkBlock__wrap row md-up-2 xmd-up-$Columns">
         	<% loop $Items %>
         		<a href="$Link.LinkURL" class="linkBlock__wrap__item column">
                     <% if $Image %>
