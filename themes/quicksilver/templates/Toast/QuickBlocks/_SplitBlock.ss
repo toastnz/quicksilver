@@ -1,0 +1,4 @@
+$LeftBackgroundImage
+$RightBackgroundImage
+$LeftContent
+$RightContent
