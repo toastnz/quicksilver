@@ -8,13 +8,10 @@
                     <% end_if %>
 
                     <% if $Content || $Title %>
-                        <div class="banner__item__wrap height alignContent">
+                        <div class="banner__item__wrap height alignContent" data-equalize-watch>
                             <div class="verticalAlign">
                                 <div class="row">
-                                    <div class="banner__item__wrap__content column xmd-7 heroContent" data-equalize-watch>
-                                    <% if $Title %>
-                                        <h1>$Title</h1>
-                                    <% end_if %>
+                                    <div class="banner__item__wrap__content column xmd-10 centered heroContent">
                                     <% if $Content %>
                                         $Content
                                     <% end_if %>
