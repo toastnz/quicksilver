@@ -9,12 +9,14 @@
 		    $ForTemplate
 		<% end_loop %>
 
-		<section class="quickBlock contentBlock">
-            <div class="quickBlock__wrap row">
-                <div class="column">
-                    $Content
-                </div>
-            </div>
-        </section>
+		<% if $ClassNameFortemplate == 'ContactPage' || $ClassNameFortemplate == 'UserDefinedForm' %>
+		    <section class="quickBlock contentBlock">
+            	<div class="quickBlock__wrap row">
+	                <div class="column">
+	                    $Content
+	                </div>
+	            </div>
+	        </section>
+		<% end_if %>
 	</section>
 </article>
