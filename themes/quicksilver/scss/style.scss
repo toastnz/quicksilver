@@ -3,28 +3,34 @@
 //------------------------------------------------------------------
 
 //------------------------------------------------------------------
-//Ordered
+// Third Party
 
-@import 'Utilities/Reset';
-@import 'Utilities/Colours';
-@import 'Utilities/Mixins';
-@import 'Utilities/BaseSettings';
-@import 'Utilities/Grid'; // Here for variables - will not bulk css without using @include
-
-// External --------------------------------------------------------
 @import 'External/TinySlider';
 // @import 'External/Tingle';
 
 //------------------------------------------------------------------
-// Users
+// Core
 
-@import 'Utilities/Emmanuel';
-// @import 'Utilities/JD';
+@import './../../../core/scss/style.scss';
 
 //------------------------------------------------------------------
-//UnOrdered
+// Users
 
+@import './../../../core/scss/Utilities/Emmanuel';
+// @import './../../../core/scss/Utilities/JD';
+
+//------------------------------------------------------------------
+// Blocks
+
+@import './../../../quickblocks/scss/style.scss';
+
+//------------------------------------------------------------------
+// Theme Specific
+
+@import 'Base/*';
 @import 'Elements/*';
 @import 'Pages/*';
-@import 'Blocks/*';
+// @import 'Blocks/*';
+
+
 
