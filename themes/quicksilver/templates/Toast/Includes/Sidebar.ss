@@ -4,15 +4,19 @@
 
             <% loop $Parent.Children %>
                 <li class="sidebar__nav__list__item">
-                    <a href="$Link" class="sidebar__nav__list__item__link $LinkingMode">$Title </a>
                     <% if $LinkingMode == 'current' %>
+                        <span class="sidebar__nav__list__item__link $LinkingMode">$Title</span>
                         <% if $Children %>
-                            <% loop $Children %>
-                                <li class="sidebar__nav__list__item">
-                                    <a href="$Link" class="sidebar__nav__list__item__link $LinkingMode">$Title</a>
-                                </li>
-                            <% end_loop %>
+                            <ul class="sidebar__nav__list__item__children children unstyled">
+                                <% loop $Children %>
+                                    <li class="sidebar__nav__list__item__children__item">
+                                        <a href="$Link" class="sidebar__nav__list__item__children__item__link $LinkingMode">$Title</a>
+                                    </li>
+                                <% end_loop %>
+                            </ul>
                         <% end_if %>
+                    <% else %>
+                        <a href="$Link" class="sidebar__nav__list__item__link $LinkingMode">$Title</a>
                     <% end_if %>
                 </li>
             <% end_loop %>

@@ -797,13 +797,13 @@ p a {
   font-size: inherit; }
 
 h1 {
-  font-size: 3.5rem; }
+  font-size: 3.6rem; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 3.4rem; }
 
 h3 {
-  font-size: 2.4rem; }
+  font-size: 2.8rem; }
 
 h4 {
   font-size: 2.4rem; }
@@ -821,13 +821,13 @@ small {
   h1 {
     font-size: 5.4rem; }
   h2 {
-    font-size: 5.2rem; }
+    font-size: 4.2rem; }
   h3 {
-    font-size: 4rem; }
+    font-size: 3.2rem; }
   h4 {
-    font-size: 3.6rem; }
+    font-size: 2.8rem; }
   h5 {
-    font-size: 2.4rem; }
+    font-size: 2.2rem; }
   h6 {
     font-size: 1.6rem; }
   small {
@@ -1408,13 +1408,16 @@ button::-moz-focus-inner {
   display: none; }
   .sidebar__nav__list__item {
     margin-bottom: 0; }
-    .sidebar__nav__list__item__link {
+    .sidebar__nav__list__item__link, .sidebar__nav__list__item__children {
       font-family: "Muli", sans-serif;
       font-weight: 700;
       display: block;
-      padding: 1rem 2rem;
       -webkit-box-shadow: inset 0.4rem 0 0 0 rgba(55, 123, 255, 0.2);
-              box-shadow: inset 0.4rem 0 0 0 rgba(55, 123, 255, 0.2);
+              box-shadow: inset 0.4rem 0 0 0 rgba(55, 123, 255, 0.2); }
+    .sidebar__nav__list__item__link {
+      color: #377bff;
+      padding: 1rem 2rem;
+      margin-bottom: 0;
       -webkit-transition: background-color 0.2s ease, -webkit-box-shadow 0.2s ease;
       transition: background-color 0.2s ease, -webkit-box-shadow 0.2s ease;
       -o-transition: box-shadow 0.2s ease, background-color 0.2s ease;
@@ -1428,6 +1431,17 @@ button::-moz-focus-inner {
       .sidebar__nav__list__item__link:not(.current):hover, .sidebar__nav__list__item__link:not(.current):active, .sidebar__nav__list__item__link:not(.current):focus {
         -webkit-box-shadow: inset 0.4rem 0 0 0 #377bff;
                 box-shadow: inset 0.4rem 0 0 0 #377bff; }
+    .sidebar__nav__list__item .current + .children {
+      background-color: rgba(55, 123, 255, 0.05); }
+      .sidebar__nav__list__item .current + .children:not(.current):hover, .sidebar__nav__list__item .current + .children:not(.current):active, .sidebar__nav__list__item .current + .children:not(.current):focus {
+        -webkit-box-shadow: inset 0.4rem 0 0 0 #377bff;
+                box-shadow: inset 0.4rem 0 0 0 #377bff; }
+    .sidebar__nav__list__item__children {
+      padding: 0 2rem 1rem 3rem; }
+      .sidebar__nav__list__item__children__item {
+        margin-bottom: 0; }
+        .sidebar__nav__list__item__children__item__link {
+          font-size: 1.4rem; }
 
 .slider-button {
   position: absolute;
