@@ -24,8 +24,7 @@ class ContactPage extends UserDefinedForm
     private static $db = [
         'NotificationEmail' => 'Varchar(100)',
         'SuccessMessage' => 'Text',
-        'Map'      => 'Boolean',
-        //'FormContent'  => 'HTMLText'
+        'Map'      => 'Boolean'
     ];
 
     public function getCMSFields()
@@ -36,7 +35,6 @@ class ContactPage extends UserDefinedForm
             HeaderField::create('FormHeader', 'Form'),
             EmailField::create('NotificationEmail', 'Notification Email'),
             TextareaField::create('SuccessMessage', 'Success Message'),
-            //HTMLEditorField::create('Content', 'Content')
         ]);
         $fields->addFieldsToTab('Root.Main', [
 
@@ -46,21 +44,8 @@ class ContactPage extends UserDefinedForm
         ]);
         return $fields;
     }
-    public function getUser()
-    {
-        return DBField::create_field(DBHTMLText::class, '$UserDefinedForm' );
-    }
 }
 
 class ContactPageController extends \PageController
 {
-    private static $allowed_actions = [
-        'ContactForm'
-    ];
-
-    public function ContactForm()
-    {
-        $form = ContactForm::create($this, 'ContactForm');
-        return $form;
-    }
 }

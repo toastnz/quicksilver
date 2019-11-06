@@ -18,12 +18,25 @@
     <%--			</div>--%>
     <%--		</div>--%>
 
-        $FormContent
-        $getUser()
-<%--        $getUserFormContent--%>
+<%--         $FormContent
+        $getUser()--%>
+<%--        $getUserFormContent--%> 
+
+
 
 		<% loop $ContentBlocks.Sort('SortOrder') %>
 		    $ForTemplate
 		<% end_loop %>
+
+
+        <section class="quickBlock contentBlock">
+            <div class="quickBlock__wrap row">
+                <div class="column">
+                    $Content
+                </div>
+            </div>
+        </section>
+
+        
 	</section>
 </article>
