@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1499f4ec6b8c8170bff27d216703e7f7",
+    "content-hash": "06f90e22ef62b9b4760eafac59ea2c8c",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -4637,6 +4637,44 @@
             "time": "2019-11-06T19:57:13+00:00"
         },
         {
+            "name": "toastnz/quicksilver-styles",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/quicksilver-styles.git",
+                "reference": "5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158",
+                "reference": "5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158",
+                "shasum": ""
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe quicksilver styles",
+            "keywords": [
+                "silverstripe",
+                "themes"
+            ],
+            "time": "2019-11-06T20:15:21+00:00"
+        },
+        {
             "name": "toastnz/silverstripe-socialnav",
             "version": "2.0.2",
             "source": {
@@ -5015,7 +5053,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "toastnz/quickblocks": 20
+        "toastnz/quickblocks": 20,
+        "toastnz/quicksilver-styles": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

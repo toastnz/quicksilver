@@ -1,6 +1,5 @@
 //------------------------------------------------------------------
-// Site wide colour variables
-// ------------------------------------------------------------------
+// Theme Colours
 
 $success-colour: #65b922;
 $warning-colour: #ffd33a;
@@ -18,10 +17,6 @@ $text-light: #6d6e6a;
 $green: #00ff02;
 $red: red;
 
-//------------------------------------------------------------------
-// Theme Colours
-//------------------------------------------------------------------
-
 $primary: #377bff;
 $secondary: #C0C0C0;
 $tertiary: #5C5C5C;
@@ -34,3 +29,16 @@ $colour-map: (
   'secondary': $secondary,
   'tertiary': $tertiary,
 );
+
+//------------------------------------------------------------------
+// Theme Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i&display=swap');
+
+$font-primary: 'Muli', sans-serif;
+
+
+//------------------------------------------------------------------
+// Global Variables
+
+$logoDimentions: 202,48;

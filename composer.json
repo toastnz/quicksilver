@@ -24,7 +24,8 @@
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
         "toastnz/quickblocks": "dev-feature/quicksilver#c5d0884e2b8c30506d8ba5c3bb04f8801f89a314",
-        "permanentinc/beautiful": "^0.3.0"
+        "permanentinc/beautiful": "^0.3.0",
+        "toastnz/quicksilver-styles": "dev-master"
     },
     "extra": {
         "project-files-installed": [

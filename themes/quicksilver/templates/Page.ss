@@ -7,19 +7,13 @@
 
     <% include Toast\Header %>
 
-    <%-- <div data-equalize-watch="body"></div> --%>
+      <% include Toast\Banner %>
 
-    <%-- <div data-smooth-scroll> --%>
-      <%-- <div data-smooth-scroll--content> --%>
-        <% include Toast\Banner %>
+      $Breadcrumbs
 
-        $Breadcrumbs
+      $Layout
 
-        $Layout
-
-        <% include Toast\Footer %>
-      <%-- </div> --%>
-    <%-- </div> --%>
+      <% include Toast\Footer %>
 
     <% if $SiteConfig.GoogleTagManagerID %>
       <noscript>

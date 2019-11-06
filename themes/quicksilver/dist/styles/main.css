@@ -290,6 +290,9 @@ body {
   color: #fff;
   background: rgba(55, 123, 255, 0.99999); }
 
+::-moz-focus-inner {
+  border: 0; }
+
 p, a, span, b, em, i, li, input, textarea, td, tr, tl, dl, dt, strong, pre, label, button, form input:not([type="submit"]),
 form textarea, .styleguide__aside a {
   font-size: 1.6rem; }
@@ -1736,34 +1739,6 @@ form {
     width: 100%;
     z-index: 2; }
 
-html,
-body {
-  font-family: "Muli", sans-serif;
-  font-weight: 400; }
-
-a {
-  color: #377bff;
-  text-decoration: none; }
-
-button::-moz-focus-inner {
-  border: 0; }
-
-.js-hide {
-  display: none !important; }
-
-.parsley-errors-list {
-  position: absolute;
-  list-style: none !important;
-  padding: 0 !important;
-  top: calc(100% + .5rem);
-  margin-bottom: 0 !important; }
-  .parsley-errors-list li {
-    padding: 0 !important;
-    font-size: 1.2rem;
-    margin-bottom: 0 !important; }
-    .parsley-errors-list li:before {
-      content: ''; }
-
 .banner {
   position: relative;
   overflow: hidden; }
@@ -1820,12 +1795,13 @@ button::-moz-focus-inner {
   .banner + .page {
     margin-top: 0; }
 
-.blockHeading {
-  margin-bottom: 6rem; }
-  .blockHeading__title {
-    text-transform: uppercase; }
-    .blockHeading__title:last-child {
-      margin-bottom: 0; }
+html,
+body {
+  font-family: "Muli", sans-serif; }
+
+a {
+  color: #377bff;
+  text-decoration: none; }
 
 .breadcrumbs {
   border-bottom: .1rem solid #e4e4e4;

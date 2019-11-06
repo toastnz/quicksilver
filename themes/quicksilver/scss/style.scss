@@ -1,6 +1,7 @@
 //------------------------------------------------------------------
-// Base imports
-//------------------------------------------------------------------
+// Theme Specific
+
+@import 'Base/*';
 
 //------------------------------------------------------------------
 // Third Party
@@ -11,26 +12,17 @@
 //------------------------------------------------------------------
 // Core
 
-@import './../../../core/scss/style.scss';
-
-//------------------------------------------------------------------
-// Users
-
-@import './../../../core/scss/Utilities/Emmanuel';
-// @import './../../../core/scss/Utilities/JD';
+@import './../../../quicksilver-styles/scss/quicksilver-styles.scss';
+@import './../../../quicksilver-styles/scss/Utilities/Emmanuel';
+// @import './../../../quicksilver-styles/scss/Utilities/JD';
 
 //------------------------------------------------------------------
 // Blocks
 
-@import './../../../quickblocks/scss/style.scss';
+@import './../../../quickblocks/scss/quickblocks.scss';
 
 //------------------------------------------------------------------
-// Theme Specific
+// Elements
 
-@import 'Base/*';
 @import 'Elements/*';
 @import 'Pages/*';
-// @import 'Blocks/*';
-
-
-

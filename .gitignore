@@ -18,4 +18,5 @@ _resampled
 /Vagrantfile
 /.vagrant
 /quickblocks
+/quicksilver-styles
 *.tar.gz
