@@ -1,3 +1,5 @@
+<% include Toast\Includes\ContactBlock %>
+
 <footer class="footer contentBlock--padding">
 	<div class="footer__wrap row" data-equalize>
 		<div class="column lg-3">
