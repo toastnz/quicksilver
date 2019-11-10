@@ -222,6 +222,10 @@ Stylesheets
 ------------------------------------------------------------------*/
 
 
+
+var $$ = function $$(element) {
+  return document.querySelectorAll(element);
+};
 /*------------------------------------------------------------------
 Imports
 ------------------------------------------------------------------*/
@@ -230,25 +234,27 @@ Imports
 Responsive tables
 - Wraps all tables inside of a div to make them responsive
 ------------------------------------------------------------------*/
-// if ($$('table').length) import('./components/ResponsiveTables');
 
+
+if ($$('table').length) Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./components/ResponsiveTables */ "./themes/quicksilver/js/components/ResponsiveTables.js"));
 /*------------------------------------------------------------------
 Accordions
 - Event handlers for toggling accordion content
 ------------------------------------------------------------------*/
-// if ($$('.js-accordion-trigger').length) import('./components/Accordions');
 
+if ($$('.js-accordion-trigger').length) Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./components/Accordions */ "./themes/quicksilver/js/components/Accordions.js"));
 /*------------------------------------------------------------------
 Video Modal
 - Video block modal to play vimeo or youtube videos
 ------------------------------------------------------------------*/
 
-if ($$('.js-video-modal').length) __webpack_require__.e(/*! import() */ 1).then(__webpack_require__.bind(null, /*! ./components/VideoModal */ "./themes/quicksilver/js/components/VideoModal.js"));
+if ($$('.js-video-modal').length) __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./components/VideoModal */ "./themes/quicksilver/js/components/VideoModal.js"));
 /*------------------------------------------------------------------
 Video Modal
 - Video block modal to play vimeo or youtube videos
 ------------------------------------------------------------------*/
-// if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
+
+if ($$('#ContactForm_ContactForm').length) Promise.all(/*! import() */[__webpack_require__.e(1), __webpack_require__.e(3), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./components/ContactForm */ "./themes/quicksilver/js/components/ContactForm.js"));
 
 /***/ }),
 

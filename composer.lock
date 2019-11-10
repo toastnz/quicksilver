@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "620f8446dd55ea8b18159ca563447060",
+    "content-hash": "42fa26a48b8f7482ef393dc21209d943",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -952,6 +952,56 @@
             "time": "2019-03-19T21:19:28+00:00"
         },
         {
+            "name": "permanentinc/found",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/found.git",
+                "reference": "ac4463f712dfa2aca1481e8b6991b4cd133c57c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/found/zipball/ac4463f712dfa2aca1481e8b6991b4cd133c57c2",
+                "reference": "ac4463f712dfa2aca1481e8b6991b4cd133c57c2",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "found",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot2.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "SEO Tab - based on squarespace",
+            "homepage": "http://github.com/permanentinc/beautiful",
+            "keywords": [
+                "admin",
+                "cms",
+                "permanentinc",
+                "pinc",
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2019-04-02T00:55:39+00:00"
+        },
+        {
             "name": "permanentinc/type",
             "version": "dev-master",
             "source": {
@@ -999,7 +1049,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-03-26 23:14:28"
+            "time": "2019-03-26T23:14:28+00:00"
         },
         {
             "name": "psr/cache",
@@ -3406,7 +3456,8 @@
     "stability-flags": {
         "unclecheese/betterbuttons": 20,
         "permanentinc/beautiful": 20,
-        "permanentinc/type": 20
+        "permanentinc/type": 20,
+        "permanentinc/found": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

@@ -11,7 +11,7 @@ Stylesheets
 
 import './../scss/style.scss';
 
-
+let $$ = element => document.querySelectorAll(element);
 
 /*------------------------------------------------------------------
 Imports
@@ -22,14 +22,14 @@ Responsive tables
 - Wraps all tables inside of a div to make them responsive
 ------------------------------------------------------------------*/
 
-// if ($$('table').length) import('./components/ResponsiveTables');
+if ($$('table').length) import('./components/ResponsiveTables');
 
 /*------------------------------------------------------------------
 Accordions
 - Event handlers for toggling accordion content
 ------------------------------------------------------------------*/
 
-// if ($$('.js-accordion-trigger').length) import('./components/Accordions');
+if ($$('.js-accordion-trigger').length) import('./components/Accordions');
 
 /*------------------------------------------------------------------
 Video Modal
@@ -43,5 +43,5 @@ Video Modal
 - Video block modal to play vimeo or youtube videos
 ------------------------------------------------------------------*/
 
-// if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
+if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
 

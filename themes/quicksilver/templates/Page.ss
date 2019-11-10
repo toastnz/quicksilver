@@ -11,7 +11,15 @@
       data-page-template="$Classname">
 <div class="tingle-content-wrapper">
 
-<%-- <% include Type %> --%>
+<%------------------------------------------------------------------
+Type Settings Inclusion
+------------------------------------------------------------------%>
+
+<% include Type %>
+
+<%------------------------------------------------------------------
+Type Wrapper
+------------------------------------------------------------------%>
 
 <div id="type">
     <% include Header %>
@@ -20,6 +28,7 @@
 
     <% include Footer %>
 </div>
+
     <% if $SiteConfig.GoogleTagManagerID %>
         <!-- Google Tag Manager (noscript) -->
         <noscript>

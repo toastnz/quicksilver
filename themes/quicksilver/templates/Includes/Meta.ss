@@ -10,6 +10,8 @@ Meta
 Base Tag
 ----------------------------------------------------------------%>
 
+<script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=String.prototype.includes%2CArray.prototype.includes"></script>
+
 <% base_tag %>
 
 <%----------------------------------------------------------------
