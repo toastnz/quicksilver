@@ -19,7 +19,7 @@
                         <a href="#" class="button button--bordered--primary">0800 SHADES</a>
                     </div>
                 </div>
-                <button id="hamburger">
+                <button id="hamburger" data-modal-toggle="mobile-nav" role="button" aria-label="open site navigation" title="open site navigation">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -28,3 +28,8 @@
         </div>
     </div>
 </header>
+
+<section class="mobileNav" data-modal="mobile-nav">
+    <button class="mobileNav__close" data-modal-toggle="mobile-nav"></button>
+    <% include Toast\Nav %>
+</section>

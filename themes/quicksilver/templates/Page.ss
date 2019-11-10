@@ -16,6 +16,7 @@
     ------------------------------------------------------------------%>
 
     <%-- <div id="type"> --%>
+      <div class="body">
         <% include Toast\Header %>
         <% include Toast\Banner %>
 
@@ -24,6 +25,7 @@
         $Layout
 
         <% include Toast\Footer %>
+      </div>
     <%-- </div> --%>
 
 

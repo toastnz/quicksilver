@@ -23,6 +23,7 @@ const selectAll = require('./functions/selectAll');
 
 // import './components/breakpoints';
 import './components/forms';
+import './components/modals';
 import Slider from'./components/sliders';
 
 const sliders = [];
