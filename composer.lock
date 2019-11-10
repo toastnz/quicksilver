@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "06f90e22ef62b9b4760eafac59ea2c8c",
+    "content-hash": "f7e29c587050d2a5e232eb5ef12e5f4e",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -1878,6 +1878,56 @@
                 "theme"
             ],
             "time": "2019-08-12T04:44:48+00:00"
+        },
+        {
+            "name": "permanentinc/type",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/type.git",
+                "reference": "bc931cceb1119f835f2a893f9b2f1e1259e82de6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/bc931cceb1119f835f2a893f9b2f1e1259e82de6",
+                "reference": "bc931cceb1119f835f2a893f9b2f1e1259e82de6",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "type",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot2.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "Font Settings - based on that thing I saw a few years ago",
+            "homepage": "http://github.com/permanentinc/type",
+            "keywords": [
+                "colour",
+                "font",
+                "permanentinc",
+                "pinc",
+                "silverstripe",
+                "type"
+            ],
+            "time": "2019-11-07T01:24:13+00:00"
         },
         {
             "name": "psr/cache",
@@ -4642,12 +4692,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158"
+                "reference": "3b4a9a6139bd3b294668bd3207c8115b02b1a6ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158",
-                "reference": "5f8a2ebe800b88e4b70d4c6d47a294aa6e57a158",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/3b4a9a6139bd3b294668bd3207c8115b02b1a6ba",
+                "reference": "3b4a9a6139bd3b294668bd3207c8115b02b1a6ba",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4662,7 +4712,7 @@
                     "role": "Developer"
                 },
                 {
-                    "name": "Danae Miller-Clendon",
+                    "name": "Emmanuel Davies",
                     "homepage": "http://toast.co.nz/",
                     "role": "Developer"
                 }
@@ -4672,7 +4722,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-06T20:15:21+00:00"
+            "time": "2019-11-06T22:36:18+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
@@ -5054,7 +5104,8 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "toastnz/quickblocks": 20,
-        "toastnz/quicksilver-styles": 20
+        "toastnz/quicksilver-styles": 20,
+        "permanentinc/type": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

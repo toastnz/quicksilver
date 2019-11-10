@@ -3947,6 +3947,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/parallax */ "./themes/quicksilver/js/components/parallax.js");
 /* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
 /* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
+/* harmony import */ var _components_breakpoints__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/breakpoints */ "./themes/quicksilver/js/components/breakpoints.js");
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
@@ -3964,7 +3965,7 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 
 var loadContent = __webpack_require__(/*! ./functions/loadContent */ "./themes/quicksilver/js/functions/loadContent.js");
 
-var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quicksilver/js/functions/selectAll.js"); // import './components/accordions';
+var selectAll = __webpack_require__(/*! ./functions/selectAll */ "./themes/quicksilver/js/functions/selectAll.js"); // import './components/breakpoints';
 
 
 
@@ -3987,6 +3988,7 @@ Object.keys(sliderSettings).map(function (selector) {
  // import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
 
+
 selectAll('.js-accordion').forEach(function (group) {
   return new _components_accordion__WEBPACK_IMPORTED_MODULE_3__["default"](group);
 });
@@ -3999,6 +4001,9 @@ selectAll('[data-equalize]').forEach(function (group) {
 });
 selectAll('[data-parallax]').forEach(function (group) {
   return new _components_parallax__WEBPACK_IMPORTED_MODULE_5__["default"](group);
+});
+selectAll('[data-breakpoint]').forEach(function (group) {
+  return new _components_breakpoints__WEBPACK_IMPORTED_MODULE_8__["default"](group);
 });
 selectAll('[data-video]').forEach(function (el) {
   el.addEventListener('click', function (e) {
@@ -4194,6 +4199,78 @@ var Accordion = function Accordion(el) {
 // 		closeContent();
 // 	})
 // });
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/components/breakpoints.js":
+/*!*********************************************************!*\
+  !*** ./themes/quicksilver/js/components/breakpoints.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var attach = __webpack_require__(/*! ../functions/attach */ "./themes/quicksilver/js/functions/attach.js");
+
+var Breakpoint =
+/*#__PURE__*/
+function () {
+  function Breakpoint(el) {
+    var _this = this;
+
+    _classCallCheck(this, Breakpoint);
+
+    this.container = el;
+    this.children = this.container.querySelectorAll('[data-breakpoint-watch]');
+    this.breakpoint = 0;
+    setTimeout(function () {
+      return _this.init();
+    }, 100);
+  }
+
+  _createClass(Breakpoint, [{
+    key: "toggleClass",
+    value: function toggleClass() {
+      window.innerWidth >= this.breakpoint ? this.container.classList.remove('js-breakpoint') : this.container.classList.add('js-breakpoint');
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this2 = this;
+
+      // Create the breakpoint
+      this.children.forEach(function (child) {
+        return _this2.breakpoint += child.clientWidth;
+      }); // Init functions
+
+      attach('resize', function () {
+        return _this2.toggleClass();
+      }, 500);
+    }
+  }]);
+
+  return Breakpoint;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Breakpoint); // ======================================================
+// JavaScript Usage
+// ======================================================
+// import Breakpoint from './breakpoints';
+// document.querySelectorAll('[data-breakpoint]').forEach((group) => new Breakpoint(group));
+// ======================================================
+// HTML Usage
+// ======================================================
+// <section data-breakpoint>
+//   <div data-breakpoint-watch></div>
+//   <div data-breakpoint-watch></div>
+// </section>
 
 /***/ }),
 

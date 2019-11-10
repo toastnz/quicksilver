@@ -2,11 +2,12 @@
 
 namespace Toast\Pages;
 
+use BetterBrief\GoogleMapField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\EmailField;
 use SilverStripe\Forms\FieldList;
-use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\HTMLEditor\HTMLEditorField;
+use SilverStripe\Forms\HeaderField;
 use SilverStripe\Forms\TextareaField;
 use SilverStripe\ORM\FieldType\DBField;
 use SilverStripe\ORM\FieldType\DBHTMLText;
@@ -22,26 +23,26 @@ class ContactPage extends UserDefinedForm
     private static $table_name = 'ContactPage';
 
     private static $db = [
-        'NotificationEmail' => 'Varchar(100)',
-        'SuccessMessage' => 'Text',
-        'Map'      => 'Boolean'
+        'Map'      => 'Boolean',
+        'Latitude' => 'Varchar',
+        'Longitude' => 'Varchar'
     ];
 
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
 
-        $fields->addFieldsToTab('Root.Form', [
-            HeaderField::create('FormHeader', 'Form'),
-            EmailField::create('NotificationEmail', 'Notification Email'),
-            TextareaField::create('SuccessMessage', 'Success Message'),
+        $fields->addFieldsToTab('Root.Map', [
+            CheckboxField::create('Map', 'Turn on map')
         ]);
-        $fields->addFieldsToTab('Root.Main', [
 
-            $fields->insertAfter(
-                'MenuTitle',
-                CheckboxField::create('Map', 'Turn on map'))
-        ]);
+
+        $fields->addFieldToTab('Root.Map', new GoogleMapField(
+            $this,
+            'Location'
+        ));
+        
+        $fields->removeFieldsFromTab('Root.Main', ['Latitude', 'Longitude']);
         return $fields;
     }
 }

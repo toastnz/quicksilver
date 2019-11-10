@@ -21,7 +21,7 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 const loadContent = require('./functions/loadContent');
 const selectAll = require('./functions/selectAll');
 
-// import './components/accordions';
+// import './components/breakpoints';
 import './components/forms';
 import Slider from'./components/sliders';
 
@@ -43,12 +43,14 @@ import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
 // import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
+import Breakpoint from './components/breakpoints';
 
 selectAll('.js-accordion').forEach((group) => new Accordion(group));
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
 // selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
 selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
 selectAll('[data-parallax]').forEach((group) => new Parallax(group));
+selectAll('[data-breakpoint]').forEach((group) => new Breakpoint(group));
 
 selectAll('[data-video]').forEach((el) => {
 	el.addEventListener('click', (e) => {

@@ -5,15 +5,27 @@
   </head>
   <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
 
-    <% include Toast\Header %>
+    <%------------------------------------------------------------------
+    Type Settings Inclusion
+    ------------------------------------------------------------------%>
+    
+    <%-- <% include Type %> --%>
 
-      <% include Toast\Banner %>
+    <%------------------------------------------------------------------
+    Type Wrapper
+    ------------------------------------------------------------------%>
 
-      $Breadcrumbs
+    <%-- <div id="type"> --%>
+        <% include Toast\Header %>
+        <% include Toast\Banner %>
 
-      $Layout
+        $Breadcrumbs
 
-      <% include Toast\Footer %>
+        $Layout
+
+        <% include Toast\Footer %>
+    <%-- </div> --%>
+
 
     <% if $SiteConfig.GoogleTagManagerID %>
       <noscript>
