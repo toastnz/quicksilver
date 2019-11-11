@@ -1,0 +1,93 @@
+//------------------------------------------------------------------
+// Sidebar
+//------------------------------------------------------------------
+
+@include media($lg) {
+  .page {
+    margin-top: 10rem;
+    position: relative;
+
+    .sidebar {
+      display: block;
+      position: absolute;
+      width: 30rem;
+      right: calc(50% + #{$globalWidth / 2} - 30rem);
+
+      + .contentBlocks {
+        max-width: $globalWidthPX;
+        margin: 0 auto;
+        padding-left: 30rem;
+        
+        .percentageBlock {
+          .media.full-width {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sidebar {
+  display: none;
+
+  &__nav {
+
+    &__list {
+
+      &__item {
+        margin-bottom: 0;
+
+        &__link,
+        &__children {
+          @include font(700);
+          display: block;
+          box-shadow: inset .4rem 0 0 0 rgba($primary, .2);
+        }
+
+        &__link {
+          color: $primary;
+          padding: 1rem 2rem;
+          margin-bottom: 0;
+          @include transition((box-shadow, background-color));
+
+          &.current {
+            background-color: rgba($primary, .05);
+            box-shadow: inset .4rem 0 0 0 $primary;
+            cursor: default;
+          }
+
+          &:not(.current) {
+            @include active {
+              box-shadow: inset .4rem 0 0 0 $primary;
+            }
+          }
+        }
+
+        .current {
+          + .children {
+            background-color: rgba($primary, .05);
+            // box-shadow: inset .4rem 0 0 0 $primary;
+            &:not(.current) {
+              @include active {
+                box-shadow: inset .4rem 0 0 0 $primary;
+              }
+            }
+          }
+        }
+
+        &__children {
+          padding: 0 2rem 1rem 3rem;
+
+          &__item {
+            margin-bottom: 0;
+
+            &__link {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

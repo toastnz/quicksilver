@@ -1,0 +1,68 @@
+{
+	"exclude": {
+		"patterns": [
+			"ss-errors.log",
+			"/framework/error_log",
+			"node_modules",
+			"/tests/*",
+			"framework/php.ini",
+			"_ss_environment.php",
+			"*~",
+			".DS_Store",
+			".env",
+			".gitignore",
+			".mergesources.yml",
+			"README.md",
+			"deploy.json",
+			"beam.json",
+			"deploy.properties",
+			"sftp-config.json",
+			"checksums.json*",
+			"/access-logs/",
+			"/cgi-bin/",
+			"/.idea/",
+			"/assets/",
+			"/silverstripe-cache/",
+			"/_cache/",
+			"silverstripe.log",
+			".htaccess",
+			"/_logs/",
+			"*.sspak",
+			"robots.txt",
+			"robots_nz.txt",
+			"/.well-known/",
+			".htaccess",
+			"/assets",
+			"/subsites/host-map.php",
+			"/silverstripe-cacheinclude/cache/",
+			"/debug.log",
+			"ads.txt",
+			"/.vagrant",
+			"/VagrantFile",
+			"/framework/thirdparty/tinymce/error_log",
+			"/silverstripe-cacheinclude/cache/"
+		]
+	},
+	"servers": {
+		"live":{
+			"user": "username",
+			"host": "website.host.here",
+			"webroot": "/var/www/website-root",
+			"syncPermissions": false
+		}
+	},
+	"commands": [
+		{
+			"command": "composer install --prefer-dist",
+			"location": "local",
+			"phase": "pre",
+			"required": true
+		},
+		{
+			"command": "php vendor/silverstripe/framework/cli-script.php dev/build flush=1",
+			"location": "target",
+			"phase": "post",
+			"tag": "build"
+		}
+	]
+}

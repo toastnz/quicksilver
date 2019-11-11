@@ -1,47 +1,125 @@
 /*------------------------------------------------------------------
-Versioning & Debug Information
+Stylesheets
 ------------------------------------------------------------------*/
+
+// import './../../../core/scss/style.scss';
+import './../scss/style.scss';
+// import './../../../quickblocks/scss/style.scss';
+
+
+/*------------------------------------------------------------------
+Versioning & Debug Information
+------------------------------------------------------------------*/ 
 window.debug = window.location.host.includes('.test');
 
 if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:#fff;text-shadow:0 1px 0 #ccc,0 2px 0 #c9c9c9,0 3px 0 #bbb,0 4px 0 #b9b9b9,0 5px 0 #aaa,0 6px 1px rgba(0,0,0,.1),0 0 5px rgba(0,0,0,.1),0 1px 3px rgba(0,0,0,.3),0 3px 5px rgba(0,0,0,.2),0 5px 10px rgba(0,0,0,.25),0 10px 10px rgba(0,0,0,.2);');
 
-/*------------------------------------------------------------------
-Stylesheets
-------------------------------------------------------------------*/
+// ------------------------------------------------------------------
+// User
+// ------------------------------------------------------------------
 
-import './../scss/style.scss';
+const loadContent = require('./functions/loadContent');
+const selectAll = require('./functions/selectAll');
 
-let $$ = element => document.querySelectorAll(element);
+// import './components/breakpoints';
+import './components/forms';
+import './components/modals';
+import Slider from'./components/sliders';
 
-/*------------------------------------------------------------------
-Imports
-------------------------------------------------------------------*/
+const sliders = [];
+const sliderSettings = {
+	'.js-slider--hero': {},
+	'.js-slider--gallery': {},
+	'.js-slider--testimonials': {},
+}
 
-/*------------------------------------------------------------------
-Responsive tables
-- Wraps all tables inside of a div to make them responsive
-------------------------------------------------------------------*/
+Object.keys(sliderSettings).map((selector) => {
+	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliderSettings[selector])));
+});
 
-if ($$('table').length) import('./components/ResponsiveTables');
+import Accordion from './components/accordion';
+import Tabs from './components/tabs';
+import Parallax from './components/parallax';
+import Equalizer from './components/equalizer';
+import VideoEmbed from './components/videoEmbed';
+// import SmoothScroll from './components/smoothScroll';
+// import Gallery from './components/gallery';
+import Breakpoint from './components/breakpoints';
 
-/*------------------------------------------------------------------
-Accordions
-- Event handlers for toggling accordion content
-------------------------------------------------------------------*/
+selectAll('.js-accordion').forEach((group) => new Accordion(group));
+selectAll('.js-tabs').forEach((group) => new Tabs(group));
+// selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
+selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
+selectAll('[data-parallax]').forEach((group) => new Parallax(group));
+selectAll('[data-breakpoint]').forEach((group) => new Breakpoint(group));
 
-if ($$('.js-accordion-trigger').length) import('./components/Accordions');
+selectAll('[data-video]').forEach((el) => {
+	el.addEventListener('click', (e) => {
+		e.preventDefault();
+		el.insertAdjacentHTML('beforeend', new VideoEmbed(el.dataset.video, { autoplay: 1 }).render());
+	})
+});
 
-/*------------------------------------------------------------------
-Video Modal
-- Video block modal to play vimeo or youtube videos
-------------------------------------------------------------------*/
+// new SmoothScroll(document.querySelector('[data-smooth-scroll]'));
 
-if ($$('.js-video-modal').length) import('./components/VideoModal');
+selectAll('.js-sliderGallery').forEach((group) => {
+	const gallery = {};
+	const sliderMain = group.querySelector('.js-sliderGallery--main');
+	const sliderNav = group.querySelector('.js-sliderGallery--nav');
 
-/*------------------------------------------------------------------
-Video Modal
-- Video block modal to play vimeo or youtube videos
-------------------------------------------------------------------*/
+	gallery.main = new Slider(sliderMain, {
+		loop: false,
+		nav: false,
+		mode: "gallery",
+	}).tns;
 
-if ($$('#ContactForm_ContactForm').length) import('./components/ContactForm');
+	if (sliderNav !== null) {
+		const navItems = Array.from(sliderNav.querySelectorAll('.js-sliderGallery--nav-item'));
 
+		navItems[0].classList.add('tns-slide-current');
+
+		gallery.nav = new Slider(sliderNav, {
+			loop: false,
+			nav: false,
+			controls: false,
+		}).tns;
+
+		let changing = null;
+		let hasChanged = 0;
+
+		const changeSlides = (sliderToChange, index) => {
+			clearTimeout(changing);
+			hasChanged = 1;
+			navItems.forEach((item) => item.classList.remove('tns-slide-current'));
+			navItems[index].classList.add('tns-slide-current');
+			changing = setTimeout(() => {
+				hasChanged = 0;
+				sliderToChange.goTo(index);
+			}, 200);
+		}
+
+		navItems.forEach((item) => {
+			item.addEventListener('click', () => {
+				let index = navItems.indexOf(item);
+				gallery.nav.goTo(index);
+				changeSlides(gallery.main, index);
+			});
+		});
+
+		gallery.main.events.on('indexChanged', (e) => {
+			changeSlides(gallery.nav, e.index);
+		});
+
+		gallery.nav.events.on('indexChanged', (e) => {
+			changeSlides(gallery.main, e.index);
+		});
+	}
+});
+
+// loadContent({
+// 	url: '/contact-us',
+// 	method: 'POST',
+// 	success: (response) => {
+// 		console.log(response);
+// 	}
+// });

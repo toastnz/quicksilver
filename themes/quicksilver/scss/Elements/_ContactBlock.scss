@@ -1,0 +1,27 @@
+//------------------------------------------------------------------
+// Contact Block
+//------------------------------------------------------------------
+
+.contactBlock {
+  @include cover;
+  position: relative;
+  color: $white;
+
+  &:before {
+    content: '';
+    @include pos(absolute, 0);
+    @include horzGrad($tertiary, rgba($tertiary, 0));
+  }
+  
+  &__wrap {
+    position: relative;
+
+    &__header {
+
+    }
+
+    &__form {
+
+    }
+  }
+}

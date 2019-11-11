@@ -1,0 +1,226 @@
+body a.ss-broken {
+    background-color: #FF7B71;
+    border:           1px red solid;
+    color:            #fff;
+    padding:          1px;
+    text-decoration:  underline;
+}
+
+body p {
+    padding-bottom: 1em;
+    margin:         0;
+}
+
+body {
+    padding-top: 12px;
+}
+
+/*=================*/
+/* Headings        */
+/*=================*/
+
+body {
+    font-size: 12px;
+}
+
+body h1 {
+    font-size: 2.5em;
+}
+
+body h2 {
+    font-size: 2em;
+}
+
+body h3 {
+    font-size: 1.75em;
+}
+
+body h4 {
+    font-size: 1.5em;
+}
+
+body h5 {
+    font-size: 1.3em;
+}
+
+body h6 {
+    font-size: 1.2em;
+}
+
+body h1,
+body h2,
+body, h3,
+body h4,
+body h5,
+body h6 {
+    margin-top:    0;
+    margin-bottom: 10px;
+}
+
+/*=================*/
+/* Styles          */
+/*=================*/
+
+.colour--primary {
+    color: #e75931;
+}
+
+.colour--secondary {
+    color: #333;
+}
+
+.colour--tertiary {
+    color: #000;
+}
+
+/*=================*/
+/* Buttons         */
+/*=================*/
+
+a.button.button--primary {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button.button--bordered--primary {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button.button--secondary {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button.button--bordered--secondary {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button.button--tertiary {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button.button--bordered--tertiary {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button.button--white {
+    background-color: #e75931;
+    border:           1px solid #e75931;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button.button--bordered--white {
+    background-color: transparent;
+    color:            #e75931;
+}
+
+a.button.button--black {
+    background-color: #000;
+    border:           1px solid #000;
+    color:            #fff;
+    padding:          3px 5px;
+    text-decoration:  none;
+    display:          inline-block;
+}
+
+a.button.button--bordered--black {
+    background-color: transparent;
+    color:            #000;
+}
+
+/*=================*/
+/* Lists           */
+/*=================*/
+
+ul,
+ol {
+    padding-left: 1.2rem !important;
+}
+
+ul li,
+ol li {
+    position: relative;
+}
+
+ol {
+    list-style: decimal !important;
+}
+
+ul li:before {
+    position:      absolute;
+    content:       '';
+    display:       block;
+    width:         .4rem;
+    height:        .4rem;
+    border-radius: 1.5rem;
+    background:    #ff6e32;
+    top:           .4rem;
+    left:          -1rem;
+}
+
+/*=================*/
+/* Type         */
+/*=================*/
+
+em, i {
+    font-style: italic !important;
+}
+
+strong, b {
+    font-weight: bold !important;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+img.rightAlone {
+    display: block;
+    margin-left: auto;
+}
+
+img.leftAlone {
+    display: block;
+    margin-right: auto;
+}
+
+img.right {
+    float: right;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+img.left {
+    float: left;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

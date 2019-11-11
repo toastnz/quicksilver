@@ -1,41 +1,40 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <% include Meta %>
-</head>
-<body class="$Classname"
-      <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %>
-      data-classname="$Classname"
-      data-title="$Title"
-      data-url-segment="$URLSegment"
-      data-page-template="$Classname">
-<div class="tingle-content-wrapper">
+  <head>
+    <% include Toast\Meta %>
+  </head>
+  <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
 
-<%------------------------------------------------------------------
-Type Settings Inclusion
-------------------------------------------------------------------%>
+    <%------------------------------------------------------------------
+    Type Settings Inclusion
+    ------------------------------------------------------------------%>
+    
+    <%-- <% include Type %> --%>
 
-<% include Type %>
+    <%------------------------------------------------------------------
+    Type Wrapper
+    ------------------------------------------------------------------%>
 
-<%------------------------------------------------------------------
-Type Wrapper
-------------------------------------------------------------------%>
+    <%-- <div id="type"> --%>
+      <div class="body">
+        <% include Toast\Header %>
+        <% include Toast\Banner %>
 
-<div id="type">
-    <% include Header %>
+        $Breadcrumbs
 
-    $Layout
+        $Layout
 
-    <% include Footer %>
-</div>
+        <% include Toast\Footer %>
+      </div>
+    <%-- </div> --%>
+
 
     <% if $SiteConfig.GoogleTagManagerID %>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id={$SiteConfig.GoogleTagManagerID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
-        <!-- End Google Tag Manager (noscript) -->
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id={$SiteConfig.GoogleTagManagerID}" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+      </noscript>
     <% end_if %>
-</div>
-</body>
+
+    <% require javascript("themes/quicksilver/dist/scripts/app.js") %>
+  </body>
 </html>

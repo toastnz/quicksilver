@@ -1,9 +1,18 @@
-<div class="loginWrap">
-    <div class="loginWrap__content">
-        <h5 class="loginWrap__content__title"><b>Lost your password</b></h5>
-        $Form
-        <p id="BackToLogin">
-            <a href="{$BaseURL}Security/login">Back to login</a>
-        </p>
+<section class="login alignContent">
+    <div class="login__wrap verticalAlign">
+        <div class="login__wrap__content">
+            <div class="login__wrap__content__header">
+                $SVG('logo')
+            </div>
+            <div class="login__wrap__content__text">
+                <h5 class="login__wrap__content__text__heading">Lost your password</h5>
+            </div>
+            <div class="login__wrap__content__form">
+                $Form
+                <p id="BackToLogin">
+                    <a href="{$BaseURL}Security/login">Back to login</a>
+                </p>
+            </div>
+        </div>
     </div>
-</div>
+</section>

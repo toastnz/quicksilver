@@ -9,14 +9,17 @@
   "license": "BSD-3-Clause",
   "dependencies": {
     "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "css-vars-ponyfill": "^2.1.2",
     "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "parsleyjs": "^2.9.1",
+    "slick-carousel": "^1.8.1",
     "stats-js": "^1.0.0",
     "superagent": "^5.1.0",
     "three": "^0.103.0",
     "tingle.js": "^0.14.0",
+    "tiny-slider": "^2.9.2",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "validate.js": "^0.13.1",
     "wretch": "^1.5.4"

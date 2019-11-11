@@ -1,17 +1,26 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <% include Meta %>
+    <% include Toast/Meta %>
 </head>
 <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment">
-<% include Type %>
     
    
+    <%------------------------------------------------------------------
+    Type Settings Inclusion
+    ------------------------------------------------------------------%>
+    
+    <% include Type %>
 
-<div class="tingle-content-wrapper">
+    <%------------------------------------------------------------------
+    Type Wrapper
+    ------------------------------------------------------------------%>
 
+    <div id="type">
 
-    $Layout
+        $Layout
+
+    </div>
 
     <% if $SiteConfig.GoogleTagManagerID %>
         <noscript>
@@ -30,7 +39,6 @@
         </div>
     <% end_if %>
 
-</div>
 
  <canvas class="animation" id="animation"></canvas>
 </body>

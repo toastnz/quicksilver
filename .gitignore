@@ -15,4 +15,9 @@ _resampled
 /.env
 /resources/
 /betterbuttons/
+/Vagrantfile
+/.vagrant
+/quickblocks
+/quicksilver-styles
+*.tar.gz
 package-lock.json
