@@ -1,4 +1,4 @@
-<% include Toast\Includes\ContactBlock %>
+<%-- <% include Toast\Includes\ContactBlock %> --%>
 
 <footer class="footer contentBlock--padding">
 	<div class="footer__wrap row" data-equalize>
