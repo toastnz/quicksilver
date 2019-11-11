@@ -29,10 +29,8 @@
 
 
 //------------------------------------------------------------------
-// Blocks
+// Blocks -- Requirements: quicksilver-styles.scss
 //------------------------------------------------------------------
-
-@if not (variable-exists(core)) {@warn 'Quickblocks are dependent on the core style.';}
 
 @import './../../../quickblocks/scss/AccordionBlock';
 @import './../../../quickblocks/scss/ColumnBlock';
