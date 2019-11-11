@@ -41,7 +41,8 @@ class SiteConfigExtension extends DataExtension
         'GoogleTrackingID'        => 'Varchar(100)',
         'GoogleTagManagerID'      => 'Varchar(100)',
         'BHProjectKey'            => 'Varchar(100)',
-        'EnableBugherd'           => 'Boolean'
+        'EnableBugherd'           => 'Boolean',
+        'TollFreeNumber'          => 'Varchar(100)',
     ];
 
     /**
@@ -86,6 +87,7 @@ class SiteConfigExtension extends DataExtension
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('DetailsHeader', 'Company Details'),
             TextField::create('Phone', 'Phone Number'),
+            TextField::create('TollFreeNumber', 'Toll Free Number'),
             TextField::create('Email', 'Public Email Address')
                 ->addExtraClass('inputWrap--half inputWrap--half--last'),
             $address,
