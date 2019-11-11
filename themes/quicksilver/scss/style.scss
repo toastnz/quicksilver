@@ -2,7 +2,7 @@
 // Theme Specific
 //------------------------------------------------------------------
 
-@import 'Base/*';
+@import 'Base/Base';
 
 
 //------------------------------------------------------------------
@@ -24,8 +24,8 @@
 // Users
 //------------------------------------------------------------------
 
-// @import './../../../quicksilver-styles/scss/Utilities/JD';
-@import './../../../quicksilver-styles/scss/Utilities/Emmanuel';
+@import 'Base/Emmanuel';
+// @import './../../../quicksilver-styles/scss/Utilities/Emmanuel';
 
 
 //------------------------------------------------------------------
