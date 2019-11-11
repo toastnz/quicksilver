@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "42fa26a48b8f7482ef393dc21209d943",
+    "content-hash": "7aff0ea5434d92b854ffb50232cc7f1a",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -226,6 +226,55 @@
             "time": "2018-02-16T15:31:05+00:00"
         },
         {
+            "name": "edgarindustries/youtubefield",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edgarindustries/silverstripe-youtubefield.git",
+                "reference": "8ef6b7c7eafd1ceab2a3e4ca1bbea3d3b928fdcd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edgarindustries/silverstripe-youtubefield/zipball/8ef6b7c7eafd1ceab2a3e4ca1bbea3d3b928fdcd",
+                "reference": "8ef6b7c7eafd1ceab2a3e4ca1bbea3d3b928fdcd",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "~6.0",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client"
+                ],
+                "installer-name": "youtubefield"
+            },
+            "autoload": {
+                "psr-4": {
+                    "EdgarIndustries\\YouTubeField\\": "src/",
+                    "EdgarIndustries\\YouTubeField\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Linklater",
+                    "email": "ed@edgar.industries"
+                }
+            ],
+            "description": "Field for selecting YouTube videos. Takes various URL formats as input and stores the YouTube ID.",
+            "keywords": [
+                "formfield",
+                "silverstripe",
+                "youtube"
+            ],
+            "time": "2017-11-20T10:57:22+00:00"
+        },
+        {
             "name": "embed/embed",
             "version": "v3.3.9",
             "source": {
@@ -277,6 +326,122 @@
                 "twitter cards"
             ],
             "time": "2019-02-25T15:07:28+00:00"
+        },
+        {
+            "name": "guzzlehttp/guzzle",
+            "version": "6.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/promises": "^1.0",
+                "guzzlehttp/psr7": "^1.4",
+                "php": ">=5.5"
+            },
+            "require-dev": {
+                "ext-curl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
+                "psr/log": "^1.0"
+            },
+            "suggest": {
+                "psr/log": "Required for using the Log middleware"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "6.3-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions_include.php"
+                ],
+                "psr-4": {
+                    "GuzzleHttp\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle is a PHP HTTP client library",
+            "homepage": "http://guzzlephp.org/",
+            "keywords": [
+                "client",
+                "curl",
+                "framework",
+                "http",
+                "http client",
+                "rest",
+                "web service"
+            ],
+            "time": "2018-04-22T15:46:56+00:00"
+        },
+        {
+            "name": "guzzlehttp/promises",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/promises.git",
+                "reference": "17d36ed176c998839582c739ce0753381598edf0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/17d36ed176c998839582c739ce0753381598edf0",
+                "reference": "17d36ed176c998839582c739ce0753381598edf0",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7.27 || ^7.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GuzzleHttp\\Promise\\": "src/"
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dowling",
+                    "email": "mtdowling@gmail.com",
+                    "homepage": "https://github.com/mtdowling"
+                }
+            ],
+            "description": "Guzzle promises library",
+            "keywords": [
+                "promise"
+            ],
+            "time": "2019-07-02T14:54:06+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -3244,6 +3409,54 @@
             "time": "2019-03-25T07:48:46+00:00"
         },
         {
+            "name": "toastnz/quickblocks",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/quickblocks.git",
+                "reference": "28b1e064b9da6072ea190d899222142072173d2c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/28b1e064b9da6072ea190d899222142072173d2c",
+                "reference": "28b1e064b9da6072ea190d899222142072173d2c",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "edgarindustries/youtubefield": "^1.1",
+                "sheadawson/silverstripe-linkable": "^2.0.0",
+                "silverstripe/cms": "^4.3",
+                "silverstripe/framework": "^4.3",
+                "symbiote/silverstripe-gridfieldextensions": "^3.1",
+                "undefinedoffset/sortablegridfield": "^2.0.4"
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Danae Miller-Clendon",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe content blocks module",
+            "keywords": [
+                "Content Blocks",
+                "modular",
+                "silverstripe"
+            ],
+            "time": "2019-07-28T21:55:02+00:00"
+        },
+        {
             "name": "unclecheese/betterbuttons",
             "version": "dev-master",
             "source": {
@@ -3405,6 +3618,60 @@
             "time": "2019-03-26T12:48:39+00:00"
         },
         {
+            "name": "undefinedoffset/sortablegridfield",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UndefinedOffset/SortableGridField.git",
+                "reference": "af492d02675f1222197f6d1dd1d32122fb4cc1cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UndefinedOffset/SortableGridField/zipball/af492d02675f1222197f6d1dd1d32122fb4cc1cb",
+                "reference": "af492d02675f1222197f6d1dd1d32122fb4cc1cb",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "~4.0",
+                "silverstripe/vendor-plugin": "^1.0",
+                "silverstripe/versioned": "^1.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "sortablegridfield",
+                "expose": [
+                    "css",
+                    "javascript"
+                ],
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "UndefinedOffset\\SortableGridField\\": "src/",
+                    "UndefinedOffset\\SortableGridField\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ed Chipman",
+                    "homepage": "http://www.edchipman.ca",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Adds drag and drop functionality to SilverStripe 4.x's GridField",
+            "keywords": [
+                "gridfield",
+                "silverstripe"
+            ],
+            "time": "2019-01-08T16:23:14+00:00"
+        },
+        {
             "name": "webonyx/graphql-php",
             "version": "0.12.x-dev",
             "source": {
@@ -3457,7 +3724,8 @@
         "unclecheese/betterbuttons": 20,
         "permanentinc/beautiful": 20,
         "permanentinc/type": 20,
-        "permanentinc/found": 20
+        "permanentinc/found": 20,
+        "toastnz/quickblocks": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

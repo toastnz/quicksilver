@@ -12,10 +12,6 @@
         {
             "name": "Jaydn de Graaf",
             "homepage": "http://pinc.nz/"
-        },
-        {
-            "name": "Danae Miller-Clendon",
-            "homepage": "http://www.toast.co.nz/"
         }
     ],
     "require": {
@@ -31,7 +27,8 @@
         "stevie-mayhew/silverstripe-svg": "^2.1.0",
         "permanentinc/beautiful": "dev-master",
         "permanentinc/type": "dev-master",
-        "permanentinc/found": "dev-master"
+        "permanentinc/found": "dev-master",
+        "toastnz/quickblocks": "dev-master"
     },
     "config": {
         "preferred-install": "dist"

@@ -8,3 +8,12 @@ SilverStripe\Control\Director:
   rules:
     '_styleguide': 'StyleGuideController'
 
+Page:
+  extensions:
+    - Toast\QuickBlocks\QuickBlocksExtension
+PageController:
+  extensions:
+    - Toast\QuickBlocks\QuickBlocksControllerExtension
+Toast\QuickBlocks\QuickBlocksExtension:
+  available_blocks:
+    - Toast\QuickBlocks\TextBlock
