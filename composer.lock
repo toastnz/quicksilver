@@ -4487,12 +4487,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "3b4a9a6139bd3b294668bd3207c8115b02b1a6ba"
+                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/3b4a9a6139bd3b294668bd3207c8115b02b1a6ba",
-                "reference": "3b4a9a6139bd3b294668bd3207c8115b02b1a6ba",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/3836baae370c811694f2a3c358846e8fb8a0a25d",
+                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4517,7 +4517,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-06T22:36:18+00:00"
+            "time": "2019-11-11T19:05:42+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
