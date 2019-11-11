@@ -32,20 +32,22 @@
 // Blocks -- Requirements: quicksilver-styles.scss
 //------------------------------------------------------------------
 
-@import './../../../quickblocks/scss/AccordionBlock';
-@import './../../../quickblocks/scss/ColumnBlock';
-@import './../../../quickblocks/scss/DownloadBlock';
-@import './../../../quickblocks/scss/GalleryBlock';
-@import './../../../quickblocks/scss/HeroBlock';
-@import './../../../quickblocks/scss/ImageBlock';
-@import './../../../quickblocks/scss/LinkBlock';
-@import './../../../quickblocks/scss/NewsBlock';
-@import './../../../quickblocks/scss/PercentageBlock';
-@import './../../../quickblocks/scss/SliderBlock';
-@import './../../../quickblocks/scss/SplitBlock';
-@import './../../../quickblocks/scss/TabBlock';
-@import './../../../quickblocks/scss/TestimonialBlock';
-@import './../../../quickblocks/scss/VideoBlock';
+@import './../../../quickblocks/scss/*';
+
+@include AccordionBlock;
+@include ColumnBlock;
+@include DownloadBlock;
+@include GalleryBlock;
+@include HeroBlock;
+@include ImageBlock;
+@include LinkBlock;
+@include NewsBlock;
+@include PercentageBlock;
+@include SliderBlock;
+@include SplitBlock;
+@include TabBlock;
+@include TestimonialBlock;
+@include VideoBlock;
 
 
 //------------------------------------------------------------------
