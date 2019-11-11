@@ -22,7 +22,7 @@
         "jaedb/iconfield": "1.0.2",
         "axllent/silverstripe-form-fields": "^1.3",
         "toastnz/silverstripe-socialnav": "^2.0",
-        "toastnz/quickblocks": "dev-feature/quicksilver#23252e852629ea186a73c89afbf981f0093262ee",
+        "toastnz/quickblocks": "dev-feature/quicksilver#f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
         "toastnz/quicksilver-styles": "dev-master",
         "permanentinc/type": "dev-master",
         "silverstripe/userforms": "^5.4",
