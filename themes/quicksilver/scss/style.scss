@@ -1,20 +1,28 @@
 //------------------------------------------------------------------
-// Base imports
+// Theme Specific
+
+@import 'Base/*';
+
 //------------------------------------------------------------------
-//Ordered
-@import 'Utilities/Reset';
-@import 'Utilities/Colours';
-@import 'Utilities/Mixins';
-@import 'Utilities/Base';
-@import 'Utilities/Buttons';
-@import 'Utilities/Inputs';
-//Ordered
-@import '../spritesmith-generated/normal';
-@import '../spritesmith-generated/retina';
-@import 'Sprites/Sprites';
-//UnOrdered
-@import 'External/*';
+// Third Party
+
+@import 'External/TinySlider';
+// @import 'External/Tingle';
+
+//------------------------------------------------------------------
+// Core
+
+@import './../../../quicksilver-styles/scss/quicksilver-styles.scss';
+@import './../../../quicksilver-styles/scss/Utilities/Emmanuel';
+// @import './../../../quicksilver-styles/scss/Utilities/JD';
+
+//------------------------------------------------------------------
+// Blocks
+
+@import './../../../quickblocks/scss/quickblocks.scss';
+
+//------------------------------------------------------------------
+// Elements
+
 @import 'Elements/*';
 @import 'Pages/*';
-@import 'Blocks/*';
-

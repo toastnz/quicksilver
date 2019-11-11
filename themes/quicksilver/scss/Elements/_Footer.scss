@@ -1,3 +1,185 @@
 //------------------------------------------------------------------
-// Footer
+// Footer - Styles
 //------------------------------------------------------------------
+
+.footer {
+  color: $white;
+  background-color: $secondary;
+  &__wrap {
+
+    .column {
+      
+      &.float-right {
+        float: right!important;
+      }
+
+      @include media($lg) {
+        .content {
+          &:not(.logo) {
+            &:after {
+              display: block;
+            }
+          }
+        }
+      }      
+    }
+
+    &__content {      
+      position: relative;
+      width: 100%;
+
+      @include media($md, max) {
+        text-align: center;
+      }
+
+      @include media($lg, max) {
+        height: auto!important;
+      }
+
+      &:after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        right: -$gutterWidth;
+        bottom: 0;
+        width: .1rem;
+        background-color: rgba($white, .1);
+      }
+
+
+
+      .socialIcons {
+        margin-bottom: $gutterWidth * 2;
+        &__item {
+          display: inline-block;
+
+          &:not(:last-child) {
+            margin-right: 2rem;
+          }
+
+          &__link {
+            @include svg(1,1);
+            display: block;
+            width: 3rem;
+            border-radius: 50%;
+            background-color: $primary;
+            @include transition(background-color);
+
+            @include active {
+              background-color: $white;
+
+              svg {
+                path {
+                  fill: $primary;
+                }
+              }
+            }
+
+            svg {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              height: 50%;
+              width: 50%;
+
+              path {
+                fill: $secondary;
+                @include transition(fill);
+              }
+            }
+          }
+        }
+      }
+
+      &__heading {
+        text-transform: uppercase;
+        color: $primary;
+        font-weight: bold;
+        margin-bottom: 3rem;
+      }
+
+      &__nav {
+        &__item {
+          &__link {
+            color: $white;
+            @include transition(color);
+
+            @include active {
+              color: $primary;
+            }
+          }
+        }
+      }
+
+      &__details {
+        margin-bottom: 5rem;
+
+        &__phone {
+          display: block;
+          font-weight: bold;
+          margin-bottom: 3rem;
+          line-height: 1.1;
+
+          a {
+            color: $white;
+          }
+
+          span {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &__copyright {
+        
+        @include media($lg) {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+        }
+
+        p {
+          white-space: nowrap;
+          font-size: 1.1rem;
+          margin-bottom: 0;
+        }
+      }
+      
+      &.social {
+        padding-bottom: 2rem;
+      }
+
+      &.logo {
+
+        margin-bottom: $gutterWidth * 2;
+
+        @include media($lg) {
+          padding-bottom: nth($logoDimentions, 2) / nth($logoDimentions, 1) * 100 + 0.0%;
+        }
+
+        .logoWrap {
+          width: 100%;
+          max-width: 20rem;
+
+          @include media($md, max) {
+            margin: 0 auto;
+          }
+
+          @include media($lg) {
+            @include svg($logoDimentions...);
+            position: absolute;
+            top: auto;
+            bottom: 0;
+            left: 0;
+          }
+        }
+
+        // svg {
+        // }
+      }
+    }
+  }
+}
