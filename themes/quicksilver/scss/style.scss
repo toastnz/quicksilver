@@ -34,20 +34,22 @@
 
 @import './../../../quickblocks/scss/*';
 
-@include AccordionBlock;
-@include ColumnBlock;
-@include DownloadBlock;
-@include GalleryBlock;
-@include HeroBlock;
-@include ImageBlock;
-@include LinkBlock;
-@include NewsBlock;
-@include PercentageBlock;
-@include SliderBlock;
-@include SplitBlock;
-@include TabBlock;
-@include TestimonialBlock;
-@include VideoBlock;
+@if (variable-exists(core)) {
+	@include AccordionBlock;
+	@include ColumnBlock;
+	@include DownloadBlock;
+	@include GalleryBlock;
+	@include HeroBlock;
+	@include ImageBlock;
+	@include LinkBlock;
+	@include NewsBlock;
+	@include PercentageBlock;
+	@include SliderBlock;
+	@include SplitBlock;
+	@include TabBlock;
+	@include TestimonialBlock;
+	@include VideoBlock;
+}
 
 
 //------------------------------------------------------------------
