@@ -1,0 +1,69 @@
+//------------------------------------------------------------------
+// Imports
+//------------------------------------------------------------------
+
+@import './../../../../quicksilver-styles/scss/Emmanuel/Colours';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Fonts';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Lists';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Tables';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Blockquotes';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Buttons';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Forms';
+@import './../../../../quicksilver-styles/scss/Emmanuel/Spacing';
+@import './../../../../quicksilver-styles/scss/Emmanuel/LoginPage';
+
+
+//------------------------------------------------------------------
+// Include Overrides
+//------------------------------------------------------------------
+
+$globalWidth: 110rem;
+$globalWidthPX: 1100px;
+$globalWidthMax: 144rem;
+$globalWidthMaxPX: 1440px;
+$columnCount: 12;
+$gutterWidth: 2rem;
+
+// Include neccessary column numbers for project here - HINT: false = no classes;
+
+$rowClasses: 2, 3, 4, 5, 6, 7; // e.g md-up-4
+$columnClasses: 3, 4, 5, 6, 7, 8, 9, 10; // e.g md-4
+
+// Include neccessary breakpoints for project here;
+
+$breakpoint-map: (
+  'md': $md,
+  'xmd': $xmd,
+  'lg': $lg,
+);
+
+// List our styles we want to alter with our ColourClasses
+
+$colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+
+//------------------------------------------------------------------
+// Components
+//------------------------------------------------------------------
+
+@include TheGrid;
+
+// Classes: Inject these includes with $breakpoint-map if needed
+
+@include TextAlignmentClasses();
+// @include FloatClasses($breakpoint-map);
+// @include ShowHideClasses($breakpoint-map);
+@include TableAlignmentClasses($breakpoint-map);
+
+//------------------------------------------------------------------
+
+@include ColourClasses($colour-styles);
+
+// Generic Styles
+
+@include FontStyles;
+@include ListStyles;
+@include TableStyles;
+@include BlockquoteStyles;
+@include Buttons;
+@include FormStyles;
+@include SpacingStyles;

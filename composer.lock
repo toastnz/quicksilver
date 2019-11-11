@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "content-hash": "c2848840ce63f9ff1e7c8475e6cb3e2c",
+=======
+    "content-hash": "12ce263280dc84fe93c48214358c61e4",
+>>>>>>> b766387de111a2891209c9b7439af5ea9360e58c
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -136,48 +140,6 @@
                 "silverstripe"
             ],
             "time": "2018-08-11T10:50:53+00:00"
-        },
-        {
-            "name": "axllent/silverstripe-trailing-slash",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/axllent/silverstripe-trailing-slash.git",
-                "reference": "9be9350c4f634d6f41c68c1ec315dc80260948b0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/axllent/silverstripe-trailing-slash/zipball/9be9350c4f634d6f41c68c1ec315dc80260948b0",
-                "reference": "9be9350c4f634d6f41c68c1ec315dc80260948b0",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "^4.0"
-            },
-            "type": "silverstripe-vendormodule",
-            "autoload": {
-                "psr-4": {
-                    "Axllent\\TrailingSlash\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ralph Slooten",
-                    "homepage": "http://www.axllent.org/"
-                }
-            ],
-            "description": "Ensure that a single trailing slash is always added to the URL",
-            "homepage": "https://github.com/axllent/silverstripe-trailing-slash",
-            "keywords": [
-                "seo",
-                "silverstripe",
-                "urls"
-            ],
-            "time": "2019-02-07T04:27:11+00:00"
         },
         {
             "name": "betterbrief/silverstripe-googlemapfield",
@@ -699,27 +661,28 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.3",
+            "version": "6.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba"
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/407b0cb880ace85c9b63c5f9551db498cb2d50ba",
-                "reference": "407b0cb880ace85c9b63c5f9551db498cb2d50ba",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
+                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
                 "shasum": ""
             },
             "require": {
+                "ext-json": "*",
                 "guzzlehttp/promises": "^1.0",
-                "guzzlehttp/psr7": "^1.4",
+                "guzzlehttp/psr7": "^1.6.1",
                 "php": ">=5.5"
             },
             "require-dev": {
                 "ext-curl": "*",
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4 || ^7.0",
-                "psr/log": "^1.0"
+                "psr/log": "^1.1"
             },
             "suggest": {
                 "psr/log": "Required for using the Log middleware"
@@ -731,12 +694,12 @@
                 }
             },
             "autoload": {
-                "files": [
-                    "src/functions_include.php"
-                ],
                 "psr-4": {
                     "GuzzleHttp\\": "src/"
-                }
+                },
+                "files": [
+                    "src/functions_include.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -760,7 +723,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2018-04-22T15:46:56+00:00"
+            "time": "2019-10-23T15:58:00+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -886,16 +849,16 @@
         },
         {
             "name": "heyday/silverstripe-menumanager",
-            "version": "3.0.4",
+            "version": "3.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/heyday/silverstripe-menumanager.git",
-                "reference": "a2c2ad395599773762f005973f5f57a0cb4584f2"
+                "reference": "366c21187cc2cb039a0e43fe69b2c623c953c6d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heyday/silverstripe-menumanager/zipball/a2c2ad395599773762f005973f5f57a0cb4584f2",
-                "reference": "a2c2ad395599773762f005973f5f57a0cb4584f2",
+                "url": "https://api.github.com/repos/heyday/silverstripe-menumanager/zipball/366c21187cc2cb039a0e43fe69b2c623c953c6d4",
+                "reference": "366c21187cc2cb039a0e43fe69b2c623c953c6d4",
                 "shasum": ""
             },
             "require": {
@@ -924,20 +887,20 @@
                 }
             ],
             "description": "Allows complex menu management to be handled through the CMS when a simple tree structure is not enough.",
-            "time": "2018-09-09T04:41:47+00:00"
+            "time": "2019-11-11T18:49:34+00:00"
         },
         {
             "name": "intervention/image",
-            "version": "2.5.0",
+            "version": "2.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Intervention/image.git",
-                "reference": "39eaef720d082ecc54c64bf54541c55f10db546d"
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Intervention/image/zipball/39eaef720d082ecc54c64bf54541c55f10db546d",
-                "reference": "39eaef720d082ecc54c64bf54541c55f10db546d",
+                "url": "https://api.github.com/repos/Intervention/image/zipball/abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
+                "reference": "abbf18d5ab8367f96b3205ca3c89fb2fa598c69e",
                 "shasum": ""
             },
             "require": {
@@ -994,7 +957,7 @@
                 "thumbnail",
                 "watermark"
             ],
-            "time": "2019-06-24T14:06:31+00:00"
+            "time": "2019-11-02T09:15:47+00:00"
         },
         {
             "name": "jaedb/iconfield",
@@ -1153,145 +1116,6 @@
                 "silverstripe"
             ],
             "time": "2019-07-01T22:51:15+00:00"
-        },
-        {
-            "name": "jonom/silverstripe-share-care",
-            "version": "v3.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jonom/silverstripe-share-care.git",
-                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jonom/silverstripe-share-care/zipball/f0df5e7af6c52077ed059a9e7d8179c1457f216b",
-                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "*",
-                "silverstripe/framework": "^4.0",
-                "tractorcow/silverstripe-opengraph": "^4.0"
-            },
-            "type": "silverstripe-vendormodule",
-            "autoload": {
-                "psr-4": {
-                    "JonoM\\ShareCare\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathon Menz",
-                    "homepage": "http://jonathonmenz.com"
-                }
-            ],
-            "description": "Social media sharing previews and customisation for SilverStripe",
-            "keywords": [
-                "facebook",
-                "open graph",
-                "opengraph",
-                "share",
-                "silverstripe",
-                "social media"
-            ],
-            "time": "2019-05-07T16:24:01+00:00"
-        },
-        {
-            "name": "jonom/silverstripe-text-target-length",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/jonom/silverstripe-text-target-length.git",
-                "reference": "8710bb4954dfaa420837ebea1eb7c42aef31e214"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/jonom/silverstripe-text-target-length/zipball/8710bb4954dfaa420837ebea1eb7c42aef31e214",
-                "reference": "8710bb4954dfaa420837ebea1eb7c42aef31e214",
-                "shasum": ""
-            },
-            "require": {
-                "silverstripe/framework": "^4.0"
-            },
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "expose": [
-                    "client"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "JonoM\\SilverStripeTextTargetLength\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Jonathon Menz",
-                    "homepage": "http://jonathonmenz.com"
-                }
-            ],
-            "description": "Set character length recommendations on SilverStripe text form fields",
-            "keywords": [
-                "silverstripe",
-                "target",
-                "textareafield",
-                "textfield"
-            ],
-            "time": "2018-05-28T17:57:48+00:00"
-        },
-        {
-            "name": "kub-at/php-simple-html-dom-parser",
-            "version": "1.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Kub-AT/php-simple-html-dom-parser.git",
-                "reference": "1fe277a7616b5d7cfd192a8908cbc7653dc9baee"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Kub-AT/php-simple-html-dom-parser/zipball/1fe277a7616b5d7cfd192a8908cbc7653dc9baee",
-                "reference": "1fe277a7616b5d7cfd192a8908cbc7653dc9baee",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "KubAT\\PhpSimple\\HtmlDomParser": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "S.C. Chen",
-                    "email": "me578022@gmail.com"
-                },
-                {
-                    "name": "Jakub Stawowy",
-                    "email": "Kub-AT@users.noreply.github.com"
-                }
-            ],
-            "description": "PHP Simple HTML DOM Parser with namespace and PHP 7.3 compatible",
-            "homepage": "http://simplehtmldom.sourceforge.net/",
-            "keywords": [
-                "Simple",
-                "dom",
-                "html"
-            ],
-            "time": "2019-06-03T05:50:36+00:00"
         },
         {
             "name": "league/csv",
@@ -1728,16 +1552,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.2.4",
+            "version": "v4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4"
+                "reference": "9a9981c347c5c49d6dfe5cf826bb882b824080dc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/97e59c7a16464196a8b9c77c47df68e4a39a45c4",
-                "reference": "97e59c7a16464196a8b9c77c47df68e4a39a45c4",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/9a9981c347c5c49d6dfe5cf826bb882b824080dc",
+                "reference": "9a9981c347c5c49d6dfe5cf826bb882b824080dc",
                 "shasum": ""
             },
             "require": {
@@ -1745,6 +1569,7 @@
                 "php": ">=7.0"
             },
             "require-dev": {
+                "ircmaxell/php-yacc": "0.0.5",
                 "phpunit/phpunit": "^6.5 || ^7.0 || ^8.0"
             },
             "bin": [
@@ -1753,7 +1578,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.2-dev"
+                    "dev-master": "4.3-dev"
                 }
             },
             "autoload": {
@@ -1775,7 +1600,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2019-09-01T07:51:21+00:00"
+            "time": "2019-11-08T13:50:10+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -1876,6 +1701,106 @@
                 "theme"
             ],
             "time": "2019-08-12T04:44:48+00:00"
+        },
+        {
+            "name": "permanentinc/found",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/found.git",
+                "reference": "e52d53708228527975c1b2f3dd9c3b2dd1d6b79f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/found/zipball/e52d53708228527975c1b2f3dd9c3b2dd1d6b79f",
+                "reference": "e52d53708228527975c1b2f3dd9c3b2dd1d6b79f",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "found",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot2.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "SEO Tab - based on squarespace",
+            "homepage": "http://github.com/permanentinc/beautiful",
+            "keywords": [
+                "admin",
+                "cms",
+                "permanentinc",
+                "pinc",
+                "seo",
+                "silverstripe"
+            ],
+            "time": "2019-11-11T01:34:13+00:00"
+        },
+        {
+            "name": "permanentinc/type",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/permanentinc/type.git",
+                "reference": "22eaeb24ac8a4332e0ace7050ff2b57157b467a9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/22eaeb24ac8a4332e0ace7050ff2b57157b467a9",
+                "reference": "22eaeb24ac8a4332e0ace7050ff2b57157b467a9",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/cms": "^4",
+                "silverstripe/framework": "^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "type",
+                "expose": [
+                    "dist"
+                ],
+                "screenshots": [
+                    "http://permanentinc.me/screenshot2.png"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "email": "jd@pinc.nz"
+                }
+            ],
+            "description": "Font Settings - based on that thing I saw a few years ago",
+            "homepage": "http://github.com/permanentinc/type",
+            "keywords": [
+                "colour",
+                "font",
+                "permanentinc",
+                "pinc",
+                "silverstripe",
+                "type"
+            ],
+            "time": "2019-11-10T20:34:04+00:00"
         },
         {
             "name": "psr/cache",
@@ -2024,16 +1949,16 @@
         },
         {
             "name": "psr/log",
-            "version": "1.1.0",
+            "version": "1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/log.git",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd"
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/log/zipball/6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
-                "reference": "6c001f1daafa3a3ac1d8ff69ee4db8e799a654dd",
+                "url": "https://api.github.com/repos/php-fig/log/zipball/446d54b4cb6bf489fc9d75f55843658e6f25d801",
+                "reference": "446d54b4cb6bf489fc9d75f55843658e6f25d801",
                 "shasum": ""
             },
             "require": {
@@ -2042,7 +1967,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.0.x-dev"
+                    "dev-master": "1.1.x-dev"
                 }
             },
             "autoload": {
@@ -2067,7 +1992,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2018-11-20T15:27:04+00:00"
+            "time": "2019-11-01T11:05:21+00:00"
         },
         {
             "name": "psr/simple-cache",
@@ -2116,80 +2041,6 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
-        },
-        {
-            "name": "quinninteractive/silverstripe-seo",
-            "version": "1.0.6",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Quinn-Interactive/silverstripe-seo.git",
-                "reference": "5b960c0baee4f3353f49c46a42284608cca0ee30"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Quinn-Interactive/silverstripe-seo/zipball/5b960c0baee4f3353f49c46a42284608cca0ee30",
-                "reference": "5b960c0baee4f3353f49c46a42284608cca0ee30",
-                "shasum": ""
-            },
-            "require": {
-                "axllent/silverstripe-trailing-slash": "^2.1",
-                "jonom/silverstripe-text-target-length": "^2",
-                "kub-at/php-simple-html-dom-parser": "^1.7",
-                "silverstripe/cms": "^4.1",
-                "wilr/silverstripe-googlesitemaps": "^2.1"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7",
-                "squizlabs/php_codesniffer": "3.*"
-            },
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.1.x-dev"
-                },
-                "expose": [
-                    "dist"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "Vulcan\\Seo\\": "src/",
-                    "Vulcan\\Seo\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Reece Alexander",
-                    "homepage": "https://vulcandigital.co.nz",
-                    "role": "author"
-                },
-                {
-                    "name": "Fred Condo",
-                    "homepage": "https://quinn.com",
-                    "role": "maintainer"
-                },
-                {
-                    "name": "Phil Quinn",
-                    "homepage": "https://quinn.com",
-                    "role": "maintainer"
-                }
-            ],
-            "description": "An all-in-one SEO module for SilverStripe",
-            "keywords": [
-                "facebook",
-                "opengraph",
-                "optimisation",
-                "optimization",
-                "search",
-                "seo",
-                "silverstripe",
-                "twitter"
-            ],
-            "time": "2019-09-19T22:46:38+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -3131,16 +2982,16 @@
         },
         {
             "name": "silverstripe/redirectedurls",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-redirectedurls.git",
-                "reference": "042ece48aaa9f5d72b7e56280d8c6ac8190937e6"
+                "reference": "c0d4cde3a52744aa87f52780b553e24d94a2d397"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-redirectedurls/zipball/042ece48aaa9f5d72b7e56280d8c6ac8190937e6",
-                "reference": "042ece48aaa9f5d72b7e56280d8c6ac8190937e6",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-redirectedurls/zipball/c0d4cde3a52744aa87f52780b553e24d94a2d397",
+                "reference": "c0d4cde3a52744aa87f52780b553e24d94a2d397",
                 "shasum": ""
             },
             "require": {
@@ -3183,7 +3034,7 @@
                 "silverstripe",
                 "urls"
             ],
-            "time": "2018-04-17T21:04:02+00:00"
+            "time": "2019-03-21T09:02:09+00:00"
         },
         {
             "name": "silverstripe/reports",
@@ -3951,16 +3802,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v3.4.32",
+            "version": "v3.4.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "5c7bd827617fcb9b13e04e423c31c0fb0bcf0160"
+                "reference": "9307cc18f444d0b4f6b56daceaa7e55174dfdfb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/5c7bd827617fcb9b13e04e423c31c0fb0bcf0160",
-                "reference": "5c7bd827617fcb9b13e04e423c31c0fb0bcf0160",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/9307cc18f444d0b4f6b56daceaa7e55174dfdfb5",
+                "reference": "9307cc18f444d0b4f6b56daceaa7e55174dfdfb5",
                 "shasum": ""
             },
             "require": {
@@ -4017,20 +3868,20 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-09-29T21:19:44+00:00"
+            "time": "2019-10-24T15:33:53+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "v3.4.32",
+            "version": "v3.4.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
-                "reference": "717ad66b5257e9752ae3c5722b5810bb4c40b236"
+                "reference": "c3a30587de97263d2813a3c81b74126c58b67a4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/config/zipball/717ad66b5257e9752ae3c5722b5810bb4c40b236",
-                "reference": "717ad66b5257e9752ae3c5722b5810bb4c40b236",
+                "url": "https://api.github.com/repos/symfony/config/zipball/c3a30587de97263d2813a3c81b74126c58b67a4f",
+                "reference": "c3a30587de97263d2813a3c81b74126c58b67a4f",
                 "shasum": ""
             },
             "require": {
@@ -4081,11 +3932,11 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "https://symfony.com",
-            "time": "2019-09-19T15:32:51+00:00"
+            "time": "2019-11-08T08:28:59+00:00"
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.5",
+            "version": "v4.3.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -4135,16 +3986,16 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.32",
+            "version": "v3.4.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
-                "reference": "2b6a666d6ff7fb65d10b97d817c8e7930944afb9"
+                "reference": "3e915e5ce305f8bc8017597f71f1f4095092ddf8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/finder/zipball/2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
-                "reference": "2b6a666d6ff7fb65d10b97d817c8e7930944afb9",
+                "url": "https://api.github.com/repos/symfony/finder/zipball/3e915e5ce305f8bc8017597f71f1f4095092ddf8",
+                "reference": "3e915e5ce305f8bc8017597f71f1f4095092ddf8",
                 "shasum": ""
             },
             "require": {
@@ -4180,7 +4031,7 @@
             ],
             "description": "Symfony Finder Component",
             "homepage": "https://symfony.com",
-            "time": "2019-09-01T21:32:23+00:00"
+            "time": "2019-10-30T12:43:22+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -4529,16 +4380,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.32",
+            "version": "v3.4.34",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "768f817446da74a776a31eea335540f9dcb53942"
+                "reference": "dab657db15207879217fc81df4f875947bf68804"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/768f817446da74a776a31eea335540f9dcb53942",
-                "reference": "768f817446da74a776a31eea335540f9dcb53942",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/dab657db15207879217fc81df4f875947bf68804",
+                "reference": "dab657db15207879217fc81df4f875947bf68804",
                 "shasum": ""
             },
             "require": {
@@ -4584,7 +4435,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2019-09-10T10:38:46+00:00"
+            "time": "2019-10-24T15:33:53+00:00"
         },
         {
             "name": "toastnz/quickblocks",
@@ -4592,12 +4443,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
+<<<<<<< HEAD
                 "reference": "206d3a83495256447e1d5cb892aa374df1e6b84e"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/206d3a83495256447e1d5cb892aa374df1e6b84e",
                 "reference": "206d3a83495256447e1d5cb892aa374df1e6b84e",
+=======
+                "reference": "f5ca460e03289cc41dc13ddd06da1dddb1afe6a1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
+                "reference": "f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
+>>>>>>> b766387de111a2891209c9b7439af5ea9360e58c
                 "shasum": ""
             },
             "require": {
@@ -4624,6 +4484,11 @@
                     "name": "Danae Miller-Clendon",
                     "homepage": "http://toast.co.nz/",
                     "role": "Developer"
+                },
+                {
+                    "name": "Emmanuel Davies",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Developer"
                 }
             ],
             "description": "Silverstripe content blocks module",
@@ -4632,7 +4497,49 @@
                 "modular",
                 "silverstripe"
             ],
+<<<<<<< HEAD
             "time": "2019-11-04T04:31:42+00:00"
+=======
+            "time": "2019-11-11T20:15:12+00:00"
+>>>>>>> b766387de111a2891209c9b7439af5ea9360e58c
+        },
+        {
+            "name": "toastnz/quicksilver-styles",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/toastnz/quicksilver-styles.git",
+                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/3836baae370c811694f2a3c358846e8fb8a0a25d",
+                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d",
+                "shasum": ""
+            },
+            "type": "silverstripe-module",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jaydn de Graaf",
+                    "homepage": "http://pinc.nz/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Emmanuel Davies",
+                    "homepage": "http://toast.co.nz/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Silverstripe quicksilver styles",
+            "keywords": [
+                "silverstripe",
+                "themes"
+            ],
+            "time": "2019-11-11T19:05:42+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
@@ -4679,62 +4586,6 @@
                 "you tube"
             ],
             "time": "2018-11-15T17:11:17+00:00"
-        },
-        {
-            "name": "tractorcow/silverstripe-opengraph",
-            "version": "4.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/tractorcow/silverstripe-opengraph.git",
-                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/tractorcow/silverstripe-opengraph/zipball/f701656dc3d2b71528d069237e89e87c2df3d375",
-                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375",
-                "shasum": ""
-            },
-            "require": {
-                "composer/installers": "*",
-                "silverstripe/recipe-core": "^1 || ^4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.7",
-                "silverstripe/recipe-cms": "^1 || ^4"
-            },
-            "type": "silverstripe-vendormodule",
-            "extra": {
-                "installer-name": "opengraph",
-                "branch-alias": {
-                    "dev-master": "4.x-dev"
-                },
-                "expose": [
-                    "images"
-                ]
-            },
-            "autoload": {
-                "psr-4": {
-                    "TractorCow\\OpenGraph\\": "src/",
-                    "TractorCow\\OpenGraph\\Tests\\": "tests/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Damian Mooyman",
-                    "email": "damian.mooyman@gmail.com"
-                }
-            ],
-            "description": "Implementation of the Facebook Open Graph protocol for SilverStripe",
-            "keywords": [
-                "facebook",
-                "opengraph",
-                "silverstripe"
-            ],
-            "time": "2018-07-25T03:07:22+00:00"
         },
         {
             "name": "unclecheese/display-logic",
@@ -5013,7 +4864,10 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "toastnz/quickblocks": 20
+        "toastnz/quickblocks": 20,
+        "toastnz/quicksilver-styles": 20,
+        "permanentinc/type": 20,
+        "permanentinc/found": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

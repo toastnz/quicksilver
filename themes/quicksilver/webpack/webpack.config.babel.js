@@ -23,7 +23,7 @@ const stats = {
     errors: false,
     errorDetails: false,
     warnings: false,
-    publicPath: false, 
+    publicPath: false,
 };
 
 module.exports = (env, argv) => {
@@ -38,7 +38,8 @@ module.exports = (env, argv) => {
         output: {
             publicPath: '/themes/quicksilver/dist/scripts/',
             path: path.resolve(__dirname, '../dist/scripts'),
-            filename: 'app.js'
+            filename: '[name].js',
+            // sourceMapFilename: '[name].map.js'
         },
         module: {
             rules: [
@@ -93,11 +94,11 @@ module.exports = (env, argv) => {
         },
         optimization: {
             minimizer: [
-                new UglifyJsPlugin({
-                    cache: true,
-                    parallel: true,
-                    sourceMap: ifProduction(true, false)
-                }),
+                // new UglifyJsPlugin({
+                //     cache: true,
+                //     parallel: true,
+                //     sourceMap: ifProduction(true, false)
+                // }),
                 new TerserPlugin({
                     sourceMap: true,
                     terserOptions: {

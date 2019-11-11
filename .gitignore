@@ -18,4 +18,6 @@ _resampled
 /Vagrantfile
 /.vagrant
 /quickblocks
+/quicksilver-styles
 *.tar.gz
+package-lock.json

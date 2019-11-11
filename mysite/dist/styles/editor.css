@@ -1,0 +1,96 @@
+body.mceContentBody a.ss-broken {
+    background-color: #FF7B71;
+    border: 1px red solid;
+    color: #fff;
+    padding: 1px;
+    text-decoration: underline;
+}
+
+body.mceContentBody p {
+    padding-bottom: 1em;
+    margin: 0;
+}
+
+body.mceContentBody {
+    padding-top: 10px;
+}
+
+
+/*=================*/
+/* Headings        */
+/*=================*/
+
+body.mceContentBody {
+    font-size: 10px;
+}
+
+body.mceContentBody h1 {
+    font-size: 2.5em;
+}
+
+body.mceContentBody h2 {
+    font-size: 2em;
+}
+
+body.mceContentBody h3 {
+    font-size: 1.75em;
+}
+
+body.mceContentBody h4 {
+    font-size: 1.5em;
+}
+
+body.mceContentBody h5 {
+    font-size: 1.3em;
+}
+
+body.mceContentBody h6 {
+    font-size: 1.2em;
+}
+
+body.mceContentBody h1,
+body.mceContentBody h2,
+body.mceContentBody, h3,
+body.mceContentBody h4,
+body.mceContentBody h5,
+body.mceContentBody h6 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+/*=================*/
+/* Styles          */
+/*=================*/
+
+body.mceContentBody span.colour--primary {
+    color: #377cff;
+}
+
+body.mceContentBody span.colour--secondary {
+    color: #222426;
+}
+
+/*=================*/
+/* Buttons         */
+/*=================*/
+
+ a.button {
+    background-color: #377cff;
+    border: 1px solid #377cff;
+    color: #fff;
+    padding: 3px 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+ a.button.button--secondary {
+    color: #222426;
+    background-color: #222426;
+    border: 1px solid #222426;
+}
+
+ a.button.button--outline--primary {
+    border-color: #377cff;
+    background-color: transparent;
+    color: #377cff;
+}

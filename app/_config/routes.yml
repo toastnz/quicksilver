@@ -6,4 +6,14 @@ After:
 ---
 SilverStripe\Control\Director:
   rules:
-    api/v1.0//$Action: Toast\Controllers\ApiController
+    '_styleguide': 'StyleGuideController'
+
+Page:
+  extensions:
+    - Toast\QuickBlocks\QuickBlocksExtension
+PageController:
+  extensions:
+    - Toast\QuickBlocks\QuickBlocksControllerExtension
+Toast\QuickBlocks\QuickBlocksExtension:
+  available_blocks:
+    - Toast\QuickBlocks\TextBlock

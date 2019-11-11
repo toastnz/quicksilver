@@ -1,0 +1,31 @@
+//------------------------------------------------------------------
+// Modal Styles
+// ------------------------------------------------------------------
+
+.modal {
+
+  &__close {
+    max-width: 90rem;
+    width: 100%;
+    text-align: right;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    display: none;
+
+    &__icon {
+      position: absolute;
+      top: 3rem;
+      right: 3rem;
+      transition: all 555ms ease;
+      transform: translateY(-100%);
+    }
+
+  }
+
+
+  .embed-container {
+    max-width: 100%;
+    width: 128rem;
+  }
+}

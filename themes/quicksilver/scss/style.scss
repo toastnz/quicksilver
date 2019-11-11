@@ -1,30 +1,60 @@
 //------------------------------------------------------------------
-// Base imports
+// Theme Specific
 //------------------------------------------------------------------
 
+@import 'Base/Base';
+
+
 //------------------------------------------------------------------
-//Ordered
+// Third Party
+//------------------------------------------------------------------
 
-@import 'Utilities/Reset';
-@import 'Utilities/Colours';
-@import 'Utilities/Mixins';
-@import 'Utilities/BaseSettings';
-@import 'Utilities/Grid'; // Here for variables - will not bulk css without using @include
-
-// External --------------------------------------------------------
 @import 'External/TinySlider';
 // @import 'External/Tingle';
 
+
+//------------------------------------------------------------------
+// Core
+//------------------------------------------------------------------
+
+@import './../../../quicksilver-styles/scss/quicksilver-styles.scss';
+
+
 //------------------------------------------------------------------
 // Users
+//------------------------------------------------------------------
 
-@import 'Utilities/Emmanuel';
-// @import 'Utilities/JD';
+@import 'Base/Emmanuel';
+// @import 'Base/JD';
+
 
 //------------------------------------------------------------------
-//UnOrdered
+// Blocks -- Requirements: quicksilver-styles.scss
+//------------------------------------------------------------------
+
+@import './../../../quickblocks/scss/*';
+
+@if (variable-exists(core)) {
+	@include AccordionBlock;
+	@include ColumnBlock;
+	@include DownloadBlock;
+	@include GalleryBlock;
+	@include HeroBlock;
+	@include ImageBlock;
+	@include LinkBlock;
+	@include NewsBlock;
+	@include PercentageBlock;
+	@include SliderBlock;
+	@include SplitBlock;
+	@include TabBlock;
+	@include TestimonialBlock;
+	@include VideoBlock;
+}
+
+
+//------------------------------------------------------------------
+// Elements
+//------------------------------------------------------------------
 
 @import 'Elements/*';
 @import 'Pages/*';
-@import 'Blocks/*';
-

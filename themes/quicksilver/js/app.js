@@ -1,7 +1,11 @@
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
+
+// import './../../../core/scss/style.scss';
 import './../scss/style.scss';
+// import './../../../quickblocks/scss/style.scss';
+
 
 /*------------------------------------------------------------------
 Versioning & Debug Information
@@ -17,7 +21,9 @@ if (debug) console.log('%cQUICKSILVER 4', 'padding:5px 5px;font-size:50px;color:
 const loadContent = require('./functions/loadContent');
 const selectAll = require('./functions/selectAll');
 
-import './components/accordions';
+// import './components/breakpoints';
+import './components/forms';
+import './components/modals';
 import Slider from'./components/sliders';
 
 const sliders = [];
@@ -31,16 +37,21 @@ Object.keys(sliderSettings).map((selector) => {
 	selectAll(selector).forEach((el) => sliders.push(new Slider(el, sliderSettings[selector])));
 });
 
+import Accordion from './components/accordion';
 import Tabs from './components/tabs';
 import Parallax from './components/parallax';
 import Equalizer from './components/equalizer';
 import VideoEmbed from './components/videoEmbed';
+// import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
+import Breakpoint from './components/breakpoints';
 
+selectAll('.js-accordion').forEach((group) => new Accordion(group));
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
 // selectAll('.js-gallery').forEach((group) => new Gallery(group, sliders));
 selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
 selectAll('[data-parallax]').forEach((group) => new Parallax(group));
+selectAll('[data-breakpoint]').forEach((group) => new Breakpoint(group));
 
 selectAll('[data-video]').forEach((el) => {
 	el.addEventListener('click', (e) => {
@@ -48,6 +59,8 @@ selectAll('[data-video]').forEach((el) => {
 		el.insertAdjacentHTML('beforeend', new VideoEmbed(el.dataset.video, { autoplay: 1 }).render());
 	})
 });
+
+// new SmoothScroll(document.querySelector('[data-smooth-scroll]'));
 
 selectAll('.js-sliderGallery').forEach((group) => {
 	const gallery = {};

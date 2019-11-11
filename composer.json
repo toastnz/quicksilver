@@ -1,7 +1,8 @@
 {
+    "name": "toastnz/quicksilver",
+    "description": "Quicksilver site skeleton",
     "require": {
         "silverstripe/recipe-cms": "^4.4.4",
-        "silverstripe/userforms": "^5.4",
         "silverstripe/blog": "^3.4",
         "silverstripe/taxonomy": "^2.0",
         "undefinedoffset/silverstripe-nocaptcha": "^2.0",
@@ -23,8 +24,12 @@
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
-        "toastnz/quickblocks": "dev-feature/quicksilver#206d3a83495256447e1d5cb892aa374df1e6b84e",
-        "permanentinc/beautiful": "^0.3.0"
+        "toastnz/quickblocks": "dev-feature/quicksilver#f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
+        "toastnz/quicksilver-styles": "dev-master",
+        "permanentinc/type": "dev-master",
+        "silverstripe/userforms": "^5.4",
+        "permanentinc/beautiful": "^0.3.0",
+        "permanentinc/found": "dev-master"
     },
     "extra": {
         "project-files-installed": [

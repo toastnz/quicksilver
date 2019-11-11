@@ -13,10 +13,6 @@ SilverStripe\ErrorPage\ErrorPage:
   extensions:
     - Toast\Extensions\ErrorPageExtension
 
-SilverStripe\UserForms\Model\UserDefinedForm:
-  extensions:
-    - Toast\Extensions\UserDefinedFormExtension
-
 # QuickBlocks
 Page:
   extensions:

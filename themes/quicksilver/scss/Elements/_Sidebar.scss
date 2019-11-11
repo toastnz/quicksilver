@@ -38,11 +38,17 @@
       &__item {
         margin-bottom: 0;
 
-        &__link {
+        &__link,
+        &__children {
           @include font(700);
           display: block;
-          padding: 1rem 2rem;
           box-shadow: inset .4rem 0 0 0 rgba($primary, .2);
+        }
+
+        &__link {
+          color: $primary;
+          padding: 1rem 2rem;
+          margin-bottom: 0;
           @include transition((box-shadow, background-color));
 
           &.current {
@@ -54,6 +60,30 @@
           &:not(.current) {
             @include active {
               box-shadow: inset .4rem 0 0 0 $primary;
+            }
+          }
+        }
+
+        .current {
+          + .children {
+            background-color: rgba($primary, .05);
+            // box-shadow: inset .4rem 0 0 0 $primary;
+            &:not(.current) {
+              @include active {
+                box-shadow: inset .4rem 0 0 0 $primary;
+              }
+            }
+          }
+        }
+
+        &__children {
+          padding: 0 2rem 1rem 3rem;
+
+          &__item {
+            margin-bottom: 0;
+
+            &__link {
+              font-size: 1.4rem;
             }
           }
         }

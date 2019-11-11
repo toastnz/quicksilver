@@ -1,0 +1,44 @@
+//------------------------------------------------------------------
+// Theme Colours
+
+$success-colour: #65b922;
+$warning-colour: #ffd33a;
+$error-colour: #e44e4e;
+
+$white: #fff;
+$off-white: #f9f9f9;
+$grey-light: #ebebeb;
+$black: #000;
+$black-light: #434343;
+
+$text: $black-light;
+$text-light: #6d6e6a;
+
+$green: #00ff02;
+$red: red;
+
+$primary: #008bd1;
+$secondary: #0f1b25;
+$tertiary: #0c2d47;
+
+$colour-map: (
+  'white': $white,
+  'off-white': $off-white,
+  'black': $black,
+  'primary': $primary,
+  'secondary': $secondary,
+  'tertiary': $tertiary,
+);
+
+//------------------------------------------------------------------
+// Theme Fonts
+
+@import url('https://fonts.googleapis.com/css?family=Muli:400,400i,700,700i&display=swap');
+
+$font-primary: 'Muli', sans-serif;
+
+
+//------------------------------------------------------------------
+// Global Variables
+
+$logoDimentions: 202,48;
