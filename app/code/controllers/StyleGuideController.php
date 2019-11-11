@@ -52,11 +52,26 @@ class StyleGuideController extends Controller
 
     public function fauxTestimonialBlock()
     {
-        $arrayData = new ArrayData([
-            'Testimonial' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
-            'Attribution' => 'First name, Last Name',
-            'Location'    => 'Location'
+        $accordionItems = new ArrayList([
+            new ArrayData([
+                'Testimonial' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
+                'Attribution' => 'First name, Last Name',
+            ]),
+            new ArrayData([
+                'Testimonial' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
+                'Attribution' => 'First name, Last Name',
+            ]),
+            new ArrayData([
+                'Testimonial' => 'Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.',
+                'Attribution' => 'First name, Last Name',
+            ]),
         ]);
+
+        $arrayData = new ArrayData([
+            'Testimonials' => $accordionItems
+        ]);
+
+
         return $arrayData->renderWith('Toast\QuickBlocks\TestimonialBlock');
     }
 
@@ -64,7 +79,7 @@ class StyleGuideController extends Controller
     {
         $arrayData = new ArrayData([
             'VideoType' => 'youtube',
-            'VideoID'   => 'ScMzIvxBSi4',
+            'Video'     => 'ScMzIvxBSi4',
             'Caption'   => 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ipsum dolor sit amet.',
             'Thumbnail' => Image::find('styleguide_placeholder.jpg')
         ]);
@@ -85,21 +100,21 @@ class StyleGuideController extends Controller
 
         $accordionItems = new ArrayList([
             new ArrayData([
-                'DisplayTitle' => 'Accordion Heading 1',
+                'Heading' => 'Accordion Heading 1',
                 'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
             new ArrayData([
-                'DisplayTitle' => 'Accordion Heading 2',
+                'Heading' => 'Accordion Heading 2',
                 'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
             new ArrayData([
-                'DisplayTitle' => 'Accordion Heading 3',
+                'Heading' => 'Accordion Heading 3',
                 'Content'      => DBField::create_field(DBHTMLText::class, '<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>')
             ]),
         ]);
 
         $arrayData = new ArrayData([
-            'Children' => $accordionItems
+            'Items' => $accordionItems
         ]);
 
         return $arrayData->renderWith('Toast\QuickBlocks\AccordionBlock');
@@ -121,7 +136,7 @@ class StyleGuideController extends Controller
             Image::find('styleguide_placeholder.jpg'),
         ]);
         $arrayData = new ArrayData([
-            'Files' => $files
+            'Items' => $files
         ]);
         return $arrayData->renderWith('Toast\QuickBlocks\DownloadBlock');
     }
