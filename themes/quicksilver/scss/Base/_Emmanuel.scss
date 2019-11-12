@@ -64,6 +64,22 @@ $colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 @include ListStyles;
 @include TableStyles;
 @include BlockquoteStyles;
-@include Buttons;
+@include ButtonStyles {
+	display: inline-block;
+	margin: 0 1rem 1rem 0;
+	padding: 1rem 2rem 1rem;
+	border-radius: 0;
+	cursor: pointer;
+	outline: none;
+	font-size: 2rem;
+	white-space: nowrap;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-width: .2rem;
+	border-style: solid;
+	@include transition((color, border-color, background-color));
+}
+@include ButtonClasses;
 @include FormStyles;
 @include SpacingStyles;
