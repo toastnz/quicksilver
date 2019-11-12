@@ -35,6 +35,6 @@
       </noscript>
     <% end_if %>
 
-    <% require javascript("themes/quicksilver/dist/scripts/app.js") %>
+    <% require javascript("themes/quicksilver/dist/scripts/main.js") %>
   </body>
 </html>

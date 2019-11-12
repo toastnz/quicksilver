@@ -2,6 +2,8 @@
 
 namespace Toast\Extensions;
 
+use Sheadawson\Linkable\Forms\LinkField;
+use Sheadawson\Linkable\Models\Link;
 use SilverStripe\Forms\FieldList;
 use SilverStripe\Forms\TabSet;
 use SilverStripe\Forms\TextareaField;
@@ -41,7 +43,7 @@ class SiteConfigExtension extends DataExtension
         'GoogleTrackingID'        => 'Varchar(100)',
         'GoogleTagManagerID'      => 'Varchar(100)',
         'BHProjectKey'            => 'Varchar(100)',
-        'EnableBugherd'           => 'Boolean'
+        'EnableBugherd'           => 'Boolean',
     ];
 
     /**
@@ -49,6 +51,10 @@ class SiteConfigExtension extends DataExtension
      */
     public static $defaults = [
         'MailChimpSuccessMessage' => 'Your subscription has been received, you will be sent a confirmation email shortly.'
+    ];
+
+    private static $has_one = [
+        'TollFreeNumber' => Link::class
     ];
 
     private static $many_many = [
@@ -86,6 +92,7 @@ class SiteConfigExtension extends DataExtension
         $fields->addFieldsToTab('Root.Settings.Details', [
             HeaderField::create('DetailsHeader', 'Company Details'),
             TextField::create('Phone', 'Phone Number'),
+            LinkField::create('TollFreeNumberID', 'Toll Free Number'),
             TextField::create('Email', 'Public Email Address')
                 ->addExtraClass('inputWrap--half inputWrap--half--last'),
             $address,

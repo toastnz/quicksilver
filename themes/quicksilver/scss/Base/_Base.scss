@@ -17,8 +17,10 @@ $text-light: #6d6e6a;
 $green: #00ff02;
 $red: red;
 
-$primary: #008bd1;
-$secondary: #0f1b25;
+$primary: #008bd1 !default;
+$primary: var(--primary-colour);
+$secondary: #0f1b25 !default;
+$secondary: var(--secondary-colour);
 $tertiary: #0c2d47;
 
 $colour-map: (
@@ -27,7 +29,7 @@ $colour-map: (
   'black': $black,
   'primary': $primary,
   'secondary': $secondary,
-  'tertiary': $tertiary,
+  'tertiary': $tertiary
 );
 
 //------------------------------------------------------------------
@@ -37,8 +39,7 @@ $colour-map: (
 
 $font-primary: 'Muli', sans-serif;
 
-
 //------------------------------------------------------------------
 // Global Variables
 
-$logoDimentions: 202,48;
+$logoDimentions: 202, 48;

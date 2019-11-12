@@ -1,5 +1,5 @@
 function loadContent(options) {
-    const  httpRequest = new XMLHttpRequest();
+	const httpRequest = new XMLHttpRequest();
 	const settings = Object.assign({
 		url: '/',
 		method: 'GET',
@@ -15,8 +15,8 @@ function loadContent(options) {
 	httpRequest.addEventListener("load", settings.load);
 	httpRequest.addEventListener("error", settings.error);
 
-    httpRequest.open(settings.method, settings.url);
-    httpRequest.send(data);
+	httpRequest.open(settings.method, settings.url);
+	httpRequest.send(data);
 }
 
 module.exports = loadContent;
