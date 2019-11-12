@@ -16,7 +16,7 @@
                         <% include Toast\Includes\SocialIcons %>
                     </ul>
                     <div class="header__wrap__inner__actions__button headerAction">
-                        <a href="#" class="button button--bordered--primary">0800 SHADES</a>
+                        <a href="#" class="button button--bordered--primary">0800 123456</a>
                     </div>
                 </div>
                 <button id="hamburger" data-modal-toggle="mobile-nav" role="button" aria-label="open site navigation" title="open site navigation">

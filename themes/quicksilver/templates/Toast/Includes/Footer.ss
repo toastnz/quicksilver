@@ -17,10 +17,8 @@
 			<div class="footer__wrap__content content logo" data-equalize-watch>
 				<div class="footer__wrap__content__details">
 
-					<h6 class="footer__wrap__content__details__phone"><a href="#">0800 SHADES | <span class="colour--primary">0800 742 337</span></a></h6>
+					<h6 class="footer__wrap__content__details__phone"><a href="#">0800 123456 | <span class="colour--primary">0800 123456</span></a></h6>
 
-					<%-- Content WYSIWYG --%>
-					<p><b>Call now for FREE no obligation design, measure and quote.</b></p>
 				</div>
 				<div class="logoWrap">
 					$SVG('logo')
