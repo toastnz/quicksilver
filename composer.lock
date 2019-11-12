@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d626e037951d32c9d15f06ac6f7beec3",
+    "content-hash": "185614d59eecf5121629b93fc176eb00",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -1935,12 +1935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/type.git",
-                "reference": "22eaeb24ac8a4332e0ace7050ff2b57157b467a9"
+                "reference": "ec6f57589137795e29ca89aa1ccadf59c04141b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/type/zipball/22eaeb24ac8a4332e0ace7050ff2b57157b467a9",
-                "reference": "22eaeb24ac8a4332e0ace7050ff2b57157b467a9",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/ec6f57589137795e29ca89aa1ccadf59c04141b3",
+                "reference": "ec6f57589137795e29ca89aa1ccadf59c04141b3",
                 "shasum": ""
             },
             "require": {
@@ -1977,7 +1977,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-11-10T20:34:04+00:00"
+            "time": "2019-11-12T02:35:08+00:00"
         },
         {
             "name": "psr/cache",
@@ -4694,12 +4694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "78ec27c1e0ef06ba5020bc6482f60caae4ce8392"
+                "reference": "33bf9a8cdb3bd7ef60c21426a689bd304a062cda"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/78ec27c1e0ef06ba5020bc6482f60caae4ce8392",
-                "reference": "78ec27c1e0ef06ba5020bc6482f60caae4ce8392",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/33bf9a8cdb3bd7ef60c21426a689bd304a062cda",
+                "reference": "33bf9a8cdb3bd7ef60c21426a689bd304a062cda",
                 "shasum": ""
             },
             "require": {
@@ -4739,7 +4739,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-12T00:11:34+00:00"
+            "time": "2019-11-12T22:06:56+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4747,12 +4747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d"
+                "reference": "315a3adda9229db59a59dd9266735bfd0e644071"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/3836baae370c811694f2a3c358846e8fb8a0a25d",
-                "reference": "3836baae370c811694f2a3c358846e8fb8a0a25d",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/315a3adda9229db59a59dd9266735bfd0e644071",
+                "reference": "315a3adda9229db59a59dd9266735bfd0e644071",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4777,7 +4777,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-11T19:05:42+00:00"
+            "time": "2019-11-12T21:33:24+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
