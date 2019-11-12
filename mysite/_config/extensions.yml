@@ -1,0 +1,15 @@
+---
+Name: myextensions
+---
+SilverStripe\SiteConfig\SiteConfig:
+  extensions:
+    - Toast\Extensions\SiteConfigExtension
+
+SilverStripe\Control\Controller:
+  extensions:
+    - Toast\Extensions\ControllerExtension
+
+Heyday\MenuManager\MenuSet:
+  default_sets:
+    - Main
+    - Footer
