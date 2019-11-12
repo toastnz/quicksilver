@@ -24,7 +24,7 @@
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
-        "toastnz/quickblocks": "dev-feature/quicksilver#f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
+        "toastnz/quickblocks": "dev-feature/quicksilver#78ec27c1e0ef06ba5020bc6482f60caae4ce8392",
         "toastnz/quicksilver-styles": "dev-master",
         "permanentinc/type": "dev-master",
         "silverstripe/userforms": "^5.4",
