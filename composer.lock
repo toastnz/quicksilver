@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2848840ce63f9ff1e7c8475e6cb3e2c",
+    "content-hash": "d626e037951d32c9d15f06ac6f7beec3",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -136,6 +136,48 @@
                 "silverstripe"
             ],
             "time": "2018-08-11T10:50:53+00:00"
+        },
+        {
+            "name": "axllent/silverstripe-trailing-slash",
+            "version": "2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/axllent/silverstripe-trailing-slash.git",
+                "reference": "9be9350c4f634d6f41c68c1ec315dc80260948b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/axllent/silverstripe-trailing-slash/zipball/9be9350c4f634d6f41c68c1ec315dc80260948b0",
+                "reference": "9be9350c4f634d6f41c68c1ec315dc80260948b0",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "Axllent\\TrailingSlash\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ralph Slooten",
+                    "homepage": "http://www.axllent.org/"
+                }
+            ],
+            "description": "Ensure that a single trailing slash is always added to the URL",
+            "homepage": "https://github.com/axllent/silverstripe-trailing-slash",
+            "keywords": [
+                "seo",
+                "silverstripe",
+                "urls"
+            ],
+            "time": "2019-02-07T04:27:11+00:00"
         },
         {
             "name": "betterbrief/silverstripe-googlemapfield",
@@ -1114,6 +1156,145 @@
             "time": "2019-07-01T22:51:15+00:00"
         },
         {
+            "name": "jonom/silverstripe-share-care",
+            "version": "v3.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-share-care.git",
+                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-share-care/zipball/f0df5e7af6c52077ed059a9e7d8179c1457f216b",
+                "reference": "f0df5e7af6c52077ed059a9e7d8179c1457f216b",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "*",
+                "silverstripe/framework": "^4.0",
+                "tractorcow/silverstripe-opengraph": "^4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "autoload": {
+                "psr-4": {
+                    "JonoM\\ShareCare\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Social media sharing previews and customisation for SilverStripe",
+            "keywords": [
+                "facebook",
+                "open graph",
+                "opengraph",
+                "share",
+                "silverstripe",
+                "social media"
+            ],
+            "time": "2019-05-07T16:24:01+00:00"
+        },
+        {
+            "name": "jonom/silverstripe-text-target-length",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jonom/silverstripe-text-target-length.git",
+                "reference": "8710bb4954dfaa420837ebea1eb7c42aef31e214"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jonom/silverstripe-text-target-length/zipball/8710bb4954dfaa420837ebea1eb7c42aef31e214",
+                "reference": "8710bb4954dfaa420837ebea1eb7c42aef31e214",
+                "shasum": ""
+            },
+            "require": {
+                "silverstripe/framework": "^4.0"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "expose": [
+                    "client"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "JonoM\\SilverStripeTextTargetLength\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Jonathon Menz",
+                    "homepage": "http://jonathonmenz.com"
+                }
+            ],
+            "description": "Set character length recommendations on SilverStripe text form fields",
+            "keywords": [
+                "silverstripe",
+                "target",
+                "textareafield",
+                "textfield"
+            ],
+            "time": "2018-05-28T17:57:48+00:00"
+        },
+        {
+            "name": "kub-at/php-simple-html-dom-parser",
+            "version": "1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Kub-AT/php-simple-html-dom-parser.git",
+                "reference": "ff22f98bfd9235115c128059076f3eb740d66913"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Kub-AT/php-simple-html-dom-parser/zipball/ff22f98bfd9235115c128059076f3eb740d66913",
+                "reference": "ff22f98bfd9235115c128059076f3eb740d66913",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "KubAT\\PhpSimple\\HtmlDomParser": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "S.C. Chen",
+                    "email": "me578022@gmail.com"
+                },
+                {
+                    "name": "Jakub Stawowy",
+                    "email": "Kub-AT@users.noreply.github.com"
+                }
+            ],
+            "description": "PHP Simple HTML DOM Parser with namespace and PHP 7.3 compatible",
+            "homepage": "http://simplehtmldom.sourceforge.net/",
+            "keywords": [
+                "Simple",
+                "dom",
+                "html"
+            ],
+            "time": "2019-10-25T12:34:43+00:00"
+        },
+        {
             "name": "league/csv",
             "version": "8.2.3",
             "source": {
@@ -2037,6 +2218,80 @@
                 "simple-cache"
             ],
             "time": "2017-10-23T01:57:42+00:00"
+        },
+        {
+            "name": "quinninteractive/silverstripe-seo",
+            "version": "1.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Quinn-Interactive/silverstripe-seo.git",
+                "reference": "5b960c0baee4f3353f49c46a42284608cca0ee30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Quinn-Interactive/silverstripe-seo/zipball/5b960c0baee4f3353f49c46a42284608cca0ee30",
+                "reference": "5b960c0baee4f3353f49c46a42284608cca0ee30",
+                "shasum": ""
+            },
+            "require": {
+                "axllent/silverstripe-trailing-slash": "^2.1",
+                "jonom/silverstripe-text-target-length": "^2",
+                "kub-at/php-simple-html-dom-parser": "^1.7",
+                "silverstripe/cms": "^4.1",
+                "wilr/silverstripe-googlesitemaps": "^2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "3.*"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                },
+                "expose": [
+                    "dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Vulcan\\Seo\\": "src/",
+                    "Vulcan\\Seo\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Reece Alexander",
+                    "homepage": "https://vulcandigital.co.nz",
+                    "role": "author"
+                },
+                {
+                    "name": "Fred Condo",
+                    "homepage": "https://quinn.com",
+                    "role": "maintainer"
+                },
+                {
+                    "name": "Phil Quinn",
+                    "homepage": "https://quinn.com",
+                    "role": "maintainer"
+                }
+            ],
+            "description": "An all-in-one SEO module for SilverStripe",
+            "keywords": [
+                "facebook",
+                "opengraph",
+                "optimisation",
+                "optimization",
+                "search",
+                "seo",
+                "silverstripe",
+                "twitter"
+            ],
+            "time": "2019-09-19T22:46:38+00:00"
         },
         {
             "name": "ralouphie/getallheaders",
@@ -4439,21 +4694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-<<<<<<< HEAD
-                "reference": "206d3a83495256447e1d5cb892aa374df1e6b84e"
+                "reference": "78ec27c1e0ef06ba5020bc6482f60caae4ce8392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/206d3a83495256447e1d5cb892aa374df1e6b84e",
-                "reference": "206d3a83495256447e1d5cb892aa374df1e6b84e",
-=======
-                "reference": "f5ca460e03289cc41dc13ddd06da1dddb1afe6a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
-                "reference": "f5ca460e03289cc41dc13ddd06da1dddb1afe6a1",
->>>>>>> b766387de111a2891209c9b7439af5ea9360e58c
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/78ec27c1e0ef06ba5020bc6482f60caae4ce8392",
+                "reference": "78ec27c1e0ef06ba5020bc6482f60caae4ce8392",
                 "shasum": ""
             },
             "require": {
@@ -4493,11 +4739,7 @@
                 "modular",
                 "silverstripe"
             ],
-<<<<<<< HEAD
-            "time": "2019-11-04T04:31:42+00:00"
-=======
-            "time": "2019-11-11T20:15:12+00:00"
->>>>>>> b766387de111a2891209c9b7439af5ea9360e58c
+            "time": "2019-11-12T00:11:34+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4582,6 +4824,62 @@
                 "you tube"
             ],
             "time": "2018-11-15T17:11:17+00:00"
+        },
+        {
+            "name": "tractorcow/silverstripe-opengraph",
+            "version": "4.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tractorcow/silverstripe-opengraph.git",
+                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tractorcow/silverstripe-opengraph/zipball/f701656dc3d2b71528d069237e89e87c2df3d375",
+                "reference": "f701656dc3d2b71528d069237e89e87c2df3d375",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "*",
+                "silverstripe/recipe-core": "^1 || ^4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "silverstripe/recipe-cms": "^1 || ^4"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "installer-name": "opengraph",
+                "branch-alias": {
+                    "dev-master": "4.x-dev"
+                },
+                "expose": [
+                    "images"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "TractorCow\\OpenGraph\\": "src/",
+                    "TractorCow\\OpenGraph\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian.mooyman@gmail.com"
+                }
+            ],
+            "description": "Implementation of the Facebook Open Graph protocol for SilverStripe",
+            "keywords": [
+                "facebook",
+                "opengraph",
+                "silverstripe"
+            ],
+            "time": "2018-07-25T03:07:22+00:00"
         },
         {
             "name": "unclecheese/display-logic",
