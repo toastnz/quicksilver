@@ -11,11 +11,11 @@ i18n::set_locale('en_US');
 
 Requirements::set_force_js_to_bottom(true);
 
-// try {
-//     FulltextSearchable::enable([SiteTree::class]);
-// } catch (Exception $e) {
-//     user_error($e->getMessage(), E_USER_NOTICE);
-// }
+try {
+    FulltextSearchable::enable([SiteTree::class]);
+} catch (Exception $e) {
+    user_error($e->getMessage(), E_USER_NOTICE);
+}
 
 CMSMenu::remove_menu_item('SilverStripe-CampaignAdmin-CampaignAdmin');
 

@@ -30,6 +30,14 @@ SilverStripe\Forms\HTMLEditor\TinyMCEConfig:
   editor_css:
     - 'app/dist/styles/editor.css'
 
+SilverStripe\Assets\File:
+  allowed_extensions:
+    - svg
+
+Heyday\MenuManager\MenuSet:
+  default_sets:
+    - Main
+    - Footer
 ---
 Only:
   environment: dev

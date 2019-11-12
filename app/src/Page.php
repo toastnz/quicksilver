@@ -1,5 +1,7 @@
 <?php
 
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\CMS\Controllers\ContentController;
@@ -14,10 +16,16 @@ class Page extends SiteTree
 {
     private static $db = [];
 
-    private static $has_one = [];
+    private static $has_one = [
+        'Thumbnail' => Image::class
+    ];
 
     private static $has_many = [
-        'BannerImages' => BannerSliderImage::class
+        'BannerImages' => BannerSliderImage::class,
+    ];
+
+    private static $owns = [
+        'Thumbnail'
     ];
 
     public function getCMSFields()
@@ -38,6 +46,10 @@ class Page extends SiteTree
 
         $fields->addFieldsToTab('Root.Banner', [
             $imagesGridField
+        ]);
+        $fields->addFieldsToTab('Root.Share', [
+            UploadField::create('Thumbnail', 'Thumbnail')
+                ->setFolderName('Uploads/banners/images')
         ]);
 
         return $fields;
