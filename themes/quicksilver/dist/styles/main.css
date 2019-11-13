@@ -399,13 +399,21 @@ hr {
               border-radius: 1rem; } }
         .login__wrap__content__form [type="submit"] {
           width: 100%;
+          overflow: hidden;
           color: #fff;
           border-color: #fff;
-          background-color: transparent; }
+          background-color: transparent !important; }
+          .login__wrap__content__form [type="submit"]:before {
+            background-color: #fff;
+            background-color: transparent;
+            -webkit-transition: background-color 0.2s ease;
+            -o-transition: background-color 0.2s ease;
+            transition: background-color 0.2s ease; }
           .login__wrap__content__form [type="submit"]:hover, .login__wrap__content__form [type="submit"]:active, .login__wrap__content__form [type="submit"]:focus {
             color: #000;
-            border-color: #fff;
-            background-color: #fff; }
+            border-color: #fff; }
+            .login__wrap__content__form [type="submit"]:hover:before, .login__wrap__content__form [type="submit"]:active:before, .login__wrap__content__form [type="submit"]:focus:before {
+              background-color: #fff; }
         .login__wrap__content__form [type="checkbox"] + label:before {
           border-color: #fff; }
         .login__wrap__content__form [type="checkbox"] + label:after {
@@ -904,6 +912,7 @@ button {
   margin: 0;
   outline: 0;
   cursor: pointer;
+  overflow: hidden;
   background-color: transparent; }
 
 .button,
@@ -930,11 +939,21 @@ button {
   color: #fff;
   border-color: var(--primary-colour);
   background-color: var(--primary-colour); }
-  .button:hover, .button:focus,
+  .button:hover, .button:active, .button:focus,
   [type="submit"]:hover,
+  [type="submit"]:active,
   [type="submit"]:focus {
-    background-color: transparent;
-    color: var(--primary-colour); }
+    color: var(--primary-colour);
+    background-color: transparent; }
+
+.button.button--bordered--white:before, .button.button--bordered--off-white:before, .button.button--bordered--black:before, .button.button--bordered--primary:before, .button.button--bordered--secondary:before, .button.button--bordered--tertiary:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%; }
 
 .button.button--white {
   color: #000;
@@ -946,13 +965,28 @@ button {
     border-color: #fff; }
 
 .button.button--bordered--white {
+  position: relative;
+  overflow: hidden;
   color: #fff;
   border-color: #fff;
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--white:before {
+    background-color: #fff;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--white:hover, .button.button--bordered--white:active, .button.button--bordered--white:focus {
     color: #000;
-    border-color: #fff;
-    background-color: #fff; }
+    border-color: #fff; }
+    .button.button--bordered--white:hover:before, .button.button--bordered--white:active:before, .button.button--bordered--white:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 .button.button--off-white {
   color: #fff;
@@ -964,13 +998,28 @@ button {
     border-color: #f9f9f9; }
 
 .button.button--bordered--off-white {
+  position: relative;
+  overflow: hidden;
   color: #f9f9f9;
   border-color: #f9f9f9;
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--off-white:before {
+    background-color: #f9f9f9;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--off-white:hover, .button.button--bordered--off-white:active, .button.button--bordered--off-white:focus {
     color: #fff;
-    border-color: #f9f9f9;
-    background-color: #f9f9f9; }
+    border-color: #f9f9f9; }
+    .button.button--bordered--off-white:hover:before, .button.button--bordered--off-white:active:before, .button.button--bordered--off-white:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 .button.button--black {
   color: #fff;
@@ -982,13 +1031,28 @@ button {
     border-color: #000; }
 
 .button.button--bordered--black {
+  position: relative;
+  overflow: hidden;
   color: #000;
   border-color: #000;
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--black:before {
+    background-color: #000;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--black:hover, .button.button--bordered--black:active, .button.button--bordered--black:focus {
     color: #fff;
-    border-color: #000;
-    background-color: #000; }
+    border-color: #000; }
+    .button.button--bordered--black:hover:before, .button.button--bordered--black:active:before, .button.button--bordered--black:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 .button.button--primary {
   color: #fff;
@@ -1000,13 +1064,28 @@ button {
     border-color: var(--primary-colour); }
 
 .button.button--bordered--primary {
+  position: relative;
+  overflow: hidden;
   color: var(--primary-colour);
   border-color: var(--primary-colour);
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--primary:before {
+    background-color: var(--primary-colour);
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--primary:hover, .button.button--bordered--primary:active, .button.button--bordered--primary:focus {
     color: #fff;
-    border-color: var(--primary-colour);
-    background-color: var(--primary-colour); }
+    border-color: var(--primary-colour); }
+    .button.button--bordered--primary:hover:before, .button.button--bordered--primary:active:before, .button.button--bordered--primary:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 .button.button--secondary {
   color: #fff;
@@ -1018,13 +1097,28 @@ button {
     border-color: var(--secondary-colour); }
 
 .button.button--bordered--secondary {
+  position: relative;
+  overflow: hidden;
   color: var(--secondary-colour);
   border-color: var(--secondary-colour);
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--secondary:before {
+    background-color: var(--secondary-colour);
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--secondary:hover, .button.button--bordered--secondary:active, .button.button--bordered--secondary:focus {
     color: #fff;
-    border-color: var(--secondary-colour);
-    background-color: var(--secondary-colour); }
+    border-color: var(--secondary-colour); }
+    .button.button--bordered--secondary:hover:before, .button.button--bordered--secondary:active:before, .button.button--bordered--secondary:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 .button.button--tertiary {
   color: #fff;
@@ -1036,13 +1130,28 @@ button {
     border-color: #0c2d47; }
 
 .button.button--bordered--tertiary {
+  position: relative;
+  overflow: hidden;
   color: #0c2d47;
   border-color: #0c2d47;
-  background-color: transparent; }
+  background-color: transparent !important; }
+  .button.button--bordered--tertiary:before {
+    background-color: #0c2d47;
+    -webkit-transition: -webkit-transform 0.2s ease;
+    transition: -webkit-transform 0.2s ease;
+    -o-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, -webkit-transform 0.2s ease;
+    -webkit-transform: translate(-100%, 0%);
+        -ms-transform: translate(-100%, 0%);
+            transform: translate(-100%, 0%); }
   .button.button--bordered--tertiary:hover, .button.button--bordered--tertiary:active, .button.button--bordered--tertiary:focus {
     color: #fff;
-    border-color: #0c2d47;
-    background-color: #0c2d47; }
+    border-color: #0c2d47; }
+    .button.button--bordered--tertiary:hover:before, .button.button--bordered--tertiary:active:before, .button.button--bordered--tertiary:focus:before {
+      -webkit-transform: translate(0%, 0%);
+          -ms-transform: translate(0%, 0%);
+              transform: translate(0%, 0%); }
 
 form {
   display: block;
