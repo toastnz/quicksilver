@@ -13,6 +13,10 @@ SilverStripe\ErrorPage\ErrorPage:
   extensions:
     - Toast\Extensions\ErrorPageExtension
 
+SilverStripe\CMS\Model\SiteTree:
+  extensions:
+    - Toast\Extensions\SiteTreeExtension
+
 # QuickBlocks
 Page:
   extensions:

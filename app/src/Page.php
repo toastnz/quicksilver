@@ -31,7 +31,7 @@ class Page extends SiteTree
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
-        $fields->removeByName(["Content"]);
+        //$fields->removeByName(["Content"]);
         // Banner Slider Images
         $config = GridFieldConfig_RelationEditor::create(10);
         $config->addComponent(GridFieldOrderableRows::create('SortOrder'))
