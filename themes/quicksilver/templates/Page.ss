@@ -15,7 +15,7 @@
     Type Wrapper
     ------------------------------------------------------------------%>
 
-    <%-- <div id="type"> --%>
+    <div id="type">
       <div class="body">
         <% include Toast\Header %>
         <% include Toast\Banner %>
@@ -26,7 +26,7 @@
 
         <% include Toast\Footer %>
       </div>
-    <%-- </div> --%>
+    </div>
 
 
     <% if $SiteConfig.GoogleTagManagerID %>
