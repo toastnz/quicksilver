@@ -3,7 +3,7 @@
     <div class="header__wrap row max">
         <div class="header__wrap__inner column alignContent">
             <div class="header__wrap__inner__logo navLogo verticalAlign" data-breakpoint-watch>
-                <a href="{$BaseURL}" class="header__wrap__inner__logo__link">$SVG('logo')</a>
+                <a href="{$BaseURL}" class="header__wrap__inner__logo__link"><% with $SiteConfig %><img src="$Logo.URL" alt="$Logo.ALT"/><% end_with %></a>
             </div>
             <nav class="header__wrap__inner__nav navLinks mainNav verticalAlign" data-breakpoint-watch>
                 <div class="headerNav">

@@ -47,10 +47,47 @@
         background-color: rgba($white, .1);
       }
 
+      &__alignment {
+        height: 100%;
+        margin-bottom: $gutterWidth * 2;
 
+        @include media($lg) {
+          margin-bottom: 0;
+        }
+
+        &__details {
+          margin-bottom: 5rem;
+
+          &__phone {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 3rem;
+            line-height: 1.1;
+
+            a {
+              color: $white;
+            }
+
+            span {
+              margin-bottom: 0;
+            }
+          }
+        }
+
+        &__logo {
+          img {
+            display: block;
+            margin: 0;
+            width: 100%;
+            height: auto;
+            max-width: 20rem;
+          }
+        }
+      }
 
       .socialIcons {
         margin-bottom: $gutterWidth * 2;
+
         &__item {
           display: inline-block;
 
@@ -113,25 +150,6 @@
         }
       }
 
-      &__details {
-        margin-bottom: 5rem;
-
-        &__phone {
-          display: block;
-          font-weight: bold;
-          margin-bottom: 3rem;
-          line-height: 1.1;
-
-          a {
-            color: $white;
-          }
-
-          span {
-            margin-bottom: 0;
-          }
-        }
-      }
-
       &__copyright {
         
         @include media($lg) {
@@ -150,35 +168,6 @@
       
       &.social {
         padding-bottom: 2rem;
-      }
-
-      &.logo {
-
-        margin-bottom: $gutterWidth * 2;
-
-        @include media($lg) {
-          padding-bottom: nth($logoDimentions, 2) / nth($logoDimentions, 1) * 100 + 0.0%;
-        }
-
-        .logoWrap {
-          width: 100%;
-          max-width: 20rem;
-
-          @include media($md, max) {
-            margin: 0 auto;
-          }
-
-          @include media($lg) {
-            @include svg($logoDimentions...);
-            position: absolute;
-            top: auto;
-            bottom: 0;
-            left: 0;
-          }
-        }
-
-        // svg {
-        // }
       }
     }
   }

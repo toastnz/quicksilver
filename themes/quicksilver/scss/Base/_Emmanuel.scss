@@ -3,7 +3,7 @@
 //------------------------------------------------------------------
 
 @import './../../../../quicksilver-styles/scss/Emmanuel/Colours';
-@import './../../../../quicksilver-styles/scss/Emmanuel/Fonts';
+// @import './../../../../quicksilver-styles/scss/Emmanuel/Fonts';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Lists';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Tables';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Blockquotes';
@@ -38,8 +38,11 @@ $breakpoint-map: (
 );
 
 // List our styles we want to alter with our ColourClasses
+// 'color', 'background-color', 'border-color', 'fill', 'stroke'
+$colour-styles: 'color';
 
-$colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+// fade, fromLeft, fromRight, fromTop, fromBottom
+$ButtonHoverStyle: 'fromLeft';
 
 //------------------------------------------------------------------
 // Components
@@ -60,10 +63,28 @@ $colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
 
 // Generic Styles
 
-@include FontStyles;
+// @include FontStyles;
 @include ListStyles;
 @include TableStyles;
 @include BlockquoteStyles;
-@include Buttons;
+
+@include ButtonStyles {
+	display: inline-block;
+	margin: 0 1rem 1rem 0;
+	padding: 1rem 2rem 1rem;
+	border-radius: 0;
+	cursor: pointer;
+	outline: none;
+	font-size: 2rem!important;
+	white-space: nowrap;
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-width: .2rem;
+	border-style: solid;
+	@include transition((color, border-color, background-color));
+}
+
+@include ButtonClasses;
 @include FormStyles;
 @include SpacingStyles;
