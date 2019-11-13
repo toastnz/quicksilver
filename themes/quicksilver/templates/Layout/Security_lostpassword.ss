@@ -2,7 +2,7 @@
     <div class="login__wrap verticalAlign">
         <div class="login__wrap__content">
             <div class="login__wrap__content__header">
-                $SVG('logo')
+                <% with $SiteConfig %><img src="$Logo.URL" alt="$Logo.ALT"/><% end_with %>
             </div>
             <div class="login__wrap__content__text">
                 <h5 class="login__wrap__content__text__heading">Lost your password</h5>
