@@ -3,7 +3,7 @@
 //------------------------------------------------------------------
 
 @import './../../../../quicksilver-styles/scss/Emmanuel/Colours';
-@import './../../../../quicksilver-styles/scss/Emmanuel/Fonts';
+// @import './../../../../quicksilver-styles/scss/Emmanuel/Fonts';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Lists';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Tables';
 @import './../../../../quicksilver-styles/scss/Emmanuel/Blockquotes';
@@ -63,7 +63,7 @@ $ButtonHoverStyle: 'fromLeft';
 
 // Generic Styles
 
-@include FontStyles;
+// @include FontStyles;
 @include ListStyles;
 @include TableStyles;
 @include BlockquoteStyles;

@@ -1935,12 +1935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/type.git",
-                "reference": "ec6f57589137795e29ca89aa1ccadf59c04141b3"
+                "reference": "989e4316481bc6c5739855c7c44b75f6a85fc8d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/type/zipball/ec6f57589137795e29ca89aa1ccadf59c04141b3",
-                "reference": "ec6f57589137795e29ca89aa1ccadf59c04141b3",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/989e4316481bc6c5739855c7c44b75f6a85fc8d2",
+                "reference": "989e4316481bc6c5739855c7c44b75f6a85fc8d2",
                 "shasum": ""
             },
             "require": {
@@ -1977,7 +1977,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-11-12T02:35:08+00:00"
+            "time": "2019-11-13T01:36:39+00:00"
         },
         {
             "name": "psr/cache",
@@ -4747,12 +4747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "e2453ad96a1d942f1cd600ccb56a96882a2470ca"
+                "reference": "30fdb1910aab5c4cab83160832dd1701485e6413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/e2453ad96a1d942f1cd600ccb56a96882a2470ca",
-                "reference": "e2453ad96a1d942f1cd600ccb56a96882a2470ca",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/30fdb1910aab5c4cab83160832dd1701485e6413",
+                "reference": "30fdb1910aab5c4cab83160832dd1701485e6413",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4777,7 +4777,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-13T00:40:09+00:00"
+            "time": "2019-11-13T01:28:41+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
