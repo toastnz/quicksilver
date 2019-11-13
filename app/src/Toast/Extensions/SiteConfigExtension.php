@@ -50,7 +50,6 @@ class SiteConfigExtension extends DataExtension
         'GoogleTagManagerID' => 'Varchar(100)',
         'BHProjectKey' => 'Varchar(100)',
         'EnableBugherd' => 'Boolean',
-        'Sidebar'      => 'Boolean',
         'SidebarColor' => DBVarchar::class . '(7)',
     ];
 
@@ -99,7 +98,6 @@ class SiteConfigExtension extends DataExtension
                 ->setFolderName('Uploads/page-images'),
             $address,
             $postalAddress,
-            CheckboxField::create('Sidebar', 'Show Sidebar'),
             ColorField::create('SidebarColor'),
             UploadField::create('Logo', 'Logo')
                 ->setFolderName('Uploads/page-images'),
