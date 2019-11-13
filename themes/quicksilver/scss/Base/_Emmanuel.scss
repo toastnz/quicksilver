@@ -38,8 +38,8 @@ $breakpoint-map: (
 );
 
 // List our styles we want to alter with our ColourClasses
-
-$colour-styles: 'color', 'background-color', 'border-color', 'fill', 'stroke';
+// 'color', 'background-color', 'border-color', 'fill', 'stroke'
+$colour-styles: 'color';
 
 // fade, fromLeft, fromRight, fromTop, fromBottom
 $ButtonHoverStyle: 'fromLeft';

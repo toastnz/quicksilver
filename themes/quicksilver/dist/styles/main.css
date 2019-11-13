@@ -706,92 +706,20 @@ hr {
 .colour--white {
   color: #fff; }
 
-.background-color--white {
-  background-color: #fff; }
-
-.border-color--white {
-  border-color: #fff; }
-
-.fill--white {
-  fill: #fff; }
-
-.stroke--white {
-  stroke: #fff; }
-
 .colour--off-white {
   color: #f9f9f9; }
-
-.background-color--off-white {
-  background-color: #f9f9f9; }
-
-.border-color--off-white {
-  border-color: #f9f9f9; }
-
-.fill--off-white {
-  fill: #f9f9f9; }
-
-.stroke--off-white {
-  stroke: #f9f9f9; }
 
 .colour--black {
   color: #000; }
 
-.background-color--black {
-  background-color: #000; }
-
-.border-color--black {
-  border-color: #000; }
-
-.fill--black {
-  fill: #000; }
-
-.stroke--black {
-  stroke: #000; }
-
 .colour--primary {
   color: var(--primary-colour); }
-
-.background-color--primary {
-  background-color: var(--primary-colour); }
-
-.border-color--primary {
-  border-color: var(--primary-colour); }
-
-.fill--primary {
-  fill: var(--primary-colour); }
-
-.stroke--primary {
-  stroke: var(--primary-colour); }
 
 .colour--secondary {
   color: var(--secondary-colour); }
 
-.background-color--secondary {
-  background-color: var(--secondary-colour); }
-
-.border-color--secondary {
-  border-color: var(--secondary-colour); }
-
-.fill--secondary {
-  fill: var(--secondary-colour); }
-
-.stroke--secondary {
-  stroke: var(--secondary-colour); }
-
 .colour--tertiary {
   color: #0c2d47; }
-
-.background-color--tertiary {
-  background-color: #0c2d47; }
-
-.border-color--tertiary {
-  border-color: #0c2d47; }
-
-.fill--tertiary {
-  fill: #0c2d47; }
-
-.stroke--tertiary {
-  stroke: #0c2d47; }
 
 ul:not(.unstyled),
 ol:not(.unstyled) {

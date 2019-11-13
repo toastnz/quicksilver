@@ -61,6 +61,11 @@ body h6 {
 /* Styles          */
 /*=================*/
 
+.colour--white {
+    color: #ffffff;
+    background-color: #000000;
+}
+
 .colour--primary {
     color: #e75931;
 }
