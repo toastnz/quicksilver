@@ -14,14 +14,22 @@
 			</div>
 		</div>
 		<div class="column lg-3 float-right">
-			<div class="footer__wrap__content content logo" data-equalize-watch>
-				<div class="footer__wrap__content__details">
-
-					<h6 class="footer__wrap__content__details__phone"><a href="#">0800 123456 | <span class="colour--primary">0800 123456</span></a></h6>
-
-				</div>
-				<div class="logoWrap">
-					$SVG('logo')
+			<div class="footer__wrap__content content" data-equalize-watch>
+				<div class="footer__wrap__content__alignment md-up-alignContent">
+					<div class="contentRow">
+						<div class="verticalAlign verticalAlign--top">
+							<div class="footer__wrap__content__alignment__details">
+								<h6 class="footer__wrap__content__alignment__details__phone"><a href="#">0800 123456 | <span class="colour--primary">0800 123456</span></a></h6>
+							</div>
+						</div>
+					</div>
+					<div class="contentRow">
+						<div class="verticalAlign verticalAlign--bottom">
+							<div class="footer__wrap__content__alignment__logo">
+								<% with $SiteConfig %><img src="$Logo.URL" alt="$Logo.ALT"/><% end_with %>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
