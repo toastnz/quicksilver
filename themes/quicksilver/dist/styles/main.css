@@ -1834,6 +1834,9 @@ a {
   color: var(--primary-colour);
   text-decoration: none; }
 
+.contentBlocks :last-child {
+  margin-bottom: 0; }
+
 .breadcrumbs {
   border-bottom: .1rem solid #e4e4e4;
   margin: 0 0 4rem; }

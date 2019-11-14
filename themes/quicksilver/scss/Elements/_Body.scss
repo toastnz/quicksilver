@@ -10,3 +10,9 @@ a {
   color: $primary;
   text-decoration: none;
 }
+
+.contentBlocks {
+  :last-child {
+    margin-bottom: 0;
+  }
+}
