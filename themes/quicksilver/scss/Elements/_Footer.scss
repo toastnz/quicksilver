@@ -86,6 +86,11 @@
 
         .nav {
           margin-bottom: $gutterWidth * 2;
+          
+          .navChildren {
+            display: none;
+          }
+          
           &__item {
 
             @include media($lg) {

@@ -4,9 +4,11 @@
         <div class="header__wrap__inner column alignContent">
             <div class="header__wrap__inner__logo navLogo verticalAlign" data-breakpoint-watch>
                 <a href="{$BaseURL}" class="header__wrap__inner__logo__link">
-                    <% if $DarkLogo %>
-                        <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
-                    <% end_if %>
+                    <% with $SiteConfig %>
+                        <% if $DarkLogo %>
+                            <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                        <% end_if %>
+                    <% end_with %>
                 </a>
             </div>
             <nav class="header__wrap__inner__nav navLinks mainNav verticalAlign" data-breakpoint-watch>

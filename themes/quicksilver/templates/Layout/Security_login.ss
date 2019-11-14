@@ -5,9 +5,11 @@
 			<div class="login__wrap verticalAlign">
 				<div class="login__wrap__content">
 					<div class="login__wrap__content__header">
-						<% if $Light %>
-	                    	<img src="$Light.URL" alt="$Light.ALT"/>
-	                    <% end_if %>
+						<% with $SiteConfig %>
+	                        <% if $LightLogo %>
+	                            <img src="$LightLogo.URL" alt="$LightLogo.ALT"/>
+	                        <% end_if %>
+	                    <% end_with %>
 					</div>
 					<div class="login__wrap__content__text">
 						<h5 class="login__wrap__content__text__heading">Login to your account</h5>
