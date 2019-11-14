@@ -12,6 +12,7 @@ use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use SilverStripe\Forms\HeaderField;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use Toast\Model\BannerSliderImage;
+use Toast\Pages\ContactPage;
 
 class Page extends SiteTree
 {
@@ -75,6 +76,12 @@ class Page extends SiteTree
     public function getIsLive()
     {
         return Director::isLive();
+    }
+
+    public function getContact()
+    {
+
+        return ContactPage::get();
     }
 
     public function getClassNameForTemplate()
