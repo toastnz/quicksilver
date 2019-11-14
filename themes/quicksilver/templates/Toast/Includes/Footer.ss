@@ -19,14 +19,22 @@
 					<div class="contentRow">
 						<div class="verticalAlign verticalAlign--top">
 							<div class="footer__wrap__content__alignment__details">
-								<h6 class="footer__wrap__content__alignment__details__phone"><a href="#">0800 123456 | <span class="colour--primary">0800 123456</span></a></h6>
+                                <% with $SiteConfig %>
+                                <% if $TollFreeNumber %>
+								<h6 class="footer__wrap__content__alignment__details__phone"><a href="$TollFreeNumber.LinkURL">$TollFreeNumber.Title| <span class="colour--primary">$TollFreeNumber.Title</span></a></h6>
+                                <% end_if %>
+                                <% end_with %>
+                                <p><b>{$SiteConfig.FooterContent}</b></p>
 							</div>
 						</div>
 					</div>
 					<div class="contentRow">
 						<div class="verticalAlign verticalAlign--bottom">
 							<div class="footer__wrap__content__alignment__logo">
-								<% with $SiteConfig %><img src="$LightLogo.URL" alt="$LightLogo.ALT"/><% end_with %>
+                                <% with $SiteConfig %>
+                                    <% if $DarkLogo %><% end_if %>
+                                    <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                                <% end_with %>
 							</div>
 						</div>
 					</div>
@@ -59,29 +67,14 @@
 		<div class="column md-6 lg-3">
 			<div class="footer__wrap__content content" data-equalize-watch>
 				<h6 class="footer__wrap__content__heading">Contact</h6>
-
 				<ul class="footer__wrap__content__nav unstyled">
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
-					<li class="footer__wrap__content__nav__item">
-						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
-					</li>
+                    <% loop $Contact %>
+                        <% loop $Children %>
+                            <li class="footer__wrap__content__nav__item">
+                                <a href="$Link" class="footer__wrap__content__nav__item__link">$Title</a>
+                            </li>
+                        <% end_loop %>
+                    <% end_loop %>
 				</ul>
 			</div>
 		</div>
