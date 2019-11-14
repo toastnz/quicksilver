@@ -42,6 +42,7 @@ class SiteConfigExtension extends DataExtension
         'InstagramLink' => 'Varchar(255)',
         'YouTubeLink' => 'Varchar(255)',
         'TwitterLink' => 'Varchar(255)',
+        'VimeoLink' => 'Varchar(255)',
         'MailChimpAPI' => 'Varchar(255)',
         'MailChimpListID' => 'Varchar(255)',
         'MailChimpSuccessMessage' => 'Text',
@@ -51,6 +52,7 @@ class SiteConfigExtension extends DataExtension
         'BHProjectKey' => 'Varchar(100)',
         'EnableBugherd' => 'Boolean',
         'SidebarColor' => DBVarchar::class . '(7)',
+        'FooterContent' => 'HTMLText'
     ];
 
     private static $has_one = [
@@ -58,12 +60,14 @@ class SiteConfigExtension extends DataExtension
         'PrivacyLink' => Link::class,
         'DefaultImage' => Image::class,
         'TollFreeNumber' => Link::class,
-        'Logo'          => File::class
+        'DarkLogo'       => File::class,
+        'LightLogo'      => File::class,
     ];
 
     private static $owns = [
         'DefaultImage',
-        'Logo'
+        'DarkLogo',
+        'LightLogo'
     ];
 
     public static $defaults = [
@@ -99,8 +103,12 @@ class SiteConfigExtension extends DataExtension
             $address,
             $postalAddress,
             ColorField::create('SidebarColor'),
-            UploadField::create('Logo', 'Logo')
+            UploadField::create('DarkLogo', 'Dark Logo')
                 ->setFolderName('Uploads/page-images'),
+            UploadField::create('LightLogo', 'LightLogo')
+                ->setFolderName('Uploads/page-images'),
+            HTMLEditorField::create('FooterContent', 'Footer Content')
+                ->setRows(10)
         ]);
 
         /** -----------------------------------------
@@ -116,7 +124,8 @@ class SiteConfigExtension extends DataExtension
             TextField::create('PinterestLink', 'Pinterest'),
             TextField::create('InstagramLink', 'Instagram'),
             TextField::create('TwitterLink', 'Twitter'),
-            TextField::create('YouTubeLink', 'YouTube')
+            TextField::create('YouTubeLink', 'YouTube'),
+            TextField::create('VimeoLink', 'Vimeo')
         ]);
 
         /** -----------------------------------------
