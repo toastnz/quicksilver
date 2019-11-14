@@ -81,6 +81,10 @@ body h6 {
 /* Buttons         */
 /*=================*/
 
+a.redirect--arrow {
+    
+}
+
 a.button.button--primary {
     background-color: #e75931;
     border:           1px solid #e75931;
