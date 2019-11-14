@@ -5,6 +5,7 @@ use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
 use SilverStripe\CMS\Model\SiteTree;
 use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
@@ -14,7 +15,10 @@ use Toast\Model\BannerSliderImage;
 
 class Page extends SiteTree
 {
-    private static $db = [];
+    private static $db = [
+        'DropdownNav' => 'Boolean',
+        'Sidebar'     => 'Boolean',
+    ];
 
     private static $has_one = [
         'Thumbnail' => Image::class
@@ -52,6 +56,19 @@ class Page extends SiteTree
                 ->setFolderName('Uploads/banners/images')
         ]);
 
+        return $fields;
+    }
+
+    public function getSettingsFields() {
+        $fields = parent::getSettingsFields();
+        $fields->insertAfter(
+            'ShowInSearch',
+            CheckboxField::create('Sidebar', 'Show Sidebar')
+        );
+        $fields->insertAfter(
+            'Sidebar',
+            CheckboxField::create('DropdownNav', 'Show Dropdown Nav')
+        );
         return $fields;
     }
 
