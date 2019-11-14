@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a368e3c57a2e7b86085e8af1d746c6f8",
+    "content-hash": "f32212f56b231b44b2700a26696af1bc",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -4694,12 +4694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "21c15aa88b9d9e88ea22762f8751737a22cc3141"
+                "reference": "788c53070718e0799ffa276b8eb0f027d1903591"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/21c15aa88b9d9e88ea22762f8751737a22cc3141",
-                "reference": "21c15aa88b9d9e88ea22762f8751737a22cc3141",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/788c53070718e0799ffa276b8eb0f027d1903591",
+                "reference": "788c53070718e0799ffa276b8eb0f027d1903591",
                 "shasum": ""
             },
             "require": {
@@ -4739,7 +4739,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-14T01:50:07+00:00"
+            "time": "2019-11-14T03:21:48+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4747,12 +4747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "c1a51f23ab84d8dd38e59728747ab5e0c6373b42"
+                "reference": "c9321744b3e85d570004c0faf5a23f719bb70f57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/c1a51f23ab84d8dd38e59728747ab5e0c6373b42",
-                "reference": "c1a51f23ab84d8dd38e59728747ab5e0c6373b42",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/c9321744b3e85d570004c0faf5a23f719bb70f57",
+                "reference": "c9321744b3e85d570004c0faf5a23f719bb70f57",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4777,7 +4777,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-14T02:18:42+00:00"
+            "time": "2019-11-14T03:15:30+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
