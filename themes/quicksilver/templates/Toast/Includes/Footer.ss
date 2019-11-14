@@ -19,14 +19,22 @@
 					<div class="contentRow">
 						<div class="verticalAlign verticalAlign--top">
 							<div class="footer__wrap__content__alignment__details">
-								<h6 class="footer__wrap__content__alignment__details__phone"><a href="#">0800 123456 | <span class="colour--primary">0800 123456</span></a></h6>
+                                <% with $SiteConfig %>
+                                <% if $TollFreeNumber %>
+								<h6 class="footer__wrap__content__alignment__details__phone"><a href="$TollFreeNumber.LinkURL">$TollFreeNumber.Title| <span class="colour--primary">$TollFreeNumber.Title</span></a></h6>
+                                <% end_if %>
+                                <% end_with %>
+                                <p><b>{$SiteConfig.FooterContent}</b></p>
 							</div>
 						</div>
 					</div>
 					<div class="contentRow">
 						<div class="verticalAlign verticalAlign--bottom">
 							<div class="footer__wrap__content__alignment__logo">
-								<% with $SiteConfig %><img src="$Logo.URL" alt="$Logo.ALT"/><% end_with %>
+                                <% with $SiteConfig %>
+                                    <% if $DarkLogo %><% end_if %>
+                                    <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                                <% end_with %>
 							</div>
 						</div>
 					</div>
