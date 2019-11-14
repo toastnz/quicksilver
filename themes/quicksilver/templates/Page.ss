@@ -15,13 +15,20 @@
     Type Wrapper
     ------------------------------------------------------------------%>
 
-    <div class="body type">
+    <div class="body type page">
+
       <% include Toast\Header %>
       <% include Toast\Banner %>
 
       $Breadcrumbs
 
-      $Layout
+      <% if $Sidebar %>
+        <% include Toast\Includes\Sidebar %>
+      <% end_if %>
+
+      <section class="contentBlocks">
+        $Layout
+      </section>
 
       <% include Toast\Footer %>
     </div>

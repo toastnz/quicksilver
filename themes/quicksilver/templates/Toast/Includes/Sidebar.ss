@@ -9,7 +9,7 @@
                         <% if $Children %>
                             <ul class="sidebar__nav__list__item__children children unstyled">
                                 <% loop $Children %>
-                                    <li class="sidebar__nav__list__item__children__item">
+                                    <li class="sidebar__nav__list__item__children__item childrenItem">
                                         <a href="$Link" class="sidebar__nav__list__item__children__item__link $LinkingMode">$Title</a>
                                     </li>
                                 <% end_loop %>

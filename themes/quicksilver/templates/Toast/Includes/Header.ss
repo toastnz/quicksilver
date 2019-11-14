@@ -4,15 +4,14 @@
         <div class="header__wrap__inner column alignContent">
             <div class="header__wrap__inner__logo navLogo verticalAlign" data-breakpoint-watch>
                 <a href="{$BaseURL}" class="header__wrap__inner__logo__link">
-                    <% with $SiteConfig %>
-                        <% if $LightLogo %><% end_if %>
-                        <img src="$LightLogo.URL" alt="$LightLogo.ALT"/>
-                    <% end_with %>
+                    <% if $DarkLogo %>
+                        <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                    <% end_if %>
                 </a>
             </div>
             <nav class="header__wrap__inner__nav navLinks mainNav verticalAlign" data-breakpoint-watch>
                 <div class="headerNav">
-                    <% include Toast\Nav %>
+                    <% include Toast\Nav Dropdown=$DropdownNav %>
                 </div>
             </nav>
             <div class="header__wrap__inner__actions verticalAlign" data-breakpoint-watch>

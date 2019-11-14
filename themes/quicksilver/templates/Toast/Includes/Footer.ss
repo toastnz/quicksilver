@@ -28,8 +28,9 @@
 						<div class="verticalAlign verticalAlign--bottom">
 							<div class="footer__wrap__content__alignment__logo">
                                 <% with $SiteConfig %>
-                                    <% if $DarkLogo %><% end_if %>
-                                    <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                                    <% if $LightLogo %>
+                                    	<img src="$LightLogo.URL" alt="$LightLogo.ALT"/>
+                                    <% end_if %>
                                 <% end_with %>
 							</div>
 						</div>

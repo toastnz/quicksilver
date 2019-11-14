@@ -38,9 +38,66 @@
           text-decoration: none;
           transition: color .3s ease;
           @include transition(color);
-        
-          @include active('current') {
+
+          &.current {
             color: $primary;
+          }
+        
+          @include active() {
+            color: $primary;
+
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: calc(100% + 2rem);
+            }
+
+            + .navChildren {
+              display: block;
+            }
+          }
+        }
+
+        &__children {
+          display: none;
+          position: absolute;
+          text-align: left;
+          top: 100%;
+          background-color: $white;
+          padding: 0;
+          box-shadow: 0 0 2rem 0 rgba($black, .05);
+
+          @include active {
+            display: block;
+          }
+          &__item {
+            margin-bottom: 0!important;
+
+            &__link {
+              display: block;
+              position: relative;
+              padding: 1rem $gutterWidth;
+              box-shadow: inset 0 0 0 0 $primary;
+              @include transition(box-shadow);
+              
+              &:before {
+                content: '';
+                @include pos(absolute, 0);
+                @include transition(opacity);
+                opacity: 0;
+                background-color: $primary;
+              }
+
+              @include active {
+                box-shadow: inset .4rem 0 0 0 $primary;
+                &:before {
+                  opacity: .05;
+                }
+              }
+            }
           }
         }
       }
@@ -52,10 +109,16 @@
     display: none;
     @include pos(fixed, 0);
     z-index: 1000;
-    background-color: rgba($primary, .95);
     opacity: 0;
     padding: 10rem 0;
     @include transition(opacity);
+
+    &:before {
+      content: '';
+      @include pos(absolute, 0);
+      background-color: $primary;
+      opacity: .95;
+    }
 
     &.js-active {
       opacity: 1;
@@ -67,6 +130,10 @@
 
     &__close {
       @include closeBtn(4rem, .4rem, $white);
+    }
+
+    .navChildren {
+      display: none;
     }
 
     .nav {

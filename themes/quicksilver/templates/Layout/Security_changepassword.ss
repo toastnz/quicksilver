@@ -3,7 +3,9 @@
 		<div class="login__wrap verticalAlign">
 			<div class="login__wrap__content">
 				<div class="login__wrap__content__header">
-					<% with $SiteConfig %><img src="$LightLogo.URL" alt="$LightLogo.ALT"/><% end_with %>
+					<% if $Light %>
+                    	<img src="$Light.URL" alt="$Light.ALT"/>
+                    <% end_if %>
 				</div>
 				<div class="login__wrap__content__text">
 					<h5 class="login__wrap__content__text__heading">Reset your password</h5>
