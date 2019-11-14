@@ -105,7 +105,7 @@ class SiteConfigExtension extends DataExtension
             ColorField::create('SidebarColor'),
             UploadField::create('DarkLogo', 'Dark Logo')
                 ->setFolderName('Uploads/page-images'),
-            UploadField::create('LightLogo', 'LightLogo')
+            UploadField::create('LightLogo', 'Light Logo')
                 ->setFolderName('Uploads/page-images'),
             HTMLEditorField::create('FooterContent', 'Footer Content')
                 ->setRows(10)

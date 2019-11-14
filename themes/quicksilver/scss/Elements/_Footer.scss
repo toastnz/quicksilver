@@ -2,172 +2,176 @@
 // Footer - Styles
 //------------------------------------------------------------------
 
-.footer {
-  color: $white;
-  background-color: $secondary;
-  &__wrap {
+.type {
 
-    .column {
-      
-      &.float-right {
-        float: right!important;
-      }
+  .footer {
+    color: $white;
+    background-color: $secondary;
+    &__wrap {
 
-      @include media($lg) {
-        .content {
-          &:not(.logo) {
-            &:after {
-              display: block;
-            }
-          }
+      .column {
+        
+        &.float-right {
+          float: right!important;
         }
-      }      
-    }
-
-    &__content {      
-      position: relative;
-      width: 100%;
-
-      @include media($md, max) {
-        text-align: center;
-      }
-
-      @include media($lg, max) {
-        height: auto!important;
-      }
-
-      &:after {
-        content: '';
-        display: none;
-        position: absolute;
-        top: 0;
-        right: -$gutterWidth;
-        bottom: 0;
-        width: .1rem;
-        background-color: rgba($white, .1);
-      }
-
-      &__alignment {
-        height: 100%;
-        margin-bottom: $gutterWidth * 2;
 
         @include media($lg) {
-          margin-bottom: 0;
-        }
-
-        &__details {
-          margin-bottom: 5rem;
-
-          &__phone {
-            display: block;
-            font-weight: bold;
-            margin-bottom: 3rem;
-            line-height: 1.1;
-
-            a {
-              color: $white;
-            }
-
-            span {
-              margin-bottom: 0;
+          .content {
+            &:not(.logo) {
+              &:after {
+                display: block;
+              }
             }
           }
-        }
-
-        &__logo {
-          img {
-            display: block;
-            margin: 0;
-            width: 100%;
-            height: auto;
-            max-width: 20rem;
-          }
-        }
+        }      
       }
 
-      .socialIcons {
-        margin-bottom: $gutterWidth * 2;
+      &__content {      
+        position: relative;
+        width: 100%;
 
-        &__item {
-          display: inline-block;
+        @include media($md, max) {
+          text-align: center;
+        }
 
-          &:not(:last-child) {
-            margin-right: 2rem;
+        @include media($lg, max) {
+          height: auto!important;
+        }
+
+        &:after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 0;
+          right: -$gutterWidth;
+          bottom: 0;
+          width: .1rem;
+          background-color: rgba($white, .1);
+        }
+
+        &__alignment {
+          height: 100%;
+          margin-bottom: $gutterWidth * 2;
+
+          @include media($lg) {
+            margin-bottom: 0;
           }
 
-          &__link {
-            @include svg(1,1);
-            display: block;
-            width: 3rem;
-            border-radius: 50%;
-            background-color: $primary;
-            @include transition(background-color);
+          &__details {
+            margin-bottom: 5rem;
 
-            @include active {
-              background-color: $white;
+            &__phone {
+              display: block;
+              font-weight: bold;
+              margin-bottom: 3rem;
+              line-height: 1.1;
+
+              a {
+                color: $white;
+              }
+
+              span {
+                margin-bottom: 0;
+              }
+            }
+          }
+
+          &__logo {
+            img {
+              display: block;
+              margin: 0;
+              width: 100%;
+              height: auto;
+              max-width: 20rem;
+            }
+          }
+        }
+
+        .socialIcons {
+          margin-bottom: $gutterWidth * 2;
+
+          &__item {
+            display: inline-block;
+
+            &:not(:last-child) {
+              margin-right: 2rem;
+            }
+
+            &__link {
+              @include svg(1,1);
+              display: block;
+              width: 3rem;
+              border-radius: 50%;
+              background-color: $primary;
+              @include transition(background-color);
+
+              @include active {
+                background-color: $white;
+
+                svg {
+                  path {
+                    fill: $primary;
+                  }
+                }
+              }
 
               svg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 50%;
+                width: 50%;
+
                 path {
-                  fill: $primary;
+                  fill: $secondary;
+                  @include transition(fill);
                 }
               }
             }
+          }
+        }
 
-            svg {
-              position: absolute;
-              top: 50%;
-              left: 50%;
-              transform: translate(-50%, -50%);
-              height: 50%;
-              width: 50%;
+        &__heading {
+          text-transform: uppercase;
+          color: $primary;
+          font-weight: bold;
+          margin-bottom: 3rem;
+        }
 
-              path {
-                fill: $secondary;
-                @include transition(fill);
+        &__nav {
+          &__item {
+            &__link {
+              color: $white;
+              @include transition(color);
+
+              @include active {
+                color: $primary;
               }
             }
           }
         }
-      }
 
-      &__heading {
-        text-transform: uppercase;
-        color: $primary;
-        font-weight: bold;
-        margin-bottom: 3rem;
-      }
+        &__copyright {
+          
+          @include media($lg) {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+          }
 
-      &__nav {
-        &__item {
-          &__link {
+          p {
+            white-space: nowrap;
+            font-size: 1.1rem;
+            margin-bottom: 0;
             color: $white;
-            @include transition(color);
-
-            @include active {
-              color: $primary;
-            }
           }
         }
-      }
-
-      &__copyright {
         
-        @include media($lg) {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
+        &.social {
+          padding-bottom: 2rem;
         }
-
-        p {
-          white-space: nowrap;
-          font-size: 1.1rem;
-          margin-bottom: 0;
-        }
-      }
-      
-      &.social {
-        padding-bottom: 2rem;
       }
     }
   }

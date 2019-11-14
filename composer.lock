@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "185614d59eecf5121629b93fc176eb00",
+    "content-hash": "a368e3c57a2e7b86085e8af1d746c6f8",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -1651,16 +1651,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.25.1",
+            "version": "1.25.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf"
+                "reference": "d5e2fb341cb44f7e2ab639d12a1e5901091ec287"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
-                "reference": "70e65a5470a42cfec1a7da00d30edb6e617e8dcf",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/d5e2fb341cb44f7e2ab639d12a1e5901091ec287",
+                "reference": "d5e2fb341cb44f7e2ab639d12a1e5901091ec287",
                 "shasum": ""
             },
             "require": {
@@ -1725,7 +1725,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2019-09-06T13:49:17+00:00"
+            "time": "2019-11-13T10:00:05+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -4053,16 +4053,16 @@
         },
         {
             "name": "symfony/cache",
-            "version": "v3.4.34",
+            "version": "v3.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/cache.git",
-                "reference": "9307cc18f444d0b4f6b56daceaa7e55174dfdfb5"
+                "reference": "8d5db9c0cecf8b6f79fa96583fae652224d897da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/cache/zipball/9307cc18f444d0b4f6b56daceaa7e55174dfdfb5",
-                "reference": "9307cc18f444d0b4f6b56daceaa7e55174dfdfb5",
+                "url": "https://api.github.com/repos/symfony/cache/zipball/8d5db9c0cecf8b6f79fa96583fae652224d897da",
+                "reference": "8d5db9c0cecf8b6f79fa96583fae652224d897da",
                 "shasum": ""
             },
             "require": {
@@ -4119,11 +4119,11 @@
                 "caching",
                 "psr6"
             ],
-            "time": "2019-10-24T15:33:53+00:00"
+            "time": "2019-11-12T12:50:33+00:00"
         },
         {
             "name": "symfony/config",
-            "version": "v3.4.34",
+            "version": "v3.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/config.git",
@@ -4187,7 +4187,7 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.7",
+            "version": "v4.3.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
@@ -4237,7 +4237,7 @@
         },
         {
             "name": "symfony/finder",
-            "version": "v3.4.34",
+            "version": "v3.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/finder.git",
@@ -4567,7 +4567,7 @@
         },
         {
             "name": "symfony/translation",
-            "version": "v2.8.50",
+            "version": "v2.8.52",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
@@ -4631,7 +4631,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.4.34",
+            "version": "v3.4.35",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
@@ -4694,12 +4694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "33bf9a8cdb3bd7ef60c21426a689bd304a062cda"
+                "reference": "21c15aa88b9d9e88ea22762f8751737a22cc3141"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/33bf9a8cdb3bd7ef60c21426a689bd304a062cda",
-                "reference": "33bf9a8cdb3bd7ef60c21426a689bd304a062cda",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/21c15aa88b9d9e88ea22762f8751737a22cc3141",
+                "reference": "21c15aa88b9d9e88ea22762f8751737a22cc3141",
                 "shasum": ""
             },
             "require": {
@@ -4739,7 +4739,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-12T22:06:56+00:00"
+            "time": "2019-11-14T01:50:07+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4747,12 +4747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "d89e0db0378ee2e3b03194e86db2840cf5d37c13"
+                "reference": "c1a51f23ab84d8dd38e59728747ab5e0c6373b42"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/d89e0db0378ee2e3b03194e86db2840cf5d37c13",
-                "reference": "d89e0db0378ee2e3b03194e86db2840cf5d37c13",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/c1a51f23ab84d8dd38e59728747ab5e0c6373b42",
+                "reference": "c1a51f23ab84d8dd38e59728747ab5e0c6373b42",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4777,7 +4777,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-13T22:36:11+00:00"
+            "time": "2019-11-14T02:18:42+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
