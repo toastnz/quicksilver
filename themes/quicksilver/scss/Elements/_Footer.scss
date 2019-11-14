@@ -15,7 +15,7 @@
           float: right!important;
         }
 
-        @include media($lg) {
+        @include media($md) {
           .content {
             &:not(.logo) {
               &:after {
@@ -32,9 +32,6 @@
 
         @include media($md, max) {
           text-align: center;
-        }
-
-        @include media($lg, max) {
           height: auto!important;
         }
 
@@ -87,8 +84,31 @@
           }
         }
 
-        .socialIcons {
+        .nav {
           margin-bottom: $gutterWidth * 2;
+          &__item {
+
+            @include media($lg) {
+              display: inline-block;
+              &:not(:last-child) {
+                margin-right: $gutterWidth;
+              }
+            }
+
+
+            &__link {
+              color: $white;
+              @include transition(color);
+
+              @include active {
+                color: $primary;
+              }
+            }
+          }
+        }
+
+        .socialIcons {
+          margin-bottom: $gutterWidth;
 
           &__item {
             display: inline-block;
@@ -127,26 +147,6 @@
                   fill: $secondary;
                   @include transition(fill);
                 }
-              }
-            }
-          }
-        }
-
-        &__heading {
-          text-transform: uppercase;
-          color: $primary;
-          font-weight: bold;
-          margin-bottom: 3rem;
-        }
-
-        &__nav {
-          &__item {
-            &__link {
-              color: $white;
-              @include transition(color);
-
-              @include active {
-                color: $primary;
               }
             }
           }
