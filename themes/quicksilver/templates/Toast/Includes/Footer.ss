@@ -67,14 +67,29 @@
 		<div class="column md-6 lg-3">
 			<div class="footer__wrap__content content" data-equalize-watch>
 				<h6 class="footer__wrap__content__heading">Contact</h6>
+
 				<ul class="footer__wrap__content__nav unstyled">
-                    <% loop $Contact %>
-                        <% loop $Children %>
-                            <li class="footer__wrap__content__nav__item">
-                                <a href="$Link" class="footer__wrap__content__nav__item__link">$Title</a>
-                            </li>
-                        <% end_loop %>
-                    <% end_loop %>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
+					<li class="footer__wrap__content__nav__item">
+						<a href="#" class="footer__wrap__content__nav__item__link">Link Title</a>
+					</li>
 				</ul>
 			</div>
 		</div>
