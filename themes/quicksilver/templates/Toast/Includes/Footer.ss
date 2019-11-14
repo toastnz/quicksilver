@@ -26,7 +26,7 @@
 					<div class="contentRow">
 						<div class="verticalAlign verticalAlign--bottom">
 							<div class="footer__wrap__content__alignment__logo">
-								<% with $SiteConfig %><img src="$Logo.URL" alt="$Logo.ALT"/><% end_with %>
+								<% with $SiteConfig %><img src="$LightLogo.URL" alt="$LightLogo.ALT"/><% end_with %>
 							</div>
 						</div>
 					</div>

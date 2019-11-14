@@ -5,8 +5,7 @@
             <div class="header__wrap__inner__logo navLogo verticalAlign" data-breakpoint-watch>
                 <a href="{$BaseURL}" class="header__wrap__inner__logo__link">
                     <% with $SiteConfig %>
-                        <% if $DarkLogo %><% end_if %>
-                        <img src="$DarkLogo.URL" alt="$Logo.ALT"/>
+                        <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
                     <% end_with %>
                 </a>
             </div>
