@@ -173,6 +173,10 @@ ol {
     list-style: decimal !important;
 }
 
+ul {
+    list-style: none;
+}
+
 ul li:before {
     position:      absolute;
     content:       '';
