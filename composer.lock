@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f32212f56b231b44b2700a26696af1bc",
+    "content-hash": "1d5fcff0f5bde00b83b7e772b086aafa",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -4694,12 +4694,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "788c53070718e0799ffa276b8eb0f027d1903591"
+                "reference": "877666dc7d6dbde12533845cd37e7e4928c1e822"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/788c53070718e0799ffa276b8eb0f027d1903591",
-                "reference": "788c53070718e0799ffa276b8eb0f027d1903591",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/877666dc7d6dbde12533845cd37e7e4928c1e822",
+                "reference": "877666dc7d6dbde12533845cd37e7e4928c1e822",
                 "shasum": ""
             },
             "require": {
@@ -4739,7 +4739,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-14T03:21:48+00:00"
+            "time": "2019-11-14T21:12:23+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",

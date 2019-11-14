@@ -34,3 +34,4 @@ Toast\QuickBlocks\QuickBlocksExtension:
     - Toast\QuickBlocks\TextBlock
     - Toast\QuickBlocks\VideoBlock
     - Toast\QuickBlocks\ColumnBlock
+    - Toast\QuickBlocks\ChildLinkBlock
