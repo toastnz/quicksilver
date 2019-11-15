@@ -91,6 +91,12 @@ class Page extends SiteTree
         return $reflect->getShortName() ?: $this->ClassName;
     }
 
+    public function getImage()
+    {
+
+        return $this->Thumbnail();
+    }
+
 }
 
 
