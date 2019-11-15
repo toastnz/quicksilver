@@ -2,7 +2,7 @@
     <% loop $MenuSet('Main').MenuItems %>
         <li class="nav__item">
             <a href="{$Link}" class="{$LinkingMode} nav__item__link link">{$MenuTitle}</a>
-            <% if $Children %>
+            <% if $Page.DropdownNav && $Children %>
                 <ul class="nav__item__children navChildren unstyled">
                     <% loop $Children %>
                         <li class="nav__item__children__item">
