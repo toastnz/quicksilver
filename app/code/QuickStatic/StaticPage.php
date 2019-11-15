@@ -39,7 +39,7 @@ class StaticPageController extends ContentController
         parent::init();
 
         Requirements::backend()->setWriteHeaderComment(false);
-        Requirements::combine_files('app.js', ['themes/quicksilver/dist/scripts/bundle.js']);
+        Requirements::combine_files('app.js', ['themes/quicksilver/dist/scripts/main.js']);
         Requirements::process_combined_files();
 
     }

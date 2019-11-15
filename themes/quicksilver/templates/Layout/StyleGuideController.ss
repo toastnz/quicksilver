@@ -2,7 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.5.0/prism.min.js"></script>
 
 
-<div class="styleguide" id="type">
+<div class="styleguide type">
     <div class="styleguide__aside">
         <h6>COMPONENTS</h6>
         <a href="#Buttons">Buttons</a>

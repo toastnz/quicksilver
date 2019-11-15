@@ -282,14 +282,6 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale; }
 
-::-moz-selection {
-  color: #fff;
-  background: rgba(var(--primary-colour), 0.99999); }
-
-::selection {
-  color: #fff;
-  background: rgba(var(--primary-colour), 0.99999); }
-
 ::-moz-focus-inner {
   border: 0; }
 
@@ -911,11 +903,10 @@ button {
 [type="submit"] {
   display: inline-block;
   margin: 0 1rem 1rem 0;
-  padding: 1rem 2rem 1rem;
-  border-radius: 0.5rem;
+  padding: .5rem 2rem;
   cursor: pointer;
   outline: none;
-  font-size: 2rem;
+  font-size: 1.6rem;
   white-space: nowrap;
   text-align: center;
   text-decoration: none;
