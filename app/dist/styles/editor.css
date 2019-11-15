@@ -61,6 +61,10 @@ body h6 {
 /* Styles          */
 /*=================*/
 
+.colour--white {
+    color: #ccc;
+}
+
 .colour--primary {
     color: #e75931;
 }
@@ -76,6 +80,10 @@ body h6 {
 /*=================*/
 /* Buttons         */
 /*=================*/
+
+a.redirect--arrow {
+    
+}
 
 a.button.button--primary {
     background-color: #e75931;
@@ -163,6 +171,10 @@ ol li {
 
 ol {
     list-style: decimal !important;
+}
+
+ul {
+    list-style: none;
 }
 
 ul li:before {

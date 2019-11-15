@@ -36,7 +36,7 @@
     &__list {
 
       &__item {
-        margin-bottom: 0;
+        margin-bottom: 0!important;
 
         &__link,
         &__children {
@@ -46,13 +46,24 @@
         }
 
         &__link {
+          position: relative;
           color: $primary;
           padding: 1rem 2rem;
           margin-bottom: 0;
           @include transition((box-shadow, background-color));
 
+          &:before {
+            content: '';
+            @include pos(absolute, 0);
+            @include transition(opacity);
+            opacity: 0;
+            background-color: $primary;
+          }
+
           &.current {
-            background-color: rgba($primary, .05);
+            &:before {
+              opacity: .05;
+            }
             box-shadow: inset .4rem 0 0 0 $primary;
             cursor: default;
           }
@@ -66,9 +77,20 @@
 
         .current {
           + .children {
-            background-color: rgba($primary, .05);
+            position: relative;
+
+            &:before {
+              content: '';
+              @include pos(absolute, 0);
+              @include transition(opacity);
+              opacity: .05;
+              background-color: $primary;
+            }
+
             // box-shadow: inset .4rem 0 0 0 $primary;
-            &:not(.current) {
+            .childrenItem {
+              box-shadow: inset 0 0 0 0 $primary;
+              @include transition(box-shadow);
               @include active {
                 box-shadow: inset .4rem 0 0 0 $primary;
               }
@@ -77,13 +99,17 @@
         }
 
         &__children {
-          padding: 0 2rem 1rem 3rem;
+          padding: 0 1rem 0 0;
 
           &__item {
-            margin-bottom: 0;
+            margin-bottom: 0!important;
 
             &__link {
+              display: block;
+              position: relative;
+              cursor: pointer;
               font-size: 1.4rem;
+              padding: 1rem 3rem;
             }
           }
         }

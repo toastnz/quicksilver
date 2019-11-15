@@ -4,7 +4,11 @@
 
 .breadcrumbs {
 	border-bottom: .1rem solid #e4e4e4;
-	margin: 0 0 $gutterWidth * 2;
+	margin: 0 0 5rem;
+
+	@include media($xmd) {
+		margin-bottom: 10rem;
+	}
 	&__list {
 		list-style: none;
 		padding: $gutterWidth 0!important;

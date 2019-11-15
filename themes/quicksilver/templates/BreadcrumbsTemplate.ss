@@ -3,7 +3,7 @@
         <div class="breadcrumbs">
             <div class="row">
                 <div class="column">
-                    <ul class="breadcrumbs__list">
+                    <ul class="breadcrumbs__list unstyled">
                         <li class="breadcrumbs__list__item">
                             <a class="breadcrumbs__list__item__link" href="$BaseURL">$SVG('home')</a>
                         </li>

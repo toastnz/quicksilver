@@ -1,154 +1,159 @@
 //------------------------------------------------------------------
 // Header - Styles
 //------------------------------------------------------------------
+.type {
+  .header {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 2rem 0 rgba($black, .05);
+    background-color: $white;
 
-.header {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 0 2rem 0 rgba($black, .05);
-  background-color: $white;
-
-  .headerNav,
-  .headerActions {
-    display: block;
-  }
-
-  &.js-breakpoint {
-    .headerActions,
-    .headerNav {
-      display: none;
-    }
-
-    #hamburger {
+    .headerNav,
+    .headerActions {
       display: block;
     }
-  }
 
-  &__wrap {
+    &.js-breakpoint {
+      .headerActions,
+      .headerNav {
+        display: none;
+      }
 
-    &__inner {
+      #hamburger {
+        display: block;
+      }
+    }
 
-      &__logo {
-        width: 20rem;
-        padding: 2rem 0;
+    &__wrap {
 
-        &__link {
-          display: block;
+      &__inner {
+
+        &__logo {
           width: 20rem;
-          @if variable-exists(logoDimentions) {
-            @include svg($logoDimentions...);
-          }@else {
-            @include svg(1,1);
+          padding: 2rem 0;
+
+          &__link {
+            display: block;
+            width: 20rem;
+            img {
+              width: 100%;
+              height: auto;
+            }
+            // @if variable-exists(logoDimentions) {
+            //   @include svg($logoDimentions...);
+            // }@else {
+            //   @include svg(1,1);
+            // }
           }
         }
-      }
 
-      &__nav {
-        padding: 0 $gutterWidth;
-        // width: 100%;
-        // See _Nav.scss
-      }
+        &__nav {
+          padding: 0 $gutterWidth;
+          // width: 100%;
+          // See _Nav.scss
+        }
 
-      &__actions {
-        width: 0;
-        text-align: right;
-        white-space: nowrap;
+        &__actions {
+          width: 0;
+          text-align: right;
+          white-space: nowrap;
 
-        &__button {
-          margin: 0 2rem;
+          &__button {
+            margin: 0 2rem;
 
-          .button {
-            margin: 0;
+            .button {
+              margin: 0;
+            }
           }
-        }
-        
-        &__button,
-        .socialIcons,
-        #hamburger {
-          display: inline-block;
-          vertical-align: middle;
-          // float: left;
-        }
-
-        .socialIcons {
-          // margin-right: 2rem;
-
-          &__item {
+          
+          &__button,
+          .socialIcons,
+          #hamburger {
             display: inline-block;
             vertical-align: middle;
-            margin-bottom: 0;
+            // float: left;
+          }
 
-            &:not(:last-child) {
-              margin-right: 2rem;
-            }
+          .socialIcons {
+            // margin-right: 2rem;
 
-            &__link {
-              @include svg(1,1);
-              display: block;
-              width: 2rem;
-              @include transition(transform);
-              
-              @include active {
-                transform: scale(1.4);
+            &__item {
+              display: inline-block;
+              vertical-align: middle;
+              margin-bottom: 0;
+
+              &:not(:last-child) {
+                margin-right: 2rem;
               }
 
-              svg {
-                path {
-                  fill: $primary;
+              &__link {
+                @include svg(1,1);
+                display: block;
+                width: 2rem;
+                @include transition(transform);
+                
+                @include active {
+                  transform: scale(1.4);
+                }
+
+                svg {
+                  path {
+                    fill: $primary;
+                  }
                 }
               }
             }
-          }
 
-          + {
-            #hamburger {
-              margin-left: 2rem;
+            + {
+              #hamburger {
+                margin-left: 2rem;
+              }
             }
           }
-        }
 
-        #hamburger {
-          display: none;
-          // display: block;
-          position: relative;
-          height: 1.8rem;
-          width: 2.6rem;
-          background-color: transparent;
-          border: none;
-          cursor: pointer;
-          padding: 0;
-          outline: none;
+          #hamburger {
+            display: none;
+            // display: block;
+            position: relative;
+            height: 1.8rem;
+            width: 2.6rem;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            outline: none;
+            overflow: visible;
 
-          span {
-            position: absolute;
-            display: block;
-            height: 0.3rem;
-            width: 100%;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: $primary;
-            &:first-child {
-              top: 0;
+            span {
+              position: absolute;
+              display: block;
+              height: 0.3rem;
+              width: 100%;
+              top: 50%;
+              transform: translateY(-50%);
+              background-color: $primary;
+              &:first-child {
+                top: 0;
+              }
+              &:last-child {
+                top: 100%;
+              }
             }
-            &:last-child {
-              top: 100%;
-            }
+            // @include media($xmd) {
+            //   display: none;
+            // }
           }
-          // @include media($xmd) {
-          //   display: none;
-          // }
         }
       }
     }
-  }
-  
-  + .heroBlock,
-  + .banner, {
-    margin-top: 0;
+    
+    + .heroBlock,
+    + .banner, {
+      margin-top: 0;
+    }
   }
 }
-
 

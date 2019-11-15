@@ -15,18 +15,23 @@
     Type Wrapper
     ------------------------------------------------------------------%>
 
-    <%-- <div id="type"> --%>
-      <div class="body">
-        <% include Toast\Header %>
-        <% include Toast\Banner %>
+    <div class="body type page">
 
-        $Breadcrumbs
+      <% include Toast\Header %>
+      <% include Toast\Banner %>
 
+      $Breadcrumbs
+
+      <% if $Sidebar %>
+        <% include Toast\Includes\Sidebar %>
+      <% end_if %>
+
+      <section class="contentBlocks">
         $Layout
+      </section>
 
-        <% include Toast\Footer %>
-      </div>
-    <%-- </div> --%>
+      <% include Toast\Footer %>
+    </div>
 
 
     <% if $SiteConfig.GoogleTagManagerID %>

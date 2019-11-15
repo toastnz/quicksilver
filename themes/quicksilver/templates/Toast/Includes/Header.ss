@@ -3,11 +3,17 @@
     <div class="header__wrap row max">
         <div class="header__wrap__inner column alignContent">
             <div class="header__wrap__inner__logo navLogo verticalAlign" data-breakpoint-watch>
-                <a href="{$BaseURL}" class="header__wrap__inner__logo__link">$SVG('logo')</a>
+                <a href="{$BaseURL}" class="header__wrap__inner__logo__link">
+                    <% with $SiteConfig %>
+                        <% if $DarkLogo %>
+                            <img src="$DarkLogo.URL" alt="$DarkLogo.ALT"/>
+                        <% end_if %>
+                    <% end_with %>
+                </a>
             </div>
             <nav class="header__wrap__inner__nav navLinks mainNav verticalAlign" data-breakpoint-watch>
                 <div class="headerNav">
-                    <% include Toast\Nav %>
+                    <% include Toast\Nav Dropdown=$DropdownNav %>
                 </div>
             </nav>
             <div class="header__wrap__inner__actions verticalAlign" data-breakpoint-watch>
@@ -15,9 +21,14 @@
                     <ul class="socialIcons unstyled">
                         <% include Toast\Includes\SocialIcons %>
                     </ul>
-                    <div class="header__wrap__inner__actions__button headerAction">
-                        <a href="#" class="button button--bordered--primary">0800 123456</a>
-                    </div>
+                    <% with $SiteConfig %>
+                        <div class="header__wrap__inner__actions__button headerAction">
+                            <% if $TollFreeNumber %>
+                                <a href="$TollFreeNumber.LinkURL"
+                                   class="button button--bordered--primary">$TollFreeNumber.Title</a>
+                            <% end_if %>
+                        </div>
+                    <% end_with %>
                 </div>
                 <button id="hamburger" data-modal-toggle="mobile-nav" role="button" aria-label="open site navigation" title="open site navigation">
                     <span></span>
