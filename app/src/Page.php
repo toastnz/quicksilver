@@ -1,5 +1,6 @@
 <?php
 
+<<<<<<< .merge_file_Z8NADJ
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
@@ -13,12 +14,32 @@ use SilverStripe\Forms\HeaderField;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use Toast\Model\BannerSliderImage;
 use Toast\Pages\ContactPage;
+=======
+use Toast\Pages\ContactPage;
+use SilverStripe\Assets\Image;
+use SilverStripe\Control\Director;
+use Toast\Model\BannerSliderImage;
+use SilverStripe\Forms\HeaderField;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
+>>>>>>> .merge_file_cWutOC
 
 class Page extends SiteTree
 {
     private static $db = [
         'DropdownNav' => 'Boolean',
         'Sidebar'     => 'Boolean',
+<<<<<<< .merge_file_Z8NADJ
+=======
+        'Summary'     => 'Text',
+>>>>>>> .merge_file_cWutOC
     ];
 
     private static $has_one = [
@@ -52,10 +73,19 @@ class Page extends SiteTree
         $fields->addFieldsToTab('Root.Banner', [
             $imagesGridField
         ]);
+<<<<<<< .merge_file_Z8NADJ
         $fields->addFieldsToTab('Root.Share', [
             UploadField::create('Thumbnail', 'Thumbnail')
                 ->setFolderName('Uploads/banners/images')
         ]);
+=======
+        $fields->addFieldsToTab('Root.Main', [
+            TextareaField::create('Summary', 'Summary'),
+            UploadField::create('Thumbnail', 'Thumbnail')
+                ->setFolderName('Uploads/banners/images')
+            
+        ], 'SEOHealthAnalysis');
+>>>>>>> .merge_file_cWutOC
 
         return $fields;
     }
@@ -91,6 +121,15 @@ class Page extends SiteTree
         return $reflect->getShortName() ?: $this->ClassName;
     }
 
+<<<<<<< .merge_file_Z8NADJ
+=======
+    public function getImage()
+    {
+
+        return $this->Thumbnail();
+    }
+
+>>>>>>> .merge_file_cWutOC
 }
 
 
