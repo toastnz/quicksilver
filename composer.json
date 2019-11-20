@@ -24,21 +24,13 @@
         "toastnz/silverstripe-socialnav": "^2.0",
         "jonom/silverstripe-share-care": "^3.0",
         "quinninteractive/silverstripe-seo": "^1.0",
-<<<<<<< .merge_file_6PCbV9
-        "toastnz/quickblocks": "dev-feature/quicksilver#877666dc7d6dbde12533845cd37e7e4928c1e822",
-=======
         "toastnz/quickblocks": "dev-feature/quicksilver#fe6b388ef3b00c688d6d03086e29db68b384f89f",
->>>>>>> .merge_file_b3Jpk4
         "toastnz/quicksilver-styles": "dev-master",
         "permanentinc/type": "dev-master",
         "silverstripe/userforms": "^5.4",
         "permanentinc/beautiful": "^0.3.0",
-<<<<<<< .merge_file_6PCbV9
-        "permanentinc/found": "dev-master"
-=======
         "permanentinc/found": "dev-master",
         "bringyourownideas/silverstripe-maintenance": "^2.3"
->>>>>>> .merge_file_b3Jpk4
     },
     "extra": {
         "project-files-installed": [
