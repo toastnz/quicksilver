@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e0e5ed37c7e37b0167b01fad85690527",
+    "content-hash": "3695b6dfb6d6448f1b10ab9c49b688f9",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -316,6 +316,74 @@
             ],
             "description": "Colored Line Formatter for Monolog",
             "time": "2015-01-07T22:12:35+00:00"
+        },
+        {
+            "name": "bringyourownideas/silverstripe-maintenance",
+            "version": "2.3.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bringyourownideas/silverstripe-maintenance.git",
+                "reference": "645c5dc57e1eee57106d3468179d4c42490184f5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bringyourownideas/silverstripe-maintenance/zipball/645c5dc57e1eee57106d3468179d4c42490184f5",
+                "reference": "645c5dc57e1eee57106d3468179d4c42490184f5",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.3",
+                "silverstripe/framework": "^4.4",
+                "silverstripe/reports": "^4.4",
+                "symbiote/silverstripe-queuedjobs": "^4"
+            },
+            "replace": {
+                "friendsofsilverstripe/silverstripe-maintenance": "self.version"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7",
+                "squizlabs/php_codesniffer": "^3"
+            },
+            "suggest": {
+                "bringyourownideas/silverstripe-composer-security-checker": "Checks for known security vulnerabilities",
+                "bringyourownideas/silverstripe-composer-update-checker": "Checks for available updates of dependencies"
+            },
+            "type": "silverstripe-vendormodule",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                },
+                "expose": [
+                    "client/dist"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "BringYourOwnIdeas\\Maintenance\\": "src/",
+                    "BringYourOwnIdeas\\Maintenance\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Peter Thaleikis",
+                    "homepage": "https://thaleikis.de"
+                }
+            ],
+            "description": "Toolset to help with the day by day maintenance work.",
+            "homepage": "https://github.com/bringyourownideas/silverstripe-maintenance",
+            "keywords": [
+                "composer",
+                "environment",
+                "security",
+                "silverstripe",
+                "updates",
+                "vulnerabilities"
+            ],
+            "time": "2019-10-23T11:31:47+00:00"
         },
         {
             "name": "bummzack/sortablefile",
@@ -1935,12 +2003,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/type.git",
-                "reference": "c77004790a9888ded1782e53226609216a4123d9"
+                "reference": "3f773525d078a230183759c13b0de264591d50cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/type/zipball/c77004790a9888ded1782e53226609216a4123d9",
-                "reference": "c77004790a9888ded1782e53226609216a4123d9",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/3f773525d078a230183759c13b0de264591d50cd",
+                "reference": "3f773525d078a230183759c13b0de264591d50cd",
                 "shasum": ""
             },
             "require": {
@@ -1977,7 +2045,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-11-13T22:36:01+00:00"
+            "time": "2019-11-19T22:43:11+00:00"
         },
         {
             "name": "psr/cache",
@@ -2610,16 +2678,16 @@
         },
         {
             "name": "silverstripe/blog",
-            "version": "3.4.0",
+            "version": "3.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-blog.git",
-                "reference": "d06fe86d54b474f3dc7abf74354c4cf99729608c"
+                "reference": "21c858b9d5ff1529db35ee217e82ed114c1bb132"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-blog/zipball/d06fe86d54b474f3dc7abf74354c4cf99729608c",
-                "reference": "d06fe86d54b474f3dc7abf74354c4cf99729608c",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-blog/zipball/21c858b9d5ff1529db35ee217e82ed114c1bb132",
+                "reference": "21c858b9d5ff1529db35ee217e82ed114c1bb132",
                 "shasum": ""
             },
             "require": {
@@ -2669,7 +2737,7 @@
                 "news",
                 "silverstripe"
             ],
-            "time": "2019-08-20T04:37:58+00:00"
+            "time": "2019-11-17T22:21:20+00:00"
         },
         {
             "name": "silverstripe/campaign-admin",
@@ -3349,16 +3417,16 @@
         },
         {
             "name": "silverstripe/segment-field",
-            "version": "2.2.2",
+            "version": "2.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-segment-field.git",
-                "reference": "17734b05c18244db039c1a8d3555761249247415"
+                "reference": "74be25c43cebbe867ccf43f661f1cd0d2ef3bf56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-segment-field/zipball/17734b05c18244db039c1a8d3555761249247415",
-                "reference": "17734b05c18244db039c1a8d3555761249247415",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-segment-field/zipball/74be25c43cebbe867ccf43f661f1cd0d2ef3bf56",
+                "reference": "74be25c43cebbe867ccf43f661f1cd0d2ef3bf56",
                 "shasum": ""
             },
             "require": {
@@ -3397,7 +3465,7 @@
                 "segment",
                 "silverstripe"
             ],
-            "time": "2018-09-03T11:17:10+00:00"
+            "time": "2019-11-17T22:00:32+00:00"
         },
         {
             "name": "silverstripe/siteconfig",
@@ -3605,16 +3673,16 @@
         },
         {
             "name": "silverstripe/userforms",
-            "version": "5.4.1",
+            "version": "5.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/silverstripe/silverstripe-userforms.git",
-                "reference": "d7c76ecf80ef4791403b028b07ab65dba21be79c"
+                "reference": "cc2526aac48d7d2f52f29ce0da602260808f4f63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/d7c76ecf80ef4791403b028b07ab65dba21be79c",
-                "reference": "d7c76ecf80ef4791403b028b07ab65dba21be79c",
+                "url": "https://api.github.com/repos/silverstripe/silverstripe-userforms/zipball/cc2526aac48d7d2f52f29ce0da602260808f4f63",
+                "reference": "cc2526aac48d7d2f52f29ce0da602260808f4f63",
                 "shasum": ""
             },
             "require": {
@@ -3652,24 +3720,24 @@
             ],
             "authors": [
                 {
-                    "name": "David Craig",
-                    "email": "david@silverstripe.com"
+                    "name": "Will Rossiter",
+                    "email": "will@fullscreen.io"
                 },
                 {
                     "name": "Damian Mooyman",
                     "email": "damian@silverstripe.com"
                 },
                 {
-                    "name": "Will Rossiter",
-                    "email": "will@fullscreen.io"
-                },
-                {
-                    "name": "Christopher Pitt",
-                    "email": "chris@silverstripe.com"
+                    "name": "David Craig",
+                    "email": "david@silverstripe.com"
                 },
                 {
                     "name": "Scott Hutchinson",
                     "email": "scott@silverstripe.com"
+                },
+                {
+                    "name": "Christopher Pitt",
+                    "email": "chris@silverstripe.com"
                 }
             ],
             "description": "UserForms enables CMS users to create dynamic forms via a drag and drop interface and without getting involved in any PHP code",
@@ -3677,7 +3745,7 @@
                 "silverstripe",
                 "userforms"
             ],
-            "time": "2019-05-27T08:01:56+00:00"
+            "time": "2019-11-15T04:22:21+00:00"
         },
         {
             "name": "silverstripe/vendor-plugin",
@@ -3933,16 +4001,16 @@
         },
         {
             "name": "symbiote/silverstripe-gridfieldextensions",
-            "version": "3.2.1",
+            "version": "3.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symbiote/silverstripe-gridfieldextensions.git",
-                "reference": "56d1adf64ab790d08195cbeb23e71c37092a51da"
+                "reference": "668b297a30f7dcb0c1d34e86e2178a85c725eb2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symbiote/silverstripe-gridfieldextensions/zipball/56d1adf64ab790d08195cbeb23e71c37092a51da",
-                "reference": "56d1adf64ab790d08195cbeb23e71c37092a51da",
+                "url": "https://api.github.com/repos/symbiote/silverstripe-gridfieldextensions/zipball/668b297a30f7dcb0c1d34e86e2178a85c725eb2a",
+                "reference": "668b297a30f7dcb0c1d34e86e2178a85c725eb2a",
                 "shasum": ""
             },
             "require": {
@@ -3995,20 +4063,20 @@
                 "gridfield",
                 "silverstripe"
             ],
-            "time": "2018-10-19T21:52:48+00:00"
+            "time": "2019-04-10T20:37:22+00:00"
         },
         {
             "name": "symbiote/silverstripe-queuedjobs",
-            "version": "4.4.0",
+            "version": "4.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:symbiote/silverstripe-queuedjobs.git",
-                "reference": "6a2b99c6c37b8b678c71c4de0f7098342ec50bb3"
+                "url": "https://github.com/symbiote/silverstripe-queuedjobs.git",
+                "reference": "1729bb293dd27b9ce6da8cd56bd867d534a254bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symbiote/silverstripe-queuedjobs/zipball/6a2b99c6c37b8b678c71c4de0f7098342ec50bb3",
-                "reference": "6a2b99c6c37b8b678c71c4de0f7098342ec50bb3",
+                "url": "https://api.github.com/repos/symbiote/silverstripe-queuedjobs/zipball/1729bb293dd27b9ce6da8cd56bd867d534a254bc",
+                "reference": "1729bb293dd27b9ce6da8cd56bd867d534a254bc",
                 "shasum": ""
             },
             "require": {
@@ -4036,12 +4104,12 @@
             ],
             "authors": [
                 {
-                    "name": "Damian Mooyman",
-                    "email": "damian@silverstripe.com"
-                },
-                {
                     "name": "Marcus Nyeholt",
                     "email": "marcus@symbiote.com.au"
+                },
+                {
+                    "name": "Damian Mooyman",
+                    "email": "damian@silverstripe.com"
                 }
             ],
             "description": "A framework for defining and running background jobs in a queued manner",
@@ -4049,7 +4117,7 @@
                 "jobs",
                 "silverstripe"
             ],
-            "time": "2019-04-17T23:00:35+00:00"
+            "time": "2019-06-05T21:32:53+00:00"
         },
         {
             "name": "symfony/cache",
@@ -4187,16 +4255,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.8",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263"
+                "reference": "d12b01cba60be77b583c9af660007211e3909854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/9abbb7ef96a51f4d7e69627bc6f63307994e4263",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d12b01cba60be77b583c9af660007211e3909854",
+                "reference": "d12b01cba60be77b583c9af660007211e3909854",
                 "shasum": ""
             },
             "require": {
@@ -4206,7 +4274,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -4233,7 +4301,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T14:07:54+00:00"
+            "time": "2019-11-12T14:51:11+00:00"
         },
         {
             "name": "symfony/finder",
@@ -4690,16 +4758,16 @@
         },
         {
             "name": "toastnz/quickblocks",
-            "version": "dev-feature/quicksilver",
+            "version": "dev-quicksimple",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "bd7685bee2113192e242866650b33a8734bda10d"
+                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/bd7685bee2113192e242866650b33a8734bda10d",
-                "reference": "bd7685bee2113192e242866650b33a8734bda10d",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/08ee7e91d4dd072497a86974663f4371e2738cd2",
+                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2",
                 "shasum": ""
             },
             "require": {
@@ -4739,7 +4807,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-15T01:57:36+00:00"
+            "time": "2019-11-21T00:46:33+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4747,12 +4815,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "69d566152dbb0682875ce08b42612db95e725b24"
+                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/69d566152dbb0682875ce08b42612db95e725b24",
-                "reference": "69d566152dbb0682875ce08b42612db95e725b24",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/9b1bf88b760919fad88e23a941c22c37dfca1f90",
+                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4777,7 +4845,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-19T22:27:40+00:00"
+            "time": "2019-11-21T20:07:49+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",

@@ -1,24 +1,26 @@
 <?php
 
-use SilverStripe\AssetAdmin\Forms\UploadField;
+use Toast\Pages\ContactPage;
 use SilverStripe\Assets\Image;
 use SilverStripe\Control\Director;
-use SilverStripe\CMS\Model\SiteTree;
-use SilverStripe\CMS\Controllers\ContentController;
-use SilverStripe\Forms\CheckboxField;
-use SilverStripe\Forms\GridField\GridField;
-use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
-use SilverStripe\Forms\GridField\GridFieldDeleteAction;
-use SilverStripe\Forms\HeaderField;
-use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use Toast\Model\BannerSliderImage;
-use Toast\Pages\ContactPage;
+use SilverStripe\Forms\HeaderField;
+use SilverStripe\CMS\Model\SiteTree;
+use SilverStripe\Forms\CheckboxField;
+use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\GridField\GridField;
+use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\CMS\Controllers\ContentController;
+use SilverStripe\Forms\GridField\GridFieldDeleteAction;
+use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
+use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 
 class Page extends SiteTree
 {
     private static $db = [
         'DropdownNav' => 'Boolean',
         'Sidebar'     => 'Boolean',
+        'Summary'     => 'Text',
     ];
 
     private static $has_one = [
@@ -52,10 +54,12 @@ class Page extends SiteTree
         $fields->addFieldsToTab('Root.Banner', [
             $imagesGridField
         ]);
-        $fields->addFieldsToTab('Root.Share', [
+        $fields->addFieldsToTab('Root.Main', [
+            TextareaField::create('Summary', 'Summary'),
             UploadField::create('Thumbnail', 'Thumbnail')
                 ->setFolderName('Uploads/banners/images')
-        ]);
+            
+        ], 'SEOHealthAnalysis');
 
         return $fields;
     }
