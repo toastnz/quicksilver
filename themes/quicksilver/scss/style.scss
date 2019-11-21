@@ -4,21 +4,18 @@
 
 @import 'Base/Base';
 
-
-//------------------------------------------------------------------
-// Third Party
-//------------------------------------------------------------------
-
-@import 'External/TinySlider';
-// @import 'External/Tingle';
-
-
 //------------------------------------------------------------------
 // Core
 //------------------------------------------------------------------
 
 @import './../../../quicksilver-styles/scss/quicksilver-styles.scss';
 
+//------------------------------------------------------------------
+// Third Party
+//------------------------------------------------------------------
+
+@import 'External/TinySlider';
+@import 'External/Tingle';
 
 //------------------------------------------------------------------
 // Users
@@ -27,7 +24,6 @@
 @import 'Base/Emmanuel';
 // @import 'Base/JD';
 
-
 //------------------------------------------------------------------
 // Blocks -- Requirements: quicksilver-styles.scss
 //------------------------------------------------------------------
@@ -35,22 +31,21 @@
 @import './../../../quickblocks/scss/*';
 
 @if (variable-exists(core)) {
-	@include AccordionBlock;
-	@include ColumnBlock;
-	@include DownloadBlock;
-	@include GalleryBlock;
-	@include HeroBlock;
-	@include ImageBlock;
-	@include LinkBlock;
-	@include NewsBlock;
-	@include PercentageBlock;
-	@include SliderBlock;
-	@include SplitBlock;
-	@include TabBlock;
-	@include TestimonialBlock;
-	@include VideoBlock;
+  @include AccordionBlock;
+  @include ColumnBlock;
+  @include DownloadBlock;
+  @include GalleryBlock;
+  @include HeroBlock;
+  @include ImageBlock;
+  @include LinkBlock;
+  @include NewsBlock;
+  @include PercentageBlock;
+  @include SliderBlock;
+  @include SplitBlock;
+  @include TabBlock;
+  @include TestimonialBlock;
+  @include VideoBlock;
 }
-
 
 //------------------------------------------------------------------
 // Elements
