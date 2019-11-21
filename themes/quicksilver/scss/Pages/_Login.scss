@@ -1,0 +1,128 @@
+//------------------------------------------------------------------
+// Login Page
+//------------------------------------------------------------------
+
+.type {
+  .login {
+    position: relative;
+    height: 100vh;
+    background-color: $secondary;
+
+    .loginHeight {
+      height: 100vh;
+    }
+
+    &__wrap {
+      position: relative;
+      z-index: 1;
+      padding-top: 4rem;
+      padding-bottom: 4rem;
+
+      &__content {
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        padding: 2rem;
+        width: 100%;
+        max-width: 60rem;
+        border-radius: 0;
+
+        transition: border-radius .3s ease, padding .3s ease, width .3s ease;
+
+        @include media($sm) {
+          width: calc(100% - #{$gutterWidth * 2});
+          padding: 8rem 3rem;
+          border-radius: 6rem;
+        }
+
+        @include media($xmd) {
+          padding: 8rem;
+        }
+
+        &__header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+
+        &__text {
+          text-align: center;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: .2rem solid rgba($white, 0.3);
+
+          &__heading {
+            color: $white;
+          }
+        }
+
+        p {
+          color: $white;
+        }
+
+        &__form {
+          @include autofill($white);
+
+          .field {
+            margin-bottom: 1rem;
+          }
+
+          label {
+            display: block;
+            color: $white;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+          }
+
+          input:not([type="submit"]) {
+            @extend %input;
+            color: $white!important;
+            background-color: rgba($black, 0.2)!important;
+          }
+
+          [type="submit"] {
+            width: 100%;
+            @include button($white);
+          }
+
+          .field.checkbox {
+            margin-top: 2rem;
+
+            [type="checkbox"] {
+              @extend %checkbox; 
+
+              + label {
+                &:before {
+                  border-color: $white!important;
+                }
+
+                &:after {
+                  background-color: $white!important;
+                }
+              }
+            }
+          }
+
+
+          .btn-toolbar {
+            margin-top: 2rem;
+          }
+
+          #ForgotPassword,
+          #BackToLogin {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: .2rem solid rgba($white, 0.3);
+            a {
+              color: $white;
+
+              @include active {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

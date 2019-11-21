@@ -3,7 +3,7 @@
   <head>
     <% include Toast\Meta %>
   </head>
-  <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api-key="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
+  <body class="$Classname" <% if $GoogleMapsApiKey %>data-maps-api="$GoogleMapsApiKey"<% end_if %> data-classname="$Classname" data-title="$Title" data-url-segment="$URLSegment" data-page-template="$Classname" data-equalize="header">
 
     <%------------------------------------------------------------------
     Type Settings Inclusion

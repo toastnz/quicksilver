@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "78295c6da73df7295a96993a2af3931f",
+    "content-hash": "3695b6dfb6d6448f1b10ab9c49b688f9",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -2003,12 +2003,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/type.git",
-                "reference": "c77004790a9888ded1782e53226609216a4123d9"
+                "reference": "0956f989dafcbfce3474462c67d803bdc0b141b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/type/zipball/c77004790a9888ded1782e53226609216a4123d9",
-                "reference": "c77004790a9888ded1782e53226609216a4123d9",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/0956f989dafcbfce3474462c67d803bdc0b141b4",
+                "reference": "0956f989dafcbfce3474462c67d803bdc0b141b4",
                 "shasum": ""
             },
             "require": {
@@ -2045,7 +2045,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-11-13T22:36:01+00:00"
+            "time": "2019-11-21T20:54:08+00:00"
         },
         {
             "name": "psr/cache",
@@ -4255,16 +4255,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v4.3.8",
+            "version": "v4.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263"
+                "reference": "d12b01cba60be77b583c9af660007211e3909854"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/9abbb7ef96a51f4d7e69627bc6f63307994e4263",
-                "reference": "9abbb7ef96a51f4d7e69627bc6f63307994e4263",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d12b01cba60be77b583c9af660007211e3909854",
+                "reference": "d12b01cba60be77b583c9af660007211e3909854",
                 "shasum": ""
             },
             "require": {
@@ -4274,7 +4274,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3-dev"
+                    "dev-master": "4.4-dev"
                 }
             },
             "autoload": {
@@ -4301,7 +4301,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T14:07:54+00:00"
+            "time": "2019-11-12T14:51:11+00:00"
         },
         {
             "name": "symfony/finder",
@@ -4758,16 +4758,16 @@
         },
         {
             "name": "toastnz/quickblocks",
-            "version": "dev-feature/quicksilver",
+            "version": "dev-quicksimple",
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "fe6b388ef3b00c688d6d03086e29db68b384f89f"
+                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/fe6b388ef3b00c688d6d03086e29db68b384f89f",
-                "reference": "fe6b388ef3b00c688d6d03086e29db68b384f89f",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/08ee7e91d4dd072497a86974663f4371e2738cd2",
+                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2",
                 "shasum": ""
             },
             "require": {
@@ -4807,7 +4807,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-18T20:22:43+00:00"
+            "time": "2019-11-21T00:46:33+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4815,12 +4815,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "fea113339b10f389288ef9e81b4b4db08ffa274d"
+                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/fea113339b10f389288ef9e81b4b4db08ffa274d",
-                "reference": "fea113339b10f389288ef9e81b4b4db08ffa274d",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/9b1bf88b760919fad88e23a941c22c37dfca1f90",
+                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4845,7 +4845,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-14T21:39:44+00:00"
+            "time": "2019-11-21T20:07:49+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",

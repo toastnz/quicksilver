@@ -86,6 +86,240 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./node_modules/google-maps/lib/Google.js":
+/*!************************************************!*\
+  !*** ./node_modules/google-maps/lib/Google.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;(function(root, factory) {
+
+	if (root === null) {
+		throw new Error('Google-maps package can be used only in browser');
+	}
+
+	if (true) {
+		!(__WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.call(exports, __webpack_require__, exports, module)) :
+				__WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+	} else {}
+
+})(typeof window !== 'undefined' ? window : null, function() {
+
+
+	'use strict';
+
+
+	var googleVersion = '3.31';
+
+	var script = null;
+
+	var google = null;
+
+	var loading = false;
+
+	var callbacks = [];
+
+	var onLoadEvents = [];
+
+	var originalCreateLoaderMethod = null;
+
+
+	var GoogleMapsLoader = {};
+
+
+	GoogleMapsLoader.URL = 'https://maps.googleapis.com/maps/api/js';
+
+	GoogleMapsLoader.KEY = null;
+
+	GoogleMapsLoader.LIBRARIES = [];
+
+	GoogleMapsLoader.CLIENT = null;
+
+	GoogleMapsLoader.CHANNEL = null;
+
+	GoogleMapsLoader.LANGUAGE = null;
+
+	GoogleMapsLoader.REGION = null;
+
+	GoogleMapsLoader.VERSION = googleVersion;
+
+	GoogleMapsLoader.WINDOW_CALLBACK_NAME = '__google_maps_api_provider_initializator__';
+
+
+	GoogleMapsLoader._googleMockApiObject = {};
+
+
+	GoogleMapsLoader.load = function(fn) {
+		if (google === null) {
+			if (loading === true) {
+				if (fn) {
+					callbacks.push(fn);
+				}
+			} else {
+				loading = true;
+
+				window[GoogleMapsLoader.WINDOW_CALLBACK_NAME] = function() {
+					ready(fn);
+				};
+
+				GoogleMapsLoader.createLoader();
+			}
+		} else if (fn) {
+			fn(google);
+		}
+	};
+
+
+	GoogleMapsLoader.createLoader = function() {
+		script = document.createElement('script');
+		script.type = 'text/javascript';
+		script.src = GoogleMapsLoader.createUrl();
+
+		document.body.appendChild(script);
+	};
+
+
+	GoogleMapsLoader.isLoaded = function() {
+		return google !== null;
+	};
+
+
+	GoogleMapsLoader.createUrl = function() {
+		var url = GoogleMapsLoader.URL;
+
+		url += '?callback=' + GoogleMapsLoader.WINDOW_CALLBACK_NAME;
+
+		if (GoogleMapsLoader.KEY) {
+			url += '&key=' + GoogleMapsLoader.KEY;
+		}
+
+		if (GoogleMapsLoader.LIBRARIES.length > 0) {
+			url += '&libraries=' + GoogleMapsLoader.LIBRARIES.join(',');
+		}
+
+		if (GoogleMapsLoader.CLIENT) {
+			url += '&client=' + GoogleMapsLoader.CLIENT;
+		}
+
+		if (GoogleMapsLoader.CHANNEL) {
+			url += '&channel=' + GoogleMapsLoader.CHANNEL;
+		}
+
+		if (GoogleMapsLoader.LANGUAGE) {
+			url += '&language=' + GoogleMapsLoader.LANGUAGE;
+		}
+
+		if (GoogleMapsLoader.REGION) {
+			url += '&region=' + GoogleMapsLoader.REGION;
+		}
+
+		if (GoogleMapsLoader.VERSION) {
+			url += '&v=' + GoogleMapsLoader.VERSION;
+		}
+
+		return url;
+	};
+
+
+	GoogleMapsLoader.release = function(fn) {
+		var release = function() {
+			GoogleMapsLoader.KEY = null;
+			GoogleMapsLoader.LIBRARIES = [];
+			GoogleMapsLoader.CLIENT = null;
+			GoogleMapsLoader.CHANNEL = null;
+			GoogleMapsLoader.LANGUAGE = null;
+			GoogleMapsLoader.REGION = null;
+			GoogleMapsLoader.VERSION = googleVersion;
+
+			google = null;
+			loading = false;
+			callbacks = [];
+			onLoadEvents = [];
+
+			if (typeof window.google !== 'undefined') {
+				delete window.google;
+			}
+
+			if (typeof window[GoogleMapsLoader.WINDOW_CALLBACK_NAME] !== 'undefined') {
+				delete window[GoogleMapsLoader.WINDOW_CALLBACK_NAME];
+			}
+
+			if (originalCreateLoaderMethod !== null) {
+				GoogleMapsLoader.createLoader = originalCreateLoaderMethod;
+				originalCreateLoaderMethod = null;
+			}
+
+			if (script !== null) {
+				script.parentElement.removeChild(script);
+				script = null;
+			}
+
+			if (fn) {
+				fn();
+			}
+		};
+
+		if (loading) {
+			GoogleMapsLoader.load(function() {
+				release();
+			});
+		} else {
+			release();
+		}
+	};
+
+
+	GoogleMapsLoader.onLoad = function(fn) {
+		onLoadEvents.push(fn);
+	};
+
+
+	GoogleMapsLoader.makeMock = function() {
+		originalCreateLoaderMethod = GoogleMapsLoader.createLoader;
+
+		GoogleMapsLoader.createLoader = function() {
+			window.google = GoogleMapsLoader._googleMockApiObject;
+			window[GoogleMapsLoader.WINDOW_CALLBACK_NAME]();
+		};
+	};
+
+
+	var ready = function(fn) {
+		var i;
+
+		loading = false;
+
+		if (google === null) {
+			google = window.google;
+		}
+
+		for (i = 0; i < onLoadEvents.length; i++) {
+			onLoadEvents[i](google);
+		}
+
+		if (fn) {
+			fn(google);
+		}
+
+		for (i = 0; i < callbacks.length; i++) {
+			callbacks[i](google);
+		}
+
+		callbacks = [];
+	};
+
+
+	return GoogleMapsLoader;
+
+});
+
+
+/***/ }),
+
 /***/ "./node_modules/tiny-slider/src/helpers/Object.keys.js":
 /*!*************************************************************!*\
   !*** ./node_modules/tiny-slider/src/helpers/Object.keys.js ***!
@@ -3950,6 +4184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_equalizer__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/equalizer */ "./themes/quicksilver/js/components/equalizer.js");
 /* harmony import */ var _components_videoEmbed__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/videoEmbed */ "./themes/quicksilver/js/components/videoEmbed.js");
 /* harmony import */ var _components_breakpoints__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/breakpoints */ "./themes/quicksilver/js/components/breakpoints.js");
+/* harmony import */ var _components_maps__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/maps */ "./themes/quicksilver/js/components/maps.js");
 /*------------------------------------------------------------------
 Stylesheets
 ------------------------------------------------------------------*/
@@ -3992,6 +4227,7 @@ Object.keys(sliderSettings).map(function (selector) {
 // import Gallery from './components/gallery';
 
 
+
 selectAll('.js-accordion').forEach(function (group) {
   return new _components_accordion__WEBPACK_IMPORTED_MODULE_4__["default"](group);
 });
@@ -4007,6 +4243,9 @@ selectAll('[data-parallax]').forEach(function (group) {
 });
 selectAll('[data-breakpoint]').forEach(function (group) {
   return new _components_breakpoints__WEBPACK_IMPORTED_MODULE_9__["default"](group);
+});
+selectAll('[data-map]').forEach(function (map) {
+  return new _components_maps__WEBPACK_IMPORTED_MODULE_10__["default"](map);
 });
 selectAll('[data-video]').forEach(function (el) {
   el.addEventListener('click', function (e) {
@@ -4491,6 +4730,87 @@ _functions_selectAll__WEBPACK_IMPORTED_MODULE_0___default()('form.form').forEach
     }
   });
 });
+
+/***/ }),
+
+/***/ "./themes/quicksilver/js/components/maps.js":
+/*!**************************************************!*\
+  !*** ./themes/quicksilver/js/components/maps.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+// Requirements
+var GM = __webpack_require__(/*! google-maps */ "./node_modules/google-maps/lib/Google.js");
+
+var devMode = false;
+
+var Map =
+/*#__PURE__*/
+function () {
+  function Map(el) {
+    _classCallCheck(this, Map);
+
+    this.map = el;
+    this.coordinates = this.map.getAttribute('data-map').split(',');
+    this.api = document.body.getAttribute('data-maps-api');
+    this.api || devMode ? this.init() : this.exit();
+  }
+
+  _createClass(Map, [{
+    key: "exit",
+    value: function exit() {
+      console.warn('Missing Google Maps API key! Add the API key to the body \'data-maps-api="key"\'.');
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      GM.KEY = this.api;
+      var map;
+      var marker;
+      var center = {
+        lat: parseFloat(this.coordinates[0]),
+        lng: parseFloat(this.coordinates[1])
+      };
+      GM.load(function (google) {
+        // Initialise the map
+        map = new google.maps.Map(_this.map, {
+          center: center,
+          disableDefaultUI: true,
+          scrollwheel: false,
+          zoomControl: true,
+          zoom: 12
+        });
+        marker = new google.maps.Marker({
+          map: map,
+          position: center
+        });
+      });
+    }
+  }]);
+
+  return Map;
+}();
+
+/* harmony default export */ __webpack_exports__["default"] = (Map); // ======================================================
+// JavaScript Usage
+// ======================================================
+// import Map from './maps';
+// document.querySelectorAll('[data-map]').forEach((map) => new Map(map));
+// ======================================================
+// HTML Usage
+// ======================================================
+// <section class="js-map" data-map="latitude,longitude"></section>
 
 /***/ }),
 
@@ -5330,9 +5650,9 @@ function () {
   !*** ./themes/quicksilver/scss/style.scss ***!
   \********************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-// extracted by mini-css-extract-plugin
+throw new Error("Module build failed (from ./node_modules/mini-css-extract-plugin/dist/loader.js):\nModuleBuildError: Module build failed (from ./node_modules/sass-loader/dist/cjs.js):\n\n            @include button($white);\n                    ^\n      No mixin named button\n      in /Users/pinc/Sites/www/quicksilver/themes/quicksilver/scss/Pages/_Login.scss (line 84, column 22)\n    at runLoaders (/Users/pinc/Sites/www/quicksilver/node_modules/webpack/lib/NormalModule.js:316:20)\n    at /Users/pinc/Sites/www/quicksilver/node_modules/loader-runner/lib/LoaderRunner.js:367:11\n    at /Users/pinc/Sites/www/quicksilver/node_modules/loader-runner/lib/LoaderRunner.js:233:18\n    at context.callback (/Users/pinc/Sites/www/quicksilver/node_modules/loader-runner/lib/LoaderRunner.js:111:13)\n    at Object.render [as callback] (/Users/pinc/Sites/www/quicksilver/node_modules/sass-loader/dist/index.js:89:7)\n    at Object.done [as callback] (/Users/pinc/Sites/www/quicksilver/node_modules/neo-async/async.js:8067:18)\n    at options.error (/Users/pinc/Sites/www/quicksilver/node_modules/node-sass/lib/index.js:294:32)");
 
 /***/ })
 
