@@ -45,6 +45,7 @@ import VideoEmbed from './components/videoEmbed';
 // import SmoothScroll from './components/smoothScroll';
 // import Gallery from './components/gallery';
 import Breakpoint from './components/breakpoints';
+import Map from './components/maps';
 
 selectAll('.js-accordion').forEach((group) => new Accordion(group));
 selectAll('.js-tabs').forEach((group) => new Tabs(group));
@@ -52,6 +53,7 @@ selectAll('.js-tabs').forEach((group) => new Tabs(group));
 selectAll('[data-equalize]').forEach((group) => new Equalizer(group));
 selectAll('[data-parallax]').forEach((group) => new Parallax(group));
 selectAll('[data-breakpoint]').forEach((group) => new Breakpoint(group));
+selectAll('[data-map]').forEach((map) => new Map(map));
 
 selectAll('[data-video]').forEach((el) => {
 	el.addEventListener('click', (e) => {

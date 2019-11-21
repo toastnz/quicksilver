@@ -2003,12 +2003,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/type.git",
-                "reference": "3f773525d078a230183759c13b0de264591d50cd"
+                "reference": "0956f989dafcbfce3474462c67d803bdc0b141b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/type/zipball/3f773525d078a230183759c13b0de264591d50cd",
-                "reference": "3f773525d078a230183759c13b0de264591d50cd",
+                "url": "https://api.github.com/repos/permanentinc/type/zipball/0956f989dafcbfce3474462c67d803bdc0b141b4",
+                "reference": "0956f989dafcbfce3474462c67d803bdc0b141b4",
                 "shasum": ""
             },
             "require": {
@@ -2045,7 +2045,7 @@
                 "silverstripe",
                 "type"
             ],
-            "time": "2019-11-19T22:43:11+00:00"
+            "time": "2019-11-21T20:54:08+00:00"
         },
         {
             "name": "psr/cache",
