@@ -25,7 +25,8 @@ class ContactPage extends UserDefinedForm
     private static $db = [
         'Map'      => 'Boolean',
         'Latitude' => 'Varchar',
-        'Longitude' => 'Varchar'
+        'Longitude' => 'Varchar',
+        'FullWidth' => 'Boolean',
     ];
 
     public function getCMSFields()
@@ -33,7 +34,8 @@ class ContactPage extends UserDefinedForm
         $fields = parent::getCMSFields();
 
         $fields->addFieldsToTab('Root.Map', [
-            CheckboxField::create('Map', 'Turn on map')
+            CheckboxField::create('Map', 'Turn on map'),
+            CheckboxField::create('FullWidth', 'Show FullWidth')
         ]);
 
 
@@ -41,9 +43,13 @@ class ContactPage extends UserDefinedForm
             $this,
             'Location'
         ));
-        
+
         $fields->removeFieldsFromTab('Root.Main', ['Latitude', 'Longitude']);
         return $fields;
+    }
+    public function mapApiKey()
+    {
+        return GoogleMapField::config()->default_options['api_key'];
     }
 }
 

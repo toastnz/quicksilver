@@ -38,6 +38,10 @@ Heyday\MenuManager\MenuSet:
   default_sets:
     - Main
     - Footer
+
+BetterBrief\GoogleMapField:
+  default_options:
+    api_key: 'api_key'
 ---
 Only:
   environment: dev
