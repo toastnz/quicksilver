@@ -21,10 +21,11 @@
         <section class="contactMap contentBlock">
             <div class="row <% if $FullWidth %>explode collapse<% end_if %>">
                 <div class="column">
-                    <div class="contactMap__media [ js-map ]" data-map="1,1"></div>
+                    <div class="contactMap__media [ js-map ]" data-map="$Latitude,$Longitude"></div>
                 </div>
             </div>
         </section>
-            
+
+
     </section>
 </article>

@@ -15,11 +15,11 @@ Tingle v0.14.0
   align-items: center;
   overflow: hidden;
   -webkit-overflow-scrolling: touch;
-  background: rgba($black, .8);
+  background: rgba($black, 0.8);
   opacity: 0;
   user-select: none;
   cursor: pointer;
-  transition: transform .2s ease;
+  transition: transform 0.2s ease;
 }
 
 /*------------------------------------------------------------------
@@ -57,7 +57,7 @@ Modal
   font-family: monospace;
   line-height: 1;
   cursor: pointer;
-  transition: color .3s ease;
+  transition: color 0.3s ease;
 }
 
 .tingle-modal__closeLabel {
@@ -78,8 +78,8 @@ Modal
   background: transparent;
   opacity: 1;
   cursor: auto;
-  transition: transform .3s cubic-bezier(.175, .885, .32, 1.275);
-  transform: scale(.8);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform: scale(0.8);
 }
 
 .tingle-modal-box__content {
@@ -98,7 +98,7 @@ Modal
 .tingle-modal-box__footer::after {
   display: table;
   clear: both;
-  content: "";
+  content: '';
 }
 
 .tingle-modal-box__footer--sticky {
@@ -106,7 +106,7 @@ Modal
   bottom: -200px;
   z-index: 10001;
   opacity: 1;
-  transition: bottom .3s ease-in-out .3s;
+  transition: bottom 0.3s ease-in-out 0.3s;
 }
 
 /* state
@@ -147,7 +147,7 @@ Button
 
 .tingle-btn {
   display: inline-block;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
   padding: 1rem 2rem;
   border: none;
   background-color: grey;
@@ -159,7 +159,7 @@ Button
   font-family: inherit;
   line-height: normal;
   cursor: pointer;
-  transition: background-color .4s ease;
+  transition: background-color 0.4s ease;
 }
 
 .tingle-btn--primary {
@@ -236,15 +236,14 @@ Responsive
     display: inline-block;
     vertical-align: middle;
     font-size: 1.5rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   }
 
   .tingle-modal__closeIcon {
     display: inline-block;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     vertical-align: middle;
     font-size: 4rem;
-
   }
 }
 
@@ -264,7 +263,6 @@ Responsive
   }
 }
 
-
 /*------------------------------------------------------------------
 Custom Styles
 ------------------------------------------------------------------*/
@@ -276,6 +274,7 @@ Custom Styles
 
 .closeIcon {
   @include svg(1, 1);
+
   @include media($md, max) {
     max-width: 4rem;
   }
