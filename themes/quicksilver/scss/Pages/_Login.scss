@@ -74,21 +74,21 @@
           }
 
           input:not([type="submit"]) {
-            @extend %input;
+            // @extend %input;
             color: $white!important;
             background-color: rgba($black, 0.2)!important;
           }
 
           [type="submit"] {
             width: 100%;
-            @include button($white);
+            // @include button($white);
           }
 
           .field.checkbox {
             margin-top: 2rem;
 
             [type="checkbox"] {
-              @extend %checkbox; 
+              // @extend %checkbox; 
 
               + label {
                 &:before {
