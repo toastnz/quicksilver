@@ -23,7 +23,7 @@
             </div>
         </section>
         
-        <% if $SiteConfig.GoogleMapsApiKey %>
+        <% if $SiteConfig.GoogleMapsApiKey && $Map %>
             <section class="contactMap contentBlock">
                 <div class="row <% if $FullWidth %>explode collapse<% end_if %>">
                     <div class="column">
