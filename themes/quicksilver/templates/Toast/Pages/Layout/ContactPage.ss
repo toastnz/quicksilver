@@ -9,23 +9,29 @@
             $ForTemplate
         <% end_loop %>
 
-
         <section class="quickBlock contentBlock">
             <div class="quickBlock__wrap row">
-                <div class="column">
-                    $Content
-                </div>
+                <% if $ContactContent %>
+                    <div class="column xmd-6 lg-4">
+                        $ContactContent
+                    </div>
+                <% else %>
+                    <div class="column">
+                        $Content
+                    </div>
+                <% end_if %>
             </div>
         </section>
-
-        <section class="contactMap contentBlock">
-            <div class="row <% if $FullWidth %>explode collapse<% end_if %>">
-                <div class="column">
-                    <div class="contactMap__media [ js-map ]" data-map="$Latitude,$Longitude"></div>
+        
+        <% if $SiteConfig.GoogleMapsApiKey %>
+            <section class="contactMap contentBlock">
+                <div class="row <% if $FullWidth %>explode collapse<% end_if %>">
+                    <div class="column">
+                        <div class="contactMap__media [ js-map ]" data-map="$Latitude,$Longitude"></div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
+            </section>
+        <% end_if %>
 
     </section>
 </article>
