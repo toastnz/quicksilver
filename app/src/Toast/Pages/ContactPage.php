@@ -27,6 +27,7 @@ class ContactPage extends UserDefinedForm
         'Latitude' => 'Varchar',
         'Longitude' => 'Varchar',
         'FullWidth' => 'Boolean',
+        'ContactContent' => 'HTMLText',
     ];
 
     public function getCMSFields()
@@ -36,6 +37,10 @@ class ContactPage extends UserDefinedForm
         $fields->addFieldsToTab('Root.Map', [
             CheckboxField::create('Map', 'Turn on map'),
             CheckboxField::create('FullWidth', 'Show FullWidth')
+        ]);
+
+        $fields->addFieldsToTab('Root.Main', [
+            HTMLEditorField::create('ContactContent', 'Contact Content')
         ]);
 
 
