@@ -1,29 +1,28 @@
-<div class="post-summary">
+<div class="blogSummary">
+	<div class="md-up-alignContent">
+	    <% if $FeaturedImage %>
+		    <div class="blogSummary__media verticalAlign">
+		    	<a href="$Link" title="<%t SilverStripe\\Blog\\Model\\Blog.ReadMoreAbout "Read more about '{title}'..." title=$Title %>" class="blogSummary__media__image" style="background-image: url('$FeaturedImage.ScaleWidth(795).URL');"></a>
+		    </div>
+		<% end_if %>
 
-	<h2>
-		<a href="$Link" title="<%t SilverStripe\\Blog\\Model\\Blog.ReadMoreAbout "Read more about '{title}'..." title=$Title %>">
-		    <% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %>
-		</a>
-	</h2>
+		<div class="blogSummary__wrap verticalAlign">
 
-    <% if $FeaturedImage %>
-	<p class="post-image">
-		<a href="$Link" title="<%t SilverStripe\\Blog\\Model\\Blog.ReadMoreAbout "Read more about '{title}'..." title=$Title %>">
-			$FeaturedImage.ScaleWidth(795)
-		</a>
-	</p>
-	<% end_if %>
+			<h4 class="blogSummary__wrap__heading">
+				<a href="$Link" title="<%t SilverStripe\\Blog\\Model\\Blog.ReadMoreAbout "Read more about '{title}'..." title=$Title %>">
+				    <% if $MenuTitle %>$MenuTitle<% else %>$Title<% end_if %>
+				</a>
+			</h4>
 
-	<% if $Summary %>
-		$Summary
-	<% else %>
-		<p>$Excerpt</p>
-	<% end_if %>
-	    <p>
-			<a href="$Link">
-				<%t SilverStripe\\Blog\\Model\\Blog.ReadMoreAbout "Read more about '{title}'..." title=$Title %>
-			</a>
-		</p>
+			<% if $Summary %>
+				<p>$Summary</p>
+			<% else %>
+				<p>$Excerpt</p>
+			<% end_if %>
+			
+			<% include SilverStripe\\Blog\\EntryMeta %>
 
-	<% include SilverStripe\\Blog\\EntryMeta %>
+			<p><a href="$Link" class="redirect--arrow">Read more</a></p>
+		</div>
+	</div>
 </div>
