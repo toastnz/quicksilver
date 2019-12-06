@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar contentBlock">
     <nav class="sidebar__nav row">
         <ul class="sidebar__nav__list column unstyled">
 

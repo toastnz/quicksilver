@@ -1,0 +1,75 @@
+//------------------------------------------------------------------
+// Blog Page
+//------------------------------------------------------------------
+
+.blog {
+  background-color: $off-white;
+  &__wrap {
+    &__item {
+      margin-bottom: $gutterWidth * 2;
+
+      .blogSummary {
+        padding: $gutterWidth;
+        background-color: $white;
+
+        &__media {
+          margin-bottom: $gutterWidth * 2;
+
+          @include media($md) {
+            width: 30%;
+            padding-right: $gutterWidth;
+          }
+
+          &__image {
+            @include contain;
+            display: block;
+            width: 100%;
+            padding-bottom: 75%;
+          }
+        }
+
+
+        &__wrap {
+
+          &__heading {
+  
+          }
+
+          .blogMeta {
+            color: rgba($black, 0.5);
+            font-size: 1.2rem;
+          }
+
+          :last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+
+.blogPost {
+  &__header {
+    margin-bottom: $gutterWidth * 2;
+
+    &__title {
+      margin-bottom: $gutterWidth * 2;
+    }
+
+    // &__media {
+    //   @include contain;
+    //   width: 100%;
+    //   padding-bottom: 60%;
+    // }
+
+    + .contentBlock {
+      margin-top: 0;
+    }
+  }
+
+  .blogMeta {
+    font-size: 1.2rem;
+    color: rgba($black, 0.5);
+  }
+}

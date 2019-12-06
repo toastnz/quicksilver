@@ -1,0 +1,24 @@
+//------------------------------------------------------------------
+// Pagination
+//------------------------------------------------------------------
+
+.pagination {
+	padding: $gutterWidth * 2 0;
+	background-color: $off-white;
+
+	&__wrap {
+
+		&__list {
+			text-align: center;
+
+			&__items {
+				margin-bottom: 0;
+
+				a, span {
+					display: inline-block;
+					margin: 0 .5em;
+				}
+			}
+		}
+	}
+}

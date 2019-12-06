@@ -1,5 +1,26 @@
 
-<article class="[ js-filters ]" data-api-url="{$Link}ajaxBlogPosts" data-category-id="$CategoryID" data-posts-per-page="$PostsPerPage">
+<section class="blog contentBlock--padding">
+	<div class="blog__wrap row">
+		<% if $PaginatedList.Exists %>
+			<% loop $PaginatedList %>
+				<div class="blog__wrap__item column">
+					<% include SilverStripe\\Blog\\PostSummary %>
+				</div>
+			<% end_loop %>
+		<% else %>
+			<div class="blog__wrap__item column">
+				<h3 class="colour--primary">Unfortunately there are no items found for the current filter.</h3>
+			</div>
+		<% end_if %>
+	</div>
+</section>
+
+<% loop $ContentBlocks.Sort('SortOrder') %>
+	$ForTemplate
+<% end_loop %>
+
+
+<%-- <article class="[ js-filters ]" data-api-url="{$Link}ajaxBlogPosts" data-category-id="$CategoryID" data-posts-per-page="$PostsPerPage">
 
 	<% include Silverstripe\\Blog\\HolderFilters %>
 
@@ -29,3 +50,4 @@
 	$ForTemplate
 <% end_loop %>
 
+ --%>
