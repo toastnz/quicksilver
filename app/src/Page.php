@@ -18,10 +18,11 @@ use SilverStripe\Forms\GridField\GridFieldConfig_RelationEditor;
 class Page extends SiteTree
 {
     private static $db = [
-        'DropdownNav' => 'Boolean',
-        'Sidebar'     => 'Boolean',
-        'Summary'     => 'Text',
-    ];
+            'DropdownNav' => 'Boolean',
+            'Sidebar' => 'Boolean',
+            'Summary' => 'Text',
+            'CopyBlocks' => 'Boolean'
+        ];
 
     private static $has_one = [
         'Thumbnail' => Image::class
@@ -35,6 +36,10 @@ class Page extends SiteTree
         'Thumbnail'
     ];
 
+    private static $defaults = [
+        'CopyBlocks' => 0
+    ];
+
     public function getCMSFields()
     {
         $fields = parent::getCMSFields();
@@ -42,8 +47,8 @@ class Page extends SiteTree
         // Banner Slider Images
         $config = GridFieldConfig_RelationEditor::create(10);
         $config->addComponent(GridFieldOrderableRows::create('SortOrder'))
-               ->removeComponentsByType(GridFieldDeleteAction::class)
-               ->addComponent(new GridFieldDeleteAction(false));
+            ->removeComponentsByType(GridFieldDeleteAction::class)
+            ->addComponent(new GridFieldDeleteAction(false));
         $imagesGridField = GridField::create(
             'BannerImages',
             '',
@@ -54,17 +59,23 @@ class Page extends SiteTree
         $fields->addFieldsToTab('Root.Banner', [
             $imagesGridField
         ]);
+        $fields->addFieldsToTab('Root.Blocks', [
+            CheckboxField::create('CopyBlocks', 'Copy Blocks')->setDescription('Copy the blocks when the page is duplicated')
+
+        ]);
+
         $fields->addFieldsToTab('Root.Main', [
             TextareaField::create('Summary', 'Summary'),
             UploadField::create('Thumbnail', 'Thumbnail')
                 ->setFolderName('Uploads/banners/images')
-            
+
         ], 'SEOHealthAnalysis');
 
         return $fields;
     }
 
-    public function getSettingsFields() {
+    public function getSettingsFields()
+    {
         $fields = parent::getSettingsFields();
         $fields->insertAfter(
             'ShowInSearch',
@@ -101,6 +112,26 @@ class Page extends SiteTree
         return $this->Thumbnail();
     }
 
+
+    public function onBeforeDuplicate($originalRecord, $doWrite)
+    {
+        /*
+         * Duplicates block
+         */
+        if ($originalRecord->CopyBlocks) {
+            if ($originalRecord->ContentBlocks()) {
+                foreach ($originalRecord->ContentBlocks() as $block) {
+                    $newBlock = $block->duplicate();
+                    $newBlock->setField('ParentPageID', $this->ID);
+                    $newBlock->setField('Title', $block->Title);
+                    $newBlock->write();
+                    $newBlock->doPublish();
+                    $this->ContentBlocks()->add($newBlock);
+                    $this->CopyBlocks = 0;
+                }
+            }
+        }
+    }
 }
 
 
