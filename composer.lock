@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3695b6dfb6d6448f1b10ab9c49b688f9",
+    "content-hash": "ae5096fe4c16dbd64ade99d6ee86d15b",
     "packages": [
         {
             "name": "asyncphp/doorman",
@@ -237,16 +237,16 @@
         },
         {
             "name": "bramus/ansi-php",
-            "version": "3.0.2",
+            "version": "3.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/bramus/ansi-php.git",
-                "reference": "79d30c30651b0c6f23cf85503c779c72ac74ab8a"
+                "reference": "fb0be33f36053af7454d462e3ddc0a2ac0b2f311"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/bramus/ansi-php/zipball/79d30c30651b0c6f23cf85503c779c72ac74ab8a",
-                "reference": "79d30c30651b0c6f23cf85503c779c72ac74ab8a",
+                "url": "https://api.github.com/repos/bramus/ansi-php/zipball/fb0be33f36053af7454d462e3ddc0a2ac0b2f311",
+                "reference": "fb0be33f36053af7454d462e3ddc0a2ac0b2f311",
                 "shasum": ""
             },
             "require": {
@@ -273,7 +273,7 @@
                 }
             ],
             "description": "ANSI Control Functions and ANSI Control Sequences (Colors, Erasing, etc.) for PHP CLI Apps",
-            "time": "2019-02-12T15:05:30+00:00"
+            "time": "2019-12-03T09:04:38+00:00"
         },
         {
             "name": "bramus/monolog-colored-line-formatter",
@@ -767,16 +767,16 @@
         },
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.4.1",
+            "version": "6.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "0895c932405407fd3a7368b6910c09a24d26db11"
+                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/0895c932405407fd3a7368b6910c09a24d26db11",
-                "reference": "0895c932405407fd3a7368b6910c09a24d26db11",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
+                "reference": "dbc2bc3a293ed6b1ae08a3651e2bfd213d19b6a5",
                 "shasum": ""
             },
             "require": {
@@ -791,12 +791,13 @@
                 "psr/log": "^1.1"
             },
             "suggest": {
+                "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.3-dev"
+                    "dev-master": "6.5-dev"
                 }
             },
             "autoload": {
@@ -829,7 +830,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2019-10-23T15:58:00+00:00"
+            "time": "2019-12-07T18:20:45+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -1421,16 +1422,16 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.57",
+            "version": "1.0.61",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a"
+                "reference": "4fb13c01784a6c9f165a351e996871488ca2d8c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
-                "reference": "0e9db7f0b96b9f12dcf6f65bc34b72b1a30ea55a",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/4fb13c01784a6c9f165a351e996871488ca2d8c9",
+                "reference": "4fb13c01784a6c9f165a351e996871488ca2d8c9",
                 "shasum": ""
             },
             "require": {
@@ -1501,7 +1502,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2019-10-16T21:01:05+00:00"
+            "time": "2019-12-08T21:46:50+00:00"
         },
         {
             "name": "m1/env",
@@ -1953,12 +1954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/permanentinc/found.git",
-                "reference": "e52d53708228527975c1b2f3dd9c3b2dd1d6b79f"
+                "reference": "f957e8da05e016778c41af7e6eef86cfdd0dee7c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/permanentinc/found/zipball/e52d53708228527975c1b2f3dd9c3b2dd1d6b79f",
-                "reference": "e52d53708228527975c1b2f3dd9c3b2dd1d6b79f",
+                "url": "https://api.github.com/repos/permanentinc/found/zipball/f957e8da05e016778c41af7e6eef86cfdd0dee7c",
+                "reference": "f957e8da05e016778c41af7e6eef86cfdd0dee7c",
                 "shasum": ""
             },
             "require": {
@@ -1995,7 +1996,7 @@
                 "seo",
                 "silverstripe"
             ],
-            "time": "2019-11-11T01:34:13+00:00"
+            "time": "2019-12-04T23:33:17+00:00"
         },
         {
             "name": "permanentinc/type",
@@ -4762,12 +4763,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quickblocks.git",
-                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2"
+                "reference": "9d7f83d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/08ee7e91d4dd072497a86974663f4371e2738cd2",
-                "reference": "08ee7e91d4dd072497a86974663f4371e2738cd2",
+                "url": "https://api.github.com/repos/toastnz/quickblocks/zipball/9d7f83d",
+                "reference": "9d7f83d",
                 "shasum": ""
             },
             "require": {
@@ -4807,7 +4808,7 @@
                 "modular",
                 "silverstripe"
             ],
-            "time": "2019-11-21T00:46:33+00:00"
+            "time": "2019-12-10T02:56:55+00:00"
         },
         {
             "name": "toastnz/quicksilver-styles",
@@ -4815,12 +4816,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/toastnz/quicksilver-styles.git",
-                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90"
+                "reference": "b47924771296c7e522dbcfae117c8aee9a540cc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/9b1bf88b760919fad88e23a941c22c37dfca1f90",
-                "reference": "9b1bf88b760919fad88e23a941c22c37dfca1f90",
+                "url": "https://api.github.com/repos/toastnz/quicksilver-styles/zipball/b47924771296c7e522dbcfae117c8aee9a540cc2",
+                "reference": "b47924771296c7e522dbcfae117c8aee9a540cc2",
                 "shasum": ""
             },
             "type": "silverstripe-module",
@@ -4845,7 +4846,7 @@
                 "silverstripe",
                 "themes"
             ],
-            "time": "2019-11-21T20:07:49+00:00"
+            "time": "2019-12-09T19:42:53+00:00"
         },
         {
             "name": "toastnz/silverstripe-socialnav",
