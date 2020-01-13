@@ -19,10 +19,21 @@ try {
 
 CMSMenu::remove_menu_item('SilverStripe-CampaignAdmin-CampaignAdmin');
 
+
+$colors = [
+    "000000", "Black",
+    "ffffff", "White",
+    "222222", "Dark Grey",
+    "333333", "Grey",
+    "666666", "Light Grey",
+]; 
+
 TinyMCEConfig::get('cms')
     ->enablePlugins(['hr'])
+    ->enablePlugins(['textcolor'])
+    // ->enablePlugins(['colorpicker'])
+    ->setOptions(['textcolor_map' => $colors])
     ->addButtonsToLine(2, 'styleselect')
     ->addButtonsToLine(1, 'hr')
-    ->setOptions([
-        'importcss_append' => true
-    ]);
+    ->addButtonsToLine(2, 'forecolor')
+    ->setOptions(['importcss_append' => true]);
