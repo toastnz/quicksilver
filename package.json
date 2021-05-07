@@ -31,7 +31,7 @@
     "jquery-bridget": "^2.0.1",
     "jquery-match-height": "^0.7.2",
     "list.js": "^1.5.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "masonry-layout": "^4.1.1",
     "moment": "^2.18.1",
     "nprogress": "^0.2.0",
