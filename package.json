@@ -33,7 +33,7 @@
     "list.js": "^1.5.0",
     "lodash": "^4.17.4",
     "masonry-layout": "^4.1.1",
-    "moment": "^2.18.1",
+    "moment": "^2.29.4",
     "nprogress": "^0.2.0",
     "parsleyjs": "^2.7.0",
     "places.js": "^1.4.12",
